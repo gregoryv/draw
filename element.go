@@ -2,8 +2,6 @@ package design
 
 type Element int
 
-//go:generate stringer -linecomment -type Element element.go
-
 // Elements have been parsed from https://www.w3.org/TR/SVG11/eltindex.html
 const (
 	Element_undefined Element = iota // Undefined
@@ -12,3 +10,15 @@ const (
 
 	Element_last // Undefined
 )
+
+var elementNames map[Element]string = map[Element]string{
+	Element_rect: "rect",
+}
+
+func (i Element) String() string {
+	name, found := elementNames[i]
+	if !found {
+		return "undefined"
+	}
+	return name
+}
