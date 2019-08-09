@@ -6,6 +6,8 @@ import (
 	"html/template"
 	"io"
 	"reflect"
+
+	"github.com/gregoryv/go-design/xml"
 )
 
 func NewGraph() *Graph {
@@ -71,7 +73,7 @@ type Component struct {
 
 func (comp *Component) WriteTo(w io.Writer) (int, error) {
 	all := make(Drawables, 0)
-	all = append(all, NewNode(Element_rect,
+	all = append(all, xml.NewNode(Element_rect,
 		x("30"), y("20"), width("150"), height("150"),
 		style("fill:#ffffcc;stroke:black;stroke-width:1;opacity:0.5"),
 	))
@@ -80,8 +82,8 @@ func (comp *Component) WriteTo(w io.Writer) (int, error) {
 	   <text x="50" y="55" fill="black">Account</text>  */
 }
 
-func x(v string) Attribute      { return Attribute{"x", v} }
-func y(v string) Attribute      { return Attribute{"y", v} }
-func width(v string) Attribute  { return Attribute{"width", v} }
-func height(v string) Attribute { return Attribute{"width", v} }
-func style(v string) Attribute  { return Attribute{"style", v} }
+func x(v string) xml.Attribute      { return xml.NewAttribute("x", v) }
+func y(v string) xml.Attribute      { return xml.NewAttribute("y", v) }
+func width(v string) xml.Attribute  { return xml.NewAttribute("width", v) }
+func height(v string) xml.Attribute { return xml.NewAttribute("width", v) }
+func style(v string) xml.Attribute  { return xml.NewAttribute("style", v) }

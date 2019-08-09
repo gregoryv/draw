@@ -1,4 +1,4 @@
-package design
+package xml
 
 import (
 	"fmt"
@@ -7,11 +7,11 @@ import (
 )
 
 type Node struct {
-	element    Element
+	element    fmt.Stringer
 	attributes Attributes
 }
 
-func NewNode(element Element, attributes ...Attribute) *Node {
+func NewNode(element fmt.Stringer, attributes ...Attribute) *Node {
 	return &Node{
 		element:    element,
 		attributes: attributes,
@@ -20,6 +20,10 @@ func NewNode(element Element, attributes ...Attribute) *Node {
 
 func (node *Node) WriteTo(w io.Writer) (int, error) {
 	return fmt.Fprintf(w, "<%s%s>", node.element, node.attributes)
+}
+
+func NewAttribute(key, val string) Attribute {
+	return Attribute{key, val}
 }
 
 type Attribute struct {

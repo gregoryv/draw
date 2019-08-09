@@ -1,4 +1,4 @@
-package design
+package xml
 
 import (
 	"bytes"
@@ -12,14 +12,13 @@ func Test_rect(t *testing.T) {
 		node *Node
 		exp  string
 	}{
-		{NewNode(Element_rect), "<rect>"},
+		{NewNode(&img{}), "<img>"},
 		{
 			node: NewNode(
-				Element_rect,
-				Attribute{"x", "100"},
-				Attribute{"y", "0"},
+				&img{},
+				Attribute{"src", "http://example.com"},
 			),
-			exp: `<rect x="100" y="0">`,
+			exp: `<img src="http://example.com">`,
 		},
 	}
 	assert := asserter.New(t)
@@ -29,4 +28,10 @@ func Test_rect(t *testing.T) {
 		got := buf.String()
 		assert().Equals(got, c.exp)
 	}
+}
+
+type img struct{}
+
+func (*img) String() string {
+	return "img"
 }
