@@ -7,14 +7,14 @@ import (
 
 func NewGraph() *Graph {
 	return &Graph{
-		Elements: make([]*Element, 0),
+		Elements: make([]*Node, 0),
 	}
 }
 
 type Graph struct {
 	Width, Height int
 	Title         string
-	Elements      []*Element
+	Elements      []*Node
 }
 
 func (graph *Graph) WriteTo(w io.Writer) {
@@ -24,5 +24,3 @@ func (graph *Graph) WriteTo(w io.Writer) {
 
 func (graph *Graph) NewFolder(basename string) {
 }
-
-type Element struct{}
