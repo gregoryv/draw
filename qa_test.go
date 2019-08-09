@@ -1,4 +1,4 @@
-package X
+package design
 
 import (
 	"testing"
