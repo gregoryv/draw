@@ -11,12 +11,14 @@ const (
 	Element_undefined Element = iota // Undefined
 
 	Element_rect // rect
+	Element_text // text
 
 	Element_last // Undefined
 )
 
 var elementNames map[Element]string = map[Element]string{
 	Element_rect: "rect",
+	Element_text: "text",
 }
 
 func (i Element) String() string {
@@ -36,5 +38,6 @@ func attr(key, val string) xml.Attribute {
 func x(v string) xml.Attribute      { return attr("x", v) }
 func y(v string) xml.Attribute      { return attr("y", v) }
 func width(v string) xml.Attribute  { return attr("width", v) }
-func height(v string) xml.Attribute { return attr("width", v) }
+func height(v string) xml.Attribute { return attr("height", v) }
 func style(v string) xml.Attribute  { return attr("style", v) }
+func fill(v string) xml.Attribute   { return attr("fill", v) }

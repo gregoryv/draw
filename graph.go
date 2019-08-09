@@ -6,8 +6,6 @@ import (
 	"html/template"
 	"io"
 	"reflect"
-
-	"github.com/gregoryv/go-design/xml"
 )
 
 func NewGraph() *Graph {
@@ -26,14 +24,6 @@ func (graph *Graph) String() string {
 	buf := bytes.NewBufferString("")
 	graph.Parts.WriteTo(buf)
 	return buf.String()
-}
-
-func (graph *Graph) NewComponent(v interface{}) {
-	component := &Component{
-		Label: reflect.TypeOf(v).Name(),
-	}
-	graph.Title = component.Label
-	graph.Parts = append(graph.Parts, component)
 }
 
 const header string = `<svg width="{{.Width}}" height="{{.Height}}"
@@ -67,17 +57,10 @@ func (all Drawables) WriteTo(w io.Writer) (int, error) {
 	return total, nil
 }
 
-type Component struct {
-	Label string
-}
-
-func (comp *Component) WriteTo(w io.Writer) (int, error) {
-	all := make(Drawables, 0)
-	all = append(all, xml.NewNode(Element_rect,
-		x("30"), y("20"), width("150"), height("150"),
-		style("fill:#ffffcc;stroke:black;stroke-width:1;opacity:0.5"),
-	))
-	return all.WriteTo(w)
-	/*
-	   <text x="50" y="55" fill="black">Account</text>  */
+func (graph *Graph) NewComponent(v interface{}) {
+	component := &Component{
+		Label: reflect.TypeOf(v).Name(),
+	}
+	graph.Title = component.Label
+	graph.Parts = append(graph.Parts, component)
 }
