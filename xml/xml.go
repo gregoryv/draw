@@ -24,7 +24,7 @@ func NewNode(element fmt.Stringer, attributes ...Attribute) *Node {
 	}
 }
 
-func (node *Node) Append(child *Node) {
+func (node *Node) Append(child Drawable) {
 	node.children = append(node.children, child)
 }
 
@@ -84,4 +84,10 @@ func (attributes Attributes) String() string {
 		all[i] = attr.String()
 	}
 	return " " + strings.Join(all, " ")
+}
+
+type CData string
+
+func (cdata CData) WriteTo(w io.Writer) (int, error) {
+	return fmt.Fprint(w, string(cdata))
 }
