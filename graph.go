@@ -81,9 +81,3 @@ func (comp *Component) WriteTo(w io.Writer) (int, error) {
 	/*
 	   <text x="50" y="55" fill="black">Account</text>  */
 }
-
-func x(v string) xml.Attribute      { return xml.NewAttribute("x", v) }
-func y(v string) xml.Attribute      { return xml.NewAttribute("y", v) }
-func width(v string) xml.Attribute  { return xml.NewAttribute("width", v) }
-func height(v string) xml.Attribute { return xml.NewAttribute("width", v) }
-func style(v string) xml.Attribute  { return xml.NewAttribute("style", v) }
