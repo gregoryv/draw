@@ -23,11 +23,11 @@ func Test_rect(t *testing.T) {
 		{
 			node: &Node{
 				element: &img{},
-				children: []*Node{
-					&Node{
-						element: &img{},
+				children: []Drawable{
+					NewNode(
+						&img{},
 						Attribute{"src", "http://example.com"},
-					},
+					),
 				},
 			},
 			exp: "<img><img src=\"http://example.com\"/>\n</img>",

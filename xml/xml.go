@@ -9,14 +9,18 @@ import (
 type Node struct {
 	element    fmt.Stringer
 	attributes Attributes
-	children   []*Node
+	children   []Drawable
+}
+
+type Drawable interface {
+	WriteTo(io.Writer) (int, error)
 }
 
 func NewNode(element fmt.Stringer, attributes ...Attribute) *Node {
 	return &Node{
 		element:    element,
 		attributes: attributes,
-		children:   make([]*Node, 0),
+		children:   make([]Drawable, 0),
 	}
 }
 
