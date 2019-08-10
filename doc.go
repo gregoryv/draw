@@ -22,20 +22,24 @@ type Editor func(...interface{})
 
 func (doc *DesignDoc) edit(arguments ...interface{}) {
 	for _, arg := range arguments {
-		var valid Stringer
-		switch arg := arg.(type) {
-		case string:
-			valid = plain(arg)
-		case *Graph:
-			doc.Parts = append(doc.Parts, plain("\n"))
-			valid = arg
-		case Stringer:
-			valid = arg
-		default:
-			panic(arg)
-		}
-		doc.Parts = append(doc.Parts, valid)
+		doc.appendByType(arg)
 	}
+}
+
+func (doc *DesignDoc) appendByType(arg interface{}) {
+	var valid Stringer
+	switch arg := arg.(type) {
+	case string:
+		valid = plain(arg)
+	case *Graph:
+		doc.Parts = append(doc.Parts, plain("\n"))
+		valid = arg
+	case Stringer:
+		valid = arg
+	default:
+		panic(arg)
+	}
+	doc.Parts = append(doc.Parts, valid)
 }
 
 func (doc *DesignDoc) SaveAs(filename string) error {
