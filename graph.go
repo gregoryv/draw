@@ -61,6 +61,5 @@ func (all Drawables) WriteTo(w io.Writer) (int, error) {
 
 func (graph *Graph) NewComponent(v interface{}) {
 	comp := NewComponent(v)
-	graph.Title = comp.Label
 	graph.Parts = append(graph.Parts, comp)
 }
