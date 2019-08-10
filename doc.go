@@ -26,6 +26,9 @@ func (doc *DesignDoc) edit(arguments ...interface{}) {
 		switch arg := arg.(type) {
 		case string:
 			valid = plain(arg)
+		case *Graph:
+			doc.Parts = append(doc.Parts, plain("\n"))
+			valid = arg
 		case Stringer:
 			valid = arg
 		default:

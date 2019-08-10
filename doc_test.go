@@ -10,7 +10,13 @@ import (
 func Test_render_design_document(t *testing.T) {
 	doc := NewDesignDoc()
 	write := doc.Editor()
-	write("<h1>title</h1>")
+	write("<h1>Design Document as Software</h1>")
+
+	graph := NewGraph()
+	graph.Title = "Types"
+	graph.NewComponent(Account{})
+
+	write(graph)
 
 	filename := "result.html"
 	doc.SaveAs(filename)

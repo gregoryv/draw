@@ -10,7 +10,9 @@ import (
 
 func NewGraph() *Graph {
 	return &Graph{
-		Parts: make(Drawables, 0),
+		Width:  100, // Default size, should be adapted by content I think
+		Height: 100,
+		Parts:  make(Drawables, 0),
 	}
 }
 
@@ -22,7 +24,7 @@ type Graph struct {
 
 func (graph *Graph) String() string {
 	buf := bytes.NewBufferString("")
-	graph.Parts.WriteTo(buf)
+	graph.WriteTo(buf)
 	return buf.String()
 }
 
@@ -32,6 +34,7 @@ const header string = `<svg width="{{.Width}}" height="{{.Height}}"
 <title>{{.Title}}</title>
 `
 
+// WriteTo includes full xml
 func (graph *Graph) WriteTo(w io.Writer) {
 	tpl := template.Must(template.New("header").Parse(header))
 	tpl.Execute(w, graph)
