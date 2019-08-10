@@ -2,9 +2,17 @@ package design
 
 import (
 	"io"
+	"reflect"
 
 	"github.com/gregoryv/go-design/xml"
 )
+
+func NewComponent(v interface{}) *Component {
+	comp := &Component{
+		Label: reflect.TypeOf(v).Name(),
+	}
+	return comp
+}
 
 type Component struct {
 	Label string

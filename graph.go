@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"html/template"
 	"io"
-	"reflect"
 )
 
 func NewGraph() *Graph {
@@ -61,9 +60,7 @@ func (all Drawables) WriteTo(w io.Writer) (int, error) {
 }
 
 func (graph *Graph) NewComponent(v interface{}) {
-	component := &Component{
-		Label: reflect.TypeOf(v).Name(),
-	}
-	graph.Title = component.Label
-	graph.Parts = append(graph.Parts, component)
+	comp := NewComponent(v)
+	graph.Title = comp.Label
+	graph.Parts = append(graph.Parts, comp)
 }
