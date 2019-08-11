@@ -1,6 +1,7 @@
 package xml
 
 import (
+	"bytes"
 	"fmt"
 	"io"
 	"strings"
@@ -59,6 +60,12 @@ func (node *Node) writeCloseTo(w io.Writer) (int, error) {
 
 func (node *Node) HasChildren() bool {
 	return len(node.children) > 0
+}
+
+func (node *Node) String() string {
+	buf := bytes.NewBufferString("")
+	node.WriteTo(buf)
+	return buf.String()
 }
 
 func NewAttribute(key, val string) Attribute {

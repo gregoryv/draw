@@ -43,11 +43,10 @@ func intAttr(key string, val int) xml.Attribute {
 	return xml.NewAttribute(key, strconv.Itoa(val))
 }
 
-func xp(v int) xml.Attribute      { return attr("x", strconv.Itoa(v)) }
-func yp(v int) xml.Attribute      { return attr("y", strconv.Itoa(v)) }
-func width(v int) xml.Attribute   { return attr("width", strconv.Itoa(v)) }
-func height(v int) xml.Attribute  { return attr("height", strconv.Itoa(v)) }
-func fill(v string) xml.Attribute { return attr("fill", v) }
+func xp(v int) xml.Attribute     { return attr("x", strconv.Itoa(v)) }
+func yp(v int) xml.Attribute     { return attr("y", strconv.Itoa(v)) }
+func width(v int) xml.Attribute  { return attr("width", strconv.Itoa(v)) }
+func height(v int) xml.Attribute { return attr("height", strconv.Itoa(v)) }
 
 func Rect(x, y, w, h int, attr ...xml.Attribute) *xml.Node {
 	all := append(
