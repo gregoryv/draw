@@ -12,20 +12,22 @@ func NewReferenceDoc() *DesignDoc {
 	doc := NewDesignDoc()
 	write := doc.Editor()
 	write(
-		"<h1>Go-Design Diagram Reference</h1>",
+		"<h1>Example Go-Design Document</h1>",
+		"<p>Some stuff here</p>",
 	)
 
-	graph := NewGraph()
-	graph.Title = "Struct component"
-	comp := NewComponent(Account{})
-	comp.ShowFields()
-	graph.Add(comp)
-
+	account := NewComponent(Account{})
 	ledger := NewComponent(Ledger{})
+	product := NewComponent(Product{})
+
+	graph := NewGraph()
+	account.ShowFields()
+	graph.Add(account)
 	ledger.x = 200
 	ledger.ShowFields()
-
 	graph.Add(ledger)
+	graph.Link(account, ledger)
+	// graph.Link(comp, product) // invalid example
 
 	write(graph)
 	return doc
@@ -40,3 +42,5 @@ type Ledger struct {
 	From, To *Account
 	Total    int
 }
+
+type Product struct{}

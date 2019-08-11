@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"html/template"
 	"io"
+
+	"github.com/gregoryv/go-design/svg"
 )
 
 func NewGraph() *Graph {
@@ -37,8 +39,23 @@ const header string = `<svg width="{{.Width}}" height="{{.Height}}"
 func (graph *Graph) WriteTo(w io.Writer) {
 	tpl := template.Must(template.New("header").Parse(header))
 	tpl.Execute(w, graph)
+
 	graph.Parts.WriteTo(w)
 	fmt.Fprint(w, "\n</svg>")
+}
+
+func (graph *Graph) Link(from, to *Component) {
+	if !from.areLinked(to) {
+		panic(fmt.Sprintf("Cannot link %v with %v", from.v, to.v))
+	}
+	x1, y1 := from.Center()
+	x2, y2 := to.Center()
+	graph.Parts = append(
+		Drawables{
+			svg.Line(x1, y1, x2, y2),
+		},
+		graph.Parts...,
+	)
 }
 
 type Drawable interface {

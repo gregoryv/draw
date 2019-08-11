@@ -56,6 +56,11 @@ func (comp *Component) WriteTo(out io.Writer) (int, error) {
 	return all.WriteTo(out)
 }
 
+func (comp *Component) Center() (x int, y int) {
+	return comp.x + comp.Width()/2, comp.y + comp.Height()/2
+
+}
+
 func (comp *Component) Width() int {
 	// todo find widest
 	return widthOf(comp.v.Name())
@@ -78,4 +83,22 @@ func class(v string) xml.Attribute { return attr("class", v) }
 func fill(v string) xml.Attribute  { return attr("fill", v) }
 func attr(key, val string) xml.Attribute {
 	return xml.NewAttribute(key, val)
+}
+
+func (a *Component) areLinked(b *Component) bool {
+	for i := 0; i < a.v.NumField(); i++ {
+		if linked(a.v.Field(i).Type, b.v) {
+			return true
+		}
+	}
+	for i := 0; i < b.v.NumField(); i++ {
+		if linked(b.v.Field(i).Type, a.v) {
+			return true
+		}
+	}
+	return false
+}
+
+func linked(from, to reflect.Type) bool {
+	return from == to || from == reflect.PtrTo(to)
 }
