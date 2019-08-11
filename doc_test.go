@@ -23,9 +23,10 @@ func NewReferenceDoc() *DesignDoc {
 	graph := NewGraph()
 	account.ShowFields()
 	graph.Add(account)
-	ledger.x = 200
 	ledger.ShowFields()
-	graph.Add(ledger)
+	graph.Place(ledger, 200, 0)
+	graph.Place(product, 0, 200)
+
 	graph.Link(account, ledger)
 	// graph.Link(comp, product) // invalid example
 

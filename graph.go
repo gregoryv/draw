@@ -79,3 +79,9 @@ func (all Drawables) WriteTo(w io.Writer) (int, error) {
 func (graph *Graph) Add(d ...Drawable) {
 	graph.Parts = append(graph.Parts, d...)
 }
+
+func (graph *Graph) Place(obj PositionedDrawable, x, y int) {
+	obj.SetX(x)
+	obj.SetY(y)
+	graph.Add(obj)
+}

@@ -102,3 +102,6 @@ func (a *Component) areLinked(b *Component) bool {
 func linked(from, to reflect.Type) bool {
 	return from == to || from == reflect.PtrTo(to)
 }
+
+func (comp *Component) SetX(x int) { comp.x = x }
+func (comp *Component) SetY(y int) { comp.y = y }
