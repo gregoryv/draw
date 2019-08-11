@@ -54,12 +54,18 @@ func (comp *Component) WriteTo(out io.Writer) (int, error) {
 		)
 		for i := 0; i < comp.v.NumField(); i++ {
 			yOffset := s.PaddingTop + s.Height(i+2)
+			field := comp.v.Field(i)
 			all = append(all,
-				svg.Text(x+padLeft, y+yOffset, comp.v.Field(i).Name),
+				svg.Text(x+padLeft, y+yOffset, field.Name),
 			)
 		}
 	}
 	return all.WriteTo(out)
+}
+
+func nameAndType(field reflect.StructField) string {
+	typ := field.Type.Kind().String()
+	return field.Name + " " + typ
 }
 
 func (comp *Component) Center() (x int, y int) {
@@ -84,7 +90,6 @@ func (comp *Component) Height() int {
 func (comp *Component) Style() *StyleGuide { return DefaultStyle }
 func (comp *Component) ShowFields()        { comp.showPublicFields = true }
 
-func style(v string) xml.Attribute { return attr("style", v) }
 func class(v string) xml.Attribute { return attr("class", v) }
 func fill(v string) xml.Attribute  { return attr("fill", v) }
 func attr(key, val string) xml.Attribute {

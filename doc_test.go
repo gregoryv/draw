@@ -16,17 +16,23 @@ func NewReferenceDoc() *DesignDoc {
 		"<p>Some stuff here</p>",
 	)
 
-	account := NewComponent(Account{})
-	ledger := NewComponent(Ledger{})
-	product := NewComponent(Product{})
+	var (
+		account = NewComponent(Account{})
+		ledger  = NewComponent(Ledger{})
+		product = NewComponent(Product{})
+		order   = NewComponent(Order{})
+	)
 
 	graph := NewGraph()
-	graph.Add(account.WithFields())
+	graph.Place(account.WithFields(), 0, 0)
 	graph.Place(ledger.WithFields(), 200, 0)
-	graph.Place(product, 0, 200)
+	graph.Place(product, 200, 200)
+	graph.Place(order.WithFields(), 0, 200)
 
 	graph.Link(account, ledger)
-	// graph.Link(comp, product) // invalid example
+	graph.Link(order, product)
+	graph.Link(order, account)
+	//graph.Link(account, product) // invalid example
 
 	write(graph)
 	return doc
@@ -43,3 +49,8 @@ type Ledger struct {
 }
 
 type Product struct{}
+
+type Order struct {
+	First *Product
+	Owner *Account
+}
