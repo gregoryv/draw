@@ -19,12 +19,13 @@ func NewReferenceDoc() *DesignDoc {
 	graph := NewGraph()
 	graph.Place(account.WithFields()).At(1, 40)
 	graph.Place(ledger.WithFields()).RightOf(account)
-	graph.Place(order).Below(account)
+	graph.Place(order.WithFields()).Below(account)
 	graph.Place(product).RightOf(order)
 
 	AlignHorizontal(Center, account, ledger)
 	AlignHorizontal(Center, order, product)
 	AlignVertical(Center, account, order)
+	AlignVertical(Center, ledger, product)
 
 	graph.Link(account, ledger)
 	graph.Link(order, product)
@@ -35,7 +36,7 @@ func NewReferenceDoc() *DesignDoc {
 	write := doc.Editor()
 	write(
 		"<h1>Example Go-Design Document</h1>",
-		"<p>Some stuff here</p>",
+		"<p>", Account{}, "s are the root connector of ", Order{}, "'s</p>",
 		graph,
 	)
 	return doc

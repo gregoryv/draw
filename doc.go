@@ -3,6 +3,7 @@ package design
 import (
 	"io"
 	"os"
+	"reflect"
 	"text/template"
 )
 
@@ -28,16 +29,16 @@ func (doc *DesignDoc) edit(arguments ...interface{}) {
 
 func (doc *DesignDoc) appendByType(arg interface{}) {
 	var valid Stringer
-	switch arg := arg.(type) {
+	switch a := arg.(type) {
 	case string:
-		valid = plain(arg)
+		valid = plain(a)
 	case *Graph:
 		doc.Parts = append(doc.Parts, plain("\n"))
-		valid = arg
+		valid = a
 	case Stringer:
-		valid = arg
+		valid = a
 	default:
-		panic(arg)
+		valid = plain(reflect.TypeOf(arg).Name())
 	}
 	doc.Parts = append(doc.Parts, valid)
 }
