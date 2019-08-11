@@ -12,13 +12,15 @@ type Element int
 const (
 	Element_undefined Element = iota // Undefined
 
-	Element_rect // rect
-	Element_text // text
+	Element_line
+	Element_rect
+	Element_text
 
 	Element_last // Undefined
 )
 
 var elementNames map[Element]string = map[Element]string{
+	Element_line: "line",
 	Element_rect: "rect",
 	Element_text: "text",
 }
@@ -37,9 +39,15 @@ func attr(key, val string) xml.Attribute {
 	return xml.NewAttribute(key, val)
 }
 
-func x(v int) xml.Attribute         { return attr("x", strconv.Itoa(v)) }
-func y(v int) xml.Attribute         { return attr("y", strconv.Itoa(v)) }
-func width(v string) xml.Attribute  { return attr("width", v) }
-func height(v string) xml.Attribute { return attr("height", v) }
-func style(v string) xml.Attribute  { return attr("style", v) }
-func fill(v string) xml.Attribute   { return attr("fill", v) }
+func x(v int) xml.Attribute        { return attr("x", strconv.Itoa(v)) }
+func y(v int) xml.Attribute        { return attr("y", strconv.Itoa(v)) }
+func width(v int) xml.Attribute    { return attr("width", strconv.Itoa(v)) }
+func height(v int) xml.Attribute   { return attr("height", strconv.Itoa(v)) }
+func style(v string) xml.Attribute { return attr("style", v) }
+func fill(v string) xml.Attribute  { return attr("fill", v) }
+
+func Rect(xp, yp, w, h int, attr ...xml.Attribute) *xml.Node {
+	all := append([]xml.Attribute{x(xp), y(yp), width(w), height(h)},
+		attr...)
+	return xml.NewNode(Element_rect, all...)
+}

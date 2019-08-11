@@ -18,6 +18,7 @@ func NewReferenceDoc() *DesignDoc {
 	graph := NewGraph()
 	graph.Title = "Struct component"
 	comp := NewComponent(Account{})
+	comp.ShowPublicFields()
 	graph.Add(comp)
 
 	write(graph)
