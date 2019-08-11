@@ -9,6 +9,7 @@ import (
 
 type DesignDoc struct {
 	Parts Stringers
+	Style Stringer
 }
 
 func NewDesignDoc() *DesignDoc {
@@ -79,7 +80,7 @@ const htmlSource = `<!DOCTYPE html>
         stroke:black;
         stroke-width:1;
       }
-
+      {{.Style}}
     </style>
   </head>
 <body>

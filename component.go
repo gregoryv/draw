@@ -91,7 +91,6 @@ func (comp *Component) Style() *StyleGuide { return DefaultStyle }
 func (comp *Component) ShowFields()        { comp.showPublicFields = true }
 
 func class(v string) xml.Attribute { return attr("class", v) }
-func fill(v string) xml.Attribute  { return attr("fill", v) }
 func attr(key, val string) xml.Attribute {
 	return xml.NewAttribute(key, val)
 }

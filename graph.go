@@ -11,8 +11,8 @@ import (
 
 func NewGraph() *Graph {
 	return &Graph{
-		Width:  800, // Default size, should be adapted by content I think
-		Height: 400,
+		Width:  500, // Default size, should be adapted by content I think
+		Height: 300,
 		Parts:  make(Drawables, 0),
 	}
 }
