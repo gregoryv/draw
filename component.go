@@ -16,16 +16,22 @@ func NewComponent(v interface{}) *Component {
 }
 
 type Component struct {
+	Pos
 	v reflect.Type
-
-	x, y int
 
 	showPublicFields bool
 }
 
+func (comp *Component) Copy() *Component {
+	return &Component{
+		Pos: comp.Pos,
+		v:   comp.v,
+	}
+}
+
 func (comp *Component) WriteTo(out io.Writer) (int, error) {
 	all := make(Drawables, 0)
-	x, y := comp.x, comp.y
+	x, y := comp.X(), comp.Y()
 	w, h := comp.Width(), comp.Height()
 	s := DefaultStyle
 	offset := s.Offset(x, y)
@@ -57,7 +63,7 @@ func (comp *Component) WriteTo(out io.Writer) (int, error) {
 }
 
 func (comp *Component) Center() (x int, y int) {
-	return comp.x + comp.Width()/2, comp.y + comp.Height()/2
+	return comp.X() + comp.Width()/2, comp.Y() + comp.Height()/2
 
 }
 
@@ -103,5 +109,7 @@ func linked(from, to reflect.Type) bool {
 	return from == to || from == reflect.PtrTo(to)
 }
 
-func (comp *Component) SetX(x int) { comp.x = x }
-func (comp *Component) SetY(y int) { comp.y = y }
+func (comp *Component) WithFields() *Component {
+	comp.showPublicFields = true
+	return comp
+}
