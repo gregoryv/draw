@@ -13,7 +13,7 @@ func Test_render_design_document(t *testing.T) {
 	write("<h1>Design Document as Software</h1>")
 
 	graph := NewGraph()
-	graph.Title = "Types"
+	graph.Title = "Struct component"
 	graph.NewComponent(Account{})
 
 	write(graph)

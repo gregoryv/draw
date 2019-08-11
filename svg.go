@@ -1,6 +1,8 @@
 package design
 
 import (
+	"strconv"
+
 	"github.com/gregoryv/go-design/xml"
 )
 
@@ -35,8 +37,8 @@ func attr(key, val string) xml.Attribute {
 	return xml.NewAttribute(key, val)
 }
 
-func x(v string) xml.Attribute      { return attr("x", v) }
-func y(v string) xml.Attribute      { return attr("y", v) }
+func x(v int) xml.Attribute         { return attr("x", strconv.Itoa(v)) }
+func y(v int) xml.Attribute         { return attr("y", strconv.Itoa(v)) }
 func width(v string) xml.Attribute  { return attr("width", v) }
 func height(v string) xml.Attribute { return attr("height", v) }
 func style(v string) xml.Attribute  { return attr("style", v) }
