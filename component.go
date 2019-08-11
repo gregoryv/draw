@@ -4,6 +4,7 @@ import (
 	"io"
 	"reflect"
 
+	"github.com/gregoryv/go-design/svg"
 	"github.com/gregoryv/go-design/xml"
 )
 
@@ -26,17 +27,15 @@ func (comp *Component) WriteTo(w io.Writer) (int, error) {
 	h := 150
 	name := comp.v.Name()
 	all = append(all,
-		Rect(xp, yp, comp.Width(), h,
+		svg.Rect(xp, yp, comp.Width(), h,
 			style("fill:#ffffcc;stroke:black;stroke-width:1"),
 		),
-		xml.NewNode(Element_rect, x(xp-5), y(yp+5), width(10), height(10),
+		svg.Rect(xp-5, yp+5, 10, 10,
 			style("fill:#ffffcc;stroke:black;stroke-width:1"),
 		),
 	)
 	// Name of type
-	text := xml.NewNode(Element_text, x(xp+20), y(yp+25), fill("black"))
-	text.Append(xml.CData(name))
-	all = append(all, text)
+	all = append(all, svg.Text(xp+20, yp+25, name, fill("black")))
 
 	// Line separator
 
@@ -50,3 +49,9 @@ func (comp *Component) Width() int {
 }
 func (comp *Component) Style() *StyleGuide { return DefaultStyle }
 func (comp *Component) ShowPublicFields()  { comp.showPublicFields = true }
+
+func style(v string) xml.Attribute { return attr("style", v) }
+func fill(v string) xml.Attribute  { return attr("fill", v) }
+func attr(key, val string) xml.Attribute {
+	return xml.NewAttribute(key, val)
+}
