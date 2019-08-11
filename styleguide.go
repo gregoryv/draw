@@ -6,6 +6,7 @@ type StyleGuide struct {
 	PaddingTop    int
 	PaddingBottom int
 	PaddingLeft   int
+	Space         int // between components in graph
 }
 
 var DefaultStyle = &StyleGuide{
@@ -14,6 +15,7 @@ var DefaultStyle = &StyleGuide{
 	PaddingTop:    4,
 	PaddingBottom: 4,
 	PaddingLeft:   16,
+	Space:         60,
 }
 
 func widthOf(txt string) int {

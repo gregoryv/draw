@@ -58,30 +58,11 @@ func (graph *Graph) Link(from, to *Component) {
 	)
 }
 
-type Drawable interface {
-	WriteTo(io.Writer) (int, error)
-}
-
-type Drawables []Drawable
-
-func (all Drawables) WriteTo(w io.Writer) (int, error) {
-	var total int
-	for _, part := range all {
-		n, err := part.WriteTo(w)
-		if err != nil {
-			return total + n, err
-		}
-		total += n
-	}
-	return total, nil
-}
-
 func (graph *Graph) Add(d ...Drawable) {
 	graph.Parts = append(graph.Parts, d...)
 }
 
-func (graph *Graph) Place(obj PositionedDrawable, x, y int) {
-	obj.SetX(x)
-	obj.SetY(y)
+func (graph *Graph) Place(obj PositionedDrawable) *Adjuster {
 	graph.Add(obj)
+	return &Adjuster{obj, DefaultStyle.Space}
 }

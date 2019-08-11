@@ -9,13 +9,6 @@ func Test_reference_document(t *testing.T) {
 }
 
 func NewReferenceDoc() *DesignDoc {
-	doc := NewDesignDoc()
-	write := doc.Editor()
-	write(
-		"<h1>Example Go-Design Document</h1>",
-		"<p>Some stuff here</p>",
-	)
-
 	var (
 		account = NewComponent(Account{})
 		ledger  = NewComponent(Ledger{})
@@ -24,17 +17,27 @@ func NewReferenceDoc() *DesignDoc {
 	)
 
 	graph := NewGraph()
-	graph.Place(account.WithFields(), 0, 0)
-	graph.Place(ledger.WithFields(), 200, 0)
-	graph.Place(product, 200, 200)
-	graph.Place(order.WithFields(), 0, 200)
+	graph.Place(account.WithFields()).At(1, 40)
+	graph.Place(ledger.WithFields()).RightOf(account)
+	graph.Place(order).Below(account)
+	graph.Place(product).RightOf(order)
+
+	AlignHorizontal(Center, account, ledger)
+	AlignHorizontal(Center, order, product)
+	AlignVertical(Center, account, order)
 
 	graph.Link(account, ledger)
 	graph.Link(order, product)
 	graph.Link(order, account)
 	//graph.Link(account, product) // invalid example
 
-	write(graph)
+	doc := NewDesignDoc()
+	write := doc.Editor()
+	write(
+		"<h1>Example Go-Design Document</h1>",
+		"<p>Some stuff here</p>",
+		graph,
+	)
 	return doc
 }
 

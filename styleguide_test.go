@@ -13,6 +13,7 @@ func Test_styleguide(t *testing.T) {
 		expHeight int
 	}{
 		{DefaultStyle, 1, 22},
+		{DefaultStyle, 2, 44},
 	}
 	assert := asserter.New(t)
 
