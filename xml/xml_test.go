@@ -7,11 +7,26 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
-func Test_rect(t *testing.T) {
+func Test_attribute(t *testing.T) {
 	cases := []struct {
-		node *Node
+		attr Attribute
 		exp  string
 	}{
+		{NewAttribute("src", "http"), `src="http"`},
+	}
+	assert := asserter.New(t)
+	for _, c := range cases {
+		got := c.attr.String()
+		assert().Equals(got, c.exp)
+	}
+}
+
+func Test_drawables(t *testing.T) {
+	cases := []struct {
+		node Drawable
+		exp  string
+	}{
+		{CData("hello"), "hello"},
 		{NewNode(&img{}), "<img/>\n"},
 		{
 			node: NewNode(
@@ -39,7 +54,15 @@ func Test_rect(t *testing.T) {
 		c.node.WriteTo(buf)
 		got := buf.String()
 		assert().Equals(got, c.exp)
+		n, ok := c.node.(Stringer)
+		if ok {
+			assert().Equals(n.String(), c.exp)
+		}
 	}
+}
+
+type Stringer interface {
+	String() string
 }
 
 type img struct{}
