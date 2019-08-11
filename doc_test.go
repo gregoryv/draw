@@ -4,10 +4,8 @@ import (
 	"testing"
 )
 
-func Test_render_design_document(t *testing.T) {
-	doc := NewReferenceDoc()
-	filename := "result.html"
-	doc.SaveAs(filename)
+func Test_reference_document(t *testing.T) {
+	NewReferenceDoc().SaveAs("reference.html")
 }
 
 func NewReferenceDoc() *DesignDoc {
@@ -19,8 +17,14 @@ func NewReferenceDoc() *DesignDoc {
 
 	graph := NewGraph()
 	graph.Title = "Struct component"
-	graph.NewComponent(Account{})
+	comp := NewComponent(Account{})
+	graph.Add(comp)
 
 	write(graph)
 	return doc
+}
+
+type Account struct {
+	Username string
+	password string
 }

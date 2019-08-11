@@ -59,7 +59,6 @@ func (all Drawables) WriteTo(w io.Writer) (int, error) {
 	return total, nil
 }
 
-func (graph *Graph) NewComponent(v interface{}) {
-	comp := NewComponent(v)
-	graph.Parts = append(graph.Parts, comp)
+func (graph *Graph) Add(d ...Drawable) {
+	graph.Parts = append(graph.Parts, d...)
 }
