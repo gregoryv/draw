@@ -39,6 +39,10 @@ func attr(key, val string) xml.Attribute {
 	return xml.NewAttribute(key, val)
 }
 
+func intAttr(key string, val int) xml.Attribute {
+	return xml.NewAttribute(key, strconv.Itoa(val))
+}
+
 func xp(v int) xml.Attribute      { return attr("x", strconv.Itoa(v)) }
 func yp(v int) xml.Attribute      { return attr("y", strconv.Itoa(v)) }
 func width(v int) xml.Attribute   { return attr("width", strconv.Itoa(v)) }
@@ -46,9 +50,24 @@ func height(v int) xml.Attribute  { return attr("height", strconv.Itoa(v)) }
 func fill(v string) xml.Attribute { return attr("fill", v) }
 
 func Rect(x, y, w, h int, attr ...xml.Attribute) *xml.Node {
-	all := append([]xml.Attribute{xp(x), yp(y), width(w), height(h)},
-		attr...)
+	all := append(
+		[]xml.Attribute{xp(x), yp(y), width(w), height(h)},
+		attr...,
+	)
 	return xml.NewNode(Element_rect, all...)
+}
+
+func Line(x1, y1, x2, y2 int, attr ...xml.Attribute) *xml.Node {
+	all := append(
+		[]xml.Attribute{
+			intAttr("x1", x1),
+			intAttr("y1", y1),
+			intAttr("x2", x2),
+			intAttr("y2", y2),
+		},
+		attr...,
+	)
+	return xml.NewNode(Element_line, all...)
 }
 
 func Text(x, y int, s string, attr ...xml.Attribute) *xml.Node {

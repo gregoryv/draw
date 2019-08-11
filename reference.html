@@ -1,13 +1,31 @@
- <html>
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      .component, .smallbox {
+        fill:#ffffcc;
+        stroke:black;
+        stroke-width:1;
+      }
+      line {
+        stroke:black;
+        stroke-width:1;
+      }
+
+    </style>
+  </head>
 <body>
 <h1>Go-Design Diagram Reference</h1>
 <svg width="800" height="400"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
 <title>Struct component</title>
-<rect x="30" y="20" width="126" height="150" style="fill:#ffffcc;stroke:black;stroke-width:1"/>
-<rect x="25" y="25" width="10" height="10" style="fill:#ffffcc;stroke:black;stroke-width:1"/>
-<text x="50" y="45" fill="black">Account</text>
+<rect x="0" y="0" width="112" height="88" class="component"/>
+<text x="16" y="16">Account</text><line x1="0" y1="24" x2="112" y2="24"/>
+<text x="16" y="48">Username</text><text x="16" y="70">password</text><rect x="200" y="0" width="96" height="110" class="component"/>
+<text x="216" y="16">Ledger</text><line x1="200" y1="24" x2="296" y2="24"/>
+<text x="216" y="48">From</text><text x="216" y="70">To</text><text x="216" y="92">Total</text>
 </svg>
 </body>
 </html>

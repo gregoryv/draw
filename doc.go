@@ -64,7 +64,23 @@ func (doc *DesignDoc) WriteTo(w io.Writer) (int, error) {
 	return int(n), err
 }
 
-const htmlSource = ` <html>
+const htmlSource = `<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      .component, .smallbox {
+        fill:#ffffcc;
+        stroke:black;
+        stroke-width:1;
+      }
+      line {
+        stroke:black;
+        stroke-width:1;
+      }
+
+    </style>
+  </head>
 <body>
 {{range .Parts}}{{.}}{{end}}
 </body>

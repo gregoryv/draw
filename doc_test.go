@@ -18,8 +18,14 @@ func NewReferenceDoc() *DesignDoc {
 	graph := NewGraph()
 	graph.Title = "Struct component"
 	comp := NewComponent(Account{})
-	comp.ShowPublicFields()
+	comp.ShowFields()
 	graph.Add(comp)
+
+	ledger := NewComponent(Ledger{})
+	ledger.x = 200
+	ledger.ShowFields()
+
+	graph.Add(ledger)
 
 	write(graph)
 	return doc
@@ -28,4 +34,9 @@ func NewReferenceDoc() *DesignDoc {
 type Account struct {
 	Username string
 	password string
+}
+
+type Ledger struct {
+	From, To *Account
+	Total    int
 }
