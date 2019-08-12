@@ -74,8 +74,15 @@ func (comp *Component) Center() (x int, y int) {
 }
 
 func (comp *Component) Width() int {
-	// todo find widest
-	return widthOf(comp.v.Name())
+	n := widthOf(comp.v.Name())
+	for i := 0; i < comp.v.NumField(); i++ {
+		field := comp.v.Field(i)
+		w := widthOf(field.Name)
+		if w > n {
+			n = w
+		}
+	}
+	return n
 }
 
 func (comp *Component) Height() int {
