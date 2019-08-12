@@ -1,18 +1,19 @@
-package design
+package design_test
 
 import (
 	"testing"
 
 	"github.com/gregoryv/asserter"
+	design "github.com/gregoryv/go-design"
 )
 
 func Test_linked(t *testing.T) {
-	account := NewComponent(Account{})
-	ledger := NewComponent(Ledger{})
-	product := NewComponent(Product{})
+	account := design.NewComponent(Account{})
+	ledger := design.NewComponent(Ledger{})
+	product := design.NewComponent(Product{})
 
 	cases := []struct {
-		a, b *Component
+		a, b *design.Component
 		exp  bool
 	}{
 		{account, ledger, true},
@@ -20,7 +21,7 @@ func Test_linked(t *testing.T) {
 	}
 	assert := asserter.New(t)
 	for _, c := range cases {
-		got := c.a.areLinked(c.b)
+		got := c.a.AreLinked(c.b)
 		assert().Equals(got, c.exp)
 	}
 }

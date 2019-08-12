@@ -95,7 +95,7 @@ func attr(key, val string) xml.Attribute {
 	return xml.NewAttribute(key, val)
 }
 
-func (a *Component) areLinked(b *Component) bool {
+func (a *Component) AreLinked(b *Component) bool {
 	for i := 0; i < a.v.NumField(); i++ {
 		if linked(a.v.Field(i).Type, b.v) {
 			return true

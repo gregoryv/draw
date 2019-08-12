@@ -1,34 +1,36 @@
-package design
+package design_test
 
 import (
 	"testing"
+
+	design "github.com/gregoryv/go-design"
 )
 
 func Test_reference_document(t *testing.T) {
 	var (
-		account = NewComponent(Account{})
-		ledger  = NewComponent(Ledger{})
-		product = NewComponent(Product{})
-		order   = NewComponent(Order{})
+		account = design.NewComponent(Account{})
+		ledger  = design.NewComponent(Ledger{})
+		product = design.NewComponent(Product{})
+		order   = design.NewComponent(Order{})
 	)
 
-	graph := NewGraph()
+	graph := design.NewGraph()
 	graph.Place(account.WithFields()).At(30, 40)
 	graph.Place(ledger.WithFields()).RightOf(account)
 	graph.Place(order.WithFields()).Below(account)
 	graph.Place(product).RightOf(order)
 
-	AlignHorizontal(Center, account, ledger)
-	AlignHorizontal(Center, order, product)
-	AlignVertical(Center, account, order)
-	AlignVertical(Center, ledger, product)
+	design.AlignHorizontal(design.Center, account, ledger)
+	design.AlignHorizontal(design.Center, order, product)
+	design.AlignVertical(design.Center, account, order)
+	design.AlignVertical(design.Center, ledger, product)
 
 	graph.Link(account, ledger)
 	graph.Link(order, product)
 	graph.Link(order, account)
 	//graph.Link(account, product) // invalid example
 
-	doc := NewDesignDoc()
+	doc := design.NewDocument()
 	write := doc.Editor()
 	write(
 		"<h1>Example Go-Design Document</h1>",
@@ -53,7 +55,7 @@ can be mixed with types, E.g. `,
 	)
 
 	// Additional style can be added
-	doc.Style = plain(
+	doc.Style = design.Plain(
 		`body { width: 16cm; margin-left: 3cm }
 h1 { margin-left: -2.5cm }
 svg { border: 1px solid #e2e2e2; margin: auto }

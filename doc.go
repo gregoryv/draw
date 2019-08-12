@@ -12,7 +12,7 @@ type Document struct {
 	Style Stringer
 }
 
-func NewDesignDoc() *Document {
+func NewDocument() *Document {
 	return &Document{}
 }
 
@@ -32,14 +32,14 @@ func (doc *Document) appendByType(arg interface{}) {
 	var valid Stringer
 	switch a := arg.(type) {
 	case string:
-		valid = plain(a)
+		valid = Plain(a)
 	case *Graph:
-		doc.Parts = append(doc.Parts, plain("\n"))
+		doc.Parts = append(doc.Parts, Plain("\n"))
 		valid = a
 	case Stringer:
 		valid = a
 	default:
-		valid = plain(reflect.TypeOf(arg).Name())
+		valid = Plain(reflect.TypeOf(arg).Name())
 	}
 	doc.Parts = append(doc.Parts, valid)
 }
@@ -100,8 +100,8 @@ func (fn StringerFunc) String() string {
 	return fn()
 }
 
-type plain string
+type Plain string
 
-func (p plain) String() string {
+func (p Plain) String() string {
 	return string(p)
 }

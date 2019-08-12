@@ -45,7 +45,7 @@ func (graph *Graph) WriteTo(w io.Writer) {
 }
 
 func (graph *Graph) Link(from, to *Component) {
-	if !from.areLinked(to) {
+	if !from.AreLinked(to) {
 		panic(fmt.Sprintf("Cannot link %v with %v", from.v, to.v))
 	}
 	x1, y1 := from.Center()
