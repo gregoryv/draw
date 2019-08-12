@@ -78,3 +78,10 @@ func (adjust *Adjuster) Space(space []int) int {
 	}
 	return space[0]
 }
+
+type Direction int
+
+const (
+	Horizontal Direction = iota
+	Vertical
+)
