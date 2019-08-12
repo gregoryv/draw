@@ -75,11 +75,13 @@ func (comp *Component) Center() (x int, y int) {
 
 func (comp *Component) Width() int {
 	n := widthOf(comp.v.Name())
-	for i := 0; i < comp.v.NumField(); i++ {
-		field := comp.v.Field(i)
-		w := widthOf(field.Name)
-		if w > n {
-			n = w
+	if comp.showPublicFields {
+		for i := 0; i < comp.v.NumField(); i++ {
+			field := comp.v.Field(i)
+			w := widthOf(field.Name)
+			if w > n {
+				n = w
+			}
 		}
 	}
 	return n
