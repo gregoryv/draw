@@ -62,7 +62,7 @@ func (graph *Graph) Add(d ...Drawable) {
 	graph.Parts = append(graph.Parts, d...)
 }
 
-func (graph *Graph) Place(obj PositionedDrawable) *Adjuster {
+func (graph *Graph) Place(obj Shape) *Adjuster {
 	graph.Add(obj)
 	return &Adjuster{obj, DefaultStyle.Space}
 }

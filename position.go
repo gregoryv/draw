@@ -9,7 +9,7 @@ type Positioned interface {
 	Width() int
 }
 
-type PositionedDrawable interface {
+type Shape interface {
 	Positioned
 	Drawable
 }
