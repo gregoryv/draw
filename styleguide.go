@@ -9,6 +9,7 @@ import (
 type StyleGuide struct {
 	applicable bool
 
+	FontFamily    string
 	FontWidth     int
 	LineHeight    int
 	PaddingTop    int
@@ -24,7 +25,8 @@ type StyleGuide struct {
 var DefaultStyle = StyleGuide{
 	applicable: true,
 
-	FontWidth:     16,
+	FontFamily:    "monospace",
+	FontWidth:     12,
 	LineHeight:    12,
 	PaddingTop:    4,
 	PaddingBottom: 4,
@@ -38,6 +40,13 @@ var DefaultStyle = StyleGuide{
 
 func (s *StyleGuide) HasSpecialStyle() bool {
 	return s.applicable
+}
+
+func (s *StyleGuide) FillFont() xml.Attribute {
+	return style(fmt.Sprintf("fill:%s;font-family:%s",
+		s.ShapeFill,
+		s.FontFamily,
+	))
 }
 
 func (s *StyleGuide) FillStroke() xml.Attribute {

@@ -8,11 +8,12 @@ import (
 )
 
 func Test_element_names(t *testing.T) {
+
 	for e := Element_undefined; e <= Element_last+1; e++ {
 		valid := e > Element_undefined && e < Element_last
 		name := e.String()
 		if valid && name == "undefined" {
-			t.Errorf("No names for %#v", e)
+			t.Errorf("No name for %#v listed after %s", e, e-1)
 		}
 	}
 }

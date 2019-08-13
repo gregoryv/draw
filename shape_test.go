@@ -8,10 +8,12 @@ import (
 
 func Test_save_all_shapes(t *testing.T) {
 	cases := []struct {
-		shape    Shape
-		filename string
+		width, height, x, y int
+		shape               Shape
+		filename            string
 	}{
-		{NewRecord(Record{}).WithFields(), "shapes/record.svg"},
+		{300, 150, 0, 0, NewRecord(Record{}).WithFields(), "shapes/record.svg"},
+		{200, 100, 50, 50, NewCircle("Circle"), "shapes/circle.svg"},
 	}
 	shapes, err := os.Create("shapes.md")
 	if err != nil {
@@ -21,13 +23,16 @@ func Test_save_all_shapes(t *testing.T) {
 	defer shapes.Close()
 	for _, c := range cases {
 		graph := NewGraph()
+		graph.Width = c.width
+		graph.Height = c.height
 		fh, err := os.Create(c.filename)
 		if err != nil {
 			t.Error(err)
 		}
-		graph.Place(c.shape).At(10, 10)
+		graph.Place(c.shape).At(c.x, c.y)
 		graph.WriteTo(fh)
-		shapes.WriteString(fmt.Sprintf("<img src=%q />\n", c.filename))
+		format := "<img src=%q />\n<br clear=\"all\">"
+		shapes.WriteString(fmt.Sprintf(format, c.filename))
 		fh.Close()
 		t.Logf("Saved %s", c.filename)
 	}

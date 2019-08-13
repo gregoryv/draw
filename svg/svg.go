@@ -12,6 +12,7 @@ type Element int
 const (
 	Element_undefined Element = iota // Undefined
 
+	Element_circle
 	Element_line
 	Element_rect
 	Element_text
@@ -20,9 +21,10 @@ const (
 )
 
 var elementNames map[Element]string = map[Element]string{
-	Element_line: "line",
-	Element_rect: "rect",
-	Element_text: "text",
+	Element_circle: "circle",
+	Element_line:   "line",
+	Element_rect:   "rect",
+	Element_text:   "text",
 }
 
 func (i Element) String() string {
@@ -48,9 +50,17 @@ func yp(v int) xml.Attribute     { return attr("y", strconv.Itoa(v)) }
 func width(v int) xml.Attribute  { return attr("width", strconv.Itoa(v)) }
 func height(v int) xml.Attribute { return attr("height", strconv.Itoa(v)) }
 
+func Circle(cx, cy, r int, attr ...xml.Attribute) *xml.Node {
+	all := append(
+		xml.Attributes{intAttr("cx", cx), intAttr("cy", cy), intAttr("r", r)},
+		attr...,
+	)
+	return xml.NewNode(Element_circle, all...)
+}
+
 func Rect(x, y, w, h int, attr ...xml.Attribute) *xml.Node {
 	all := append(
-		[]xml.Attribute{xp(x), yp(y), width(w), height(h)},
+		xml.Attributes{xp(x), yp(y), width(w), height(h)},
 		attr...,
 	)
 	return xml.NewNode(Element_rect, all...)
