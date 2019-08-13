@@ -44,7 +44,7 @@ func (graph *Graph) WriteTo(w io.Writer) {
 	fmt.Fprint(w, "\n</svg>")
 }
 
-func (graph *Graph) Link(from, to *Component) {
+func (graph *Graph) Link(from, to *Record) {
 	if !from.AreLinked(to) {
 		panic(fmt.Sprintf("Cannot link %v with %v", from.v, to.v))
 	}

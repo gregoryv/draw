@@ -8,35 +8,35 @@ import (
 	"github.com/gregoryv/go-design/xml"
 )
 
-func NewComponent(v interface{}) *Component {
-	comp := &Component{
+func NewRecord(v interface{}) *Record {
+	record := &Record{
 		v: reflect.TypeOf(v),
 	}
-	return comp
+	return record
 }
 
-type Component struct {
+type Record struct {
 	Pos
 	v reflect.Type
 
 	showPublicFields bool
 }
 
-func (comp *Component) Copy() *Component {
-	return &Component{
-		Pos: comp.Pos,
-		v:   comp.v,
+func (record *Record) Copy() *Record {
+	return &Record{
+		Pos: record.Pos,
+		v:   record.v,
 	}
 }
 
-func (comp *Component) WriteTo(out io.Writer) (int, error) {
+func (record *Record) WriteTo(out io.Writer) (int, error) {
 	all := make(Drawables, 0)
-	x, y := comp.X(), comp.Y()
-	w, h := comp.Width(), comp.Height()
+	x, y := record.X(), record.Y()
+	w, h := record.Width(), record.Height()
 	s := DefaultStyle
 	offset := s.Offset(x, y)
 	padLeft := s.PaddingLeft
-	name := comp.v.Name()
+	name := record.v.Name()
 	all = append(all,
 		svg.Rect(x, y, w, h, class("component")),
 		//svg.Rect(x-5, y+5, 10, 10, class("smallbox")),
@@ -45,16 +45,16 @@ func (comp *Component) WriteTo(out io.Writer) (int, error) {
 	)
 
 	// Public fields
-	if comp.showPublicFields {
+	if record.showPublicFields {
 		all = append(all,
 			svg.Line(
 				x, offset.Line(1)+s.PaddingBottom,
 				x+w, offset.Line(1)+s.PaddingBottom,
 			),
 		)
-		for i := 0; i < comp.v.NumField(); i++ {
+		for i := 0; i < record.v.NumField(); i++ {
 			yOffset := s.PaddingTop + s.Height(i+2)
-			field := comp.v.Field(i)
+			field := record.v.Field(i)
 			all = append(all,
 				svg.Text(x+padLeft, y+yOffset, field.Name),
 			)
@@ -68,16 +68,16 @@ func nameAndType(field reflect.StructField) string {
 	return field.Name + " " + typ
 }
 
-func (comp *Component) Center() (x int, y int) {
-	return comp.X() + comp.Width()/2, comp.Y() + comp.Height()/2
+func (record *Record) Center() (x int, y int) {
+	return record.X() + record.Width()/2, record.Y() + record.Height()/2
 
 }
 
-func (comp *Component) Width() int {
-	n := widthOf(comp.v.Name())
-	if comp.showPublicFields {
-		for i := 0; i < comp.v.NumField(); i++ {
-			field := comp.v.Field(i)
+func (record *Record) Width() int {
+	n := widthOf(record.v.Name())
+	if record.showPublicFields {
+		for i := 0; i < record.v.NumField(); i++ {
+			field := record.v.Field(i)
 			w := widthOf(field.Name)
 			if w > n {
 				n = w
@@ -87,24 +87,24 @@ func (comp *Component) Width() int {
 	return n
 }
 
-func (comp *Component) Height() int {
+func (record *Record) Height() int {
 	n := 1
-	if comp.showPublicFields {
-		n += comp.v.NumField()
+	if record.showPublicFields {
+		n += record.v.NumField()
 		n += 1 // separators
 	}
 	return DefaultStyle.Height(n)
 }
 
-func (comp *Component) Style() *StyleGuide { return DefaultStyle }
-func (comp *Component) ShowFields()        { comp.showPublicFields = true }
+func (record *Record) Style() *StyleGuide { return DefaultStyle }
+func (record *Record) ShowFields()        { record.showPublicFields = true }
 
 func class(v string) xml.Attribute { return attr("class", v) }
 func attr(key, val string) xml.Attribute {
 	return xml.NewAttribute(key, val)
 }
 
-func (a *Component) AreLinked(b *Component) bool {
+func (a *Record) AreLinked(b *Record) bool {
 	for i := 0; i < a.v.NumField(); i++ {
 		if linked(a.v.Field(i).Type, b.v) {
 			return true
@@ -122,7 +122,7 @@ func linked(from, to reflect.Type) bool {
 	return from == to || from == reflect.PtrTo(to)
 }
 
-func (comp *Component) WithFields() *Component {
-	comp.showPublicFields = true
-	return comp
+func (record *Record) WithFields() *Record {
+	record.showPublicFields = true
+	return record
 }

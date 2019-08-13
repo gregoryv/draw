@@ -8,12 +8,12 @@ import (
 )
 
 func Test_linked(t *testing.T) {
-	account := design.NewComponent(Account{})
-	ledger := design.NewComponent(Ledger{})
-	product := design.NewComponent(Product{})
+	account := design.NewRecord(Account{})
+	ledger := design.NewRecord(Ledger{})
+	product := design.NewRecord(Product{})
 
 	cases := []struct {
-		a, b *design.Component
+		a, b *design.Record
 		exp  bool
 	}{
 		{account, ledger, true},
