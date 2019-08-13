@@ -11,9 +11,10 @@ import (
 
 func NewGraph() *Graph {
 	return &Graph{
-		Width:  500, // Default size, should be adapted by content I think
-		Height: 300,
-		Parts:  make(Drawables, 0),
+		Width:      500, // Default size, should be adapted by content I think
+		Height:     300,
+		Parts:      make(Drawables, 0),
+		StyleGuide: DefaultStyle,
 	}
 }
 
@@ -21,6 +22,7 @@ type Graph struct {
 	Width, Height int
 	Title         string
 	Parts         Drawables
+	StyleGuide
 }
 
 func (graph *Graph) String() string {
@@ -50,9 +52,11 @@ func (graph *Graph) Link(from, to *Record) {
 	}
 	x1, y1 := from.Center()
 	x2, y2 := to.Center()
+
+	// Prepend lines so they are drawn below other shapes
 	graph.Parts = append(
 		Drawables{
-			svg.Line(x1, y1, x2, y2),
+			svg.Line(x1, y1, x2, y2, graph.Stroke()),
 		},
 		graph.Parts...,
 	)

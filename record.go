@@ -10,7 +10,8 @@ import (
 
 func NewRecord(v interface{}) *Record {
 	record := &Record{
-		v: reflect.TypeOf(v),
+		v:          reflect.TypeOf(v),
+		StyleGuide: DefaultStyle,
 	}
 	return record
 }
@@ -18,42 +19,43 @@ func NewRecord(v interface{}) *Record {
 type Record struct {
 	Pos
 	v reflect.Type
+	StyleGuide
 
 	showPublicFields bool
-}
-
-func (record *Record) Copy() *Record {
-	return &Record{
-		Pos: record.Pos,
-		v:   record.v,
-	}
 }
 
 func (record *Record) WriteTo(out io.Writer) (int, error) {
 	all := make(Drawables, 0)
 	x, y := record.X(), record.Y()
 	w, h := record.Width(), record.Height()
-	s := DefaultStyle
-	offset := s.Offset(x, y)
-	padLeft := s.PaddingLeft
+	offset := record.Offset(x, y)
+	padLeft := record.PaddingLeft
 	name := record.v.Name()
+
+	attributes := xml.Attributes{class("record")}
+	if record.HasSpecialStyle() {
+		attributes = append(attributes, record.FillStroke())
+	}
 	all = append(all,
-		svg.Rect(x, y, w, h, class("component")),
-		//svg.Rect(x-5, y+5, 10, 10, class("smallbox")),
-		// Name of type
-		svg.Text(x+padLeft, offset.Line(1)-s.PaddingTop, name),
+		svg.Rect(x, y, w, h, attributes...),
+		svg.Text(x+padLeft, offset.Line(1)-record.PaddingTop, name),
 	)
 
 	// Public fields
 	if record.showPublicFields {
+		attributes := xml.Attributes{}
+		if record.HasSpecialStyle() {
+			attributes = append(attributes, record.Stroke())
+		}
 		all = append(all,
 			svg.Line(
-				x, offset.Line(1)+s.PaddingBottom,
-				x+w, offset.Line(1)+s.PaddingBottom,
+				x, offset.Line(1)+record.PaddingBottom,
+				x+w, offset.Line(1)+record.PaddingBottom,
+				attributes...,
 			),
 		)
 		for i := 0; i < record.v.NumField(); i++ {
-			yOffset := s.PaddingTop + s.Height(i+2)
+			yOffset := record.PaddingTop + record.StyleGuide.Height(i+2)
 			field := record.v.Field(i)
 			all = append(all,
 				svg.Text(x+padLeft, y+yOffset, field.Name),
@@ -96,10 +98,10 @@ func (record *Record) Height() int {
 	return DefaultStyle.Height(n)
 }
 
-func (record *Record) Style() *StyleGuide { return DefaultStyle }
-func (record *Record) ShowFields()        { record.showPublicFields = true }
+func (record *Record) ShowFields() { record.showPublicFields = true }
 
 func class(v string) xml.Attribute { return attr("class", v) }
+func style(v string) xml.Attribute { return attr("style", v) }
 func attr(key, val string) xml.Attribute {
 	return xml.NewAttribute(key, val)
 }

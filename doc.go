@@ -71,15 +71,6 @@ const htmlSource = `<!DOCTYPE html>
 <html>
   <head>
     <style>
-      .component, .smallbox {
-        fill:#ffffcc;
-        stroke:black;
-        stroke-width:1;
-      }
-      line {
-        stroke:black;
-        stroke-width:1;
-      }
       {{.Style}}
     </style>
   </head>

@@ -8,7 +8,7 @@ import (
 
 func Test_styleguide(t *testing.T) {
 	cases := []struct {
-		s         *StyleGuide
+		s         StyleGuide
 		lines     int
 		expHeight int
 	}{

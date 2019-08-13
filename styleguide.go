@@ -1,21 +1,58 @@
 package design
 
+import (
+	"fmt"
+
+	"github.com/gregoryv/go-design/xml"
+)
+
 type StyleGuide struct {
+	applicable bool
+
 	FontWidth     int
 	LineHeight    int
 	PaddingTop    int
 	PaddingBottom int
 	PaddingLeft   int
 	Space         int // between components in graph
+
+	ShapeStrokeWidth int
+	ShapeStrokeColor string
+	ShapeFill        string
 }
 
-var DefaultStyle = &StyleGuide{
+var DefaultStyle = StyleGuide{
+	applicable: true,
+
 	FontWidth:     16,
 	LineHeight:    12,
 	PaddingTop:    4,
 	PaddingBottom: 4,
 	PaddingLeft:   16,
 	Space:         60,
+
+	ShapeStrokeWidth: 1,
+	ShapeStrokeColor: "black",
+	ShapeFill:        "#ffffcc",
+}
+
+func (s *StyleGuide) HasSpecialStyle() bool {
+	return s.applicable
+}
+
+func (s *StyleGuide) FillStroke() xml.Attribute {
+	return style(fmt.Sprintf("fill:%s;stroke:%s;stroke-width:%v",
+		s.ShapeFill,
+		s.ShapeStrokeColor,
+		s.ShapeStrokeWidth,
+	))
+}
+
+func (s *StyleGuide) Stroke() xml.Attribute {
+	return style(fmt.Sprintf("stroke:%s;stroke-width:%v",
+		s.ShapeStrokeColor,
+		s.ShapeStrokeWidth,
+	))
 }
 
 func widthOf(txt string) int {
@@ -36,6 +73,7 @@ type Offset struct {
 	s    *StyleGuide
 }
 
+// Returns the y offset for line number n
 func (o *Offset) Line(n int) int {
 	return o.y + (o.s.LineHeight+o.s.PaddingTop+o.s.PaddingBottom)*n
 }
