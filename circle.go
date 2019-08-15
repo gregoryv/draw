@@ -1,42 +1,41 @@
 package design
 
 import (
+	"bytes"
 	"io"
-
-	"github.com/gregoryv/go-design/svg"
-	"github.com/gregoryv/go-design/xml"
+	"text/template"
 )
 
 type Circle struct {
 	Pos
 	StyleGuide
-	Label string
+	Label Label
 }
 
 func NewCircle(label string) *Circle {
 	return &Circle{
 		StyleGuide: DefaultStyle,
-		Label:      label,
+		Label: Label{
+			StyleGuide: DefaultStyle,
+			Text:       label,
+		},
 	}
 }
 
 func (circle *Circle) Height() int   { return circle.Diameter() }
 func (circle *Circle) Width() int    { return circle.Diameter() }
-func (circle *Circle) Diameter() int { return widthOf(circle.Label) }
+func (circle *Circle) Diameter() int { return widthOf(circle.Label.Text) }
+func (circle *Circle) Radius() int   { return circle.Diameter() / 2 }
+
+// todo SetX should affect label
 
 func (circle *Circle) WriteTo(w io.Writer) (int, error) {
-	radius := circle.Diameter() / 2
-	attributes := xml.Attributes{}
-	if circle.HasSpecialStyle() {
-		attributes = append(attributes, circle.FillStroke())
-	}
-	all := make(Drawables, 2)
-	all[0] = svg.Circle(circle.X(), circle.Y(), radius, attributes...)
-	textX := circle.X() - radius + circle.PaddingLeft
-	all[1] = svg.Text(textX, circle.Y(), circle.Label,
-		attr("font-family", circle.FontFamily),
-		circle.FillStroke(),
-	)
-
-	return all.WriteTo(w)
+	xml := `<circle cx="{{.X}}" cy="{{.Y}}" r="{{.Radius}}" {{.FillStrokeS}}/>
+{{.Label}}
+`
+	svg := template.Must(template.New("").Parse(xml))
+	buf := bytes.NewBufferString("")
+	svg.Execute(buf, circle)
+	n, err := buf.WriteTo(w)
+	return int(n), err // todo switch to int6r
 }

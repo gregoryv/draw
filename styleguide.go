@@ -57,11 +57,21 @@ func (s *StyleGuide) FillStroke() xml.Attribute {
 	))
 }
 
+func (s *StyleGuide) FillStrokeS() string {
+	a := s.FillStroke()
+	return a.String()
+}
+
 func (s *StyleGuide) Stroke() xml.Attribute {
 	return style(fmt.Sprintf("stroke:%s;stroke-width:%v",
 		s.ShapeStrokeColor,
 		s.ShapeStrokeWidth,
 	))
+}
+
+func (s *StyleGuide) StrokeS() string {
+	a := s.Stroke()
+	return a.String()
 }
 
 func widthOf(txt string) int {

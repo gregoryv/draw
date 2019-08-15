@@ -3,5 +3,6 @@
      xmlns:xlink="http://www.w3.org/1999/xlink">
 <title></title>
 <circle cx="50" cy="50" r="36" style="fill:#ffffcc;stroke:black;stroke-width:1"/>
-<text x="30" y="50" font-family="monospace" style="fill:#ffffcc;stroke:black;stroke-width:1">Circle</text>
+<text x="0" y="0" style="stroke:black;stroke-width:1">Circle</text>
+
 </svg>
