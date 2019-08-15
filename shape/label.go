@@ -5,15 +5,13 @@ import (
 	"text/template"
 )
 
-type Stringer interface {
-	String() string
+type Label struct {
+	X, Y int
+	Text string
 }
 
-type svg interface {
-	Svg() string
-}
-
-func toString(xml string, shape interface{}) string {
+func (shape *Label) Svg() string {
+	xml := `<text x="{{.X}}" y="{{.Y}}">{{.Text}}</text>`
 	svg := template.Must(template.New("").Parse(xml))
 	buf := bytes.NewBufferString("")
 	svg.Execute(buf, shape)

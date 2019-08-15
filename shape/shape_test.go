@@ -16,6 +16,9 @@ func Test_shapes_write_svg(t *testing.T) {
 		{&Line{X1: 0, Y1: 0, X2: 100, Y2: 0}, `<line x1="0"`},
 		{&Svg{}, "<svg width"},
 		{&Svg{Content: []svg{&Line{}}}, ">\n<line"},
+		{&Label{
+			Text: "hello",
+		}, "<text x="},
 	}
 	assert := asserter.New(t)
 	for _, c := range cases {
@@ -30,9 +33,19 @@ func Test_example_shapes(t *testing.T) {
 		{
 			&Svg{
 				Width:  100,
-				Height: 20,
+				Height: 200,
 				Content: []svg{
 					&Line{X1: 0, Y1: 0, X2: 100, Y2: 0},
+					&Label{
+						Y:    40,
+						Text: "Label",
+					},
+					&Record{
+						Y:      70,
+						Width:  100, // todo calculate perhaps
+						Height: 30,
+						Title:  "Record",
+					},
 				},
 			},
 		},
@@ -49,5 +62,7 @@ func Test_example_shapes(t *testing.T) {
 
 func style(xml string) string {
 	s := strings.ReplaceAll(xml, "<line", `<line style="stroke: black"`)
+
+	s = strings.ReplaceAll(s, "<rect", `<rect style="fill:#ffffcc;stroke:black"`)
 	return s
 }
