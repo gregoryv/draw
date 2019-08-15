@@ -1,3 +1,8 @@
 package shape
 
-type Style struct{}
+import "io"
+
+type StyledWriter interface {
+	io.WriterTo
+	Style() string
+}
