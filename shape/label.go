@@ -10,11 +10,15 @@ type Label struct {
 	Text string
 }
 
+var (
+	_ = template.Must(Templates.New("label").Parse(
+		`<text x="{{.X}}" y="{{.Y}}">{{.Text}}</text>`,
+	))
+)
+
 func (shape *Label) Svg() string {
-	xml := `<text x="{{.X}}" y="{{.Y}}">{{.Text}}</text>`
-	svg := template.Must(template.New("").Parse(xml))
 	buf := bytes.NewBufferString("")
-	svg.Execute(buf, shape)
+	Templates.ExecuteTemplate(buf, "label", shape)
 	return buf.String()
 }
 

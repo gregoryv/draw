@@ -1,5 +1,11 @@
 package shape
 
+import (
+	"bytes"
+	"io"
+	"text/template"
+)
+
 type Record struct {
 	X, Y          int
 	Width, Height int
@@ -10,13 +16,21 @@ type Record struct {
 	Padding Padding
 }
 
-func (shape *Record) Svg() string {
-	xml := `<rect x="{{.X}}" y="{{.Y}}"
+var recordSvg = template.Must(template.New("").Parse(
+	`<rect x="{{.X}}" y="{{.Y}}"
      width="{{.Width}}" height="{{.Height}}"/>
 {{.TitleSvg}}
 
-`
-	return toString(xml, shape)
+`))
+
+func (shape *Record) Svg() string {
+	buf := bytes.NewBufferString("")
+	recordSvg.Execute(buf, shape)
+	return buf.String()
+}
+
+func (shape *Record) WriteSvg(w io.Writer) {
+	recordSvg.Execute(w, shape)
 }
 
 func (record *Record) TitleSvg() string {
