@@ -5,29 +5,7 @@ import (
 	"io"
 	"os"
 	"testing"
-
-	"github.com/gregoryv/asserter"
 )
-
-func Test_shapes_write_svg(t *testing.T) {
-	cases := []struct {
-		shape   SvgWriter
-		xmlText string
-	}{
-		{&Line{X1: 0, Y1: 0, X2: 100, Y2: 0}, `<line x1="0"`},
-		{&Svg{}, "<svg width"},
-		{&Svg{Content: []SvgWriter{&Line{}}}, ">\n<line"},
-		{&Label{
-			Text: "hello",
-		}, "<text x="},
-	}
-	assert := asserter.New(t)
-	for _, c := range cases {
-		buf := bytes.NewBufferString("")
-		c.shape.WriteSvg(buf)
-		assert().Contains(buf.String(), c.xmlText)
-	}
-}
 
 func Test_example_shapes(t *testing.T) {
 	cases := []struct {
@@ -44,12 +22,10 @@ func Test_example_shapes(t *testing.T) {
 						Text: "Label",
 					},
 					&Record{
-						Y:       70,
-						Width:   100, // todo calculate perhaps
-						Height:  30,
-						Title:   "Record",
-						Font:    Font{Height: 10},
-						Padding: Padding{Left: 10, Top: 5},
+						Y:     70,
+						Title: "Record",
+						Font:  Font{Height: 9, Width: 7},
+						Pad:   Padding{Left: 10, Top: 4, Bottom: 4, Right: 10},
 					},
 				},
 			},

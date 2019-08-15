@@ -16,6 +16,11 @@ func TestAlignHorizontal(t *testing.T) {
 			&Label{X: 50, Y: 40},
 			50, 10,
 		},
+		{
+			&Label{X: 10, Y: 10},
+			&Record{X: 50, Y: 40},
+			50, 10,
+		},
 	}
 	assert := asserter.New(t)
 	for _, c := range cases {
