@@ -11,14 +11,15 @@ type Svg struct {
 }
 
 func (shape *Svg) WriteSvg(w io.Writer) error {
-	e := make([]error, 2+len(shape.Content))
-	_, e[0] = fmt.Fprintf(w,
+	collect := &ErrCollector{}
+	collect.Last(fmt.Fprintf(w,
 		`<svg width="%v" height="%v">`,
-		shape.Width, shape.Height)
-	for i, s := range shape.Content {
+		shape.Width, shape.Height))
+
+	for _, s := range shape.Content {
 		fmt.Fprint(w, "\n")
-		e[i+1] = s.WriteSvg(w)
+		collect.Err(s.WriteSvg(w))
 	}
-	_, e[len(e)-1] = fmt.Fprint(w, "</svg>")
-	return firstOf(e...)
+	collect.Last(fmt.Fprint(w, "</svg>"))
+	return collect.First()
 }

@@ -9,19 +9,20 @@ type Record struct {
 	X, Y          int
 	Width, Height int
 	Title         string
-	Public        []string
+	PublicFields  []string
 
 	Font    Font
 	Padding Padding
 }
 
 func (shape *Record) WriteSvg(w io.Writer) error {
-	_, e1 := fmt.Fprintf(w,
+	collect := &ErrCollector{}
+	collect.Last(fmt.Fprintf(w,
 		`<rect x="%v" y="%v" width="%v" height="%v"/>`,
-		shape.X, shape.Y, shape.Width, shape.Height)
+		shape.X, shape.Y, shape.Width, shape.Height))
 
-	e2 := shape.title().WriteSvg(w)
-	return firstOf(e1, e2)
+	collect.Err(shape.title().WriteSvg(w))
+	return collect.First()
 }
 
 func (record *Record) title() *Label {
@@ -50,4 +51,23 @@ func firstOf(errors ...error) error {
 		}
 	}
 	return nil
+}
+
+type ErrCollector struct {
+	err error
+}
+
+func (ec *ErrCollector) Last(any interface{}, err error) {
+	ec.Err(err)
+}
+
+func (ec *ErrCollector) Err(err error) {
+	if ec.err != nil {
+		return
+	}
+	ec.err = err
+}
+
+func (ec *ErrCollector) First() error {
+	return ec.err
 }
