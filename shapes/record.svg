@@ -1,8 +1,0 @@
-<svg width="300" height="150"
-     xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink">
-<title></title>
-<rect x="0" y="0" width="192" height="132" class="record" style="fill:#ffffcc;stroke:black;stroke-width:1"/>
-<text x="16" y="16">Record</text><line x1="0" y1="24" x2="192" y2="24" style="stroke:black;stroke-width:1"/>
-<text x="16" y="48">Pos</text><text x="16" y="70">v</text><text x="16" y="92">StyleGuide</text><text x="16" y="114">showPublicFields</text>
-</svg>
