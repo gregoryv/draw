@@ -64,7 +64,7 @@ func Test_example_shapes(t *testing.T) {
 
 func style(xml string) string {
 	s := strings.ReplaceAll(xml, "<line", `<line style="stroke: black"`)
-
-	s = strings.ReplaceAll(s, "<rect", `<rect style="fill:#ffffcc;stroke:black"`)
+	s = strings.ReplaceAll(s, "<rect",
+		`<rect style="fill:#ffffcc;stroke:black"`)
 	return s
 }

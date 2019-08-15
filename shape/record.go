@@ -11,7 +11,8 @@ type Record struct {
 }
 
 func (shape *Record) Svg() string {
-	xml := `<rect x="{{.X}}" y="{{.Y}}" width="{{.Width}}" height="{{.Height}}"/>
+	xml := `<rect x="{{.X}}" y="{{.Y}}"
+     width="{{.Width}}" height="{{.Height}}"/>
 {{.TitleSvg}}
 
 `

@@ -1,38 +1,38 @@
-package design
+package shape
 
-func AlignHorizontal(adjust Adjust, objects ...Positioned) {
+func AlignHorizontal(adjust Adjust, objects ...Shape) {
 	mustAlign(adjust, objects, Top, Bottom, Center)
 	first := objects[0]
-	y := first.Y()
-	for _, obj := range objects[1:] {
+	_, y := first.Position()
+	for _, shape := range objects[1:] {
 		switch adjust {
 		case Top:
-			obj.SetY(y)
+			shape.SetY(y)
 		case Bottom:
-			obj.SetY(y + first.Height() - obj.Height())
+			shape.SetY(y + first.Height() - shape.Height())
 		case Center:
-			obj.SetY(y + (first.Height()-obj.Height())/2)
+			shape.SetY(y + (first.Height()-shape.Height())/2)
 		}
 	}
 }
 
-func AlignVertical(adjust Adjust, objects ...Positioned) {
+func AlignVertical(adjust Adjust, objects ...Shape) {
 	mustAlign(adjust, objects, Left, Right, Center)
 	first := objects[0]
-	x := first.X()
-	for _, obj := range objects[1:] {
+	x, _ := first.Position()
+	for _, shape := range objects[1:] {
 		switch adjust {
 		case Left:
-			obj.SetX(x)
+			shape.SetX(x)
 		case Right:
-			obj.SetX(x + first.Width() - obj.Width())
+			shape.SetX(x + first.Width() - shape.Width())
 		case Center:
-			obj.SetX(x + (first.Width()-obj.Width())/2)
+			shape.SetX(x + (first.Width()-shape.Width())/2)
 		}
 	}
 }
 
-func mustAlign(adjust Adjust, objects []Positioned, ok ...Adjust) {
+func mustAlign(adjust Adjust, objects []Shape, ok ...Adjust) {
 	if len(objects) < 2 {
 		panic("Align must have 2 or more objects as arguments")
 	}
@@ -55,21 +55,23 @@ const (
 )
 
 type Adjuster struct {
-	obj          Positioned
+	shape        Shape
 	defaultSpace int
 }
 
 func (adjust *Adjuster) At(x, y int) {
-	adjust.obj.SetX(x)
-	adjust.obj.SetY(y)
+	adjust.shape.SetX(x)
+	adjust.shape.SetY(y)
 }
 
-func (adjust *Adjuster) RightOf(o Positioned, l ...int) {
-	adjust.obj.SetX(o.X() + o.Width() + adjust.Space(l))
+func (adjust *Adjuster) RightOf(o Shape, l ...int) {
+	x, _ := o.Position()
+	adjust.shape.SetX(x + o.Width() + adjust.Space(l))
 }
 
-func (adjust *Adjuster) Below(o Positioned, l ...int) {
-	adjust.obj.SetY(o.Y() + o.Height() + adjust.Space(l))
+func (adjust *Adjuster) Below(o Shape, l ...int) {
+	_, y := o.Position()
+	adjust.shape.SetY(y + o.Height() + adjust.Space(l))
 }
 
 func (adjust *Adjuster) Space(space []int) int {
@@ -85,3 +87,11 @@ const (
 	Horizontal Direction = iota
 	Vertical
 )
+
+type Shape interface {
+	Position() (x int, y int)
+	SetX(int)
+	SetY(int)
+	Width() int
+	Height() int
+}
