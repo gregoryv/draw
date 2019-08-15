@@ -41,10 +41,12 @@ func Test_example_shapes(t *testing.T) {
 						Text: "Label",
 					},
 					&Record{
-						Y:      70,
-						Width:  100, // todo calculate perhaps
-						Height: 30,
-						Title:  "Record",
+						Y:       70,
+						Width:   100, // todo calculate perhaps
+						Height:  30,
+						Title:   "Record",
+						Font:    Font{Height: 10},
+						Padding: Padding{Left: 10, Top: 5},
 					},
 				},
 			},

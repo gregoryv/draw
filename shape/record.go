@@ -5,6 +5,9 @@ type Record struct {
 	Width, Height int
 	Title         string
 	Public        []string
+
+	Font    Font
+	Padding Padding
 }
 
 func (shape *Record) Svg() string {
@@ -16,10 +19,21 @@ func (shape *Record) Svg() string {
 }
 
 func (record *Record) TitleSvg() string {
-	fontHeight := 10
+	fontHeight := record.Font.Height
+	padding := record.Padding.Left
 	label := &Label{
-		Y:    record.Y + fontHeight,
+		X:    record.X + padding,
+		Y:    record.Y + fontHeight + padding,
 		Text: record.Title,
 	}
 	return label.Svg()
+}
+
+type Font struct {
+	Height int
+	Width  int
+}
+
+type Padding struct {
+	Left, Top, Right, Bottom int
 }
