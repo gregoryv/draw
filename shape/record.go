@@ -20,8 +20,23 @@ func (shape *Record) WriteSvg(w io.Writer) error {
 		`<rect x="%v" y="%v" width="%v" height="%v"/>`,
 		shape.X, shape.Y, shape.Width(), shape.Height()))
 
+	collect.Err(shape.writeFirstSeparator(w))
 	collect.Err(shape.title().WriteSvg(w))
 	return collect.First()
+}
+
+func (record *Record) writeFirstSeparator(w io.Writer) error {
+	if len(record.PublicFields) == 0 {
+		return nil
+	}
+	y1 := record.Y + boxHeight(record.Font, record.Pad, 1)
+	line := &Line{
+		X1: record.X,
+		Y1: y1,
+		X2: record.Width(),
+		Y2: y1,
+	}
+	return line.WriteSvg(w)
 }
 
 func (record *Record) title() *Label {
@@ -32,9 +47,12 @@ func (record *Record) title() *Label {
 	}
 }
 
+func (record *Record) lines() int {
+	return 1 + len(record.PublicFields)
+}
+
 func (record *Record) Height() int {
-	lines := 1
-	return boxHeight(record.Font, record.Pad, lines) // todo
+	return boxHeight(record.Font, record.Pad, record.lines())
 }
 
 func (record *Record) Width() int {

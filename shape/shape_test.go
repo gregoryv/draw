@@ -26,6 +26,10 @@ func Test_example_shapes(t *testing.T) {
 						Title: "Record",
 						Font:  Font{Height: 9, Width: 7},
 						Pad:   Padding{Left: 10, Top: 4, Bottom: 4, Right: 10},
+						PublicFields: []string{
+							"Write",
+							"SetLabel",
+						},
 					},
 				},
 			},
