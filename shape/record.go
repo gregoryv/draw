@@ -1,9 +1,8 @@
 package shape
 
 import (
-	"bytes"
+	"fmt"
 	"io"
-	"text/template"
 )
 
 type Record struct {
@@ -16,32 +15,23 @@ type Record struct {
 	Padding Padding
 }
 
-var recordSvg = template.Must(template.New("").Parse(
-	`<rect x="{{.X}}" y="{{.Y}}"
-     width="{{.Width}}" height="{{.Height}}"/>
-{{.TitleSvg}}
+func (shape *Record) WriteSvg(w io.Writer) error {
+	_, e1 := fmt.Fprintf(w,
+		`<rect x="%v" y="%v" width="%v" height="%v"/>`,
+		shape.X, shape.Y, shape.Width, shape.Height)
 
-`))
-
-func (shape *Record) Svg() string {
-	buf := bytes.NewBufferString("")
-	recordSvg.Execute(buf, shape)
-	return buf.String()
+	e2 := shape.title().WriteSvg(w)
+	return firstOf(e1, e2)
 }
 
-func (shape *Record) WriteSvg(w io.Writer) {
-	recordSvg.Execute(w, shape)
-}
-
-func (record *Record) TitleSvg() string {
+func (record *Record) title() *Label {
 	fontHeight := record.Font.Height
 	padding := record.Padding.Left
-	label := &Label{
+	return &Label{
 		X:    record.X + padding,
 		Y:    record.Y + fontHeight + padding,
 		Text: record.Title,
 	}
-	return label.Svg()
 }
 
 type Font struct {
@@ -51,4 +41,13 @@ type Font struct {
 
 type Padding struct {
 	Left, Top, Right, Bottom int
+}
+
+func firstOf(errors ...error) error {
+	for _, err := range errors {
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }

@@ -1,8 +1,8 @@
 package shape
 
 import (
-	"bytes"
-	"text/template"
+	"fmt"
+	"io"
 )
 
 type Svg struct {
@@ -10,16 +10,15 @@ type Svg struct {
 	Content       []svg
 }
 
-func (shape *Svg) Svg() string {
-	buf := bytes.NewBufferString("")
-	Templates.ExecuteTemplate(buf, "svg", shape)
-	return buf.String()
+func (shape *Svg) WriteSvg(w io.Writer) error {
+	e := make([]error, 2+len(shape.Content))
+	_, e[0] = fmt.Fprintf(w,
+		`<svg width="%v" height="%v">`,
+		shape.Width, shape.Height)
+	for i, s := range shape.Content {
+		fmt.Fprint(w, "\n")
+		e[i+1] = s.WriteSvg(w)
+	}
+	_, e[len(e)-1] = fmt.Fprint(w, "</svg>")
+	return firstOf(e...)
 }
-
-var (
-	Templates = template.Must(template.New("svg").Parse(
-		`<svg width="{{.Width}}" height="{{.Height}}">
-{{ range .Content }}{{.Svg}}
-{{end}}
-</svg>`))
-)

@@ -1,8 +1,8 @@
 package shape
 
 import (
-	"bytes"
-	"text/template"
+	"fmt"
+	"io"
 )
 
 type Label struct {
@@ -10,16 +10,11 @@ type Label struct {
 	Text string
 }
 
-var (
-	_ = template.Must(Templates.New("label").Parse(
-		`<text x="{{.X}}" y="{{.Y}}">{{.Text}}</text>`,
-	))
-)
-
-func (shape *Label) Svg() string {
-	buf := bytes.NewBufferString("")
-	Templates.ExecuteTemplate(buf, "label", shape)
-	return buf.String()
+func (shape *Label) WriteSvg(w io.Writer) error {
+	_, err := fmt.Fprintf(w,
+		`<text x="%v" y="%v">%s</text>`,
+		shape.X, shape.Y, shape.Text)
+	return err
 }
 
 func (shape *Label) Height() int {

@@ -5,16 +5,10 @@ import (
 	"testing"
 )
 
-func BenchmarkSvgRendering(b *testing.B) {
-	record := &Record{}
-	for i := 0; i < b.N; i++ {
-		record.Svg()
-	}
-}
-
 func BenchmarkWriteSvg(b *testing.B) {
 	record := &Record{}
+	styler := &Styler{ioutil.Discard}
 	for i := 0; i < b.N; i++ {
-		record.WriteSvg(ioutil.Discard)
+		record.WriteSvg(styler)
 	}
 }
