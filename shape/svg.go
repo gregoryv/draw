@@ -7,7 +7,7 @@ import (
 
 type Svg struct {
 	Width, Height int
-	Content       []svg
+	Content       []SvgWriter
 }
 
 func (shape *Svg) WriteSvg(w io.Writer) error {

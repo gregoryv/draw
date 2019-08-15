@@ -11,12 +11,12 @@ import (
 
 func Test_shapes_write_svg(t *testing.T) {
 	cases := []struct {
-		shape   svg
+		shape   SvgWriter
 		xmlText string
 	}{
 		{&Line{X1: 0, Y1: 0, X2: 100, Y2: 0}, `<line x1="0"`},
 		{&Svg{}, "<svg width"},
-		{&Svg{Content: []svg{&Line{}}}, ">\n<line"},
+		{&Svg{Content: []SvgWriter{&Line{}}}, ">\n<line"},
 		{&Label{
 			Text: "hello",
 		}, "<text x="},
@@ -31,13 +31,13 @@ func Test_shapes_write_svg(t *testing.T) {
 
 func Test_example_shapes(t *testing.T) {
 	cases := []struct {
-		shape svg
+		shape SvgWriter
 	}{
 		{
 			&Svg{
 				Width:  100,
 				Height: 200,
-				Content: []svg{
+				Content: []SvgWriter{
 					&Line{X1: 0, Y1: 0, X2: 100, Y2: 0},
 					&Label{
 						Y:    40,

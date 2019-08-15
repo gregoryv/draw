@@ -6,13 +6,13 @@ import (
 )
 
 func BenchmarkWriteSvg(b *testing.B) {
-	svg := &Svg{
-		Content: []svg{
+	SvgWriter := &Svg{
+		Content: []SvgWriter{
 			&Record{},
 		},
 	}
 	styler := &Styler{ioutil.Discard}
 	for i := 0; i < b.N; i++ {
-		svg.WriteSvg(styler)
+		SvgWriter.WriteSvg(styler)
 	}
 }
