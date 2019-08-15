@@ -14,14 +14,26 @@ type Record struct {
 	Pad  Padding
 }
 
-func (shape *Record) WriteSvg(w io.Writer) error {
+func (record *Record) WriteSvg(w io.Writer) error {
 	collect := &ErrCollector{}
 	collect.Last(fmt.Fprintf(w,
 		`<rect x="%v" y="%v" width="%v" height="%v"/>`,
-		shape.X, shape.Y, shape.Width(), shape.Height()))
+		record.X, record.Y, record.Width(), record.Height()))
 
-	collect.Err(shape.writeFirstSeparator(w))
-	collect.Err(shape.title().WriteSvg(w))
+	collect.Err(record.writeFirstSeparator(w))
+	var y = boxHeight(record.Font, record.Pad, 1) + record.Pad.Top
+	for _, txt := range record.PublicFields {
+		// todo we need line height here
+		y += record.Font.LineHeight
+		label := &Label{
+			X:    record.X + record.Pad.Left,
+			Y:    record.Y + y,
+			Text: txt,
+		}
+
+		collect.Err(label.WriteSvg(w))
+	}
+	collect.Err(record.title().WriteSvg(w))
 	return collect.First()
 }
 
@@ -42,7 +54,7 @@ func (record *Record) writeFirstSeparator(w io.Writer) error {
 func (record *Record) title() *Label {
 	return &Label{
 		X:    record.X + record.Pad.Left,
-		Y:    record.Y + record.Font.Height + record.Pad.Top,
+		Y:    record.Y + record.Font.LineHeight + record.Pad.Top,
 		Text: record.Title,
 	}
 }
@@ -52,11 +64,21 @@ func (record *Record) lines() int {
 }
 
 func (record *Record) Height() int {
-	return boxHeight(record.Font, record.Pad, record.lines())
+	// figure out why it doesn't fit all labels with nice padding
+	first := boxHeight(record.Font, record.Pad, 1)
+	rest := boxHeight(record.Font, record.Pad, len(record.PublicFields))
+	return first + rest
 }
 
 func (record *Record) Width() int {
-	return boxWidth(record.Font, record.Pad, record.Title) // todo check widest
+	width := boxWidth(record.Font, record.Pad, record.Title)
+	for _, txt := range record.PublicFields {
+		w := boxWidth(record.Font, record.Pad, txt)
+		if w > width {
+			width = w
+		}
+	}
+	return width
 }
 
 func (record *Record) Position() (int, int) { return record.X, record.Y }

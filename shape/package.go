@@ -9,8 +9,9 @@ type SvgWriter interface {
 }
 
 type Font struct {
-	Height int
-	Width  int
+	Height     int
+	Width      int
+	LineHeight int
 }
 
 type Padding struct {
@@ -18,7 +19,7 @@ type Padding struct {
 }
 
 func boxHeight(font Font, pad Padding, lines int) int {
-	return (pad.Top + pad.Bottom + font.Height) * lines
+	return (pad.Top + pad.Bottom) + lines*font.LineHeight
 }
 
 func boxWidth(font Font, pad Padding, txt string) int {
