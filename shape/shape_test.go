@@ -8,21 +8,26 @@ import (
 )
 
 func Test_example_shapes(t *testing.T) {
+	y := 0
+	addy := func(Y int) int {
+		y += Y
+		return y
+	}
 	cases := []struct {
 		shape SvgWriter
 	}{
 		{
 			&Svg{
-				Width:  100,
+				Width:  300,
 				Height: 200,
 				Content: []SvgWriter{
-					&Line{X1: 0, Y1: 0, X2: 100, Y2: 0},
+					&Line{X1: 0, Y1: y, X2: 100, Y2: 0},
 					&Label{
-						Y:    40,
+						Y:    addy(40),
 						Text: "Label",
 					},
 					&Record{
-						Y:     70,
+						Y:     addy(20),
 						Title: "Record",
 						Font:  Font{Height: 9, Width: 7, LineHeight: 15},
 						Pad:   Padding{Left: 10, Top: 2, Bottom: 7, Right: 10},
@@ -30,6 +35,14 @@ func Test_example_shapes(t *testing.T) {
 							"Write",
 							"SetLabel",
 						},
+					},
+
+					&Record{
+						X:     100,
+						Y:     y,
+						Title: "Record without fields",
+						Font:  Font{Height: 9, Width: 7, LineHeight: 15},
+						Pad:   Padding{Left: 10, Top: 2, Bottom: 7, Right: 10},
 					},
 				},
 			},

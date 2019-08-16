@@ -45,7 +45,7 @@ func (record *Record) writeFirstSeparator(w io.Writer) error {
 	line := &Line{
 		X1: record.X,
 		Y1: y1,
-		X2: record.Width(),
+		X2: record.X + record.Width(),
 		Y2: y1,
 	}
 	return line.WriteSvg(w)
@@ -64,8 +64,10 @@ func (record *Record) lines() int {
 }
 
 func (record *Record) Height() int {
-	// figure out why it doesn't fit all labels with nice padding
 	first := boxHeight(record.Font, record.Pad, 1)
+	if len(record.PublicFields) == 0 {
+		return first
+	}
 	rest := boxHeight(record.Font, record.Pad, len(record.PublicFields))
 	return first + rest
 }
