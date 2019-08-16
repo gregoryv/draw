@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 )
 
@@ -11,15 +10,13 @@ type Svg struct {
 }
 
 func (shape *Svg) WriteSvg(w io.Writer) error {
-	collect := &ErrCollector{}
-	collect.Last(fmt.Fprintf(w,
-		`<svg width="%v" height="%v">`,
-		shape.Width, shape.Height))
+	w, printf, err := newTagPrinter(w)
+	printf(`<svg width="%v" height="%v">`, shape.Width, shape.Height)
 
 	for _, s := range shape.Content {
-		fmt.Fprint(w, "\n")
-		collect.Err(s.WriteSvg(w))
+		printf("\n")
+		s.WriteSvg(w)
 	}
-	collect.Last(fmt.Fprint(w, "</svg>"))
-	return collect.First()
+	printf("</svg>")
+	return *err
 }

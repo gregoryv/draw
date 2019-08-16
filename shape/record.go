@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 )
 
@@ -15,26 +14,24 @@ type Record struct {
 }
 
 func (record *Record) WriteSvg(w io.Writer) error {
-	collect := &ErrCollector{}
-	collect.Last(fmt.Fprintf(w,
+	w, printf, err := newTagPrinter(w)
+	printf(
 		`<rect x="%v" y="%v" width="%v" height="%v"/>`,
-		record.X, record.Y, record.Width(), record.Height()))
+		record.X, record.Y, record.Width(), record.Height())
 
-	collect.Err(record.writeFirstSeparator(w))
+	record.writeFirstSeparator(w)
 	var y = boxHeight(record.Font, record.Pad, 1) + record.Pad.Top
 	for _, txt := range record.PublicFields {
-		// todo we need line height here
 		y += record.Font.LineHeight
 		label := &Label{
 			X:    record.X + record.Pad.Left,
 			Y:    record.Y + y,
 			Text: txt,
 		}
-
-		collect.Err(label.WriteSvg(w))
+		label.WriteSvg(w)
 	}
-	collect.Err(record.title().WriteSvg(w))
-	return collect.First()
+	record.title().WriteSvg(w)
+	return *err
 }
 
 func (record *Record) writeFirstSeparator(w io.Writer) error {
