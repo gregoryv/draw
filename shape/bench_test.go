@@ -11,8 +11,10 @@ func BenchmarkWriteSvg(b *testing.B) {
 			&Record{},
 		},
 	}
-	styler := &Styler{ioutil.Discard}
+	styler := &Styler{dest: ioutil.Discard}
 	for i := 0; i < b.N; i++ {
 		SvgWriter.WriteSvg(styler)
 	}
+	b.StopTimer()
+	b.ReportAllocs()
 }

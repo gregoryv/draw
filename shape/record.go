@@ -16,7 +16,7 @@ type Record struct {
 func (record *Record) WriteSvg(w io.Writer) error {
 	w, printf, err := newTagPrinter(w)
 	printf(
-		`<rect x="%v" y="%v" width="%v" height="%v"/>`,
+		`<rect class="record" x="%v" y="%v" width="%v" height="%v"/>`,
 		record.X, record.Y, record.Width(), record.Height())
 
 	record.writeFirstSeparator(w)

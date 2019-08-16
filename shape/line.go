@@ -12,7 +12,7 @@ type Line struct {
 
 func (line *Line) WriteSvg(w io.Writer) error {
 	_, err := fmt.Fprintf(w,
-		`<line x1="%v" y1="%v" x2="%v" y2="%v"/>`,
+		`<line class="line" x1="%v" y1="%v" x2="%v" y2="%v"/>`,
 		line.X1, line.Y1, line.X2, line.Y2,
 	)
 	return err

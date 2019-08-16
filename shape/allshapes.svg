@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+width="350" height="300">
+<line class="line" style="stroke:black" x1="0" y1="70" x2="100" y2="70"/>
+<path class="arrow" style="stroke:black" d="M230,70 L280,100" /><circle class="arrowtail" style="fill:red;stroke:black" cx="230" cy="70" r="3" /><g transform="rotate(36 280 100)"><path class="arrowhead" style="stroke:green;fill:green" d="M280,100 l-15,-6 l0,12 Z" /></g>
+<path class="arrow" style="stroke:black" d="M230,70 L200,120" /><circle class="arrowtail" style="fill:red;stroke:black" cx="230" cy="70" r="3" /><g transform="rotate(126 200 120)"><path class="arrowhead" style="stroke:green;fill:green" d="M200,120 l-15,-6 l0,12 Z" /></g>
+<path class="arrow" style="stroke:black" d="M230,70 L180,50" /><circle class="arrowtail" style="fill:red;stroke:black" cx="230" cy="70" r="3" /><g transform="rotate(203 180 50)"><path class="arrowhead" style="stroke:green;fill:green" d="M180,50 l-15,-6 l0,12 Z" /></g>
+<path class="arrow" style="stroke:black" d="M230,70 L270,50" /><circle class="arrowtail" style="fill:red;stroke:black" cx="230" cy="70" r="3" /><g transform="rotate(-30 270 50)"><path class="arrowhead" style="stroke:green;fill:green" d="M270,50 l-15,-6 l0,12 Z" /></g>
+<path class="arrow" style="stroke:black" d="M230,70 L320,70" /><circle class="arrowtail" style="fill:red;stroke:black" cx="230" cy="70" r="3" /><g transform="rotate(0 320 70)"><path class="arrowhead" style="stroke:green;fill:green" d="M320,70 l-15,-6 l0,12 Z" /></g>
+<path class="arrow" style="stroke:black" d="M230,70 L180,70" /><circle class="arrowtail" style="fill:red;stroke:black" cx="230" cy="70" r="3" /><g transform="rotate(180 180 70)"><path class="arrowhead" style="stroke:green;fill:green" d="M180,70 l-15,-6 l0,12 Z" /></g>
+<path class="arrow" style="stroke:black" d="M230,70 L230,30" /><circle class="arrowtail" style="fill:red;stroke:black" cx="230" cy="70" r="3" /><g transform="rotate(-90 230 30)"><path class="arrowhead" style="stroke:green;fill:green" d="M230,30 l-15,-6 l0,12 Z" /></g>
+<path class="arrow" style="stroke:black" d="M230,70 L230,110" /><circle class="arrowtail" style="fill:red;stroke:black" cx="230" cy="70" r="3" /><g transform="rotate(90 230 110)"><path class="arrowhead" style="stroke:green;fill:green" d="M230,110 l-15,-6 l0,12 Z" /></g>
+<text x="0" y="150">Label</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="0" y="170" width="76" height="63"/><line class="line" style="stroke:black" x1="0" y1="194" x2="76" y2="194"/><text x="10" y="211">Write</text><text x="10" y="226">SetLabel</text><text x="10" y="187">Record</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="100" y="170" width="167" height="24"/><text x="110" y="187">Record without fields</text></svg>
