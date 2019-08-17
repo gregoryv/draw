@@ -21,11 +21,12 @@ func (styler *Styler) write(s []byte) {
 }
 
 var styles = map[string]string{
-	"arrowhead": "stroke:green;fill:green",
-	"arrow":     "stroke:black",
-	"line":      "stroke:black",
-	"record":    "fill:#ffffcc;stroke:black",
-	"arrowtail": "fill:white;stroke:black",
+	"arrowhead":  "stroke:green;fill:green",
+	"arrow":      "stroke:black",
+	"line":       "stroke:black",
+	"columnline": "stroke:#d3d3d3",
+	"record":     "fill:#ffffcc;stroke:black",
+	"arrowtail":  "fill:white;stroke:black",
 }
 
 // Write adds a style attribute based on class.

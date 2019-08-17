@@ -34,7 +34,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 	)
 	lines := make([]*shape.Line, len(dia.columns))
 	for i, column := range dia.columns {
-		lines[i] = &shape.Line{X1: x, Y1: y1, X2: x, Y2: y2}
+		lines[i] = &shape.Line{Class: "columnline", X1: x, Y1: y1, X2: x, Y2: y2}
 		x += colWidth
 
 		label := &shape.Label{X: i * colWidth, Y: top,
