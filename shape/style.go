@@ -27,7 +27,7 @@ var styles = map[string]string{
 	"arrow-head":     "stroke:#d3d3d3;fill:#ffffff",
 	"arrow-tail":     "fill:white;stroke:#d3d3d3",
 	"line":           "stroke:#d3d3d3",
-	"columnline":     "stroke:#d3d3d3",
+	"column-line":    "stroke:#d3d3d3",
 	"record":         "fill:#ffffcc;stroke:black",
 }
 

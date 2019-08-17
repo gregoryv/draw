@@ -2,11 +2,11 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="500" height="230">
-<line class="columnline" style="stroke:#d3d3d3" x1="31" y1="38" x2="31" y2="230"/>
+<line class="column-line" style="stroke:#d3d3d3" x1="31" y1="38" x2="31" y2="230"/>
 <text x="10" y="31">Client</text>
-<line class="columnline" style="stroke:#d3d3d3" x1="221" y1="38" x2="221" y2="230"/>
+<line class="column-line" style="stroke:#d3d3d3" x1="221" y1="38" x2="221" y2="230"/>
 <text x="200" y="31">Server</text>
-<line class="columnline" style="stroke:#d3d3d3" x1="411" y1="38" x2="411" y2="230"/>
+<line class="column-line" style="stroke:#d3d3d3" x1="411" y1="38" x2="411" y2="230"/>
 <text x="383" y="31">Database</text>
 <path class="arrow" style="stroke:#d3d3de" d="M31,60 L221,60" />
 <g transform="rotate(0 221 60)"><path class="arrow-head" style="stroke:#d3d3d3;fill:#ffffff" d="M221,60 l-8,-4 l 0,8 Z" /></g>

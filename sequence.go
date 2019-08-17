@@ -42,7 +42,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		if i == 0 {
 			x += label.Width() / 2
 		}
-		lines[i] = &shape.Line{Class: "columnline", X1: x, Y1: y1, X2: x, Y2: y2}
+		lines[i] = &shape.Line{Class: "column-line", X1: x, Y1: y1, X2: x, Y2: y2}
 		x += colWidth
 
 		shape.AlignVertical(shape.Center, lines[i], label)
