@@ -21,7 +21,7 @@ func Test_example_sequence_diagram(t *testing.T) {
 
 	diagram.Link(cli, srv, "connect()")
 	diagram.Link(srv, db, "SELECT")
-	diagram.Link(db, cli, "poof")
+	diagram.Link(db, srv, "Rows")
 
 	fh, err := os.Create("alldiagrams.svg")
 	if err != nil {

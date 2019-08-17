@@ -8,18 +8,18 @@
 <text x="114" y="31">Server</text>
 <line class="columnline" style="stroke:#d3d3d3" x1="225" y1="38" x2="225" y2="200"/>
 <text x="197" y="31">Database</text>
-<path class="arrow" style="stroke:black" d="M45,60 L135,60" />
-<circle class="arrowtail" style="fill:white;stroke:black" cx="45" cy="60" r="3" />
-<g transform="rotate(0 135 60)"><path class="arrowhead" style="stroke:green;fill:green" d="M135,60 l-15,-6 l0,12 Z" /></g>
+<path class="arrow" style="stroke:#a3a3a3" d="M45,60 L135,60" />
+<circle class="arrowtail" style="fill:white;stroke:#d3d3d3" cx="45" cy="60" r="3" />
+<g transform="rotate(0 135 60)"><path class="arrowhead" style="stroke:#a3a3a3;fill:#d3d3d3" d="M135,60 l-8,-4 l 0,8 Z" /></g>
 
 <text x="58" y="58">connect()</text>
-<path class="arrow" style="stroke:black" d="M135,82 L225,82" />
-<circle class="arrowtail" style="fill:white;stroke:black" cx="135" cy="82" r="3" />
-<g transform="rotate(0 225 82)"><path class="arrowhead" style="stroke:green;fill:green" d="M225,82 l-15,-6 l0,12 Z" /></g>
+<path class="arrow" style="stroke:#a3a3a3" d="M135,82 L225,82" />
+<circle class="arrowtail" style="fill:white;stroke:#d3d3d3" cx="135" cy="82" r="3" />
+<g transform="rotate(0 225 82)"><path class="arrowhead" style="stroke:#a3a3a3;fill:#d3d3d3" d="M225,82 l-8,-4 l 0,8 Z" /></g>
 
 <text x="159" y="80">SELECT</text>
-<path class="arrow" style="stroke:black" d="M225,104 L45,104" />
-<circle class="arrowtail" style="fill:white;stroke:black" cx="225" cy="104" r="3" />
-<g transform="rotate(180 45 104)"><path class="arrowhead" style="stroke:green;fill:green" d="M45,104 l-15,-6 l0,12 Z" /></g>
+<path class="arrow" style="stroke:#a3a3a3" d="M225,104 L135,104" />
+<circle class="arrowtail" style="fill:white;stroke:#d3d3d3" cx="225" cy="104" r="3" />
+<g transform="rotate(180 135 104)"><path class="arrowhead" style="stroke:#a3a3a3;fill:#d3d3d3" d="M135,104 l-8,-4 l 0,8 Z" /></g>
 
-<text x="121" y="102">poof</text></svg>
+<text x="166" y="102">Rows</text></svg>

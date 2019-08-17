@@ -19,7 +19,7 @@ func (arrow *Arrow) WriteSvg(w io.Writer) error {
 	tag.printf(`<circle class="arrowtail" cx="%v" cy="%v" r="3" />`, x1, y1)
 	tag.printf("\n")
 	tag.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
-	tag.printf(`<path class="arrowhead" d="M%v,%v l-15,-6 l0,12 Z" />`, x2, y2)
+	tag.printf(`<path class="arrowhead" d="M%v,%v l-8,-4 l 0,8 Z" />`, x2, y2)
 	tag.printf(`</g>`)
 	tag.printf("\n")
 	return *err
