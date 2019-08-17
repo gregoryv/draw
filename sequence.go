@@ -15,7 +15,7 @@ type SequenceDiagram struct {
 	Pad           shape.Padding
 
 	columns []string
-	links   []link
+	links   []*Link
 }
 
 func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
@@ -50,22 +50,22 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 	}
 
 	y := y1 + (dia.Font.LineHeight + dia.Pad.Bottom)
-	for _, link := range dia.links {
-		fromX := lines[link.fromIndex].X1
-		toX := lines[link.toIndex].X1
+	for _, lnk := range dia.links {
+		fromX := lines[lnk.fromIndex].X1
+		toX := lines[lnk.toIndex].X1
 		label := &shape.Label{
 			X:    fromX,
 			Y:    y - 2,
-			Text: link.text,
+			Text: lnk.text,
 			Font: dia.Font,
 			Pad:  dia.Pad,
 		}
 		arrow := &shape.Arrow{}
-		if link.toSelf() {
+		if lnk.toSelf() {
 			margin := 15
 			// add two lines + arrow
-			l1 := &shape.Line{Class: "arrow", X1: fromX, Y1: y, X2: fromX + margin, Y2: y}
-			l2 := &shape.Line{Class: "arrow",
+			l1 := &shape.Line{Class: lnk.class(), X1: fromX, Y1: y, X2: fromX + margin, Y2: y}
+			l2 := &shape.Line{Class: lnk.class(),
 				X1: fromX + margin,
 				Y1: y,
 				X2: fromX + margin,
@@ -77,6 +77,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			arrow.Y1 = l2.Y2
 			arrow.X2 = l1.X1
 			arrow.Y2 = l2.Y2
+			arrow.Class = lnk.class()
 			svg.Content = append(svg.Content, l1, l2, arrow, label)
 			y += 3*dia.Font.LineHeight + dia.Pad.Bottom
 		} else {
@@ -88,7 +89,6 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			svg.Content = append(svg.Content, arrow, label)
 			y += dia.Font.LineHeight + dia.Pad.Bottom
 		}
-
 	}
 	return svg.WriteSvg(w)
 }
@@ -97,7 +97,7 @@ func (dia *SequenceDiagram) AddColumns(names ...string) {
 	dia.columns = append(dia.columns, names...)
 }
 
-func (dia *SequenceDiagram) Link(from, to, text string) error {
+func (dia *SequenceDiagram) Link(from, to, text string) *Link {
 	fromIndex := -1
 	toIndex := -1
 	for i, column := range dia.columns {
@@ -112,22 +112,35 @@ func (dia *SequenceDiagram) Link(from, to, text string) error {
 			break
 		}
 	}
-	link := link{fromIndex, toIndex, text}
-	dia.links = append(dia.links, link)
+	lnk := &Link{
+		fromIndex: fromIndex,
+		toIndex:   toIndex,
+		text:      text,
+	}
+	dia.links = append(dia.links, lnk)
 	if fromIndex == -1 {
-		return fmt.Errorf("Missing %q column", from)
+		panic(fmt.Sprintf("Missing %q column", from))
 	}
 	if toIndex == -1 {
-		return fmt.Errorf("Missing %q column", to)
+		panic(fmt.Sprintf("Missing %q column", to))
 	}
-	return nil
+	return lnk
 }
 
-type link struct {
+type Link struct {
 	fromIndex, toIndex int
 	text               string
+	Class              string
+	TextClass          string
 }
 
-func (l *link) toSelf() bool {
+func (l *Link) toSelf() bool {
 	return l.fromIndex == l.toIndex
+}
+
+func (l *Link) class() string {
+	if l.Class == "" {
+		return "arrow"
+	}
+	return l.Class
 }

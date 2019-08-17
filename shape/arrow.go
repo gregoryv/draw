@@ -9,21 +9,22 @@ type Arrow struct {
 	X1, Y1 int
 	X2, Y2 int
 
-	Tail bool
+	Tail  bool
+	Class string
 }
 
 func (arrow *Arrow) WriteSvg(w io.Writer) error {
 	tag, _, err := newTagPrinter(w)
 	x1, y1 := arrow.start()
 	x2, y2 := arrow.end()
-	tag.printf(`<path class="arrow" d="M%v,%v L%v,%v" />`, x1, y1, x2, y2)
+	tag.printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class(), x1, y1, x2, y2)
 	tag.printf("\n")
 	if arrow.Tail {
-		tag.printf(`<circle class="arrowtail" cx="%v" cy="%v" r="3" />`, x1, y1)
+		tag.printf(`<circle class="%s-tail" cx="%v" cy="%v" r="3" />`, arrow.class(), x1, y1)
 		tag.printf("\n")
 	}
 	tag.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
-	tag.printf(`<path class="arrowhead" d="M%v,%v l-8,-4 l 0,8 Z" />`, x2, y2)
+	tag.printf(`<path class="%s-head" d="M%v,%v l-8,-4 l 0,8 Z" />`, arrow.class(), x2, y2)
 	tag.printf(`</g>`)
 	tag.printf("\n")
 	return *err
@@ -129,4 +130,10 @@ func (arrow *Arrow) Direction() Direction {
 		return LR
 	}
 	return RL
+}
+func (arrow *Arrow) class() string {
+	if arrow.Class == "" {
+		return "arrow"
+	}
+	return arrow.Class
 }

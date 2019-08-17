@@ -10,7 +10,7 @@ import (
 func Test_example_sequence_diagram(t *testing.T) {
 	diagram := &SequenceDiagram{
 		Width:    500,
-		Height:   200,
+		Height:   230,
 		ColWidth: 190,
 		Font:     shape.Font{Height: 9, Width: 7, LineHeight: 15},
 		TextPad:  shape.Padding{Left: 10, Top: 2, Bottom: 7, Right: 10},
@@ -22,7 +22,8 @@ func Test_example_sequence_diagram(t *testing.T) {
 	diagram.Link(cli, srv, "connect()")
 	diagram.Link(srv, db, "SELECT")
 	diagram.Link(db, srv, "Rows")
-	diagram.Link(srv, srv, "Transform to view model")
+	lnk := diagram.Link(srv, srv, "Transform to view model")
+	lnk.Class = "highlight"
 	diagram.Link(srv, cli, "Send HTML")
 
 	fh, err := os.Create("alldiagrams.svg")
