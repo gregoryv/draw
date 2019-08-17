@@ -11,7 +11,7 @@ func AlignHorizontal(adjust Adjust, objects ...Shape) {
 		case Bottom:
 			shape.SetY(y + first.Height() - shape.Height())
 		case Center:
-			shape.SetY(y + (first.Height()-shape.Height())/2)
+			shape.SetY(y + (first.Height()+shape.Height())/2)
 		}
 	}
 }

@@ -21,8 +21,8 @@ func (styler *Styler) write(s []byte) {
 }
 
 var styles = map[string]string{
-	"arrowhead":  "stroke:#a3a3a3;fill:#d3d3d3",
-	"arrow":      "stroke:#a3a3a3",
+	"arrowhead":  "stroke:#d3d3d3;fill:#ffffff",
+	"arrow":      "stroke:#d3d3de",
 	"line":       "stroke:#d3d3d3",
 	"columnline": "stroke:#d3d3d3",
 	"record":     "fill:#ffffcc;stroke:black",

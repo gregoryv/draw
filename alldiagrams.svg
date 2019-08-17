@@ -2,24 +2,31 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="500" height="200">
-<line class="columnline" style="stroke:#d3d3d3" x1="45" y1="38" x2="45" y2="200"/>
-<text x="24" y="31">Client</text>
-<line class="columnline" style="stroke:#d3d3d3" x1="135" y1="38" x2="135" y2="200"/>
-<text x="114" y="31">Server</text>
-<line class="columnline" style="stroke:#d3d3d3" x1="225" y1="38" x2="225" y2="200"/>
-<text x="197" y="31">Database</text>
-<path class="arrow" style="stroke:#a3a3a3" d="M45,60 L135,60" />
-<circle class="arrowtail" style="fill:white;stroke:#d3d3d3" cx="45" cy="60" r="3" />
-<g transform="rotate(0 135 60)"><path class="arrowhead" style="stroke:#a3a3a3;fill:#d3d3d3" d="M135,60 l-8,-4 l 0,8 Z" /></g>
+<line class="columnline" style="stroke:#d3d3d3" x1="31" y1="38" x2="31" y2="200"/>
+<text x="10" y="31">Client</text>
+<line class="columnline" style="stroke:#d3d3d3" x1="221" y1="38" x2="221" y2="200"/>
+<text x="200" y="31">Server</text>
+<line class="columnline" style="stroke:#d3d3d3" x1="411" y1="38" x2="411" y2="200"/>
+<text x="383" y="31">Database</text>
+<path class="arrow" style="stroke:#d3d3de" d="M31,60 L221,60" />
+<g transform="rotate(0 221 60)"><path class="arrowhead" style="stroke:#d3d3d3;fill:#ffffff" d="M221,60 l-8,-4 l 0,8 Z" /></g>
 
-<text x="58" y="58">connect()</text>
-<path class="arrow" style="stroke:#a3a3a3" d="M135,82 L225,82" />
-<circle class="arrowtail" style="fill:white;stroke:#d3d3d3" cx="135" cy="82" r="3" />
-<g transform="rotate(0 225 82)"><path class="arrowhead" style="stroke:#a3a3a3;fill:#d3d3d3" d="M225,82 l-8,-4 l 0,8 Z" /></g>
+<text x="94" y="58">connect()</text>
+<path class="arrow" style="stroke:#d3d3de" d="M221,82 L411,82" />
+<g transform="rotate(0 411 82)"><path class="arrowhead" style="stroke:#d3d3d3;fill:#ffffff" d="M411,82 l-8,-4 l 0,8 Z" /></g>
 
-<text x="159" y="80">SELECT</text>
-<path class="arrow" style="stroke:#a3a3a3" d="M225,104 L135,104" />
-<circle class="arrowtail" style="fill:white;stroke:#d3d3d3" cx="225" cy="104" r="3" />
-<g transform="rotate(180 135 104)"><path class="arrowhead" style="stroke:#a3a3a3;fill:#d3d3d3" d="M135,104 l-8,-4 l 0,8 Z" /></g>
+<text x="295" y="80">SELECT</text>
+<path class="arrow" style="stroke:#d3d3de" d="M411,104 L221,104" />
+<g transform="rotate(180 221 104)"><path class="arrowhead" style="stroke:#d3d3d3;fill:#ffffff" d="M221,104 l-8,-4 l 0,8 Z" /></g>
 
-<text x="166" y="102">Rows</text></svg>
+<text x="302" y="102">Rows</text>
+<line class="arrow" style="stroke:#d3d3de" x1="221" y1="126" x2="236" y2="126"/>
+<line class="arrow" style="stroke:#d3d3de" x1="236" y1="126" x2="236" y2="156"/>
+<path class="arrow" style="stroke:#d3d3de" d="M236,156 L221,156" />
+<g transform="rotate(180 221 156)"><path class="arrowhead" style="stroke:#d3d3d3;fill:#ffffff" d="M221,156 l-8,-4 l 0,8 Z" /></g>
+
+<text x="246" y="145">Transform to view model</text>
+<path class="arrow" style="stroke:#d3d3de" d="M221,178 L31,178" />
+<g transform="rotate(180 31 178)"><path class="arrowhead" style="stroke:#d3d3d3;fill:#ffffff" d="M31,178 l-8,-4 l 0,8 Z" /></g>
+
+<text x="95" y="176">Send HTML</text></svg>

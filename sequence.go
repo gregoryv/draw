@@ -28,42 +28,67 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 	top := dia.Font.Height + dia.TextPad.Top + dia.Pad.Top
 	// todo use correct padding around diagram
 	var (
-		x  = colWidth / 2
+		x  = dia.Pad.Left
 		y1 = top + dia.TextPad.Bottom // below label
 		y2 = dia.Height
 	)
 	lines := make([]*shape.Line, len(dia.columns))
 	for i, column := range dia.columns {
-		lines[i] = &shape.Line{Class: "columnline", X1: x, Y1: y1, X2: x, Y2: y2}
-		x += colWidth
-
 		label := &shape.Label{X: i * colWidth, Y: top,
 			Text: column,
 			Font: dia.Font,
 			Pad:  dia.Pad,
 		}
+		if i == 0 {
+			x += label.Width() / 2
+		}
+		lines[i] = &shape.Line{Class: "columnline", X1: x, Y1: y1, X2: x, Y2: y2}
+		x += colWidth
+
 		shape.AlignVertical(shape.Center, lines[i], label)
 		svg.Content = append(svg.Content, lines[i], label)
 	}
 
-	for i, link := range dia.links {
-		k := i + 1
-		y := y1 + (dia.Font.LineHeight+dia.Pad.Bottom)*k
-		arrow := &shape.Arrow{}
-		arrow.X1 = lines[link.fromIndex].X1
-		arrow.Y1 = y
-		arrow.X2 = lines[link.toIndex].X1
-		arrow.Y2 = y
-
+	y := y1 + (dia.Font.LineHeight + dia.Pad.Bottom)
+	for _, link := range dia.links {
+		fromX := lines[link.fromIndex].X1
+		toX := lines[link.toIndex].X1
 		label := &shape.Label{
-			X:    arrow.X1,
+			X:    fromX,
 			Y:    y - 2,
 			Text: link.text,
 			Font: dia.Font,
 			Pad:  dia.Pad,
 		}
-		shape.AlignVertical(shape.Center, arrow, label)
-		svg.Content = append(svg.Content, arrow, label)
+		arrow := &shape.Arrow{}
+		if link.toSelf() {
+			margin := 15
+			// add two lines + arrow
+			l1 := &shape.Line{Class: "arrow", X1: fromX, Y1: y, X2: fromX + margin, Y2: y}
+			l2 := &shape.Line{Class: "arrow",
+				X1: fromX + margin,
+				Y1: y,
+				X2: fromX + margin,
+				Y2: y + dia.Font.LineHeight*2,
+			}
+			shape.AlignHorizontal(shape.Center, l2, label)
+			label.X += l1.Width() + dia.TextPad.Left
+			arrow.X1 = l2.X2
+			arrow.Y1 = l2.Y2
+			arrow.X2 = l1.X1
+			arrow.Y2 = l2.Y2
+			svg.Content = append(svg.Content, l1, l2, arrow, label)
+			y += 3*dia.Font.LineHeight + dia.Pad.Bottom
+		} else {
+			arrow.X1 = fromX
+			arrow.Y1 = y
+			arrow.X2 = toX
+			arrow.Y2 = y
+			shape.AlignVertical(shape.Center, arrow, label)
+			svg.Content = append(svg.Content, arrow, label)
+			y += dia.Font.LineHeight + dia.Pad.Bottom
+		}
+
 	}
 	return svg.WriteSvg(w)
 }
@@ -78,10 +103,13 @@ func (dia *SequenceDiagram) Link(from, to, text string) error {
 	for i, column := range dia.columns {
 		if column == from {
 			fromIndex = i
-			continue
+			break
 		}
+	}
+	for i, column := range dia.columns {
 		if column == to {
 			toIndex = i
+			break
 		}
 	}
 	link := link{fromIndex, toIndex, text}
@@ -98,4 +126,8 @@ func (dia *SequenceDiagram) Link(from, to, text string) error {
 type link struct {
 	fromIndex, toIndex int
 	text               string
+}
+
+func (l *link) toSelf() bool {
+	return l.fromIndex == l.toIndex
 }
