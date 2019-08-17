@@ -92,3 +92,27 @@ func inQuadrant4(x1, y1, x2, y2 int) bool { return y1 > y2 && x1 < x2 }
 
 func (arrow *Arrow) start() (int, int) { return arrow.X1, arrow.Y1 }
 func (arrow *Arrow) end() (int, int)   { return arrow.X2, arrow.Y2 }
+
+func (arrow *Arrow) Height() int {
+	return intAbs(arrow.Y1 - arrow.Y2)
+}
+
+func (arrow *Arrow) Width() int {
+	return intAbs(arrow.X1 - arrow.X2)
+}
+
+func (arrow *Arrow) Position() (int, int) {
+	return arrow.X1, arrow.Y1
+}
+
+func (arrow *Arrow) SetX(x int) {
+	diff := arrow.X1 - x
+	arrow.X1 = x
+	arrow.X2 = arrow.X2 - diff // Set X2 so the entire arrow moves
+}
+
+func (arrow *Arrow) SetY(y int) {
+	diff := arrow.Y1 - y
+	arrow.Y1 = y
+	arrow.Y2 = arrow.Y2 - diff // Set Y2 so the entire arrow moves
+}

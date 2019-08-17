@@ -2,10 +2,16 @@ package shape
 
 import (
 	"io"
+	"math"
 )
 
 type SvgWriter interface {
 	WriteSvg(io.Writer) error
+}
+
+type SvgWriterShape interface {
+	SvgWriter
+	Shape
 }
 
 type Font struct {
@@ -24,4 +30,8 @@ func boxHeight(font Font, pad Padding, lines int) int {
 
 func boxWidth(font Font, pad Padding, txt string) int {
 	return pad.Left + font.Width*len(txt) + pad.Right
+}
+
+func intAbs(v int) int {
+	return int(math.Abs(float64(v)))
 }

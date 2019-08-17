@@ -21,7 +21,7 @@ func Test_example_shapes(t *testing.T) {
 			&Svg{
 				Width:  350,
 				Height: 300,
-				Content: []SvgWriter{
+				Content: []SvgWriterShape{
 					&Line{X1: 0, Y1: y, X2: 100, Y2: y},
 					&Arrow{X1: 230, Y1: y, X2: 280, Y2: y + 30}, // q1
 					&Arrow{X1: 230, Y1: y, X2: 200, Y2: y + 50}, // q2

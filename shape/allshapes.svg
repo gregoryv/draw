@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-xmlns:xlink="http://www.w3.org/1999/xlink"
-width="350" height="300">
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="350" height="300">
 <line class="line" style="stroke:black" x1="0" y1="70" x2="100" y2="70"/>
 <path class="arrow" style="stroke:black" d="M230,70 L280,100" /><circle class="arrowtail" style="fill:red;stroke:black" cx="230" cy="70" r="3" /><g transform="rotate(36 280 100)"><path class="arrowhead" style="stroke:green;fill:green" d="M280,100 l-15,-6 l0,12 Z" /></g>
 <path class="arrow" style="stroke:black" d="M230,70 L200,120" /><circle class="arrowtail" style="fill:red;stroke:black" cx="230" cy="70" r="3" /><g transform="rotate(126 200 120)"><path class="arrowhead" style="stroke:green;fill:green" d="M200,120 l-15,-6 l0,12 Z" /></g>
