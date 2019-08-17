@@ -62,6 +62,7 @@ func Test_example_shapes(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	defer fh.Close()
 	styler := &Styler{dest: fh}
 	for _, c := range cases {
 		c.shape.WriteSvg(styler)

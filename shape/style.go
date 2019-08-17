@@ -5,6 +5,10 @@ import (
 	"io"
 )
 
+func NewStyler(dest io.Writer) *Styler {
+	return &Styler{dest: dest}
+}
+
 type Styler struct {
 	dest io.Writer
 

@@ -27,7 +27,12 @@ func AlignVertical(adjust Adjust, objects ...Shape) {
 		case Right:
 			shape.SetX(x + first.Width() - shape.Width())
 		case Center:
-			shape.SetX(x + (first.Width()-shape.Width())/2)
+			if first.Direction() == RL {
+				shape.SetX(x - (first.Width()+shape.Width())/2)
+			} else {
+				shape.SetX(x + (first.Width()-shape.Width())/2)
+			}
+
 		}
 	}
 }
@@ -86,12 +91,16 @@ type Direction int
 const (
 	Horizontal Direction = iota
 	Vertical
+	LR
+	RL
 )
 
 type Shape interface {
+	// Position returns the center x,y values
 	Position() (x int, y int)
 	SetX(int)
 	SetY(int)
 	Width() int
 	Height() int
+	Direction() Direction
 }

@@ -41,3 +41,10 @@ func (line *Line) SetY(y int) {
 	line.Y1 = y
 	line.Y2 = line.Y2 - diff // Set Y2 so the entire arrow moves
 }
+
+func (line *Line) Direction() Direction {
+	if line.X1 <= line.X2 {
+		return LR
+	}
+	return RL
+}

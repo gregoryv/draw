@@ -116,3 +116,10 @@ func (arrow *Arrow) SetY(y int) {
 	arrow.Y1 = y
 	arrow.Y2 = arrow.Y2 - diff // Set Y2 so the entire arrow moves
 }
+
+func (arrow *Arrow) Direction() Direction {
+	if arrow.X1 <= arrow.X2 {
+		return LR
+	}
+	return RL
+}

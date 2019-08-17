@@ -83,3 +83,4 @@ func (record *Record) Width() int {
 func (record *Record) Position() (int, int) { return record.X, record.Y }
 func (record *Record) SetX(x int)           { record.X = x }
 func (record *Record) SetY(y int)           { record.Y = y }
+func (record *Record) Direction() Direction { return LR }
