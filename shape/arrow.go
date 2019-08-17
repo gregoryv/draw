@@ -15,10 +15,13 @@ func (arrow *Arrow) WriteSvg(w io.Writer) error {
 	x1, y1 := arrow.start()
 	x2, y2 := arrow.end()
 	tag.printf(`<path class="arrow" d="M%v,%v L%v,%v" />`, x1, y1, x2, y2)
+	tag.printf("\n")
 	tag.printf(`<circle class="arrowtail" cx="%v" cy="%v" r="3" />`, x1, y1)
+	tag.printf("\n")
 	tag.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
 	tag.printf(`<path class="arrowhead" d="M%v,%v l-15,-6 l0,12 Z" />`, x2, y2)
 	tag.printf(`</g>`)
+	tag.printf("\n")
 	return *err
 }
 

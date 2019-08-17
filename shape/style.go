@@ -25,7 +25,7 @@ var styles = map[string]string{
 	"arrow":     "stroke:black",
 	"line":      "stroke:black",
 	"record":    "fill:#ffffcc;stroke:black",
-	"arrowtail": "fill:red;stroke:black",
+	"arrowtail": "fill:white;stroke:black",
 }
 
 // Write adds a style attribute based on class.
