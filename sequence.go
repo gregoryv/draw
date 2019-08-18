@@ -9,7 +9,6 @@ import (
 
 func NewSequenceDiagram() *SequenceDiagram {
 	return &SequenceDiagram{
-		Height:   230,
 		ColWidth: 190,
 		Font:     shape.Font{Height: 9, Width: 7, LineHeight: 15},
 		TextPad:  shape.Padding{Left: 10, Top: 2, Bottom: 7, Right: 10},
@@ -18,29 +17,28 @@ func NewSequenceDiagram() *SequenceDiagram {
 }
 
 type SequenceDiagram struct {
-	width, Height int
-	ColWidth      int
-	Font          shape.Font
-	TextPad       shape.Padding
-	Pad           shape.Padding
+	ColWidth int
+	Font     shape.Font
+	TextPad  shape.Padding
+	Pad      shape.Padding
 
-	columns []string
-	links   []*Link
+	width, height int
+	columns       []string
+	links         []*Link
 }
 
 func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 	svg := &shape.Svg{
 		Width:  dia.Width(),
-		Height: dia.Height,
+		Height: dia.Height(),
 	}
 
 	colWidth := dia.ColWidth
-	top := dia.Font.Height + dia.TextPad.Top + dia.Pad.Top
-	// todo use correct padding around diagram
+	top := dia.top()
 	var (
 		x  = dia.Pad.Left
 		y1 = top + dia.TextPad.Bottom // below label
-		y2 = dia.Height
+		y2 = dia.Height()
 	)
 	lines := make([]*shape.Line, len(dia.columns))
 	for i, column := range dia.columns {
@@ -59,7 +57,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		svg.Content = append(svg.Content, lines[i], label)
 	}
 
-	y := y1 + (dia.Font.LineHeight + dia.Pad.Bottom)
+	y := y1 + dia.plainHeight()
 	for _, lnk := range dia.links {
 		fromX := lines[lnk.fromIndex].X1
 		toX := lines[lnk.toIndex].X1
@@ -89,7 +87,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			arrow.Y2 = l2.Y2
 			arrow.Class = lnk.class()
 			svg.Content = append(svg.Content, l1, l2, arrow, label)
-			y += 3*dia.Font.LineHeight + dia.Pad.Bottom
+			y += dia.selfHeight()
 		} else {
 			arrow.X1 = fromX
 			arrow.Y1 = y
@@ -97,7 +95,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			arrow.Y2 = y
 			shape.AlignVertical(shape.Center, arrow, label)
 			svg.Content = append(svg.Content, arrow, label)
-			y += dia.Font.LineHeight + dia.Pad.Bottom
+			y += dia.plainHeight()
 		}
 	}
 	return svg.WriteSvg(w)
@@ -108,6 +106,35 @@ func (dia *SequenceDiagram) Width() int {
 		return dia.width
 	}
 	return len(dia.columns) * dia.ColWidth
+}
+
+func (dia *SequenceDiagram) Height() int {
+	if dia.height != 0 {
+		return dia.height
+	}
+	height := dia.top() + dia.plainHeight()
+	for _, lnk := range dia.links {
+		if lnk.toSelf() {
+			height += dia.selfHeight()
+			continue
+		}
+		height += dia.plainHeight()
+	}
+	return height
+}
+
+// selfHeight is the height of a self referencing linkg
+func (dia *SequenceDiagram) selfHeight() int {
+	return 3*dia.Font.LineHeight + dia.Pad.Bottom
+}
+
+// plainHeight returns the height of and arrow and label
+func (dia *SequenceDiagram) plainHeight() int {
+	return dia.Font.LineHeight + dia.Pad.Bottom
+}
+
+func (dia *SequenceDiagram) top() int {
+	return dia.Font.LineHeight + dia.Pad.Top
 }
 
 func (dia *SequenceDiagram) AddColumns(names ...string) {
