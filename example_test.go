@@ -1,7 +1,6 @@
 package design
 
 import (
-	"os"
 	"testing"
 )
 
@@ -18,10 +17,7 @@ func ExampleSequenceDiagram() {
 	diagram.Link(srv, cli, "Send HTML")
 
 	// Save the diagram to file
-	fh, _ := os.Create("img/sequence_example.svg")
-	styler := NewStyler(fh)
-	diagram.WriteSvg(styler)
-	fh.Close()
+	SaveAs(diagram, "img/sequence_example.svg")
 }
 
 func TestSequenceDiagram(t *testing.T) {

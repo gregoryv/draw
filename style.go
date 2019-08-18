@@ -10,17 +10,18 @@ func NewStyler(dest io.Writer) *Styler {
 }
 
 type Styler struct {
-	dest io.Writer
-
+	dest    io.Writer
 	err     error
 	written int
+	styles  map[string]string
 }
 
 func (styler *Styler) write(s []byte) {
 	styler.written, styler.err = styler.dest.Write(s)
 }
 
-var styles = map[string]string{
+// classname -> style
+var DefaultStyle = map[string]string{
 	"highlight":      "stroke:red",
 	"highlight-head": "stroke:red;fill:#ffffff",
 	"arrow":          "stroke:black",
@@ -44,7 +45,10 @@ func (styler *Styler) Write(s []byte) (int, error) {
 	write(field)
 	class := parseClass(s[i:])
 	write(class)
-	style, found := styles[string(class)]
+	style, found := styler.styles[string(class)]
+	if !found {
+		style, found = DefaultStyle[string(class)]
+	}
 	if found {
 		write([]byte(`" style="`))
 		write([]byte(style))
