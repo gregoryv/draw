@@ -28,7 +28,7 @@ func ExampleSequenceDiagram() {
 
 	// Save the diagram to file
 	fh, _ := os.Create("img/sequence_example.svg")
-	styler := shape.NewStyler(fh)
+	styler := NewStyler(fh)
 	diagram.WriteSvg(styler)
 	fh.Close()
 }

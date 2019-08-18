@@ -1,4 +1,4 @@
-package shape
+package design
 
 import (
 	"bytes"
