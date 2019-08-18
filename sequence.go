@@ -9,7 +9,6 @@ import (
 
 func NewSequenceDiagram() *SequenceDiagram {
 	return &SequenceDiagram{
-		Width:    500,
 		Height:   230,
 		ColWidth: 190,
 		Font:     shape.Font{Height: 9, Width: 7, LineHeight: 15},
@@ -19,7 +18,7 @@ func NewSequenceDiagram() *SequenceDiagram {
 }
 
 type SequenceDiagram struct {
-	Width, Height int
+	width, Height int
 	ColWidth      int
 	Font          shape.Font
 	TextPad       shape.Padding
@@ -31,7 +30,7 @@ type SequenceDiagram struct {
 
 func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 	svg := &shape.Svg{
-		Width:  dia.Width,
+		Width:  dia.Width(),
 		Height: dia.Height,
 	}
 
@@ -102,6 +101,13 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		}
 	}
 	return svg.WriteSvg(w)
+}
+
+func (dia *SequenceDiagram) Width() int {
+	if dia.width != 0 {
+		return dia.width
+	}
+	return len(dia.columns) * dia.ColWidth
 }
 
 func (dia *SequenceDiagram) AddColumns(names ...string) {
