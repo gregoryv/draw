@@ -1,23 +1,23 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="500" height="230">
+  width="500" height="230" font-family="Arial, Helvetica, sans-serif">
 <line class="column-line" style="stroke:#d3d3d3" x1="31" y1="38" x2="31" y2="230"/>
 <text x="10" y="31">Client</text>
 <line class="column-line" style="stroke:#d3d3d3" x1="221" y1="38" x2="221" y2="230"/>
 <text x="200" y="31">Server</text>
 <line class="column-line" style="stroke:#d3d3d3" x1="411" y1="38" x2="411" y2="230"/>
 <text x="383" y="31">Database</text>
-<path class="arrow" style="stroke:#d3d3de" d="M31,60 L221,60" />
-<g transform="rotate(0 221 60)"><path class="arrow-head" style="stroke:#d3d3d3;fill:#ffffff" d="M221,60 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M31,60 L221,60" />
+<g transform="rotate(0 221 60)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M221,60 l-8,-4 l 0,8 Z" /></g>
 
 <text x="94" y="58">connect()</text>
-<path class="arrow" style="stroke:#d3d3de" d="M221,82 L411,82" />
-<g transform="rotate(0 411 82)"><path class="arrow-head" style="stroke:#d3d3d3;fill:#ffffff" d="M411,82 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M221,82 L411,82" />
+<g transform="rotate(0 411 82)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M411,82 l-8,-4 l 0,8 Z" /></g>
 
 <text x="295" y="80">SELECT</text>
-<path class="arrow" style="stroke:#d3d3de" d="M411,104 L221,104" />
-<g transform="rotate(180 221 104)"><path class="arrow-head" style="stroke:#d3d3d3;fill:#ffffff" d="M221,104 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M411,104 L221,104" />
+<g transform="rotate(180 221 104)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M221,104 l-8,-4 l 0,8 Z" /></g>
 
 <text x="302" y="102">Rows</text>
 <line class="highlight" style="stroke:red" x1="221" y1="126" x2="236" y2="126"/>
@@ -26,7 +26,7 @@
 <g transform="rotate(180 221 156)"><path class="highlight-head" style="stroke:red;fill:#ffffff" d="M221,156 l-8,-4 l 0,8 Z" /></g>
 
 <text x="246" y="145">Transform to view model</text>
-<path class="arrow" style="stroke:#d3d3de" d="M221,178 L31,178" />
-<g transform="rotate(180 31 178)"><path class="arrow-head" style="stroke:#d3d3d3;fill:#ffffff" d="M31,178 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M221,178 L31,178" />
+<g transform="rotate(180 31 178)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M31,178 l-8,-4 l 0,8 Z" /></g>
 
 <text x="95" y="176">Send HTML</text></svg>

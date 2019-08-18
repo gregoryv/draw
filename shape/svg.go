@@ -14,7 +14,7 @@ func (shape *Svg) WriteSvg(w io.Writer) error {
 	printf(`<svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="%v" height="%v">`, shape.Width, shape.Height)
+  width="%v" height="%v" font-family="Arial, Helvetica, sans-serif">`, shape.Width, shape.Height)
 
 	for _, s := range shape.Content {
 		printf("\n")
