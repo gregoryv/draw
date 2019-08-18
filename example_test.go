@@ -7,7 +7,7 @@ import (
 	"github.com/gregoryv/go-design/shape"
 )
 
-func Test_example_sequence_diagram(t *testing.T) {
+func ExampleSequenceDiagram() {
 	diagram := &SequenceDiagram{
 		Width:    500,
 		Height:   230,
@@ -18,19 +18,21 @@ func Test_example_sequence_diagram(t *testing.T) {
 	}
 	cli, srv, db := "Client", "Server", "Database"
 	diagram.AddColumns(cli, srv, db)
-
 	diagram.Link(cli, srv, "connect()")
 	diagram.Link(srv, db, "SELECT")
 	diagram.Link(db, srv, "Rows")
+	// Special link
 	lnk := diagram.Link(srv, srv, "Transform to view model")
 	lnk.Class = "highlight"
 	diagram.Link(srv, cli, "Send HTML")
 
-	fh, err := os.Create("alldiagrams.svg")
-	if err != nil {
-		t.Fatal(err)
-	}
-	defer fh.Close()
+	// Save the diagram to file
+	fh, _ := os.Create("img/sequence_example.svg")
 	styler := shape.NewStyler(fh)
 	diagram.WriteSvg(styler)
+	fh.Close()
+}
+
+func TestSequenceDiagram(t *testing.T) {
+	ExampleSequenceDiagram()
 }
