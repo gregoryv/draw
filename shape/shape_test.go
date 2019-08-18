@@ -1,8 +1,10 @@
 package shape
 
 import (
-	"os"
+	"bytes"
 	"testing"
+
+	"github.com/gregoryv/golden"
 )
 
 func Test_example_shapes(t *testing.T) {
@@ -58,13 +60,9 @@ func Test_example_shapes(t *testing.T) {
 			},
 		},
 	}
-	fh, err := os.Create("allshapes.svg")
-	if err != nil {
-		t.Fatal(err)
-	}
-	defer fh.Close()
-	styler := &Styler{dest: fh}
+	buf := bytes.NewBufferString("")
 	for _, c := range cases {
-		c.shape.WriteSvg(styler)
+		c.shape.WriteSvg(buf)
 	}
+	golden.Assert(t, buf.String())
 }
