@@ -12,6 +12,7 @@ func Test_parseClass(t *testing.T) {
 		exp  string
 	}{
 		{`class="hepp" x="8">`, "hepp"},
+		{`class="hepp>`, "hepp>"},
 	}
 	assert := asserter.New(t)
 
