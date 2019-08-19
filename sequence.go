@@ -124,6 +124,14 @@ func (dia *SequenceDiagram) Height() int {
 	return height
 }
 
+func (dia *SequenceDiagram) SetHeight(h int) {
+	dia.height = h
+}
+
+func (dia *SequenceDiagram) SetWidth(w int) {
+	dia.width = w
+}
+
 // selfHeight is the height of a self referencing link
 func (dia *SequenceDiagram) selfHeight() int {
 	return 3*dia.Font.LineHeight + dia.Pad.Bottom

@@ -32,6 +32,7 @@ func (dia *SequenceDiagram) Link(from, to, text string) *Link {
 	return lnk
 }
 
+// Link represents an arrow in a sequence diagram
 type Link struct {
 	fromIndex, toIndex int
 	text               string
