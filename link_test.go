@@ -20,3 +20,17 @@ func TestLink_class(t *testing.T) {
 		assert().Equals(got, c.exp)
 	}
 }
+
+func TestSequenceDiagram_Link_missing_from_column(t *testing.T) {
+	dia := &SequenceDiagram{}
+	defer func() { recover() }()
+	dia.Link("a", "b", "..")
+	t.Fail()
+}
+
+func TestSequenceDiagram_Link_missing_to_column(t *testing.T) {
+	dia := &SequenceDiagram{columns: []string{"a"}}
+	defer func() { recover() }()
+	dia.Link("a", "b", "..")
+	t.Fail()
+}
