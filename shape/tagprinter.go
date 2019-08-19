@@ -5,9 +5,9 @@ import (
 	"io"
 )
 
-func newTagPrinter(w io.Writer) (*tagPrinter, printFfunc, *error) {
+func newTagPrinter(w io.Writer) (*tagPrinter, *error) {
 	tag := &tagPrinter{w: w}
-	return tag, tag.printf, &tag.err
+	return tag, &tag.err
 }
 
 type printFunc func(...interface{})

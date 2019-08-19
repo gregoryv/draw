@@ -13,12 +13,12 @@ type Record struct {
 	Pad  Padding
 }
 
-func (record *Record) WriteSvg(w io.Writer) error {
-	w, printf, err := newTagPrinter(w)
-	printf(
+func (record *Record) WriteSvg(out io.Writer) error {
+	w, err := newTagPrinter(out)
+	w.printf(
 		`<rect class="record" x="%v" y="%v" width="%v" height="%v"/>`,
 		record.X, record.Y, record.Width(), record.Height())
-	printf("\n")
+	w.printf("\n")
 	record.writeFirstSeparator(w)
 	var y = boxHeight(record.Font, record.Pad, 1) + record.Pad.Top
 	for _, txt := range record.PublicFields {
@@ -29,7 +29,7 @@ func (record *Record) WriteSvg(w io.Writer) error {
 			Text: txt,
 		}
 		label.WriteSvg(w)
-		printf("\n")
+		w.printf("\n")
 	}
 	record.title().WriteSvg(w)
 	return *err

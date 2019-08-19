@@ -13,20 +13,19 @@ type Arrow struct {
 	Class string
 }
 
-func (arrow *Arrow) WriteSvg(w io.Writer) error {
-	tag, _, err := newTagPrinter(w)
+func (arrow *Arrow) WriteSvg(out io.Writer) error {
+	w, err := newTagPrinter(out)
 	x1, y1 := arrow.start()
 	x2, y2 := arrow.end()
-	tag.printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class(), x1, y1, x2, y2)
-	tag.printf("\n")
+	w.printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class(), x1, y1, x2, y2)
+	w.print("\n")
 	if arrow.Tail {
-		tag.printf(`<circle class="%s-tail" cx="%v" cy="%v" r="3" />`, arrow.class(), x1, y1)
-		tag.printf("\n")
+		w.printf(`<circle class="%s-tail" cx="%v" cy="%v" r="3" />`, arrow.class(), x1, y1)
+		w.print("\n")
 	}
-	tag.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
-	tag.printf(`<path class="%s-head" d="M%v,%v l-8,-4 l 0,8 Z" />`, arrow.class(), x2, y2)
-	tag.printf(`</g>`)
-	tag.printf("\n")
+	w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
+	w.printf(`<path class="%s-head" d="M%v,%v l-8,-4 l 0,8 Z" />`, arrow.class(), x2, y2)
+	w.print("</g>\n")
 	return *err
 }
 
