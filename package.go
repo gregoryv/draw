@@ -12,9 +12,9 @@ func WriteDefault(dia shape.SvgWriter, w io.Writer) error {
 	return dia.WriteSvg(NewStyler(w))
 }
 
-// SaveAs saves diagram using default style to filename
-func SaveAs(dia shape.SvgWriter, filename string) error {
-	fh, err := os.Create("img/sequence_example.svg")
+// saveAs saves diagram using default style to filename
+func saveAs(dia shape.SvgWriter, filename string) error {
+	fh, err := os.Create(filename)
 	if err != nil {
 		return err
 	}

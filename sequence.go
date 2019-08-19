@@ -139,3 +139,7 @@ func (dia *SequenceDiagram) top() int {
 func (dia *SequenceDiagram) AddColumns(names ...string) {
 	dia.columns = append(dia.columns, names...)
 }
+
+func (dia *SequenceDiagram) SaveAs(filename string) error {
+	return saveAs(dia, filename)
+}

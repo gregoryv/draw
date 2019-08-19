@@ -17,7 +17,7 @@ func ExampleSequenceDiagram() {
 	diagram.Link(srv, cli, "Send HTML")
 
 	// Save the diagram to file
-	SaveAs(diagram, "img/sequence_example.svg")
+	diagram.SaveAs("img/sequence_example.svg")
 }
 
 func TestSequenceDiagram(t *testing.T) {
