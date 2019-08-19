@@ -100,6 +100,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 	return svg.WriteSvg(w)
 }
 
+// Width returns the total width of the diagram
 func (dia *SequenceDiagram) Width() int {
 	if dia.width != 0 {
 		return dia.width
@@ -107,6 +108,7 @@ func (dia *SequenceDiagram) Width() int {
 	return len(dia.columns) * dia.ColWidth
 }
 
+// Height returns the total height of the diagram
 func (dia *SequenceDiagram) Height() int {
 	if dia.height != 0 {
 		return dia.height
@@ -122,7 +124,7 @@ func (dia *SequenceDiagram) Height() int {
 	return height
 }
 
-// selfHeight is the height of a self referencing linkg
+// selfHeight is the height of a self referencing link
 func (dia *SequenceDiagram) selfHeight() int {
 	return 3*dia.Font.LineHeight + dia.Pad.Bottom
 }
