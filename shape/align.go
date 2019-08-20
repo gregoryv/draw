@@ -59,6 +59,13 @@ const (
 	Center
 )
 
+func NewAdjuster(s Shape) *Adjuster {
+	return &Adjuster{
+		shape:        s,
+		defaultSpace: 10,
+	}
+}
+
 type Adjuster struct {
 	shape        Shape
 	defaultSpace int

@@ -23,3 +23,7 @@ func ExampleSequenceDiagram() {
 func TestSequenceDiagram(t *testing.T) {
 	ExampleSequenceDiagram()
 }
+
+func TestDiagram(t *testing.T) {
+	ExampleClassDiagram()
+}

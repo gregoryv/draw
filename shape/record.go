@@ -4,6 +4,12 @@ import (
 	"io"
 )
 
+func NewRecord(title string) *Record {
+	return &Record{
+		Title: title,
+	}
+}
+
 type Record struct {
 	X, Y         int
 	Title        string

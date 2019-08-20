@@ -23,3 +23,7 @@ func (shape *Svg) WriteSvg(out io.Writer) error {
 	w.print("</svg>")
 	return *err
 }
+
+func (svg *Svg) Append(shapes ...SvgWriterShape) {
+	svg.Content = append(svg.Content, shapes...)
+}
