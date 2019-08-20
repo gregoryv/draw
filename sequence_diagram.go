@@ -31,13 +31,13 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		Width:  dia.Width(),
 		Height: dia.Height(),
 	}
-
-	colWidth := dia.ColWidth
-	top := dia.top()
 	var (
-		x  = dia.Pad.Left
-		y1 = top + dia.TextPad.Bottom // below label
-		y2 = dia.Height()
+		colWidth = dia.ColWidth
+
+		top = dia.top()
+		x   = dia.Pad.Left
+		y1  = top + dia.TextPad.Bottom // below label
+		y2  = dia.Height()
 	)
 	lines := make([]*shape.Line, len(dia.columns))
 	for i, column := range dia.columns {
@@ -46,7 +46,8 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			Font: dia.Font,
 			Pad:  dia.Pad,
 		}
-		if i == 0 {
+		firstColumn := i == 0
+		if firstColumn {
 			x += label.Width() / 2
 		}
 		lines[i] = &shape.Line{Class: "column-line", X1: x, Y1: y1, X2: x, Y2: y2}
