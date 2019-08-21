@@ -2,12 +2,21 @@ package shape
 
 import (
 	"io"
+	"reflect"
 )
 
 func NewRecord(title string) *Record {
 	return &Record{
 		Title: title,
 	}
+}
+
+// NewRecordOf returns a record shape based on a Go type.
+// Reflection is used
+func NewRecordOf(obj interface{}) *Record {
+	t := reflect.TypeOf(obj)
+	rec := NewRecord(t.Name())
+	return rec
 }
 
 type Record struct {
@@ -91,3 +100,6 @@ func (record *Record) Position() (int, int) { return record.X, record.Y }
 func (record *Record) SetX(x int)           { record.X = x }
 func (record *Record) SetY(y int)           { record.Y = y }
 func (record *Record) Direction() Direction { return LR }
+
+func (record *Record) SetFont(f Font)         { record.Font = f }
+func (record *Record) SetTextPad(pad Padding) { record.Pad = pad }

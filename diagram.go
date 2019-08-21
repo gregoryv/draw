@@ -2,7 +2,6 @@ package design
 
 import (
 	"io"
-	"reflect"
 
 	"github.com/gregoryv/go-design/shape"
 )
@@ -25,18 +24,19 @@ type Diagram struct {
 	Pad     shape.Padding
 }
 
-func (diagram *Diagram) Place(obj interface{}) *shape.Adjuster {
-	rec := reflectRecord(obj)
-	rec.Font = diagram.Font
-	rec.Pad = diagram.TextPad
-	diagram.Append(rec)
-	return shape.NewAdjuster(rec)
+func (diagram *Diagram) Place(s shape.SvgWriterShape) *shape.Adjuster {
+	diagram.applyStyle(s)
+	diagram.Append(s)
+	return shape.NewAdjuster(s)
 }
 
-func reflectRecord(obj interface{}) *shape.Record {
-	t := reflect.TypeOf(obj)
-	rec := shape.NewRecord(t.Name())
-	return rec
+func (diagram *Diagram) applyStyle(s interface{}) {
+	if s, ok := s.(shape.HasFont); ok {
+		s.SetFont(diagram.Font)
+	}
+	if s, ok := s.(shape.HasTextPad); ok {
+		s.SetTextPad(diagram.TextPad)
+	}
 }
 
 func (diagram *Diagram) SaveAs(filename string) error {

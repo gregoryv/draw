@@ -35,3 +35,11 @@ func boxWidth(font Font, pad Padding, txt string) int {
 func intAbs(v int) int {
 	return int(math.Abs(float64(v)))
 }
+
+type HasFont interface {
+	SetFont(Font)
+}
+
+type HasTextPad interface {
+	SetTextPad(Padding)
+}
