@@ -9,17 +9,13 @@ import (
 func NewSequenceDiagram() *SequenceDiagram {
 	return &SequenceDiagram{
 		ColWidth: 190,
-		Font:     shape.Font{Height: 9, Width: 7, LineHeight: 15},
-		TextPad:  shape.Padding{Left: 10, Top: 2, Bottom: 7, Right: 10},
-		Pad:      shape.Padding{Left: 10, Top: 20, Bottom: 7, Right: 10},
+		Diagram:  NewDiagram(),
 	}
 }
 
 type SequenceDiagram struct {
+	Diagram
 	ColWidth int
-	Font     shape.Font
-	TextPad  shape.Padding
-	Pad      shape.Padding
 
 	width, height int
 	columns       []string
