@@ -16,7 +16,7 @@ func NewRecord(title string) *Record {
 // Reflection is used
 func NewRecordOf(obj interface{}) *Record {
 	t := reflect.TypeOf(obj)
-	rec := NewRecord(t.Name())
+	rec := NewRecord(t.String())
 	// Add fields
 	for i := 0; i < t.NumField(); i++ {
 		field := t.Field(i)
