@@ -1,6 +1,18 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="79" height="34" font-family="Arial, Helvetica, sans-serif">
-<rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="10" width="69" height="24"/>
-<text x="20" y="27">Diagram</text></svg>
+  width="193" height="138" font-family="Arial, Helvetica, sans-serif">
+<rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="30" width="69" height="93"/>
+<line class="line" style="stroke:#d3d3d3" x1="10" y1="54" x2="79" y2="54"/><text x="20" y="71">Svg</text>
+<text x="20" y="86">Font</text>
+<text x="20" y="101">TextPad</text>
+<text x="20" y="116">Pad</text>
+<text x="20" y="47">Diagram</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="89" y="15" width="104" height="123"/>
+<line class="line" style="stroke:#d3d3d3" x1="89" y1="39" x2="193" y2="39"/><text x="99" y="56">X</text>
+<text x="99" y="71">Y</text>
+<text x="99" y="86">Title</text>
+<text x="99" y="101">PublicFields</text>
+<text x="99" y="116">Font</text>
+<text x="99" y="131">Pad</text>
+<text x="99" y="32">Record</text></svg>

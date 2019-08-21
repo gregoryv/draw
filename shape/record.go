@@ -1,6 +1,7 @@
 package shape
 
 import (
+	"bytes"
 	"io"
 	"reflect"
 )
@@ -16,7 +17,22 @@ func NewRecord(title string) *Record {
 func NewRecordOf(obj interface{}) *Record {
 	t := reflect.TypeOf(obj)
 	rec := NewRecord(t.Name())
+	// Add fields
+	for i := 0; i < t.NumField(); i++ {
+		field := t.Field(i)
+		if isPublic(field.Name) {
+			rec.PublicFields = append(rec.PublicFields, field.Name)
+		}
+	}
 	return rec
+}
+
+func isPublic(name string) bool {
+	if len(name) == 0 {
+		panic("Name must not be empty")
+	}
+	up := bytes.ToUpper([]byte(name))
+	return []byte(name)[0] == up[0]
 }
 
 type Record struct {
