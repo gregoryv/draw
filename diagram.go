@@ -78,6 +78,6 @@ func (dia *Diagram) SetWidth(w int) {
 	dia.width = w
 }
 
-func (dia *SequenceDiagram) SaveAs(filename string) error {
-	return saveAs(dia, filename)
+func (diagram *Diagram) HAlignCenter(shapes ...shape.Shape) {
+	shape.AlignHorizontal(shape.Center, shapes...)
 }

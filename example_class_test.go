@@ -10,6 +10,6 @@ func ExampleClassDiagram() {
 	diagram.Place(diagramRec).At(10, 30)
 	diagram.Place(record).RightOf(diagramRec)
 
-	shape.AlignHorizontal(shape.Center, diagramRec, record)
+	diagram.HAlignCenter(diagramRec, record)
 	diagram.SaveAs("img/class_example.svg")
 }
