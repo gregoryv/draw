@@ -17,6 +17,9 @@ func NewDiagram() Diagram {
 
 type Diagram struct {
 	shape.Svg
+
+	width, height int
+
 	Font    shape.Font
 	TextPad shape.Padding
 	Pad     shape.Padding
@@ -65,4 +68,16 @@ func (diagram *Diagram) AdaptSize() {
 
 	diagram.Width = width
 	diagram.Height = height
+}
+
+func (dia *Diagram) SetHeight(h int) {
+	dia.height = h
+}
+
+func (dia *Diagram) SetWidth(w int) {
+	dia.width = w
+}
+
+func (dia *SequenceDiagram) SaveAs(filename string) error {
+	return saveAs(dia, filename)
 }

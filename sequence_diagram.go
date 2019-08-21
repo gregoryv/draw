@@ -17,9 +17,8 @@ type SequenceDiagram struct {
 	Diagram
 	ColWidth int
 
-	width, height int
-	columns       []string
-	links         []*Link
+	columns []string
+	links   []*Link
 }
 
 func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
@@ -121,14 +120,6 @@ func (dia *SequenceDiagram) Height() int {
 	return height
 }
 
-func (dia *SequenceDiagram) SetHeight(h int) {
-	dia.height = h
-}
-
-func (dia *SequenceDiagram) SetWidth(w int) {
-	dia.width = w
-}
-
 // selfHeight is the height of a self referencing link
 func (dia *SequenceDiagram) selfHeight() int {
 	return 3*dia.Font.LineHeight + dia.Pad.Bottom
@@ -145,8 +136,4 @@ func (dia *SequenceDiagram) top() int {
 
 func (dia *SequenceDiagram) AddColumns(names ...string) {
 	dia.columns = append(dia.columns, names...)
-}
-
-func (dia *SequenceDiagram) SaveAs(filename string) error {
-	return saveAs(dia, filename)
 }
