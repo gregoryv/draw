@@ -43,7 +43,7 @@ func Test_example_shapes(t *testing.T) {
 						Title: "Record",
 						Font:  font,
 						Pad:   pad,
-						PublicFields: []string{
+						Fields: []string{
 							"Write",
 							"SetLabel",
 						},

@@ -82,8 +82,9 @@ func (adjust *Adjuster) RightOf(o Shape, l ...int) {
 }
 
 func (adjust *Adjuster) Below(o Shape, l ...int) {
-	_, y := o.Position()
+	x, y := o.Position()
 	adjust.shape.SetY(y + o.Height() + adjust.Space(l))
+	adjust.shape.SetX(x)
 }
 
 func (adjust *Adjuster) Space(space []int) int {

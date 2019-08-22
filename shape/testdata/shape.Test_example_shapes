@@ -29,7 +29,7 @@
 
 <text x="0" y="150">Label</text>
 <rect class="record" x="0" y="170" width="76" height="63"/>
-<line class="line" x1="0" y1="194" x2="76" y2="194"/><text x="10" y="211">Write</text>
+<line class="line" x1="0" y1="196" x2="76" y2="196"/><text x="10" y="211">Write</text>
 <text x="10" y="226">SetLabel</text>
 <text x="10" y="187">Record</text>
 <rect class="record" x="100" y="170" width="167" height="24"/>
