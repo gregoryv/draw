@@ -22,5 +22,4 @@ func TestSequenceDiagram_Height(t *testing.T) {
 		assert().Equals(c.dia.Height(), c.expHeight)
 		assert().Equals(c.dia.Width(), c.expWidth)
 	}
-
 }

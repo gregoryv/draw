@@ -2,6 +2,8 @@ package design
 
 import (
 	"testing"
+
+	"github.com/gregoryv/go-design/shape"
 )
 
 func ExampleSequenceDiagram() {
@@ -16,14 +18,26 @@ func ExampleSequenceDiagram() {
 	lnk.Class = "highlight"
 	diagram.Link(srv, cli, "Send HTML")
 
-	// Save the diagram to file
 	diagram.SaveAs("img/sequence_example.svg")
 }
 
-func TestSequenceDiagram(t *testing.T) {
-	ExampleSequenceDiagram()
+func ExampleDiagram() {
+	var (
+		diagram    = NewDiagram()
+		diagramRec = shape.NewStructRecord(Diagram{})
+		record     = shape.NewStructRecord(shape.Record{})
+		adjuster   = shape.NewStructRecord(shape.Adjuster{})
+		shapeI     = shape.NewInterfaceRecord((*shape.Shape)(nil))
+	)
+
+	diagram.Place(diagramRec).At(10, 30)
+	diagram.Place(record).RightOf(diagramRec)
+	diagram.Place(adjuster).RightOf(record)
+	diagram.HAlignTop(diagramRec, record, adjuster)
+	diagram.Place(shapeI).Below(adjuster)
+
+	diagram.SaveAs("img/diagram_example.svg")
 }
 
-func TestDiagram(t *testing.T) {
-	ExampleClassDiagram()
-}
+func TestSequenceDiagram(t *testing.T) { ExampleSequenceDiagram() }
+func TestDiagram(t *testing.T)         { ExampleDiagram() }
