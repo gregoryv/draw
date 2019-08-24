@@ -70,14 +70,17 @@ func (diagram *Diagram) AdaptSize() {
 	diagram.Height = height
 }
 
-func (dia *Diagram) SetHeight(h int) {
-	dia.height = h
-}
+func (d *Diagram) SetHeight(h int) { d.height = h }
+func (d *Diagram) SetWidth(w int)  { d.width = w }
 
-func (dia *Diagram) SetWidth(w int) {
-	dia.width = w
-}
-
-func (diagram *Diagram) HAlignCenter(shapes ...shape.Shape) {
+func (*Diagram) HAlignCenter(shapes ...shape.Shape) {
 	shape.AlignHorizontal(shape.Center, shapes...)
+}
+
+func (*Diagram) HAlignTop(shapes ...shape.Shape) {
+	shape.AlignHorizontal(shape.Top, shapes...)
+}
+
+func (*Diagram) HAlignBottom(shapes ...shape.Shape) {
+	shape.AlignHorizontal(shape.Bottom, shapes...)
 }

@@ -62,7 +62,7 @@ const (
 func NewAdjuster(s Shape) *Adjuster {
 	return &Adjuster{
 		shape:        s,
-		defaultSpace: 10,
+		defaultSpace: 30,
 	}
 }
 
