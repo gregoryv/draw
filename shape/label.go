@@ -20,19 +20,10 @@ func (shape *Label) WriteSvg(w io.Writer) error {
 	return err
 }
 
-func (label *Label) Height() int {
-	return label.Font.Height
-}
+func (l *Label) Height() int { return l.Font.Height }
+func (l *Label) Width() int  { return len(l.Text) * l.Font.Width }
 
-func (label *Label) Width() int {
-	return len(label.Text) * label.Font.Width
-}
-
-func (label *Label) SetX(x int) { label.X = x }
-func (label *Label) SetY(y int) { label.Y = y }
-
-func (label *Label) Position() (int, int) {
-	return label.X, label.Y
-}
-
-func (label *Label) Direction() Direction { return LR }
+func (l *Label) SetX(x int)           { l.X = x }
+func (l *Label) SetY(y int)           { l.Y = y }
+func (l *Label) Direction() Direction { return LR }
+func (l *Label) Position() (int, int) { return l.X, l.Y }

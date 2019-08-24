@@ -6,6 +6,13 @@ import (
 	"github.com/gregoryv/go-design/shape"
 )
 
+func ExampleClassDiagram() {
+	diagram := NewClassDiagram()
+
+	// todo
+	diagram.SaveAs("img/class_example.svg")
+}
+
 func ExampleSequenceDiagram() {
 	diagram := NewSequenceDiagram()
 	cli, srv, db := "Client", "Server", "Database"
@@ -33,8 +40,11 @@ func ExampleDiagram() {
 	diagram.Place(diagramRec).At(10, 30)
 	diagram.Place(record).RightOf(diagramRec)
 	diagram.Place(adjuster).RightOf(record)
-	diagram.HAlignTop(diagramRec, record, adjuster)
 	diagram.Place(shapeI).Below(adjuster)
+
+	diagram.HAlignTop(diagramRec, record, adjuster)
+	diagram.HAlignCenter(record, diagramRec)
+	diagram.HAlignBottom(record, shapeI)
 
 	diagram.SaveAs("img/diagram_example.svg")
 }

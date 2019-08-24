@@ -2,22 +2,22 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="557" height="310" font-family="Arial, Helvetica, sans-serif">
-<rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="30" width="167" height="250"/>
-<line class="line" style="stroke:#d3d3d3" x1="10" y1="56" x2="177" y2="56"/><text x="20" y="71">Svg</text>
-<text x="20" y="86">Font</text>
-<text x="20" y="101">TextPad</text>
-<text x="20" y="116">Pad</text>
-<line class="line" style="stroke:#d3d3d3" x1="10" y1="123" x2="177" y2="123"/><text x="20" y="138">AdaptSize()</text>
-<text x="20" y="153">Append()</text>
-<text x="20" y="168">HAlignBottom()</text>
-<text x="20" y="183">HAlignCenter()</text>
-<text x="20" y="198">HAlignTop()</text>
-<text x="20" y="213">Place()</text>
-<text x="20" y="228">SaveAs()</text>
-<text x="20" y="243">SetHeight()</text>
-<text x="20" y="258">SetWidth()</text>
-<text x="20" y="273">WriteSvg()</text>
-<text x="20" y="47">design.Diagram struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="45" width="167" height="250"/>
+<line class="line" style="stroke:#d3d3d3" x1="10" y1="71" x2="177" y2="71"/><text x="20" y="86">Svg</text>
+<text x="20" y="101">Font</text>
+<text x="20" y="116">TextPad</text>
+<text x="20" y="131">Pad</text>
+<line class="line" style="stroke:#d3d3d3" x1="10" y1="138" x2="177" y2="138"/><text x="20" y="153">AdaptSize()</text>
+<text x="20" y="168">Append()</text>
+<text x="20" y="183">HAlignBottom()</text>
+<text x="20" y="198">HAlignCenter()</text>
+<text x="20" y="213">HAlignTop()</text>
+<text x="20" y="228">Place()</text>
+<text x="20" y="243">SaveAs()</text>
+<text x="20" y="258">SetHeight()</text>
+<text x="20" y="273">SetWidth()</text>
+<text x="20" y="288">WriteSvg()</text>
+<text x="20" y="62">design.Diagram struct</text>
 <rect class="record" style="fill:#ffffcc;stroke:black" x="207" y="30" width="153" height="280"/>
 <line class="line" style="stroke:#d3d3d3" x1="207" y1="56" x2="360" y2="56"/><text x="217" y="71">X</text>
 <text x="217" y="86">Y</text>
@@ -42,11 +42,11 @@
 <text x="400" y="101">RightOf()</text>
 <text x="400" y="116">Space()</text>
 <text x="400" y="47">shape.Adjuster struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="390" y="153" width="167" height="123"/>
-<line class="line" style="stroke:#d3d3d3" x1="390" y1="179" x2="557" y2="179"/><text x="400" y="194">Direction()</text>
-<text x="400" y="209">Height()</text>
-<text x="400" y="224">Position()</text>
-<text x="400" y="239">SetX()</text>
-<text x="400" y="254">SetY()</text>
-<text x="400" y="269">Width()</text>
-<text x="400" y="170">shape.Shape interface</text></svg>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="390" y="187" width="167" height="123"/>
+<line class="line" style="stroke:#d3d3d3" x1="390" y1="213" x2="557" y2="213"/><text x="400" y="228">Direction()</text>
+<text x="400" y="243">Height()</text>
+<text x="400" y="258">Position()</text>
+<text x="400" y="273">SetX()</text>
+<text x="400" y="288">SetY()</text>
+<text x="400" y="303">Width()</text>
+<text x="400" y="204">shape.Shape interface</text></svg>

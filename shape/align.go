@@ -11,7 +11,22 @@ func AlignHorizontal(adjust Adjust, objects ...Shape) {
 		case Bottom:
 			shape.SetY(y + first.Height() - shape.Height())
 		case Center:
-			shape.SetY(y + (first.Height()-shape.Height())/2)
+			firstHigher := first.Height() > shape.Height()
+			diff := intAbs(first.Height()-shape.Height()) / 2
+			if shape, ok := shape.(*Label); ok {
+				// labels are drawn from bottom left corner
+				if firstHigher {
+					diff += shape.Height()
+				} else {
+					diff -= shape.Height()
+				}
+			}
+			switch {
+			case firstHigher:
+				shape.SetY(y + diff)
+			case !firstHigher:
+				shape.SetY(y - diff)
+			}
 		}
 	}
 }
