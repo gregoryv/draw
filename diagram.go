@@ -78,13 +78,25 @@ func (d *Diagram) SetHeight(h int) { d.height = h }
 func (d *Diagram) SetWidth(w int)  { d.width = w }
 
 func (*Diagram) HAlignCenter(shapes ...shape.Shape) {
-	shape.AlignHorizontal(shape.Center, shapes...)
+	shape.HAlign(shape.Center, shapes...)
 }
 
 func (*Diagram) HAlignTop(shapes ...shape.Shape) {
-	shape.AlignHorizontal(shape.Top, shapes...)
+	shape.HAlign(shape.Top, shapes...)
 }
 
 func (*Diagram) HAlignBottom(shapes ...shape.Shape) {
-	shape.AlignHorizontal(shape.Bottom, shapes...)
+	shape.HAlign(shape.Bottom, shapes...)
+}
+
+func (*Diagram) VAlignCenter(shapes ...shape.Shape) {
+	shape.VAlign(shape.Center, shapes...)
+}
+
+func (*Diagram) VAlignLeft(shapes ...shape.Shape) {
+	shape.VAlign(shape.Left, shapes...)
+}
+
+func (*Diagram) VAlignRight(shapes ...shape.Shape) {
+	shape.VAlign(shape.Right, shapes...)
 }

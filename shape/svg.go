@@ -27,3 +27,7 @@ func (shape *Svg) WriteSvg(out io.Writer) error {
 func (svg *Svg) Append(shapes ...SvgWriterShape) {
 	svg.Content = append(svg.Content, shapes...)
 }
+
+func (svg *Svg) Prepend(shapes ...SvgWriterShape) {
+	svg.Content = append(shapes, svg.Content...)
+}

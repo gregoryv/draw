@@ -7,9 +7,20 @@ import (
 )
 
 func ExampleClassDiagram() {
-	diagram := NewClassDiagram()
+	var (
+		diagram = NewClassDiagram()
+		record  = NewStruct(shape.Record{})
+		shapeI  = NewInterface((*shape.Shape)(nil))
+		sws     = NewInterface((*shape.SvgWriterShape)(nil))
+		arrow   = NewStruct(shape.Arrow{})
+	)
+	diagram.Place(record).At(20, 20)
+	diagram.Place(shapeI).RightOf(record, 90)
+	diagram.Place(arrow).RightOf(shapeI, 90)
+	diagram.Place(sws).Below(shapeI, 70)
 
-	// todo
+	diagram.HAlignTop(record, shapeI, arrow)
+	diagram.VAlignCenter(shapeI, sws)
 	diagram.SaveAs("img/class_example.svg")
 }
 
@@ -49,5 +60,6 @@ func ExampleDiagram() {
 	diagram.SaveAs("img/diagram_example.svg")
 }
 
+func TestClassDiagram(t *testing.T)    { ExampleClassDiagram() }
 func TestSequenceDiagram(t *testing.T) { ExampleSequenceDiagram() }
 func TestDiagram(t *testing.T)         { ExampleDiagram() }

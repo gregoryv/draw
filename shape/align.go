@@ -1,6 +1,6 @@
 package shape
 
-func AlignHorizontal(adjust Adjust, objects ...Shape) {
+func HAlign(adjust Adjust, objects ...Shape) {
 	mustAlign(adjust, objects, Top, Bottom, Center)
 	first := objects[0]
 	_, y := first.Position()
@@ -31,7 +31,7 @@ func AlignHorizontal(adjust Adjust, objects ...Shape) {
 	}
 }
 
-func AlignVertical(adjust Adjust, objects ...Shape) {
+func VAlign(adjust Adjust, objects ...Shape) {
 	mustAlign(adjust, objects, Left, Right, Center)
 	first := objects[0]
 	x, _ := first.Position()
@@ -61,7 +61,6 @@ func mustAlign(adjust Adjust, objects []Shape, ok ...Adjust) {
 			return
 		}
 	}
-	panic("Cannot adjust Left or Right when horizontal.")
 }
 
 type Adjust int

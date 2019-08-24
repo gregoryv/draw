@@ -48,7 +48,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		lines[i] = &shape.Line{Class: "column-line", X1: x, Y1: y1, X2: x, Y2: y2}
 		x += colWidth
 
-		shape.AlignVertical(shape.Center, lines[i], label)
+		shape.VAlign(shape.Center, lines[i], label)
 		svg.Content = append(svg.Content, lines[i], label)
 	}
 
@@ -74,7 +74,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 				X2: fromX + margin,
 				Y2: y + dia.Font.LineHeight*2,
 			}
-			shape.AlignHorizontal(shape.Center, l2, label)
+			shape.HAlign(shape.Center, l2, label)
 			label.X += l1.Width() + dia.TextPad.Left
 			arrow.X1 = l2.X2
 			arrow.Y1 = l2.Y2
@@ -88,7 +88,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			arrow.Y1 = y
 			arrow.X2 = toX
 			arrow.Y2 = y
-			shape.AlignVertical(shape.Center, arrow, label)
+			shape.VAlign(shape.Center, arrow, label)
 			svg.Content = append(svg.Content, arrow, label)
 			y += dia.plainHeight()
 		}

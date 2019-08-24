@@ -62,7 +62,7 @@ func TestAlignHorizontal(t *testing.T) {
 	}
 	assert := asserter.New(t)
 	for i, c := range cases {
-		AlignHorizontal(c.adjust, c.shapeA, c.shapeB)
+		HAlign(c.adjust, c.shapeA, c.shapeB)
 		x, y := c.shapeB.Position()
 		assert(x == c.expX).Errorf("%v. X was %v, expected %v", i, x, c.expX)
 		assert(y == c.expY).Errorf("%v. Y was %v, expected %v", i, y, c.expY)

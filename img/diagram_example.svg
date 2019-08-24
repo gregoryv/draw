@@ -1,23 +1,27 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="557" height="310" font-family="Arial, Helvetica, sans-serif">
-<rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="45" width="167" height="250"/>
-<line class="line" style="stroke:#d3d3d3" x1="10" y1="71" x2="177" y2="71"/><text x="20" y="86">Svg</text>
-<text x="20" y="101">Font</text>
-<text x="20" y="116">TextPad</text>
-<text x="20" y="131">Pad</text>
-<line class="line" style="stroke:#d3d3d3" x1="10" y1="138" x2="177" y2="138"/><text x="20" y="153">AdaptSize()</text>
-<text x="20" y="168">Append()</text>
-<text x="20" y="183">HAlignBottom()</text>
-<text x="20" y="198">HAlignCenter()</text>
-<text x="20" y="213">HAlignTop()</text>
-<text x="20" y="228">Place()</text>
-<text x="20" y="243">SaveAs()</text>
-<text x="20" y="258">SetHeight()</text>
-<text x="20" y="273">SetWidth()</text>
-<text x="20" y="288">WriteSvg()</text>
-<text x="20" y="62">design.Diagram struct</text>
+  width="557" height="325" font-family="Arial, Helvetica, sans-serif">
+<rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="15" width="167" height="310"/>
+<line class="line" style="stroke:#d3d3d3" x1="10" y1="41" x2="177" y2="41"/><text x="20" y="56">Svg</text>
+<text x="20" y="71">Font</text>
+<text x="20" y="86">TextPad</text>
+<text x="20" y="101">Pad</text>
+<line class="line" style="stroke:#d3d3d3" x1="10" y1="108" x2="177" y2="108"/><text x="20" y="123">AdaptSize()</text>
+<text x="20" y="138">Append()</text>
+<text x="20" y="153">HAlignBottom()</text>
+<text x="20" y="168">HAlignCenter()</text>
+<text x="20" y="183">HAlignTop()</text>
+<text x="20" y="198">Place()</text>
+<text x="20" y="213">Prepend()</text>
+<text x="20" y="228">SaveAs()</text>
+<text x="20" y="243">SetHeight()</text>
+<text x="20" y="258">SetWidth()</text>
+<text x="20" y="273">VAlignCenter()</text>
+<text x="20" y="288">VAlignLeft()</text>
+<text x="20" y="303">VAlignRight()</text>
+<text x="20" y="318">WriteSvg()</text>
+<text x="20" y="32">design.Diagram struct</text>
 <rect class="record" style="fill:#ffffcc;stroke:black" x="207" y="30" width="153" height="280"/>
 <line class="line" style="stroke:#d3d3d3" x1="207" y1="56" x2="360" y2="56"/><text x="217" y="71">X</text>
 <text x="217" y="86">Y</text>
