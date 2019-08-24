@@ -24,6 +24,8 @@ type Diagram struct {
 	Pad     shape.Padding
 }
 
+// Place adds the shape to the diagram returning an adjuster for
+// positioning.
 func (diagram *Diagram) Place(s shape.SvgWriterShape) *shape.Adjuster {
 	diagram.applyStyle(s)
 	diagram.Append(s)
@@ -39,6 +41,7 @@ func (diagram *Diagram) applyStyle(s interface{}) {
 	}
 }
 
+// SaveAs saves the diagram to filename as SVG
 func (diagram *Diagram) SaveAs(filename string) error {
 	return saveAs(diagram, filename)
 }
@@ -48,6 +51,8 @@ func (diagram *Diagram) WriteSvg(w io.Writer) error {
 	return diagram.Svg.WriteSvg(w)
 }
 
+// AdaptSize adapts the diagram size to the shapes inside it so all
+// are visible.
 func (diagram *Diagram) AdaptSize() {
 	width := diagram.Width
 	height := diagram.Height
@@ -65,7 +70,6 @@ func (diagram *Diagram) AdaptSize() {
 			height = h
 		}
 	}
-
 	diagram.Width = width
 	diagram.Height = height
 }
