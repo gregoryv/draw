@@ -78,25 +78,6 @@ func (arrow *Arrow) angle() int {
 	return 0
 }
 
-func quadrantAngleDiffx(x1, y1, x2, y2 int) int {
-	switch {
-	case inQuadrant1(x1, y1, x2, y2):
-		return 0
-	case inQuadrant2(x1, y1, x2, y2):
-		return 1
-	case inQuadrant3(x1, y1, x2, y2):
-		return 2
-	case inQuadrant4(x1, y1, x2, y2):
-		return 3
-	}
-	return 0
-}
-
-func inQuadrant1(x1, y1, x2, y2 int) bool { return y1 < y2 && x1 < x2 }
-func inQuadrant2(x1, y1, x2, y2 int) bool { return y1 < y2 && x1 > x2 }
-func inQuadrant3(x1, y1, x2, y2 int) bool { return y1 > y2 && x1 > x2 }
-func inQuadrant4(x1, y1, x2, y2 int) bool { return y1 > y2 && x1 < x2 }
-
 func (arrow *Arrow) start() (int, int) { return arrow.X1, arrow.Y1 }
 func (arrow *Arrow) end() (int, int)   { return arrow.X2, arrow.Y2 }
 
