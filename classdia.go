@@ -30,14 +30,10 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 			if reflect.PtrTo(struct_.t).Implements(iface.t) {
 				// todo arrow is hidden by destination, calculate edge x,y
 				// k won't work for all cases
-				k := 1
-				if iface.X > struct_.X {
-					k = 0
-				}
 				line := &shape.Arrow{
 					X1: struct_.X + struct_.Width()/2,
 					Y1: struct_.Y + struct_.Height()/2,
-					X2: iface.X + k*iface.Width(),
+					X2: iface.X + iface.Width()/2,
 					Y2: iface.Y + iface.Height()/2,
 				}
 				rel = append(rel, line)
@@ -46,6 +42,14 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 	}
 	d.Diagram.Prepend(rel...)
 	return d.Diagram.WriteSvg(w)
+}
+
+func dxdy(from, to shape.Shape) (int, int) {
+	fx, fy := from.Position()
+	tx, ty := to.Position()
+	dx := fx - tx
+	dy := fy - ty
+	return dx, dy
 }
 
 func (d *ClassDiagram) Place(vr VRecord) *shape.Adjuster {
