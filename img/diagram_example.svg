@@ -41,11 +41,10 @@
 <text x="217" y="288">Width()</text>
 <text x="217" y="303">WriteSvg()</text>
 <text x="217" y="47">shape.Record struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="390" y="30" width="167" height="93"/>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="390" y="30" width="167" height="78"/>
 <line class="line" style="stroke:#d3d3d3" x1="390" y1="56" x2="557" y2="56"/><text x="400" y="71">At()</text>
 <text x="400" y="86">Below()</text>
 <text x="400" y="101">RightOf()</text>
-<text x="400" y="116">Space()</text>
 <text x="400" y="47">shape.Adjuster struct</text>
 <rect class="record" style="fill:#ffffcc;stroke:black" x="390" y="187" width="167" height="123"/>
 <line class="line" style="stroke:#d3d3d3" x1="390" y1="213" x2="557" y2="213"/><text x="400" y="228">Direction()</text>
