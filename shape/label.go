@@ -9,14 +9,15 @@ type Label struct {
 	X, Y int
 	Text string
 
-	Font Font
-	Pad  Padding
+	Font  Font
+	Pad   Padding
+	Class string
 }
 
 func (shape *Label) WriteSvg(w io.Writer) error {
 	_, err := fmt.Fprintf(w,
-		`<text x="%v" y="%v">%s</text>`,
-		shape.X, shape.Y, shape.Text)
+		`<text class="%s" x="%v" y="%v">%s</text>`,
+		shape.Class, shape.X, shape.Y, shape.Text)
 	return err
 }
 

@@ -21,6 +21,7 @@ func ExampleClassDiagram() {
 
 	diagram.HAlignTop(record, shapeI, arrow)
 	diagram.VAlignCenter(shapeI, sws)
+	diagram.HAlignBottom(sws, arrow)
 	diagram.SaveAs("img/class_example.svg")
 }
 

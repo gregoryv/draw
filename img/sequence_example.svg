@@ -2,31 +2,31 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="570" height="197" font-family="Arial, Helvetica, sans-serif">
-<line class="column-line" style="stroke:#d3d3d3" x1="31" y1="42" x2="31" y2="197"/>
-<text x="10" y="35">Client</text>
-<line class="column-line" style="stroke:#d3d3d3" x1="221" y1="42" x2="221" y2="197"/>
-<text x="200" y="35">Server</text>
-<line class="column-line" style="stroke:#d3d3d3" x1="411" y1="42" x2="411" y2="197"/>
-<text x="383" y="35">Database</text>
-<path class="arrow" style="stroke:black" d="M31,64 L221,64" />
-<g transform="rotate(0 221 64)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M221,64 l-8,-4 l 0,8 Z" /></g>
+<line class="column-line" style="stroke:#d3d3d3" x1="28" y1="42" x2="28" y2="197"/>
+<text class="" x="10" y="35">Client</text>
+<line class="column-line" style="stroke:#d3d3d3" x1="218" y1="42" x2="218" y2="197"/>
+<text class="" x="200" y="35">Server</text>
+<line class="column-line" style="stroke:#d3d3d3" x1="408" y1="42" x2="408" y2="197"/>
+<text class="" x="384" y="35">Database</text>
+<path class="arrow" style="stroke:black" d="M28,64 L218,64" />
+<g transform="rotate(0 218 64)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M218,64 l-8,-4 l 0,8 Z" /></g>
 
-<text x="94" y="62">connect()</text>
-<path class="arrow" style="stroke:black" d="M221,86 L411,86" />
-<g transform="rotate(0 411 86)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M411,86 l-8,-4 l 0,8 Z" /></g>
+<text class="" x="96" y="62">connect()</text>
+<path class="arrow" style="stroke:black" d="M218,86 L408,86" />
+<g transform="rotate(0 408 86)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M408,86 l-8,-4 l 0,8 Z" /></g>
 
-<text x="295" y="84">SELECT</text>
-<path class="arrow" style="stroke:black" d="M411,108 L221,108" />
-<g transform="rotate(180 221 108)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M221,108 l-8,-4 l 0,8 Z" /></g>
+<text class="" x="295" y="84">SELECT</text>
+<path class="arrow" style="stroke:black" d="M408,108 L218,108" />
+<g transform="rotate(180 218 108)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M218,108 l-8,-4 l 0,8 Z" /></g>
 
-<text x="302" y="106">Rows</text>
-<line class="highlight" style="stroke:red" x1="221" y1="130" x2="236" y2="130"/>
-<line class="highlight" style="stroke:red" x1="236" y1="130" x2="236" y2="160"/>
-<path class="highlight" style="stroke:red" d="M236,160 L221,160" />
-<g transform="rotate(180 221 160)"><path class="highlight-head" style="stroke:red;fill:#ffffff" d="M221,160 l-8,-4 l 0,8 Z" /></g>
+<text class="" x="301" y="106">Rows</text>
+<line class="highlight" style="stroke:red" x1="218" y1="130" x2="233" y2="130"/>
+<line class="highlight" style="stroke:red" x1="233" y1="130" x2="233" y2="160"/>
+<path class="highlight" style="stroke:red" d="M233,160 L218,160" />
+<g transform="rotate(180 218 160)"><path class="highlight-head" style="stroke:red;fill:#ffffff" d="M218,160 l-8,-4 l 0,8 Z" /></g>
 
-<text x="246" y="149">Transform to view model</text>
-<path class="arrow" style="stroke:black" d="M221,182 L31,182" />
-<g transform="rotate(180 31 182)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M31,182 l-8,-4 l 0,8 Z" /></g>
+<text class="" x="243" y="149">Transform to view model</text>
+<path class="arrow" style="stroke:black" d="M218,182 L28,182" />
+<g transform="rotate(180 28 182)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M28,182 l-8,-4 l 0,8 Z" /></g>
 
-<text x="95" y="180">Send HTML</text></svg>
+<text class="" x="96" y="180">Send HTML</text></svg>

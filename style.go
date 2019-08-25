@@ -30,6 +30,10 @@ var DefaultStyle = map[string]string{
 	"line":           "stroke:#d3d3d3",
 	"column-line":    "stroke:#d3d3d3",
 	"record":         "fill:#ffffcc;stroke:black",
+	"record-title":   "font-family:Arial,Helvetica,sans-serif; font-size:12px",
+	"field":          "font-family:Arial,Helvetica,sans-serif; font-size:12px",
+	"method":         "font-family:Arial,Helvetica,sans-serif; font-size:12px",
+	"record-label":   "font-family:Arial,Helvetica,sans-serif; font-size:12px",
 }
 
 // Write adds a style attribute based on class.
@@ -52,6 +56,8 @@ func (styler *Styler) Write(s []byte) (int, error) {
 	if found {
 		write([]byte(`" style="`))
 		write([]byte(style))
+		write([]byte(`" `))
+	} else {
 		write([]byte(`" `))
 	}
 	afterClass := i + len(field) + len(class) + 2

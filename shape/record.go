@@ -78,9 +78,10 @@ func (record *Record) WriteSvg(out io.Writer) error {
 		for _, txt := range record.Fields {
 			y += record.Font.LineHeight
 			label := &Label{
-				X:    record.X + record.Pad.Left,
-				Y:    record.Y + y,
-				Text: txt,
+				X:     record.X + record.Pad.Left,
+				Y:     record.Y + y,
+				Text:  txt,
+				Class: "field",
 			}
 			label.WriteSvg(w)
 			w.printf("\n")
@@ -94,9 +95,10 @@ func (record *Record) WriteSvg(out io.Writer) error {
 		for _, txt := range record.Methods {
 			y += record.Font.LineHeight
 			label := &Label{
-				X:    record.X + record.Pad.Left,
-				Y:    record.Y + y,
-				Text: txt,
+				X:     record.X + record.Pad.Left,
+				Y:     record.Y + y,
+				Text:  txt,
+				Class: "method",
 			}
 			label.WriteSvg(w)
 			w.printf("\n")
@@ -119,9 +121,10 @@ func (record *Record) writeSeparator(w io.Writer, y1 int) error {
 
 func (record *Record) title() *Label {
 	return &Label{
-		X:    record.X + record.Pad.Left,
-		Y:    record.Y + record.Font.LineHeight + record.Pad.Top,
-		Text: record.Title,
+		X:     record.X + record.Pad.Left,
+		Y:     record.Y + record.Font.LineHeight + record.Pad.Top,
+		Text:  record.Title,
+		Class: "record-title",
 	}
 }
 
