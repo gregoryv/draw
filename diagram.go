@@ -16,6 +16,7 @@ func NewDiagram() Diagram {
 
 type Diagram struct {
 	shape.Svg
+	shape.Aligner
 
 	width, height int
 
@@ -76,27 +77,3 @@ func (diagram *Diagram) AdaptSize() {
 
 func (d *Diagram) SetHeight(h int) { d.height = h }
 func (d *Diagram) SetWidth(w int)  { d.width = w }
-
-func (*Diagram) HAlignCenter(shapes ...shape.Shape) {
-	shape.HAlign(shape.Center, shapes...)
-}
-
-func (*Diagram) HAlignTop(shapes ...shape.Shape) {
-	shape.HAlign(shape.Top, shapes...)
-}
-
-func (*Diagram) HAlignBottom(shapes ...shape.Shape) {
-	shape.HAlign(shape.Bottom, shapes...)
-}
-
-func (*Diagram) VAlignCenter(shapes ...shape.Shape) {
-	shape.VAlign(shape.Center, shapes...)
-}
-
-func (*Diagram) VAlignLeft(shapes ...shape.Shape) {
-	shape.VAlign(shape.Left, shapes...)
-}
-
-func (*Diagram) VAlignRight(shapes ...shape.Shape) {
-	shape.VAlign(shape.Right, shapes...)
-}

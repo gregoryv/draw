@@ -1,5 +1,14 @@
 package shape
 
+type Aligner int
+
+func (Aligner) HAlignCenter(shapes ...Shape) { HAlign(Center, shapes...) }
+func (Aligner) HAlignTop(shapes ...Shape)    { HAlign(Top, shapes...) }
+func (Aligner) HAlignBottom(shapes ...Shape) { HAlign(Bottom, shapes...) }
+func (Aligner) VAlignCenter(shapes ...Shape) { VAlign(Center, shapes...) }
+func (Aligner) VAlignLeft(shapes ...Shape)   { VAlign(Left, shapes...) }
+func (Aligner) VAlignRight(shapes ...Shape)  { VAlign(Right, shapes...) }
+
 func HAlign(adjust Adjust, objects ...Shape) {
 	mustAlign(adjust, objects, Top, Bottom, Center)
 	first := objects[0]
