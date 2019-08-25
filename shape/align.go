@@ -2,15 +2,11 @@ package shape
 
 type Aligner int
 
-func (Aligner) HAlignCenter(shapes ...Shape) { HAlign(Center, shapes...) }
-func (Aligner) HAlignTop(shapes ...Shape)    { HAlign(Top, shapes...) }
-func (Aligner) HAlignBottom(shapes ...Shape) { HAlign(Bottom, shapes...) }
-func (Aligner) VAlignCenter(shapes ...Shape) { VAlign(Center, shapes...) }
-func (Aligner) VAlignLeft(shapes ...Shape)   { VAlign(Left, shapes...) }
-func (Aligner) VAlignRight(shapes ...Shape)  { VAlign(Right, shapes...) }
+func (Aligner) HAlignCenter(shapes ...Shape) { hAlign(Center, shapes...) }
+func (Aligner) HAlignTop(shapes ...Shape)    { hAlign(Top, shapes...) }
+func (Aligner) HAlignBottom(shapes ...Shape) { hAlign(Bottom, shapes...) }
 
-func HAlign(adjust Adjust, objects ...Shape) {
-	mustAlign(adjust, objects, Top, Bottom, Center)
+func hAlign(adjust Adjust, objects ...Shape) {
 	first := objects[0]
 	_, y := first.Position()
 	for _, shape := range objects[1:] {
@@ -40,8 +36,11 @@ func HAlign(adjust Adjust, objects ...Shape) {
 	}
 }
 
-func VAlign(adjust Adjust, objects ...Shape) {
-	mustAlign(adjust, objects, Left, Right, Center)
+func (Aligner) VAlignCenter(shapes ...Shape) { vAlign(Center, shapes...) }
+func (Aligner) VAlignLeft(shapes ...Shape)   { vAlign(Left, shapes...) }
+func (Aligner) VAlignRight(shapes ...Shape)  { vAlign(Right, shapes...) }
+
+func vAlign(adjust Adjust, objects ...Shape) {
 	first := objects[0]
 	x, _ := first.Position()
 	for _, shape := range objects[1:] {
@@ -57,17 +56,6 @@ func VAlign(adjust Adjust, objects ...Shape) {
 				shape.SetX(x + (first.Width()-shape.Width())/2)
 			}
 
-		}
-	}
-}
-
-func mustAlign(adjust Adjust, objects []Shape, ok ...Adjust) {
-	if len(objects) < 2 {
-		panic("Align must have 2 or more objects as arguments")
-	}
-	for _, a := range ok {
-		if adjust == a {
-			return
 		}
 	}
 }
