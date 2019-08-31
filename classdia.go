@@ -44,11 +44,13 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 	return d.Diagram.WriteSvg(w)
 }
 
+// should it return absolute? should direction be part of it
 func dxdy(from, to shape.Shape) (int, int) {
 	fx, fy := from.Position()
 	tx, ty := to.Position()
 	dx := fx - tx
 	dy := fy - ty
+	// todo
 	return dx, dy
 }
 
