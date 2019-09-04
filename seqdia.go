@@ -109,6 +109,9 @@ func (dia *SequenceDiagram) Height() int {
 	if dia.height != 0 {
 		return dia.height
 	}
+	if len(dia.columns) == 0 {
+		return 0
+	}
 	height := dia.top() + dia.plainHeight()
 	for _, lnk := range dia.links {
 		if lnk.toSelf() {

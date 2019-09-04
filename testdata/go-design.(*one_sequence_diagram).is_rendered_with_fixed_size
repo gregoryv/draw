@@ -1,0 +1,8 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="10" height="10" font-family="Arial, Helvetica, sans-serif">
+<line class="column-line" x1="13" y1="42" x2="13" y2="10"/>
+<text class="" x="10" y="35">a</text>
+<line class="column-line" x1="203" y1="42" x2="203" y2="10"/>
+<text class="" x="200" y="35">b</text></svg>

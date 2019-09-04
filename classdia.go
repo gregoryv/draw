@@ -29,7 +29,6 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 		for _, iface := range d.Interfaces {
 			if reflect.PtrTo(struct_.t).Implements(iface.t) {
 				// todo arrow is hidden by destination, calculate edge x,y
-				// k won't work for all cases
 				line := &shape.Arrow{
 					X1: struct_.X + struct_.Width()/2,
 					Y1: struct_.Y + struct_.Height()/2,
@@ -37,8 +36,10 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 					Y2: iface.Y + iface.Height()/2,
 				}
 				rel = append(rel, line)
+				// todo, add implements label
 			}
 		}
+		// todo, composition
 	}
 	d.Diagram.Prepend(rel...)
 	return d.Diagram.WriteSvg(w)

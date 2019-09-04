@@ -13,6 +13,7 @@ func ExampleClassDiagram() {
 		shapeI  = NewInterface((*shape.Shape)(nil))
 		sws     = NewInterface((*shape.SvgWriterShape)(nil))
 		arrow   = NewStruct(shape.Arrow{})
+		fnt     = NewStruct(shape.Font{})
 	)
 	diagram.Place(record).At(20, 20)
 	diagram.Place(shapeI).RightOf(record, 90)
@@ -22,6 +23,9 @@ func ExampleClassDiagram() {
 	diagram.HAlignTop(record, shapeI, arrow)
 	diagram.VAlignCenter(shapeI, sws)
 	diagram.HAlignBottom(sws, arrow)
+
+	diagram.Place(fnt).Below(record, 40)
+
 	diagram.SaveAs("img/class_example.svg")
 }
 

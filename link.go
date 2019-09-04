@@ -32,6 +32,10 @@ func (dia *SequenceDiagram) Link(from, to, text string) *Link {
 	return lnk
 }
 
+func (dia *SequenceDiagram) ClearLinks() {
+	dia.links = make([]*Link, 0)
+}
+
 // Link represents an arrow in a sequence diagram
 type Link struct {
 	fromIndex, toIndex int
