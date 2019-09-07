@@ -48,7 +48,6 @@ func Test_example_shapes(t *testing.T) {
 							"SetLabel",
 						},
 					},
-
 					&Record{
 						X:     100,
 						Y:     y,
