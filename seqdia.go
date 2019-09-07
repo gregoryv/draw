@@ -98,16 +98,16 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 
 // Width returns the total width of the diagram
 func (dia *SequenceDiagram) Width() int {
-	if dia.width != 0 {
-		return dia.width
+	if dia.Svg.Width != 0 {
+		return dia.Svg.Width
 	}
 	return len(dia.columns) * dia.ColWidth
 }
 
 // Height returns the total height of the diagram
 func (dia *SequenceDiagram) Height() int {
-	if dia.height != 0 {
-		return dia.height
+	if dia.Svg.Height != 0 {
+		return dia.Svg.Height
 	}
 	if len(dia.columns) == 0 {
 		return 0
