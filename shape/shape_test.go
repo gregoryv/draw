@@ -25,14 +25,22 @@ func Test_example_shapes(t *testing.T) {
 				Height: 300,
 				Content: []SvgWriterShape{
 					&Line{X1: 0, Y1: y, X2: 100, Y2: y},
-					&Arrow{X1: 230, Y1: y, X2: 280, Y2: y + 30}, // q1
-					&Arrow{X1: 230, Y1: y, X2: 200, Y2: y + 50}, // q2
-					&Arrow{X1: 230, Y1: y, X2: 180, Y2: y - 20}, // q3
-					&Arrow{X1: 230, Y1: y, X2: 270, Y2: y - 20}, // q4
-					&Arrow{X1: 230, Y1: y, X2: 320, Y2: y},      // right
-					&Arrow{X1: 230, Y1: y, X2: 180, Y2: y},      // left
-					&Arrow{X1: 230, Y1: y, X2: 230, Y2: y - 40}, // up
-					&Arrow{X1: 230, Y1: y, X2: 230, Y2: y + 40}, // down
+					// q1
+					NewArrow(230, y, 280, y+30),
+					// q2
+					NewArrow(230, y, 200, y+50),
+					// q3
+					NewArrow(230, y, 180, y-20),
+					// q4
+					NewArrow(230, y, 270, y-20),
+					// right
+					NewArrow(230, y, 320, y),
+					// left
+					NewArrow(230, y, 180, y),
+					// up
+					NewArrow(230, y, 230, y-40),
+					//down
+					NewArrow(230, y, 230, y+40),
 
 					&Label{
 						Y:    addy(80),

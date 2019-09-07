@@ -20,24 +20,23 @@ type one_arrow struct {
 
 func (t *one_arrow) starts_at_visible_position_N() {
 	t.Helper()
-	t.X1 = 50
-	t.Y1 = 50
+	t.Start.X = 50
+	t.Start.Y = 50
 }
 
 func (t *one_arrow) ends_above_and_to_the_right_of_N() {
 	t.Helper()
-	t.X2 = t.X1 + 30
-	t.Y2 = t.Y1 - 30
+	t.End.X = t.Start.X + 30
+	t.End.Y = t.Start.Y - 30
 }
 
 func (t *one_arrow) points_up_and_to_the_right() {
 	t.Helper()
 	d := NewDiagram()
-	t.Error(d.Width)
-	d.SetWidth(150)
-	t.Error(d.Width)
-	d.SetHeight(150)
+	d.SetWidth(100)
+	d.SetHeight(100)
 	d.Place(&t.Arrow)
+
 	fh, err := os.Create("img/arrow_points_up_and_to_the_right.svg")
 	if err != nil {
 		t.Error(err)

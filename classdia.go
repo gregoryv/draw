@@ -29,12 +29,12 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 		for _, iface := range d.Interfaces {
 			if reflect.PtrTo(struct_.t).Implements(iface.t) {
 				// todo arrow is hidden by destination, calculate edge x,y
-				line := &shape.Arrow{
-					X1: struct_.X + struct_.Width()/2,
-					Y1: struct_.Y + struct_.Height()/2,
-					X2: iface.X + iface.Width()/2,
-					Y2: iface.Y + iface.Height()/2,
-				}
+				line := shape.NewArrow(
+					struct_.X+struct_.Width()/2,
+					struct_.Y+struct_.Height()/2,
+					iface.X+iface.Width()/2,
+					iface.Y+iface.Height()/2,
+				)
 				rel = append(rel, line)
 				// todo, add implements label
 			}
