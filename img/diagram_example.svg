@@ -58,13 +58,13 @@
 <g transform="rotate(-11 280 390)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M280,390 l-8,-4 l 0,8 Z" /></g>
 
 <path class="arrow" style="stroke:black" d="M230,400 L200,390" />
-<g transform="rotate(199 200 390)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M200,390 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(198 200 390)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M200,390 l-8,-4 l 0,8 Z" /></g>
 
 <path class="arrow" style="stroke:black" d="M230,400 L180,420" />
-<g transform="rotate(-9223372036854775718 180 420)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M180,420 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(159 180 420)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M180,420 l-8,-4 l 0,8 Z" /></g>
 
 <path class="arrow" style="stroke:black" d="M230,400 L270,420" />
-<g transform="rotate(30 270 420)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M270,420 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(26 270 420)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M270,420 l-8,-4 l 0,8 Z" /></g>
 
 <path class="arrow" style="stroke:black" d="M230,400 L320,400" />
 <g transform="rotate(0 320 400)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M320,400 l-8,-4 l 0,8 Z" /></g>

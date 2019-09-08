@@ -42,22 +42,19 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 func (arrow *Arrow) angle() int {
 	start := arrow.Start
 	end := arrow.End
-	x1, y1 := arrow.Start.XY()
-	x2, y2 := arrow.End.XY()
 
 	var (
-		// quadrandts start at top right and are counted counter clockwise
-		q1 = start.LeftOf(end) && start.Above(end)
-		q2 = y1 < y2 && x1 > x2
-		q3 = y1 > y2 && x1 > x2
-		q4 = y1 > y2 && x1 < x2
+		// quadrandts start at bottom right and are counted clockwise
+		q1 = start.LeftOf(end) && end.Below(start)
+		q2 = start.RightOf(end) && end.Below(start)
+		q3 = start.RightOf(end) && end.Above(start)
+		q4 = start.LeftOf(end) && end.Above(start)
 		// straight arrows
-		right = x1 < x2 && y1 == y2
-		left  = x1 > x2 && y1 == y2
-		down  = x1 == x2 && y1 < y2
-		up    = x1 == x2 && y1 > y2
+		right = start.LeftOf(end) && start.Y == end.Y
+		left  = start.RightOf(end) && start.Y == end.Y
+		down  = start.Above(end) && start.X == end.X
+		up    = start.Below(end) && start.X == end.X
 	)
-
 	switch {
 	case right: // most frequent arrow on top
 	case left:
@@ -67,28 +64,31 @@ func (arrow *Arrow) angle() int {
 	case up:
 		return -90
 	case q1:
-		a := float64(y2 - y1)
-		b := float64(x2 - x1)
-		A := math.Asin(math.Abs(a) / math.Abs(b))
-		return int(A * 180 / math.Pi)
+		a := float64(end.Y - start.Y)
+		b := float64(end.X - start.X)
+		A := math.Atan(a / b)
+		return radians2degrees(A)
 	case q2:
-		a := float64(y2 - y1)
-		b := float64(x1 - x2)
-		A := math.Asin(math.Abs(b) / math.Abs(a))
-		return int(A*180/math.Pi) + 90
+		a := float64(end.Y - start.Y)
+		b := float64(start.X - end.X)
+		A := math.Atan(a / b)
+		return 180 - radians2degrees(A)
 	case q3:
-		a := float64(y1 - y2)
-		b := float64(x1 - x2)
-		A := math.Asin(math.Abs(a) / math.Abs(b))
-		return int(A*180/math.Pi) + 180
+		a := float64(start.Y - end.Y)
+		b := float64(start.X - end.X)
+		A := math.Atan(a / b)
+		return radians2degrees(A) + 180
 	case q4:
-		a := float64(y1 - y2)
-		b := float64(x2 - x1)
-		A := math.Asin(math.Abs(a) / math.Abs(b))
-		return -int(A * 180 / math.Pi)
+		a := float64(start.Y - end.Y)
+		b := float64(end.X - start.X)
+		A := math.Atan(a / b)
+		return -radians2degrees(A)
 	}
-
 	return 0
+}
+
+func radians2degrees(A float64) int {
+	return int(A * 180 / math.Pi)
 }
 
 func (arrow *Arrow) Height() int {
