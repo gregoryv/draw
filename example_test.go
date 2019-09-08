@@ -51,12 +51,29 @@ func ExampleDiagram() {
 		record     = shape.NewStructRecord(shape.Record{})
 		adjuster   = shape.NewStructRecord(shape.Adjuster{})
 		shapeI     = shape.NewInterfaceRecord((*shape.Shape)(nil))
+		y          = 400
+		q1arrow    = shape.NewArrow(230, y, 280, y-10)
+		q2arrow    = shape.NewArrow(230, y, 200, y-10)
+		q3arrow    = shape.NewArrow(230, y, 180, y+20)
+		q4arrow    = shape.NewArrow(230, y, 270, y+20)
+		rightarrow = shape.NewArrow(230, y, 320, y)
+		leftarrow  = shape.NewArrow(230, y, 180, y)
+		uparrow    = shape.NewArrow(230, y, 230, y-40)
+		downarrow  = shape.NewArrow(230, y, 230, y+40)
 	)
 
 	diagram.Place(diagramRec).At(10, 30)
 	diagram.Place(record).RightOf(diagramRec)
 	diagram.Place(adjuster).RightOf(record)
 	diagram.Place(shapeI).Below(adjuster)
+
+	for _, arrow := range []*shape.Arrow{
+		q1arrow, q2arrow, q3arrow, q4arrow,
+		rightarrow, leftarrow,
+		uparrow, downarrow,
+	} {
+		diagram.Place(arrow)
+	}
 
 	diagram.HAlignTop(diagramRec, record, adjuster)
 	diagram.HAlignCenter(record, diagramRec)

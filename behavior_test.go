@@ -18,6 +18,6 @@ func Test_one_arrow(t *testing.T) {
 	it := new_one_arrow(t)
 	// when
 	it.starts_at_visible_position_N()
-	it.ends_above_and_to_the_right_of_N()
-	it.points_up_and_to_the_right()
+	it.ends_above_and_right_of_N()
+	it.points_up_and_right()
 }
