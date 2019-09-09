@@ -1,11 +1,31 @@
-package design
+package shape
 
 import (
 	"os"
 	"testing"
 
-	"github.com/gregoryv/go-design/shape"
+	"github.com/gregoryv/go-design/style"
 )
+
+func Test_one_arrow(t *testing.T) {
+	it := new_one_arrow(t)
+	// when
+	it.starts_at_visible_position_N()
+	it.ends_above_and_right_of_N()
+	it.points_up_and_right()
+
+	// when
+	it.ends_above_and_left_of_N()
+	it.points_up_and_left()
+
+	// when
+	it.ends_below_and_left_of_N()
+	it.points_down_and_left()
+
+	// when
+	it.ends_below_and_right_of_N()
+	it.points_down_and_right()
+}
 
 func new_one_arrow(t *testing.T) *one_arrow {
 	return &one_arrow{
@@ -15,7 +35,7 @@ func new_one_arrow(t *testing.T) *one_arrow {
 
 type one_arrow struct {
 	*testing.T
-	shape.Arrow
+	Arrow
 }
 
 func (t *one_arrow) starts_at_visible_position_N() {
@@ -61,16 +81,14 @@ func (t *one_arrow) points_down_and_right() {
 
 func (t *one_arrow) saveAs(filename string) {
 	t.Helper()
-	d := NewDiagram()
-	d.SetWidth(100)
-	d.SetHeight(100)
-	d.Place(&t.Arrow)
+	d := &Svg{Width: 100, Height: 100}
+	d.Append(&t.Arrow)
 
 	fh, err := os.Create(filename)
 	if err != nil {
 		t.Error(err)
 		return
 	}
-	d.WriteSvg(NewStyler(fh))
+	d.WriteSvg(style.NewStyler(fh))
 	fh.Close()
 }

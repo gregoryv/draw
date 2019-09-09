@@ -13,23 +13,3 @@ func Test_one_sequence_diagram(t *testing.T) {
 	it.has_fixed_size()
 	it.is_rendered_with_fixed_size()
 }
-
-func Test_one_arrow(t *testing.T) {
-	it := new_one_arrow(t)
-	// when
-	it.starts_at_visible_position_N()
-	it.ends_above_and_right_of_N()
-	it.points_up_and_right()
-
-	// when
-	it.ends_above_and_left_of_N()
-	it.points_up_and_left()
-
-	// when
-	it.ends_below_and_left_of_N()
-	it.points_down_and_left()
-
-	// when
-	it.ends_below_and_right_of_N()
-	it.points_down_and_right()
-}

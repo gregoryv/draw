@@ -1,4 +1,4 @@
-package design
+package style
 
 import (
 	"bytes"

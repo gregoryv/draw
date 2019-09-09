@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/gregoryv/go-design/shape"
+	"github.com/gregoryv/go-design/style"
 )
 
 func BenchmarkWriteSvg(b *testing.B) {
@@ -13,7 +14,7 @@ func BenchmarkWriteSvg(b *testing.B) {
 			&shape.Record{},
 		},
 	}
-	styler := &Styler{dest: ioutil.Discard}
+	styler := style.NewStyler(ioutil.Discard)
 	for i := 0; i < b.N; i++ {
 		diagram.WriteSvg(styler)
 	}
