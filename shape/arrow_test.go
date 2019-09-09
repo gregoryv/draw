@@ -25,6 +25,10 @@ func Test_one_arrow(t *testing.T) {
 	// when
 	it.ends_below_and_right_of_N()
 	it.points_down_and_right()
+
+	// when
+	it.has_a_tail()
+	it.has_both_tail_and_head()
 }
 
 func new_one_arrow(t *testing.T) *one_arrow {
@@ -77,6 +81,14 @@ func (t *one_arrow) points_down_and_left() {
 
 func (t *one_arrow) points_down_and_right() {
 	t.saveAs("img/arrow_points_down_and_right.svg")
+}
+
+func (t *one_arrow) has_a_tail() {
+	t.Tail = true
+}
+
+func (t *one_arrow) has_both_tail_and_head() {
+	t.saveAs("img/arrow_with_tail_and_head.svg")
 }
 
 func (t *one_arrow) saveAs(filename string) {
