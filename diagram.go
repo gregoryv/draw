@@ -18,8 +18,6 @@ type Diagram struct {
 	shape.Svg
 	shape.Aligner
 
-	width, height int
-
 	Font    shape.Font
 	TextPad shape.Padding
 	Pad     shape.Padding
@@ -75,5 +73,5 @@ func (diagram *Diagram) AdaptSize() {
 	diagram.Height = height
 }
 
-func (d *Diagram) SetHeight(h int) { d.height = h }
-func (d *Diagram) SetWidth(w int)  { d.width = w }
+func (d *Diagram) SetHeight(h int) { d.Height = h }
+func (d *Diagram) SetWidth(w int)  { d.Width = w }

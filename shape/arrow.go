@@ -3,11 +3,20 @@ package shape
 import (
 	"io"
 	"math"
+
+	"github.com/gregoryv/go-design/xy"
 )
 
+func NewArrow(x1, y1, x2, y2 int) *Arrow {
+	return &Arrow{
+		Start: xy.Position{x1, y1},
+		End:   xy.Position{x2, y2},
+	}
+}
+
 type Arrow struct {
-	X1, Y1 int
-	X2, Y2 int
+	Start xy.Position
+	End   xy.Position
 
 	Tail  bool
 	Class string
@@ -15,8 +24,8 @@ type Arrow struct {
 
 func (arrow *Arrow) WriteSvg(out io.Writer) error {
 	w, err := newTagPrinter(out)
-	x1, y1 := arrow.start()
-	x2, y2 := arrow.end()
+	x1, y1 := arrow.Start.XY()
+	x2, y2 := arrow.End.XY()
 	w.printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class(), x1, y1, x2, y2)
 	w.print("\n")
 	if arrow.Tail {
@@ -24,27 +33,28 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 		w.print("\n")
 	}
 	w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
+	// the path is drawn as if it points straight to the right
 	w.printf(`<path class="%s-head" d="M%v,%v l-8,-4 l 0,8 Z" />`, arrow.class(), x2, y2)
 	w.print("</g>\n")
 	return *err
 }
 
 func (arrow *Arrow) angle() int {
-	x1, y1 := arrow.start()
-	x2, y2 := arrow.end()
+	start := arrow.Start
+	end := arrow.End
 
 	var (
-		q1 = y1 < y2 && x1 < x2
-		q2 = y1 < y2 && x1 > x2
-		q3 = y1 > y2 && x1 > x2
-		q4 = y1 > y2 && x1 < x2
+		// quadrandts start at bottom right and are counted clockwise
+		q1 = start.LeftOf(end) && end.Below(start)
+		q2 = start.RightOf(end) && end.Below(start)
+		q3 = start.RightOf(end) && end.Above(start)
+		q4 = start.LeftOf(end) && end.Above(start)
 		// straight arrows
-		right = x1 < x2 && y1 == y2
-		left  = x1 > x2 && y1 == y2
-		down  = x1 == x2 && y1 < y2
-		up    = x1 == x2 && y1 > y2
+		right = start.LeftOf(end) && start.Y == end.Y
+		left  = start.RightOf(end) && start.Y == end.Y
+		down  = start.Above(end) && start.X == end.X
+		up    = start.Below(end) && start.X == end.X
 	)
-
 	switch {
 	case right: // most frequent arrow on top
 	case left:
@@ -54,59 +64,59 @@ func (arrow *Arrow) angle() int {
 	case up:
 		return -90
 	case q1:
-		a := float64(y2 - y1)
-		b := float64(x2 - x1)
-		A := math.Asin(math.Abs(a) / math.Abs(b))
-		return int(A * 180 / math.Pi)
+		a := float64(end.Y - start.Y)
+		b := float64(end.X - start.X)
+		A := math.Atan(a / b)
+		return radians2degrees(A)
 	case q2:
-		a := float64(y2 - y1)
-		b := float64(x1 - x2)
-		A := math.Asin(math.Abs(b) / math.Abs(a))
-		return int(A*180/math.Pi) + 90
+		a := float64(end.Y - start.Y)
+		b := float64(start.X - end.X)
+		A := math.Atan(a / b)
+		return 180 - radians2degrees(A)
 	case q3:
-		a := float64(y1 - y2)
-		b := float64(x1 - x2)
-		A := math.Asin(math.Abs(a) / math.Abs(b))
-		return int(A*180/math.Pi) + 180
+		a := float64(start.Y - end.Y)
+		b := float64(start.X - end.X)
+		A := math.Atan(a / b)
+		return radians2degrees(A) + 180
 	case q4:
-		a := float64(y1 - y2)
-		b := float64(x2 - x1)
-		A := math.Asin(math.Abs(a) / math.Abs(b))
-		return -int(A * 180 / math.Pi)
+		a := float64(start.Y - end.Y)
+		b := float64(end.X - start.X)
+		A := math.Atan(a / b)
+		return -radians2degrees(A)
 	}
-
 	return 0
 }
 
-func (arrow *Arrow) start() (int, int) { return arrow.X1, arrow.Y1 }
-func (arrow *Arrow) end() (int, int)   { return arrow.X2, arrow.Y2 }
+func radians2degrees(A float64) int {
+	return int(A * 180 / math.Pi)
+}
 
 func (arrow *Arrow) Height() int {
-	return intAbs(arrow.Y1 - arrow.Y2)
+	return intAbs(arrow.Start.Y - arrow.End.Y)
 }
 
 func (arrow *Arrow) Width() int {
-	return intAbs(arrow.X1 - arrow.X2)
+	return intAbs(arrow.Start.X - arrow.End.X)
 }
 
 func (arrow *Arrow) Position() (int, int) {
-	return arrow.X1, arrow.Y1
+	return arrow.Start.XY()
 }
 
 func (arrow *Arrow) SetX(x int) {
-	diff := arrow.X1 - x
-	arrow.X1 = x
-	arrow.X2 = arrow.X2 - diff // Set X2 so the entire arrow moves
+	diff := arrow.Start.X - x
+	arrow.Start.X = x
+	arrow.End.X = arrow.End.X - diff // Set X2 so the entire arrow moves
 }
 
 func (arrow *Arrow) SetY(y int) {
-	diff := arrow.Y1 - y
-	arrow.Y1 = y
-	arrow.Y2 = arrow.Y2 - diff // Set Y2 so the entire arrow moves
+	diff := arrow.Start.Y - y
+	arrow.Start.Y = y
+	arrow.End.Y = arrow.End.Y - diff // Set Y2 so the entire arrow moves
 }
 
 func (arrow *Arrow) Direction() Direction {
-	if arrow.X1 <= arrow.X2 {
+	if arrow.Start.LeftOf(arrow.End) {
 		return LR
 	}
 	return RL

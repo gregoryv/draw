@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="557" height="333" font-family="Arial, Helvetica, sans-serif">
+  width="557" height="440" font-family="Arial, Helvetica, sans-serif">
 <rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="8" width="167" height="325"/>
 <line class="line" style="stroke:#d3d3d3" x1="10" y1="34" x2="177" y2="34"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="49">Svg</text>
 <text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="64">Aligner</text>
@@ -53,4 +53,28 @@
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="273">SetX()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="288">SetY()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="303">Width()</text>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="204">shape.Shape interface</text></svg>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="204">shape.Shape interface</text>
+<path class="arrow" style="stroke:black" d="M230,400 L280,390" />
+<g transform="rotate(-11 280 390)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M280,390 l-8,-4 l 0,8 Z" /></g>
+
+<path class="arrow" style="stroke:black" d="M230,400 L200,390" />
+<g transform="rotate(198 200 390)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M200,390 l-8,-4 l 0,8 Z" /></g>
+
+<path class="arrow" style="stroke:black" d="M230,400 L180,420" />
+<g transform="rotate(159 180 420)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M180,420 l-8,-4 l 0,8 Z" /></g>
+
+<path class="arrow" style="stroke:black" d="M230,400 L270,420" />
+<g transform="rotate(26 270 420)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M270,420 l-8,-4 l 0,8 Z" /></g>
+
+<path class="arrow" style="stroke:black" d="M230,400 L320,400" />
+<g transform="rotate(0 320 400)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M320,400 l-8,-4 l 0,8 Z" /></g>
+
+<path class="arrow" style="stroke:black" d="M230,400 L180,400" />
+<g transform="rotate(180 180 400)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M180,400 l-8,-4 l 0,8 Z" /></g>
+
+<path class="arrow" style="stroke:black" d="M230,400 L230,360" />
+<g transform="rotate(-90 230 360)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M230,360 l-8,-4 l 0,8 Z" /></g>
+
+<path class="arrow" style="stroke:black" d="M230,400 L230,440" />
+<g transform="rotate(90 230 440)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M230,440 l-8,-4 l 0,8 Z" /></g>
+</svg>

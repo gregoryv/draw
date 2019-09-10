@@ -76,18 +76,18 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			}
 			dia.HAlignCenter(l2, label)
 			label.X += l1.Width() + dia.TextPad.Left
-			arrow.X1 = l2.X2
-			arrow.Y1 = l2.Y2
-			arrow.X2 = l1.X1
-			arrow.Y2 = l2.Y2
+			arrow.Start.X = l2.X2
+			arrow.Start.Y = l2.Y2
+			arrow.End.X = l1.X1
+			arrow.End.Y = l2.Y2
 			arrow.Class = lnk.class()
 			svg.Content = append(svg.Content, l1, l2, arrow, label)
 			y += dia.selfHeight()
 		} else {
-			arrow.X1 = fromX
-			arrow.Y1 = y
-			arrow.X2 = toX
-			arrow.Y2 = y
+			arrow.Start.X = fromX
+			arrow.Start.Y = y
+			arrow.End.X = toX
+			arrow.End.Y = y
 			dia.VAlignCenter(arrow, label)
 			svg.Content = append(svg.Content, arrow, label)
 			y += dia.plainHeight()
@@ -98,16 +98,16 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 
 // Width returns the total width of the diagram
 func (dia *SequenceDiagram) Width() int {
-	if dia.width != 0 {
-		return dia.width
+	if dia.Svg.Width != 0 {
+		return dia.Svg.Width
 	}
 	return len(dia.columns) * dia.ColWidth
 }
 
 // Height returns the total height of the diagram
 func (dia *SequenceDiagram) Height() int {
-	if dia.height != 0 {
-		return dia.height
+	if dia.Svg.Height != 0 {
+		return dia.Svg.Height
 	}
 	if len(dia.columns) == 0 {
 		return 0

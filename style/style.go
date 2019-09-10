@@ -1,4 +1,4 @@
-package design
+package style
 
 import (
 	"bytes"
@@ -61,6 +61,9 @@ func (styler *Styler) Write(s []byte) (int, error) {
 		write([]byte(`" `))
 	}
 	afterClass := i + len(field) + len(class) + 2
+	if afterClass > len(s) {
+		panic("bad svg format")
+	}
 	write(s[afterClass:]) // the rest
 	return styler.written, styler.err
 }
