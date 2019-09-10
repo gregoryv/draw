@@ -48,9 +48,6 @@ func (rec *Record) addMethods(t reflect.Type) {
 }
 
 func isPublic(name string) bool {
-	if len(name) == 0 {
-		panic("Name must not be empty")
-	}
 	up := bytes.ToUpper([]byte(name))
 	return []byte(name)[0] == up[0]
 }
