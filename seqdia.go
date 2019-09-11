@@ -45,7 +45,9 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		if firstColumn {
 			x += label.Width() / 2
 		}
-		lines[i] = &shape.Line{Class: "column-line", X1: x, Y1: y1, X2: x, Y2: y2}
+		line := shape.NewLine(x, y1, x, y2)
+		line.Class = "column-line"
+		lines[i] = line
 		x += colWidth
 
 		dia.VAlignCenter(lines[i], label)
@@ -54,8 +56,8 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 
 	y := y1 + dia.plainHeight()
 	for _, lnk := range dia.links {
-		fromX := lines[lnk.fromIndex].X1
-		toX := lines[lnk.toIndex].X1
+		fromX := lines[lnk.fromIndex].Start.X
+		toX := lines[lnk.toIndex].Start.X
 		label := &shape.Label{
 			X:    fromX,
 			Y:    y - 2,
@@ -67,19 +69,16 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		if lnk.toSelf() {
 			margin := 15
 			// add two lines + arrow
-			l1 := &shape.Line{Class: lnk.class(), X1: fromX, Y1: y, X2: fromX + margin, Y2: y}
-			l2 := &shape.Line{Class: lnk.class(),
-				X1: fromX + margin,
-				Y1: y,
-				X2: fromX + margin,
-				Y2: y + dia.Font.LineHeight*2,
-			}
+			l1 := shape.NewLine(fromX, y, fromX+margin, y)
+			l1.Class = lnk.class()
+			l2 := shape.NewLine(fromX+margin, y, fromX+margin, y+dia.Font.LineHeight*2)
+			l2.Class = lnk.class()
 			dia.HAlignCenter(l2, label)
 			label.X += l1.Width() + dia.TextPad.Left
-			arrow.Start.X = l2.X2
-			arrow.Start.Y = l2.Y2
-			arrow.End.X = l1.X1
-			arrow.End.Y = l2.Y2
+			arrow.Start.X = l2.End.X
+			arrow.Start.Y = l2.End.Y
+			arrow.End.X = l1.Start.X
+			arrow.End.Y = l2.End.Y
 			arrow.Class = lnk.class()
 			svg.Content = append(svg.Content, l1, l2, arrow, label)
 			y += dia.selfHeight()

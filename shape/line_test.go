@@ -11,10 +11,15 @@ func Test_one_line(t *testing.T) {
 	it := &one_line{t, NewLine(1, 1, 7, 7)}
 	it.can_be_rendered_as_svg()
 	it.s_directed_right()
-
+	// when
 	it = &one_line{t, NewLine(8, 8, 0, 0)}
 	it.s_directed_left()
 	it.can_move()
+	// when
+	line := NewLine(0, 0, 0, 0)
+	line.Class = "special"
+	it = &one_line{t, line}
+	it.can_be_rendered_as_svg()
 }
 
 type one_line struct {
