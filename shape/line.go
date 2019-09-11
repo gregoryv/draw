@@ -3,11 +3,20 @@ package shape
 import (
 	"fmt"
 	"io"
+
+	"github.com/gregoryv/go-design/xy"
 )
 
+func NewLine(x1, y1 int, x2, y2 int) *Line {
+	return &Line{
+		Start: xy.Position{x1, y1},
+		End:   xy.Position{x2, y2},
+	}
+}
+
 type Line struct {
-	X1, Y1 int
-	X2, Y2 int
+	Start xy.Position
+	End   xy.Position
 
 	Class string
 }
@@ -15,7 +24,9 @@ type Line struct {
 func (line *Line) WriteSvg(w io.Writer) error {
 	_, err := fmt.Fprintf(w,
 		`<line class="%s" x1="%v" y1="%v" x2="%v" y2="%v"/>`,
-		line.class(), line.X1, line.Y1, line.X2, line.Y2,
+		line.class(),
+		line.Start.X, line.Start.Y,
+		line.End.X, line.End.Y,
 	)
 	return err
 }
@@ -28,31 +39,31 @@ func (line *Line) class() string {
 }
 
 func (line *Line) Height() int {
-	return intAbs(line.Y1 - line.Y2)
+	return intAbs(line.Start.Y - line.End.Y)
 }
 
 func (line *Line) Width() int {
-	return intAbs(line.X1 - line.X2)
+	return intAbs(line.Start.X - line.End.X)
 }
 
 func (line *Line) Position() (int, int) {
-	return line.X1, line.Y1
+	return line.Start.X, line.Start.Y
 }
 
 func (line *Line) SetX(x int) {
-	diff := line.X1 - x
-	line.X1 = x
-	line.X2 = line.X2 - diff // Set X2 so the entire arrow moves
+	diff := line.Start.X - x
+	line.Start.X = x
+	line.End.X = line.End.X - diff
 }
 
 func (line *Line) SetY(y int) {
-	diff := line.Y1 - y
-	line.Y1 = y
-	line.Y2 = line.Y2 - diff // Set Y2 so the entire arrow moves
+	diff := line.Start.Y - y
+	line.Start.Y = y
+	line.End.Y = line.End.Y - diff // Set Y2 so the entire arrow moves
 }
 
 func (line *Line) Direction() Direction {
-	if line.X1 <= line.X2 {
+	if line.Start.X <= line.End.X {
 		return LR
 	}
 	return RL

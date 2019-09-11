@@ -26,34 +26,31 @@ func TestAlignHorizontal(t *testing.T) {
 		},
 		{
 			Center,
-			&Line{X1: 0, Y1: 10, X2: 0, Y2: 20},
-			&Line{X1: 0, Y1: 20, X2: 0, Y2: 30},
+			NewLine(0, 10, 0, 20),
+			NewLine(0, 20, 0, 30),
 			0, 10,
 		},
 		{
 			Center,
-			&Line{X1: 0, Y1: 20, X2: 0, Y2: 30},
-			&Line{X1: 0, Y1: 10, X2: 0, Y2: 20},
+			NewLine(0, 20, 0, 30),
+			NewLine(0, 10, 0, 20),
 			0, 20,
 		},
 		{ // first line is shorter
 			Center,
-			&Line{X1: 0, Y1: 10, X2: 0, Y2: 15},
-			&Line{X1: 0, Y1: 10, X2: 0, Y2: 20},
+			NewLine(0, 10, 0, 15),
+			NewLine(0, 10, 0, 20),
 			0, 8,
 		},
 		{ // second line is shorter
 			Center,
-			&Line{X1: 0, Y1: 10, X2: 0, Y2: 20},
-			&Line{X1: 0, Y1: 10, X2: 0, Y2: 15},
+			NewLine(0, 10, 0, 20),
+			NewLine(0, 10, 0, 15),
 			0, 12,
 		},
 		{
 			Center,
-			&Line{
-				X1: 0, Y1: 10,
-				X2: 0, Y2: 20,
-			},
+			NewLine(0, 10, 0, 20),
 			&Label{
 				X: 0, Y: 20, Font: Font{Height: 10},
 			},

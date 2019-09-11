@@ -4,6 +4,8 @@ import (
 	"bytes"
 	"io"
 	"reflect"
+
+	"github.com/gregoryv/go-design/xy"
 )
 
 func NewRecord(title string) *Record {
@@ -108,10 +110,8 @@ func (record *Record) WriteSvg(out io.Writer) error {
 func (record *Record) writeSeparator(w io.Writer, y1 int) error {
 	//	y1 := record.Y + boxHeight(record.Font, record.Pad, 1)
 	line := &Line{
-		X1: record.X,
-		Y1: y1,
-		X2: record.X + record.Width(),
-		Y2: y1,
+		Start: xy.Position{record.X, y1},
+		End:   xy.Position{record.X + record.Width(), y1},
 	}
 	return line.WriteSvg(w)
 }
