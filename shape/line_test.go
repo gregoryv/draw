@@ -15,6 +15,7 @@ func Test_one_line(t *testing.T) {
 	it = &one_line{t, NewLine(8, 8, 0, 0)}
 	it.s_directed_left()
 	it.can_move()
+	it.has_width()
 	// when
 	line := NewLine(0, 0, 0, 0)
 	line.Class = "special"
@@ -59,4 +60,10 @@ func (t *one_line) can_move() {
 	assert := asserter.New(t)
 	assert(!t.Start.Equals(s)).Errorf("start position same")
 	assert(!t.End.Equals(e)).Errorf("end position same")
+}
+
+func (t *one_line) has_width() {
+	t.Helper()
+	assert := asserter.New(t)
+	assert(t.Width() > 0).Error("0 width")
 }
