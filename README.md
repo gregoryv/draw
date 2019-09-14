@@ -13,7 +13,7 @@ purposes.
 
 WIP - major refactorings still going on
 
-## Example classdiagram
+## Class diagram
 
 This diagram is rendered by
 [example_test.go/ExampleClassDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-ClassDiagram)
@@ -21,17 +21,16 @@ This diagram is rendered by
 ![](img/class_example.svg)
 
 
-## Example mixed shapes
+## Sequence diagram
+
+From [example_test.go/ExampleSequenceDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-SequenceDiagram)
+
+![](img/sequence_example.svg)
+
+## Generic diagram
 
 It should be easy to just add any extra shapes to any diagram when explaining a design.
 This diagram is rendered by
 [example_test.go/ExampleDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-Diagram)
 
 ![](img/diagram_example.svg)
-
-
-## Example sequence diagram
-
-From [example_test.go/ExampleSequenceDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-SequenceDiagram)
-
-![](img/sequence_example.svg)
