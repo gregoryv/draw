@@ -39,16 +39,15 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 	return *err
 }
 
+// angle returns degrees the head of an arrow should rotate depending
+// on direction
 func (arrow *Arrow) angle() int {
 	start := arrow.Start
 	end := arrow.End
 
 	var (
 		// quadrandts start at bottom right and are counted clockwise
-		q1 = start.LeftOf(end) && end.Below(start)
-		q2 = start.RightOf(end) && end.Below(start)
-		q3 = start.RightOf(end) && end.Above(start)
-		q4 = start.LeftOf(end) && end.Above(start)
+
 		// straight arrows
 		right = start.LeftOf(end) && start.Y == end.Y
 		left  = start.RightOf(end) && start.Y == end.Y
@@ -63,28 +62,60 @@ func (arrow *Arrow) angle() int {
 		return 90
 	case up:
 		return -90
-	case q1:
+	case arrow.DirQ1():
 		a := float64(end.Y - start.Y)
 		b := float64(end.X - start.X)
 		A := math.Atan(a / b)
 		return radians2degrees(A)
-	case q2:
+	case arrow.DirQ2():
 		a := float64(end.Y - start.Y)
 		b := float64(start.X - end.X)
 		A := math.Atan(a / b)
 		return 180 - radians2degrees(A)
-	case q3:
+	case arrow.DirQ3():
 		a := float64(start.Y - end.Y)
 		b := float64(start.X - end.X)
 		A := math.Atan(a / b)
 		return radians2degrees(A) + 180
-	case q4:
+	case arrow.DirQ4():
 		a := float64(start.Y - end.Y)
 		b := float64(end.X - start.X)
 		A := math.Atan(a / b)
 		return -radians2degrees(A)
 	}
 	return 0
+}
+
+// DirQ1 returns true if the arrow points to the bottom-right
+// quadrant.
+func (a *Arrow) DirQ1() bool {
+	start, end := a.endpoints()
+	return start.LeftOf(end) && end.Below(start)
+}
+
+// DirQ2 returns true if the arrow points to the bottom-left
+// quadrant.
+func (a *Arrow) DirQ2() bool {
+	start, end := a.endpoints()
+	return start.RightOf(end) && end.Below(start)
+}
+
+// DirQ3 returns true if the arrow points to the top-left
+// quadrant.
+func (a *Arrow) DirQ3() bool {
+	start, end := a.endpoints()
+	return start.RightOf(end) && end.Above(start)
+}
+
+// DirQ4 returns true if the arrow points to the top-right
+// quadrant.
+func (a *Arrow) DirQ4() bool {
+	start, end := a.endpoints()
+	return start.LeftOf(end) && end.Above(start)
+}
+
+func (arrow *Arrow) endpoints() (xy.Position, xy.Position) {
+	return arrow.Start, arrow.End
 }
 
 func radians2degrees(A float64) int {

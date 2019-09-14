@@ -29,13 +29,19 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 		for _, iface := range d.Interfaces {
 			if reflect.PtrTo(struct_.t).Implements(iface.t) {
 				// todo arrow is hidden by destination, calculate edge x,y
-				line := shape.NewArrow(
+				arrow := shape.NewArrow(
 					struct_.X+struct_.Width()/2,
 					struct_.Y+struct_.Height()/2,
 					iface.X+iface.Width()/2,
 					iface.Y+iface.Height()/2,
 				)
-				rel = append(rel, line)
+				switch {
+				case arrow.DirQ1(), arrow.DirQ4():
+					arrow.End.X -= iface.Width() / 2
+				case arrow.DirQ2(), arrow.DirQ3():
+					arrow.End.X += iface.Width() / 2
+				}
+				rel = append(rel, arrow)
 				// todo, add implements label
 			}
 		}
@@ -43,16 +49,6 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 	}
 	d.Diagram.Prepend(rel...)
 	return d.Diagram.WriteSvg(w)
-}
-
-// should it return absolute? should direction be part of it
-func dxdy(from, to shape.Shape) (int, int) {
-	fx, fy := from.Position()
-	tx, ty := to.Position()
-	dx := fx - tx
-	dy := fy - ty
-	// todo
-	return dx, dy
 }
 
 func (d *ClassDiagram) Place(vr VRecord) *shape.Adjuster {

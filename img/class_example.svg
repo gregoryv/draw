@@ -1,18 +1,18 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="840" height="418" font-family="Arial, Helvetica, sans-serif">
-<path class="arrow" style="stroke:black" d="M96,160 L346,81" />
-<g transform="rotate(-17 346 81)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M346,81 l-8,-4 l 0,8 Z" /></g>
+  width="757" height="418" font-family="Arial, Helvetica, sans-serif">
+<path class="arrow" style="stroke:black" d="M96,160 L263,81" />
+<g transform="rotate(-25 263 81)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M263,81 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M96,160 L347,262" />
-<g transform="rotate(22 347 262)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M347,262 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M96,160 L232,262" />
+<g transform="rotate(36 232 262)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M232,262 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M593,228 L346,81" />
-<g transform="rotate(210 346 81)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M346,81 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M593,198 L429,81" />
+<g transform="rotate(215 429 81)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M429,81 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M593,228 L347,262" />
-<g transform="rotate(173 347 262)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M347,262 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M593,198 L462,262" />
+<g transform="rotate(154 462 262)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M462,262 l-8,-4 l 0,8 Z" /></g>
 
 <rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="20" width="153" height="280"/>
 <line class="line" style="stroke:#d3d3d3" x1="20" y1="46" x2="173" y2="46"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="61">X</text>
@@ -40,19 +40,23 @@
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="273" y="121">SetY()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="273" y="136">Width()</text>
 <text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="273" y="37">shape.Shape interface</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="520" y="126" width="146" height="205"/>
-<line class="line" style="stroke:#d3d3d3" x1="520" y1="152" x2="666" y2="152"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="167">Start</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="182">End</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="197">Tail</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="212">Class</text>
-<line class="line" style="stroke:#d3d3d3" x1="520" y1="219" x2="666" y2="219"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="234">Direction()</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="520" y="66" width="146" height="265"/>
+<line class="line" style="stroke:#d3d3d3" x1="520" y1="92" x2="666" y2="92"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="107">Start</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="122">End</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="137">Tail</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="152">Class</text>
+<line class="line" style="stroke:#d3d3d3" x1="520" y1="159" x2="666" y2="159"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="174">DirQ1()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="189">DirQ2()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="204">DirQ3()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="219">DirQ4()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="234">Direction()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="249">Height()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="264">Position()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="279">SetX()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="294">SetY()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="309">Width()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="324">WriteSvg()</text>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="143">shape.Arrow struct</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="530" y="83">shape.Arrow struct</text>
 <rect class="record" style="fill:#ffffcc;stroke:black" x="232" y="193" width="230" height="138"/>
 <line class="line" style="stroke:#d3d3d3" x1="232" y1="219" x2="462" y2="219"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="242" y="234">Direction()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="242" y="249">Height()</text>
