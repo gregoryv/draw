@@ -1,3 +1,4 @@
+// Package shape provides various SVG shapes
 package shape
 
 import (

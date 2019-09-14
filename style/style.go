@@ -1,3 +1,4 @@
+// Package style provides svg class base styles for design diagrams
 package style
 
 import (
@@ -36,8 +37,8 @@ var DefaultStyle = map[string]string{
 	"record-label":   "font-family:Arial,Helvetica,sans-serif; font-size:12px",
 }
 
-// Write adds a style attribute based on class.
-// Limited to 1 class only
+// Write adds a style attribute based on class. Limited to 1 class
+// only and assumes the entire classname attribute is found.
 func (styler *Styler) Write(s []byte) (int, error) {
 	field := []byte(`class="`)
 	i := bytes.Index(s, field)

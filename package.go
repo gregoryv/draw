@@ -1,3 +1,4 @@
+// Package go-design provides svg diagram creators
 package design
 
 import (

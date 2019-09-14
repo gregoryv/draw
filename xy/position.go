@@ -1,3 +1,4 @@
+// Package xy provides xy Position
 package xy
 
 import "fmt"
