@@ -2,29 +2,29 @@ package shape
 
 import "testing"
 
-func TestSvg(t *testing.T) {
-	it := &one_svg{t, &Svg{}}
+func TestOneSvg(t *testing.T) {
+	it := &OneSvg{t, &Svg{}}
 	// when
-	it.is_empty()
-	it.appends_shape_as_first_element_in_content()
+	it.IsEmpty()
+	it.AppendsShapeAsFirstElementInContent()
 	// after which
-	it.appends_shapes_last_to_content()
-	it.prepends_shape_first_to_content()
+	it.AppendsShapesLastToContent()
+	it.PrependsShapeFirstToContent()
 }
 
-type one_svg struct {
+type OneSvg struct {
 	*testing.T
 	*Svg
 }
 
-func (t *one_svg) is_empty() {
+func (t *OneSvg) IsEmpty() {
 	t.Helper()
 	if len(t.Content) != 0 {
 		t.Error("Not empty")
 	}
 }
 
-func (t *one_svg) appends_shape_as_first_element_in_content() {
+func (t *OneSvg) AppendsShapeAsFirstElementInContent() {
 	t.Helper()
 	shape := &Arrow{}
 	t.Append(shape)
@@ -33,7 +33,7 @@ func (t *one_svg) appends_shape_as_first_element_in_content() {
 	}
 }
 
-func (t *one_svg) appends_shapes_last_to_content() {
+func (t *OneSvg) AppendsShapesLastToContent() {
 	t.Helper()
 	shape := &Arrow{}
 	t.Append(shape)
@@ -42,7 +42,7 @@ func (t *one_svg) appends_shapes_last_to_content() {
 	}
 }
 
-func (t *one_svg) prepends_shape_first_to_content() {
+func (t *OneSvg) PrependsShapeFirstToContent() {
 	t.Helper()
 	shape := &Arrow{}
 	t.Prepend(shape)

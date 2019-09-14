@@ -6,7 +6,7 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
-func Test_Adjuster_At(t *testing.T) {
+func TestAdjusterAt(t *testing.T) {
 	it := new_one_adjuster(t)
 
 	it.has_default_spacing()

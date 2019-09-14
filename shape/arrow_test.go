@@ -9,53 +9,53 @@ import (
 	"github.com/gregoryv/go-design/style"
 )
 
-func Test_one_arrow(t *testing.T) {
-	it := new_one_arrow(t)
-	it.can_point_up_and_right()
-	it.can_point_up_and_left()
-	it.can_point_down_and_left()
-	it.can_point_down_and_right()
+func TestOneArrow(t *testing.T) {
+	it := NewOneArrow(t)
+	it.CanPointUpAndRight()
+	it.CanPointUpAndLeft()
+	it.CanPointDownAndLeft()
+	it.CanPointDownAndRight()
 	// also
-	it.can_point_right()
-	it.can_point_left()
-	it.can_point_down()
-	it.can_point_up()
+	it.CanPointRight()
+	it.CanPointLeft()
+	it.CanPointDown()
+	it.CanPointUp()
 	// when
-	it.has_a_tail()
-	it.has_both_tail_and_head()
+	it.HasATail()
+	it.HasBothTailAndHead()
 
-	it.can_have_a_specific_class()
-	it.can_move()
-	it.is_visible()
+	it.CanHaveASpecificClass()
+	it.CanMove()
+	it.IsVisible()
 }
 
-func new_one_arrow(t *testing.T) *one_arrow {
-	return &one_arrow{
+func NewOneArrow(t *testing.T) *OneArrow {
+	return &OneArrow{
 		T:      t,
 		assert: asserter.New(t),
 		Arrow:  NewArrow(50, 50, 50, 50),
 	}
 }
 
-type one_arrow struct {
+type OneArrow struct {
 	*testing.T
 	assert
 	*Arrow
 }
 
-func (t *one_arrow) can_point_up_and_right() {
+func (t *OneArrow) CanPointUpAndRight() {
 	t.End.X = t.Start.X + 30
 	t.End.Y = t.Start.Y - 30
 	t.saveAs("testdata/arrow_points_up_and_right.svg")
 }
 
-func (t *one_arrow) can_point_up_and_left() {
+func (t *OneArrow) CanPointUpAndLeft() {
 	t.End.X = t.Start.X - 30
 	t.End.Y = t.Start.Y - 30
 	t.saveAs("testdata/arrow_points_up_and_left.svg")
 }
 
-func (t *one_arrow) can_point_down_and_left() {
+func (t *OneArrow) CanPointDownAndLeft() {
 	t.End.X = t.Start.X - 10
 	t.End.Y = t.Start.Y + 30
 	dir := t.Direction()
@@ -63,7 +63,7 @@ func (t *one_arrow) can_point_down_and_left() {
 	t.saveAs("testdata/arrow_points_down_and_left.svg")
 }
 
-func (t *one_arrow) can_point_down_and_right() {
+func (t *OneArrow) CanPointDownAndRight() {
 	t.End.X = t.Start.X + 20
 	t.End.Y = t.Start.Y + 30
 	dir := t.Direction()
@@ -71,7 +71,7 @@ func (t *one_arrow) can_point_down_and_right() {
 	t.saveAs("testdata/arrow_points_down_and_right.svg")
 }
 
-func (t *one_arrow) can_point_right() {
+func (t *OneArrow) CanPointRight() {
 	t.End.X = t.Start.X + 50
 	t.End.Y = t.Start.Y
 	dir := t.Direction()
@@ -79,7 +79,7 @@ func (t *one_arrow) can_point_right() {
 	t.saveAs("testdata/arrow_points_right.svg")
 }
 
-func (t *one_arrow) can_point_left() {
+func (t *OneArrow) CanPointLeft() {
 	t.End.X = t.Start.X - 40
 	t.End.Y = t.Start.Y
 	dir := t.Direction()
@@ -87,27 +87,27 @@ func (t *one_arrow) can_point_left() {
 	t.saveAs("testdata/arrow_points_left.svg")
 }
 
-func (t *one_arrow) can_point_down() {
+func (t *OneArrow) CanPointDown() {
 	t.End.X = t.Start.X
 	t.End.Y = t.Start.Y + 50
 	t.saveAs("testdata/arrow_points_down.svg")
 }
 
-func (t *one_arrow) can_point_up() {
+func (t *OneArrow) CanPointUp() {
 	t.End.X = t.Start.X
 	t.End.Y = t.Start.Y - 40
 	t.saveAs("testdata/arrow_points_up.svg")
 }
 
-func (t *one_arrow) has_a_tail() {
+func (t *OneArrow) HasATail() {
 	t.Tail = true
 }
 
-func (t *one_arrow) has_both_tail_and_head() {
+func (t *OneArrow) HasBothTailAndHead() {
 	t.saveAs("testdata/arrow_with_tail_and_head.svg")
 }
 
-func (t *one_arrow) saveAs(filename string) {
+func (t *OneArrow) saveAs(filename string) {
 	t.Helper()
 	d := &Svg{Width: 100, Height: 100}
 	d.Append(t.Arrow)
@@ -121,7 +121,7 @@ func (t *one_arrow) saveAs(filename string) {
 	fh.Close()
 }
 
-func (t *one_arrow) can_have_a_specific_class() {
+func (t *OneArrow) CanHaveASpecificClass() {
 	t.Helper()
 	t.Class = "special"
 	buf := &bytes.Buffer{}
@@ -129,7 +129,7 @@ func (t *one_arrow) can_have_a_specific_class() {
 	t.assert().Contains(buf.String(), "special")
 }
 
-func (t *one_arrow) can_move() {
+func (t *OneArrow) CanMove() {
 	t.Helper()
 	x, y := t.Position()
 	t.SetX(x + 1)
@@ -138,7 +138,7 @@ func (t *one_arrow) can_move() {
 	t.assert(y != t.Start.Y).Error("start Y still the same")
 }
 
-func (t *one_arrow) is_visible() {
+func (t *OneArrow) IsVisible() {
 	t.Helper()
 	h := t.Height()
 	w := t.Width()

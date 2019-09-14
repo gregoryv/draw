@@ -7,52 +7,47 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
-func Test_one_line(t *testing.T) {
-	it := &one_line{t, NewLine(1, 1, 7, 7)}
-	it.can_be_rendered_as_svg()
-	it.s_directed_right()
+func TestOneLine(t *testing.T) {
+	it := &OneLine{t, NewLine(1, 1, 7, 7)}
+	it.RendersAsSvg()
+	it.HasDirection()
 	// when
-	it = &one_line{t, NewLine(8, 8, 0, 0)}
-	it.s_directed_left()
-	it.can_move()
-	it.has_width()
+	it = &OneLine{t, NewLine(8, 8, 0, 0)}
+	it.CanMove()
+	it.HasWidth()
 	// when
 	line := NewLine(0, 0, 0, 0)
 	line.Class = "special"
-	it = &one_line{t, line}
-	it.can_be_rendered_as_svg()
+	it = &OneLine{t, line}
+	it.RendersAsSvg()
 }
 
-type one_line struct {
+type OneLine struct {
 	*testing.T
 	*Line
 }
 
-func (t *one_line) can_be_rendered_as_svg() {
-	t.Helper()
+func (t *OneLine) RendersAsSvg() {
+	t.Log("Renders as SVG")
 	buf := &bytes.Buffer{}
 	t.WriteSvg(buf)
 	assert := asserter.New(t)
 	assert().Contains(buf.String(), "<line ")
 }
 
-func (t *one_line) s_directed_right() {
-	t.Helper()
-	dir := t.Direction()
-	if dir != LR {
-		t.Error("not directed right")
-	}
+func (t *OneLine) HasDirection() {
+	t.Log("Has direction")
+	line := NewLine(1, 1, 7, 7)
+	dir := line.Direction()
+	assert := asserter.New(t)
+	assert(dir == LR).Errorf("%v shold have LR was %v", line, dir)
+
+	line = NewLine(8, 8, 0, 0)
+	dir = line.Direction()
+	assert(dir == RL).Errorf("%v shold have RL was %v", line, dir)
 }
 
-func (t *one_line) s_directed_left() {
-	t.Helper()
-	dir := t.Direction()
-	if dir != RL {
-		t.Error("not directed left")
-	}
-}
-
-func (t *one_line) can_move() {
+func (t *OneLine) CanMove() {
 	t.Helper()
 	s, e := t.Start, t.End
 	t.SetX(s.X + 1)
@@ -62,7 +57,7 @@ func (t *one_line) can_move() {
 	assert(!t.End.Equals(e)).Errorf("end position same")
 }
 
-func (t *one_line) has_width() {
+func (t *OneLine) HasWidth() {
 	t.Helper()
 	assert := asserter.New(t)
 	assert(t.Width() > 0).Error("0 width")

@@ -7,27 +7,27 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
-func Test_one_label(t *testing.T) {
-	it := new_one_label(t)
+func TestOneLabel(t *testing.T) {
+	it := NewOneLabel(t)
 	// when
-	it.is_empty()
-	it.can_be_rendered_as_svg()
-	it.has_no_width()
+	it.IsEmpty()
+	it.RendersAsSvg()
+	it.HasNoWidth()
 	// when
-	it.is_not_empty()
-	it.is_styled()
-	it.has_width()
-	it.can_move()
+	it.IsNotEmpty()
+	it.IsStyled()
+	it.HasWidth()
+	it.CanMove()
 }
 
-func new_one_label(t *testing.T) *one_label {
-	return &one_label{
+func NewOneLabel(t *testing.T) *OneLabel {
+	return &OneLabel{
 		T:      t,
 		assert: asserter.New(t),
 	}
 }
 
-type one_label struct {
+type OneLabel struct {
 	*testing.T
 	assert
 	*Label
@@ -35,37 +35,37 @@ type one_label struct {
 
 type assert = asserter.AssertFunc
 
-func (t *one_label) is_empty() {
+func (t *OneLabel) IsEmpty() {
 	t.Label = &Label{}
 }
 
-func (t *one_label) is_not_empty() {
+func (t *OneLabel) IsNotEmpty() {
 	t.Label = &Label{Text: "a label"}
 }
 
-func (t *one_label) can_be_rendered_as_svg() {
+func (t *OneLabel) RendersAsSvg() {
 	t.Helper()
 	buf := &bytes.Buffer{}
 	t.WriteSvg(buf)
 	t.assert().Contains(buf.String(), "<text ")
 }
 
-func (t *one_label) has_no_width() {
+func (t *OneLabel) HasNoWidth() {
 	t.Helper()
 	t.assert(t.Width() == 0).Error("has width")
 }
 
-func (t *one_label) is_styled() {
+func (t *OneLabel) IsStyled() {
 	t.Font = Font{Height: 9, Width: 7, LineHeight: 15}
 	t.Pad = Padding{3, 3, 10, 2}
 }
 
-func (t *one_label) has_width() {
+func (t *OneLabel) HasWidth() {
 	t.Helper()
 	t.assert(t.Width() > 0).Error("0 width")
 }
 
-func (t *one_label) can_move() {
+func (t *OneLabel) CanMove() {
 	t.Helper()
 	x, y := t.Position()
 	t.SetX(x + 1)
