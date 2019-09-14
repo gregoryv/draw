@@ -46,31 +46,27 @@ func (diagram *Diagram) SaveAs(filename string) error {
 }
 
 func (diagram *Diagram) WriteSvg(w io.Writer) error {
-	diagram.AdaptSize()
+	if diagram.Width == 0 && diagram.Height == 0 {
+		diagram.AdaptSize()
+	}
 	return diagram.Svg.WriteSvg(w)
 }
 
 // AdaptSize adapts the diagram size to the shapes inside it so all
-// are visible.
-func (diagram *Diagram) AdaptSize() {
-	width := diagram.Width
-	height := diagram.Height
-	if width > 0 && height > 0 {
-		return
-	}
+// are visible. Returns the new width and height
+func (diagram *Diagram) AdaptSize() (int, int) {
 	for _, s := range diagram.Content {
 		x, y := s.Position()
 		w := x + s.Width()
-		if w > width {
-			width = w
+		if w > diagram.Width {
+			diagram.Width = w
 		}
 		h := y + s.Height()
-		if h > height {
-			height = h
+		if h > diagram.Height {
+			diagram.Height = h
 		}
 	}
-	diagram.Width = width
-	diagram.Height = height
+	return diagram.Width, diagram.Height
 }
 
 func (d *Diagram) SetHeight(h int) { d.Height = h }
