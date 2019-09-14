@@ -46,13 +46,13 @@ type one_arrow struct {
 func (t *one_arrow) can_point_up_and_right() {
 	t.End.X = t.Start.X + 30
 	t.End.Y = t.Start.Y - 30
-	t.saveAs("img/arrow_points_up_and_right.svg")
+	t.saveAs("testdata/arrow_points_up_and_right.svg")
 }
 
 func (t *one_arrow) can_point_up_and_left() {
 	t.End.X = t.Start.X - 30
 	t.End.Y = t.Start.Y - 30
-	t.saveAs("img/arrow_points_up_and_left.svg")
+	t.saveAs("testdata/arrow_points_up_and_left.svg")
 }
 
 func (t *one_arrow) can_point_down_and_left() {
@@ -60,7 +60,7 @@ func (t *one_arrow) can_point_down_and_left() {
 	t.End.Y = t.Start.Y + 30
 	dir := t.Direction()
 	t.assert(dir == RL).Errorf("Direction not right to left: %v", dir)
-	t.saveAs("img/arrow_points_down_and_left.svg")
+	t.saveAs("testdata/arrow_points_down_and_left.svg")
 }
 
 func (t *one_arrow) can_point_down_and_right() {
@@ -68,7 +68,7 @@ func (t *one_arrow) can_point_down_and_right() {
 	t.End.Y = t.Start.Y + 30
 	dir := t.Direction()
 	t.assert(dir == LR).Errorf("Direction not left to right: %v", dir)
-	t.saveAs("img/arrow_points_down_and_right.svg")
+	t.saveAs("testdata/arrow_points_down_and_right.svg")
 }
 
 func (t *one_arrow) can_point_right() {
@@ -76,7 +76,7 @@ func (t *one_arrow) can_point_right() {
 	t.End.Y = t.Start.Y
 	dir := t.Direction()
 	t.assert(dir == LR).Errorf("Direction not left to right: %v", dir)
-	t.saveAs("img/arrow_points_right.svg")
+	t.saveAs("testdata/arrow_points_right.svg")
 }
 
 func (t *one_arrow) can_point_left() {
@@ -84,19 +84,19 @@ func (t *one_arrow) can_point_left() {
 	t.End.Y = t.Start.Y
 	dir := t.Direction()
 	t.assert(dir == RL).Errorf("Direction not right to left: %v", dir)
-	t.saveAs("img/arrow_points_left.svg")
+	t.saveAs("testdata/arrow_points_left.svg")
 }
 
 func (t *one_arrow) can_point_down() {
 	t.End.X = t.Start.X
 	t.End.Y = t.Start.Y + 50
-	t.saveAs("img/arrow_points_down.svg")
+	t.saveAs("testdata/arrow_points_down.svg")
 }
 
 func (t *one_arrow) can_point_up() {
 	t.End.X = t.Start.X
 	t.End.Y = t.Start.Y - 40
-	t.saveAs("img/arrow_points_up.svg")
+	t.saveAs("testdata/arrow_points_up.svg")
 }
 
 func (t *one_arrow) has_a_tail() {
@@ -104,7 +104,7 @@ func (t *one_arrow) has_a_tail() {
 }
 
 func (t *one_arrow) has_both_tail_and_head() {
-	t.saveAs("img/arrow_with_tail_and_head.svg")
+	t.saveAs("testdata/arrow_with_tail_and_head.svg")
 }
 
 func (t *one_arrow) saveAs(filename string) {
