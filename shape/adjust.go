@@ -28,6 +28,13 @@ func (adjust *Adjuster) RightOf(o Shape, space ...int) {
 	adjust.shape.SetX(x + o.Width() + adjust.space(space))
 }
 
+// LeftOf places the wrapped shape to the left of o. Optional space
+// to override default.
+func (adjust *Adjuster) LeftOf(o Shape, space ...int) {
+	x, _ := o.Position()
+	adjust.shape.SetX(x - (o.Width() + adjust.space(space)))
+}
+
 // Below places the wrapped shape below o. Optional space to override
 // default.
 func (adjust *Adjuster) Below(o Shape, space ...int) {

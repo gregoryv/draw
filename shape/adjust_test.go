@@ -39,15 +39,22 @@ func (t *one_adjuster) takes_optional_spacing() {
 
 func (t *one_adjuster) can_position_shapes() {
 	t.At(1, 1)
+	x, y := t.shape.Position()
+	assert := asserter.New(t)
+	assert(x == 1).Errorf("%v", x)
+	assert(y == 1).Errorf("%v", x)
 
 	o := &Line{}
 	t.RightOf(o)
-	assert := asserter.New(t)
-	x, _ := t.shape.Position()
+	x, _ = t.shape.Position()
 	assert(x == 30).Errorf("%v", x)
 
+	t.LeftOf(o)
+	x, _ = t.shape.Position()
+	assert(x == -30).Errorf("%v", x)
+
 	t.Below(o)
-	_, y := t.shape.Position()
+	_, y = t.shape.Position()
 	assert(y == 30).Errorf("%v", y)
 
 	t.Above(o)
