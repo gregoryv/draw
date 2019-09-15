@@ -38,6 +38,7 @@ WIP - major refactorings still going on
 - More shapes
     - Note
     - Circle
+- Calculate correct width of text elements based on font
 
 ## Class diagram
 
