@@ -15,6 +15,9 @@ type ClassDiagram struct {
 	Structs    []VRecord
 }
 
+// NewClassDiagram returns a diagram representing structs and
+// interfaces.  Relations are reflected from the types and drawn as
+// arrows.
 func NewClassDiagram() *ClassDiagram {
 	return &ClassDiagram{
 		Diagram:    NewDiagram(),
@@ -23,6 +26,7 @@ func NewClassDiagram() *ClassDiagram {
 	}
 }
 
+// WriteSvg renders the diagram as SVG to the given writer.
 func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 	rel := make([]shape.SvgWriterShape, 0)
 	for _, struct_ := range d.Structs {
@@ -51,6 +55,8 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 	return d.Diagram.WriteSvg(w)
 }
 
+// Place places adds the record to the diagram returning an adjuster
+// for positioning.
 func (d *ClassDiagram) Place(vr VRecord) *shape.Adjuster {
 	if vr.isStruct {
 		d.Structs = append(d.Structs, vr)
@@ -60,16 +66,20 @@ func (d *ClassDiagram) Place(vr VRecord) *shape.Adjuster {
 	return d.Diagram.Place(vr.Record)
 }
 
+// Relation defines a relation between two records
 type Relation struct {
 	from, to *shape.Record
 }
 
+// VRecord represents a type struct or interface as a record shape.
 type VRecord struct {
 	*shape.Record
 	t        reflect.Type
 	isStruct bool
 }
 
+// NewStruct returns a VRecord of the given object, panics if not
+// struct.
 func NewStruct(obj interface{}) VRecord {
 	t := reflect.TypeOf(obj)
 	if t.Kind() != reflect.Struct {
@@ -78,6 +88,8 @@ func NewStruct(obj interface{}) VRecord {
 	return VRecord{shape.NewStructRecord(obj), t, true}
 }
 
+// NewInterface returns a VRecord of the given object, panics if not
+// interface.
 func NewInterface(obj interface{}) VRecord {
 	t := reflect.TypeOf(obj).Elem()
 	if t.Kind() != reflect.Interface {

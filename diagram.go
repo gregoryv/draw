@@ -6,6 +6,10 @@ import (
 	"github.com/gregoryv/go-design/shape"
 )
 
+// NewDiagram returns a diagram with present font and padding values.
+//
+// TODO: size and padding affects eg. records, but is related to the
+// styling
 func NewDiagram() Diagram {
 	return Diagram{
 		Font:    shape.Font{Height: 9, Width: 7, LineHeight: 15},
@@ -14,13 +18,14 @@ func NewDiagram() Diagram {
 	}
 }
 
+// Diagram is a generic SVG image with box related styling
 type Diagram struct {
 	shape.Svg
 	shape.Aligner
 
-	Font    shape.Font
-	TextPad shape.Padding
-	Pad     shape.Padding
+	Font    shape.Font    // Used to calculate width
+	TextPad shape.Padding // Surrounding text
+	Pad     shape.Padding // E.g. records
 }
 
 // Place adds the shape to the diagram returning an adjuster for
@@ -69,5 +74,12 @@ func (diagram *Diagram) AdaptSize() (int, int) {
 	return diagram.Width, diagram.Height
 }
 
-func (d *Diagram) SetHeight(h int) { d.Height = h }
-func (d *Diagram) SetWidth(w int)  { d.Width = w }
+// SetHeight sets a fixed height in pixels.
+func (d *Diagram) SetHeight(h int) {
+	d.Height = h
+}
+
+// SetWidth sets a fixe width in pixels.
+func (d *Diagram) SetWidth(w int) {
+	d.Width = w
+}
