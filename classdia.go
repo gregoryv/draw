@@ -41,6 +41,7 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 				)
 				switch {
 				case arrow.DirQ1(), arrow.DirQ4():
+					// TODO
 					arrow.End.X -= iface.Width() / 2
 				case arrow.DirQ2(), arrow.DirQ3():
 					arrow.End.X += iface.Width() / 2
