@@ -6,6 +6,8 @@ import (
 	"github.com/gregoryv/go-design/shape"
 )
 
+// NewSequenceDiagram returns a sequence diagram with default column
+// width.
 func NewSequenceDiagram() *SequenceDiagram {
 	return &SequenceDiagram{
 		ColWidth: 190,
@@ -13,6 +15,7 @@ func NewSequenceDiagram() *SequenceDiagram {
 	}
 }
 
+// SequenceDiagram defines columns and links between columns.
 type SequenceDiagram struct {
 	Diagram
 	ColWidth int
@@ -21,6 +24,7 @@ type SequenceDiagram struct {
 	links   []*Link
 }
 
+// WriteSvg renders the diagram as SVG to the given writer.
 func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 	svg := &shape.Svg{
 		Width:  dia.Width(),
