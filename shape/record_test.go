@@ -23,6 +23,8 @@ func TestOneRecord(t *testing.T) {
 	it = &OneRecord{t, NewStructRecord(Record{})}
 	it.HasFields()
 	it.HasMethods()
+	it.CanHideFields()
+	it.CanHideMethods()
 
 	it = &OneRecord{t, NewInterfaceRecord((*Shape)(nil))}
 	it.IsMissingFields()
@@ -54,6 +56,13 @@ func (t *OneRecord) HasFields() {
 	assert(len(t.Fields) >= 0).Error("missing fields")
 }
 
+func (t *OneRecord) CanHideFields() {
+	t.Helper()
+	assert := asserter.New(t)
+	t.HideFields()
+	assert(len(t.Fields) == 0).Error("fields not hidden")
+}
+
 func (t *OneRecord) IsMissingFields() {
 	t.Helper()
 	assert := asserter.New(t)
@@ -64,6 +73,13 @@ func (t *OneRecord) HasMethods() {
 	t.Helper()
 	assert := asserter.New(t)
 	assert(len(t.Methods) > 0).Error("missing methods")
+}
+
+func (t *OneRecord) CanHideMethods() {
+	t.Helper()
+	assert := asserter.New(t)
+	t.HideMethods()
+	assert(len(t.Methods) == 0).Error("methods not hidden")
 }
 
 func (t *OneRecord) SHeightAdapts() {
