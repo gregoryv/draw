@@ -21,6 +21,13 @@ This diagram is rendered by
 ![](img/class_example.svg)
 
 
+With hidden fields and methods and different placement.
+This diagram is rendered by
+[example_test.go/ExampleVerticalClassDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-VerticalClassDiagram)
+
+![](img/vertical_class_example.svg)
+
+
 ## Sequence diagram
 
 From [example_test.go/ExampleSequenceDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-SequenceDiagram)

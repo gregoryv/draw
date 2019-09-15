@@ -64,6 +64,14 @@ type Record struct {
 	Pad  Padding
 }
 
+func (record *Record) HideFields() {
+	record.Fields = []string{}
+}
+
+func (record *Record) HideMethods() {
+	record.Methods = []string{}
+}
+
 func (record *Record) WriteSvg(out io.Writer) error {
 	w, err := newTagPrinter(out)
 	w.printf(

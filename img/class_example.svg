@@ -1,12 +1,12 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="757" height="418" font-family="Arial, Helvetica, sans-serif">
-<path class="arrow" style="stroke:black" d="M96,160 L263,81" />
-<g transform="rotate(-25 263 81)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M263,81 l-8,-4 l 0,8 Z" /></g>
+  width="757" height="448" font-family="Arial, Helvetica, sans-serif">
+<path class="arrow" style="stroke:black" d="M96,175 L263,81" />
+<g transform="rotate(-29 263 81)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M263,81 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M96,160 L232,262" />
-<g transform="rotate(36 232 262)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M232,262 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M96,175 L232,262" />
+<g transform="rotate(32 232 262)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M232,262 l-8,-4 l 0,8 Z" /></g>
 
 <path class="arrow" style="stroke:black" d="M593,198 L429,81" />
 <g transform="rotate(215 429 81)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M429,81 l-8,-4 l 0,8 Z" /></g>
@@ -14,7 +14,7 @@
 <path class="arrow" style="stroke:black" d="M593,198 L462,262" />
 <g transform="rotate(154 462 262)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M462,262 l-8,-4 l 0,8 Z" /></g>
 
-<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="20" width="153" height="280"/>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="20" width="153" height="310"/>
 <line class="line" style="stroke:#d3d3d3" x1="20" y1="46" x2="173" y2="46"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="61">X</text>
 <text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="76">Y</text>
 <text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="91">Title</text>
@@ -24,13 +24,15 @@
 <text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="151">Pad</text>
 <line class="line" style="stroke:#d3d3d3" x1="20" y1="158" x2="173" y2="158"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="173">Direction()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="188">Height()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="203">Position()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="218">SetFont()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="233">SetTextPad()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="248">SetX()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="263">SetY()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="278">Width()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="293">WriteSvg()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="203">HideFields()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="218">HideMethods()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="233">Position()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="248">SetFont()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="263">SetTextPad()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="278">SetX()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="293">SetY()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="308">Width()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="323">WriteSvg()</text>
 <text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="37">shape.Record struct</text>
 <rect class="record" style="fill:#ffffcc;stroke:black" x="263" y="20" width="167" height="123"/>
 <line class="line" style="stroke:#d3d3d3" x1="263" y1="46" x2="430" y2="46"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="273" y="61">Direction()</text>
@@ -66,8 +68,8 @@
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="242" y="309">Width()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="242" y="324">WriteSvg()</text>
 <text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="242" y="210">shape.SvgWriterShape interface</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="340" width="139" height="78"/>
-<line class="line" style="stroke:#d3d3d3" x1="20" y1="366" x2="159" y2="366"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="381">Height</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="396">Width</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="411">LineHeight</text>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="357">shape.Font struct</text></svg>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="370" width="139" height="78"/>
+<line class="line" style="stroke:#d3d3d3" x1="20" y1="396" x2="159" y2="396"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="411">Height</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="426">Width</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="441">LineHeight</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="387">shape.Font struct</text></svg>

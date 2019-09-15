@@ -71,13 +71,6 @@ type Relation struct {
 	from, to *shape.Record
 }
 
-// VRecord represents a type struct or interface as a record shape.
-type VRecord struct {
-	*shape.Record
-	t        reflect.Type
-	isStruct bool
-}
-
 // NewStruct returns a VRecord of the given object, panics if not
 // struct.
 func NewStruct(obj interface{}) VRecord {
@@ -85,7 +78,24 @@ func NewStruct(obj interface{}) VRecord {
 	if t.Kind() != reflect.Struct {
 		panic(fmt.Sprintf("Expected struct kind got %v", t.Kind()))
 	}
-	return VRecord{shape.NewStructRecord(obj), t, true}
+	return VRecord{
+		Record:   shape.NewStructRecord(obj),
+		t:        t,
+		isStruct: true,
+	}
+}
+
+// VRecord represents a type struct or interface as a record shape.
+type VRecord struct {
+	*shape.Record
+	t        reflect.Type
+	isStruct bool
+}
+
+func (vr *VRecord) TitleOnly() *VRecord {
+	vr.HideFields()
+	vr.HideMethods()
+	return vr
 }
 
 // NewInterface returns a VRecord of the given object, panics if not
@@ -95,7 +105,11 @@ func NewInterface(obj interface{}) VRecord {
 	if t.Kind() != reflect.Interface {
 		panic(fmt.Sprintf("Expected ptr kind got %v", t.Kind()))
 	}
-	return VRecord{shape.NewInterfaceRecord(obj), t, false}
+	return VRecord{
+		Record:   shape.NewInterfaceRecord(obj),
+		t:        t,
+		isStruct: false,
+	}
 }
 
 // SaveAs saves the diagram to filename as SVG

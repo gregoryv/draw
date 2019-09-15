@@ -2,28 +2,28 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="557" height="440" font-family="Arial, Helvetica, sans-serif">
-<rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="8" width="167" height="325"/>
-<line class="line" style="stroke:#d3d3d3" x1="10" y1="34" x2="177" y2="34"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="49">Svg</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="64">Aligner</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="79">Font</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="94">TextPad</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="109">Pad</text>
-<line class="line" style="stroke:#d3d3d3" x1="10" y1="116" x2="177" y2="116"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="131">AdaptSize()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="146">Append()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="161">HAlignBottom()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="176">HAlignCenter()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="191">HAlignTop()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="206">Place()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="221">Prepend()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="236">SaveAs()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="251">SetHeight()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="266">SetWidth()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="281">VAlignCenter()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="296">VAlignLeft()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="311">VAlignRight()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="326">WriteSvg()</text>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="25">design.Diagram struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="207" y="30" width="153" height="280"/>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="23" width="167" height="325"/>
+<line class="line" style="stroke:#d3d3d3" x1="10" y1="49" x2="177" y2="49"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="64">Svg</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="79">Aligner</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="94">Font</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="109">TextPad</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="124">Pad</text>
+<line class="line" style="stroke:#d3d3d3" x1="10" y1="131" x2="177" y2="131"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="146">AdaptSize()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="161">Append()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="176">HAlignBottom()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="191">HAlignCenter()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="206">HAlignTop()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="221">Place()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="236">Prepend()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="251">SaveAs()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="266">SetHeight()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="281">SetWidth()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="296">VAlignCenter()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="311">VAlignLeft()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="326">VAlignRight()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="341">WriteSvg()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="40">design.Diagram struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="207" y="30" width="153" height="310"/>
 <line class="line" style="stroke:#d3d3d3" x1="207" y1="56" x2="360" y2="56"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="71">X</text>
 <text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="86">Y</text>
 <text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="101">Title</text>
@@ -33,27 +33,31 @@
 <text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="161">Pad</text>
 <line class="line" style="stroke:#d3d3d3" x1="207" y1="168" x2="360" y2="168"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="183">Direction()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="198">Height()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="213">Position()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="228">SetFont()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="243">SetTextPad()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="258">SetX()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="273">SetY()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="288">Width()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="303">WriteSvg()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="213">HideFields()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="228">HideMethods()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="243">Position()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="258">SetFont()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="273">SetTextPad()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="288">SetX()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="303">SetY()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="318">Width()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="333">WriteSvg()</text>
 <text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="217" y="47">shape.Record struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="390" y="30" width="167" height="78"/>
-<line class="line" style="stroke:#d3d3d3" x1="390" y1="56" x2="557" y2="56"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="71">At()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="86">Below()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="101">RightOf()</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="390" y="30" width="167" height="108"/>
+<line class="line" style="stroke:#d3d3d3" x1="390" y1="56" x2="557" y2="56"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="71">Above()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="86">At()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="101">Below()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="116">LeftOf()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="131">RightOf()</text>
 <text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="47">shape.Adjuster struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="390" y="187" width="167" height="123"/>
-<line class="line" style="stroke:#d3d3d3" x1="390" y1="213" x2="557" y2="213"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="228">Direction()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="243">Height()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="258">Position()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="273">SetX()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="288">SetY()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="303">Width()</text>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="204">shape.Shape interface</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="390" y="217" width="167" height="123"/>
+<line class="line" style="stroke:#d3d3d3" x1="390" y1="243" x2="557" y2="243"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="258">Direction()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="273">Height()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="288">Position()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="303">SetX()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="318">SetY()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="333">Width()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="400" y="234">shape.Shape interface</text>
 <path class="arrow" style="stroke:black" d="M230,400 L280,390" />
 <g transform="rotate(-11 280 390)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M280,390 l-8,-4 l 0,8 Z" /></g>
 

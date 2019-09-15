@@ -29,6 +29,33 @@ func ExampleClassDiagram() {
 	d.SaveAs("img/class_example.svg")
 }
 
+func ExampleVerticalClassDiagram() {
+	record := design.NewStruct(shape.Record{})
+	record.TitleOnly()
+
+	shapeI := design.NewInterface((*shape.Shape)(nil))
+	shapeI.TitleOnly()
+
+	sws := design.NewInterface((*shape.SvgWriterShape)(nil))
+	sws.TitleOnly()
+
+	arrow := design.NewStruct(shape.Arrow{})
+	arrow.TitleOnly()
+
+	d := design.NewClassDiagram()
+
+	d.Place(shapeI).At(20, 100)
+	d.Place(record).At(160, 0)
+	d.Place(sws).At(280, 100)
+	d.Place(arrow).At(60, 200)
+
+	//d.HAlignTop(record, shapeI, arrow)
+	d.VAlignCenter(record, arrow)
+	//d.HAlignBottom(sws, arrow)
+
+	d.SaveAs("img/vertical_class_example.svg")
+}
+
 func ExampleSequenceDiagram() {
 	d := design.NewSequenceDiagram()
 	cli, srv, db := "Client", "Server", "Database"
@@ -80,6 +107,7 @@ func ExampleDiagram() {
 	d.SaveAs("img/diagram_example.svg")
 }
 
-func TestClassDiagram(t *testing.T)    { ExampleClassDiagram() }
-func TestSequenceDiagram(t *testing.T) { ExampleSequenceDiagram() }
-func TestDiagram(t *testing.T)         { ExampleDiagram() }
+func TestClassDiagram(t *testing.T)         { ExampleClassDiagram() }
+func TestVerticalClassDiagram(t *testing.T) { ExampleVerticalClassDiagram() }
+func TestSequenceDiagram(t *testing.T)      { ExampleSequenceDiagram() }
+func TestDiagram(t *testing.T)              { ExampleDiagram() }
