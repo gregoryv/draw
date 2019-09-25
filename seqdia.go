@@ -12,6 +12,7 @@ func NewSequenceDiagram() *SequenceDiagram {
 	return &SequenceDiagram{
 		ColWidth: 190,
 		Diagram:  NewDiagram(),
+		VMargin:  10,
 	}
 }
 
@@ -19,6 +20,7 @@ func NewSequenceDiagram() *SequenceDiagram {
 type SequenceDiagram struct {
 	Diagram
 	ColWidth int
+	VMargin  int // top margin for each horizontal lane
 
 	columns []string
 	links   []*Link
@@ -134,7 +136,7 @@ func (dia *SequenceDiagram) selfHeight() int {
 
 // plainHeight returns the height of and arrow and label
 func (dia *SequenceDiagram) plainHeight() int {
-	return dia.Font.LineHeight + dia.Pad.Bottom
+	return dia.Font.LineHeight + dia.Pad.Bottom + dia.VMargin
 }
 
 func (dia *SequenceDiagram) top() int {
