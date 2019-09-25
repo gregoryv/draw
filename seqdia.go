@@ -87,6 +87,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			svg.Content = append(svg.Content, l1, l2, arrow, label)
 			y += dia.selfHeight()
 		} else {
+			arrow.Class = lnk.class()
 			arrow.Start.X = fromX
 			arrow.Start.Y = y
 			arrow.End.X = toX

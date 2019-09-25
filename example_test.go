@@ -61,7 +61,7 @@ func ExampleSequenceDiagram() {
 	cli, srv, db := "Client", "Server", "Database"
 	d.AddColumns(cli, srv, db)
 	d.Link(cli, srv, "connect()")
-	d.Link(srv, db, "SELECT")
+	d.Link(srv, db, "SELECT").Class = "highlight"
 	d.Link(db, srv, "Rows")
 	// Special link
 	lnk := d.Link(srv, srv, "Transform to view model")

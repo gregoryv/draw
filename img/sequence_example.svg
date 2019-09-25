@@ -12,8 +12,8 @@
 <g transform="rotate(0 221 64)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M221,64 l-8,-4 l 0,8 Z" /></g>
 
 <text class="" x="94" y="62">connect()</text>
-<path class="arrow" style="stroke:black" d="M221,86 L411,86" />
-<g transform="rotate(0 411 86)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M411,86 l-8,-4 l 0,8 Z" /></g>
+<path class="highlight" style="stroke:red" d="M221,86 L411,86" />
+<g transform="rotate(0 411 86)"><path class="highlight-head" style="stroke:red;fill:#ffffff" d="M411,86 l-8,-4 l 0,8 Z" /></g>
 
 <text class="" x="295" y="84">SELECT</text>
 <path class="arrow" style="stroke:black" d="M411,108 L221,108" />
