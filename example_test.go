@@ -99,6 +99,7 @@ func ExampleDiagram() {
 		leftarrow  = shape.NewArrow(230, y, 180, y)
 		uparrow    = shape.NewArrow(230, y, 230, y-40)
 		downarrow  = shape.NewArrow(230, y, 230, y+40)
+		label      = shape.NewLabel("Label")
 		d          = design.NewDiagram()
 	)
 	d.Place(diagramRec).At(10, 30)
@@ -113,6 +114,7 @@ func ExampleDiagram() {
 	} {
 		d.Place(arrow)
 	}
+	d.Place(label).RightOf(downarrow, 150)
 	d.HAlignTop(diagramRec, record, adjuster)
 	d.HAlignCenter(record, diagramRec)
 	d.HAlignBottom(record, shapeI)

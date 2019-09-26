@@ -5,6 +5,15 @@ import (
 	"io"
 )
 
+func NewLabel(text string) *Label {
+	return &Label{
+		X: 0, Y: 0, Text: text,
+		Font:  DefaultFont,
+		Pad:   DefaultPad,
+		Class: "label",
+	}
+}
+
 type Label struct {
 	X, Y int
 	Text string

@@ -81,4 +81,5 @@
 
 <path class="arrow" style="stroke:black" d="M230,400 L230,440" />
 <g transform="rotate(90 230 440)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M230,440 l-8,-4 l 0,8 Z" /></g>
-</svg>
+
+<text class="label" x="380" y="400">Label</text></svg>

@@ -36,7 +36,7 @@ type OneLabel struct {
 type assert = asserter.AssertFunc
 
 func (t *OneLabel) IsEmpty() {
-	t.Label = &Label{}
+	t.Label = NewLabel("")
 }
 
 func (t *OneLabel) IsNotEmpty() {

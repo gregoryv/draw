@@ -12,9 +12,9 @@ import (
 // styling
 func NewDiagram() Diagram {
 	return Diagram{
-		Font:    shape.Font{Height: 9, Width: 7, LineHeight: 15},
-		TextPad: shape.Padding{Left: 10, Top: 2, Bottom: 7, Right: 10},
-		Pad:     shape.Padding{Left: 10, Top: 20, Bottom: 7, Right: 10},
+		Font:    shape.DefaultFont,
+		TextPad: shape.DefaultTextPad,
+		Pad:     shape.DefaultPad,
 	}
 }
 
