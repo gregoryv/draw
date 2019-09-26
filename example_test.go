@@ -8,24 +8,37 @@ import (
 )
 
 func ExampleClassDiagram() {
-	var (
-		record = design.NewStruct(shape.Record{})
-		shapeI = design.NewInterface((*shape.Shape)(nil))
-		sws    = design.NewInterface((*shape.SvgWriterShape)(nil))
-		arrow  = design.NewStruct(shape.Arrow{})
-		fnt    = design.NewStruct(shape.Font{})
-		d      = design.NewClassDiagram()
-	)
+	d := design.NewClassDiagram()
+	record := design.NewStruct(shape.Record{})
 	d.Place(record).At(20, 20)
+	shapeI := design.NewInterface((*shape.Shape)(nil))
 	d.Place(shapeI).RightOf(record, 90)
+	arrow := design.NewStruct(shape.Arrow{})
 	d.Place(arrow).RightOf(shapeI, 90)
+	sws := design.NewInterface((*shape.SvgWriterShape)(nil))
 	d.Place(sws).Below(shapeI, 70)
+	line := design.NewStruct(shape.Line{})
+	d.Place(line).Below(arrow, 90)
 
-	d.HAlignTop(record, shapeI, arrow)
+	d.HAlignTop(record, shapeI)
 	d.VAlignCenter(shapeI, sws)
-	d.HAlignBottom(sws, arrow)
+	d.HAlignCenter(record, arrow)
 
+	fnt := design.NewStruct(shape.Font{})
 	d.Place(fnt).Below(record, 40)
+	aligner := design.NewStruct(shape.Aligner{})
+	d.Place(aligner).RightOf(fnt)
+
+	d.HAlignTop(fnt, aligner)
+
+	seqdia := design.NewStruct(design.SequenceDiagram{})
+	d.Place(seqdia).Below(fnt, 100)
+
+	d.VAlignLeft(fnt, seqdia)
+
+	dia := design.NewStruct(design.Diagram{})
+	d.Place(dia).RightOf(seqdia)
+
 	d.SaveAs("img/class_example.svg")
 }
 
