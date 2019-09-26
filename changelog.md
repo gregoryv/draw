@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Fixed
 
+- RightOf and LeftOf adjustments sets matching y position
 - Use class for non self arrows
 
 

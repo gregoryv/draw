@@ -24,15 +24,17 @@ func (adjust *Adjuster) At(x, y int) {
 // RightOf places the wrapped shape to the right of o. Optional space
 // to override default.
 func (adjust *Adjuster) RightOf(o Shape, space ...int) {
-	x, _ := o.Position()
+	x, y := o.Position()
 	adjust.shape.SetX(x + o.Width() + adjust.space(space))
+	adjust.shape.SetY(y)
 }
 
 // LeftOf places the wrapped shape to the left of o. Optional space
 // to override default.
 func (adjust *Adjuster) LeftOf(o Shape, space ...int) {
-	x, _ := o.Position()
+	x, y := o.Position()
 	adjust.shape.SetX(x - (o.Width() + adjust.space(space)))
+	adjust.shape.SetY(y)
 }
 
 // Below places the wrapped shape below o. Optional space to override

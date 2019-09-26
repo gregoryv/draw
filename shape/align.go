@@ -1,7 +1,7 @@
 package shape
 
 // Aligner type aligns multiple shapes
-type Aligner int
+type Aligner struct{}
 
 // HAlignCenter aligns shape[1:] to shape[0] center coordinates horizontally
 func (Aligner) HAlignCenter(shapes ...Shape) { hAlign(Center, shapes...) }
