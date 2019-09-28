@@ -14,22 +14,24 @@ func NewRecord(title string) *Record {
 	}
 }
 
-// NewStructRecord returns a record shape based on a Go struct type.
-// Reflection is used
-func NewStructRecord(obj interface{}) *Record {
-	t := reflect.TypeOf(obj)
-	rec := NewRecord(t.String() + " struct")
-	rec.addFields(t)
-	rec.addMethods(reflect.PtrTo(t))
-	return rec
+type Record struct {
+	X, Y    int
+	Title   string
+	Fields  []string
+	Methods []string
+
+	Font Font
+	Pad  Padding
 }
 
-func NewInterfaceRecord(obj interface{}) *Record {
-	t := reflect.TypeOf(obj).Elem()
-	rec := NewRecord(t.String() + " interface")
-	rec.addMethods(t)
-	return rec
-}
+func (r *Record) HideFields()            { r.Fields = []string{} }
+func (r *Record) HideMethods()           { r.Methods = []string{} }
+func (r *Record) SetFont(f Font)         { r.Font = f }
+func (r *Record) SetTextPad(pad Padding) { r.Pad = pad }
+
+func (r *Record) hasFields() bool  { return len(r.Fields) != 0 }
+func (r *Record) hasMethods() bool { return len(r.Methods) != 0 }
+func (r *Record) isEmpty() bool    { return !r.hasFields() && !r.hasMethods() }
 
 func (rec *Record) addFields(t reflect.Type) {
 	for i := 0; i < t.NumField(); i++ {
@@ -52,24 +54,6 @@ func (rec *Record) addMethods(t reflect.Type) {
 func isPublic(name string) bool {
 	up := bytes.ToUpper([]byte(name))
 	return []byte(name)[0] == up[0]
-}
-
-type Record struct {
-	X, Y    int
-	Title   string
-	Fields  []string
-	Methods []string
-
-	Font Font
-	Pad  Padding
-}
-
-func (record *Record) HideFields() {
-	record.Fields = []string{}
-}
-
-func (record *Record) HideMethods() {
-	record.Methods = []string{}
 }
 
 func (record *Record) WriteSvg(out io.Writer) error {
@@ -133,6 +117,23 @@ func (record *Record) title() *Label {
 	}
 }
 
+// NewStructRecord returns a record shape based on a Go struct type.
+// Reflection is used
+func NewStructRecord(obj interface{}) *Record {
+	t := reflect.TypeOf(obj)
+	rec := NewRecord(t.String() + " struct")
+	rec.addFields(t)
+	rec.addMethods(reflect.PtrTo(t))
+	return rec
+}
+
+func NewInterfaceRecord(obj interface{}) *Record {
+	t := reflect.TypeOf(obj).Elem()
+	rec := NewRecord(t.String() + " interface")
+	rec.addMethods(t)
+	return rec
+}
+
 func (record *Record) Height() int {
 	first := boxHeight(record.Font, record.Pad, 1)
 	if record.isEmpty() {
@@ -145,10 +146,6 @@ func (record *Record) Height() int {
 	}
 	return first + rest
 }
-
-func (r *Record) hasFields() bool  { return len(r.Fields) != 0 }
-func (r *Record) hasMethods() bool { return len(r.Methods) != 0 }
-func (r *Record) isEmpty() bool    { return !r.hasFields() && !r.hasMethods() }
 
 func (r *Record) Width() int {
 	width := boxWidth(r.Font, r.Pad, r.Title)
@@ -165,6 +162,3 @@ func (record *Record) Position() (int, int) { return record.X, record.Y }
 func (record *Record) SetX(x int)           { record.X = x }
 func (record *Record) SetY(y int)           { record.Y = y }
 func (record *Record) Direction() Direction { return LR }
-
-func (record *Record) SetFont(f Font)         { record.Font = f }
-func (record *Record) SetTextPad(pad Padding) { record.Pad = pad }
