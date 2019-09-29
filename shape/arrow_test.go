@@ -10,7 +10,11 @@ import (
 )
 
 func TestOneArrow(t *testing.T) {
-	it := NewOneArrow(t)
+	it := &OneArrow{
+		T:      t,
+		assert: asserter.New(t),
+		Arrow:  NewArrow(50, 50, 50, 50),
+	}
 	it.CanPointUpAndRight()
 	it.CanPointUpAndLeft()
 	it.CanPointDownAndLeft()
@@ -27,14 +31,6 @@ func TestOneArrow(t *testing.T) {
 	it.CanHaveASpecificClass()
 	it.CanMove()
 	it.IsVisible()
-}
-
-func NewOneArrow(t *testing.T) *OneArrow {
-	return &OneArrow{
-		T:      t,
-		assert: asserter.New(t),
-		Arrow:  NewArrow(50, 50, 50, 50),
-	}
 }
 
 type OneArrow struct {
@@ -143,4 +139,51 @@ func (t *OneArrow) IsVisible() {
 	h := t.Height()
 	w := t.Width()
 	t.assert(h > 0 || w > 0).Errorf("%v not visible", t.Arrow)
+}
+
+func TestArrowBetweenShapes(t *testing.T) {
+	it := &ArrowBetweenShapes{
+		T:      t,
+		assert: asserter.New(t),
+	}
+
+	it.StartsAndEndsAtEdgeOfShapes()
+}
+
+type ArrowBetweenShapes struct {
+	*testing.T
+	assert
+}
+
+type A struct{}
+
+type B struct{}
+
+func (t *ArrowBetweenShapes) StartsAndEndsAtEdgeOfShapes() {
+	a := NewStructRecord(A{})
+	a.SetX(10)
+	a.SetY(100)
+	b := NewStructRecord(B{})
+	b.SetX(80)
+	b.SetY(40)
+
+	arrow := NewArrowBetween(a, b)
+	svg := newSvg(200, 200, arrow, a, b)
+	writeSvgTo(t.T, "testdata/arrow_between_shapes.svg", svg)
+}
+
+func newSvg(width, height int, shapes ...SvgWriterShape) *Svg {
+	svg := &Svg{Width: width, Height: height}
+	svg.Append(shapes...)
+	return svg
+}
+
+func writeSvgTo(t *testing.T, filename string, svg *Svg) {
+	t.Helper()
+	fh, err := os.Create(filename)
+	if err != nil {
+		t.Fatal(err)
+	}
+	svg.WriteSvg(style.NewStyler(fh))
+	fh.Close()
 }

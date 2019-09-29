@@ -32,20 +32,7 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 	for _, struct_ := range d.Structs {
 		for _, iface := range d.Interfaces {
 			if reflect.PtrTo(struct_.t).Implements(iface.t) {
-				// todo arrow is hidden by destination, calculate edge x,y
-				arrow := shape.NewArrow(
-					struct_.X+struct_.Width()/2,
-					struct_.Y+struct_.Height()/2,
-					iface.X+iface.Width()/2,
-					iface.Y+iface.Height()/2,
-				)
-				switch {
-				case arrow.DirQ1(), arrow.DirQ4():
-					// TODO
-					arrow.End.X -= iface.Width() / 2
-				case arrow.DirQ2(), arrow.DirQ3():
-					arrow.End.X += iface.Width() / 2
-				}
+				arrow := shape.NewArrowBetween(struct_, iface)
 				rel = append(rel, arrow)
 				// todo, add implements label
 			}

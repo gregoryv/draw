@@ -1,0 +1,11 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="200" height="200" font-family="Arial, Helvetica, sans-serif">
+<path class="arrow" style="stroke:black" d="M10,100 L80,40" />
+<g transform="rotate(-40 80 40)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M80,40 l-8,-4 l 0,8 Z" /></g>
+
+<rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="100" width="0" height="0"/>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="10" y="100">shape.A struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="80" y="40" width="0" height="0"/>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="80" y="40">shape.B struct</text></svg>
