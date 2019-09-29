@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"math"
 	"reflect"
 
 	"github.com/gregoryv/go-design/xy"
@@ -168,4 +169,33 @@ func (record *Record) Direction() Direction { return LR }
 
 func (record *Record) String() string {
 	return fmt.Sprintf("Record %q", record.Title)
+}
+
+type Edge interface {
+	Edge(*Arrow)
+}
+
+// Edge sets the arrow.End to point to the edge of this record.
+// It assumes the arrow is pointing to the center already.
+func (record *Record) Edge(arrow *Arrow) {
+	angle := arrow.absAngle()
+
+	switch {
+	case arrow.DirQ4():
+		// corner
+		arrow.End.X = record.X
+		arrow.End.Y = record.Y + record.Height()
+		if arrow.absAngle() == angle {
+			return
+		}
+		// at bottom
+		bc := record.Height() / 2
+		dx := bc / int(math.Atan(angle))
+		arrow.End.X = record.X + record.Width()/2 - dx
+
+	case arrow.DirQ1():
+		arrow.End.X -= record.Width() / 2
+	case arrow.DirQ2(), arrow.DirQ3():
+		arrow.End.X += record.Width() / 2
+	}
 }

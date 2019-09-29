@@ -164,18 +164,16 @@ func NewArrowBetween(a, b Shape) *Arrow {
 	ax, ay := a.Position()
 	bx, by := b.Position()
 
+	// From center to center
 	x1 := ax + a.Width()/2
 	y1 := ay + a.Height()/2
 	x2 := bx + b.Width()/2
 	y2 := by + b.Height()/2
-
 	arrow := NewArrow(x1, y1, x2, y2)
-	//	angle := arrow.absAngle()
-	switch {
-	case arrow.DirQ1(), arrow.DirQ4():
-		arrow.End.X -= b.Width() / 2
-	case arrow.DirQ2(), arrow.DirQ3():
-		arrow.End.X += b.Width() / 2
+	bs, ok := b.(Edge)
+	if ok {
+		bs.Edge(arrow)
+		return arrow
 	}
 	return arrow
 }

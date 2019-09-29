@@ -11,8 +11,8 @@
 <path class="arrow" style="stroke:black" d="M236,212 L186,112" />
 <g transform="rotate(243 186 112)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M186,112 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M236,212 L280,112" />
-<g transform="rotate(-66 280 112)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M280,112 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M236,212 L383,124" />
+<g transform="rotate(-30 383 124)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M383,124 l-8,-4 l 0,8 Z" /></g>
 
 <rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="100" width="167" height="24"/>
 <text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="117">shape.Shape interface</text>
