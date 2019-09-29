@@ -2,6 +2,7 @@ package shape
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"reflect"
 
@@ -11,6 +12,8 @@ import (
 func NewRecord(title string) *Record {
 	return &Record{
 		Title: title,
+		Font:  DefaultFont,
+		Pad:   DefaultTextPad,
 	}
 }
 
@@ -162,3 +165,7 @@ func (record *Record) Position() (int, int) { return record.X, record.Y }
 func (record *Record) SetX(x int)           { record.X = x }
 func (record *Record) SetY(y int)           { record.Y = y }
 func (record *Record) Direction() Direction { return LR }
+
+func (record *Record) String() string {
+	return fmt.Sprintf("Record %q", record.Title)
+}

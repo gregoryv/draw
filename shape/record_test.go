@@ -2,6 +2,7 @@ package shape
 
 import (
 	"bytes"
+	"fmt"
 	"testing"
 
 	"github.com/gregoryv/asserter"
@@ -102,4 +103,31 @@ func (t *OneRecord) RendersAsSvg() {
 	t.WriteSvg(buf)
 	assert := asserter.New(t)
 	assert().Contains(buf.String(), "<rect ")
+}
+
+func TestShape(t *testing.T) {
+	cases := []Shape{
+		NewRecord("Hello"),
+		func() *Record {
+			r := NewRecord("car")
+			r.Fields = []string{"short", "longerField"}
+			r.Methods = []string{"String", "Model"}
+			return r
+		}(),
+	}
+	for i, s := range cases {
+		t.Run(testcase(i, s), func(t *testing.T) {
+			assert := asserter.New(t)
+			assert(s.Width() > 0).Error("Width() is 0")
+			assert(s.Height() > 0).Error("Height() is 0")
+		})
+	}
+}
+
+func testcase(i int, v interface{}) string {
+	s, ok := v.(fmt.Stringer)
+	if !ok {
+		return fmt.Sprintf("%v", i)
+	}
+	return fmt.Sprintf("%v %s", i, s.String())
 }
