@@ -2,6 +2,7 @@ package shape
 
 import (
 	"bytes"
+	"fmt"
 	"os"
 	"testing"
 
@@ -169,6 +170,11 @@ func (t *ArrowBetweenShapes) StartsAndEndsAtEdgeOfShapes() {
 
 	arrow := NewArrowBetween(a, b)
 	svg := newSvg(200, 200, arrow, a, b)
+	label := NewLabel(fmt.Sprintf("Angle: %v", arrow.absAngle()))
+	label.SetX(100)
+	label.SetY(80)
+
+	svg.Append(label)
 	writeSvgTo(t.T, "testdata/arrow_between_shapes.svg", svg)
 }
 

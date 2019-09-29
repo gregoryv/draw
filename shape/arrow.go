@@ -39,15 +39,16 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 	return *err
 }
 
+func (arrow *Arrow) absAngle() float64 {
+	return math.Abs(float64(arrow.angle()))
+}
+
 // angle returns degrees the head of an arrow should rotate depending
 // on direction
 func (arrow *Arrow) angle() int {
-	start := arrow.Start
-	end := arrow.End
-
 	var (
-		// quadrandts start at bottom right and are counted clockwise
-
+		start = arrow.Start
+		end   = arrow.End
 		// straight arrows
 		right = start.LeftOf(end) && start.Y == end.Y
 		left  = start.RightOf(end) && start.Y == end.Y
@@ -162,12 +163,14 @@ func (arrow *Arrow) class() string {
 func NewArrowBetween(a, b Shape) *Arrow {
 	ax, ay := a.Position()
 	bx, by := b.Position()
+
 	x1 := ax + a.Width()/2
 	y1 := ay + a.Height()/2
 	x2 := bx + b.Width()/2
 	y2 := by + b.Height()/2
 
 	arrow := NewArrow(x1, y1, x2, y2)
+	//	angle := arrow.absAngle()
 	switch {
 	case arrow.DirQ1(), arrow.DirQ4():
 		arrow.End.X -= b.Width() / 2
