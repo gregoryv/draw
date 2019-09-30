@@ -30,7 +30,6 @@ WIP - major refactorings still going on
 
 ## TODO
 
-- Arrows ought to point towards the center of shapes in class diagrams.
 - Labeled arrows
 - Optionally hide methods that implement an interface if it's part of
   the diagram, minimizing duplication.
