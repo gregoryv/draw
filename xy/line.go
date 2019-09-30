@@ -35,7 +35,6 @@ func (l1 *Line) Intersect(l2 *Line) (Position, error) {
 	u := -1 * (un / d)
 
 	P := Position{}
-	fmt.Println(d, t, u)
 	switch {
 	case 0.0 <= t && t <= 1.0:
 		P.X = int(x1 + t*(x2-x1))
@@ -56,7 +55,7 @@ func (l1 *Line) IntersectSegment(l2 *Line) (Position, error) {
 		return p, err
 	}
 	if !l1.Contains(p) || !l2.Contains(p) {
-		return p, fmt.Errorf("Not intersecting")
+		return p, fmt.Errorf("Not intersecting segments")
 	}
 	return p, nil
 }

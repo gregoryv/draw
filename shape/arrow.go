@@ -173,7 +173,6 @@ func NewArrowBetween(a, b Shape) *Arrow {
 	bs, ok := b.(Edge)
 	if ok {
 		bs.Edge(arrow)
-		return arrow
 	}
 	return arrow
 }

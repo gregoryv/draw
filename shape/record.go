@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-	"math"
 	"reflect"
 
 	"github.com/gregoryv/go-design/xy"
@@ -178,24 +177,37 @@ type Edge interface {
 // Edge sets the arrow.End to point to the edge of this record.
 // It assumes the arrow is pointing to the center already.
 func (record *Record) Edge(arrow *Arrow) {
-	angle := arrow.absAngle()
+	center := xy.Position{
+		record.X + record.Width()/2,
+		record.Y + record.Height()/2,
+	}
+	l1 := xy.Line{arrow.Start, center}
 
-	switch {
-	case arrow.DirQ4():
-		// corner
-		arrow.End.X = record.X
-		arrow.End.Y = record.Y + record.Height()
-		if arrow.absAngle() == angle {
+	lowY := record.Y + record.Height()
+	rightX := record.X + record.Width()
+
+	left := xy.NewLine(
+		record.X, record.Y,
+		record.X, lowY,
+	)
+	bottom := xy.NewLine(
+		record.X, lowY,
+		rightX, lowY,
+	)
+	right := xy.NewLine(
+		rightX, record.Y,
+		rightX, lowY,
+	)
+	top := xy.NewLine(
+		record.X, record.Y,
+		rightX, record.Y,
+	)
+	for _, side := range []*xy.Line{top, left, bottom, right} {
+		p, err := l1.IntersectSegment(side)
+		if err == nil {
+			arrow.End.X = p.X
+			arrow.End.Y = p.Y
 			return
 		}
-		// at bottom
-		bc := record.Height() / 2
-		dx := bc / int(math.Atan(angle))
-		arrow.End.X = record.X + record.Width()/2 - dx
-
-	case arrow.DirQ1():
-		arrow.End.X -= record.Width() / 2
-	case arrow.DirQ2(), arrow.DirQ3():
-		arrow.End.X += record.Width() / 2
 	}
 }

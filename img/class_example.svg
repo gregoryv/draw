@@ -1,24 +1,24 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="757" height="948" font-family="Arial, Helvetica, sans-serif">
-<path class="arrow" style="stroke:black" d="M96,190 L285,143" />
-<g transform="rotate(-13 285 143)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M285,143 l-8,-4 l 0,8 Z" /></g>
+  width="794" height="948" font-family="Arial, Helvetica, sans-serif">
+<path class="arrow" style="stroke:black" d="M96,190 L263,117" />
+<g transform="rotate(-23 263 117)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M263,117 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M96,190 L232,282" />
-<g transform="rotate(34 232 282)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M232,282 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M96,190 L232,239" />
+<g transform="rotate(19 232 239)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M232,239 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M593,189 L429,81" />
-<g transform="rotate(213 429 81)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M429,81 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M593,189 L430,117" />
+<g transform="rotate(203 430 117)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M430,117 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M593,189 L462,282" />
-<g transform="rotate(145 462 282)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M462,282 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M593,189 L462,238" />
+<g transform="rotate(160 462 238)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M462,238 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M589,470 L429,81" />
-<g transform="rotate(247 429 81)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M429,81 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M589,470 L384,143" />
+<g transform="rotate(237 384 143)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M384,143 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M589,470 L462,282" />
-<g transform="rotate(235 462 282)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M462,282 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M589,470 L435,351" />
+<g transform="rotate(217 435 351)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M435,351 l-8,-4 l 0,8 Z" /></g>
 
 <rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="20" width="153" height="340"/>
 <line class="line" style="stroke:#d3d3d3" x1="20" y1="46" x2="173" y2="46"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="61">X</text>
