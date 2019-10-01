@@ -1,24 +1,24 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="510" height="300" font-family="Arial, Helvetica, sans-serif">
-<path class="arrow" style="stroke:black" d="M236,12 L118,100" />
-<g transform="rotate(144 118 100)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M118,100 l-8,-4 l 0,8 Z" /></g>
+  width="477" height="300" font-family="Arial, Helvetica, sans-serif">
+<path class="arrow" style="stroke:black" d="M224,13 L107,100" />
+<g transform="rotate(144 107 100)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M107,100 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M236,12 L375,100" />
-<g transform="rotate(32 375 100)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M375,100 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M224,13 L357,100" />
+<g transform="rotate(33 357 100)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M357,100 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M236,212 L118,124" />
-<g transform="rotate(216 118 124)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M118,124 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M224,213 L107,126" />
+<g transform="rotate(216 107 126)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M107,126 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M236,212 L375,124" />
-<g transform="rotate(-32 375 124)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M375,124 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M224,213 L357,126" />
+<g transform="rotate(-33 357 126)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M357,126 l-8,-4 l 0,8 Z" /></g>
 
-<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="100" width="167" height="24"/>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="117">shape.Shape interface</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="160" y="0" width="153" height="24"/>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="170" y="17">shape.Record struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="280" y="100" width="230" height="24"/>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="290" y="117">shape.SvgWriterShape interface</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="163" y="200" width="146" height="24"/>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="173" y="217">shape.Arrow struct</text></svg>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="100" width="141" height="26"/>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="120">shape.Shape interface</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="160" y="0" width="129" height="26"/>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="166" y="20">shape.Record struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="280" y="100" width="197" height="26"/>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="286" y="120">shape.SvgWriterShape interface</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="163" y="200" width="123" height="26"/>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="169" y="220">shape.Arrow struct</text></svg>

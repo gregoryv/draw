@@ -2,11 +2,11 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="200" height="200" font-family="Arial, Helvetica, sans-serif">
-<path class="arrow" style="stroke:black" d="M69,112 L125,64" />
-<g transform="rotate(-40 125 64)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M125,64 l-8,-4 l 0,8 Z" /></g>
+<path class="arrow" style="stroke:black" d="M59,113 L113,66" />
+<g transform="rotate(-41 113 66)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M113,66 l-8,-4 l 0,8 Z" /></g>
 
-<rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="100" width="118" height="24"/>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="20" y="117">shape.A struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="80" y="40" width="118" height="24"/>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="90" y="57">shape.B struct</text>
-<text class="label" x="100" y="80">Angle: 40</text></svg>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="100" width="99" height="26"/>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="16" y="120">shape.A struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="80" y="40" width="99" height="26"/>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="86" y="60">shape.B struct</text>
+<text class="label" x="100" y="80">Angle: 41</text></svg>

@@ -4,6 +4,7 @@ package shape
 import (
 	"io"
 	"math"
+	"unicode"
 )
 
 type SvgWriter interface {
@@ -21,6 +22,17 @@ type Font struct {
 	LineHeight int
 }
 
+func (f Font) TextWidth(txt string) int {
+	var width int
+	for _, r := range txt {
+		width += f.Width
+		if unicode.IsLower(r) {
+			width -= 1 // lower case letters are not as wide
+		}
+	}
+	return width
+}
+
 type Padding struct {
 	Left, Top, Right, Bottom int
 }
@@ -30,7 +42,7 @@ func boxHeight(font Font, pad Padding, lines int) int {
 }
 
 func boxWidth(font Font, pad Padding, txt string) int {
-	return pad.Left + font.Width*len(txt) + pad.Right
+	return pad.Left + font.TextWidth(txt) + pad.Right
 }
 
 func intAbs(v int) int {

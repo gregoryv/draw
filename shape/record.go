@@ -158,6 +158,12 @@ func (r *Record) Width() int {
 			width = w
 		}
 	}
+	for _, txt := range r.Methods {
+		w := boxWidth(r.Font, r.Pad, txt)
+		if w > width {
+			width = w
+		}
+	}
 	return width
 }
 
