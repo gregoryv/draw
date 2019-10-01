@@ -17,10 +17,8 @@ func (l1 *Line) String() string {
 	return fmt.Sprint(l1.Start, " -- ", l1.End)
 }
 
-//https://en.wikipedia.org/wiki/Line-line_intersection
-
-// todo this calculates elongated l1 and l2, I need segment
-// intersections
+// Intersect returns the position if two lines intersect.
+// https://en.wikipedia.org/wiki/Line-line_intersection
 func (l1 *Line) Intersect(l2 *Line) (Position, error) {
 	x1, y1 := l1.Start.XYfloat64()
 	x2, y2 := l1.End.XYfloat64()
@@ -60,19 +58,19 @@ func (l1 *Line) IntersectSegment(l2 *Line) (Position, error) {
 	return p, nil
 }
 
-func (l1 *Line) Contains(p Position) bool {
-	if l1.Start.X != l1.End.X { // not vertical
+func (l *Line) Contains(p Position) bool {
+	if l.Start.X != l.End.X { // not vertical
 		switch {
-		case l1.Start.X <= p.X && p.X <= l1.End.X:
+		case l.Start.X <= p.X && p.X <= l.End.X:
 			return true
-		case l1.Start.X >= p.X && p.X >= l1.End.X:
+		case l.Start.X >= p.X && p.X >= l.End.X:
 			return true
 		}
 	} else {
 		switch {
-		case l1.Start.Y <= p.X && p.Y <= l1.End.Y:
+		case l.Start.Y <= p.Y && p.Y <= l.End.Y:
 			return true
-		case l1.Start.Y >= p.Y && p.Y >= l1.End.Y:
+		case l.Start.Y >= p.Y && p.Y >= l.End.Y:
 			return true
 		}
 	}

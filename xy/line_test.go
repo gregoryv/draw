@@ -6,32 +6,64 @@ import (
 )
 
 func TestIntersectSegment(t *testing.T) {
+	hLine := NewLine(5, 5, 15, 5)
+	vLine := NewLine(10, 0, 10, 10)
 	cases := []struct {
 		l1, l2 *Line
 		exp    Position // expected intersection
 		ok     bool
 	}{
 		{
-			l1:  NewLine(0, 0, 5, 5),
-			l2:  NewLine(2, 0, 0, 2),
-			exp: Position{1, 1},
+			// Crossed as plus
+			l1:  hLine,
+			l2:  vLine,
+			exp: Position{10, 5},
 			ok:  true,
 		},
 		{
-			l1:  NewLine(0, 10, 10, 10),
-			l2:  NewLine(5, 0, 5, 20),
-			exp: Position{5, 10},
+			// from left
+			l1:  NewLine(0, 0, 11, 11),
+			l2:  vLine,
+			exp: Position{10, 10},
 			ok:  true,
 		},
 		{
-			l1:  NewLine(0, 10, 0, 10),
-			l2:  NewLine(5, 10, 5, 10),
-			exp: Position{0, 0},
+			// from right
+			l1:  NewLine(15, 0, 0, 10),
+			l2:  vLine,
+			exp: Position{10, 3},
+			ok:  true,
+		},
+		{
+			// from right
+			l1:  NewLine(15, 0, 13, 0),
+			l2:  vLine,
+			exp: Position{10, 0},
 			ok:  false,
 		},
 		{
-			l1:  NewLine(0, 0, 1, 5),
-			l2:  NewLine(5, 0, 4, 5),
+			// from above
+			l1:  NewLine(0, 0, 12, 10),
+			l2:  hLine,
+			exp: Position{6, 5},
+			ok:  true,
+		},
+		{
+			// from below
+			l1:  NewLine(12, 10, 0, 0),
+			l2:  hLine,
+			exp: Position{6, 5},
+			ok:  true,
+		},
+		{
+			l1:  NewLine(0, 10, 0, 0), // vertical upward
+			l2:  NewLine(11, 0, -1, 11),
+			exp: Position{0, 10},
+			ok:  true,
+		},
+		{
+			l1:  NewLine(0, 10, 0, 10), // point
+			l2:  NewLine(5, 10, 5, 10), // point
 			exp: Position{0, 0},
 			ok:  false,
 		},

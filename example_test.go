@@ -122,7 +122,18 @@ func ExampleDiagram() {
 	d.SaveAs("img/diagram_example.svg")
 }
 
-func TestClassDiagram(t *testing.T)         { ExampleClassDiagram() }
-func TestVerticalClassDiagram(t *testing.T) { ExampleVerticalClassDiagram() }
-func TestSequenceDiagram(t *testing.T)      { ExampleSequenceDiagram() }
-func TestDiagram(t *testing.T)              { ExampleDiagram() }
+func TestClassDiagram(t *testing.T) {
+	ExampleClassDiagram()
+}
+
+func TestVerticalClassDiagram(t *testing.T) {
+	ExampleVerticalClassDiagram()
+}
+
+func TestSequenceDiagram(t *testing.T) {
+	ExampleSequenceDiagram()
+}
+
+func TestDiagram(t *testing.T) {
+	ExampleDiagram()
+}
