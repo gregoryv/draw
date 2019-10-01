@@ -31,7 +31,7 @@ func (shape *Label) WriteSvg(w io.Writer) error {
 }
 
 func (l *Label) Height() int { return l.Font.Height }
-func (l *Label) Width() int  { return len(l.Text) * l.Font.Width }
+func (l *Label) Width() int  { return l.Font.TextWidth(l.Text) }
 
 func (l *Label) SetX(x int)           { l.X = x }
 func (l *Label) SetY(y int)           { l.Y = y }

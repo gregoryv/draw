@@ -2,31 +2,31 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="570" height="238" font-family="Arial, Helvetica, sans-serif">
-<line class="column-line" style="stroke:#d3d3d3" x1="31" y1="24" x2="31" y2="238"/>
-<text class="" x="10" y="18">Client</text>
-<line class="column-line" style="stroke:#d3d3d3" x1="221" y1="24" x2="221" y2="238"/>
-<text class="" x="200" y="18">Server</text>
-<line class="column-line" style="stroke:#d3d3d3" x1="411" y1="24" x2="411" y2="238"/>
-<text class="" x="383" y="18">Database</text>
-<path class="arrow" style="stroke:black" d="M31,57 L221,57" />
-<g transform="rotate(0 221 57)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M221,57 l-8,-4 l 0,8 Z" /></g>
+<line class="column-line" style="stroke:#d3d3d3" x1="28" y1="24" x2="28" y2="238"/>
+<text class="label" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="10" y="18">Client</text>
+<line class="column-line" style="stroke:#d3d3d3" x1="218" y1="24" x2="218" y2="238"/>
+<text class="label" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="200" y="18">Server</text>
+<line class="column-line" style="stroke:#d3d3d3" x1="408" y1="24" x2="408" y2="238"/>
+<text class="label" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="384" y="18">Database</text>
+<path class="arrow" style="stroke:black" d="M28,57 L218,57" />
+<g transform="rotate(0 218 57)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M218,57 l-8,-4 l 0,8 Z" /></g>
 
-<text class="" x="94" y="55">connect()</text>
-<path class="highlight" style="stroke:red" d="M221,90 L411,90" />
-<g transform="rotate(0 411 90)"><path class="highlight-head" style="stroke:red;fill:#ffffff" d="M411,90 l-8,-4 l 0,8 Z" /></g>
+<text class="label" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="95" y="55">connect()</text>
+<path class="highlight" style="stroke:red" d="M218,90 L408,90" />
+<g transform="rotate(0 408 90)"><path class="highlight-head" style="stroke:red;fill:#ffffff" d="M408,90 l-8,-4 l 0,8 Z" /></g>
 
-<text class="" x="295" y="88">SELECT</text>
-<path class="arrow" style="stroke:black" d="M411,123 L221,123" />
-<g transform="rotate(180 221 123)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M221,123 l-8,-4 l 0,8 Z" /></g>
+<text class="label" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="292" y="88">SELECT</text>
+<path class="arrow" style="stroke:black" d="M408,123 L218,123" />
+<g transform="rotate(180 218 123)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M218,123 l-8,-4 l 0,8 Z" /></g>
 
-<text class="" x="302" y="121">Rows</text>
-<line class="highlight" style="stroke:red" x1="221" y1="156" x2="236" y2="156"/>
-<line class="highlight" style="stroke:red" x1="236" y1="156" x2="236" y2="188"/>
-<path class="highlight" style="stroke:red" d="M236,188 L221,188" />
-<g transform="rotate(180 221 188)"><path class="highlight-head" style="stroke:red;fill:#ffffff" d="M221,188 l-8,-4 l 0,8 Z" /></g>
+<text class="label" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="301" y="121">Rows</text>
+<line class="highlight" style="stroke:red" x1="218" y1="156" x2="233" y2="156"/>
+<line class="highlight" style="stroke:red" x1="233" y1="156" x2="233" y2="188"/>
+<path class="highlight" style="stroke:red" d="M233,188 L218,188" />
+<g transform="rotate(180 218 188)"><path class="highlight-head" style="stroke:red;fill:#ffffff" d="M218,188 l-8,-4 l 0,8 Z" /></g>
 
-<text class="" x="242" y="176">Transform to view model</text>
-<path class="arrow" style="stroke:black" d="M221,211 L31,211" />
-<g transform="rotate(180 31 211)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M31,211 l-8,-4 l 0,8 Z" /></g>
+<text class="label" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="239" y="176">Transform to view model</text>
+<path class="arrow" style="stroke:black" d="M218,211 L28,211" />
+<g transform="rotate(180 28 211)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M28,211 l-8,-4 l 0,8 Z" /></g>
 
-<text class="" x="95" y="209">Send HTML</text></svg>
+<text class="label" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="93" y="209">Send HTML</text></svg>

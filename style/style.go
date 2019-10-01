@@ -35,6 +35,7 @@ var DefaultStyle = map[string]string{
 	"field":          "font-family:Arial,Helvetica,sans-serif; font-size:12px",
 	"method":         "font-family:Arial,Helvetica,sans-serif; font-size:12px",
 	"record-label":   "font-family:Arial,Helvetica,sans-serif; font-size:12px",
+	"label":          "font-family:Arial,Helvetica,sans-serif; font-size:12px",
 }
 
 // Write adds a style attribute based on class. Limited to 1 class

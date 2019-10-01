@@ -42,11 +42,12 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 	)
 	lines := make([]*shape.Line, len(dia.columns))
 	for i, column := range dia.columns {
-		label := &shape.Label{X: i * colWidth, Y: top,
-			Text: column,
-			Font: dia.Font,
-			Pad:  dia.Pad,
-		}
+		label := shape.NewLabel(column)
+		label.X = i * colWidth
+		label.Y = top
+		label.Font = dia.Font
+		label.Pad = dia.Pad
+
 		firstColumn := i == 0
 		if firstColumn {
 			x += label.Width() / 2
@@ -65,11 +66,12 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		fromX := lines[lnk.fromIndex].Start.X
 		toX := lines[lnk.toIndex].Start.X
 		label := &shape.Label{
-			X:    fromX,
-			Y:    y - 2,
-			Text: lnk.text,
-			Font: dia.Font,
-			Pad:  dia.Pad,
+			X:     fromX,
+			Y:     y - 2,
+			Text:  lnk.text,
+			Font:  dia.Font,
+			Pad:   dia.Pad,
+			Class: "label",
 		}
 		arrow := &shape.Arrow{}
 		if lnk.toSelf() {

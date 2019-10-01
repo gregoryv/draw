@@ -86,26 +86,21 @@ func ExampleSequenceDiagram() {
 
 func ExampleDiagram() {
 	var (
-		diagramRec = shape.NewStructRecord(design.Diagram{})
-		record     = shape.NewStructRecord(shape.Record{})
-		adjuster   = shape.NewStructRecord(shape.Adjuster{})
-		shapeI     = shape.NewInterfaceRecord((*shape.Shape)(nil))
-		y          = 400
-		q1arrow    = shape.NewArrow(230, y, 280, y-10)
-		q2arrow    = shape.NewArrow(230, y, 200, y-10)
-		q3arrow    = shape.NewArrow(230, y, 180, y+20)
-		q4arrow    = shape.NewArrow(230, y, 270, y+20)
-		rightarrow = shape.NewArrow(230, y, 320, y)
-		leftarrow  = shape.NewArrow(230, y, 180, y)
-		uparrow    = shape.NewArrow(230, y, 230, y-40)
-		downarrow  = shape.NewArrow(230, y, 230, y+40)
+		record     = shape.NewRecord("Record")
+		y          = 80
+		x          = 130
+		q1arrow    = shape.NewArrow(x, y, x+50, y-10)
+		q2arrow    = shape.NewArrow(x, y, x-30, y-10)
+		q3arrow    = shape.NewArrow(x, y, x-50, y+20)
+		q4arrow    = shape.NewArrow(x, y, x+40, y+20)
+		rightarrow = shape.NewArrow(x, y, x+90, y)
+		leftarrow  = shape.NewArrow(x, y, x-50, y)
+		uparrow    = shape.NewArrow(x, y, x, y-40)
+		downarrow  = shape.NewArrow(x, y, x, y+40)
 		label      = shape.NewLabel("Label")
 		d          = design.NewDiagram()
 	)
-	d.Place(diagramRec).At(10, 30)
-	d.Place(record).RightOf(diagramRec)
-	d.Place(adjuster).RightOf(record)
-	d.Place(shapeI).Below(adjuster)
+	d.Place(record).At(10, 30)
 
 	for _, arrow := range []*shape.Arrow{
 		q1arrow, q2arrow, q3arrow, q4arrow,
@@ -114,10 +109,7 @@ func ExampleDiagram() {
 	} {
 		d.Place(arrow)
 	}
-	d.Place(label).RightOf(downarrow, 150)
-	d.HAlignTop(diagramRec, record, adjuster)
-	d.HAlignCenter(record, diagramRec)
-	d.HAlignBottom(record, shapeI)
+	d.Place(label).RightOf(record, 150)
 
 	d.SaveAs("img/diagram_example.svg")
 }
