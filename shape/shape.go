@@ -1,5 +1,7 @@
 package shape
 
+import "io"
+
 type Shape interface {
 	// Position returns the starting point of a shape.
 	// Mostly the top left corner.
@@ -12,4 +14,6 @@ type Shape interface {
 	// Direction returns in which direction the shape is drawn.
 	// The direction and position is needed when aligning shapes.
 	Direction() Direction
+
+	WriteSvg(io.Writer) error
 }

@@ -10,7 +10,7 @@ import (
 func ExampleClassDiagram() {
 	var (
 		d        = design.NewClassDiagram()
-		sws      = design.NewInterface((*shape.SvgWriterShape)(nil))
+		sws      = design.NewInterface((*shape.Shape)(nil))
 		record   = design.NewStruct(shape.Record{})
 		arrow    = design.NewStruct(shape.Arrow{})
 		line     = design.NewStruct(shape.Line{})
@@ -42,7 +42,7 @@ func ExampleVerticalClassDiagram() {
 	var (
 		record = design.NewStruct(shape.Record{})
 		shapeI = design.NewInterface((*shape.Shape)(nil))
-		sws    = design.NewInterface((*shape.SvgWriterShape)(nil))
+		sws    = design.NewInterface((*shape.Shape)(nil))
 		arrow  = design.NewStruct(shape.Arrow{})
 		d      = design.NewClassDiagram()
 	)

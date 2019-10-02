@@ -21,7 +21,7 @@ type Arrow struct {
 	End   xy.Position
 
 	Tail  bool
-	Head  SvgWriterShape
+	Head  Shape
 	Class string
 }
 

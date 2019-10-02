@@ -9,7 +9,7 @@ import (
 
 func BenchmarkWriteSvg(b *testing.B) {
 	svg := &Svg{
-		Content: []SvgWriterShape{
+		Content: []Shape{
 			&Record{},
 		},
 	}

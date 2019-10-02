@@ -6,7 +6,7 @@ import (
 
 type Svg struct {
 	Width, Height int
-	Content       []SvgWriterShape
+	Content       []Shape
 }
 
 func (shape *Svg) WriteSvg(out io.Writer) error {
@@ -24,10 +24,10 @@ func (shape *Svg) WriteSvg(out io.Writer) error {
 	return *err
 }
 
-func (svg *Svg) Append(shapes ...SvgWriterShape) {
+func (svg *Svg) Append(shapes ...Shape) {
 	svg.Content = append(svg.Content, shapes...)
 }
 
-func (svg *Svg) Prepend(shapes ...SvgWriterShape) {
+func (svg *Svg) Prepend(shapes ...Shape) {
 	svg.Content = append(shapes, svg.Content...)
 }

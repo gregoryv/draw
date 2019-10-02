@@ -11,11 +11,6 @@ type SvgWriter interface {
 	WriteSvg(io.Writer) error
 }
 
-type SvgWriterShape interface {
-	SvgWriter
-	Shape
-}
-
 type Font struct {
 	Height     int
 	Width      int

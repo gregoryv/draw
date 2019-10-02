@@ -34,8 +34,8 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 	return d.Diagram.WriteSvg(w)
 }
 
-func (d *ClassDiagram) implements() []shape.SvgWriterShape {
-	rel := make([]shape.SvgWriterShape, 0)
+func (d *ClassDiagram) implements() []shape.Shape {
+	rel := make([]shape.Shape, 0)
 	for _, struct_ := range d.Structs {
 		for _, iface := range d.Interfaces {
 			if reflect.PtrTo(struct_.t).Implements(iface.t) {
@@ -48,8 +48,8 @@ func (d *ClassDiagram) implements() []shape.SvgWriterShape {
 	return rel
 }
 
-func (d *ClassDiagram) composes() []shape.SvgWriterShape {
-	rel := make([]shape.SvgWriterShape, 0)
+func (d *ClassDiagram) composes() []shape.Shape {
+	rel := make([]shape.Shape, 0)
 	for _, struct_ := range d.Structs {
 		for i := 0; i < struct_.t.NumField(); i++ {
 			field := struct_.t.Field(i)
