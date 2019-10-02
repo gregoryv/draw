@@ -31,10 +31,7 @@ func ExampleClassDiagram() {
 
 	d.Place(fnt).Below(record, 90)
 	d.Place(dia).RightOf(fnt, 140)
-
-	//	d.VAlignCenter(line, dia)
 	d.Place(aligner).RightOf(dia, 90)
-
 	d.Place(seqdia).Below(fnt, 90)
 	d.Place(adj).Below(aligner, 90)
 	d.Place(classdia).Below(dia, 50)
@@ -97,7 +94,9 @@ func ExampleDiagram() {
 		uparrow    = shape.NewArrow(x, y, x, y-40)
 		downarrow  = shape.NewArrow(x, y, x, y+40)
 		label      = shape.NewLabel("Label")
-		d          = design.NewDiagram()
+
+		withtail = shape.NewArrow(20, 100, 150, 100)
+		d        = design.NewDiagram()
 	)
 	d.Place(record).At(10, 30)
 
@@ -109,7 +108,10 @@ func ExampleDiagram() {
 		d.Place(arrow)
 	}
 	d.Place(label).RightOf(record, 150)
-
+	withtail.Tail = true
+	d.Place(withtail).At(20, 150)
+	d.Width = 240
+	d.Height = 160
 	d.SaveAs("img/diagram_example.svg")
 }
 
