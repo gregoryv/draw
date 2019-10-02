@@ -177,17 +177,17 @@ func (record *Record) String() string {
 }
 
 type Edge interface {
-	Edge(*Arrow)
+	Edge(start xy.Position) xy.Position
 }
 
 // Edge sets the arrow.End to point to the edge of this record.
 // It assumes the arrow is pointing to the center already.
-func (record *Record) Edge(arrow *Arrow) {
+func (record *Record) Edge(start xy.Position) xy.Position {
 	center := xy.Position{
 		record.X + record.Width()/2,
 		record.Y + record.Height()/2,
 	}
-	l1 := xy.Line{arrow.Start, center}
+	l1 := xy.Line{start, center}
 
 	lowY := record.Y + record.Height()
 	rightX := record.X + record.Width()
@@ -211,9 +211,8 @@ func (record *Record) Edge(arrow *Arrow) {
 	for _, side := range []*xy.Line{top, left, bottom, right} {
 		p, err := l1.IntersectSegment(side)
 		if err == nil {
-			arrow.End.X = p.X
-			arrow.End.Y = p.Y
-			return
+			return p
 		}
 	}
+	panic("No intersection found")
 }

@@ -177,7 +177,16 @@ func NewArrowBetween(a, b Shape) *Arrow {
 	arrow := NewArrow(x1, y1, x2, y2)
 	bs, ok := b.(Edge)
 	if ok {
-		bs.Edge(arrow)
+		p := bs.Edge(arrow.Start)
+		arrow.End.X = p.X
+		arrow.End.Y = p.Y
 	}
+	as, ok := a.(Edge)
+	if ok {
+		p := as.Edge(arrow.End)
+		arrow.Start.X = p.X
+		arrow.Start.Y = p.Y
+	}
+
 	return arrow
 }
