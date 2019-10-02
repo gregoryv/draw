@@ -47,6 +47,8 @@ func (l1 *Line) Intersect(l2 *Line) (Position, error) {
 	return P, nil
 }
 
+// IntersectSegment returns position where lines intersect.
+// http://geomalgorithms.com/a05-_intersect-1.html#intersect2D_2Segments()
 func (l1 *Line) IntersectSegment(l2 *Line) (Position, error) {
 	p, err := l1.Intersect(l2)
 	if err != nil {
