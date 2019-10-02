@@ -2,11 +2,14 @@ package shape
 
 import (
 	"bytes"
-	"fmt"
 	"testing"
 
 	"github.com/gregoryv/asserter"
 )
+
+func TestRecord(t *testing.T) {
+	testShape(t, NewRecord("any"))
+}
 
 func TestOneRecord(t *testing.T) {
 	rec := NewRecord("car")
@@ -19,7 +22,6 @@ func TestOneRecord(t *testing.T) {
 	it.SHeightAdapts()
 	it.SWidthAdapts()
 	it.RendersAsSvg()
-	it.CanMove()
 
 	it = NewOneRecord(t, NewStructRecord(Record{}))
 	it.HasFields()
@@ -46,13 +48,6 @@ type OneRecord struct {
 	*testing.T
 	assert
 	*Record
-}
-
-func (t *OneRecord) CanMove() {
-	t.Helper()
-	t.SetX(10)
-	dir := t.Direction()
-	t.assert(dir == LR).Error("Direction should always be LR for record")
 }
 
 func (t *OneRecord) HasFields() {
@@ -103,31 +98,4 @@ func (t *OneRecord) RendersAsSvg() {
 	t.WriteSvg(buf)
 	assert := asserter.New(t)
 	assert().Contains(buf.String(), "<rect ")
-}
-
-func TestShape(t *testing.T) {
-	cases := []Shape{
-		NewRecord("Hello"),
-		func() *Record {
-			r := NewRecord("car")
-			r.Fields = []string{"short", "longerField"}
-			r.Methods = []string{"String", "Model"}
-			return r
-		}(),
-	}
-	for i, s := range cases {
-		t.Run(testcase(i, s), func(t *testing.T) {
-			assert := asserter.New(t)
-			assert(s.Width() > 0).Error("Width() is 0")
-			assert(s.Height() > 0).Error("Height() is 0")
-		})
-	}
-}
-
-func testcase(i int, v interface{}) string {
-	s, ok := v.(fmt.Stringer)
-	if !ok {
-		return fmt.Sprintf("%v", i)
-	}
-	return fmt.Sprintf("%v %s", i, s.String())
 }
