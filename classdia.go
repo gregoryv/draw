@@ -28,19 +28,41 @@ func NewClassDiagram() *ClassDiagram {
 
 // WriteSvg renders the diagram as SVG to the given writer.
 func (d *ClassDiagram) WriteSvg(w io.Writer) error {
+	rel := d.implements()
+	rel = append(rel, d.composes()...)
+	d.Diagram.Prepend(rel...)
+	return d.Diagram.WriteSvg(w)
+}
+
+func (d *ClassDiagram) implements() []shape.SvgWriterShape {
 	rel := make([]shape.SvgWriterShape, 0)
 	for _, struct_ := range d.Structs {
 		for _, iface := range d.Interfaces {
 			if reflect.PtrTo(struct_.t).Implements(iface.t) {
+				// todo use correct UML arrow
 				arrow := shape.NewArrowBetween(struct_, iface)
 				rel = append(rel, arrow)
-				// todo, add implements label
 			}
 		}
-		// todo, composition
 	}
-	d.Diagram.Prepend(rel...)
-	return d.Diagram.WriteSvg(w)
+	return rel
+}
+
+func (d *ClassDiagram) composes() []shape.SvgWriterShape {
+	rel := make([]shape.SvgWriterShape, 0)
+	for _, struct_ := range d.Structs {
+		for i := 0; i < struct_.t.NumField(); i++ {
+			field := struct_.t.Field(i)
+			for _, struct2 := range d.Structs {
+				if field.Type == struct2.t {
+					// todo use composition tail shape
+					arrow := shape.NewArrowBetween(struct_, struct2)
+					rel = append(rel, arrow)
+				}
+			}
+		}
+	}
+	return rel
 }
 
 // Place places adds the record to the diagram returning an adjuster
