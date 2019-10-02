@@ -21,7 +21,7 @@ func TestOneLine(t *testing.T) {
 	it.HasWidth()
 	// when
 	line := NewLine(0, 0, 0, 0)
-	line.Class = "special"
+	line.SetClass("special")
 	it = &OneLine{t, line}
 	it.RendersAsSvg()
 }

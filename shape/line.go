@@ -11,6 +11,7 @@ func NewLine(x1, y1 int, x2, y2 int) *Line {
 	return &Line{
 		Start: xy.Position{x1, y1},
 		End:   xy.Position{x2, y2},
+		class: "line",
 	}
 }
 
@@ -18,7 +19,7 @@ type Line struct {
 	Start xy.Position
 	End   xy.Position
 
-	Class string
+	class string
 }
 
 func (line *Line) String() string {
@@ -28,19 +29,14 @@ func (line *Line) String() string {
 func (line *Line) WriteSvg(w io.Writer) error {
 	_, err := fmt.Fprintf(w,
 		`<line class="%s" x1="%v" y1="%v" x2="%v" y2="%v"/>`,
-		line.class(),
+		line.class,
 		line.Start.X, line.Start.Y,
 		line.End.X, line.End.Y,
 	)
 	return err
 }
 
-func (line *Line) class() string {
-	if line.Class == "" {
-		return "line"
-	}
-	return line.Class
-}
+func (line *Line) SetClass(c string) { line.class = c }
 
 func (line *Line) Height() int {
 	return intAbs(line.Start.Y - line.End.Y)

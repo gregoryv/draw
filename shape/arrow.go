@@ -13,6 +13,7 @@ func NewArrow(x1, y1, x2, y2 int) *Arrow {
 		Start: xy.Position{x1, y1},
 		End:   xy.Position{x2, y2},
 		Head:  NewTriangle(x2, y2, "arrow-head"),
+		class: "arrow",
 	}
 }
 
@@ -22,7 +23,7 @@ type Arrow struct {
 
 	Tail  bool
 	Head  Shape
-	Class string
+	class string
 }
 
 func (a *Arrow) String() string {
@@ -33,10 +34,10 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 	w, err := newTagPrinter(out)
 	x1, y1 := arrow.Start.XY()
 	x2, y2 := arrow.End.XY()
-	w.printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class(), x1, y1, x2, y2)
+	w.printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class, x1, y1, x2, y2)
 	w.print("\n")
 	if arrow.Tail {
-		w.printf(`<circle class="%s-tail" cx="%v" cy="%v" r="3" />`, arrow.class(), x1, y1)
+		w.printf(`<circle class="%s-tail" cx="%v" cy="%v" r="3" />`, arrow.class, x1, y1)
 		w.print("\n")
 	}
 	w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
@@ -162,12 +163,8 @@ func (arrow *Arrow) Direction() Direction {
 	}
 	return RL
 }
-func (arrow *Arrow) class() string {
-	if arrow.Class == "" {
-		return "arrow"
-	}
-	return arrow.Class
-}
+
+func (arrow *Arrow) SetClass(c string) { arrow.class = c }
 
 func NewArrowBetween(a, b Shape) *Arrow {
 	ax, ay := a.Position()

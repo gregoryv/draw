@@ -16,4 +16,6 @@ type Shape interface {
 	Direction() Direction
 
 	WriteSvg(io.Writer) error
+
+	SetClass(string)
 }

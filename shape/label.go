@@ -10,7 +10,7 @@ func NewLabel(text string) *Label {
 		X: 0, Y: 0, Text: text,
 		Font:  DefaultFont,
 		Pad:   DefaultPad,
-		Class: "label",
+		class: "label",
 	}
 }
 
@@ -20,13 +20,17 @@ type Label struct {
 
 	Font  Font
 	Pad   Padding
-	Class string
+	class string
 }
 
-func (shape *Label) WriteSvg(w io.Writer) error {
+func (l *Label) String() string {
+	return fmt.Sprintf("label %s at %v,%v", l.Text, l.X, l.Y)
+}
+
+func (l *Label) WriteSvg(w io.Writer) error {
 	_, err := fmt.Fprintf(w,
 		`<text class="%s" x="%v" y="%v">%s</text>`,
-		shape.Class, shape.X, shape.Y, shape.Text)
+		l.class, l.X, l.Y, l.Text)
 	return err
 }
 
@@ -37,3 +41,5 @@ func (l *Label) SetX(x int)           { l.X = x }
 func (l *Label) SetY(y int)           { l.Y = y }
 func (l *Label) Direction() Direction { return LR }
 func (l *Label) Position() (int, int) { return l.X, l.Y }
+
+func (l *Label) SetClass(c string) { l.class = c }

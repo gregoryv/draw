@@ -124,7 +124,7 @@ func (t *OneArrow) saveAs(filename string) {
 
 func (t *OneArrow) CanHaveASpecificClass() {
 	t.Helper()
-	t.Class = "special"
+	t.class = "special"
 	buf := &bytes.Buffer{}
 	t.WriteSvg(buf)
 	t.assert().Contains(buf.String(), "special")

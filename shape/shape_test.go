@@ -44,4 +44,8 @@ func testShape(t *testing.T, shape Shape) {
 		got := s.String()
 		assert(got != "").Error("String() returned empty string")
 	})
+
+	t.Run("May have class", func(t *testing.T) {
+		shape.SetClass("something")
+	})
 }

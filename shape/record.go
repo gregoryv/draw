@@ -14,6 +14,7 @@ func NewRecord(title string) *Record {
 		Title: title,
 		Font:  DefaultFont,
 		Pad:   DefaultTextPad,
+		class: "record",
 	}
 }
 
@@ -23,14 +24,16 @@ type Record struct {
 	Fields  []string
 	Methods []string
 
-	Font Font
-	Pad  Padding
+	Font  Font
+	Pad   Padding
+	class string
 }
 
 func (r *Record) HideFields()            { r.Fields = []string{} }
 func (r *Record) HideMethods()           { r.Methods = []string{} }
 func (r *Record) SetFont(f Font)         { r.Font = f }
 func (r *Record) SetTextPad(pad Padding) { r.Pad = pad }
+func (r *Record) SetClass(c string)      { r.class = c }
 
 func (r *Record) hasFields() bool  { return len(r.Fields) != 0 }
 func (r *Record) hasMethods() bool { return len(r.Methods) != 0 }
@@ -75,7 +78,7 @@ func (record *Record) WriteSvg(out io.Writer) error {
 				X:     record.X + record.Pad.Left,
 				Y:     record.Y + y,
 				Text:  txt,
-				Class: "field",
+				class: "field",
 			}
 			label.WriteSvg(w)
 			w.printf("\n")
@@ -92,7 +95,7 @@ func (record *Record) WriteSvg(out io.Writer) error {
 				X:     record.X + record.Pad.Left,
 				Y:     record.Y + y,
 				Text:  txt,
-				Class: "method",
+				class: "method",
 			}
 			label.WriteSvg(w)
 			w.printf("\n")
@@ -104,10 +107,10 @@ func (record *Record) WriteSvg(out io.Writer) error {
 
 func (record *Record) writeSeparator(w io.Writer, y1 int) error {
 	//	y1 := record.Y + boxHeight(record.Font, record.Pad, 1)
-	line := &Line{
-		Start: xy.Position{record.X, y1},
-		End:   xy.Position{record.X + record.Width(), y1},
-	}
+	line := NewLine(
+		record.X, y1,
+		record.X+record.Width(), y1,
+	)
 	return line.WriteSvg(w)
 }
 
@@ -116,7 +119,7 @@ func (record *Record) title() *Label {
 		X:     record.X + record.Pad.Left,
 		Y:     record.Y + record.Font.LineHeight + record.Pad.Top,
 		Text:  record.Title,
-		Class: "record-title",
+		class: "record-title",
 	}
 }
 

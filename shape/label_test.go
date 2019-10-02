@@ -7,6 +7,10 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
+func TestLabel(t *testing.T) {
+	testShape(t, NewLabel("l"))
+}
+
 func TestOneLabel(t *testing.T) {
 	it := NewOneLabel(t)
 	// when
