@@ -8,36 +8,32 @@ import (
 )
 
 func ExampleClassDiagram() {
-	d := design.NewClassDiagram()
-	record := design.NewStruct(shape.Record{})
-	d.Place(record).At(20, 20)
-	shapeI := design.NewInterface((*shape.Shape)(nil))
-	d.Place(shapeI).RightOf(record, 90)
-	arrow := design.NewStruct(shape.Arrow{})
-	d.Place(arrow).RightOf(shapeI, 90)
-	sws := design.NewInterface((*shape.SvgWriterShape)(nil))
-	d.Place(sws).Below(shapeI, 70)
-	line := design.NewStruct(shape.Line{})
-	d.Place(line).Below(arrow, 90)
+	var (
+		d       = design.NewClassDiagram()
+		sws     = design.NewInterface((*shape.SvgWriterShape)(nil))
+		record  = design.NewStruct(shape.Record{})
+		arrow   = design.NewStruct(shape.Arrow{})
+		line    = design.NewStruct(shape.Line{})
+		fnt     = design.NewStruct(shape.Font{})
+		aligner = design.NewStruct(shape.Aligner{})
+		seqdia  = design.NewStruct(design.SequenceDiagram{})
+		dia     = design.NewStruct(design.Diagram{})
+	)
+	d.Place(sws).At(220, 20)
+	d.Place(record).At(20, 80)
+	d.Place(line).Below(sws, 90)
+	d.VAlignCenter(sws, line)
 
-	d.HAlignTop(record, shapeI)
-	d.VAlignCenter(shapeI, sws)
-	d.HAlignCenter(record, arrow)
+	d.Place(arrow).RightOf(line, 90)
+	d.HAlignBottom(record, arrow, line)
 
-	fnt := design.NewStruct(shape.Font{})
-	d.Place(fnt).Below(record, 40)
-	aligner := design.NewStruct(shape.Aligner{})
-	d.Place(aligner).RightOf(fnt)
+	d.Place(fnt).Below(record, 90)
+	d.Place(dia).RightOf(fnt, 90)
 
-	d.HAlignTop(fnt, aligner)
+	d.VAlignCenter(line, dia)
+	d.Place(aligner).RightOf(dia, 90)
 
-	seqdia := design.NewStruct(design.SequenceDiagram{})
-	d.Place(seqdia).Below(fnt, 100)
-
-	d.VAlignLeft(fnt, seqdia)
-
-	dia := design.NewStruct(design.Diagram{})
-	d.Place(dia).RightOf(seqdia)
+	d.Place(seqdia).Below(fnt, 90)
 
 	d.SaveAs("img/class_example.svg")
 }
