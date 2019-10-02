@@ -65,13 +65,12 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 	for _, lnk := range dia.links {
 		fromX := lines[lnk.fromIndex].Start.X
 		toX := lines[lnk.toIndex].Start.X
-		label := &shape.Label{
-			X:    fromX,
-			Y:    y - 2,
-			Text: lnk.text,
-			Font: dia.Font,
-			Pad:  dia.Pad,
-		}
+		label := shape.NewLabel(lnk.text)
+		label.X = fromX
+		label.Y = y - 2
+		label.Font = dia.Font
+		label.Pad = dia.Pad
+
 		if lnk.toSelf() {
 			margin := 15
 			// add two lines + arrow

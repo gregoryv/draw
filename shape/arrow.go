@@ -44,6 +44,7 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 	// Update position before rendering
 	arrow.Head.SetX(arrow.End.X)
 	arrow.Head.SetY(arrow.End.Y)
+	arrow.Head.SetClass(arrow.class + "-head")
 	arrow.Head.WriteSvg(out)
 	w.print("</g>\n")
 	return *err
