@@ -39,35 +39,31 @@ func ExampleClassDiagram() {
 }
 
 func ExampleVerticalClassDiagram() {
-	record := design.NewStruct(shape.Record{})
-	record.TitleOnly()
-
-	shapeI := design.NewInterface((*shape.Shape)(nil))
-	shapeI.TitleOnly()
-
-	sws := design.NewInterface((*shape.SvgWriterShape)(nil))
-	sws.TitleOnly()
-
-	arrow := design.NewStruct(shape.Arrow{})
-	arrow.TitleOnly()
-
-	d := design.NewClassDiagram()
-
+	var (
+		record = design.NewStruct(shape.Record{})
+		shapeI = design.NewInterface((*shape.Shape)(nil))
+		sws    = design.NewInterface((*shape.SvgWriterShape)(nil))
+		arrow  = design.NewStruct(shape.Arrow{})
+		d      = design.NewClassDiagram()
+	)
+	for _, r := range []design.VRecord{record, shapeI, sws, arrow} {
+		r.TitleOnly()
+	}
 	d.Place(shapeI).At(20, 100)
 	d.Place(record).At(160, 0)
 	d.Place(sws).At(280, 100)
 	d.Place(arrow).At(60, 200)
-
-	//d.HAlignTop(record, shapeI, arrow)
 	d.VAlignCenter(record, arrow)
-	//d.HAlignBottom(sws, arrow)
-
 	d.SaveAs("img/vertical_class_example.svg")
 }
 
 func ExampleSequenceDiagram() {
-	d := design.NewSequenceDiagram()
-	cli, srv, db := "Client", "Server", "Database"
+	var (
+		cli = "Client"
+		srv = "Server"
+		db  = "Database"
+		d   = design.NewSequenceDiagram()
+	)
 	d.AddColumns(cli, srv, db)
 	d.Link(cli, srv, "connect()")
 	d.Link(srv, db, "SELECT").Class = "highlight"
@@ -76,15 +72,13 @@ func ExampleSequenceDiagram() {
 	lnk := d.Link(srv, srv, "Transform to view model")
 	lnk.Class = "highlight"
 	d.Link(srv, cli, "Send HTML")
-
 	d.SaveAs("img/sequence_example.svg")
 }
 
 func ExampleDiagram() {
 	var (
 		record     = shape.NewRecord("Record")
-		y          = 80
-		x          = 130
+		x, y       = 130, 80
 		q1arrow    = shape.NewArrow(x, y, x+50, y-10)
 		q2arrow    = shape.NewArrow(x, y, x-30, y-10)
 		q3arrow    = shape.NewArrow(x, y, x-50, y+20)
@@ -94,12 +88,10 @@ func ExampleDiagram() {
 		uparrow    = shape.NewArrow(x, y, x, y-40)
 		downarrow  = shape.NewArrow(x, y, x, y+40)
 		label      = shape.NewLabel("Label")
-
-		withtail = shape.NewArrow(20, 100, 150, 100)
-		d        = design.NewDiagram()
+		withtail   = shape.NewArrow(20, 100, 150, 100)
+		d          = design.NewDiagram()
 	)
 	d.Place(record).At(10, 30)
-
 	for _, arrow := range []*shape.Arrow{
 		q1arrow, q2arrow, q3arrow, q4arrow,
 		rightarrow, leftarrow,
