@@ -8,7 +8,10 @@ import (
 )
 
 func TestRecord(t *testing.T) {
-	testShape(t, NewRecord("any"))
+	r := NewRecord("a")
+	r.Fields = []string{"bb", "ccc"}
+	r.Methods = []string{"dddd", "eeeee"}
+	testShape(t, r)
 }
 
 func TestOneRecord(t *testing.T) {
