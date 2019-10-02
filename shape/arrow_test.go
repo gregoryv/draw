@@ -10,6 +10,10 @@ import (
 	"github.com/gregoryv/go-design/style"
 )
 
+func TestArrow(t *testing.T) {
+	testShape(t, NewArrow(0, 0, 50, 50))
+}
+
 func TestOneArrow(t *testing.T) {
 	it := &OneArrow{
 		T:      t,

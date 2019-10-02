@@ -1,6 +1,7 @@
 package shape
 
 import (
+	"fmt"
 	"io"
 	"math"
 
@@ -20,6 +21,10 @@ type Arrow struct {
 
 	Tail  bool
 	Class string
+}
+
+func (a *Arrow) String() string {
+	return fmt.Sprintf("Arrow from %v to %v", a.Start, a.End)
 }
 
 func (arrow *Arrow) WriteSvg(out io.Writer) error {
