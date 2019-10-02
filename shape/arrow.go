@@ -12,6 +12,7 @@ func NewArrow(x1, y1, x2, y2 int) *Arrow {
 	return &Arrow{
 		Start: xy.Position{x1, y1},
 		End:   xy.Position{x2, y2},
+		Head:  NewTriangle(x2, y2, "arrow-head"),
 	}
 }
 
@@ -20,6 +21,7 @@ type Arrow struct {
 	End   xy.Position
 
 	Tail  bool
+	Head  SvgWriterShape
 	Class string
 }
 
@@ -38,8 +40,10 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 		w.print("\n")
 	}
 	w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
-	// the path is drawn as if it points straight to the right
-	w.printf(`<path class="%s-head" d="M%v,%v l-8,-4 l 0,8 Z" />`, arrow.class(), x2, y2)
+	// Update position before rendering
+	arrow.Head.SetX(arrow.End.X)
+	arrow.Head.SetY(arrow.End.Y)
+	arrow.Head.WriteSvg(out)
 	w.print("</g>\n")
 	return *err
 }

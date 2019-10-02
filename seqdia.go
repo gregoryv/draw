@@ -73,7 +73,6 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			Pad:   dia.Pad,
 			Class: "label",
 		}
-		arrow := &shape.Arrow{}
 		if lnk.toSelf() {
 			margin := 15
 			// add two lines + arrow
@@ -83,19 +82,23 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			l2.Class = lnk.class()
 			dia.HAlignCenter(l2, label)
 			label.X += l1.Width() + dia.TextPad.Left
-			arrow.Start.X = l2.End.X
-			arrow.Start.Y = l2.End.Y
-			arrow.End.X = l1.Start.X
-			arrow.End.Y = l2.End.Y
+			arrow := shape.NewArrow(
+				l2.End.X,
+				l2.End.Y,
+				l1.Start.X,
+				l2.End.Y,
+			)
 			arrow.Class = lnk.class()
 			svg.Content = append(svg.Content, l1, l2, arrow, label)
 			y += dia.selfHeight()
 		} else {
+			arrow := shape.NewArrow(
+				fromX,
+				y,
+				toX,
+				y,
+			)
 			arrow.Class = lnk.class()
-			arrow.Start.X = fromX
-			arrow.Start.Y = y
-			arrow.End.X = toX
-			arrow.End.Y = y
 			dia.VAlignCenter(arrow, label)
 			svg.Content = append(svg.Content, arrow, label)
 			y += dia.plainHeight()
