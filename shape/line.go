@@ -21,6 +21,10 @@ type Line struct {
 	Class string
 }
 
+func (line *Line) String() string {
+	return fmt.Sprintf("Line from %v to %v", line.Start, line.End)
+}
+
 func (line *Line) WriteSvg(w io.Writer) error {
 	_, err := fmt.Fprintf(w,
 		`<line class="%s" x1="%v" y1="%v" x2="%v" y2="%v"/>`,

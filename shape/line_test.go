@@ -7,6 +7,10 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
+func TestLine(t *testing.T) {
+	testShape(t, NewLine(1, 1, 7, 7))
+}
+
 func TestOneLine(t *testing.T) {
 	it := &OneLine{t, NewLine(1, 1, 7, 7)}
 	it.RendersAsSvg()

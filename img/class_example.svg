@@ -5,7 +5,7 @@
 <path class="arrow" style="stroke:black" d="M84,261 L220,163" />
 <g transform="rotate(-35 220 163)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M220,163 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M318,341 L318,168" />
+<path class="arrow" style="stroke:black" d="M318,333 L318,168" />
 <g transform="rotate(-90 318 168)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M318,168 l-8,-4 l 0,8 Z" /></g>
 
 <path class="arrow" style="stroke:black" d="M528,301 L393,168" />
@@ -57,18 +57,19 @@
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="420">Width()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="436">WriteSvg()</text>
 <text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="100">shape.Record struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="260" y="240" width="117" height="202"/>
-<line class="line" style="stroke:#d3d3d3" x1="260" y1="270" x2="377" y2="270"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="286">Start</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="302">End</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="318">Class</text>
-<line class="line" style="stroke:#d3d3d3" x1="260" y1="324" x2="377" y2="324"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="340">Direction()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="356">Height()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="372">Position()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="388">SetX()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="404">SetY()</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="260" y="224" width="117" height="218"/>
+<line class="line" style="stroke:#d3d3d3" x1="260" y1="254" x2="377" y2="254"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="270">Start</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="286">End</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="302">Class</text>
+<line class="line" style="stroke:#d3d3d3" x1="260" y1="308" x2="377" y2="308"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="324">Direction()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="340">Height()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="356">Position()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="372">SetX()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="388">SetY()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="404">String()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="420">Width()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="436">WriteSvg()</text>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="260">shape.Line struct</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="266" y="244">shape.Line struct</text>
 <rect class="record" style="fill:#ffffcc;stroke:black" x="467" y="160" width="123" height="282"/>
 <line class="line" style="stroke:#d3d3d3" x1="467" y1="190" x2="590" y2="190"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="473" y="206">Start</text>
 <text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="473" y="222">End</text>
