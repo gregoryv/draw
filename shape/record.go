@@ -183,8 +183,8 @@ type Edge interface {
 	Edge(start xy.Position) xy.Position
 }
 
-// Edge sets the arrow.End to point to the edge of this record.
-// It assumes the arrow is pointing to the center already.
+// Edge returns xy position of a line starting at start and
+// pointing to the records center.
 func (record *Record) Edge(start xy.Position) xy.Position {
 	center := xy.Position{
 		record.X + record.Width()/2,
@@ -195,27 +195,38 @@ func (record *Record) Edge(start xy.Position) xy.Position {
 	lowY := record.Y + record.Height()
 	rightX := record.X + record.Width()
 
+	var (
+		p     xy.Position
+		err   error
+		first bool = true
+	)
+	// nexus returning once intersection found
+	intersect := func(side *xy.Line) {
+		if !first && err == nil {
+			return
+		}
+		p, err = l1.IntersectSegment(side)
+		first = false
+	}
 	left := xy.NewLine(
 		record.X, record.Y,
 		record.X, lowY,
 	)
+	intersect(left)
 	bottom := xy.NewLine(
 		record.X, lowY,
 		rightX, lowY,
 	)
+	intersect(bottom)
 	right := xy.NewLine(
 		rightX, record.Y,
 		rightX, lowY,
 	)
+	intersect(right)
 	top := xy.NewLine(
 		record.X, record.Y,
 		rightX, record.Y,
 	)
-	for _, side := range []*xy.Line{top, left, bottom, right} {
-		p, err := l1.IntersectSegment(side)
-		if err == nil {
-			return p
-		}
-	}
-	panic("No intersection found")
+	intersect(top)
+	return p
 }
