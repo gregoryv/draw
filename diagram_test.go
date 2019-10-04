@@ -25,11 +25,14 @@ type OneDiagram struct {
 
 func (t *OneDiagram) AdaptsInSize() {
 	t.Log("Adapts in size")
-	t.Place(shape.NewLine(0, 0, 100, 100))
+	l1 := shape.NewLine(0, 0, 100, 100)
+	l2 := shape.NewLine(0, 0, 100, 20)
+	t.Place(l1).At(0, 0)
+	t.Place(l2).Below(l1, 10)
 	w, h := t.AdaptSize()
 	assert := asserter.New(t)
 	assert(w == 100).Errorf("width did not adapt: %v", w)
-	assert(h == 100).Errorf("height did not adapt: %v", h)
+	assert(h == 130).Errorf("height did not adapt: %v", h)
 }
 
 func (t *OneDiagram) CanHaveFixedSize() {

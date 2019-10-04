@@ -1,6 +1,7 @@
 package design
 
 import (
+	"fmt"
 	"io"
 
 	"github.com/gregoryv/go-design/shape"
@@ -52,7 +53,7 @@ func (diagram *Diagram) SaveAs(filename string) error {
 
 func (diagram *Diagram) WriteSvg(w io.Writer) error {
 	if diagram.Width == 0 && diagram.Height == 0 {
-		diagram.AdaptSize()
+		fmt.Println(diagram.AdaptSize())
 	}
 	return diagram.Svg.WriteSvg(w)
 }
@@ -62,6 +63,14 @@ func (diagram *Diagram) WriteSvg(w io.Writer) error {
 func (diagram *Diagram) AdaptSize() (int, int) {
 	for _, s := range diagram.Content {
 		x, y := s.Position()
+		switch s := s.(type) {
+		case *shape.Line:
+			x = min(s.Start.X, s.End.X)
+			y = min(s.Start.Y, s.End.Y)
+		case *shape.Arrow:
+			x = min(s.Start.X, s.End.X)
+			y = min(s.Start.Y, s.End.Y)
+		}
 		w := x + s.Width()
 		if w > diagram.Width {
 			diagram.Width = w
@@ -72,6 +81,13 @@ func (diagram *Diagram) AdaptSize() (int, int) {
 		}
 	}
 	return diagram.Width, diagram.Height
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
 
 // SetHeight sets a fixed height in pixels.
