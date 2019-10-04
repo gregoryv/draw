@@ -4,9 +4,8 @@
 
 [go-design](https://godoc.org/github.com/gregoryv/go-design) - package for writing software design diagrams in code
 
-Wouldn't it be nice if gofmt also updated all diagrams while you are
-refactoring?  If the diagrams are code, it would. This package allows
-you to easily create various diagrams as a program.
+Wouldn't it be nice if gofmt also updated all diagrams when
+refactoring?  If the diagrams are code, it would.
 
 Automatic diagram rendering of packages are rarely useful as they are
 to generic. The godoc information is far better to use when learning
@@ -26,22 +25,20 @@ purposes. Styling is kept separate although the default style should
 evolve to the point where all other are just waste of time, much like
 formating code is made pointless when using gofmt.
 
-WIP - major refactorings still going on
+WIP - major rewrites still going on
 
 ## TODO
 
 - Labeled arrows
 - Link to optional godoc service
 - More shapes
-    - Note
-    - Circle
 
 ## Class diagram
 
 This diagram is rendered by
 [example_test.go/ExampleClassDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-ClassDiagram)
 
-![](img/class_example.svg)
+<img src="img/class_example.svg" style="width: 500"/>
 
 
 ## Sequence diagram
