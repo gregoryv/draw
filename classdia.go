@@ -11,8 +11,13 @@ import (
 type ClassDiagram struct {
 	Diagram
 
+	// Placed
 	Interfaces []VRecord
 	Structs    []VRecord
+
+	// Used
+	interfaces []VRecord
+	structs    []VRecord
 }
 
 // NewClassDiagram returns a diagram representing structs and
@@ -23,7 +28,21 @@ func NewClassDiagram() *ClassDiagram {
 		Diagram:    NewDiagram(),
 		Interfaces: make([]VRecord, 0),
 		Structs:    make([]VRecord, 0),
+		interfaces: make([]VRecord, 0),
+		structs:    make([]VRecord, 0),
 	}
+}
+
+func (d *ClassDiagram) Interface(obj interface{}) VRecord {
+	vr := NewInterface(obj)
+	d.interfaces = append(d.interfaces, vr)
+	return vr
+}
+
+func (d *ClassDiagram) Struct(obj interface{}) VRecord {
+	vr := NewStruct(obj)
+	d.structs = append(d.structs, vr)
+	return vr
 }
 
 // WriteSvg renders the diagram as SVG to the given writer.
@@ -80,13 +99,25 @@ func (d *ClassDiagram) Place(vr VRecord) *shape.Adjuster {
 // HideRealizations hides all methods of structs that implement a
 // visible interface.
 func (d *ClassDiagram) HideRealizations() {
-	for _, struct_ := range d.Structs {
-		for _, iface := range d.Interfaces {
+	for _, struct_ := range d.structs {
+		for _, iface := range d.interfaces {
 			if reflect.PtrTo(struct_.t).Implements(iface.t) {
 				// Hide interface methods as they are visible
 				// in the diagram already
 				for _, m := range iface.Methods {
 					struct_.HideMethod(m)
+				}
+			}
+		}
+	}
+	for _, struct_ := range d.structs {
+		for i := 0; i < struct_.t.NumField(); i++ {
+			field := struct_.t.Field(i)
+			for _, struct2 := range d.structs {
+				if field.Type == struct2.t {
+					for _, m := range struct2.Methods {
+						struct_.HideMethod(m)
+					}
 				}
 			}
 		}

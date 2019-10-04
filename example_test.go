@@ -9,33 +9,39 @@ import (
 
 func ExampleClassDiagram() {
 	var (
-		d        = design.NewClassDiagram()
-		sws      = design.NewInterface((*shape.Shape)(nil))
-		record   = design.NewStruct(shape.Record{})
-		arrow    = design.NewStruct(shape.Arrow{})
-		line     = design.NewStruct(shape.Line{})
-		fnt      = design.NewStruct(shape.Font{})
-		aligner  = design.NewStruct(shape.Aligner{})
-		seqdia   = design.NewStruct(design.SequenceDiagram{})
-		classdia = design.NewStruct(design.ClassDiagram{})
-		dia      = design.NewStruct(design.Diagram{})
-		adj      = design.NewStruct(shape.Adjuster{})
+		d      = design.NewClassDiagram()
+		record = d.Struct(shape.Record{})
+		arrow  = d.Struct(shape.Arrow{})
+		line   = d.Struct(shape.Line{})
+		shapE  = d.Interface((*shape.Shape)(nil))
 	)
-	d.Place(sws).At(220, 20)
+	d.HideRealizations()
+
+	var (
+		fnt      = d.Struct(shape.Font{})
+		seqdia   = d.Struct(design.SequenceDiagram{})
+		classdia = d.Struct(design.ClassDiagram{})
+		dia      = d.Struct(design.Diagram{})
+		aligner  = d.Struct(shape.Aligner{})
+		adj      = d.Struct(shape.Adjuster{})
+	)
+	d.HideRealizations()
+
+	d.Place(shapE).At(220, 20)
 	d.Place(record).At(20, 80)
-	d.Place(line).Below(sws, 90)
-	d.VAlignCenter(sws, line)
+	d.Place(line).Below(shapE, 90)
+	d.VAlignCenter(shapE, line)
 
 	d.Place(arrow).RightOf(line, 90)
 	d.HAlignBottom(record, arrow, line)
-	d.HideRealizations()
 
 	d.Place(fnt).Below(record, 90)
-	d.Place(dia).RightOf(fnt, 140)
-	d.Place(aligner).RightOf(dia, 90)
+	d.Place(dia).RightOf(fnt, 150)
+	d.Place(aligner).RightOf(dia, 80)
 	d.Place(seqdia).Below(fnt, 90)
 	d.Place(adj).Below(aligner, 90)
 	d.Place(classdia).Below(dia, 50)
+	d.VAlignCenter(dia, classdia)
 	d.SaveAs("img/class_example.svg")
 }
 
