@@ -28,6 +28,7 @@ func ExampleClassDiagram() {
 
 	d.Place(arrow).RightOf(line, 90)
 	d.HAlignBottom(record, arrow, line)
+	d.HideRealizations()
 
 	d.Place(fnt).Below(record, 90)
 	d.Place(dia).RightOf(fnt, 140)

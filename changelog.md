@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 
+- Hide methods part of visible interfaces
 - Visualize interface realization as dashed line
 
 ## [0.2.0] - 2019-10-03

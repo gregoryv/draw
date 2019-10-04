@@ -29,8 +29,9 @@ type Record struct {
 	class string
 }
 
-func (r *Record) HideFields()            { r.Fields = []string{} }
-func (r *Record) HideMethods()           { r.Methods = []string{} }
+func (r *Record) HideFields()  { r.Fields = []string{} }
+func (r *Record) HideMethods() { r.Methods = []string{} }
+
 func (r *Record) SetFont(f Font)         { r.Font = f }
 func (r *Record) SetTextPad(pad Padding) { r.Pad = pad }
 
@@ -56,6 +57,19 @@ func (rec *Record) addMethods(t reflect.Type) {
 	}
 }
 
+func (rec *Record) HideMethod(m string) (found bool) {
+	rest := make([]string, 0)
+	for _, n := range rec.Methods {
+		if n == m {
+			found = true
+			continue
+		}
+		rest = append(rest, n)
+	}
+	rec.Methods = rest
+	return
+}
+
 func isPublic(name string) bool {
 	up := bytes.ToUpper([]byte(name))
 	return []byte(name)[0] == up[0]
@@ -64,8 +78,8 @@ func isPublic(name string) bool {
 func (record *Record) WriteSvg(out io.Writer) error {
 	w, err := newTagPrinter(out)
 	w.printf(
-		`<rect class="record" x="%v" y="%v" width="%v" height="%v"/>`,
-		record.X, record.Y, record.Width(), record.Height())
+		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
+		record.class, record.X, record.Y, record.Width(), record.Height())
 	w.printf("\n")
 	var y = boxHeight(record.Font, record.Pad, 1) + record.Pad.Top
 	hasFields := len(record.Fields) != 0

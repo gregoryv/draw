@@ -77,6 +77,22 @@ func (d *ClassDiagram) Place(vr VRecord) *shape.Adjuster {
 	return d.Diagram.Place(vr.Record)
 }
 
+// HideRealizations hides all methods of structs that implement a
+// visible interface.
+func (d *ClassDiagram) HideRealizations() {
+	for _, struct_ := range d.Structs {
+		for _, iface := range d.Interfaces {
+			if reflect.PtrTo(struct_.t).Implements(iface.t) {
+				// Hide interface methods as they are visible
+				// in the diagram already
+				for _, m := range iface.Methods {
+					struct_.HideMethod(m)
+				}
+			}
+		}
+	}
+}
+
 // Relation defines a relation between two records
 type Relation struct {
 	from, to *shape.Record

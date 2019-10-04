@@ -14,6 +14,14 @@ func TestRecord(t *testing.T) {
 	testShape(t, r)
 }
 
+func TestRecord_HasMethod(t *testing.T) {
+	r := NewRecord("a")
+	r.Methods = []string{"b", "c"}
+	assert := asserter.New(t)
+	assert(r.HideMethod("b")).Error("Existing method b not found")
+	assert(!r.HideMethod("x")).Error("Found non existing method c")
+}
+
 func TestOneRecord(t *testing.T) {
 	rec := NewRecord("car")
 	rec.Fields = []string{"short", "longerField"}
