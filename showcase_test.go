@@ -28,9 +28,7 @@ func TestClassDiagram_nethttp(t *testing.T) {
 
 	d.Place(title).At(220, 20)
 	d.Place(h).At(20, 60)
-	d.Place(mux).RightOf(h)
-	d.Place(w).RightOf(mux)
-	d.Place(req).RightOf(w)
+	d.Place(mux, w, req).RightOf(h)
 
 	d.Place(server).Below(h)
 	d.Place(resp).Below(mux)
@@ -38,8 +36,8 @@ func TestClassDiagram_nethttp(t *testing.T) {
 
 	d.Place(transport).Below(w)
 	d.Place(client).Below(transport)
-	d.Place(cookie).Below(server)
-	d.Place(cjar).RightOf(cookie)
+	d.Place(cjar).Below(server)
+	d.Place(cookie).RightOf(cjar)
 
 	d.SaveAs("img/http_classdiagram.svg")
 }

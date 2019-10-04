@@ -31,10 +31,12 @@ type Diagram struct {
 
 // Place adds the shape to the diagram returning an adjuster for
 // positioning.
-func (diagram *Diagram) Place(s shape.Shape) *shape.Adjuster {
-	diagram.applyStyle(s)
-	diagram.Append(s)
-	return shape.NewAdjuster(s)
+func (diagram *Diagram) Place(s ...shape.Shape) *shape.Adjuster {
+	for _, s := range s {
+		diagram.applyStyle(s)
+		diagram.Append(s)
+	}
+	return shape.NewAdjuster(s...)
 }
 
 func (diagram *Diagram) applyStyle(s interface{}) {

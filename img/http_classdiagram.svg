@@ -136,22 +136,22 @@
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="762">Post()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="778">PostForm()</text>
 <text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="602">http.Client struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="534" width="123" height="250"/>
-<line class="line" style="stroke:#d3d3d3" x1="20" y1="564" x2="143" y2="564"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="580">Name</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="596">Value</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="612">Path</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="628">Domain</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="644">Expires</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="660">RawExpires</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="676">MaxAge</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="692">Secure</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="708">HttpOnly</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="724">SameSite</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="740">Raw</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="756">Unparsed</text>
-<line class="line" style="stroke:#d3d3d3" x1="20" y1="762" x2="143" y2="762"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="778">String()</text>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="554">http.Cookie struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="173" y="534" width="160" height="68"/>
-<line class="line" style="stroke:#d3d3d3" x1="173" y1="564" x2="333" y2="564"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="179" y="580">Cookies()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="179" y="596">SetCookies()</text>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="179" y="554">http.CookieJar interface</text></svg>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="534" width="160" height="68"/>
+<line class="line" style="stroke:#d3d3d3" x1="20" y1="564" x2="180" y2="564"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="580">Cookies()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="596">SetCookies()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="554">http.CookieJar interface</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="210" y="534" width="123" height="250"/>
+<line class="line" style="stroke:#d3d3d3" x1="210" y1="564" x2="333" y2="564"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="580">Name</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="596">Value</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="612">Path</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="628">Domain</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="644">Expires</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="660">RawExpires</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="676">MaxAge</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="692">Secure</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="708">HttpOnly</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="724">SameSite</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="740">Raw</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="756">Unparsed</text>
+<line class="line" style="stroke:#d3d3d3" x1="210" y1="762" x2="333" y2="762"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="778">String()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="216" y="554">http.Cookie struct</text></svg>
