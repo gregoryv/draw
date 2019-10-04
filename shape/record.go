@@ -33,7 +33,6 @@ func (r *Record) HideFields()            { r.Fields = []string{} }
 func (r *Record) HideMethods()           { r.Methods = []string{} }
 func (r *Record) SetFont(f Font)         { r.Font = f }
 func (r *Record) SetTextPad(pad Padding) { r.Pad = pad }
-func (r *Record) SetClass(c string)      { r.class = c }
 
 func (r *Record) hasFields() bool  { return len(r.Fields) != 0 }
 func (r *Record) hasMethods() bool { return len(r.Methods) != 0 }
@@ -75,8 +74,10 @@ func (record *Record) WriteSvg(out io.Writer) error {
 		for _, txt := range record.Fields {
 			y += record.Font.LineHeight
 			label := &Label{
-				X:     record.X + record.Pad.Left,
-				Y:     record.Y + y,
+				Pos: xy.Position{
+					record.X + record.Pad.Left,
+					record.Y + y,
+				},
 				Text:  txt,
 				class: "field",
 			}
@@ -92,8 +93,10 @@ func (record *Record) WriteSvg(out io.Writer) error {
 		for _, txt := range record.Methods {
 			y += record.Font.LineHeight
 			label := &Label{
-				X:     record.X + record.Pad.Left,
-				Y:     record.Y + y,
+				Pos: xy.Position{
+					record.X + record.Pad.Left,
+					record.Y + y,
+				},
 				Text:  txt,
 				class: "method",
 			}
@@ -114,11 +117,13 @@ func (record *Record) writeSeparator(w io.Writer, y1 int) error {
 	return line.WriteSvg(w)
 }
 
-func (record *Record) title() *Label {
+func (r *Record) title() *Label {
 	return &Label{
-		X:     record.X + record.Pad.Left,
-		Y:     record.Y + record.Font.LineHeight + record.Pad.Top,
-		Text:  record.Title,
+		Pos: xy.Position{
+			r.X + r.Pad.Left,
+			r.Y + r.Font.LineHeight + r.Pad.Top,
+		},
+		Text:  r.Title,
 		class: "record-title",
 	}
 }
@@ -169,11 +174,6 @@ func (r *Record) Width() int {
 	}
 	return width
 }
-
-func (record *Record) Position() (int, int) { return record.X, record.Y }
-func (record *Record) SetX(x int)           { record.X = x }
-func (record *Record) SetY(y int)           { record.Y = y }
-func (record *Record) Direction() Direction { return LR }
 
 func (record *Record) String() string {
 	return fmt.Sprintf("Record %q", record.Title)

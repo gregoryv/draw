@@ -76,6 +76,6 @@ func (t *OneLabel) CanMove() {
 	t.SetY(y + 1)
 	dir := t.Direction()
 	t.assert(dir == LR).Error("Direction should always be LR for record")
-	t.assert(x != t.X).Error("x still the same")
-	t.assert(y != t.Y).Error("y still the same")
+	t.assert(x != t.Pos.X).Error("x still the same")
+	t.assert(y != t.Pos.Y).Error("y still the same")
 }

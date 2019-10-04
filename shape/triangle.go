@@ -30,12 +30,3 @@ func (tri *Triangle) WriteSvg(out io.Writer) error {
 		tri.class, tri.Pos.X, tri.Pos.Y)
 	return *err
 }
-
-func (tri *Triangle) Direction() Direction { return LR }
-func (tri *Triangle) Height() int          { return 4 }
-func (tri *Triangle) Width() int           { return 8 }
-func (tri *Triangle) Position() (int, int) { return tri.Pos.XY() }
-
-func (tri *Triangle) SetX(x int)        { tri.Pos.X = x }
-func (tri *Triangle) SetY(y int)        { tri.Pos.Y = y }
-func (tri *Triangle) SetClass(c string) { tri.class = c }

@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/gregoryv/asserter"
+	"github.com/gregoryv/go-design/xy"
 )
 
 func TestAlignVertical(t *testing.T) {
@@ -15,20 +16,44 @@ func TestAlignVertical(t *testing.T) {
 	}{
 		{
 			aligner.VAlignCenter,
-			&Label{X: 10, Y: 10, Text: "1234", Font: Font{Width: 10}},
-			&Label{X: 50, Y: 40, Text: "12", Font: Font{Width: 10}},
+			&Label{
+				Pos:  xy.Position{10, 10},
+				Text: "1234",
+				Font: Font{Width: 10},
+			},
+			&Label{
+				Pos:  xy.Position{50, 40},
+				Text: "12",
+				Font: Font{Width: 10},
+			},
 			20, 40,
 		},
 		{
 			aligner.VAlignLeft,
-			&Label{X: 10, Y: 10, Text: "1234", Font: Font{Width: 10}},
-			&Label{X: 50, Y: 40, Text: "12", Font: Font{Width: 10}},
+			&Label{
+				Pos:  xy.Position{10, 10},
+				Text: "1234",
+				Font: Font{Width: 10},
+			},
+			&Label{
+				Pos:  xy.Position{50, 40},
+				Text: "12",
+				Font: Font{Width: 10},
+			},
 			10, 40,
 		},
 		{
 			aligner.VAlignRight,
-			&Label{X: 10, Y: 10, Text: "1234", Font: Font{Width: 10}},
-			&Label{X: 50, Y: 40, Text: "12", Font: Font{Width: 10}},
+			&Label{
+				Pos:  xy.Position{10, 10},
+				Text: "1234",
+				Font: Font{Width: 10},
+			},
+			&Label{
+				Pos:  xy.Position{50, 40},
+				Text: "12",
+				Font: Font{Width: 10},
+			},
 			30, 40,
 		},
 		{
@@ -56,14 +81,14 @@ func TestAlignHorizontal(t *testing.T) {
 	}{
 		{
 			aligner.HAlignTop,
-			&Label{X: 10, Y: 10},
-			&Label{X: 50, Y: 40},
+			&Label{Pos: xy.Position{10, 10}},
+			&Label{Pos: xy.Position{50, 40}},
 			50, 10,
 		},
 		{
 			aligner.HAlignBottom,
-			&Label{X: 10, Y: 10},
-			&Record{X: 50, Y: 40},
+			&Label{Pos: xy.Position{10, 10}},
+			&Label{Pos: xy.Position{50, 40}},
 			50, 10,
 		},
 		{
@@ -94,14 +119,21 @@ func TestAlignHorizontal(t *testing.T) {
 			aligner.HAlignCenter,
 			NewLine(0, 10, 0, 20),
 			&Label{
-				X: 0, Y: 20, Font: Font{Height: 10},
+				Pos:  xy.Position{0, 20},
+				Font: Font{Height: 10},
 			},
 			0, 20,
 		},
 		{
 			aligner.HAlignCenter,
-			&Label{X: 0, Y: 20, Font: Font{Height: 10}},
-			&Label{X: 0, Y: 20, Font: Font{Height: 6}},
+			&Label{
+				Pos:  xy.Position{0, 20},
+				Font: Font{Height: 10},
+			},
+			&Label{
+				Pos:  xy.Position{0, 20},
+				Font: Font{Height: 6},
+			},
 			0, 28,
 		},
 	}

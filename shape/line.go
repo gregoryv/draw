@@ -36,18 +36,16 @@ func (line *Line) WriteSvg(w io.Writer) error {
 	return err
 }
 
-func (line *Line) SetClass(c string) { line.class = c }
-
-func (line *Line) Height() int {
-	return intAbs(line.Start.Y - line.End.Y)
+func (line *Line) Position() (int, int) {
+	return line.Start.XY()
 }
 
 func (line *Line) Width() int {
 	return intAbs(line.Start.X - line.End.X)
 }
 
-func (line *Line) Position() (int, int) {
-	return line.Start.X, line.Start.Y
+func (line *Line) Height() int {
+	return intAbs(line.Start.Y - line.End.Y)
 }
 
 func (line *Line) SetX(x int) {
@@ -59,7 +57,7 @@ func (line *Line) SetX(x int) {
 func (line *Line) SetY(y int) {
 	diff := line.Start.Y - y
 	line.Start.Y = y
-	line.End.Y = line.End.Y - diff // Set Y2 so the entire arrow moves
+	line.End.Y = line.End.Y - diff
 }
 
 func (line *Line) Direction() Direction {
@@ -68,3 +66,5 @@ func (line *Line) Direction() Direction {
 	}
 	return RL
 }
+
+func (line *Line) SetClass(c string) { line.class = c }
