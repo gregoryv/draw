@@ -11,11 +11,6 @@ import (
 type ClassDiagram struct {
 	Diagram
 
-	// Placed
-	Interfaces []VRecord
-	Structs    []VRecord
-
-	// Used
 	interfaces []VRecord
 	structs    []VRecord
 }
@@ -26,8 +21,6 @@ type ClassDiagram struct {
 func NewClassDiagram() *ClassDiagram {
 	return &ClassDiagram{
 		Diagram:    NewDiagram(),
-		Interfaces: make([]VRecord, 0),
-		Structs:    make([]VRecord, 0),
 		interfaces: make([]VRecord, 0),
 		structs:    make([]VRecord, 0),
 	}
@@ -55,8 +48,8 @@ func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 
 func (d *ClassDiagram) implements() []shape.Shape {
 	rel := make([]shape.Shape, 0)
-	for _, struct_ := range d.Structs {
-		for _, iface := range d.Interfaces {
+	for _, struct_ := range d.structs {
+		for _, iface := range d.interfaces {
 			if reflect.PtrTo(struct_.t).Implements(iface.t) {
 				arrow := shape.NewArrowBetween(struct_, iface)
 				arrow.SetClass("implements-arrow")
@@ -70,10 +63,10 @@ func (d *ClassDiagram) implements() []shape.Shape {
 
 func (d *ClassDiagram) composes() []shape.Shape {
 	rel := make([]shape.Shape, 0)
-	for _, struct_ := range d.Structs {
+	for _, struct_ := range d.structs {
 		for i := 0; i < struct_.t.NumField(); i++ {
 			field := struct_.t.Field(i)
-			for _, struct2 := range d.Structs {
+			for _, struct2 := range d.structs {
 				if field.Type == struct2.t {
 					// todo use composition tail shape
 					arrow := shape.NewArrowBetween(struct_, struct2)
@@ -83,17 +76,6 @@ func (d *ClassDiagram) composes() []shape.Shape {
 		}
 	}
 	return rel
-}
-
-// Place places adds the record to the diagram returning an adjuster
-// for positioning.
-func (d *ClassDiagram) Place(vr VRecord) *shape.Adjuster {
-	if vr.isStruct {
-		d.Structs = append(d.Structs, vr)
-	} else {
-		d.Interfaces = append(d.Interfaces, vr)
-	}
-	return d.Diagram.Place(vr.Record)
 }
 
 // HideRealizations hides all methods of structs that implement a

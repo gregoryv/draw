@@ -39,9 +39,10 @@ func ExampleClassDiagram() {
 	d.Place(dia).RightOf(fnt, 150)
 	d.Place(aligner).RightOf(dia, 80)
 	d.Place(seqdia).Below(fnt, 90)
-	d.Place(adj).Below(aligner, 90)
+	d.Place(adj).Below(aligner, 70)
 	d.Place(classdia).Below(dia, 50)
 	d.VAlignCenter(dia, classdia)
+	d.HAlignBottom(classdia, seqdia)
 	d.SaveAs("img/class_example.svg")
 }
 

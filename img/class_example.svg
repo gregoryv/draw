@@ -1,30 +1,30 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="649" height="1062" font-family="Arial, Helvetica, sans-serif">
+  width="649" height="998" font-family="Arial, Helvetica, sans-serif">
 <path class="implements-arrow" style="stroke:black;stroke-dasharray:5,5,5" d="M149,177 L220,139" />
 <g transform="rotate(-28 220 139)"><path class="implements-arrow-head" style="stroke:black;fill:#ffffff" d="M220,139 l-8,-4 l 0,8 Z" /></g>
-
-<path class="implements-arrow" style="stroke:black;stroke-dasharray:5,5,5" d="M290,256 L290,184" />
-<g transform="rotate(-90 290 184)"><path class="implements-arrow-head" style="stroke:black;fill:#ffffff" d="M290,184 l-8,-4 l 0,8 Z" /></g>
 
 <path class="implements-arrow" style="stroke:black;stroke-dasharray:5,5,5" d="M439,209 L361,153" />
 <g transform="rotate(215 361 153)"><path class="implements-arrow-head" style="stroke:black;fill:#ffffff" d="M361,153 l-8,-4 l 0,8 Z" /></g>
 
+<path class="implements-arrow" style="stroke:black;stroke-dasharray:5,5,5" d="M290,256 L290,184" />
+<g transform="rotate(-90 290 184)"><path class="implements-arrow-head" style="stroke:black;fill:#ffffff" d="M290,184 l-8,-4 l 0,8 Z" /></g>
+
 <path class="arrow" style="stroke:black" d="M81,346 L79,436" />
 <g transform="rotate(92 79 436)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M79,436 l-8,-4 l 0,8 Z" /></g>
+
+<path class="arrow" style="stroke:black" d="M210,679 L287,617" />
+<g transform="rotate(-38 287 617)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M287,617 l-8,-4 l 0,8 Z" /></g>
+
+<path class="arrow" style="stroke:black" d="M358,842 L357,686" />
+<g transform="rotate(269 357 686)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M357,686 l-8,-4 l 0,8 Z" /></g>
 
 <path class="arrow" style="stroke:black" d="M428,541 L508,520" />
 <g transform="rotate(-14 508 520)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M508,520 l-8,-4 l 0,8 Z" /></g>
 
 <path class="arrow" style="stroke:black" d="M287,542 L137,504" />
 <g transform="rotate(194 137 504)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M137,504 l-8,-4 l 0,8 Z" /></g>
-
-<path class="arrow" style="stroke:black" d="M210,655 L287,606" />
-<g transform="rotate(-32 287 606)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M287,606 l-8,-4 l 0,8 Z" /></g>
-
-<path class="arrow" style="stroke:black" d="M358,874 L357,686" />
-<g transform="rotate(269 357 686)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M357,686 l-8,-4 l 0,8 Z" /></g>
 
 <rect class="record" style="fill:#ffffcc;stroke:black" x="220" y="20" width="141" height="164"/>
 <line class="line" style="stroke:#d3d3d3" x1="220" y1="50" x2="361" y2="50"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="226" y="66">Direction()</text>
@@ -97,28 +97,26 @@
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="546">VAlignLeft()</text>
 <text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="562">VAlignRight()</text>
 <text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="456">shape.Aligner struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="632" width="190" height="170"/>
-<line class="line" style="stroke:#d3d3d3" x1="20" y1="662" x2="210" y2="662"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="678">Diagram</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="694">ColWidth</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="710">VMargin</text>
-<line class="line" style="stroke:#d3d3d3" x1="20" y1="716" x2="210" y2="716"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="732">AddColumns()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="748">ClearLinks()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="764">Height()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="780">Link()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="796">Width()</text>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="652">design.SequenceDiagram struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="508" y="658" width="141" height="116"/>
-<line class="line" style="stroke:#d3d3d3" x1="508" y1="688" x2="649" y2="688"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="704">Above()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="720">At()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="736">Below()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="752">LeftOf()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="768">RightOf()</text>
-<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="678">shape.Adjuster struct</text>
-<rect class="record" style="fill:#ffffcc;stroke:black" x="272" y="736" width="172" height="138"/>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="672" width="190" height="170"/>
+<line class="line" style="stroke:#d3d3d3" x1="20" y1="702" x2="210" y2="702"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="718">Diagram</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="734">ColWidth</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="750">VMargin</text>
+<line class="line" style="stroke:#d3d3d3" x1="20" y1="756" x2="210" y2="756"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="772">AddColumns()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="788">ClearLinks()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="804">Height()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="820">Link()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="836">Width()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="692">design.SequenceDiagram struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="508" y="638" width="141" height="116"/>
+<line class="line" style="stroke:#d3d3d3" x1="508" y1="668" x2="649" y2="668"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="684">Above()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="700">At()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="716">Below()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="732">LeftOf()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="748">RightOf()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="514" y="658">shape.Adjuster struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="272" y="736" width="172" height="106"/>
 <line class="line" style="stroke:#d3d3d3" x1="272" y1="766" x2="444" y2="766"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="278" y="782">Diagram</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="278" y="798">Interfaces</text>
-<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="278" y="814">Structs</text>
-<line class="line" style="stroke:#d3d3d3" x1="272" y1="820" x2="444" y2="820"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="278" y="836">HideRealizations()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="278" y="852">Interface()</text>
-<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="278" y="868">Struct()</text>
+<line class="line" style="stroke:#d3d3d3" x1="272" y1="788" x2="444" y2="788"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="278" y="804">HideRealizations()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="278" y="820">Interface()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="278" y="836">Struct()</text>
 <text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="278" y="756">design.ClassDiagram struct</text></svg>
