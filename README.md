@@ -31,13 +31,10 @@ WIP - major refactorings still going on
 ## TODO
 
 - Labeled arrows
-- Optionally hide methods that implement an interface if it's part of
-  the diagram, minimizing duplication.
 - Link to optional godoc service
 - More shapes
     - Note
     - Circle
-- Calculate correct width of text elements based on font
 
 ## Class diagram
 
@@ -45,14 +42,6 @@ This diagram is rendered by
 [example_test.go/ExampleClassDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-ClassDiagram)
 
 ![](img/class_example.svg)
-
-
-With hidden fields and methods and different placement.
-This diagram is rendered by
-[example_test.go/ExampleVerticalClassDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-VerticalClassDiagram)
-
-
-![](img/vertical_class_example.svg)
 
 
 ## Sequence diagram
