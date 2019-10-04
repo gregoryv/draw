@@ -39,25 +39,6 @@ func ExampleClassDiagram() {
 	d.SaveAs("img/class_example.svg")
 }
 
-func ExampleVerticalClassDiagram() {
-	var (
-		record = design.NewStruct(shape.Record{})
-		shapeI = design.NewInterface((*shape.Shape)(nil))
-		sws    = design.NewInterface((*shape.Shape)(nil))
-		arrow  = design.NewStruct(shape.Arrow{})
-		d      = design.NewClassDiagram()
-	)
-	for _, r := range []design.VRecord{record, shapeI, sws, arrow} {
-		r.TitleOnly()
-	}
-	d.Place(shapeI).At(20, 100)
-	d.Place(record).At(160, 0)
-	d.Place(sws).At(280, 100)
-	d.Place(arrow).At(60, 200)
-	d.VAlignCenter(record, arrow)
-	d.SaveAs("img/vertical_class_example.svg")
-}
-
 func ExampleSequenceDiagram() {
 	var (
 		cli = "Client"
@@ -110,10 +91,6 @@ func ExampleDiagram() {
 
 func TestClassDiagram(t *testing.T) {
 	ExampleClassDiagram()
-}
-
-func TestVerticalClassDiagram(t *testing.T) {
-	ExampleVerticalClassDiagram()
 }
 
 func TestSequenceDiagram(t *testing.T) {
