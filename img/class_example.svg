@@ -2,14 +2,14 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="649" height="1258" font-family="Arial, Helvetica, sans-serif">
-<path class="arrow" style="stroke:black" d="M149,215 L220,158" />
-<g transform="rotate(-38 220 158)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M220,158 l-8,-4 l 0,8 Z" /></g>
+<path class="implements-arrow" style="stroke:black;stroke-dasharray:5,5,5" d="M149,215 L220,158" />
+<g transform="rotate(-38 220 158)"><path class="implements-arrow-head" style="stroke:black;fill:#ffffff" d="M220,158 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M290,240 L290,184" />
-<g transform="rotate(-90 290 184)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M290,184 l-8,-4 l 0,8 Z" /></g>
+<path class="implements-arrow" style="stroke:black;stroke-dasharray:5,5,5" d="M290,240 L290,184" />
+<g transform="rotate(-90 290 184)"><path class="implements-arrow-head" style="stroke:black;fill:#ffffff" d="M290,184 l-8,-4 l 0,8 Z" /></g>
 
-<path class="arrow" style="stroke:black" d="M439,243 L361,169" />
-<g transform="rotate(223 361 169)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M361,169 l-8,-4 l 0,8 Z" /></g>
+<path class="implements-arrow" style="stroke:black;stroke-dasharray:5,5,5" d="M439,243 L361,169" />
+<g transform="rotate(223 361 169)"><path class="implements-arrow-head" style="stroke:black;fill:#ffffff" d="M361,169 l-8,-4 l 0,8 Z" /></g>
 
 <path class="arrow" style="stroke:black" d="M79,458 L78,548" />
 <g transform="rotate(91 78 548)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M78,548 l-8,-4 l 0,8 Z" /></g>

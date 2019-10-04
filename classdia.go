@@ -39,8 +39,9 @@ func (d *ClassDiagram) implements() []shape.Shape {
 	for _, struct_ := range d.Structs {
 		for _, iface := range d.Interfaces {
 			if reflect.PtrTo(struct_.t).Implements(iface.t) {
-				// todo use correct UML arrow
 				arrow := shape.NewArrowBetween(struct_, iface)
+				arrow.SetClass("implements-arrow")
+				arrow.Head.SetClass("implements-arrow-head")
 				rel = append(rel, arrow)
 			}
 		}

@@ -43,8 +43,8 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 	lines := make([]*shape.Line, len(dia.columns))
 	for i, column := range dia.columns {
 		label := shape.NewLabel(column)
-		label.X = i * colWidth
-		label.Y = top
+		label.SetX(i * colWidth)
+		label.SetY(top)
 		label.Font = dia.Font
 		label.Pad = dia.Pad
 
@@ -66,8 +66,8 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		fromX := lines[lnk.fromIndex].Start.X
 		toX := lines[lnk.toIndex].Start.X
 		label := shape.NewLabel(lnk.text)
-		label.X = fromX
-		label.Y = y - 2
+		label.SetX(fromX)
+		label.SetY(y - 2)
 		label.Font = dia.Font
 		label.Pad = dia.Pad
 
@@ -79,7 +79,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			l2 := shape.NewLine(fromX+margin, y, fromX+margin, y+dia.Font.LineHeight*2)
 			l2.SetClass(lnk.class())
 			dia.HAlignCenter(l2, label)
-			label.X += l1.Width() + dia.TextPad.Left
+			label.Pos.X += l1.Width() + dia.TextPad.Left
 			arrow := shape.NewArrow(
 				l2.End.X,
 				l2.End.Y,

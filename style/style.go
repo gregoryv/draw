@@ -23,19 +23,21 @@ func (styler *Styler) write(s []byte) {
 
 // classname -> style
 var DefaultStyle = map[string]string{
-	"highlight":      "stroke:red",
-	"highlight-head": "stroke:red;fill:#ffffff",
-	"arrow":          "stroke:black",
-	"arrow-head":     "stroke:black;fill:#ffffff",
-	"arrow-tail":     "fill:white;stroke:#d3d3d3",
-	"line":           "stroke:#d3d3d3",
-	"column-line":    "stroke:#d3d3d3",
-	"record":         "fill:#ffffcc;stroke:black",
-	"record-title":   "font-family:Arial,Helvetica,sans-serif; font-size:12px",
-	"field":          "font-family:Arial,Helvetica,sans-serif; font-size:12px",
-	"method":         "font-family:Arial,Helvetica,sans-serif; font-size:12px",
-	"record-label":   "font-family:Arial,Helvetica,sans-serif; font-size:12px",
-	"label":          "font-family:Arial,Helvetica,sans-serif; font-size:12px",
+	"highlight":             "stroke:red",
+	"highlight-head":        "stroke:red;fill:#ffffff",
+	"implements-arrow":      "stroke:black;stroke-dasharray:5,5,5",
+	"implements-arrow-head": "stroke:black;fill:#ffffff",
+	"arrow":                 "stroke:black",
+	"arrow-head":            "stroke:black;fill:#ffffff",
+	"arrow-tail":            "fill:white;stroke:#d3d3d3",
+	"line":                  "stroke:#d3d3d3",
+	"column-line":           "stroke:#d3d3d3",
+	"record":                "fill:#ffffcc;stroke:black",
+	"record-title":          "font-family:Arial,Helvetica,sans-serif; font-size:12px",
+	"field":                 "font-family:Arial,Helvetica,sans-serif; font-size:12px",
+	"method":                "font-family:Arial,Helvetica,sans-serif; font-size:12px",
+	"record-label":          "font-family:Arial,Helvetica,sans-serif; font-size:12px",
+	"label":                 "font-family:Arial,Helvetica,sans-serif; font-size:12px",
 }
 
 // Write adds a style attribute based on class. Limited to 1 class
