@@ -1,0 +1,157 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="720" height="784" font-family="Arial, Helvetica, sans-serif">
+<path class="implements-arrow" style="stroke:black;stroke-dasharray:5,5,5" d="M197,95 L167,92" />
+<g transform="rotate(185 167 92)"><path class="implements-arrow-head" style="stroke:black;fill:#ffffff" d="M167,92 l-8,-4 l 0,8 Z" /></g>
+
+<text class="label" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="220" y="20">package net/http</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="60" width="147" height="52"/>
+<line class="line" style="stroke:#d3d3d3" x1="20" y1="90" x2="167" y2="90"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="106">ServeHTTP()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="80">http.Handler interface</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="197" y="60" width="136" height="84"/>
+<line class="line" style="stroke:#d3d3d3" x1="197" y1="90" x2="333" y2="90"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="106">Handle()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="122">HandleFunc()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="138">Handler()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="80">http.ServeMux struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="363" y="60" width="190" height="84"/>
+<line class="line" style="stroke:#d3d3d3" x1="363" y1="90" x2="553" y2="90"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="106">Header()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="122">Write()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="138">WriteHeader()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="80">http.ResponseWriter interface</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="583" y="60" width="137" height="666"/>
+<line class="line" style="stroke:#d3d3d3" x1="583" y1="90" x2="720" y2="90"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="106">Method</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="122">URL</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="138">Proto</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="154">ProtoMajor</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="170">ProtoMinor</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="186">Header</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="202">Body</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="218">GetBody</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="234">ContentLength</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="250">TransferEncoding</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="266">Close</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="282">Host</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="298">Form</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="314">PostForm</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="330">MultipartForm</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="346">Trailer</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="362">RemoteAddr</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="378">RequestURI</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="394">TLS</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="410">Cancel</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="426">Response</text>
+<line class="line" style="stroke:#d3d3d3" x1="583" y1="432" x2="720" y2="432"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="448">AddCookie()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="464">BasicAuth()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="480">Context()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="496">Cookie()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="512">Cookies()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="528">FormFile()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="544">FormValue()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="560">MultipartReader()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="576">ParseForm()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="592">ParseMultipartForm()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="608">PostFormValue()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="624">ProtoAtLeast()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="640">Referer()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="656">SetBasicAuth()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="672">UserAgent()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="688">WithContext()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="704">Write()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="720">WriteProxy()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="589" y="80">http.Request struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="158" width="150" height="346"/>
+<line class="line" style="stroke:#d3d3d3" x1="20" y1="188" x2="170" y2="188"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="204">Addr</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="220">Handler</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="236">TLSConfig</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="252">ReadTimeout</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="268">ReadHeaderTimeout</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="284">WriteTimeout</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="300">IdleTimeout</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="316">MaxHeaderBytes</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="332">TLSNextProto</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="348">ConnState</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="364">ErrorLog</text>
+<line class="line" style="stroke:#d3d3d3" x1="20" y1="370" x2="170" y2="370"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="386">Close()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="402">ListenAndServe()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="418">ListenAndServeTLS()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="434">RegisterOnShutdown()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="450">Serve()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="466">ServeTLS()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="482">SetKeepAlivesEnabled()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="498">Shutdown()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="178">http.Server struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="197" y="174" width="135" height="330"/>
+<line class="line" style="stroke:#d3d3d3" x1="197" y1="204" x2="332" y2="204"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="220">Status</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="236">StatusCode</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="252">Proto</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="268">ProtoMajor</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="284">ProtoMinor</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="300">Header</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="316">Body</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="332">ContentLength</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="348">TransferEncoding</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="364">Close</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="380">Uncompressed</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="396">Trailer</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="412">Request</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="428">TLS</text>
+<line class="line" style="stroke:#d3d3d3" x1="197" y1="434" x2="332" y2="434"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="450">Cookies()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="466">Location()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="482">ProtoAtLeast()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="498">Write()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="203" y="194">http.Response struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="363" y="174" width="149" height="378"/>
+<line class="line" style="stroke:#d3d3d3" x1="363" y1="204" x2="512" y2="204"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="220">Proxy</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="236">DialContext</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="252">Dial</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="268">DialTLS</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="284">TLSClientConfig</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="300">TLSHandshakeTimeout</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="316">DisableKeepAlives</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="332">DisableCompression</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="348">MaxIdleConns</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="364">MaxIdleConnsPerHost</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="380">MaxConnsPerHost</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="396">IdleConnTimeout</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="412">ResponseHeaderTimeout</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="428">ExpectContinueTimeout</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="444">TLSNextProto</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="460">ProxyConnectHeader</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="476">MaxResponseHeaderBytes</text>
+<line class="line" style="stroke:#d3d3d3" x1="363" y1="482" x2="512" y2="482"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="498">CancelRequest()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="514">CloseIdleConnections()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="530">RegisterProtocol()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="546">RoundTrip()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="194">http.Transport struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="363" y="582" width="149" height="202"/>
+<line class="line" style="stroke:#d3d3d3" x1="363" y1="612" x2="512" y2="612"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="628">Transport</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="644">CheckRedirect</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="660">Jar</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="676">Timeout</text>
+<line class="line" style="stroke:#d3d3d3" x1="363" y1="682" x2="512" y2="682"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="698">CloseIdleConnections()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="714">Do()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="730">Get()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="746">Head()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="762">Post()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="778">PostForm()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="369" y="602">http.Client struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="20" y="534" width="123" height="250"/>
+<line class="line" style="stroke:#d3d3d3" x1="20" y1="564" x2="143" y2="564"/><text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="580">Name</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="596">Value</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="612">Path</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="628">Domain</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="644">Expires</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="660">RawExpires</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="676">MaxAge</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="692">Secure</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="708">HttpOnly</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="724">SameSite</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="740">Raw</text>
+<text class="field" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="756">Unparsed</text>
+<line class="line" style="stroke:#d3d3d3" x1="20" y1="762" x2="143" y2="762"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="778">String()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="26" y="554">http.Cookie struct</text>
+<rect class="record" style="fill:#ffffcc;stroke:black" x="173" y="534" width="160" height="68"/>
+<line class="line" style="stroke:#d3d3d3" x1="173" y1="564" x2="333" y2="564"/><text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="179" y="580">Cookies()</text>
+<text class="method" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="179" y="596">SetCookies()</text>
+<text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="179" y="554">http.CookieJar interface</text></svg>
