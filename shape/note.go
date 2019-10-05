@@ -3,6 +3,7 @@ package shape
 import (
 	"fmt"
 	"io"
+	"strings"
 
 	"github.com/gregoryv/go-design/xy"
 )
@@ -33,9 +34,19 @@ func (note *Note) Direction() Direction { return LR }
 func (note *Note) SetX(x int)           { note.Pos.X = x }
 func (note *Note) SetY(y int)           { note.Pos.Y = y }
 
-func (n *Note) Width() int { return n.TextWidth(n.Text) }
+func (n *Note) Width() int {
+	var width int
+	for _, line := range strings.Split(n.Text, "\n") {
+		w := n.TextWidth(line)
+		if w > width {
+			width = w
+		}
+	}
+	return width
+}
+
 func (n *Note) Height() int {
-	lines := 1 // todo
+	lines := strings.Count(n.Text, "\n") + 1
 	return boxHeight(n.Font, n.Pad, lines)
 }
 func (n *Note) SetClass(c string) { n.class = c }
@@ -51,7 +62,10 @@ func (n *Note) WriteSvg(out io.Writer) error {
 	w.printf(`<path class="%s-box" d="M%v,%v `, n.class, x, y)
 	w.printf(`L%v,%v %v,%v %v,%v %v,%v %v,%v %v,%v %v,%v M%v,%v L%v,%v" />`,
 		x, y, x, y2, x2, y2, x2, yf, xf, y, xf, yf, x2, yf, xf, y, x, y)
-	w.printf(`<text class="note" x="%v" y="%v">%s</text>`,
-		x, y+n.Font.LineHeight, n.Text)
+	x += n.Pad.Left
+	for i, line := range strings.Split(n.Text, "\n") {
+		w.printf(`<text class="note" x="%v" y="%v">%s</text>`,
+			x, y+(n.Font.LineHeight*(i+1)), line)
+	}
 	return *err
 }
