@@ -23,6 +23,8 @@ func (styler *Styler) write(s []byte) {
 
 // classname -> style
 var DefaultStyle = map[string]string{
+	"note":                  "font-family:Arial,Helvetica,sans-serif; font-size:12px",
+	"note-box":              "fill:#ffffff;stroke:black",
 	"highlight":             "stroke:red",
 	"highlight-head":        "stroke:red;fill:#ffffff",
 	"implements-arrow":      "stroke:black;stroke-dasharray:5,5,5",

@@ -5,12 +5,15 @@ import (
 	"io"
 	"os"
 
-	"github.com/gregoryv/go-design/shape"
 	"github.com/gregoryv/go-design/style"
 )
 
+type SvgWriter interface {
+	WriteSvg(io.Writer) error
+}
+
 // saveAs saves diagram using default style to filename
-func saveAs(dia shape.SvgWriter, filename string) error {
+func saveAs(dia SvgWriter, filename string) error {
 	fh, err := os.Create(filename)
 	if err != nil {
 		return err
@@ -20,6 +23,6 @@ func saveAs(dia shape.SvgWriter, filename string) error {
 }
 
 // WriteDefault applies default style while writing diagram to w
-func WriteDefault(dia shape.SvgWriter, w io.Writer) error {
+func WriteDefault(dia SvgWriter, w io.Writer) error {
 	return dia.WriteSvg(style.NewStyler(w))
 }

@@ -2,14 +2,9 @@
 package shape
 
 import (
-	"io"
 	"math"
 	"unicode"
 )
-
-type SvgWriter interface {
-	WriteSvg(io.Writer) error
-}
 
 type Font struct {
 	Height     int

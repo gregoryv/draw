@@ -8,15 +8,17 @@ import (
 )
 
 func TestNote(t *testing.T) {
-	note := NewNote(`Multiline text
+	n := NewNote(`Multiline text
 is possible in notes`)
-	saveAsSvg(t, note, "testdata/note.svg")
+	n.Pos.Y = 20
+	saveAsSvg(t, n, "testdata/note.svg")
+	testShape(t, n)
 
 }
 
-func saveAsSvg(t *testing.T, shape SvgWriterShape, filename string) {
+func saveAsSvg(t *testing.T, shape Shape, filename string) {
 	t.Helper()
-	d := &Svg{Width: 100, Height: 100}
+	d := &Svg{Width: 300, Height: 100}
 	d.Append(shape)
 
 	fh, err := os.Create(filename)
