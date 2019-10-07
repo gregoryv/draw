@@ -7,7 +7,6 @@ import (
 	"testing"
 
 	"github.com/gregoryv/asserter"
-	"github.com/gregoryv/go-design/style"
 )
 
 func TestArrow(t *testing.T) {
@@ -118,7 +117,7 @@ func (t *OneArrow) saveAs(filename string) {
 		t.Error(err)
 		return
 	}
-	d.WriteSvg(style.NewStyler(fh))
+	d.WriteSvg(NewStyler(fh))
 	fh.Close()
 }
 
@@ -194,6 +193,6 @@ func writeSvgTo(t *testing.T, filename string, svg *Svg) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	svg.WriteSvg(style.NewStyler(fh))
+	svg.WriteSvg(NewStyler(fh))
 	fh.Close()
 }

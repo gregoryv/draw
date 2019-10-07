@@ -3,8 +3,6 @@ package shape
 import (
 	"os"
 	"testing"
-
-	"github.com/gregoryv/go-design/style"
 )
 
 func TestNote(t *testing.T) {
@@ -26,6 +24,6 @@ func saveAsSvg(t *testing.T, shape Shape, filename string) {
 		t.Error(err)
 		return
 	}
-	d.WriteSvg(style.NewStyler(fh))
+	d.WriteSvg(NewStyler(fh))
 	fh.Close()
 }

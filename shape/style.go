@@ -1,5 +1,4 @@
-// Package style provides svg class base styles for design diagrams
-package style
+package shape
 
 import (
 	"bytes"

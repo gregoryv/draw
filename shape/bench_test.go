@@ -3,8 +3,6 @@ package shape
 import (
 	"io/ioutil"
 	"testing"
-
-	"github.com/gregoryv/go-design/style"
 )
 
 func BenchmarkWriteSvg(b *testing.B) {
@@ -13,7 +11,7 @@ func BenchmarkWriteSvg(b *testing.B) {
 			&Record{},
 		},
 	}
-	style := style.NewStyler(ioutil.Discard)
+	style := NewStyler(ioutil.Discard)
 	for i := 0; i < b.N; i++ {
 		svg.WriteSvg(style)
 	}
