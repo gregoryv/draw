@@ -15,7 +15,7 @@ func TestStyler_rejects_bad_elements(t *testing.T) {
 		}
 	}()
 	buf := &bytes.Buffer{}
-	s := NewStyler(buf)
+	s := NewStyle(buf)
 	input := `<line class=">`
 	s.Write([]byte(input))
 	if buf.String() != input {
@@ -49,7 +49,7 @@ func TestStylerWrite_adds_style_to_classed_elements(t *testing.T) {
 	for _, c := range cases {
 		t.Run(c.input, func(t *testing.T) {
 			var buf bytes.Buffer
-			s := NewStyler(&buf)
+			s := NewStyle(&buf)
 			s.Write([]byte(c.input))
 			got := buf.String()
 			assert := asserter.New(t)

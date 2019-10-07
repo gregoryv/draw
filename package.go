@@ -24,5 +24,5 @@ func saveAs(dia SvgWriter, filename string) error {
 
 // WriteDefault applies default style while writing diagram to w
 func WriteDefault(dia SvgWriter, w io.Writer) error {
-	return dia.WriteSvg(shape.NewStyler(w))
+	return dia.WriteSvg(shape.NewStyle(w))
 }

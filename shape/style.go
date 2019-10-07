@@ -6,16 +6,25 @@ import (
 	"io"
 )
 
-func NewStyler(dest io.Writer) *Style {
-	return &Style{dest: dest}
+func NewStyle(dest io.Writer) *Style {
+	return &Style{
+		dest: dest,
+	}
 }
 
 type Style struct {
+	Font
 	dest    io.Writer
 	err     error
 	written int
 	styles  map[string]string
 }
+
+var (
+	DefaultFont    = Font{Height: 9, Width: 8, LineHeight: 16}
+	DefaultTextPad = Padding{Left: 6, Top: 4, Bottom: 6, Right: 6}
+	DefaultPad     = Padding{Left: 10, Top: 2, Bottom: 7, Right: 10}
+)
 
 func (style *Style) write(s []byte) {
 	style.written, style.err = style.dest.Write(s)
