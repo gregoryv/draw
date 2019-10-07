@@ -8,7 +8,7 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
-func TestStyler_rejects_bad_elements(t *testing.T) {
+func TestStyl_rejects_bad_elements(t *testing.T) {
 	defer func() {
 		e := recover()
 		if e == nil {
@@ -24,7 +24,7 @@ func TestStyler_rejects_bad_elements(t *testing.T) {
 	}
 }
 
-func TestStylerWrite_adds_style_to_classed_elements(t *testing.T) {
+func TestStyle_Write_adds_style_to_classed_elements(t *testing.T) {
 	cases := []struct {
 		input string
 		exp   string
@@ -59,14 +59,17 @@ func TestStylerWrite_adds_style_to_classed_elements(t *testing.T) {
 	}
 }
 
-func TestStyler_write(t *testing.T) {
+func TestStyle_write(t *testing.T) {
 	s := &Style{
 		err: fmt.Errorf("wrong"),
 	}
-	s.SetOutput(nil)
 	s.write([]byte("something"))
 	if s.written > 0 {
 		t.Errorf("Wrote %v, should be 0", s.written)
 	}
+}
 
+func TestStyle_SetOutput(t *testing.T) {
+	s := NewStyle(nil)
+	s.SetOutput(nil)
 }

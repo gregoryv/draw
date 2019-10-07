@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"io/ioutil"
 )
 
 func NewStyle(dest io.Writer) *Style {
@@ -113,5 +114,8 @@ func (style *Style) scanClass(p []byte) ([]byte, int) {
 }
 
 func (s *Style) SetOutput(out io.Writer) {
+	if out == nil {
+		out = ioutil.Discard
+	}
 	s.dest = out
 }
