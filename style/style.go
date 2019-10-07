@@ -32,7 +32,7 @@ var DefaultStyle = map[string]string{
 	"arrow":                 "stroke:black",
 	"arrow-head":            "stroke:black;fill:#ffffff",
 	"arrow-tail":            "fill:white;stroke:#d3d3d3",
-	"line":                  "stroke:#d3d3d3",
+	"line":                  `stroke:#d3d3d3`,
 	"column-line":           "stroke:#d3d3d3",
 	"record":                "fill:#ffffcc;stroke:black",
 	"record-title":          "font-family:Arial,Helvetica,sans-serif; font-size:12px",

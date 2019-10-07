@@ -3,23 +3,11 @@ package style
 import (
 	"bytes"
 	"testing"
+
+	"github.com/gregoryv/asserter"
 )
 
-func Test_one_styler(t *testing.T) {
-	it := one_styler{T: t}
-
-	it.does_not_modify_unrecognized_elements()
-	it.skips_non_classed_elements()
-	it.only_modifies_classed_elements()
-	it.rejects_bad_elements()
-}
-
-type one_styler struct {
-	*testing.T
-}
-
-func (t *one_styler) rejects_bad_elements() {
-	t.Helper()
+func TestStyler_rejects_bad_elements(t *testing.T) {
 	defer func() {
 		e := recover()
 		if e == nil {
@@ -35,35 +23,37 @@ func (t *one_styler) rejects_bad_elements() {
 	}
 }
 
-func (t *one_styler) skips_non_classed_elements() {
-	t.Helper()
-	buf := &bytes.Buffer{}
-	s := NewStyler(buf)
-	input := `<line />`
-	s.Write([]byte(input))
-	if buf.String() != input {
-		t.Fail()
+func TestStylerWrite_adds_style_to_classed_elements(t *testing.T) {
+	cases := []struct {
+		input string
+		exp   string
+	}{
+		{
+			`<x class="line" />`,
+			`<x class="line" style="stroke:#d3d3d3" />`,
+		},
+		{
+			`<x class="whatever" />`,
+			`<x class="whatever" />`,
+		},
+		{
+			`<x b="t" s="x"/>`,
+			`<x b="t" s="x"/>`,
+		},
+		{
+			`<x />`,
+			`<x />`,
+		},
 	}
-}
 
-func (t *one_styler) does_not_modify_unrecognized_elements() {
-	t.Helper()
-	buf := &bytes.Buffer{}
-	s := NewStyler(buf)
-	input := `<x class="not-something-we-recognize" />"`
-	s.Write([]byte(input))
-	if buf.String() != input {
-		t.Fail()
-	}
-}
-
-func (t *one_styler) only_modifies_classed_elements() {
-	t.Helper()
-	buf := &bytes.Buffer{}
-	s := NewStyler(buf)
-	input := `<x class="line" />"`
-	s.Write([]byte(input))
-	if buf.String() == input {
-		t.Fail()
+	for _, c := range cases {
+		t.Run(c.input, func(t *testing.T) {
+			var buf bytes.Buffer
+			s := NewStyler(&buf)
+			s.Write([]byte(c.input))
+			got := buf.String()
+			assert := asserter.New(t)
+			assert().Equals(got, c.exp)
+		})
 	}
 }
