@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [Unreleased]
+### Added
+
+- Note shape with multiline support
+
 ### Changed
 
 - Hide methods realized by visible interfaces and structs
