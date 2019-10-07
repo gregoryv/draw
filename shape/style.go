@@ -26,10 +26,6 @@ var (
 	DefaultPad     = Padding{Left: 10, Top: 2, Bottom: 7, Right: 10}
 )
 
-func (style *Style) write(s []byte) {
-	style.written, style.err = style.dest.Write(s)
-}
-
 // classname -> style
 var DefaultStyle = map[string]string{
 	"note":                  `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
@@ -54,6 +50,7 @@ var DefaultStyle = map[string]string{
 // Write adds a style attribute based on class. Limited to 1 class
 // only and assumes the entire classname attribute is found.
 func (style *Style) Write(p []byte) (int, error) {
+	style.written = 0
 	class, i := style.scanClass(p)
 	if i == -1 {
 		return style.dest.Write(p)
@@ -72,6 +69,15 @@ func (style *Style) Write(p []byte) (int, error) {
 	}
 	write(p[i:]) // the rest
 	return style.written, style.err
+}
+
+func (style *Style) write(s []byte) {
+	if style.err != nil {
+		return
+	}
+	n, err := style.dest.Write(s)
+	style.written += n
+	style.err = err
 }
 
 var field = []byte(`class="`)

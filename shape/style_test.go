@@ -2,6 +2,7 @@ package shape
 
 import (
 	"bytes"
+	"fmt"
 	"testing"
 
 	"github.com/gregoryv/asserter"
@@ -56,4 +57,15 @@ func TestStylerWrite_adds_style_to_classed_elements(t *testing.T) {
 			assert().Equals(got, c.exp)
 		})
 	}
+}
+
+func TestStyler_write(t *testing.T) {
+	s := &Style{
+		err: fmt.Errorf("wrong"),
+	}
+	s.write([]byte("something"))
+	if s.written > 0 {
+		t.Errorf("Wrote %v, should be 0", s.written)
+	}
+
 }
