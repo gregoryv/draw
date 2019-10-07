@@ -13,11 +13,12 @@ type SvgWriter interface {
 }
 
 // saveAs saves diagram using default style to filename
-func saveAs(dia SvgWriter, filename string) error {
+func saveAs(dia SvgWriter, style *shape.Style, filename string) error {
 	fh, err := os.Create(filename)
 	if err != nil {
 		return err
 	}
 	defer fh.Close()
-	return dia.WriteSvg(shape.NewStyle(fh))
+	style.SetOutput(fh)
+	return dia.WriteSvg(style)
 }

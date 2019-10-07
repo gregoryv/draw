@@ -32,8 +32,3 @@ func NewInterface(obj interface{}) VRecord {
 		isStruct: false,
 	}
 }
-
-// SaveAs saves the diagram to filename as SVG
-func (d *ClassDiagram) SaveAs(filename string) error {
-	return saveAs(d, filename)
-}

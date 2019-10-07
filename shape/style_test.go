@@ -63,6 +63,7 @@ func TestStyler_write(t *testing.T) {
 	s := &Style{
 		err: fmt.Errorf("wrong"),
 	}
+	s.SetOutput(nil)
 	s.write([]byte("something"))
 	if s.written > 0 {
 		t.Errorf("Wrote %v, should be 0", s.written)

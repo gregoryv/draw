@@ -13,6 +13,7 @@ import (
 // styling
 func NewDiagram() Diagram {
 	return Diagram{
+		Style:   shape.NewStyle(nil),
 		Font:    shape.DefaultFont,
 		TextPad: shape.DefaultTextPad,
 		Pad:     shape.DefaultPad,
@@ -23,6 +24,7 @@ func NewDiagram() Diagram {
 type Diagram struct {
 	shape.Svg
 	shape.Aligner
+	*shape.Style
 
 	Font    shape.Font    // Used to calculate width
 	TextPad shape.Padding // Surrounding text
@@ -49,8 +51,8 @@ func (diagram *Diagram) applyStyle(s interface{}) {
 }
 
 // SaveAs saves the diagram to filename as SVG
-func (diagram *Diagram) SaveAs(filename string) error {
-	return saveAs(diagram, filename)
+func (d *Diagram) SaveAs(filename string) error {
+	return saveAs(d, d.Style, filename)
 }
 
 func (diagram *Diagram) WriteSvg(w io.Writer) error {

@@ -106,6 +106,11 @@ func (d *ClassDiagram) HideRealizations() {
 	}
 }
 
+// SaveAs saves the diagram to filename as SVG
+func (d *ClassDiagram) SaveAs(filename string) error {
+	return saveAs(d, d.Style, filename)
+}
+
 // Relation defines a relation between two records
 type Relation struct {
 	from, to *shape.Record

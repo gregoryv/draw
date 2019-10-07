@@ -111,3 +111,7 @@ func (style *Style) scanClass(p []byte) ([]byte, int) {
 	j++
 	return class, i + j
 }
+
+func (s *Style) SetOutput(out io.Writer) {
+	s.dest = out
+}
