@@ -19,10 +19,5 @@ func saveAs(dia SvgWriter, filename string) error {
 		return err
 	}
 	defer fh.Close()
-	return WriteDefault(dia, fh)
-}
-
-// WriteDefault applies default style while writing diagram to w
-func WriteDefault(dia SvgWriter, w io.Writer) error {
-	return dia.WriteSvg(shape.NewStyle(w))
+	return dia.WriteSvg(shape.NewStyle(fh))
 }
