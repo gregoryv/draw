@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="240" height="160" font-family="Arial, Helvetica, sans-serif">
+  width="251" height="221" font-family="Arial, Helvetica, sans-serif">
 <rect class="record" style="fill:#ffffcc;stroke:black" x="10" y="30" width="55" height="26"/>
 <text class="record-title" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="16" y="50">Record</text>
 <path class="arrow" style="stroke:black" d="M130,80 L180,70" />
@@ -32,4 +32,8 @@
 <path class="arrow" style="stroke:black" d="M20,150 L150,150" />
 <circle class="arrow-tail" style="fill:white;stroke:#d3d3d3" cx="20" cy="150" r="3" />
 <g transform="rotate(0 150 150)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M150,150 l-8,-4 l 0,8 Z" /></g>
+
+<path class="note-box" style="fill:#ffffff;stroke:black" d="M20,180 L20,180 20,221 133,221 133,190 123,180 123,190 133,190 M123,180 L20,180" />
+<text class="note" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="196">Notes support</text>
+<text class="note" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="212">multilines</text>
 </svg>

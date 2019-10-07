@@ -36,13 +36,15 @@ func (note *Note) SetY(y int)           { note.Pos.Y = y }
 
 func (n *Note) Width() int {
 	var width int
+	var widestLine string
 	for _, line := range strings.Split(n.Text, "\n") {
 		w := n.TextWidth(line)
 		if w > width {
 			width = w
+			widestLine = line
 		}
 	}
-	return width
+	return boxWidth(n.Font, n.Pad, widestLine)
 }
 
 func (n *Note) Height() int {
@@ -62,10 +64,12 @@ func (n *Note) WriteSvg(out io.Writer) error {
 	w.printf(`<path class="%s-box" d="M%v,%v `, n.class, x, y)
 	w.printf(`L%v,%v %v,%v %v,%v %v,%v %v,%v %v,%v %v,%v M%v,%v L%v,%v" />`,
 		x, y, x, y2, x2, y2, x2, yf, xf, y, xf, yf, x2, yf, xf, y, x, y)
+	w.print("\n")
 	x += n.Pad.Left
 	for i, line := range strings.Split(n.Text, "\n") {
 		w.printf(`<text class="note" x="%v" y="%v">%s</text>`,
 			x, y+(n.Font.LineHeight*(i+1)), line)
+		w.print("\n")
 	}
 	return *err
 }

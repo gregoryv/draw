@@ -2,4 +2,7 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="300" height="100" font-family="Arial, Helvetica, sans-serif">
-<path class="note-box" style="fill:#ffffff;stroke:black" d="M0,20 L0,20 0,61 122,61 122,30 112,20 112,30 122,30 M112,20 L0,20" /><text class="note" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="10" y="36">Multiline text is</text><text class="note" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="10" y="52">possible in notes</text></svg>
+<path class="note-box" style="fill:#ffffff;stroke:black" d="M0,20 L0,20 0,61 142,61 142,30 132,20 132,30 142,30 M132,20 L0,20" />
+<text class="note" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="10" y="36">Multiline text is</text>
+<text class="note" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="10" y="52">possible in notes</text>
+</svg>

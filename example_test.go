@@ -78,7 +78,9 @@ func ExampleDiagram() {
 		downarrow  = shape.NewArrow(x, y, x, y+40)
 		label      = shape.NewLabel("Label")
 		withtail   = shape.NewArrow(20, 100, 150, 100)
-		d          = design.NewDiagram()
+		note       = shape.NewNote(`Notes support
+multilines`)
+		d = design.NewDiagram()
 	)
 	d.Place(record).At(10, 30)
 	for _, arrow := range []*shape.Arrow{
@@ -91,8 +93,7 @@ func ExampleDiagram() {
 	d.Place(label).RightOf(record, 150)
 	withtail.Tail = true
 	d.Place(withtail).At(20, 150)
-	d.Width = 240
-	d.Height = 160
+	d.Place(note).Below(withtail)
 	d.SaveAs("img/diagram_example.svg")
 }
 
