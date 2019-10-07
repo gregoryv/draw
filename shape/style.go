@@ -9,13 +9,17 @@ import (
 
 func NewStyle(dest io.Writer) *Style {
 	return &Style{
-		Font: DefaultFont,
-		dest: dest,
+		Font:    DefaultFont,
+		TextPad: DefaultTextPad,
+		Pad:     DefaultPad,
+		dest:    dest,
 	}
 }
 
 type Style struct {
 	Font
+	TextPad Padding // Surrounding text
+	Pad     Padding // E.g. records
 	dest    io.Writer
 	err     error
 	written int

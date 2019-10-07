@@ -13,9 +13,7 @@ import (
 // styling
 func NewDiagram() Diagram {
 	return Diagram{
-		Style:   shape.NewStyle(nil),
-		TextPad: shape.DefaultTextPad,
-		Pad:     shape.DefaultPad,
+		Style: shape.NewStyle(nil),
 	}
 }
 
@@ -24,9 +22,6 @@ type Diagram struct {
 	shape.Svg
 	shape.Aligner
 	*shape.Style
-
-	TextPad shape.Padding // Surrounding text
-	Pad     shape.Padding // E.g. records
 }
 
 // Place adds the shape to the diagram returning an adjuster for
