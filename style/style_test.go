@@ -30,7 +30,7 @@ func TestStylerWrite_adds_style_to_classed_elements(t *testing.T) {
 	}{
 		{
 			`<x class="line" />`,
-			`<x class="line" style="stroke:#d3d3d3" />`,
+			`<x stroke="#d3d3d3" />`,
 		},
 		{
 			`<x class="whatever" />`,
