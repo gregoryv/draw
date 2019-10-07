@@ -14,7 +14,6 @@ import (
 func NewDiagram() Diagram {
 	return Diagram{
 		Style:   shape.NewStyle(nil),
-		Font:    shape.DefaultFont,
 		TextPad: shape.DefaultTextPad,
 		Pad:     shape.DefaultPad,
 	}
@@ -26,7 +25,6 @@ type Diagram struct {
 	shape.Aligner
 	*shape.Style
 
-	Font    shape.Font    // Used to calculate width
 	TextPad shape.Padding // Surrounding text
 	Pad     shape.Padding // E.g. records
 }

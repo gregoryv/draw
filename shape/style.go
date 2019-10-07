@@ -9,6 +9,7 @@ import (
 
 func NewStyle(dest io.Writer) *Style {
 	return &Style{
+		Font: DefaultFont,
 		dest: dest,
 	}
 }
