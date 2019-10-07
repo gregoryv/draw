@@ -7,19 +7,19 @@ import (
 	"io"
 )
 
-func NewStyler(dest io.Writer) *Styler {
-	return &Styler{dest: dest}
+func NewStyler(dest io.Writer) *Style {
+	return &Style{dest: dest}
 }
 
-type Styler struct {
+type Style struct {
 	dest    io.Writer
 	err     error
 	written int
 	styles  map[string]string
 }
 
-func (styler *Styler) write(s []byte) {
-	styler.written, styler.err = styler.dest.Write(s)
+func (style *Style) write(s []byte) {
+	style.written, style.err = style.dest.Write(s)
 }
 
 // classname -> style
@@ -45,25 +45,25 @@ var DefaultStyle = map[string]string{
 
 // Write adds a style attribute based on class. Limited to 1 class
 // only and assumes the entire classname attribute is found.
-func (styler *Styler) Write(s []byte) (int, error) {
-	class, i := styler.scanClass(s)
+func (style *Style) Write(p []byte) (int, error) {
+	class, i := style.scanClass(p)
 	if i == -1 {
-		return styler.dest.Write(s)
+		return style.dest.Write(p)
 	}
-	write := styler.write
-	style, found := styler.styles[string(class)]
+	write := style.write
+	s, found := style.styles[string(class)]
 	if !found {
-		style, found = DefaultStyle[string(class)]
+		s, found = DefaultStyle[string(class)]
 	}
 	if found {
-		write([]byte(style))
+		write([]byte(s))
 	} else {
 		write([]byte(`class="`))
 		write(class)
 		write([]byte(`"`))
 	}
-	write(s[i:]) // the rest
-	return styler.written, styler.err
+	write(p[i:]) // the rest
+	return style.written, style.err
 }
 
 var field = []byte(`class="`)
@@ -71,12 +71,12 @@ var field = []byte(`class="`)
 // scanClass returns name of class and position after the attribute.
 // position is -1 if no class was found. Everything up to the class,
 // except the class attribute is written to the underlyinge writer.
-func (styler *Styler) scanClass(s []byte) ([]byte, int) {
-	i := bytes.Index(s, field)
+func (style *Style) scanClass(p []byte) ([]byte, int) {
+	i := bytes.Index(p, field)
 	if i == -1 {
 		return []byte{}, -1
 	}
-	styler.write(s[:i])
+	style.write(p[:i])
 	var (
 		class = make([]byte, 0)
 		j     int
@@ -84,7 +84,7 @@ func (styler *Styler) scanClass(s []byte) ([]byte, int) {
 		endOk bool
 	)
 	i = len(field) + i
-	for j, c = range s[i:] {
+	for j, c = range p[i:] {
 		if c == '"' {
 			endOk = true
 			break
@@ -92,7 +92,7 @@ func (styler *Styler) scanClass(s []byte) ([]byte, int) {
 		class = append(class, c)
 	}
 	if !endOk {
-		panic(fmt.Sprintf("malformed: %s", string(s)))
+		panic(fmt.Sprintf("malformed: %s", string(p)))
 	}
 	j++
 	return class, i + j
