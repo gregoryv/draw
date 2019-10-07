@@ -55,21 +55,28 @@ func (n *Note) SetClass(c string) { n.class = c }
 
 func (n *Note) WriteSvg(out io.Writer) error {
 	x, y := n.Pos.XY()
-	x2 := x + n.Width()
-	y2 := y + n.Height()
+	w := n.Width()
+	h := n.Height()
 	flap := 10
-	xf := x2 - flap
-	yf := y + flap
-	w, err := newTagPrinter(out)
-	w.printf(`<path class="%s-box" d="M%v,%v `, n.class, x, y)
-	w.printf(`L%v,%v %v,%v %v,%v %v,%v %v,%v %v,%v %v,%v M%v,%v L%v,%v" />`,
-		x, y, x, y2, x2, y2, x2, yf, xf, y, xf, yf, x2, yf, xf, y, x, y)
-	w.print("\n")
+	t, err := newTagPrinter(out)
+	/*
+	   x,y
+	    +---------------+        -
+	    |               |\       |  flap
+	    |               +-+      -
+	    |                 |
+	    +-----------------+
+	   y+h               x+w
+	*/
+	t.printf(`<path class="%s-box" d="M%v,%v `, n.class, x, y)
+	t.printf(`v %v h %v v %v l %v,%v L %v,%v M%v,%v h %v v %v"/>`,
+		h, w, -(h - flap), -flap, -flap, x, y, x+w, y+flap, -flap, -flap)
+	t.print("\n")
 	x += n.Pad.Left
 	for i, line := range strings.Split(n.Text, "\n") {
-		w.printf(`<text class="note" x="%v" y="%v">%s</text>`,
+		t.printf(`<text class="note" x="%v" y="%v">%s</text>`,
 			x, y+(n.Font.LineHeight*(i+1)), line)
-		w.print("\n")
+		t.print("\n")
 	}
 	return *err
 }

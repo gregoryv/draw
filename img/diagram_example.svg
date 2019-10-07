@@ -33,7 +33,7 @@
 <circle class="arrow-tail" style="fill:white;stroke:#d3d3d3" cx="20" cy="150" r="3" />
 <g transform="rotate(0 150 150)"><path class="arrow-head" style="stroke:black;fill:#ffffff" d="M150,150 l-8,-4 l 0,8 Z" /></g>
 
-<path class="note-box" style="fill:#ffffff;stroke:black" d="M20,180 L20,180 20,221 133,221 133,190 123,180 123,190 133,190 M123,180 L20,180" />
+<path class="note-box" style="fill:#ffffff;stroke:black" d="M20,180 v 41 h 113 v -31 l -10,-10 L 20,180 M133,190 h -10 v -10"/>
 <text class="note" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="196">Notes support</text>
 <text class="note" style="font-family:Arial,Helvetica,sans-serif; font-size:12px" x="30" y="212">multilines</text>
 </svg>
