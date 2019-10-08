@@ -46,3 +46,15 @@ func (c *Circle) Width() int            { return c.Radius * 2 }
 func (c *Circle) Height() int           { return c.Width() }
 func (c *Circle) Direction() Direction  { return LR }
 func (c *Circle) SetClass(class string) { c.class = class }
+
+func (d *Diamond) Position() (int, int) {
+	x, y := d.Pos.XY()
+	return x, y - d.height/2
+}
+
+func (d *Diamond) SetX(x int)           { d.Pos.X = x }
+func (d *Diamond) SetY(y int)           { d.Pos.Y = y }
+func (d *Diamond) Width() int           { return d.width }
+func (d *Diamond) Height() int          { return d.height }
+func (d *Diamond) Direction() Direction { return LR }
+func (d *Diamond) SetClass(c string)    { d.class = c }

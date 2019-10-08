@@ -42,7 +42,9 @@ var DefaultStyle = map[string]string{
 	"implements-arrow-head": `stroke="black" fill="#ffffff"`,
 	"arrow":                 `stroke="black"`,
 	"arrow-head":            `stroke="black" fill="#ffffff"`,
-	"arrow-tail":            `fill="white" stroke="#d3d3d3"`,
+	"compose-arrow":         `stroke="black"`,
+	"compose-arrow-head":    `stroke="black" fill="#ffffff"`,
+	"compose-arrow-tail":    `stroke="black" fill="#777777"`,
 	"line":                  `stroke="#d3d3d3"`,
 	"column-line":           `stroke="#d3d3d3"`,
 	"record":                `stroke="black" fill="#ffffcc"`,
@@ -51,6 +53,7 @@ var DefaultStyle = map[string]string{
 	"method":                `font-family="Arial" Helvetica="sans-serif" font-size="12px"`,
 	"record-label":          `font-family="Arial" Helvetica="sans-serif" font-size="12px"`,
 	"label":                 `font-family="Arial" Helvetica="sans-serif" font-size="12px"`,
+	"diamond":               `stroke="black" fill="#333333"`,
 }
 
 // Write adds a style attribute based on class. Limited to 1 class

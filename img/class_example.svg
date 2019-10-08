@@ -12,21 +12,27 @@
 <g transform="rotate(-90 301 184)"><path stroke="black" fill="#ffffff" d="M301,184 l-8,-4 l 0,8 Z" /></g>
 
 <path stroke="black" d="M94,346 L94,466" />
+<g transform="rotate(90 94 346)"><path stroke="black" fill="#777777" d="M94,346 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(90 94 466)"><path stroke="black" fill="#ffffff" d="M94,466 l-8,-4 l 0,8 Z" /></g>
 
 <path stroke="black" d="M230,519 L161,519" />
+<g transform="rotate(180 230 519)"><path stroke="black" fill="#777777" d="M230,519 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(180 161 519)"><path stroke="black" fill="#ffffff" d="M161,519 l-8,-4 l 0,8 Z" /></g>
 
 <path stroke="black" d="M711,662 L623,587" />
+<g transform="rotate(220 711 662)"><path stroke="black" fill="#777777" d="M711,662 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(220 623 587)"><path stroke="black" fill="#ffffff" d="M623,587 l-8,-4 l 0,8 Z" /></g>
 
 <path stroke="black" d="M542,726 L542,636" />
+<g transform="rotate(-90 542 726)"><path stroke="black" fill="#777777" d="M542,726 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(-90 542 636)"><path stroke="black" fill="#ffffff" d="M542,636 l-8,-4 l 0,8 Z" /></g>
 
 <path stroke="black" d="M623,519 L703,519" />
+<g transform="rotate(0 623 519)"><path stroke="black" fill="#777777" d="M623,519 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(0 703 519)"><path stroke="black" fill="#ffffff" d="M703,519 l-8,-4 l 0,8 Z" /></g>
 
 <path stroke="black" d="M461,519 L371,519" />
+<g transform="rotate(180 461 519)"><path stroke="black" fill="#777777" d="M461,519 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(180 371 519)"><path stroke="black" fill="#ffffff" d="M371,519 l-8,-4 l 0,8 Z" /></g>
 
 <rect stroke="black" fill="#ffffcc" x="220" y="20" width="162" height="164"/>

@@ -37,10 +37,12 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 	w.printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class, x1, y1, x2, y2)
 	w.print("\n")
 	if arrow.Tail != nil {
-		arrow.Tail.SetX(x1 - arrow.Tail.Width()/2)
-		arrow.Tail.SetY(y1 - arrow.Tail.Height()/2)
+		w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x1, y1)
+		arrow.Tail.SetX(x1)
+		arrow.Tail.SetY(y1)
 		arrow.Tail.SetClass(arrow.class + "-tail")
 		arrow.Tail.WriteSvg(out)
+		w.print("</g>\n")
 	}
 	w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
 	// Update position before rendering

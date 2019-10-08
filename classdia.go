@@ -68,8 +68,10 @@ func (d *ClassDiagram) composes() []shape.Shape {
 			field := struct_.t.Field(i)
 			for _, struct2 := range d.structs {
 				if field.Type == struct2.t {
-					// todo use composition tail shape
 					arrow := shape.NewArrowBetween(struct_, struct2)
+					arrow.Tail = shape.NewDiamond(0, 0)
+					arrow.SetClass("compose-arrow")
+					arrow.Tail.SetClass("compose-arrow-tail")
 					rel = append(rel, arrow)
 				}
 			}
