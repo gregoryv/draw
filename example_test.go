@@ -97,7 +97,7 @@ multilines`)
 		d.Place(arrow)
 	}
 	d.Place(label).RightOf(record, 150)
-	withtail.Tail = true
+	withtail.Tail = shape.NewCircle(3)
 	d.Place(withtail).At(20, 150)
 	d.Place(note).Below(withtail)
 	d.SaveAs("img/diagram_example.svg")

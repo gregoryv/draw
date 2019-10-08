@@ -30,8 +30,7 @@
 
 <text font-family="Arial" Helvetica="sans-serif" font-size="12px" x="215" y="30">Label</text>
 <path stroke="black" d="M20,150 L150,150" />
-<circle fill="white" stroke="#d3d3d3" cx="20" cy="150" r="3" />
-<g transform="rotate(0 150 150)"><path stroke="black" fill="#ffffff" d="M150,150 l-8,-4 l 0,8 Z" /></g>
+<circle fill="white" stroke="#d3d3d3" cx="20" cy="150" r="3" />\n<g transform="rotate(0 150 150)"><path stroke="black" fill="#ffffff" d="M150,150 l-8,-4 l 0,8 Z" /></g>
 
 <path stroke="black" fill="#ffffff" d="M20,180 v 41 h 113 v -31 l -10,-10 L 20,180 M133,190 h -10 v -10"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="196">Notes support</text>

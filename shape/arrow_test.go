@@ -100,7 +100,7 @@ func (t *OneArrow) CanPointUp() {
 }
 
 func (t *OneArrow) HasATail() {
-	t.Tail = true
+	t.Tail = NewCircle(3)
 }
 
 func (t *OneArrow) HasBothTailAndHead() {

@@ -1,6 +1,8 @@
 package shape
 
-import "io"
+import (
+	"io"
+)
 
 type Shape interface {
 	// Position returns the starting point of a shape.
@@ -30,3 +32,17 @@ func (t *Triangle) Width() int           { return 8 }
 func (t *Triangle) Height() int          { return 4 }
 func (t *Triangle) Direction() Direction { return LR }
 func (t *Triangle) SetClass(c string)    { t.class = c }
+
+func (c *Circle) Position() (int, int) { return c.topLeft.XY() }
+func (c *Circle) SetX(x int) {
+	c.topLeft.X = x
+	c.center.X = x + c.Radius
+}
+func (c *Circle) SetY(y int) {
+	c.topLeft.Y = y
+	c.center.Y = y + c.Radius
+}
+func (c *Circle) Width() int            { return c.Radius * 2 }
+func (c *Circle) Height() int           { return c.Width() }
+func (c *Circle) Direction() Direction  { return LR }
+func (c *Circle) SetClass(class string) { c.class = class }

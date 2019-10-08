@@ -21,7 +21,7 @@ type Arrow struct {
 	Start xy.Position
 	End   xy.Position
 
-	Tail  bool
+	Tail  Shape
 	Head  Shape
 	class string
 }
@@ -36,9 +36,11 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 	x2, y2 := arrow.End.XY()
 	w.printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class, x1, y1, x2, y2)
 	w.print("\n")
-	if arrow.Tail {
-		w.printf(`<circle class="%s-tail" cx="%v" cy="%v" r="3" />`, arrow.class, x1, y1)
-		w.print("\n")
+	if arrow.Tail != nil {
+		arrow.Tail.SetX(x1 - arrow.Tail.Width()/2)
+		arrow.Tail.SetY(y1 - arrow.Tail.Height()/2)
+		arrow.Tail.SetClass(arrow.class + "-tail")
+		arrow.Tail.WriteSvg(out)
 	}
 	w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
 	// Update position before rendering
