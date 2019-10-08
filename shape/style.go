@@ -32,7 +32,7 @@ var (
 	DefaultPad     = Padding{Left: 10, Top: 2, Bottom: 7, Right: 10}
 )
 
-// classname -> style
+// DefaultStyle contains mapping between classes and svg attributes
 var DefaultStyle = map[string]string{
 	"note":                  `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
 	"note-box":              `stroke="black" fill="#ffffff"`,

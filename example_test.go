@@ -19,6 +19,7 @@ func ExampleClassDiagram() {
 
 	var (
 		fnt      = d.Struct(shape.Font{})
+		style    = d.Struct(shape.Style{})
 		seqdia   = d.Struct(design.SequenceDiagram{})
 		classdia = d.Struct(design.ClassDiagram{})
 		dia      = d.Struct(design.Diagram{})
@@ -36,7 +37,12 @@ func ExampleClassDiagram() {
 	d.HAlignBottom(record, arrow, line)
 
 	d.Place(fnt).Below(record, 90)
-	d.Place(dia).RightOf(fnt, 150)
+	d.Place(style).RightOf(fnt, 90)
+	d.VAlignCenter(shapE, line, style)
+	d.VAlignCenter(record, fnt)
+	d.HAlignCenter(fnt, style)
+
+	d.Place(dia).RightOf(style, 90)
 	d.Place(aligner).RightOf(dia, 80)
 	d.Place(seqdia).Below(fnt, 90)
 	d.Place(adj).Below(aligner, 70)
