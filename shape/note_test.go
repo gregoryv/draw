@@ -24,6 +24,7 @@ func saveAsSvg(t *testing.T, shape Shape, filename string) {
 		t.Error(err)
 		return
 	}
-	d.WriteSvg(NewStyle(fh))
+	style := NewStyle(fh)
+	d.WriteSvg(&style)
 	fh.Close()
 }

@@ -117,7 +117,8 @@ func (t *OneArrow) saveAs(filename string) {
 		t.Error(err)
 		return
 	}
-	d.WriteSvg(NewStyle(fh))
+	style := NewStyle(fh)
+	d.WriteSvg(&style)
 	fh.Close()
 }
 
@@ -193,6 +194,7 @@ func writeSvgTo(t *testing.T, filename string, svg *Svg) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	svg.WriteSvg(NewStyle(fh))
+	style := NewStyle(fh)
+	svg.WriteSvg(&style)
 	fh.Close()
 }

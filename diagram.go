@@ -21,7 +21,7 @@ func NewDiagram() Diagram {
 type Diagram struct {
 	shape.Svg
 	shape.Aligner
-	*shape.Style
+	shape.Style
 }
 
 // Place adds the shape to the diagram returning an adjuster for

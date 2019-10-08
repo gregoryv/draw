@@ -7,8 +7,8 @@ import (
 	"io/ioutil"
 )
 
-func NewStyle(dest io.Writer) *Style {
-	return &Style{
+func NewStyle(dest io.Writer) Style {
+	return Style{
 		Font:    DefaultFont,
 		TextPad: DefaultTextPad,
 		Pad:     DefaultPad,
