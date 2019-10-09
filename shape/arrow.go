@@ -38,8 +38,7 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 	w.print("\n")
 	if arrow.Tail != nil {
 		w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x1, y1)
-		arrow.Tail.SetX(x1)
-		arrow.Tail.SetY(y1)
+		alignTail(arrow.Tail, x1, y1)
 		arrow.Tail.SetClass(arrow.class + "-tail")
 		arrow.Tail.WriteSvg(out)
 		w.print("</g>\n")
@@ -52,6 +51,17 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 	arrow.Head.WriteSvg(out)
 	w.print("</g>\n")
 	return *err
+}
+
+func alignTail(s Shape, x, y int) {
+	switch s := s.(type) {
+	case *Circle:
+		s.SetX(x)
+		s.SetY(y - s.Radius)
+	default:
+		s.SetX(x)
+		s.SetY(y)
+	}
 }
 
 func (arrow *Arrow) absAngle() float64 {
