@@ -1,7 +1,6 @@
 package design
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/go-design/shape"
@@ -50,7 +49,7 @@ func (d *Diagram) SaveAs(filename string) error {
 
 func (diagram *Diagram) WriteSvg(w io.Writer) error {
 	if diagram.Width == 0 && diagram.Height == 0 {
-		fmt.Println(diagram.AdaptSize())
+		diagram.AdaptSize()
 	}
 	return diagram.Svg.WriteSvg(w)
 }
