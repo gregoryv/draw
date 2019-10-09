@@ -60,7 +60,7 @@ func (t *OneLabel) HasNoWidth() {
 }
 
 func (t *OneLabel) IsStyled() {
-	t.Font = Font{Height: 9, Width: 7, LineHeight: 15}
+	t.Font = Font{Height: 9, LineHeight: 15}
 	t.Pad = Padding{3, 3, 10, 2}
 }
 

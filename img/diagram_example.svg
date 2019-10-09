@@ -1,8 +1,8 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="251" height="251" font-family="Arial, Helvetica, sans-serif">
-<rect stroke="black" fill="#ffffcc" x="10" y="30" width="55" height="26"/>
+  width="244" height="251" font-family="Arial, Helvetica, sans-serif">
+<rect stroke="black" fill="#ffffcc" x="10" y="30" width="54" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="50">Record</text>
 <path stroke="black" d="M130,80 L180,70" />
 <g transform="rotate(-11 180 70)"><path stroke="black" fill="#ffffff" d="M180,70 l-8,-4 l 0,8 Z" /></g>
@@ -28,7 +28,7 @@
 <path stroke="black" d="M130,80 L130,120" />
 <g transform="rotate(90 130 120)"><path stroke="black" fill="#ffffff" d="M130,120 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="215" y="46">Label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="214" y="46">Label</text>
 <path stroke="black" d="M20,150 L150,150" />
 <g transform="rotate(0 20 150)"><circle class="arrow-tail" cx="23" cy="150" r="3" />\n</g>
 <g transform="rotate(0 150 150)"><path stroke="black" fill="#ffffff" d="M150,150 l-8,-4 l 0,8 Z" /></g>
@@ -37,7 +37,7 @@
 <g transform="rotate(0 20 180)"><path class="arrow-tail" d="M20,180 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(0 150 180)"><path stroke="black" fill="#ffffff" d="M150,180 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" fill="#ffffff" d="M20,210 v 41 h 113 v -31 l -10,-10 L 20,210 M133,220 h -10 v -10"/>
+<path stroke="black" fill="#ffffff" d="M20,210 v 41 h 94 v -31 l -10,-10 L 20,210 M114,220 h -10 v -10"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="226">Notes support</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="242">multilines</text>
 </svg>

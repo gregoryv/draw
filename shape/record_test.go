@@ -99,7 +99,7 @@ func (t *OneRecord) SWidthAdapts() {
 }
 
 func (t *OneRecord) IsStyled() {
-	t.SetFont(Font{Height: 9, Width: 7, LineHeight: 15})
+	t.SetFont(Font{Height: 9, LineHeight: 15})
 	t.SetTextPad(Padding{3, 3, 10, 2})
 }
 

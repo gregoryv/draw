@@ -19,26 +19,26 @@ func TestAlignVertical(t *testing.T) {
 			&Label{
 				Pos:  xy.Position{10, 10},
 				Text: "1234",
-				Font: Font{Width: 10},
+				Font: DefaultFont,
 			},
 			&Label{
 				Pos:  xy.Position{50, 40},
 				Text: "12",
-				Font: Font{Width: 10},
+				Font: DefaultFont,
 			},
-			20, 40,
+			17, 40,
 		},
 		{
 			aligner.VAlignLeft,
 			&Label{
 				Pos:  xy.Position{10, 10},
 				Text: "1234",
-				Font: Font{Width: 10},
+				Font: DefaultFont,
 			},
 			&Label{
 				Pos:  xy.Position{50, 40},
 				Text: "12",
-				Font: Font{Width: 10},
+				Font: DefaultFont,
 			},
 			10, 40,
 		},
@@ -47,14 +47,14 @@ func TestAlignVertical(t *testing.T) {
 			&Label{
 				Pos:  xy.Position{10, 10},
 				Text: "1234",
-				Font: Font{Width: 10},
+				Font: DefaultFont,
 			},
 			&Label{
 				Pos:  xy.Position{50, 40},
 				Text: "12",
-				Font: Font{Width: 10},
+				Font: DefaultFont,
 			},
-			30, 40,
+			24, 40,
 		},
 		{
 			aligner.VAlignCenter,
