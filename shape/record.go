@@ -29,6 +29,82 @@ type Record struct {
 	class string
 }
 
+func (r *Record) String() string {
+	return fmt.Sprintf("R %q", r.Title)
+}
+
+func (r *Record) Position() (int, int) { return r.X, r.Y }
+func (r *Record) SetX(x int)           { r.X = x }
+func (r *Record) SetY(y int)           { r.Y = y }
+func (r *Record) Direction() Direction { return LR }
+func (r *Record) SetClass(c string)    { r.class = c }
+
+func (r *Record) WriteSvg(out io.Writer) error {
+	w, err := newTagPrinter(out)
+	w.printf(
+		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
+		r.class, r.X, r.Y, r.Width(), r.Height())
+	w.printf("\n")
+	var y = boxHeight(r.Font, r.Pad, 1) + r.Pad.Top
+	hasFields := len(r.Fields) != 0
+	if hasFields {
+		r.writeSeparator(w, r.Y+y)
+		for _, txt := range r.Fields {
+			y += r.Font.LineHeight
+			label := &Label{
+				Pos: xy.Position{
+					r.X + r.Pad.Left,
+					r.Y + y,
+				},
+				Text:  txt,
+				class: "field",
+			}
+			label.WriteSvg(w)
+			w.printf("\n")
+		}
+	}
+	if len(r.Methods) != 0 {
+		if hasFields {
+			y += r.Pad.Bottom
+		}
+		r.writeSeparator(w, r.Y+y)
+		for _, txt := range r.Methods {
+			y += r.Font.LineHeight
+			label := &Label{
+				Pos: xy.Position{
+					r.X + r.Pad.Left,
+					r.Y + y,
+				},
+				Text:  txt,
+				class: "method",
+			}
+			label.WriteSvg(w)
+			w.printf("\n")
+		}
+	}
+	r.title().WriteSvg(w)
+	return *err
+}
+
+func (r *Record) writeSeparator(w io.Writer, y1 int) error {
+	line := NewLine(
+		r.X, y1,
+		r.X+r.Width(), y1,
+	)
+	return line.WriteSvg(w)
+}
+
+func (r *Record) title() *Label {
+	return &Label{
+		Pos: xy.Position{
+			r.X + r.Pad.Left,
+			r.Y + r.Font.LineHeight + r.Pad.Top,
+		},
+		Text:  r.Title,
+		class: "record-title",
+	}
+}
+
 func (r *Record) HideFields()  { r.Fields = []string{} }
 func (r *Record) HideMethods() { r.Methods = []string{} }
 
@@ -75,75 +151,8 @@ func isPublic(name string) bool {
 	return []byte(name)[0] == up[0]
 }
 
-func (record *Record) WriteSvg(out io.Writer) error {
-	w, err := newTagPrinter(out)
-	w.printf(
-		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
-		record.class, record.X, record.Y, record.Width(), record.Height())
-	w.printf("\n")
-	var y = boxHeight(record.Font, record.Pad, 1) + record.Pad.Top
-	hasFields := len(record.Fields) != 0
-	if hasFields {
-		record.writeSeparator(w, record.Y+y)
-		for _, txt := range record.Fields {
-			y += record.Font.LineHeight
-			label := &Label{
-				Pos: xy.Position{
-					record.X + record.Pad.Left,
-					record.Y + y,
-				},
-				Text:  txt,
-				class: "field",
-			}
-			label.WriteSvg(w)
-			w.printf("\n")
-		}
-	}
-	if len(record.Methods) != 0 {
-		if hasFields {
-			y += record.Pad.Bottom
-		}
-		record.writeSeparator(w, record.Y+y)
-		for _, txt := range record.Methods {
-			y += record.Font.LineHeight
-			label := &Label{
-				Pos: xy.Position{
-					record.X + record.Pad.Left,
-					record.Y + y,
-				},
-				Text:  txt,
-				class: "method",
-			}
-			label.WriteSvg(w)
-			w.printf("\n")
-		}
-	}
-	record.title().WriteSvg(w)
-	return *err
-}
-
-func (record *Record) writeSeparator(w io.Writer, y1 int) error {
-	//	y1 := record.Y + boxHeight(record.Font, record.Pad, 1)
-	line := NewLine(
-		record.X, y1,
-		record.X+record.Width(), y1,
-	)
-	return line.WriteSvg(w)
-}
-
-func (r *Record) title() *Label {
-	return &Label{
-		Pos: xy.Position{
-			r.X + r.Pad.Left,
-			r.Y + r.Font.LineHeight + r.Pad.Top,
-		},
-		Text:  r.Title,
-		class: "record-title",
-	}
-}
-
 // NewStructRecord returns a record shape based on a Go struct type.
-// Reflection is used
+// Reflection is used.
 func NewStructRecord(obj interface{}) *Record {
 	t := reflect.TypeOf(obj)
 	rec := NewRecord(t.String() + " struct")
@@ -159,15 +168,15 @@ func NewInterfaceRecord(obj interface{}) *Record {
 	return rec
 }
 
-func (record *Record) Height() int {
-	first := boxHeight(record.Font, record.Pad, 1)
-	if record.isEmpty() {
+func (r *Record) Height() int {
+	first := boxHeight(r.Font, r.Pad, 1)
+	if r.isEmpty() {
 		return first
 	}
-	l := len(record.Fields) + len(record.Methods)
-	rest := boxHeight(record.Font, record.Pad, l)
-	if record.hasFields() && record.hasMethods() {
-		rest += record.Pad.Bottom
+	l := len(r.Fields) + len(r.Methods)
+	rest := boxHeight(r.Font, r.Pad, l)
+	if r.hasFields() && r.hasMethods() {
+		rest += r.Pad.Bottom
 	}
 	return first + rest
 }
@@ -189,25 +198,21 @@ func (r *Record) Width() int {
 	return width
 }
 
-func (record *Record) String() string {
-	return fmt.Sprintf("Record %q", record.Title)
-}
-
 type Edge interface {
 	Edge(start xy.Position) xy.Position
 }
 
 // Edge returns xy position of a line starting at start and
-// pointing to the records center.
-func (record *Record) Edge(start xy.Position) xy.Position {
+// pointing to the rs center.
+func (r *Record) Edge(start xy.Position) xy.Position {
 	center := xy.Position{
-		record.X + record.Width()/2,
-		record.Y + record.Height()/2,
+		r.X + r.Width()/2,
+		r.Y + r.Height()/2,
 	}
 	l1 := xy.Line{start, center}
 
-	lowY := record.Y + record.Height()
-	rightX := record.X + record.Width()
+	lowY := r.Y + r.Height()
+	rightX := r.X + r.Width()
 
 	var (
 		p     xy.Position
@@ -223,23 +228,23 @@ func (record *Record) Edge(start xy.Position) xy.Position {
 		first = false
 	}
 	left := xy.NewLine(
-		record.X, record.Y,
-		record.X, lowY,
+		r.X, r.Y,
+		r.X, lowY,
 	)
 	intersect(left)
 	bottom := xy.NewLine(
-		record.X, lowY,
+		r.X, lowY,
 		rightX, lowY,
 	)
 	intersect(bottom)
 	right := xy.NewLine(
-		rightX, record.Y,
+		rightX, r.Y,
 		rightX, lowY,
 	)
 	intersect(right)
 	top := xy.NewLine(
-		record.X, record.Y,
-		rightX, record.Y,
+		r.X, r.Y,
+		rightX, r.Y,
 	)
 	intersect(top)
 	return p
