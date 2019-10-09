@@ -21,6 +21,8 @@ type Diagram struct {
 	shape.Svg
 	shape.Aligner
 	shape.Style
+
+	Caption *shape.Label
 }
 
 // Place adds the shape to the diagram returning an adjuster for
@@ -47,11 +49,19 @@ func (d *Diagram) SaveAs(filename string) error {
 	return saveAs(d, d.Style, filename)
 }
 
-func (diagram *Diagram) WriteSvg(w io.Writer) error {
-	if diagram.Width == 0 && diagram.Height == 0 {
-		diagram.AdaptSize()
+func (d *Diagram) WriteSvg(w io.Writer) error {
+	if d.Width == 0 && d.Height == 0 {
+		d.AdaptSize()
 	}
-	return diagram.Svg.WriteSvg(w)
+	if d.Caption != nil {
+		margin := 30
+		x := (d.Width - d.Caption.Width()) / 2
+		d.Place(d.Caption).At(x, d.Height+margin)
+		d.AdaptSize()
+		d.Height += d.Caption.Font.Height / 2 // Fit protruding letters like 'g'
+	}
+
+	return d.Svg.WriteSvg(w)
 }
 
 // AdaptSize adapts the diagram size to the shapes inside it so all
@@ -94,4 +104,11 @@ func (d *Diagram) SetHeight(h int) {
 // SetWidth sets a fixe width in pixels.
 func (d *Diagram) SetWidth(w int) {
 	d.Width = w
+}
+
+func (d *Diagram) SetCaption(txt string) {
+	l := shape.NewLabel(txt)
+	l.SetClass("caption")
+	d.Caption = l
+
 }

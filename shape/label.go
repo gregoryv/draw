@@ -31,12 +31,14 @@ func (l *Label) String() string {
 func (l *Label) Position() (int, int) {
 	return l.Pos.XY()
 }
+
 func (l *Label) SetX(x int) { l.Pos.X = x }
 func (l *Label) SetY(y int) { l.Pos.Y = y }
 func (l *Label) Width() int {
 	return l.Font.TextWidth(l.Text)
 }
-func (l *Label) Height() int          { return l.Font.Height }
+
+func (l *Label) Height() int          { return l.Font.LineHeight }
 func (l *Label) Direction() Direction { return LR }
 func (l *Label) SetClass(c string)    { l.class = c }
 

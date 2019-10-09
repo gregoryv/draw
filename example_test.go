@@ -56,6 +56,8 @@ func ExampleClassDiagram() {
 	d.Place(classdia).Below(dia, 90)
 	d.VAlignCenter(dia, classdia)
 	d.HAlignBottom(classdia, seqdia)
+
+	d.SetCaption("Figure 1. Class diagram of design and design.shape packages")
 	d.SaveAs("img/class_example.svg")
 }
 

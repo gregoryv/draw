@@ -120,7 +120,7 @@ func TestAlignHorizontal(t *testing.T) {
 			NewLine(0, 10, 0, 20),
 			&Label{
 				Pos:  xy.Position{0, 20},
-				Font: Font{Height: 10},
+				Font: Font{LineHeight: 10},
 			},
 			0, 20,
 		},
@@ -128,11 +128,11 @@ func TestAlignHorizontal(t *testing.T) {
 			aligner.HAlignCenter,
 			&Label{
 				Pos:  xy.Position{0, 20},
-				Font: Font{Height: 10},
+				Font: Font{LineHeight: 10},
 			},
 			&Label{
 				Pos:  xy.Position{0, 20},
-				Font: Font{Height: 6},
+				Font: Font{LineHeight: 6},
 			},
 			0, 28,
 		},

@@ -48,11 +48,12 @@ var DefaultStyle = map[string]string{
 	"line":                  `stroke="#d3d3d3"`,
 	"column-line":           `stroke="#d3d3d3"`,
 	"record":                `stroke="black" fill="#ffffcc"`,
-	"record-title":          `font-family="Arial" Helvetica="sans-serif" font-size="12px"`,
-	"field":                 `font-family="Arial" Helvetica="sans-serif" font-size="12px"`,
-	"method":                `font-family="Arial" Helvetica="sans-serif" font-size="12px"`,
-	"record-label":          `font-family="Arial" Helvetica="sans-serif" font-size="12px"`,
-	"label":                 `font-family="Arial" Helvetica="sans-serif" font-size="12px"`,
+	"record-title":          `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
+	"field":                 `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
+	"method":                `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
+	"record-label":          `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
+	"label":                 `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
+	"caption":               `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
 	"diamond":               `stroke="black" fill="#333333"`,
 }
 
