@@ -8,12 +8,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 
+- Class diagram shows composition using diamond for tail
 - Note shape with multiline support
 
 ### Changed
 
+- Arrow for realizing interface is dashed
+- Label and circle position is top left corner
 - Hide methods realized by visible interfaces and structs
 - Visualize interface realization as dashed line
+
 
 ## [0.2.0] - 2019-10-03
 ### Changed
@@ -29,6 +33,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Removed
 
 - SvgWriterShape interface
+
 
 ## [0.1.0] - 2019-09-21
 ### Added
