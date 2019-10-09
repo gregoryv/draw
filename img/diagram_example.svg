@@ -28,7 +28,7 @@
 <path stroke="black" d="M130,80 L130,120" />
 <g transform="rotate(90 130 120)"><path stroke="black" fill="#ffffff" d="M130,120 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial" Helvetica="sans-serif" font-size="12px" x="215" y="30">Label</text>
+<text font-family="Arial" Helvetica="sans-serif" font-size="12px" x="215" y="46">Label</text>
 <path stroke="black" d="M20,150 L150,150" />
 <g transform="rotate(0 20 150)"><circle class="arrow-tail" cx="23" cy="153" r="3" />\n</g>
 <g transform="rotate(0 150 150)"><path stroke="black" fill="#ffffff" d="M150,150 l-8,-4 l 0,8 Z" /></g>

@@ -37,16 +37,16 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 
 		top = dia.top()
 		x   = dia.Pad.Left
-		y1  = top + dia.TextPad.Bottom // below label
+		y1  = top + dia.TextPad.Bottom + dia.Font.LineHeight // below label
 		y2  = dia.Height()
 	)
 	lines := make([]*shape.Line, len(dia.columns))
 	for i, column := range dia.columns {
 		label := shape.NewLabel(column)
-		label.SetX(i * colWidth)
-		label.SetY(top)
 		label.Font = dia.Font
 		label.Pad = dia.Pad
+		label.SetX(i * colWidth)
+		label.SetY(top)
 
 		firstColumn := i == 0
 		if firstColumn {
@@ -66,10 +66,10 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		fromX := lines[lnk.fromIndex].Start.X
 		toX := lines[lnk.toIndex].Start.X
 		label := shape.NewLabel(lnk.text)
-		label.SetX(fromX)
-		label.SetY(y - 2)
 		label.Font = dia.Font
 		label.Pad = dia.Pad
+		label.SetX(fromX)
+		label.SetY(y - 3 - dia.Font.LineHeight)
 
 		if lnk.toSelf() {
 			margin := 15
@@ -79,7 +79,9 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			l2 := shape.NewLine(fromX+margin, y, fromX+margin, y+dia.Font.LineHeight*2)
 			l2.SetClass(lnk.class())
 			dia.HAlignCenter(l2, label)
-			label.Pos.X += l1.Width() + dia.TextPad.Left
+			label.SetX(fromX + l1.Width() + dia.TextPad.Left)
+			label.SetY(y + 3)
+
 			arrow := shape.NewArrow(
 				l2.End.X,
 				l2.End.Y,
@@ -143,7 +145,7 @@ func (dia *SequenceDiagram) plainHeight() int {
 }
 
 func (dia *SequenceDiagram) top() int {
-	return dia.Font.LineHeight + dia.Pad.Top
+	return dia.Pad.Top
 }
 
 func (dia *SequenceDiagram) AddColumns(names ...string) {

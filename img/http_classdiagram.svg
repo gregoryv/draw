@@ -5,7 +5,7 @@
 <path stroke="black" stroke-dasharray="5,5,5" d="M219,95 L189,93" />
 <g transform="rotate(183 189 93)"><path stroke="black" fill="#ffffff" d="M189,93 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial" Helvetica="sans-serif" font-size="12px" x="220" y="20">package net/http</text>
+<text font-family="Arial" Helvetica="sans-serif" font-size="12px" x="220" y="36">package net/http</text>
 <rect stroke="black" fill="#ffffcc" x="20" y="60" width="169" height="52"/>
 <line stroke="#d3d3d3" x1="20" y1="90" x2="189" y2="90"/><text font-family="Arial" Helvetica="sans-serif" font-size="12px" x="26" y="106">ServeHTTP()</text>
 <text font-family="Arial" Helvetica="sans-serif" font-size="12px" x="26" y="80">http.Handler interface</text>
