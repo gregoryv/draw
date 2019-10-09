@@ -32,8 +32,9 @@ var (
 	DefaultPad     = Padding{Left: 10, Top: 2, Bottom: 7, Right: 10}
 )
 
-// DefaultStyle contains mapping between classes and svg attributes
-var DefaultStyle = map[string]string{
+// ClassAttributes define mapping between classes and svg attributes.
+// Setting attributes that modify size or position is not advised.
+var ClassAttributes = map[string]string{
 	"note":                  `font-family="Arial,Helvetica,sans-serif"`,
 	"note-box":              `stroke="black" fill="#ffffff"`,
 	"highlight":             `stroke="red"`,
@@ -68,7 +69,7 @@ func (style *Style) Write(p []byte) (int, error) {
 	write := style.write
 	s, found := style.styles[string(class)]
 	if !found {
-		s, found = DefaultStyle[string(class)]
+		s, found = ClassAttributes[string(class)]
 	}
 	if found {
 		write([]byte(s))
