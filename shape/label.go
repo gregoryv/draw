@@ -46,7 +46,7 @@ func (l *Label) WriteSvg(w io.Writer) error {
 	x, y := l.Position()
 	y += l.Font.LineHeight
 	_, err := fmt.Fprintf(w,
-		`<text class="%s" x="%v" y="%v">%s</text>`,
-		l.class, x, y, l.Text)
+		`<text class="%s" font-size="%vpx" x="%v" y="%v">%s</text>`,
+		l.class, l.Font.Height, x, y, l.Text)
 	return err
 }

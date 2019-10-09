@@ -50,16 +50,17 @@ func (r *Record) WriteSvg(out io.Writer) error {
 	if hasFields {
 		r.writeSeparator(w, r.Y+y)
 		for _, txt := range r.Fields {
-			y += r.Font.LineHeight
 			label := &Label{
 				Pos: xy.Position{
 					r.X + r.Pad.Left,
 					r.Y + y,
 				},
+				Font:  r.Font,
 				Text:  txt,
 				class: "field",
 			}
 			label.WriteSvg(w)
+			y += r.Font.LineHeight
 			w.printf("\n")
 		}
 	}
@@ -69,16 +70,17 @@ func (r *Record) WriteSvg(out io.Writer) error {
 		}
 		r.writeSeparator(w, r.Y+y)
 		for _, txt := range r.Methods {
-			y += r.Font.LineHeight
 			label := &Label{
 				Pos: xy.Position{
 					r.X + r.Pad.Left,
 					r.Y + y,
 				},
+				Font:  r.Font,
 				Text:  txt,
 				class: "method",
 			}
 			label.WriteSvg(w)
+			y += r.Font.LineHeight
 			w.printf("\n")
 		}
 	}
@@ -98,8 +100,9 @@ func (r *Record) title() *Label {
 	return &Label{
 		Pos: xy.Position{
 			r.X + r.Pad.Left,
-			r.Y + r.Font.LineHeight + r.Pad.Top,
+			r.Y + r.Pad.Top,
 		},
+		Font:  r.Font,
 		Text:  r.Title,
 		class: "record-title",
 	}

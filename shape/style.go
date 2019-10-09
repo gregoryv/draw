@@ -27,14 +27,14 @@ type Style struct {
 }
 
 var (
-	DefaultFont    = Font{Height: 9, Width: 8, LineHeight: 16}
+	DefaultFont    = Font{Height: 12, Width: 8, LineHeight: 16}
 	DefaultTextPad = Padding{Left: 6, Top: 4, Bottom: 6, Right: 6}
 	DefaultPad     = Padding{Left: 10, Top: 2, Bottom: 7, Right: 10}
 )
 
 // DefaultStyle contains mapping between classes and svg attributes
 var DefaultStyle = map[string]string{
-	"note":                  `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
+	"note":                  `font-family="Arial,Helvetica,sans-serif"`,
 	"note-box":              `stroke="black" fill="#ffffff"`,
 	"highlight":             `stroke="red"`,
 	"highlight-head":        `stroke="red" fill="#ffffff"`,
@@ -48,12 +48,12 @@ var DefaultStyle = map[string]string{
 	"line":                  `stroke="#d3d3d3"`,
 	"column-line":           `stroke="#d3d3d3"`,
 	"record":                `stroke="black" fill="#ffffcc"`,
-	"record-title":          `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
-	"field":                 `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
-	"method":                `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
-	"record-label":          `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
-	"label":                 `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
-	"caption":               `font-family="Arial,Helvetica,sans-serif" font-size="12px"`,
+	"record-title":          `font-family="Arial,Helvetica,sans-serif"`,
+	"field":                 `font-family="Arial,Helvetica,sans-serif"`,
+	"method":                `font-family="Arial,Helvetica,sans-serif"`,
+	"record-label":          `font-family="Arial,Helvetica,sans-serif"`,
+	"label":                 `font-family="Arial,Helvetica,sans-serif"`,
+	"caption":               `font-family="Arial,Helvetica,sans-serif"`,
 	"diamond":               `stroke="black" fill="#333333"`,
 }
 

@@ -74,8 +74,8 @@ func (n *Note) WriteSvg(out io.Writer) error {
 	t.print("\n")
 	x += n.Pad.Left
 	for i, line := range strings.Split(n.Text, "\n") {
-		t.printf(`<text class="note" x="%v" y="%v">%s</text>`,
-			x, y+(n.Font.LineHeight*(i+1)), line)
+		t.printf(`<text class="note" font-size="%vpx" x="%v" y="%v">%s</text>`,
+			n.Font.Height, x, y+(n.Font.LineHeight*(i+1)), line)
 		t.print("\n")
 	}
 	return *err
