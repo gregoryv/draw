@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- Font size decoupled from class attributes
 - Arrow for realizing interface is dashed
 - Label and circle position is top left corner
 - Hide methods realized by visible interfaces and structs
