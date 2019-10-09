@@ -20,7 +20,6 @@ func NewArrow(x1, y1, x2, y2 int) *Arrow {
 type Arrow struct {
 	Start xy.Position
 	End   xy.Position
-
 	Tail  Shape
 	Head  Shape
 	class string
@@ -43,13 +42,14 @@ func (arrow *Arrow) WriteSvg(out io.Writer) error {
 		arrow.Tail.WriteSvg(out)
 		w.print("</g>\n")
 	}
-	w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
-	// Update position before rendering
-	arrow.Head.SetX(arrow.End.X)
-	arrow.Head.SetY(arrow.End.Y)
-	arrow.Head.SetClass(arrow.class + "-head")
-	arrow.Head.WriteSvg(out)
-	w.print("</g>\n")
+	if arrow.Head != nil {
+		w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
+		arrow.Head.SetX(arrow.End.X)
+		arrow.Head.SetY(arrow.End.Y)
+		arrow.Head.SetClass(arrow.class + "-head")
+		arrow.Head.WriteSvg(out)
+		w.print("</g>\n")
+	}
 	return *err
 }
 

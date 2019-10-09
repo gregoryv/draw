@@ -1,0 +1,7 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="100" height="100" font-family="Arial, Helvetica, sans-serif">
+<path stroke="black" d="M50,50 L50,10" />
+<g transform="rotate(-90 50 50)"><circle class="arrow-tail" cx="53" cy="50" r="3" />\n</g>
+</svg>
