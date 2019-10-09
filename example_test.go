@@ -9,11 +9,14 @@ import (
 
 func ExampleClassDiagram() {
 	var (
-		d      = design.NewClassDiagram()
-		record = d.Struct(shape.Record{})
-		arrow  = d.Struct(shape.Arrow{})
-		line   = d.Struct(shape.Line{})
-		shapE  = d.Interface((*shape.Shape)(nil))
+		d        = design.NewClassDiagram()
+		record   = d.Struct(shape.Record{})
+		arrow    = d.Struct(shape.Arrow{})
+		line     = d.Struct(shape.Line{})
+		circle   = d.Struct(shape.Circle{})
+		diamond  = d.Struct(shape.Diamond{})
+		triangle = d.Struct(shape.Triangle{})
+		shapE    = d.Interface((*shape.Shape)(nil))
 	)
 	d.HideRealizations()
 
@@ -29,11 +32,14 @@ func ExampleClassDiagram() {
 	d.HideRealizations()
 
 	d.Place(shapE).At(220, 20)
-	d.Place(record).At(20, 80)
+	d.Place(record).At(20, 120)
 	d.Place(line).Below(shapE, 90)
 	d.VAlignCenter(shapE, line)
 
 	d.Place(arrow).RightOf(line, 90)
+	d.Place(circle).RightOf(shapE, 280)
+	d.Place(diamond).Below(circle)
+	d.Place(triangle).Below(diamond)
 	d.HAlignBottom(record, arrow, line)
 
 	d.Place(fnt).Below(record, 120)
