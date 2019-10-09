@@ -15,25 +15,21 @@ func NewCircle(radius int) *Circle {
 }
 
 type Circle struct {
-	topLeft xy.Position
-	center  xy.Position
-	Radius  int
-	class   string
+	pos    xy.Position
+	Radius int
+	class  string
 }
 
 func (c *Circle) String() string {
 	return fmt.Sprintf("Circle")
 }
 
-func (c *Circle) Position() (int, int) { return c.topLeft.XY() }
-func (c *Circle) SetX(x int) {
-	c.topLeft.X = x
-	c.center.X = x + c.Radius
+func (c *Circle) Position() (int, int) {
+	return c.pos.XY()
 }
-func (c *Circle) SetY(y int) {
-	c.topLeft.Y = y
-	c.center.Y = y + c.Radius
-}
+
+func (c *Circle) SetX(x int)            { c.pos.X = x }
+func (c *Circle) SetY(y int)            { c.pos.Y = y }
 func (c *Circle) Width() int            { return c.Radius * 2 }
 func (c *Circle) Height() int           { return c.Width() }
 func (c *Circle) Direction() Direction  { return LR }
@@ -41,9 +37,12 @@ func (c *Circle) SetClass(class string) { c.class = class }
 
 func (c *Circle) WriteSvg(out io.Writer) error {
 	w, err := newTagPrinter(out)
+	x, y := c.Position()
+	x += c.Radius
+	y += c.Radius
 	w.printf(
 		`<circle class="%s" cx="%v" cy="%v" r="%v" />\n`,
-		c.class, c.center.X, c.center.Y, c.Radius,
+		c.class, x, y, c.Radius,
 	)
 	return *err
 }
