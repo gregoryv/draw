@@ -2,31 +2,31 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="570" height="222" font-family="Arial, Helvetica, sans-serif">
-<line stroke="#d3d3d3" x1="24" y1="24" x2="24" y2="222"/>
+<line stroke="#d3d3d3" x1="26" y1="24" x2="26" y2="222"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">Client</text>
-<line stroke="#d3d3d3" x1="214" y1="24" x2="214" y2="222"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="197" y="18">Server</text>
-<line stroke="#d3d3d3" x1="404" y1="24" x2="404" y2="222"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="18">Database</text>
-<path stroke="black" d="M24,57 L214,57" />
-<g transform="rotate(0 214 57)"><path stroke="black" fill="#ffffff" d="M214,57 l-8,-4 l 0,8 Z" /></g>
+<line stroke="#d3d3d3" x1="216" y1="24" x2="216" y2="222"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="18">Server</text>
+<line stroke="#d3d3d3" x1="406" y1="24" x2="406" y2="222"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="18">Database</text>
+<path stroke="black" d="M26,57 L216,57" />
+<g transform="rotate(0 216 57)"><path stroke="black" fill="#ffffff" d="M216,57 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="89" y="54">connect()</text>
-<path stroke="red" d="M214,90 L404,90" />
-<g transform="rotate(0 404 90)"><path stroke="red" fill="#ffffff" d="M404,90 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="95" y="54">connect()</text>
+<path stroke="red" d="M216,90 L406,90" />
+<g transform="rotate(0 406 90)"><path stroke="red" fill="#ffffff" d="M406,90 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="87">SELECT</text>
-<path stroke="black" d="M404,123 L214,123" />
-<g transform="rotate(180 214 123)"><path stroke="black" fill="#ffffff" d="M214,123 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="287" y="87">SELECT</text>
+<path stroke="black" d="M406,123 L216,123" />
+<g transform="rotate(180 216 123)"><path stroke="black" fill="#ffffff" d="M216,123 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="295" y="120">Rows</text>
-<line stroke="red" x1="214" y1="156" x2="229" y2="156"/>
-<line stroke="red" x1="229" y1="156" x2="229" y2="188"/>
-<path stroke="red" d="M229,188 L214,188" />
-<g transform="rotate(180 214 188)"><path stroke="red" fill="#ffffff" d="M214,188 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="296" y="120">Rows</text>
+<line stroke="red" x1="216" y1="156" x2="231" y2="156"/>
+<line stroke="red" x1="231" y1="156" x2="231" y2="188"/>
+<path stroke="red" d="M231,188 L216,188" />
+<g transform="rotate(180 216 188)"><path stroke="red" fill="#ffffff" d="M216,188 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="235" y="175">Transform to view model</text>
-<path stroke="black" d="M214,211 L24,211" />
-<g transform="rotate(180 24 211)"><path stroke="black" fill="#ffffff" d="M24,211 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="237" y="175">Transform to view model</text>
+<path stroke="black" d="M216,211 L26,211" />
+<g transform="rotate(180 26 211)"><path stroke="black" fill="#ffffff" d="M26,211 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="88" y="208">Send HTML</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="89" y="208">Send HTML</text></svg>

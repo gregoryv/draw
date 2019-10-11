@@ -1,67 +1,67 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="661" height="784" font-family="Arial, Helvetica, sans-serif">
-<path stroke="black" stroke-dasharray="5,5,5" d="M178,95 L148,92" />
-<g transform="rotate(185 148 92)"><path stroke="black" fill="#ffffff" d="M148,92 l-8,-4 l 0,8 Z" /></g>
+  width="677" height="784" font-family="Arial, Helvetica, sans-serif">
+<path stroke="black" stroke-dasharray="5,5,5" d="M183,95 L153,92" />
+<g transform="rotate(185 153 92)"><path stroke="black" fill="#ffffff" d="M153,92 l-8,-4 l 0,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="220" y="36">package net/http</text>
-<rect stroke="black" fill="#ffffcc" x="20" y="60" width="128" height="52"/>
-<line stroke="#d3d3d3" x1="20" y1="90" x2="148" y2="90"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="106">ServeHTTP()</text>
+<rect stroke="black" fill="#ffffcc" x="20" y="60" width="133" height="52"/>
+<line stroke="#d3d3d3" x1="20" y1="90" x2="153" y2="90"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="106">ServeHTTP()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="80">http.Handler interface</text>
-<rect stroke="black" fill="#ffffcc" x="178" y="60" width="123" height="84"/>
-<line stroke="#d3d3d3" x1="178" y1="90" x2="301" y2="90"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="106">Handle()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="122">HandleFunc()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="138">Handler()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="80">http.ServeMux struct</text>
-<rect stroke="black" fill="#ffffcc" x="331" y="60" width="168" height="84"/>
-<line stroke="#d3d3d3" x1="331" y1="90" x2="499" y2="90"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="106">Header()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="122">Write()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="138">WriteHeader()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="80">http.ResponseWriter interface</text>
-<rect stroke="black" fill="#ffffcc" x="529" y="60" width="132" height="666"/>
-<line stroke="#d3d3d3" x1="529" y1="90" x2="661" y2="90"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="106">Method</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="122">URL</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="138">Proto</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="154">ProtoMajor</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="170">ProtoMinor</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="186">Header</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="202">Body</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="218">GetBody</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="234">ContentLength</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="250">TransferEncoding</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="266">Close</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="282">Host</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="298">Form</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="314">PostForm</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="330">MultipartForm</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="346">Trailer</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="362">RemoteAddr</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="378">RequestURI</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="394">TLS</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="410">Cancel</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="426">Response</text>
-<line stroke="#d3d3d3" x1="529" y1="432" x2="661" y2="432"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="448">AddCookie()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="464">BasicAuth()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="480">Context()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="496">Cookie()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="512">Cookies()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="528">FormFile()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="544">FormValue()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="560">MultipartReader()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="576">ParseForm()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="592">ParseMultipartForm()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="608">PostFormValue()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="624">ProtoAtLeast()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="640">Referer()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="656">SetBasicAuth()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="672">UserAgent()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="688">WithContext()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="704">Write()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="720">WriteProxy()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="535" y="80">http.Request struct</text>
-<rect stroke="black" fill="#ffffcc" x="20" y="158" width="155" height="346"/>
-<line stroke="#d3d3d3" x1="20" y1="188" x2="175" y2="188"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="204">Addr</text>
+<rect stroke="black" fill="#ffffcc" x="183" y="60" width="126" height="84"/>
+<line stroke="#d3d3d3" x1="183" y1="90" x2="309" y2="90"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="106">Handle()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="122">HandleFunc()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="138">Handler()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="80">http.ServeMux struct</text>
+<rect stroke="black" fill="#ffffcc" x="339" y="60" width="177" height="84"/>
+<line stroke="#d3d3d3" x1="339" y1="90" x2="516" y2="90"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="106">Header()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="122">Write()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="138">WriteHeader()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="80">http.ResponseWriter interface</text>
+<rect stroke="black" fill="#ffffcc" x="546" y="60" width="131" height="666"/>
+<line stroke="#d3d3d3" x1="546" y1="90" x2="677" y2="90"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="106">Method</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="122">URL</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="138">Proto</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="154">ProtoMajor</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="170">ProtoMinor</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="186">Header</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="202">Body</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="218">GetBody</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="234">ContentLength</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="250">TransferEncoding</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="266">Close</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="282">Host</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="298">Form</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="314">PostForm</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="330">MultipartForm</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="346">Trailer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="362">RemoteAddr</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="378">RequestURI</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="394">TLS</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="410">Cancel</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="426">Response</text>
+<line stroke="#d3d3d3" x1="546" y1="432" x2="677" y2="432"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="448">AddCookie()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="464">BasicAuth()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="480">Context()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="496">Cookie()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="512">Cookies()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="528">FormFile()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="544">FormValue()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="560">MultipartReader()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="576">ParseForm()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="592">ParseMultipartForm()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="608">PostFormValue()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="624">ProtoAtLeast()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="640">Referer()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="656">SetBasicAuth()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="672">UserAgent()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="688">WithContext()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="704">Write()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="720">WriteProxy()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="552" y="80">http.Request struct</text>
+<rect stroke="black" fill="#ffffcc" x="20" y="158" width="150" height="346"/>
+<line stroke="#d3d3d3" x1="20" y1="188" x2="170" y2="188"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="204">Addr</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="220">Handler</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="236">TLSConfig</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="252">ReadTimeout</text>
@@ -72,7 +72,7 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="332">TLSNextProto</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="348">ConnState</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="364">ErrorLog</text>
-<line stroke="#d3d3d3" x1="20" y1="370" x2="175" y2="370"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="386">Close()</text>
+<line stroke="#d3d3d3" x1="20" y1="370" x2="170" y2="370"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="386">Close()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="402">ListenAndServe()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="418">ListenAndServeTLS()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="434">RegisterOnShutdown()</text>
@@ -81,77 +81,77 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="482">SetKeepAlivesEnabled()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="498">Shutdown()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="178">http.Server struct</text>
-<rect stroke="black" fill="#ffffcc" x="178" y="174" width="125" height="330"/>
-<line stroke="#d3d3d3" x1="178" y1="204" x2="303" y2="204"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="220">Status</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="236">StatusCode</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="252">Proto</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="268">ProtoMajor</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="284">ProtoMinor</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="300">Header</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="316">Body</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="332">ContentLength</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="348">TransferEncoding</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="364">Close</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="380">Uncompressed</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="396">Trailer</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="412">Request</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="428">TLS</text>
-<line stroke="#d3d3d3" x1="178" y1="434" x2="303" y2="434"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="450">Cookies()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="466">Location()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="482">ProtoAtLeast()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="498">Write()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="194">http.Response struct</text>
-<rect stroke="black" fill="#ffffcc" x="331" y="174" width="162" height="378"/>
-<line stroke="#d3d3d3" x1="331" y1="204" x2="493" y2="204"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="220">Proxy</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="236">DialContext</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="252">Dial</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="268">DialTLS</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="284">TLSClientConfig</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="300">TLSHandshakeTimeout</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="316">DisableKeepAlives</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="332">DisableCompression</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="348">MaxIdleConns</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="364">MaxIdleConnsPerHost</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="380">MaxConnsPerHost</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="396">IdleConnTimeout</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="412">ResponseHeaderTimeout</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="428">ExpectContinueTimeout</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="444">TLSNextProto</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="460">ProxyConnectHeader</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="476">MaxResponseHeaderBytes</text>
-<line stroke="#d3d3d3" x1="331" y1="482" x2="493" y2="482"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="498">CancelRequest()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="514">CloseIdleConnections()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="530">RegisterProtocol()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="546">RoundTrip()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="194">http.Transport struct</text>
-<rect stroke="black" fill="#ffffcc" x="331" y="582" width="148" height="202"/>
-<line stroke="#d3d3d3" x1="331" y1="612" x2="479" y2="612"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="628">Transport</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="644">CheckRedirect</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="660">Jar</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="676">Timeout</text>
-<line stroke="#d3d3d3" x1="331" y1="682" x2="479" y2="682"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="698">CloseIdleConnections()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="714">Do()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="730">Get()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="746">Head()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="762">Post()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="778">PostForm()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="337" y="602">http.Client struct</text>
-<rect stroke="black" fill="#ffffcc" x="20" y="534" width="140" height="68"/>
-<line stroke="#d3d3d3" x1="20" y1="564" x2="160" y2="564"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="580">Cookies()</text>
+<rect stroke="black" fill="#ffffcc" x="183" y="174" width="127" height="330"/>
+<line stroke="#d3d3d3" x1="183" y1="204" x2="310" y2="204"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="220">Status</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="236">StatusCode</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="252">Proto</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="268">ProtoMajor</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="284">ProtoMinor</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="300">Header</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="316">Body</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="332">ContentLength</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="348">TransferEncoding</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="364">Close</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="380">Uncompressed</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="396">Trailer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="412">Request</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="428">TLS</text>
+<line stroke="#d3d3d3" x1="183" y1="434" x2="310" y2="434"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="450">Cookies()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="466">Location()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="482">ProtoAtLeast()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="498">Write()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="194">http.Response struct</text>
+<rect stroke="black" fill="#ffffcc" x="339" y="174" width="166" height="378"/>
+<line stroke="#d3d3d3" x1="339" y1="204" x2="505" y2="204"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="220">Proxy</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="236">DialContext</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="252">Dial</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="268">DialTLS</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="284">TLSClientConfig</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="300">TLSHandshakeTimeout</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="316">DisableKeepAlives</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="332">DisableCompression</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="348">MaxIdleConns</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="364">MaxIdleConnsPerHost</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="380">MaxConnsPerHost</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="396">IdleConnTimeout</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="412">ResponseHeaderTimeout</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="428">ExpectContinueTimeout</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="444">TLSNextProto</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="460">ProxyConnectHeader</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="476">MaxResponseHeaderBytes</text>
+<line stroke="#d3d3d3" x1="339" y1="482" x2="505" y2="482"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="498">CancelRequest()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="514">CloseIdleConnections()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="530">RegisterProtocol()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="546">RoundTrip()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="194">http.Transport struct</text>
+<rect stroke="black" fill="#ffffcc" x="339" y="582" width="145" height="202"/>
+<line stroke="#d3d3d3" x1="339" y1="612" x2="484" y2="612"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="628">Transport</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="644">CheckRedirect</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="660">Jar</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="676">Timeout</text>
+<line stroke="#d3d3d3" x1="339" y1="682" x2="484" y2="682"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="698">CloseIdleConnections()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="714">Do()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="730">Get()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="746">Head()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="762">Post()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="778">PostForm()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="345" y="602">http.Client struct</text>
+<rect stroke="black" fill="#ffffcc" x="20" y="534" width="145" height="68"/>
+<line stroke="#d3d3d3" x1="20" y1="564" x2="165" y2="564"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="580">Cookies()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="596">SetCookies()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="554">http.CookieJar interface</text>
-<rect stroke="black" fill="#ffffcc" x="190" y="534" width="107" height="250"/>
-<line stroke="#d3d3d3" x1="190" y1="564" x2="297" y2="564"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="580">Name</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="596">Value</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="612">Path</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="628">Domain</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="644">Expires</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="660">RawExpires</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="676">MaxAge</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="692">Secure</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="708">HttpOnly</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="724">SameSite</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="740">Raw</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="756">Unparsed</text>
-<line stroke="#d3d3d3" x1="190" y1="762" x2="297" y2="762"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="778">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="196" y="554">http.Cookie struct</text></svg>
+<rect stroke="black" fill="#ffffcc" x="195" y="534" width="110" height="250"/>
+<line stroke="#d3d3d3" x1="195" y1="564" x2="305" y2="564"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="580">Name</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="596">Value</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="612">Path</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="628">Domain</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="644">Expires</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="660">RawExpires</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="676">MaxAge</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="692">Secure</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="708">HttpOnly</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="724">SameSite</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="740">Raw</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="756">Unparsed</text>
+<line stroke="#d3d3d3" x1="195" y1="762" x2="305" y2="762"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="778">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="201" y="554">http.Cookie struct</text></svg>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <meta charset="utf-8">
+  </head>
 
   <body >
     <table>
@@ -8,13 +11,10 @@
 	<td id="arial" style="font-family: Arial; font-size: 12px">Arial 12px<br>
 	</td>
 
-	<td id="helvetica" style="font-family: Times; font-size: 12px">Helvetica 12px<br></td>
       </tr>
       </table>
 
     <script>
-      var str = "ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvxyz._1234567890";
-
       function box(txt, id) {
         span = document.createElement("span");
 	span.id = id
@@ -32,15 +32,14 @@
       }
 
       function fsize(prefix) {
-        for (var i = 0; i < str.length; i++) {
-	  id = prefix+str.charAt(i)
-	  span = box(str.charAt(i), id)
+        for (var i = 33; i < 255; i++) {
+	  id = prefix+"_"+i
+	  span = box(String.fromCharCode(i), id)
           add(span, prefix)
 	}
         add(box("&nbsp;", "space"), prefix)
       }
       fsize("arial")
-      fsize("helvetica")
 
     </script>
 

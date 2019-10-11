@@ -8,7 +8,7 @@ func TestTextWidth(t *testing.T) {
 		font map[rune]float32
 		exp  int
 	}{
-		{'ä', arial, 8},
+		{'┤', arial, 8},
 	}
 	for _, c := range cases {
 		got := DefaultFont.TextWidth(string(c.r))
