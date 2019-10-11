@@ -1,7 +1,10 @@
 // Package xy provides xy Position
 package xy
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 type Position struct {
 	X, Y int
@@ -24,4 +27,10 @@ func (p Position) String() string {
 
 func (p Position) XYfloat64() (float64, float64) {
 	return float64(p.X), float64(p.Y)
+}
+
+func (p Position) Distance(q Position) float64 {
+	x1, y1 := p.XYfloat64()
+	x2, y2 := q.XYfloat64()
+	return math.Sqrt(math.Pow(x1-x2, 2) + math.Pow(y1-y2, 2))
 }

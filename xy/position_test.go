@@ -4,6 +4,23 @@ import (
 	"testing"
 )
 
+func TestPosition_Distance(t *testing.T) {
+	var p Position
+	cases := []struct {
+		q   Position
+		exp float64
+	}{
+		{Position{0, 2}, 2},
+	}
+	for _, c := range cases {
+		got := p.Distance(c.q)
+		if got != c.exp {
+			t.Error(got, c.exp)
+		}
+	}
+
+}
+
 func Test_one_position(t *testing.T) {
 	it := one_position{t, Position{10, 10}}
 	q := Position{10, 10}
