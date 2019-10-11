@@ -32,9 +32,9 @@
 <g transform="rotate(226 651 710)"><path stroke="black" fill="#777777" d="M651,710 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(226 562 617)"><path stroke="black" fill="#ffffff" d="M562,617 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M498,880 L497,684" />
-<g transform="rotate(269 498 880)"><path stroke="black" fill="#777777" d="M498,880 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(269 497 684)"><path stroke="black" fill="#ffffff" d="M497,684 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" d="M497,774 L497,684" />
+<g transform="rotate(-90 497 774)"><path stroke="black" fill="#777777" d="M497,774 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(-90 497 684)"><path stroke="black" fill="#ffffff" d="M497,684 l-8,-4 l 0,8 Z" /></g>
 
 <path stroke="black" d="M562,551 L642,551" />
 <g transform="rotate(0 562 551)"><path stroke="black" fill="#777777" d="M562,551 l 6,-4 6,4 -6,4 -6,-4" /></g>

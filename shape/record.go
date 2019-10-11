@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"math"
 	"reflect"
 
 	"github.com/gregoryv/go-design/xy"
@@ -214,41 +215,26 @@ func (r *Record) Edge(start xy.Position) xy.Position {
 	}
 	l1 := xy.Line{start, center}
 
-	lowY := r.Y + r.Height()
-	rightX := r.X + r.Width()
-
 	var (
-		p     xy.Position
-		err   error
-		first bool = true
+		d      float64 = math.MaxFloat64
+		pos    xy.Position
+		lowY   = r.Y + r.Height()
+		rightX = r.X + r.Width()
+		top    = xy.NewLine(r.X, r.Y, rightX, r.Y)
+		left   = xy.NewLine(r.X, r.Y, r.X, lowY)
+		right  = xy.NewLine(rightX, r.Y, rightX, lowY)
+		bottom = xy.NewLine(r.X, lowY, rightX, lowY)
 	)
-	// nexus returning once intersection found
-	intersect := func(side *xy.Line) {
-		if !first && err == nil {
-			return
+
+	for _, side := range []*xy.Line{bottom, left, right, top} {
+		p, err := l1.IntersectSegment(side)
+		if err != nil {
+			continue
 		}
-		p, err = l1.IntersectSegment(side)
-		first = false
+		dist := start.Distance(p)
+		if dist < d {
+			pos = p
+		}
 	}
-	left := xy.NewLine(
-		r.X, r.Y,
-		r.X, lowY,
-	)
-	intersect(left)
-	bottom := xy.NewLine(
-		r.X, lowY,
-		rightX, lowY,
-	)
-	intersect(bottom)
-	right := xy.NewLine(
-		rightX, r.Y,
-		rightX, lowY,
-	)
-	intersect(right)
-	top := xy.NewLine(
-		r.X, r.Y,
-		rightX, r.Y,
-	)
-	intersect(top)
-	return p
+	return pos
 }

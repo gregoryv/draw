@@ -10,8 +10,8 @@ import (
 // width.
 func NewSequenceDiagram() *SequenceDiagram {
 	return &SequenceDiagram{
-		ColWidth: 190,
 		Diagram:  NewDiagram(),
+		ColWidth: 190,
 		VMargin:  10,
 	}
 }
