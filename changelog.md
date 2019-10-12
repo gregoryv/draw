@@ -5,13 +5,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 
-## [Unreleased]
+## [0.3.0] - 2019-10-12
 ### Fixed
 
 - Arrows point to edge irrelevant of angle
 
 ### Added
 
+- Diagrams have optional bottom centered caption
 - Class diagram shows composition using diamond for tail
 - Note shape with multiline support
 
@@ -21,7 +22,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Arrow for realizing interface is dashed
 - Label and circle position is top left corner
 - Hide methods realized by visible interfaces and structs
-- Visualize interface realization as dashed line
 
 
 ## [0.2.0] - 2019-10-03
