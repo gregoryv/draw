@@ -2,6 +2,7 @@ package shape
 
 import (
 	"fmt"
+	"html/template"
 	"io"
 
 	"github.com/gregoryv/go-design/xy"
@@ -9,7 +10,7 @@ import (
 
 func NewLabel(text string) *Label {
 	return &Label{
-		Text:  text,
+		Text:  template.HTMLEscapeString(text),
 		Font:  DefaultFont,
 		Pad:   DefaultPad,
 		class: "label",
