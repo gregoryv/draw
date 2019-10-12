@@ -56,11 +56,13 @@ func (d *Diagram) WriteSvg(w io.Writer) error {
 	if d.Caption != nil {
 		margin := 30
 		x := (d.Width - d.Caption.Width()) / 2
+		if x < 0 {
+			x = 0
+		}
 		d.Place(d.Caption).At(x, d.Height+margin)
 		d.AdaptSize()
 		d.Height += d.Caption.Font.Height / 2 // Fit protruding letters like 'g'
 	}
-
 	return d.Svg.WriteSvg(w)
 }
 
