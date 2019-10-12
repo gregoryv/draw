@@ -2,11 +2,23 @@ package design
 
 import (
 	"bytes"
+	"io/ioutil"
 	"testing"
 
 	"github.com/gregoryv/asserter"
 	"github.com/gregoryv/golden"
 )
+
+func TestSequenceDiagram_WithCaption(t *testing.T) {
+	d := NewSequenceDiagram()
+	before := d.Width()
+	d.SetCaption("should affect width")
+	d.WriteSvg(ioutil.Discard) // caption is not added until written
+	after := d.Width()
+	if before == after {
+		t.Fail()
+	}
+}
 
 func TestSequenceDiagram_AddStruct(t *testing.T) {
 	d := NewSequenceDiagram()
