@@ -16,6 +16,7 @@ func BasicNetHttpClassDiagram() *design.ClassDiagram {
 		server = d.Struct(http.Server{})
 	)
 	d.HideRealizations()
+	r.TitleOnly()
 
 	d.Place(r).At(20, 20)
 	d.Place(w).RightOf(r)
@@ -45,10 +46,21 @@ func BackendHandler() *design.SequenceDiagram {
 	return d
 }
 
+func BackendClassDiagram() *design.ClassDiagram {
+	var (
+		d = design.NewClassDiagram()
+		h = d.Interface((*http.Handler)(nil))
+		i = d.Struct(Index{})
+	)
+	d.HideRealizations()
+
+	d.Place(h).At(20, 20)
+	d.Place(i).Below(h)
+	return d
+}
+
 type App struct{}
 
 type Index struct{}
 
-func (i *Index) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-
-}
+func (i *Index) ServeHTTP(w http.ResponseWriter, r *http.Request) {}

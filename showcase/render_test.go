@@ -12,7 +12,8 @@ func TestRenderAllDiagrams(t *testing.T) {
 		caption  string
 	}{
 		{BasicNetHttpClassDiagram(), "nethttp.svg", "ServeMux routes requests to handlers"},
-		{BackendHandler(), "nethttp_backend.svg", "HTTP backends implement handlers"},
+		{BackendHandler(), "backend.svg", "ServeMux is the router"},
+		{BackendClassDiagram(), "backend_classes.svg", "Index implements http.Handler"},
 	}
 	for i, c := range cases {
 		c.d.SetCaption(fmt.Sprintf("Figure %v. %s", i+1, c.caption))
