@@ -2,12 +2,11 @@ package showcase
 
 import (
 	"net/http"
-	"testing"
 
 	design "github.com/gregoryv/go-design"
 )
 
-func TestClassDiagram_nethttp(t *testing.T) {
+func BasicNetHttpClassDiagram() *design.ClassDiagram {
 	var (
 		d      = design.NewClassDiagram()
 		h      = d.Interface((*http.Handler)(nil))
@@ -22,7 +21,7 @@ func TestClassDiagram_nethttp(t *testing.T) {
 	d.Place(w).RightOf(r)
 	d.Place(h).Below(w)
 	d.Place(mux).Below(h)
-	d.Place(server).Below(mux)
+	d.Place(server).RightOf(w)
 
-	d.SaveAs("nethttp.svg")
+	return d
 }
