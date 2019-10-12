@@ -36,26 +36,28 @@ var (
 // Setting attributes that modify size or position is not advised.
 var ClassAttributes = map[string]string{
 	"note":                  `font-family="Arial,Helvetica,sans-serif"`,
-	"note-box":              `stroke="black" fill="#ffffff"`,
+	"note-box":              `stroke="#d3d3d3" fill="#ffffcc"`,
 	"highlight":             `stroke="red"`,
 	"highlight-head":        `stroke="red" fill="#ffffff"`,
 	"implements-arrow":      `stroke="black" stroke-dasharray="5,5,5"`,
 	"implements-arrow-head": `stroke="black" fill="#ffffff"`,
 	"arrow":                 `stroke="black"`,
 	"arrow-head":            `stroke="black" fill="#ffffff"`,
+	"arrow-tail":            `stroke="black" fill="#777777"`,
 	"compose-arrow":         `stroke="black"`,
 	"compose-arrow-head":    `stroke="black" fill="#ffffff"`,
 	"compose-arrow-tail":    `stroke="black" fill="#777777"`,
-	"line":                  `stroke="#d3d3d3"`,
+	"line":                  `stroke="black"`,
 	"column-line":           `stroke="#d3d3d3"`,
-	"record":                `stroke="black" fill="#ffffcc"`,
+	"record":                `stroke="#d3d3d3" fill="#ffffff"`,
+	"record-line":           `stroke="#d3d3d3"`,
 	"record-title":          `font-family="Arial,Helvetica,sans-serif"`,
 	"field":                 `font-family="Arial,Helvetica,sans-serif"`,
 	"method":                `font-family="Arial,Helvetica,sans-serif"`,
 	"record-label":          `font-family="Arial,Helvetica,sans-serif"`,
 	"label":                 `font-family="Arial,Helvetica,sans-serif"`,
 	"caption":               `font-family="Arial,Helvetica,sans-serif"`,
-	"diamond":               `stroke="black" fill="#333333"`,
+	"diamond":               `stroke="#d3d3d3" fill="#333333"`,
 }
 
 // Write adds a style attribute based on class. Limited to 1 class

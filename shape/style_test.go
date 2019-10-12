@@ -31,7 +31,7 @@ func TestStyle_Write_adds_style_to_classed_elements(t *testing.T) {
 	}{
 		{
 			`<x class="line" />`,
-			`<x stroke="#d3d3d3" />`,
+			`<x stroke="black" />`,
 		},
 		{
 			`<x class="whatever" />`,

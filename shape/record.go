@@ -94,6 +94,7 @@ func (r *Record) writeSeparator(w io.Writer, y1 int) error {
 		r.X, y1,
 		r.X+r.Width(), y1,
 	)
+	line.SetClass("record-line")
 	return line.WriteSvg(w)
 }
 
