@@ -226,7 +226,7 @@ func (r *Record) Edge(start xy.Position) xy.Position {
 		bottom = xy.NewLine(r.X, lowY, rightX, lowY)
 	)
 
-	for _, side := range []*xy.Line{bottom, left, right, top} {
+	for _, side := range []*xy.Line{top, left, right, bottom} {
 		p, err := l1.IntersectSegment(side)
 		if err != nil {
 			continue
@@ -234,6 +234,7 @@ func (r *Record) Edge(start xy.Position) xy.Position {
 		dist := start.Distance(p)
 		if dist < d {
 			pos = p
+			d = dist
 		}
 	}
 	return pos

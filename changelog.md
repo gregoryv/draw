@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [Unreleased]
+### Fixed
+
+- Arrows point to edge irrelevant of angle
+
 ### Added
 
 - Class diagram shows composition using diamond for tail
