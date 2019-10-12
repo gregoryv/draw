@@ -110,5 +110,4 @@ func (d *Diagram) SetCaption(txt string) {
 	l := shape.NewLabel(txt)
 	l.SetClass("caption")
 	d.Caption = l
-
 }

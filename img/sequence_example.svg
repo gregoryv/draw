@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="570" height="222" font-family="Arial, Helvetica, sans-serif">
+  width="433" height="222" font-family="Arial, Helvetica, sans-serif">
 <line stroke="#d3d3d3" x1="26" y1="24" x2="26" y2="222"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">Client</text>
 <line stroke="#d3d3d3" x1="216" y1="24" x2="216" y2="222"/>

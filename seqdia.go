@@ -29,10 +29,6 @@ type SequenceDiagram struct {
 
 // WriteSvg renders the diagram as SVG to the given writer.
 func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
-	svg := &shape.Svg{
-		Width:  dia.Width(),
-		Height: dia.Height(),
-	}
 	var (
 		colWidth = dia.ColWidth
 
@@ -59,7 +55,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		x += colWidth
 
 		dia.VAlignCenter(lines[i], label)
-		svg.Content = append(svg.Content, lines[i], label)
+		dia.Place(lines[i], label)
 	}
 
 	y := y1 + dia.plainHeight()
@@ -90,7 +86,7 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 				l2.End.Y,
 			)
 			arrow.SetClass(lnk.class())
-			svg.Content = append(svg.Content, l1, l2, arrow, label)
+			dia.Place(l1, l2, arrow, label)
 			y += dia.selfHeight()
 		} else {
 			arrow := shape.NewArrow(
@@ -101,11 +97,11 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 			)
 			arrow.SetClass(lnk.class())
 			dia.VAlignCenter(arrow, label)
-			svg.Content = append(svg.Content, arrow, label)
+			dia.Place(arrow, label)
 			y += dia.plainHeight()
 		}
 	}
-	return svg.WriteSvg(w)
+	return dia.Diagram.WriteSvg(w)
 }
 
 // Width returns the total width of the diagram
