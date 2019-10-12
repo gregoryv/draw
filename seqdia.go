@@ -28,20 +28,20 @@ type SequenceDiagram struct {
 }
 
 // WriteSvg renders the diagram as SVG to the given writer.
-func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
+func (d *SequenceDiagram) WriteSvg(w io.Writer) error {
 	var (
-		colWidth = dia.ColWidth
+		colWidth = d.ColWidth
 
-		top = dia.top()
-		x   = dia.Pad.Left
-		y1  = top + dia.TextPad.Bottom + dia.Font.LineHeight // below label
-		y2  = dia.Height()
+		top = d.top()
+		x   = d.Pad.Left
+		y1  = top + d.TextPad.Bottom + d.Font.LineHeight // below label
+		y2  = d.Height()
 	)
-	lines := make([]*shape.Line, len(dia.columns))
-	for i, column := range dia.columns {
+	lines := make([]*shape.Line, len(d.columns))
+	for i, column := range d.columns {
 		label := shape.NewLabel(column)
-		label.Font = dia.Font
-		label.Pad = dia.Pad
+		label.Font = d.Font
+		label.Pad = d.Pad
 		label.SetX(i * colWidth)
 		label.SetY(top)
 
@@ -54,29 +54,29 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 		lines[i] = line
 		x += colWidth
 
-		dia.VAlignCenter(lines[i], label)
-		dia.Place(lines[i], label)
+		d.VAlignCenter(lines[i], label)
+		d.Place(lines[i], label)
 	}
 
-	y := y1 + dia.plainHeight()
-	for _, lnk := range dia.links {
+	y := y1 + d.plainHeight()
+	for _, lnk := range d.links {
 		fromX := lines[lnk.fromIndex].Start.X
 		toX := lines[lnk.toIndex].Start.X
 		label := shape.NewLabel(lnk.text)
-		label.Font = dia.Font
-		label.Pad = dia.Pad
+		label.Font = d.Font
+		label.Pad = d.Pad
 		label.SetX(fromX)
-		label.SetY(y - 3 - dia.Font.LineHeight)
+		label.SetY(y - 3 - d.Font.LineHeight)
 
 		if lnk.toSelf() {
 			margin := 15
 			// add two lines + arrow
 			l1 := shape.NewLine(fromX, y, fromX+margin, y)
 			l1.SetClass(lnk.class())
-			l2 := shape.NewLine(fromX+margin, y, fromX+margin, y+dia.Font.LineHeight*2)
+			l2 := shape.NewLine(fromX+margin, y, fromX+margin, y+d.Font.LineHeight*2)
 			l2.SetClass(lnk.class())
-			dia.HAlignCenter(l2, label)
-			label.SetX(fromX + l1.Width() + dia.TextPad.Left)
+			d.HAlignCenter(l2, label)
+			label.SetX(fromX + l1.Width() + d.TextPad.Left)
 			label.SetY(y + 3)
 
 			arrow := shape.NewArrow(
@@ -86,8 +86,8 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 				l2.End.Y,
 			)
 			arrow.SetClass(lnk.class())
-			dia.Place(l1, l2, arrow, label)
-			y += dia.selfHeight()
+			d.Place(l1, l2, arrow, label)
+			y += d.selfHeight()
 		} else {
 			arrow := shape.NewArrow(
 				fromX,
@@ -96,57 +96,57 @@ func (dia *SequenceDiagram) WriteSvg(w io.Writer) error {
 				y,
 			)
 			arrow.SetClass(lnk.class())
-			dia.VAlignCenter(arrow, label)
-			dia.Place(arrow, label)
-			y += dia.plainHeight()
+			d.VAlignCenter(arrow, label)
+			d.Place(arrow, label)
+			y += d.plainHeight()
 		}
 	}
-	return dia.Diagram.WriteSvg(w)
+	return d.Diagram.WriteSvg(w)
 }
 
 // Width returns the total width of the diagram
-func (dia *SequenceDiagram) Width() int {
-	if dia.Svg.Width != 0 {
-		return dia.Svg.Width
+func (d *SequenceDiagram) Width() int {
+	if d.Svg.Width != 0 {
+		return d.Svg.Width
 	}
-	return len(dia.columns) * dia.ColWidth
+	return len(d.columns) * d.ColWidth
 }
 
 // Height returns the total height of the diagram
-func (dia *SequenceDiagram) Height() int {
-	if dia.Svg.Height != 0 {
-		return dia.Svg.Height
+func (d *SequenceDiagram) Height() int {
+	if d.Svg.Height != 0 {
+		return d.Svg.Height
 	}
-	if len(dia.columns) == 0 {
+	if len(d.columns) == 0 {
 		return 0
 	}
-	height := dia.top() + dia.plainHeight()
-	for _, lnk := range dia.links {
+	height := d.top() + d.plainHeight()
+	for _, lnk := range d.links {
 		if lnk.toSelf() {
-			height += dia.selfHeight()
+			height += d.selfHeight()
 			continue
 		}
-		height += dia.plainHeight()
+		height += d.plainHeight()
 	}
 	return height
 }
 
 // selfHeight is the height of a self referencing link
-func (dia *SequenceDiagram) selfHeight() int {
-	return 3*dia.Font.LineHeight + dia.Pad.Bottom
+func (d *SequenceDiagram) selfHeight() int {
+	return 3*d.Font.LineHeight + d.Pad.Bottom
 }
 
 // plainHeight returns the height of and arrow and label
-func (dia *SequenceDiagram) plainHeight() int {
-	return dia.Font.LineHeight + dia.Pad.Bottom + dia.VMargin
+func (d *SequenceDiagram) plainHeight() int {
+	return d.Font.LineHeight + d.Pad.Bottom + d.VMargin
 }
 
-func (dia *SequenceDiagram) top() int {
-	return dia.Pad.Top
+func (d *SequenceDiagram) top() int {
+	return d.Pad.Top
 }
 
-func (dia *SequenceDiagram) AddColumns(names ...string) {
-	dia.columns = append(dia.columns, names...)
+func (d *SequenceDiagram) AddColumns(names ...string) {
+	d.columns = append(d.columns, names...)
 }
 
 func (d *SequenceDiagram) SaveAs(filename string) error {

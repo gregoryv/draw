@@ -2,16 +2,16 @@ package design
 
 import "fmt"
 
-func (dia *SequenceDiagram) Link(from, to, text string) *Link {
+func (d *SequenceDiagram) Link(from, to, text string) *Link {
 	fromIndex := -1
 	toIndex := -1
-	for i, column := range dia.columns {
+	for i, column := range d.columns {
 		if column == from {
 			fromIndex = i
 			break
 		}
 	}
-	for i, column := range dia.columns {
+	for i, column := range d.columns {
 		if column == to {
 			toIndex = i
 			break
@@ -22,7 +22,7 @@ func (dia *SequenceDiagram) Link(from, to, text string) *Link {
 		toIndex:   toIndex,
 		text:      text,
 	}
-	dia.links = append(dia.links, lnk)
+	d.links = append(d.links, lnk)
 	if fromIndex == -1 {
 		panic(fmt.Sprintf("Missing %q column", from))
 	}
@@ -32,8 +32,8 @@ func (dia *SequenceDiagram) Link(from, to, text string) *Link {
 	return lnk
 }
 
-func (dia *SequenceDiagram) ClearLinks() {
-	dia.links = make([]*Link, 0)
+func (d *SequenceDiagram) ClearLinks() {
+	d.links = make([]*Link, 0)
 }
 
 // Link represents an arrow in a sequence diagram
