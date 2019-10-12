@@ -119,11 +119,11 @@ func (r *Record) hasFields() bool  { return len(r.Fields) != 0 }
 func (r *Record) hasMethods() bool { return len(r.Methods) != 0 }
 func (r *Record) isEmpty() bool    { return !r.hasFields() && !r.hasMethods() }
 
-func (rec *Record) addFields(t reflect.Type) {
+func (r *Record) addFields(t reflect.Type) {
 	for i := 0; i < t.NumField(); i++ {
 		field := t.Field(i)
 		if isPublic(field.Name) {
-			rec.Fields = append(rec.Fields, field.Name)
+			r.Fields = append(r.Fields, field.Name)
 		}
 	}
 }
@@ -137,16 +137,16 @@ func (rec *Record) addMethods(t reflect.Type) {
 	}
 }
 
-func (rec *Record) HideMethod(m string) (found bool) {
+func (r *Record) HideMethod(m string) (found bool) {
 	rest := make([]string, 0)
-	for _, n := range rec.Methods {
+	for _, n := range r.Methods {
 		if n == m {
 			found = true
 			continue
 		}
 		rest = append(rest, n)
 	}
-	rec.Methods = rest
+	r.Methods = rest
 	return
 }
 
