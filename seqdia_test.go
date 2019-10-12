@@ -8,6 +8,16 @@ import (
 	"github.com/gregoryv/golden"
 )
 
+func TestSequenceDiagram_AddStruct(t *testing.T) {
+	d := NewSequenceDiagram()
+	before := d.Width()
+	d.AddStruct(d)
+	after := d.Width()
+	if before == after {
+		t.Fail()
+	}
+}
+
 func Test_one_sequence_diagram(t *testing.T) {
 	it := new_one_sequence_diagram(t)
 	it.is_empty()
