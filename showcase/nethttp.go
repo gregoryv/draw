@@ -25,3 +25,29 @@ func BasicNetHttpClassDiagram() *design.ClassDiagram {
 
 	return d
 }
+
+func BackendHandler() *design.SequenceDiagram {
+	var (
+		d   = design.NewSequenceDiagram()
+		app = d.AddStruct(App{})
+		h   = d.AddStruct(Index{})
+		mux = d.AddStruct(http.ServeMux{})
+		srv = d.AddStruct(http.Server{})
+		cli = d.AddStruct(http.Client{})
+	)
+	d.ColWidth = 130
+	d.Link(app, h, `&Index{} : myhandler`)
+	d.Link(app, mux, `Handle("/path", myhandler)`)
+	d.Link(app, srv, `ListenAndServe(":8080", mux)`)
+	d.Link(cli, srv, `GET /path `)
+	d.Link(srv, mux, `routes request to registered func`)
+	return d
+}
+
+type App struct{}
+
+type Index struct{}
+
+func (i *Index) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+
+}

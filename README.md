@@ -5,6 +5,7 @@
 [go-design](https://godoc.org/github.com/gregoryv/go-design) - package for writing software design diagrams
 
 Program your diagrams and refactoring automatically updates them.
+Take a look at the below examples and then browse the [showcase](./showcase/README.md) of golang standard packages.
 
 ## Class diagram
 
@@ -27,6 +28,7 @@ This diagram is rendered by
 [example_test.go/ExampleDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-Diagram)
 
 ![](img/diagram_example.svg)
+
 
 ## TODO
 

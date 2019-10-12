@@ -80,4 +80,4 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="394" y="344">SetKeepAlivesEnabled()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="394" y="360">Shutdown()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="394" y="40">http.Server struct</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="144" y="732">Figure 1. HTTP backends implement handlers</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="140" y="732">Figure 1. ServeMux routes requests to handlers</text></svg>

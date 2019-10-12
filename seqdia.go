@@ -2,6 +2,7 @@ package design
 
 import (
 	"io"
+	"reflect"
 
 	"github.com/gregoryv/go-design/shape"
 )
@@ -154,4 +155,10 @@ func (dia *SequenceDiagram) AddColumns(names ...string) {
 
 func (d *SequenceDiagram) SaveAs(filename string) error {
 	return saveAs(d, d.Style, filename)
+}
+
+func (d *SequenceDiagram) AddStruct(obj interface{}) string {
+	name := reflect.TypeOf(obj).String()
+	d.AddColumns(name)
+	return name
 }
