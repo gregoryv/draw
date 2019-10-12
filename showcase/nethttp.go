@@ -21,8 +21,9 @@ func BasicNetHttpClassDiagram() *design.ClassDiagram {
 	d.Place(w).RightOf(r)
 	d.Place(h).Below(w)
 	d.Place(mux).Below(h)
-	d.Place(server).RightOf(w)
+	d.VAlignCenter(w, h, mux)
 
+	d.Place(server).RightOf(w)
 	return d
 }
 
