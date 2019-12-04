@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="524" height="418" font-family="Arial, Helvetica, sans-serif">
+  width="524" height="450" font-family="Arial, Helvetica, sans-serif">
 <path stroke="black" stroke-dasharray="5,5,5" d="M255,216 L255,186" />
 <g transform="rotate(-90 255 186)"><path stroke="black" fill="#ffffff" d="M255,186 l-8,-4 l 0,8 Z" /></g>
 
@@ -20,7 +20,7 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="278">HandleFunc()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="294">Handler()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="236">http.ServeMux struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="374" y="20" width="150" height="346"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="374" y="20" width="150" height="378"/>
 <line stroke="#d3d3d3" x1="374" y1="50" x2="524" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="66">Addr</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="82">Handler</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="98">TLSConfig</text>
@@ -32,13 +32,15 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="194">TLSNextProto</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="210">ConnState</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="226">ErrorLog</text>
-<line stroke="#d3d3d3" x1="374" y1="232" x2="524" y2="232"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="248">Close()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="264">ListenAndServe()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="280">ListenAndServeTLS()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="296">RegisterOnShutdown()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="312">Serve()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="328">ServeTLS()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="344">SetKeepAlivesEnabled()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="360">Shutdown()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="242">BaseContext</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="258">ConnContext</text>
+<line stroke="#d3d3d3" x1="374" y1="264" x2="524" y2="264"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="280">Close()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="296">ListenAndServe()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="312">ListenAndServeTLS()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="328">RegisterOnShutdown()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="344">Serve()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="360">ServeTLS()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="376">SetKeepAlivesEnabled()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="392">Shutdown()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="40">http.Server struct</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="412">Figure 1. ServeMux routes requests to handlers</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="444">Figure 1. ServeMux routes requests to handlers</text></svg>
