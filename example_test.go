@@ -96,7 +96,9 @@ func ExampleDiagram() {
 		diamond    = shape.NewArrow(20, 120, 150, 120)
 		note       = shape.NewNote(`Notes support
 multilines`)
-		d = design.NewDiagram()
+		comp = shape.NewComponent("database")
+		srv  = shape.NewComponent("service")
+		d    = design.NewDiagram()
 	)
 	d.Place(record).At(10, 30)
 	for _, arrow := range []*shape.Arrow{
@@ -112,6 +114,10 @@ multilines`)
 	diamond.Tail = shape.NewDiamond(0, 0)
 	d.Place(diamond).Below(withtail)
 	d.Place(note).Below(diamond)
+	d.Place(comp).RightOf(diamond)
+	d.Place(srv).Below(comp)
+	d.VAlignCenter(comp, srv)
+	d.Place(shape.NewArrowBetween(srv, comp))
 	d.SaveAs("img/diagram_example.svg")
 }
 
