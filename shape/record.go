@@ -208,7 +208,8 @@ type Edge interface {
 }
 
 // Edge returns xy position of a line starting at start and
-// pointing to the rs center.
+// pointing to the records center. The returned position would
+// be at the crosspoint.
 func (r *Record) Edge(start xy.Position) xy.Position {
 	center := xy.Position{
 		r.X + r.Width()/2,
