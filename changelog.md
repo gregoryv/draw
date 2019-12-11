@@ -7,7 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 
+- Dot shape
 - Component shape
+
+### Changed
+
+- Circle shape is stroked by default
 
 ## [0.4.0] - 2019-12-04
 ### Fixed

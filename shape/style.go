@@ -36,6 +36,7 @@ var (
 // Setting attributes that modify size or position is not advised.
 var ClassAttributes = map[string]string{
 	"circle":                `stroke="black" stroke-width="2" fill="#ffffff"`,
+	"dot":                   `stroke="black"`,
 	"note":                  `font-family="Arial,Helvetica,sans-serif"`,
 	"note-box":              `stroke="#d3d3d3" fill="#ffffcc"`,
 	"highlight":             `stroke="red"`,
