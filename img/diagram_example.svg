@@ -43,6 +43,7 @@
 
 <circle stroke="black" stroke-width="2" fill="#ffffff" cx="30" cy="291" r="10" />\n
 <circle stroke="black" cx="80" cy="291" r="10" />\n
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="130" cy="291" r="10" />\n<circle stroke="black" cx="130" cy="291" r="6" />\n
 <rect stroke="#d3d3d3" fill="#ffffff" x="180" y="180" width="72" height="26"/>
 <rect stroke="#d3d3d3" fill="#ffffff" x="175" y="185" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="175" y="196" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="191" y="198">database</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="186" y="236" width="60" height="26"/>
