@@ -125,7 +125,7 @@ multilines`)
 	d.Place(rect).Below(circle)
 	d.Place(srv).Below(comp)
 	d.VAlignCenter(comp, srv)
-	d.Place(shape.NewArrowBetween(srv, comp))
+	d.Link(srv, comp)
 	d.SaveAs("img/diagram_example.svg")
 }
 

@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	"github.com/gregoryv/asserter"
+	"github.com/gregoryv/go-design/xy"
 )
 
 func TestShapes(t *testing.T) {
@@ -86,6 +87,16 @@ func testShape(t *testing.T, shape Shape) {
 			return
 		}
 		s.SetTextPad(DefaultTextPad)
+	})
+
+	t.Run("Has edge", func(t *testing.T) {
+		s, ok := shape.(Edge)
+		if !ok {
+			// TODO all shapes should have an edge so we can link
+			// everything
+			return
+		}
+		s.Edge(xy.Position{0, 0})
 	})
 
 }

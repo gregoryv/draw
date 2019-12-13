@@ -35,6 +35,11 @@ func (diagram *Diagram) Place(s ...shape.Shape) *shape.Adjuster {
 	return shape.NewAdjuster(s...)
 }
 
+// Link places an arrow between the two shapes
+func (diagram *Diagram) Link(from, to shape.Shape) {
+	diagram.Place(shape.NewArrowBetween(from, to))
+}
+
 func (diagram *Diagram) applyStyle(s interface{}) {
 	if s, ok := s.(shape.HasFont); ok {
 		s.SetFont(diagram.Font)

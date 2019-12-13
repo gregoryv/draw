@@ -51,3 +51,7 @@ func (l *Label) WriteSvg(w io.Writer) error {
 		l.class, l.Font.Height, x, y, l.Text)
 	return err
 }
+
+func (l *Label) Edge(start xy.Position) xy.Position {
+	return boxEdge(start, l)
+}

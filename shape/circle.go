@@ -15,7 +15,7 @@ func NewCircle(radius int) *Circle {
 }
 
 type Circle struct {
-	pos    xy.Position
+	pos    xy.Position // top left
 	Radius int
 	class  string
 }
@@ -45,4 +45,8 @@ func (c *Circle) WriteSvg(out io.Writer) error {
 		c.class, x, y, c.Radius,
 	)
 	return *err
+}
+
+func (c *Circle) Edge(start xy.Position) xy.Position {
+	return boxEdge(start, c)
 }
