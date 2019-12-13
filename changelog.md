@@ -4,13 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.5.0] - 2019-12-13
 ### Added
 
+- Link method to generic diagram
 - Rect, Dot, ExitDot and Component shapes
 
 ### Changed
 
+- Label and circle has an edge
 - Circle shape is stroked by default
 
 ## [0.4.0] - 2019-12-04
