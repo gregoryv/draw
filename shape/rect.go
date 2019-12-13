@@ -69,25 +69,35 @@ func (r *Rect) Width() int {
 	return boxWidth(r.Font, r.Pad, r.Title)
 }
 
-// Edge returns xy position of a line starting at start and
-// pointing to the records center. The returned position would
-// be at the crosspoint.
+// Edge returns intersecting position of a line starting at start and
+// pointing to the rect center.
 func (r *Rect) Edge(start xy.Position) xy.Position {
+	return boxEdge(start, r)
+}
+
+type Box interface {
+	Position() (int, int)
+	Width() int
+	Height() int
+}
+
+func boxEdge(start xy.Position, r Box) xy.Position {
+	x, y := r.Position()
 	center := xy.Position{
-		r.X + r.Width()/2,
-		r.Y + r.Height()/2,
+		x + r.Width()/2,
+		y + r.Height()/2,
 	}
 	l1 := xy.Line{start, center}
 
 	var (
 		d      float64 = math.MaxFloat64
 		pos    xy.Position
-		lowY   = r.Y + r.Height()
-		rightX = r.X + r.Width()
-		top    = xy.NewLine(r.X, r.Y, rightX, r.Y)
-		left   = xy.NewLine(r.X, r.Y, r.X, lowY)
-		right  = xy.NewLine(rightX, r.Y, rightX, lowY)
-		bottom = xy.NewLine(r.X, lowY, rightX, lowY)
+		lowY   = y + r.Height()
+		rightX = x + r.Width()
+		top    = xy.NewLine(x, y, rightX, y)
+		left   = xy.NewLine(x, y, x, lowY)
+		right  = xy.NewLine(rightX, y, rightX, lowY)
+		bottom = xy.NewLine(x, lowY, rightX, lowY)
 	)
 
 	for _, side := range []*xy.Line{top, left, right, bottom} {

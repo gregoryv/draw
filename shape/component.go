@@ -3,7 +3,6 @@ package shape
 import (
 	"fmt"
 	"io"
-	"math"
 
 	"github.com/gregoryv/go-design/xy"
 )
@@ -83,37 +82,8 @@ func (r *Component) Width() int {
 	return boxWidth(r.Font, r.Pad, r.Title) + r.sbWidth/2
 }
 
-// Edge returns xy position of a line starting at start and
-// pointing to the records center. The returned position would
-// be at the crosspoint.
+// Edge returns intersecting position of a line starting at start and
+// pointing to the components center.
 func (r *Component) Edge(start xy.Position) xy.Position {
-	center := xy.Position{
-		r.X + r.Width()/2,
-		r.Y + r.Height()/2,
-	}
-	l1 := xy.Line{start, center}
-
-	var (
-		d      float64 = math.MaxFloat64
-		pos    xy.Position
-		lowY   = r.Y + r.Height()
-		rightX = r.X + r.Width()
-		top    = xy.NewLine(r.X, r.Y, rightX, r.Y)
-		left   = xy.NewLine(r.X, r.Y, r.X, lowY)
-		right  = xy.NewLine(rightX, r.Y, rightX, lowY)
-		bottom = xy.NewLine(r.X, lowY, rightX, lowY)
-	)
-
-	for _, side := range []*xy.Line{top, left, right, bottom} {
-		p, err := l1.IntersectSegment(side)
-		if err != nil {
-			continue
-		}
-		dist := start.Distance(p)
-		if dist < d {
-			pos = p
-			d = dist
-		}
-	}
-	return pos
+	return boxEdge(start, r)
 }
