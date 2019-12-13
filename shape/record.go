@@ -202,10 +202,6 @@ func (r *Record) Width() int {
 	return width
 }
 
-type Edge interface {
-	Edge(start xy.Position) xy.Position
-}
-
 // Edge returns intersecting position of a line starting at start and
 // pointing to the records center.
 func (r *Record) Edge(start xy.Position) xy.Position {

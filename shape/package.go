@@ -4,6 +4,8 @@ package shape
 import (
 	"io"
 	"math"
+
+	"github.com/gregoryv/go-design/xy"
 )
 
 type Shape interface {
@@ -34,6 +36,12 @@ func boxWidth(font Font, pad Padding, txt string) int {
 
 func intAbs(v int) int {
 	return int(math.Abs(float64(v)))
+}
+
+type Edge interface {
+	// Edge returns the intersecting position to a shape from start
+	// position.
+	Edge(start xy.Position) xy.Position
 }
 
 type HasFont interface {
