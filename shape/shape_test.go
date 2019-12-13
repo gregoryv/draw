@@ -71,4 +71,21 @@ func testShape(t *testing.T, shape Shape) {
 		assert := asserter.New(t)
 		assert(err == nil).Error(err)
 	})
+
+	t.Run("Uses font", func(t *testing.T) {
+		s, ok := shape.(HasFont)
+		if !ok {
+			return
+		}
+		s.SetFont(DefaultFont)
+	})
+
+	t.Run("Uses text padding", func(t *testing.T) {
+		s, ok := shape.(HasTextPad)
+		if !ok {
+			return
+		}
+		s.SetTextPad(DefaultTextPad)
+	})
+
 }
