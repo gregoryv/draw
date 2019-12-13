@@ -2,6 +2,7 @@ package shape
 
 import (
 	"fmt"
+	"io/ioutil"
 	"testing"
 
 	"github.com/gregoryv/asserter"
@@ -47,5 +48,11 @@ func testShape(t *testing.T, shape Shape) {
 
 	t.Run("May have class", func(t *testing.T) {
 		shape.SetClass("something")
+	})
+
+	t.Run("Can be written as SVG", func(t *testing.T) {
+		err := shape.WriteSvg(ioutil.Discard)
+		assert := asserter.New(t)
+		assert(err == nil).Error(err)
 	})
 }
