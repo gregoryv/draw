@@ -8,6 +8,22 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
+func TestShapes(t *testing.T) {
+	shapes := []Shape{
+		NewComponent("a"),
+		NewRect("rect"),
+		NewTriangle(0, 0, ""),
+		NewLabel("l"),
+		NewLine(1, 1, 7, 7),
+		NewExitDot(),
+		NewDot(24),
+		NewCircle(24),
+	}
+	for _, shape := range shapes {
+		testShape(t, shape)
+	}
+}
+
 func testShape(t *testing.T, shape Shape) {
 	t.Helper()
 	t.Run("Can move in X,Y direction", func(t *testing.T) {

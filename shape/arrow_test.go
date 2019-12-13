@@ -43,6 +43,8 @@ type OneArrow struct {
 	*Arrow
 }
 
+type assert = asserter.AssertFunc
+
 func (t *OneArrow) CanPointUpAndRight() {
 	t.End.X = t.Start.X + 30
 	t.End.Y = t.Start.Y - 30
