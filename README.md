@@ -34,6 +34,13 @@ This diagram is rendered by
 ![](img/diagram_example.svg)
 
 
+## Grid layout
+
+Simplifying placing shapes in a grid layout aligning different sizes of shapes.
+
+![](img/grid_layout.svg)
+
+
 ## TODO
 
 - Labeled arrows

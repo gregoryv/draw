@@ -35,6 +35,45 @@ func (diagram *Diagram) Place(s ...shape.Shape) *shape.Adjuster {
 	return shape.NewAdjuster(s...)
 }
 
+// PlaceGrid place all the shapes into a grid starting at X,Y
+// position. Row height is adapted to heighest element.
+func (diagram *Diagram) PlaceGrid(cols, X, Y int, s ...shape.Shape) {
+	row := make([]shape.Shape, cols)
+	var x, y int
+	var h shape.Shape
+	for i, s := range s {
+		switch {
+		case i == 0:
+			diagram.Place(s).At(X, Y)
+		case y == 0:
+			diagram.Place(s).RightOf(row[x-1])
+			//			diagram.HAlignCenter(row[x-1], s)
+		default:
+			diagram.Place(s).Below(h)
+			diagram.VAlignCenter(row[x], s)
+		}
+		row[x] = s
+		x++
+		if x == cols {
+			x = 0
+			y++
+			h = highest(row...)
+		}
+	}
+}
+
+func highest(s ...shape.Shape) shape.Shape {
+	var h int
+	var r shape.Shape
+	for _, s := range s {
+		if s.Height() > h {
+			h = s.Height()
+			r = s
+		}
+	}
+	return r
+}
+
 // Link places an arrow between the two shapes
 func (diagram *Diagram) Link(from, to shape.Shape) {
 	diagram.Place(shape.NewArrowBetween(from, to))

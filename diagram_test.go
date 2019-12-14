@@ -49,3 +49,23 @@ func (t *OneDiagram) CanHaveFixedSize() {
 	assert := asserter.New(t)
 	assert(adjusted.String() != fixed.String())
 }
+
+func TestDiagram_PlaceGrid(t *testing.T) {
+	var (
+		d = NewDiagram()
+		a = shape.NewRect("grid")
+		b = shape.NewLabel("layout")
+		c = shape.NewLabel("1")
+		e = shape.NewCircle(30)
+		g = shape.NewComponent("component")
+	)
+	cols := 2
+	d.PlaceGrid(
+		cols, 50, 20,
+		a, b, e, c, g,
+	)
+	d.AdaptSize()
+	d.Height += 10
+	d.Width += 10
+	d.SaveAs("img/grid_layout.svg")
+}
