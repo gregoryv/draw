@@ -72,11 +72,9 @@ func ExampleSequenceDiagram() {
 	d.Link(cli, srv, "connect()")
 	d.Link(srv, db, "SELECT").Class = "highlight"
 	d.Link(db, srv, "Rows")
-	// Special link
-	lnk := d.Link(srv, srv, "Transform to view model")
-	lnk.Class = "highlight"
+	d.Link(srv, srv, "Transform to view model").Class = "highlight"
 	d.Link(srv, cli, "Send HTML")
-	d.SaveAs("img/sequence_example.svg")
+	d.SaveAs("img/sequence_diagram.svg")
 }
 
 func ExampleDiagram() {
@@ -131,14 +129,25 @@ multilines`)
 	d.SaveAs("img/diagram_example.svg")
 }
 
-func TestClassDiagram(t *testing.T) {
+func ExampleDiagram_activity() {
+	var (
+		d     = design.NewDiagram()
+		start = shape.NewDot(10)
+		push  = shape.NewState("Push commit")
+		run   = shape.NewState("Run git hook")
+		end   = shape.NewExitDot()
+	)
+	d.Place(start).At(80, 20)
+	d.Place(push, run, end).Below(start)
+
+	d.VAlignCenter(start, push, run, end)
+	d.Link(start, push, run, end)
+	d.SaveAs("img/activity_diagram.svg")
+}
+
+func TestExamples(t *testing.T) {
 	ExampleClassDiagram()
-}
-
-func TestSequenceDiagram(t *testing.T) {
 	ExampleSequenceDiagram()
-}
-
-func TestDiagram(t *testing.T) {
 	ExampleDiagram()
+	ExampleDiagram_activity()
 }

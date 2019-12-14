@@ -1,0 +1,19 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="133" height="202" font-family="Arial, Helvetica, sans-serif">
+<circle stroke="black" cx="90" cy="30" r="10" />\n
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="47" y="70" width="86" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="53" y="88">Push commit</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="48" y="126" width="85" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="54" y="144">Run git hook</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="90" cy="192" r="10" />\n<circle stroke="black" cx="90" cy="192" r="6" />\n
+<path stroke="black" d="M90,40 L90,70" />
+<g transform="rotate(90 90 70)"><path stroke="black" fill="#ffffff" d="M90,70 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M90,96 L90,126" />
+<g transform="rotate(90 90 126)"><path stroke="black" fill="#ffffff" d="M90,126 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M90,152 L90,182" />
+<g transform="rotate(90 90 182)"><path stroke="black" fill="#ffffff" d="M90,182 l-8,-4 l 0,8 Z" /></g>
+</svg>

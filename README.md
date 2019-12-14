@@ -5,11 +5,37 @@
 [go-design](https://godoc.org/github.com/gregoryv/go-design) - package for writing software design diagrams
 
 - Cross platform
-- No dependencies
+- No external dependencies
 - SVG output
 
 Program your diagrams and refactoring automatically updates them.
 Take a look at the below examples and then browse the [showcase](./showcase/README.md) of golang standard packages.
+
+## Sequence diagram
+
+<img src="img/sequence_diagram.svg">
+
+    var (
+	    cli = "Client"
+        srv = "Server"
+        db  = "Database"
+        d   = design.NewSequenceDiagram()
+    )
+    d.AddColumns(cli, srv, db)
+    d.Link(cli, srv, "connect()")
+    d.Link(srv, db, "SELECT").Class = "highlight"
+    d.Link(db, srv, "Rows")
+    d.Link(srv, srv, "Transform to view model").Class = "highlight"
+    d.Link(srv, cli, "Send HTML")
+
+
+## Activity diagram
+
+<img src="img/activity_diagram.svg">
+
+Generic diagrams are suitable for these types of diagrams.
+Rendered by
+[example_test.go/ExampleDiagram_activity](https://godoc.org/github.com/gregoryv/go-design/#example-Diagram--Activity)
 
 ## Class diagram
 
@@ -17,13 +43,6 @@ This diagram is rendered by
 [example_test.go/ExampleClassDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-ClassDiagram)
 
 <img src="img/class_example.svg" style="width: 500"/>
-
-
-## Sequence diagram
-
-From [example_test.go/ExampleSequenceDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-SequenceDiagram)
-
-![](img/sequence_example.svg)
 
 ## Generic diagram
 

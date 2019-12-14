@@ -74,9 +74,11 @@ func highest(s ...shape.Shape) shape.Shape {
 	return r
 }
 
-// Link places an arrow between the two shapes
-func (diagram *Diagram) Link(from, to shape.Shape) {
-	diagram.Place(shape.NewArrowBetween(from, to))
+// Link places an arrow between the shapes, s0->s1->...->sn
+func (diagram *Diagram) Link(s ...shape.Shape) {
+	for i, next := range s[1:] {
+		diagram.Place(shape.NewArrowBetween(s[i], next))
+	}
 }
 
 func (diagram *Diagram) applyStyle(s interface{}) {

@@ -51,3 +51,7 @@ func (c *ExitDot) WriteSvg(out io.Writer) error {
 
 	return *err
 }
+
+func (c *ExitDot) Edge(start xy.Position) xy.Position {
+	return boxEdge(start, c)
+}
