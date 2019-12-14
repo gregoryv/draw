@@ -48,6 +48,8 @@
 <rect stroke="#d3d3d3" fill="#ffffff" x="175" y="185" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="175" y="196" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="191" y="198">database</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="20" y="331" width="41" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="349">Rect</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="91" y="331" width="132" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="97" y="349">Waiting for go routine</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="186" y="236" width="60" height="26"/>
 <rect stroke="#d3d3d3" fill="#ffffff" x="181" y="241" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="181" y="252" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="197" y="254">service</text>
 <path stroke="black" d="M216,236 L216,206" />

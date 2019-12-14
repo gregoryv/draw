@@ -57,6 +57,8 @@ var ClassAttributes = map[string]string{
 	"record-line":           `stroke="#d3d3d3"`,
 	"record-title":          `font-family="Arial,Helvetica,sans-serif"`,
 	"rect":                  `stroke="#d3d3d3" fill="#ffffff"`,
+	"state-title":           `font-family="Arial,Helvetica,sans-serif"`,
+	"state":                 `stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10"`,
 	"component":             `stroke="#d3d3d3" fill="#ffffff"`,
 	"component-title":       `font-family="Arial,Helvetica,sans-serif"`,
 	"field":                 `font-family="Arial,Helvetica,sans-serif"`,

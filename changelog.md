@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 
+- State shape
 - PlaceGrid to quickly place many shapes into a grid layout
 
 ## [0.5.0] - 2019-12-13
