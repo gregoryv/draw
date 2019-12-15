@@ -1,33 +1,33 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="200" height="348" font-family="Arial, Helvetica, sans-serif">
+  width="202" height="352" font-family="Arial, Helvetica, sans-serif">
 <circle stroke="black" cx="90" cy="30" r="10" />\n
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="47" y="80" width="86" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="53" y="98">Push commit</text>
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="48" y="146" width="85" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="54" y="164">Run git hook</text>
-<path stroke="#d3d3d3" fill="#ffffff" d="M80,212 l 10,-10 10,10 -10,10 -10,-10" />
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="63" y="262" width="55" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="69" y="280">Deploy</text>
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="90" cy="338" r="10" />\n<circle stroke="black" cx="90" cy="338" r="6" />\n
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="190" cy="212" r="10" />\n<circle stroke="black" cx="190" cy="212" r="6" />\n
-<path stroke="black" d="M90,40 L90,80" />
-<g transform="rotate(90 90 80)"><path stroke="black" fill="#ffffff" d="M90,80 l-8,-4 l 0,8 Z" /></g>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="48" y="82" width="86" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="54" y="100">Push commit</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="49" y="148" width="85" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="55" y="166">Run git hook</text>
+<path stroke="#d3d3d3" fill="#ffffff" d="M81,214 l 10,-10 10,10 -10,10 -10,-10" />
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="64" y="264" width="55" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="70" y="282">Deploy</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="90" cy="340" r="10" />\n<circle stroke="black" cx="90" cy="340" r="6" />\n
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="190" cy="213" r="10" />\n<circle stroke="black" cx="190" cy="213" r="6" />\n
+<path stroke="black" d="M91,42 L91,82" />
+<g transform="rotate(90 91 82)"><path stroke="black" fill="#ffffff" d="M91,82 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M90,106 L90,146" />
-<g transform="rotate(90 90 146)"><path stroke="black" fill="#ffffff" d="M90,146 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" d="M91,108 L91,148" />
+<g transform="rotate(90 91 148)"><path stroke="black" fill="#ffffff" d="M91,148 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M90,172 L90,202" />
-<g transform="rotate(90 90 202)"><path stroke="black" fill="#ffffff" d="M90,202 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" d="M91,174 L91,204" />
+<g transform="rotate(90 91 204)"><path stroke="black" fill="#ffffff" d="M91,204 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M90,222 L90,262" />
-<g transform="rotate(90 90 262)"><path stroke="black" fill="#ffffff" d="M90,262 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" d="M91,224 L91,264" />
+<g transform="rotate(90 91 264)"><path stroke="black" fill="#ffffff" d="M91,264 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M90,288 L90,328" />
-<g transform="rotate(90 90 328)"><path stroke="black" fill="#ffffff" d="M90,328 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" d="M91,290 L91,330" />
+<g transform="rotate(90 91 330)"><path stroke="black" fill="#ffffff" d="M91,330 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M100,212 L180,212" />
-<g transform="rotate(0 180 212)"><path stroke="black" fill="#ffffff" d="M180,212 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" d="M101,214 L180,214" />
+<g transform="rotate(0 180 214)"><path stroke="black" fill="#ffffff" d="M180,214 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="109" y="208">Tests failed</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="109" y="210">Tests failed</text></svg>

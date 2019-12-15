@@ -28,9 +28,12 @@ func (c *Dot) Position() (int, int) {
 	return c.pos.XY()
 }
 
-func (c *Dot) SetX(x int)            { c.pos.X = x }
-func (c *Dot) SetY(y int)            { c.pos.Y = y }
-func (c *Dot) Width() int            { return c.Radius * 2 }
+func (c *Dot) SetX(x int) { c.pos.X = x }
+func (c *Dot) SetY(y int) { c.pos.Y = y }
+func (c *Dot) Width() int {
+	stroke := 2
+	return (c.Radius+stroke)*2 - 2
+}
 func (c *Dot) Height() int           { return c.Width() }
 func (c *Dot) Direction() Direction  { return LR }
 func (c *Dot) SetClass(class string) { c.class = class }

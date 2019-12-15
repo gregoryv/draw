@@ -28,9 +28,12 @@ func (c *Circle) Position() (int, int) {
 	return c.pos.XY()
 }
 
-func (c *Circle) SetX(x int)            { c.pos.X = x }
-func (c *Circle) SetY(y int)            { c.pos.Y = y }
-func (c *Circle) Width() int            { return c.Radius * 2 }
+func (c *Circle) SetX(x int) { c.pos.X = x }
+func (c *Circle) SetY(y int) { c.pos.Y = y }
+func (c *Circle) Width() int {
+	stroke := 2
+	return (c.Radius+stroke)*2 - 2
+}
 func (c *Circle) Height() int           { return c.Width() }
 func (c *Circle) Direction() Direction  { return LR }
 func (c *Circle) SetClass(class string) { c.class = class }

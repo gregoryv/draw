@@ -28,9 +28,13 @@ func (c *ExitDot) Position() (int, int) {
 	return c.pos.XY()
 }
 
-func (c *ExitDot) SetX(x int)            { c.pos.X = x }
-func (c *ExitDot) SetY(y int)            { c.pos.Y = y }
-func (c *ExitDot) Width() int            { return c.Radius * 2 }
+func (c *ExitDot) SetX(x int) { c.pos.X = x }
+func (c *ExitDot) SetY(y int) { c.pos.Y = y }
+func (c *ExitDot) Width() int {
+	// If the style shanges the width will be slightly off, no biggy.
+	stroke := 2
+	return (c.Radius+stroke)*2 - 2
+}
 func (c *ExitDot) Height() int           { return c.Width() }
 func (c *ExitDot) Direction() Direction  { return LR }
 func (c *ExitDot) SetClass(class string) { c.class = class }
