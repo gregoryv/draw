@@ -14,11 +14,11 @@
 <path stroke="black" stroke-dasharray="5,5,5" d="M639,70 L359,95" />
 <g transform="rotate(175 359 95)"><path stroke="black" fill="#ffffff" d="M359,95 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M639,169 L359,115" />
-<g transform="rotate(190 359 115)"><path stroke="black" fill="#ffffff" d="M359,115 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M639,162 L359,114" />
+<g transform="rotate(189 359 114)"><path stroke="black" fill="#ffffff" d="M359,114 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M643,254 L359,132" />
-<g transform="rotate(203 359 132)"><path stroke="black" fill="#ffffff" d="M359,132 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M639,238 L359,129" />
+<g transform="rotate(201 359 129)"><path stroke="black" fill="#ffffff" d="M359,129 l-8,-4 l 0,8 Z" /></g>
 
 <path stroke="black" d="M82,386 L82,506" />
 <g transform="rotate(90 82 386)"><path stroke="black" fill="#777777" d="M82,386 l 6,-4 6,4 -6,4 -6,-4" /></g>
@@ -91,14 +91,13 @@
 <line stroke="#d3d3d3" x1="639" y1="72" x2="756" y2="72"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="88">Edge()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="104">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="40">shape.Circle struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="639" y="140" width="135" height="84"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="639" y="140" width="135" height="68"/>
 <line stroke="#d3d3d3" x1="639" y1="170" x2="774" y2="170"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="186">Edge()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="202">SetSize()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="218">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="202">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="160">shape.Diamond struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="639" y="254" width="130" height="52"/>
-<line stroke="#d3d3d3" x1="639" y1="284" x2="769" y2="284"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="300">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="274">shape.Triangle struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="639" y="238" width="130" height="52"/>
+<line stroke="#d3d3d3" x1="639" y1="268" x2="769" y2="268"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="284">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="258">shape.Triangle struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="28" y="506" width="109" height="90"/>
 <line stroke="#d3d3d3" x1="28" y1="536" x2="137" y2="536"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="34" y="552">Height</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="34" y="568">LineHeight</text>

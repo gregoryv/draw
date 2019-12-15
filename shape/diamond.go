@@ -41,10 +41,6 @@ func (d *Diamond) Width() int           { return d.width }
 func (d *Diamond) Height() int          { return d.height }
 func (d *Diamond) Direction() Direction { return LR }
 func (d *Diamond) SetClass(c string)    { d.class = c }
-func (d *Diamond) SetSize(size int) {
-	d.width = size
-	d.height = size
-}
 
 func (d *Diamond) WriteSvg(out io.Writer) error {
 	w, err := newTagPrinter(out)
