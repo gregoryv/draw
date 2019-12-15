@@ -31,7 +31,7 @@ interfaces. Reflection includes fields and methods.
 This diagram is rendered by
 [ExampleClassDiagram](https://godoc.org/github.com/gregoryv/draw/shape/design/#example-ClassDiagram)
 
-<img src="img/class_example.svg" style="width: 500"/>
+<img src="img/class_example.svg">
 
 ## Generic diagram
 

@@ -5,7 +5,7 @@ import (
 )
 
 type Svg struct {
-	Width, Height int
+	width, height int
 	Content       []Shape
 }
 
@@ -14,7 +14,7 @@ func (shape *Svg) WriteSvg(out io.Writer) error {
 	w.printf(`<svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="%v" height="%v" font-family="Arial, Helvetica, sans-serif">`, shape.Width, shape.Height)
+  width="%v" height="%v" font-family="Arial, Helvetica, sans-serif">`, shape.width, shape.height)
 
 	for _, s := range shape.Content {
 		w.print("\n")
@@ -31,3 +31,10 @@ func (svg *Svg) Append(shapes ...Shape) {
 func (svg *Svg) Prepend(shapes ...Shape) {
 	svg.Content = append(shapes, svg.Content...)
 }
+
+func (svg *Svg) Width() int  { return svg.width }
+func (svg *Svg) Height() int { return svg.height }
+
+func (svg *Svg) SetWidth(w int)   { svg.width = w }
+func (svg *Svg) SetHeight(h int)  { svg.height = h }
+func (svg *Svg) SetSize(w, h int) { svg.SetWidth(w); svg.SetHeight(h) }

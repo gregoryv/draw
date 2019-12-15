@@ -56,7 +56,7 @@ func TestDiagram_PlaceGrid(t *testing.T) {
 		a, b, e, c, g,
 	)
 	d.AdaptSize()
-	d.Height += 10
-	d.Width += 10
+	d.SetHeight(d.Height() + 10)
+	d.SetWidth(d.Width() + 10)
 	d.SaveAs("img/grid_layout.svg")
 }

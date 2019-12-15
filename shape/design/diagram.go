@@ -104,18 +104,18 @@ func (d *Diagram) SaveAs(filename string) error {
 }
 
 func (d *Diagram) WriteSvg(w io.Writer) error {
-	if d.Width == 0 && d.Height == 0 {
+	if d.Width() == 0 && d.Height() == 0 {
 		d.AdaptSize()
 	}
 	if d.Caption != nil {
 		margin := 30
-		x := (d.Width - d.Caption.Width()) / 2
+		x := (d.Width() - d.Caption.Width()) / 2
 		if x < 0 {
 			x = 0
 		}
-		d.Place(d.Caption).At(x, d.Height+margin)
+		d.Place(d.Caption).At(x, d.Height()+margin)
 		d.AdaptSize()
-		d.Height += d.Caption.Font.Height / 2 // Fit protruding letters like 'g'
+		d.SetHeight(d.Height() + d.Caption.Font.Height/2) // Fit protruding letters like 'g'
 	}
 	return d.Svg.WriteSvg(w)
 }
@@ -134,15 +134,15 @@ func (diagram *Diagram) AdaptSize() (int, int) {
 			y = min(s.Start.Y, s.End.Y)
 		}
 		w := x + s.Width()
-		if w > diagram.Width {
-			diagram.Width = w
+		if w > diagram.Width() {
+			diagram.SetWidth(w)
 		}
 		h := y + s.Height()
-		if h > diagram.Height {
-			diagram.Height = h
+		if h > diagram.Height() {
+			diagram.SetHeight(h)
 		}
 	}
-	return diagram.Width, diagram.Height
+	return diagram.Width(), diagram.Height()
 }
 
 func min(a, b int) int {
@@ -150,16 +150,6 @@ func min(a, b int) int {
 		return a
 	}
 	return b
-}
-
-// SetHeight sets a fixed height in pixels.
-func (d *Diagram) SetHeight(h int) {
-	d.Height = h
-}
-
-// SetWidth sets a fixe width in pixels.
-func (d *Diagram) SetWidth(w int) {
-	d.Width = w
 }
 
 func (d *Diagram) SetCaption(txt string) {

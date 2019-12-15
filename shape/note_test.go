@@ -16,7 +16,7 @@ possible in notes`)
 
 func saveAsSvg(t *testing.T, shape Shape, filename string) {
 	t.Helper()
-	d := &Svg{Width: 300, Height: 100}
+	d := &Svg{width: 300, height: 100}
 	d.Append(shape)
 
 	fh, err := os.Create(filename)

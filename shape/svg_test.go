@@ -1,6 +1,18 @@
 package shape
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/gregoryv/asserter"
+)
+
+func TestSvg_SetSize(t *testing.T) {
+	s := &Svg{}
+	s.SetSize(1, 2)
+	assert := asserter.New(t)
+	assert().Equals(s.Width(), 1)
+	assert().Equals(s.Height(), 2)
+}
 
 func TestOneSvg(t *testing.T) {
 	it := &OneSvg{t, &Svg{}}

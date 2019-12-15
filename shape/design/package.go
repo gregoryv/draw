@@ -1,4 +1,4 @@
-// Package draw provides svg diagram creators
+// Package design provides svg diagram creators
 package design
 
 import (

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 
+- Hide Height, Width attributes in Diagram
 - shape.NewDot defaults to radius 10
 
 ## [0.7.0] - 2019-12-15

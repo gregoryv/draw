@@ -119,7 +119,7 @@ func (t *OneArrow) HasBothTailAndHead() {
 
 func (t *OneArrow) saveAs(filename string) {
 	t.Helper()
-	d := &Svg{Width: 100, Height: 100}
+	d := &Svg{width: 100, height: 100}
 	d.Append(t.Arrow)
 
 	fh, err := os.Create(filename)
@@ -193,7 +193,7 @@ func (t *ArrowBetweenShapes) StartsAndEndsAtEdgeOfShapes() {
 }
 
 func newSvg(width, height int, shapes ...Shape) *Svg {
-	svg := &Svg{Width: width, Height: height}
+	svg := &Svg{width: width, height: height}
 	svg.Append(shapes...)
 	return svg
 }
