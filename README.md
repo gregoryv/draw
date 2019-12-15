@@ -35,7 +35,7 @@ Take a look at the below examples and then browse the [showcase](./showcase/READ
 
 Generic diagrams are suitable for these types of diagrams.
 Rendered by
-[example_test.go/ExampleDiagram_activity](https://godoc.org/github.com/gregoryv/go-design/#example-Diagram--Activity)
+[example_test.go/ExampleActivityDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-ActivityDiagram)
 
 ## Class diagram
 

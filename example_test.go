@@ -129,9 +129,9 @@ multilines`)
 	d.SaveAs("img/diagram_example.svg")
 }
 
-func ExampleDiagram_activity() {
+func ExampleActivityDiagram() {
 	var (
-		d       = design.NewDiagram()
+		d       = design.NewActivityDiagram()
 		start   = shape.NewDot(10)
 		push    = shape.NewState("Push commit")
 		dec     = shape.NewDecision()
@@ -157,5 +157,5 @@ func TestExamples(t *testing.T) {
 	ExampleClassDiagram()
 	ExampleSequenceDiagram()
 	ExampleDiagram()
-	ExampleDiagram_activity()
+	ExampleActivityDiagram()
 }
