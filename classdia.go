@@ -69,7 +69,7 @@ func (d *ClassDiagram) composes() []shape.Shape {
 			for _, struct2 := range d.structs {
 				if field.Type == struct2.t {
 					arrow := shape.NewArrowBetween(struct_, struct2)
-					arrow.Tail = shape.NewDiamond(0, 0)
+					arrow.Tail = shape.NewDiamond()
 					arrow.SetClass("compose-arrow")
 					arrow.Tail.SetClass("compose-arrow-tail")
 					rel = append(rel, arrow)

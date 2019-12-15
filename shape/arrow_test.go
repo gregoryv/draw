@@ -108,8 +108,12 @@ func (t *OneArrow) HasATail() {
 }
 
 func (t *OneArrow) HasBothTailAndHead() {
-	t.Tail = NewDiamond(20, 24)
-	t.Head = NewDiamond(16, 8)
+	t.Tail = NewDiamond()
+	t.Tail.SetX(20)
+	t.Tail.SetY(24)
+	t.Head = NewDiamond()
+	t.Head.SetX(16)
+	t.Head.SetY(8)
 	t.saveAs("testdata/arrow_with_tail_and_head.svg")
 }
 

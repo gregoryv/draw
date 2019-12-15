@@ -7,15 +7,12 @@ import (
 	"github.com/gregoryv/go-design/xy"
 )
 
-func NewDiamond(x, y int) *Diamond {
-	d := &Diamond{
-		pos:    xy.Position{X: x},
+func NewDiamond() *Diamond {
+	return &Diamond{
 		width:  12,
 		height: 8,
 		class:  "diamond",
 	}
-	d.SetY(y)
-	return d
 }
 
 type Diamond struct {
