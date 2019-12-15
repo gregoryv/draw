@@ -13,7 +13,7 @@ Take a look at the below examples and then browse the [showcase](./showcase/READ
 
 ## Sequence diagram
 
-<img src="img/app_sequence_diagram.svg">
+<img src="shape/design/img/app_sequence_diagram.svg">
 
     var (
         d   = design.NewSequenceDiagram()
@@ -29,10 +29,10 @@ Take a look at the below examples and then browse the [showcase](./showcase/READ
 
 ## Activity diagram
 
-<img src="img/activity_diagram.svg">
+<img src="shape/design/img/activity_diagram.svg">
 
 Rendered by
-[example_test.go/ExampleActivityDiagram](https://godoc.org/github.com/gregoryv/draw/#example-ActivityDiagram)
+[ExampleActivityDiagram](https://godoc.org/github.com/gregoryv/draw/shape/design/#example-ActivityDiagram)
 
 ## Class diagram
 
@@ -40,24 +40,24 @@ Class diagrams show relations between structs and
 interfaces. Reflection includes fields and methods.
 
 This diagram is rendered by
-[example_test.go/ExampleClassDiagram](https://godoc.org/github.com/gregoryv/draw/#example-ClassDiagram)
+[ExampleClassDiagram](https://godoc.org/github.com/gregoryv/draw/shape/design/#example-ClassDiagram)
 
-<img src="img/class_example.svg" style="width: 500"/>
+<img src="shape/design/img/class_example.svg" style="width: 500"/>
 
 ## Generic diagram
 
 It should be easy to just add any extra shapes to any diagram when explaining a design.
 This diagram is rendered by
-[example_test.go/ExampleDiagram](https://godoc.org/github.com/gregoryv/draw/#example-Diagram)
+[ExampleDiagram](https://godoc.org/github.com/gregoryv/draw/shape/design/#example-Diagram)
 
-![](img/diagram_example.svg)
+![](shape/design/img/diagram_example.svg)
 
 
 ## Grid layout
 
 Simplifying placing shapes in a grid layout aligning different sizes of shapes.
 
-![](img/grid_layout.svg)
+![](shape/design/img/grid_layout.svg)
 
 
 ## TODO

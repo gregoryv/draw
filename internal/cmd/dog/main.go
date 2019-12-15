@@ -20,5 +20,5 @@ func main() {
 	d.Link(db, srv, "Rows")
 	d.Link(srv, srv, "Transform to view model").Class = "highlight"
 	d.Link(srv, cli, "Send HTML")
-	d.SaveAs("../../../img/app_sequence_diagram.svg")
+	d.SaveAs("../../../shape/design/img/app_sequence_diagram.svg")
 }
