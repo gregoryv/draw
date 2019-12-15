@@ -6,7 +6,7 @@ import (
 	"io"
 	"reflect"
 
-	"github.com/gregoryv/go-design/xy"
+	"github.com/gregoryv/draw/xy"
 )
 
 func NewRecord(title string) *Record {

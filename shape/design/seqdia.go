@@ -4,7 +4,7 @@ import (
 	"io"
 	"reflect"
 
-	"github.com/gregoryv/go-design/shape"
+	"github.com/gregoryv/draw/shape"
 )
 
 // NewSequenceDiagram returns a sequence diagram with default column

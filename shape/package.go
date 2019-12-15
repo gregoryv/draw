@@ -5,7 +5,7 @@ import (
 	"io"
 	"math"
 
-	"github.com/gregoryv/go-design/xy"
+	"github.com/gregoryv/draw/xy"
 )
 
 type Shape interface {

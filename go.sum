@@ -1,6 +1,8 @@
 github.com/gregoryv/asserter v0.1.0 h1:p+0pvUOuUCn/rVy7YxafoxfXnYPfVptbExJOrWQy9sc=
 github.com/gregoryv/asserter v0.1.0/go.mod h1:iLD46IKZjjleTkmDikemRaDZQldDrq8uwTnygV/hC/M=
 github.com/gregoryv/find v0.0.0-20180328085109-1bbc2d70c482/go.mod h1:/xxQlO62bzxhyabf2iKJzGJa+VAJy25spLI/6ICTrxU=
+github.com/gregoryv/draw v0.6.0 h1:tqM4JmlK1pzbkAb+bwVgP2hRNqb0IZscK4yAmE6kkcc=
+github.com/gregoryv/draw v0.6.0/go.mod h1:vO8b7xF6TZa342q4e+1VT4oMlUqOFf3bv0pW5VTtWT4=
 github.com/gregoryv/gocyclo v0.0.0-20180305144948-0be7902fabdc h1:chhF7lRELMFmxWl3AWbZ2UT1xQtN9nqFGyhL3jwGWDs=
 github.com/gregoryv/gocyclo v0.0.0-20180305144948-0be7902fabdc/go.mod h1:x/QA8cT1gfn/XriQ/CVNX7I8IM4Z2YJAAEWFym2clZI=
 github.com/gregoryv/golden v0.3.1 h1:OdVsKRhiTWQj/euKcBU09KHK1iYfLljijh+lE01GETc=

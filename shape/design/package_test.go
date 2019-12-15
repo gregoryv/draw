@@ -3,7 +3,7 @@ package design
 import (
 	"testing"
 
-	"github.com/gregoryv/go-design/shape"
+	"github.com/gregoryv/draw/shape"
 )
 
 func Test_saveAs(t *testing.T) {

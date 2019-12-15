@@ -6,7 +6,7 @@ import (
 	"testing"
 
 	"github.com/gregoryv/asserter"
-	"github.com/gregoryv/go-design/xy"
+	"github.com/gregoryv/draw/xy"
 )
 
 func TestShapes(t *testing.T) {

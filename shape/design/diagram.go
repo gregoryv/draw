@@ -3,7 +3,7 @@ package design
 import (
 	"io"
 
-	"github.com/gregoryv/go-design/shape"
+	"github.com/gregoryv/draw/shape"
 )
 
 // NewDiagram returns a diagram with present font and padding values.

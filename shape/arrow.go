@@ -5,7 +5,7 @@ import (
 	"io"
 	"math"
 
-	"github.com/gregoryv/go-design/xy"
+	"github.com/gregoryv/draw/xy"
 )
 
 func NewArrow(x1, y1, x2, y2 int) *Arrow {

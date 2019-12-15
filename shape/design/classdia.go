@@ -5,7 +5,7 @@ import (
 	"io"
 	"reflect"
 
-	"github.com/gregoryv/go-design/shape"
+	"github.com/gregoryv/draw/shape"
 )
 
 type ClassDiagram struct {

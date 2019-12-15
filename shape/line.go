@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/gregoryv/go-design/xy"
+	"github.com/gregoryv/draw/xy"
 )
 
 func NewLine(x1, y1 int, x2, y2 int) *Line {

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/gregoryv/go-design/shape"
+	"github.com/gregoryv/draw/shape"
 )
 
 // VRecord represents a type struct or interface as a record shape.

@@ -1,11 +1,11 @@
-// Package go-design provides svg diagram creators
+// Package draw provides svg diagram creators
 package design
 
 import (
 	"io"
 	"os"
 
-	"github.com/gregoryv/go-design/shape"
+	"github.com/gregoryv/draw/shape"
 )
 
 type SvgWriter interface {

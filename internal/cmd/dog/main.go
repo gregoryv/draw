@@ -3,8 +3,8 @@ package main
 import (
 	"database/sql"
 
-	design "github.com/gregoryv/go-design"
-	"github.com/gregoryv/go-design/internal/app"
+	"github.com/gregoryv/draw/internal/app"
+	"github.com/gregoryv/draw/shape/design"
 )
 
 //go:generate go run .

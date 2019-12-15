@@ -3,8 +3,8 @@ package design_test
 import (
 	"testing"
 
-	design "github.com/gregoryv/go-design"
-	"github.com/gregoryv/go-design/shape"
+	"github.com/gregoryv/draw/shape"
+	"github.com/gregoryv/draw/shape/design"
 )
 
 func ExampleClassDiagram() {

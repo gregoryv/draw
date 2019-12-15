@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/gregoryv/go-design/xy"
+	"github.com/gregoryv/draw/xy"
 )
 
 func NewNote(text string) *Note {
