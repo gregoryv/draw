@@ -42,7 +42,7 @@ func ExampleClassDiagram() {
 	d.Place(triangle).Below(diaarrow)
 	d.HAlignBottom(record, arrow, line)
 
-	d.Place(fnt).Below(record, 120)
+	d.Place(fnt).Below(record, 170)
 	d.Place(style).RightOf(fnt, 90)
 	d.VAlignCenter(shapE, line, style)
 	d.VAlignCenter(record, fnt)

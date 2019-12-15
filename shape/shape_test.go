@@ -102,4 +102,17 @@ func testShape(t *testing.T, shape Shape) {
 		}
 		s.Edge(xy.Position{0, 0})
 	})
+
+	t.Run("Is resizable", func(t *testing.T) {
+		s, ok := shape.(resizable)
+		if !ok {
+			//t.Errorf("%T", shape)
+			return
+		}
+		s.SetHeight(100)
+	})
+}
+
+type resizable interface {
+	SetHeight(int)
 }

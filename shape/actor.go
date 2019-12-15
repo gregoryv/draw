@@ -7,6 +7,7 @@ import (
 	"github.com/gregoryv/draw/xy"
 )
 
+// NewActor returns a new actor with a default height.
 func NewActor() *Actor {
 	return &Actor{
 		height: 35,
@@ -26,6 +27,7 @@ func (c *Actor) SetX(x int)            { c.pos.X = x }
 func (c *Actor) SetY(y int)            { c.pos.Y = y }
 func (c *Actor) Width() int            { return c.rad() * 4 }
 func (c *Actor) Height() int           { return c.height }
+func (c *Actor) SetHeight(h int)       { c.height = h }
 func (c *Actor) rad() int              { return c.height / 6 }
 func (c *Actor) Direction() Direction  { return LR }
 func (c *Actor) SetClass(class string) { c.class = class }
