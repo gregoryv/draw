@@ -63,10 +63,10 @@ func ExampleClassDiagram() {
 
 func ExampleSequenceDiagram() {
 	var (
+		d   = design.NewSequenceDiagram()
 		cli = "Client"
 		srv = "Server"
 		db  = "Database"
-		d   = design.NewSequenceDiagram()
 	)
 	d.AddColumns(cli, srv, db)
 	d.Link(cli, srv, "connect()")
