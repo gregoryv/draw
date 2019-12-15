@@ -14,6 +14,7 @@ type VRecord struct {
 	isStruct bool
 }
 
+// TitleOnly hides fields and methods.
 func (vr *VRecord) TitleOnly() {
 	vr.HideFields()
 	vr.HideMethods()

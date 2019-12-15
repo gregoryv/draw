@@ -8,12 +8,12 @@ import (
 	"github.com/gregoryv/draw/shape"
 )
 
-type SvgWriter interface {
+type svgWriter interface {
 	WriteSvg(io.Writer) error
 }
 
 // saveAs saves diagram using default style to filename
-func saveAs(dia SvgWriter, style shape.Style, filename string) error {
+func saveAs(dia svgWriter, style shape.Style, filename string) error {
 	fh, err := os.Create(filename)
 	if err != nil {
 		return err
