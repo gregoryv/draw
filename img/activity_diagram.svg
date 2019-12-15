@@ -1,19 +1,32 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="133" height="202" font-family="Arial, Helvetica, sans-serif">
+  width="200" height="348" font-family="Arial, Helvetica, sans-serif">
 <circle stroke="black" cx="90" cy="30" r="10" />\n
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="47" y="70" width="86" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="53" y="88">Push commit</text>
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="48" y="126" width="85" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="54" y="144">Run git hook</text>
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="90" cy="192" r="10" />\n<circle stroke="black" cx="90" cy="192" r="6" />\n
-<path stroke="black" d="M90,40 L90,70" />
-<g transform="rotate(90 90 70)"><path stroke="black" fill="#ffffff" d="M90,70 l-8,-4 l 0,8 Z" /></g>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="47" y="80" width="86" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="53" y="98">Push commit</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="48" y="146" width="85" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="54" y="164">Run git hook</text>
+<path stroke="#d3d3d3" fill="#ffffff" d="M80,212 l 10,-10 10,10 -10,10 -10,-10" />
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="63" y="262" width="55" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="69" y="280">Deploy</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="90" cy="338" r="10" />\n<circle stroke="black" cx="90" cy="338" r="6" />\n
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="190" cy="212" r="10" />\n<circle stroke="black" cx="190" cy="212" r="6" />\n
+<path stroke="black" d="M90,40 L90,80" />
+<g transform="rotate(90 90 80)"><path stroke="black" fill="#ffffff" d="M90,80 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M90,96 L90,126" />
-<g transform="rotate(90 90 126)"><path stroke="black" fill="#ffffff" d="M90,126 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" d="M90,106 L90,146" />
+<g transform="rotate(90 90 146)"><path stroke="black" fill="#ffffff" d="M90,146 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M90,152 L90,182" />
-<g transform="rotate(90 90 182)"><path stroke="black" fill="#ffffff" d="M90,182 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" d="M90,172 L90,202" />
+<g transform="rotate(90 90 202)"><path stroke="black" fill="#ffffff" d="M90,202 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M90,222 L90,262" />
+<g transform="rotate(90 90 262)"><path stroke="black" fill="#ffffff" d="M90,262 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M90,288 L90,328" />
+<g transform="rotate(90 90 328)"><path stroke="black" fill="#ffffff" d="M90,328 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M100,212 L180,212" />
+<g transform="rotate(0 180 212)"><path stroke="black" fill="#ffffff" d="M180,212 l-8,-4 l 0,8 Z" /></g>
 </svg>

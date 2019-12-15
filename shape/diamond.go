@@ -15,6 +15,14 @@ func NewDiamond() *Diamond {
 	}
 }
 
+func NewDecision() *Diamond {
+	return &Diamond{
+		width:  20,
+		height: 20,
+		class:  "decision",
+	}
+}
+
 type Diamond struct {
 	pos    xy.Position
 	width  int
@@ -33,6 +41,10 @@ func (d *Diamond) Width() int           { return d.width }
 func (d *Diamond) Height() int          { return d.height }
 func (d *Diamond) Direction() Direction { return LR }
 func (d *Diamond) SetClass(c string)    { d.class = c }
+func (d *Diamond) SetSize(size int) {
+	d.width = size
+	d.height = size
+}
 
 func (d *Diamond) WriteSvg(out io.Writer) error {
 	w, err := newTagPrinter(out)
@@ -44,4 +56,8 @@ func (d *Diamond) WriteSvg(out io.Writer) error {
 	w.printf(`<path class="%s" d="M%v,%v l %v,%v %v,%v %v,%v %v,%v" />`,
 		d.class, x, y, w2, -h2, w2, h2, -w2, h2, -w2, -h2)
 	return *err
+}
+
+func (d *Diamond) Edge(start xy.Position) xy.Position {
+	return boxEdge(start, d)
 }

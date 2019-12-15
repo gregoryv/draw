@@ -67,6 +67,7 @@ var ClassAttributes = map[string]string{
 	"label":                 `font-family="Arial,Helvetica,sans-serif"`,
 	"caption":               `font-family="Arial,Helvetica,sans-serif"`,
 	"diamond":               `stroke="#d3d3d3" fill="#333333"`,
+	"decision":              `stroke="#d3d3d3" fill="#ffffff"`,
 }
 
 // Write adds a style attribute based on class. Limited to 1 class
