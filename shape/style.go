@@ -35,6 +35,7 @@ var (
 // ClassAttributes define mapping between classes and svg attributes.
 // Setting attributes that modify size or position is not advised.
 var ClassAttributes = map[string]string{
+	"actor":                 `stroke="black" stroke-width="2" fill="#ffffff"`,
 	"circle":                `stroke="black" stroke-width="2" fill="#ffffff"`,
 	"dot":                   `stroke="black"`,
 	"exit":                  `stroke="black" stroke-width="2" fill="#ffffff"`,

@@ -33,6 +33,12 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="471" y="130">Anything is possible!</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="471" y="146">Go draw your next design</text>
 
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="610" cy="48" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M610,53 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+
+<path stroke="black" d="M600,70 L558,114" />
+<g transform="rotate(134 558 114)"><path stroke="black" fill="#ffffff" d="M558,114 l-8,-4 l 0,8 Z" /></g>
+
 <line stroke="#d3d3d3" x1="38" y1="24" x2="38" y2="101"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">app.Client</text>
 <line stroke="#d3d3d3" x1="228" y1="24" x2="228" y2="101"/>

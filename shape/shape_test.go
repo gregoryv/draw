@@ -21,6 +21,7 @@ func TestShapes(t *testing.T) {
 		NewCircle(24),
 		NewState("Waiting for push"),
 		NewDecision(),
+		NewActor(),
 	}
 	for _, shape := range shapes {
 		testShape(t, shape)

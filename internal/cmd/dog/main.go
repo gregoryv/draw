@@ -40,6 +40,8 @@ func genOverview() {
 		circle = design.NewStruct(shape.Circle{})
 		shp    = design.NewInterface((*shape.Shape)(nil))
 		note   = shape.NewNote("Anything is possible!\nGo draw your next design")
+
+		actor = shape.NewActor()
 	)
 	circle.HideMethods()
 	d.Link(cli, srv, "connect()")
@@ -63,5 +65,9 @@ func genOverview() {
 	d.VAlignCenter(lnk, label)
 
 	d.Place(note).Above(circle)
+	d.Place(actor).Above(note)
+	d.VAlignRight(note, actor)
+
+	d.Place(shape.NewArrowBetween(actor, note))
 	d.SaveAs("../../../overview.svg")
 }
