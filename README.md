@@ -8,3 +8,5 @@
 - No external dependencies
 - SVG output
 - Diagrams: [Sequence](shape/design/#sequence-diagram), [Activity](shape/design/#activity-diagram), [Class](shape/design/#class-diagram) and [more...](shape/design/#generic-diagram)
+
+![](overview.svg)

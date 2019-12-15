@@ -17,7 +17,7 @@ func TestShapes(t *testing.T) {
 		NewLabel("l"),
 		NewLine(1, 1, 7, 7),
 		NewExitDot(),
-		NewDot(24),
+		NewDot(),
 		NewCircle(24),
 		NewState("Waiting for push"),
 		NewDecision(),

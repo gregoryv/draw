@@ -1,0 +1,49 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="620" height="304" font-family="Arial, Helvetica, sans-serif">
+<circle stroke="black" cx="110" cy="150" r="10" />\n
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="92" y="192" width="39" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="98" y="210">Run</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="110" cy="258" r="10" />\n<circle stroke="black" cx="110" cy="258" r="6" />\n
+<path stroke="black" d="M111,162 L111,192" />
+<g transform="rotate(90 111 192)"><path stroke="black" fill="#ffffff" d="M111,192 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M111,218 L111,248" />
+<g transform="rotate(90 111 248)"><path stroke="black" fill="#ffffff" d="M111,248 l-8,-4 l 0,8 Z" /></g>
+
+<rect stroke="#d3d3d3" fill="#ffffff" x="222" y="140" width="139" height="164"/>
+<line stroke="#d3d3d3" x1="222" y1="170" x2="361" y2="170"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="186">Direction()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="202">Height()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="218">Position()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="234">SetClass()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="250">SetX()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="266">SetY()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="282">Width()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="298">WriteSvg()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="160">shape.Shape interface</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="461" y="196" width="117" height="52"/>
+<line stroke="#d3d3d3" x1="461" y1="226" x2="578" y2="226"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="467" y="242">Radius</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="467" y="216">shape.Circle struct</text>
+<path stroke="black" stroke-dasharray="5,5,5" d="M461,222 L361,222" />
+<g transform="rotate(180 361 222)"><path stroke="black" fill="#ffffff" d="M361,222 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="218">implements</text>
+<path stroke="#d3d3d3" fill="#ffffcc" d="M461,114 v 41 h 159 v -31 l -10,-10 L 461,114 M620,124 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="471" y="130">Anything is possible!</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="471" y="146">Go draw your next design</text>
+
+<line stroke="#d3d3d3" x1="38" y1="24" x2="38" y2="101"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">app.Client</text>
+<line stroke="#d3d3d3" x1="228" y1="24" x2="228" y2="101"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="18">app.Server</text>
+<line stroke="#d3d3d3" x1="418" y1="24" x2="418" y2="101"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="400" y="18">sql.DB</text>
+<path stroke="black" d="M38,57 L228,57" />
+<g transform="rotate(0 228 57)"><path stroke="black" fill="#ffffff" d="M228,57 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="107" y="54">connect()</text>
+<path stroke="black" d="M228,90 L418,90" />
+<g transform="rotate(0 418 90)"><path stroke="black" fill="#ffffff" d="M418,90 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="318" y="87">...</text></svg>

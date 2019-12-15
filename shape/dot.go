@@ -7,9 +7,9 @@ import (
 	"github.com/gregoryv/draw/xy"
 )
 
-func NewDot(radius int) *Dot {
+func NewDot() *Dot {
 	return &Dot{
-		Radius: radius,
+		Radius: 10,
 		class:  "dot",
 	}
 }
