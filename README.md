@@ -31,11 +31,13 @@ Take a look at the below examples and then browse the [showcase](./showcase/READ
 
 <img src="img/activity_diagram.svg">
 
-Generic diagrams are suitable for these types of diagrams.
 Rendered by
 [example_test.go/ExampleActivityDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-ActivityDiagram)
 
 ## Class diagram
+
+Class diagrams show relations between structs and
+interfaces. Reflection includes fields and methods.
 
 This diagram is rendered by
 [example_test.go/ExampleClassDiagram](https://godoc.org/github.com/gregoryv/go-design/#example-ClassDiagram)
