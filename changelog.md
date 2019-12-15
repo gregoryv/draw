@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 
+- Activity diagram examples
+- Labeled links in plain diagrams
 - State shape
 - PlaceGrid to quickly place many shapes into a grid layout
 

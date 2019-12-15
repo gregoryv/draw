@@ -125,7 +125,7 @@ multilines`)
 	d.Place(state).RightOf(rect)
 	d.Place(srv).Below(comp)
 	d.VAlignCenter(comp, srv)
-	d.Link(srv, comp)
+	d.LinkAll(srv, comp)
 	d.SaveAs("img/diagram_example.svg")
 }
 
@@ -147,8 +147,8 @@ func ExampleDiagram_activity() {
 	d.VAlignCenter(start, push, run, dec, deploy, endOk)
 	d.HAlignCenter(dec, endFail)
 
-	d.Link(start, push, run, dec, deploy, endOk)
-	d.Link(dec, endFail)
+	d.LinkAll(start, push, run, dec, deploy, endOk)
+	d.Link(dec, endFail, "Tests failed")
 
 	d.SaveAs("img/activity_diagram.svg")
 }
