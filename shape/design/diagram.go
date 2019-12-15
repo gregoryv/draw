@@ -74,13 +74,14 @@ func highest(s ...shape.Shape) shape.Shape {
 	return r
 }
 
-// LinkAll places an arrow between the shapes, s0->s1->...->sn
+// LinkAll places arrows between each shape, s0->s1->...->sn
 func (diagram *Diagram) LinkAll(s ...shape.Shape) {
 	for i, next := range s[1:] {
 		diagram.Place(shape.NewArrowBetween(s[i], next))
 	}
 }
 
+// Link places an arrow with a label above it between the two shapes.
 func (diagram *Diagram) Link(from, to shape.Shape, txt string) {
 	lnk := shape.NewArrowBetween(from, to)
 	diagram.Place(lnk)
@@ -152,6 +153,7 @@ func min(a, b int) int {
 	return b
 }
 
+// SetCaption adds a caption to the bottom of the diagram.
 func (d *Diagram) SetCaption(txt string) {
 	l := shape.NewLabel(txt)
 	l.SetClass("caption")
