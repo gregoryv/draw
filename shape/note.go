@@ -80,3 +80,7 @@ func (n *Note) WriteSvg(out io.Writer) error {
 	}
 	return *err
 }
+
+func (n *Note) Edge(start xy.Position) xy.Position {
+	return boxEdge(start, n)
+}

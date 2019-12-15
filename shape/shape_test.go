@@ -95,10 +95,10 @@ func testShape(t *testing.T, shape Shape) {
 		s, ok := shape.(Edge)
 		if !ok {
 			// TODO all shapes should have an edge so we can link
-			// everything
+			// everything. Figure out what en edge means for lines and arrows.
+			// t.Errorf("%T", shape)
 			return
 		}
 		s.Edge(xy.Position{0, 0})
 	})
-
 }
