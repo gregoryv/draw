@@ -110,9 +110,34 @@ func testShape(t *testing.T, shape Shape) {
 			return
 		}
 		s.SetHeight(100)
+		h := s.Height()
+		if h != 100 {
+			t.Fail()
+		}
+		s.SetWidth(100)
+		w := s.Width()
+		if w != 100 {
+			t.Fail()
+		}
+	})
+
+	t.Run("Special", func(t *testing.T) {
+		s, ok := shape.(*Actor)
+		if !ok {
+			//t.Errorf("%T", shape)
+			return
+		}
+		s.SetHeight(100)
+		h := s.Height()
+		if h != 100 {
+			t.Fail()
+		}
 	})
 }
 
 type resizable interface {
 	SetHeight(int)
+	Height() int
+	SetWidth(int)
+	Width() int
 }

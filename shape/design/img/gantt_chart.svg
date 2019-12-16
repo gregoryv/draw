@@ -1,0 +1,54 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="563" height="188" font-family="Arial, Helvetica, sans-serif">
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="36">2019</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="88" y="56">11</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="104" y="56">12</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="120" y="56">13</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="136" y="56">14</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="152" y="56">15</text>
+<rect font-family="Arial,Helvetica,sans-serif" fill="#f3f3f3" x="181" y="46" width="33" height="90"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="187" y="64"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="168" y="56">16</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="184" y="56">17</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="200" y="56">18</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="216" y="56">19</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="232" y="56">20</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="248" y="56">21</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="264" y="56">22</text>
+<rect font-family="Arial,Helvetica,sans-serif" fill="#f3f3f3" x="293" y="46" width="33" height="90"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="299" y="64"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="280" y="56">23</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="296" y="56">24</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="312" y="56">25</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="328" y="56">26</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="344" y="56">27</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="360" y="56">28</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="376" y="56">29</text>
+<rect font-family="Arial,Helvetica,sans-serif" fill="#f3f3f3" x="405" y="46" width="33" height="90"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="411" y="64"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="392" y="56">30</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="408" y="36">December</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="408" y="56">01</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="424" y="56">02</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="440" y="56">03</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="456" y="56">04</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="472" y="56">05</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="488" y="56">06</text>
+<rect font-family="Arial,Helvetica,sans-serif" fill="#f3f3f3" x="517" y="46" width="33" height="90"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="523" y="64"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="504" y="56">07</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="520" y="56">08</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="536" y="56">09</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="552" y="56">10</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="86">Develop</text>
+<rect stroke="#d3d3d3" fill="#ccff99" rx="5" ry="5" x="88" y="72" width="155" height="12"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="94" y="90"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="106">Release</text>
+<rect stroke="#d3d3d3" fill="#ccff99" rx="5" ry="5" x="216" y="92" width="75" height="12"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="222" y="110"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="126">Vacation</text>
+<rect stroke="#d3d3d3" fill="#ccff99" rx="5" ry="5" x="328" y="112" width="219" height="12"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="334" y="130"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="211" y="182">Project estimated delivery</text></svg>

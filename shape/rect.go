@@ -24,6 +24,8 @@ type Rect struct {
 	Font  Font
 	Pad   Padding
 	class string
+
+	width, height int
 }
 
 func (r *Rect) String() string {
@@ -62,12 +64,21 @@ func (r *Rect) SetFont(f Font)         { r.Font = f }
 func (r *Rect) SetTextPad(pad Padding) { r.Pad = pad }
 
 func (r *Rect) Height() int {
+	if r.height > 0 {
+		return r.height
+	}
 	return boxHeight(r.Font, r.Pad, 1)
 }
 
 func (r *Rect) Width() int {
+	if r.width > 0 {
+		return r.width
+	}
 	return boxWidth(r.Font, r.Pad, r.Title)
 }
+
+func (r *Rect) SetWidth(w int)  { r.width = w }
+func (r *Rect) SetHeight(h int) { r.height = h }
 
 // Edge returns intersecting position of a line starting at start and
 // pointing to the rect center.

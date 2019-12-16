@@ -2,6 +2,7 @@ package design_test
 
 import (
 	"testing"
+	"time"
 
 	"github.com/gregoryv/draw/shape"
 	"github.com/gregoryv/draw/shape/design"
@@ -153,9 +154,23 @@ func ExampleActivityDiagram() {
 	d.SaveAs("img/activity_diagram.svg")
 }
 
+func ExampleGantChart() {
+	str := "2019-11-11T01:00:00.000Z"
+	t, _ := time.Parse(time.RFC3339, str)
+	var (
+		d = design.NewGanttChart(30, t)
+	)
+	d.Add("Develop", 0, 10)
+	d.Add("Release", 8, 5)
+	d.Add("Vacation", 15, 14)
+	d.SetCaption("Project estimated delivery")
+	d.SaveAs("img/gantt_chart.svg")
+}
+
 func TestExamples(t *testing.T) {
 	ExampleClassDiagram()
 	ExampleSequenceDiagram()
 	ExampleDiagram()
 	ExampleActivityDiagram()
+	ExampleGantChart()
 }

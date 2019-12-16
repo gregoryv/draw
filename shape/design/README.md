@@ -49,6 +49,10 @@ Simplifying placing shapes in a grid layout aligning different sizes of shapes.
 ![](img/grid_layout.svg)
 
 
+## Gantt chart
+
+![](img/gantt_chart.svg)
+
 ## Showcase
 
 You can find more examples in the [showcase](showcase) folder.
