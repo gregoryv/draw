@@ -32,8 +32,7 @@ func (c *ExitDot) SetX(x int) { c.pos.X = x }
 func (c *ExitDot) SetY(y int) { c.pos.Y = y }
 func (c *ExitDot) Width() int {
 	// If the style shanges the width will be slightly off, no biggy.
-	stroke := 2
-	return (c.Radius+stroke)*2 - 2
+	return c.Radius*2 + 4
 }
 func (c *ExitDot) Height() int           { return c.Width() }
 func (c *ExitDot) Direction() Direction  { return LR }
@@ -46,11 +45,11 @@ func (c *ExitDot) WriteSvg(out io.Writer) error {
 	y += c.Radius
 	w.printf(
 		`<circle class="%s" cx="%v" cy="%v" r="%v" />\n`,
-		c.class, x, y, c.Radius,
+		c.class, x+2, y+2, c.Radius,
 	)
 	w.printf(
 		`<circle class="%s-dot" cx="%v" cy="%v" r="%v" />\n`,
-		c.class, x, y, c.Radius-4,
+		c.class, x+2, y+2, c.Radius-4,
 	)
 
 	return *err

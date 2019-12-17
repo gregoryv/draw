@@ -42,8 +42,14 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="242">multilines</text>
 
 <circle stroke="black" stroke-width="2" fill="#ffffff" cx="30" cy="291" r="10" />\n
-<circle stroke="black" cx="82" cy="291" r="10" />\n
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="134" cy="291" r="10" />\n<circle stroke="black" cx="134" cy="291" r="6" />\n
+<circle stroke="black" cx="78" cy="292" r="6" />\n
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="126" cy="292" r="10" />\n<circle stroke="black" cx="126" cy="292" r="6" />\n
+<path stroke="black" d="M42,292 L72,292" />
+<g transform="rotate(0 72 292)"><path stroke="black" fill="#ffffff" d="M72,292 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M84,292 L114,292" />
+<g transform="rotate(0 114 292)"><path stroke="black" fill="#ffffff" d="M114,292 l-8,-4 l 0,8 Z" /></g>
+
 <rect stroke="#d3d3d3" fill="#ffffff" x="180" y="180" width="72" height="26"/>
 <rect stroke="#d3d3d3" fill="#ffffff" x="175" y="185" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="175" y="196" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="191" y="198">database</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="20" y="333" width="41" height="26"/>
@@ -54,4 +60,5 @@
 <rect stroke="#d3d3d3" fill="#ffffff" x="181" y="241" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="181" y="252" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="197" y="254">service</text>
 <path stroke="black" d="M216,236 L216,206" />
 <g transform="rotate(-90 216 206)"><path stroke="black" fill="#ffffff" d="M216,206 l-8,-4 l 0,8 Z" /></g>
-</svg>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="216" y="202"></text></svg>
