@@ -32,8 +32,7 @@ func testShape(t *testing.T, shape Shape) {
 	t.Helper()
 	t.Run("Can move in X,Y direction", func(t *testing.T) {
 		x, y := shape.Position()
-		shape.SetX(x + 1)
-		shape.SetY(y + 1)
+		Move(shape, 1, 1)
 		assert := asserter.New(t)
 		x1, y1 := shape.Position()
 		assert(x != x1).Errorf("x same as before move")

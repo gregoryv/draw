@@ -16,6 +16,8 @@ func NewGanttChart(days int, start ...time.Time) *GanttChart {
 		start:   time.Now(),
 		days:    days,
 		tasks:   make([]task, 0),
+		padLeft: 16,
+		padTop:  10,
 	}
 	if len(start) > 0 {
 		d.start = start[0]
@@ -28,14 +30,13 @@ type GanttChart struct {
 	start time.Time
 	days  int
 	tasks []task
+
+	padLeft, padTop int
 }
 
 func (d *GanttChart) Add(txt string, offset, days int) {
 	d.tasks = append(d.tasks, task{txt, offset, days})
 }
-
-const indent int = 20 // top and left
-const cw int = 16     // column width
 
 type task struct {
 	txt          string
@@ -44,48 +45,77 @@ type task struct {
 
 func (d *GanttChart) WriteSvg(w io.Writer) error {
 	now := d.start
-	d.Place(shape.NewLabel(fmt.Sprintf("%v", now.Year()))).At(indent, indent)
-	offset := indent + d.daysOffset()
+	year := shape.NewLabel(fmt.Sprintf("%v", now.Year()))
+	d.Place(year).At(d.padLeft, d.padTop)
+	offset := d.padLeft + d.taskWidth()
+
+	var lastDay *shape.Label
+	columns := make([]*shape.Label, d.days)
 	for i := 0; i < d.days; i++ {
-		x := offset + i*cw
 		day := now.Day()
 		if day == 1 {
-			txt := fmt.Sprintf("%s", now.Month())
-			d.Place(shape.NewLabel(txt)).At(x, indent)
+			label := shape.NewLabel(now.Month().String())
+			d.Place(label).Above(lastDay, 4)
+			shape.Move(label, lastDay.Width()+4, 0)
 		}
-		col := shape.NewLabel(fmt.Sprintf("%02v", day))
+		col := newCol(day)
+		columns[i] = col
 		if now.Weekday() == time.Saturday {
 			bg := shape.NewRect("")
 			bg.SetClass("weekend")
-			bg.SetWidth(cw*2 + 1)
-			bg.SetHeight(len(d.tasks)*20 + 30)
-			d.Place(bg).At(x+cw-3, 46)
+			bg.SetWidth(col.Width()*2 + 8)
+			bg.SetHeight(len(d.tasks)*col.Font.LineHeight + d.padTop + d.Diagram.Font.LineHeight)
+			d.Place(bg).RightOf(lastDay, 4)
+			shape.Move(bg, -2, 4)
 		}
-
-		col.Font.Height = 10
-		d.Place(col).At(x, 40)
+		if i == 0 {
+			d.Place(col).Below(year, 4)
+			col.SetX(offset)
+		} else {
+			d.Place(col).RightOf(lastDay, 4)
+		}
+		lastDay = col
 		now = now.AddDate(0, 0, 1)
 	}
 
+	var lastTask *shape.Label
 	for i, t := range d.tasks {
-		y := i*20 + 70
 		label := shape.NewLabel(t.txt)
-		d.Place(label).At(indent, y)
+		if i == 0 {
+			d.Place(label).Below(lastDay, 4)
+			d.VAlignLeft(year, label)
+		} else {
+			d.Place(label).Below(lastTask, 4)
+		}
+		lastTask = label
+
 		rect := shape.NewRect("")
-		rect.SetWidth(t.days*cw - 5)
+		col := columns[t.offset]
+		var w int
+		for i := t.offset; i < t.offset+t.days; i++ {
+			w += columns[i].Width() + 4
+		}
+		rect.SetWidth(w - 4)
 		rect.SetHeight(d.Diagram.Font.Height)
 		rect.SetClass("span")
-		d.Place(rect).At(offset+t.offset*cw, y)
+
+		d.Place(rect).Below(col, 4)
 		d.HAlignCenter(label, rect)
 	}
 	return d.Diagram.WriteSvg(w)
+}
+
+func newCol(day int) *shape.Label {
+	col := shape.NewLabel(fmt.Sprintf("%02v", day))
+	col.Font.Height = 10
+	return col
 }
 
 func (d *GanttChart) SaveAs(filename string) error {
 	return saveAs(d, d.Diagram.Style, filename)
 }
 
-func (d *GanttChart) daysOffset() int {
+func (d *GanttChart) taskWidth() int {
 	x := 0
 	for _, t := range d.tasks {
 		w := d.Diagram.Font.TextWidth(t.txt)
@@ -93,5 +123,5 @@ func (d *GanttChart) daysOffset() int {
 			x = w
 		}
 	}
-	return x + indent
+	return x + d.padLeft
 }
