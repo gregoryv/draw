@@ -163,9 +163,9 @@ func ExampleGantChart() {
 		d = design.NewGanttChart(30, t)
 	)
 	d.Add("Develop", 0, 10)
-	d.Add("Release", 8, 5)
-	d.Add("Vacation", 15, 14)
-	d.SetCaption("Project estimated delivery")
+	d.Add("Release", 10, 1).Red()
+	d.Add("Vacation", 14, 14).Blue()
+	d.SetCaption("Figure 1. Project estimated delivery")
 	d.SaveAs("img/gantt_chart.svg")
 }
 

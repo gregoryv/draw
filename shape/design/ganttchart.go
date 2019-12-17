@@ -15,7 +15,7 @@ func NewGanttChart(days int, start ...time.Time) *GanttChart {
 		Diagram: NewDiagram(),
 		start:   time.Now(),
 		days:    days,
-		tasks:   make([]task, 0),
+		tasks:   make([]*Task, 0),
 		padLeft: 16,
 		padTop:  10,
 	}
@@ -29,19 +29,35 @@ type GanttChart struct {
 	Diagram
 	start time.Time
 	days  int
-	tasks []task
+	tasks []*Task
 
 	padLeft, padTop int
 }
 
-func (d *GanttChart) Add(txt string, offset, days int) {
-	d.tasks = append(d.tasks, task{txt, offset, days})
+// Add new task. Default color is green.
+func (d *GanttChart) Add(txt string, offset, days int) *Task {
+	task := NewTask(txt, offset, days)
+	d.tasks = append(d.tasks, task)
+	return task
 }
 
-type task struct {
+func NewTask(txt string, offset, days int) *Task {
+	return &Task{
+		txt:    txt,
+		offset: offset,
+		days:   days,
+		class:  "span-green",
+	}
+}
+
+type Task struct {
 	txt          string
 	offset, days int
+	class        string
 }
+
+func (t *Task) Red()  { t.class = "span-red" }
+func (t *Task) Blue() { t.class = "span-blue" }
 
 func (d *GanttChart) WriteSvg(w io.Writer) error {
 	now := d.start
@@ -97,7 +113,7 @@ func (d *GanttChart) WriteSvg(w io.Writer) error {
 		}
 		rect.SetWidth(w - 4)
 		rect.SetHeight(d.Diagram.Font.Height)
-		rect.SetClass("span")
+		rect.SetClass(t.class)
 
 		d.Place(rect).Below(col, 4)
 		d.HAlignCenter(label, rect)

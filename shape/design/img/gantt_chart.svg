@@ -46,9 +46,9 @@
 <rect stroke="#d3d3d3" fill="#ccff99" rx="5" ry="5" x="80" y="52" width="146" height="12"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="86" y="70"></text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="86">Release</text>
-<rect stroke="#d3d3d3" fill="#ccff99" rx="5" ry="5" x="200" y="72" width="71" height="12"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="206" y="90"></text>
+<rect stroke="#d3d3d3" fill="#ff9999" rx="5" ry="5" x="230" y="72" width="11" height="12"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="236" y="90"></text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="106">Vacation</text>
-<rect stroke="#d3d3d3" fill="#ccff99" rx="5" ry="5" x="305" y="92" width="206" height="12"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="311" y="110"></text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="193" y="154">Project estimated delivery</text></svg>
+<rect stroke="#d3d3d3" fill="#99e6ff" rx="5" ry="5" x="290" y="92" width="206" height="12"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="296" y="110"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="167" y="154">Figure 1. Project estimated delivery</text></svg>
