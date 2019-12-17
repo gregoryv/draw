@@ -8,8 +8,8 @@ import (
 	"github.com/gregoryv/draw/shape"
 )
 
-// NewGantChart returns a chart with number of days with optional
-// start time. If none is given, then time.Now() is used.
+// NewGanttChart returns a chart showing days from optional
+// start time. If no start is given, time.Now() is used.
 func NewGanttChart(days int, start ...time.Time) *GanttChart {
 	d := &GanttChart{
 		Diagram: NewDiagram(),
@@ -41,6 +41,7 @@ func (d *GanttChart) Add(txt string, offset, days int) *Task {
 	return task
 }
 
+// NewTask returns a green task.
 func NewTask(txt string, offset, days int) *Task {
 	return &Task{
 		txt:    txt,
@@ -50,13 +51,17 @@ func NewTask(txt string, offset, days int) *Task {
 	}
 }
 
+// Task is the colorized span of a gantt chart.
 type Task struct {
 	txt          string
 	offset, days int
 	class        string
 }
 
-func (t *Task) Red()  { t.class = "span-red" }
+// Red sets class of task to span-red
+func (t *Task) Red() { t.class = "span-red" }
+
+// Blue sets class of task to span-blue
 func (t *Task) Blue() { t.class = "span-blue" }
 
 func (d *GanttChart) WriteSvg(w io.Writer) error {
