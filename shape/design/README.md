@@ -53,6 +53,8 @@ Simplifying placing shapes in a grid layout aligning different sizes of shapes.
 
 ![](img/gantt_chart.svg)
 
+[ExampleGanttChart](https://godoc.org/github.com/gregoryv/draw/shape/design/#example-GanttChart)
+
 ## Showcase
 
 You can find more examples in the [showcase](showcase) folder.

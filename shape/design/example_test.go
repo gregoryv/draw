@@ -156,7 +156,7 @@ func ExampleActivityDiagram() {
 	d.SaveAs("img/activity_diagram.svg")
 }
 
-func ExampleGantChart() {
+func ExampleGanttChart() {
 	str := "2019-11-11T01:00:00.000Z"
 	t, _ := time.Parse(time.RFC3339, str)
 	var (
@@ -174,5 +174,5 @@ func TestExamples(t *testing.T) {
 	ExampleSequenceDiagram()
 	ExampleDiagram()
 	ExampleActivityDiagram()
-	ExampleGantChart()
+	ExampleGanttChart()
 }
