@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- Label is optional when creating links with func Link
 - Hide Height, Width attributes in Diagram
 - shape.NewDot defaults to radius 10
 
