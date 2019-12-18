@@ -61,3 +61,13 @@ func (vr *VRecord) ComposedOf(d *VRecord) bool {
 	}
 	return false
 }
+
+func (vr *VRecord) Aggregates(d *VRecord) bool {
+	for i := 0; i < vr.t.NumField(); i++ {
+		field := vr.t.Field(i)
+		if field.Type == reflect.PtrTo(d.t) {
+			return true
+		}
+	}
+	return false
+}

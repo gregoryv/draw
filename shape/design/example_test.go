@@ -29,6 +29,7 @@ func ExampleClassDiagram() {
 		dia      = d.Struct(design.Diagram{})
 		aligner  = d.Struct(shape.Aligner{})
 		adj      = d.Struct(shape.Adjuster{})
+		rel      = d.Struct(design.Relation{})
 	)
 	d.HideRealizations()
 
@@ -48,6 +49,7 @@ func ExampleClassDiagram() {
 	d.VAlignCenter(shapE, line, style)
 	d.VAlignCenter(record, fnt)
 
+	d.Place(rel).Below(line, 80)
 	d.Place(dia).RightOf(style, 90)
 	d.Place(aligner).RightOf(dia, 80)
 	d.HAlignCenter(fnt, style, dia, aligner)

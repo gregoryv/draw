@@ -70,3 +70,25 @@ func TestVRecord_ComposedOf(t *testing.T) {
 	}
 	bad(struct{ c *C }{}, C{})
 }
+
+func TestVRecord_Aggregates(t *testing.T) {
+	ok := func(a, b interface{}) {
+		t.Helper()
+		A := NewStruct(a)
+		B := NewStruct(b)
+		if !A.Aggregates(&B) {
+			t.Fail()
+		}
+	}
+	ok(struct{ c *C }{}, C{})
+
+	bad := func(a, b interface{}) {
+		t.Helper()
+		A := NewStruct(a)
+		B := NewStruct(b)
+		if A.Aggregates(&B) {
+			t.Fail()
+		}
+	}
+	bad(struct{ c C }{}, C{})
+}

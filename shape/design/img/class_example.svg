@@ -44,6 +44,10 @@
 <g transform="rotate(0 570 601)"><path stroke="black" fill="#777777" d="M570,601 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(0 650 601)"><path stroke="black" fill="#ffffff" d="M650,601 l-8,-4 l 0,8 Z" /></g>
 
+<path stroke="black" d="M289,466 L145,317" />
+<g transform="rotate(225 289 466)"><path stroke="black" fill="#ffffff" d="M289,466 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(225 145 317)"><path stroke="black" fill="#ffffff" d="M145,317 l-8,-4 l 0,8 Z" /></g>
+
 <rect stroke="#d3d3d3" fill="#ffffff" x="220" y="20" width="139" height="164"/>
 <line stroke="#d3d3d3" x1="220" y1="50" x2="359" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="66">Direction()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="82">Height()</text>
@@ -110,6 +114,8 @@
 <line stroke="#d3d3d3" x1="233" y1="624" x2="345" y2="624"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="239" y="640">SetOutput()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="239" y="656">Write()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="239" y="560">shape.Style struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="466" width="134" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="486">design.Relation struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="435" y="420" width="135" height="362"/>
 <line stroke="#d3d3d3" x1="435" y1="450" x2="570" y2="450"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="441" y="466">Svg</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="441" y="482">Aligner</text>
