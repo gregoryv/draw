@@ -7,34 +7,25 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
-func TestDesignPackage(t *testing.T) {
-	it := NewDesignPackage(t)
-	it.CanCreateRecordFromStruct()
-	it.CanCreateRecordFromInterface()
-}
-
-func NewDesignPackage(t *testing.T) *DesignPackage {
-	return &DesignPackage{T: t}
-}
-
-type DesignPackage struct {
-	*testing.T
-}
-
-func (t *DesignPackage) CanCreateRecordFromStruct() {
-	t.Log("Can create record from struct")
+func TestNewStruct(t *testing.T) {
 	x := struct {
 		Field string
 	}{}
-	NewStruct(x)
+	s := NewStruct(x)
+	if len(s.Fields) != 1 {
+		t.Error("Expected one field")
+	}
 
 	defer mustCatchPanic(t)
 	NewStruct((*io.Writer)(nil))
 }
 
-func (t *DesignPackage) CanCreateRecordFromInterface() {
-	t.Log("Can create record from interface")
-	NewInterface((*io.Writer)(nil))
+func TestNewInterface(t *testing.T) {
+	i := NewInterface((*io.Writer)(nil))
+	if len(i.Methods) != 1 {
+		t.Error("Expected one method")
+	}
+
 	defer mustCatchPanic(t)
 	NewInterface(t)
 }
