@@ -46,3 +46,27 @@ func mustCatchPanic(t asserter.T) {
 		t.Error("should panic")
 	}
 }
+
+type C struct{}
+
+func TestVRecord_ComposedOf(t *testing.T) {
+	ok := func(a, b interface{}) {
+		t.Helper()
+		A := NewStruct(a)
+		B := NewStruct(b)
+		if !A.ComposedOf(&B) {
+			t.Fail()
+		}
+	}
+	ok(struct{ c C }{}, C{})
+
+	bad := func(a, b interface{}) {
+		t.Helper()
+		A := NewStruct(a)
+		B := NewStruct(b)
+		if A.ComposedOf(&B) {
+			t.Fail()
+		}
+	}
+	bad(struct{ c *C }{}, C{})
+}
