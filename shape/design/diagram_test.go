@@ -2,6 +2,7 @@ package design
 
 import (
 	"bytes"
+	"io"
 	"testing"
 
 	"github.com/gregoryv/asserter"
@@ -20,10 +21,18 @@ func AdaptsInSize(t *testing.T, d *Diagram) {
 	l2 := shape.NewLine(0, 0, 100, 20)
 	d.Place(l1).At(0, 0)
 	d.Place(l2).Below(l1, 10)
+	d.Append(&dummy{}) // Not a shape, should be skipped
 	w, h := d.AdaptSize()
 	assert := asserter.New(t)
 	assert(w == 100).Errorf("width did not adapt: %v", w)
 	assert(h == 130).Errorf("height did not adapt: %v", h)
+}
+
+type dummy struct{}
+
+func (d *dummy) WriteSvg(w io.Writer) error {
+	_, err := w.Write([]byte("..."))
+	return err
 }
 
 func CanHaveFixedSize(t *testing.T, d *Diagram) {
