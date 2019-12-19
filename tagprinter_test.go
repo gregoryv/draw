@@ -3,17 +3,16 @@ package draw
 import (
 	"bytes"
 	"fmt"
+	"strings"
 	"testing"
-
-	"github.com/gregoryv/asserter"
-	"github.com/gregoryv/golden"
 )
 
-func Test_tagPrinter(t *testing.T) {
+func TestTagPrinter(t *testing.T) {
 	buf := bytes.NewBufferString("")
 	w, err := NewTagPrinter(buf)
-	assert := asserter.New(t)
-	assert(err != nil).Error(err)
+	if err == nil {
+		t.Fatal(err)
+	}
 	w.Printf("ok %s\n", "printf")
 	w.Print("ok print\n")
 	w.Write([]byte("ok Write\n"))
@@ -22,5 +21,7 @@ func Test_tagPrinter(t *testing.T) {
 	w.Printf("%s should not print this", "printf")
 	w.Print("print should not print this")
 	w.Write([]byte("Write should not write this"))
-	golden.Assert(t, buf.String())
+	if strings.Index(buf.String(), " not ") > -1 {
+		t.Error(buf.String())
+	}
 }
