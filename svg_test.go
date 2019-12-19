@@ -1,6 +1,7 @@
 package draw
 
 import (
+	"bytes"
 	"io"
 	"testing"
 
@@ -15,57 +16,50 @@ func TestSvg_SetSize(t *testing.T) {
 	assert().Equals(s.Height(), 2)
 }
 
-func TestOneSvg(t *testing.T) {
-	it := &OneSvg{t, &Svg{}}
-	// when
-	it.IsEmpty()
-	it.AppendsShapeAsFirstElementInContent()
-	// after which
-	it.AppendsShapesLastToContent()
-	it.PrependsShapeFirstToContent()
-}
-
-type OneSvg struct {
-	*testing.T
-	*Svg
-}
-
-func (t *OneSvg) IsEmpty() {
-	t.Helper()
-	if len(t.Content) != 0 {
+func TestSvg_empty_by_default(t *testing.T) {
+	s := NewSvg()
+	if len(s.Content) != 0 {
 		t.Error("Not empty")
 	}
 }
 
-func (t *OneSvg) AppendsShapeAsFirstElementInContent() {
-	t.Helper()
+func TestSvg_Append(t *testing.T) {
+	s := NewSvg()
 	shape := &dummy{}
-	t.Append(shape)
-	if t.Content[0] != shape {
+	s.Append(shape)
+	if s.Content[0] != shape {
 		t.Error("Not first")
 	}
-}
 
-func (t *OneSvg) AppendsShapesLastToContent() {
-	t.Helper()
-	shape := &dummy{}
-	t.Append(shape)
-	if t.Content[len(t.Content)-1] != shape {
+	s.Append(shape)
+	if s.Content[len(s.Content)-1] != shape {
 		t.Error("Not last")
 	}
 }
 
-func (t *OneSvg) PrependsShapeFirstToContent() {
-	t.Helper()
+func TestPrepend(t *testing.T) {
+	s := NewSvg()
 	shape := &dummy{}
-	t.Prepend(shape)
-	if t.Content[0] != shape {
+	s.Prepend(shape)
+	if s.Content[0] != shape {
 		t.Error("Not first")
+	}
+}
+
+func TestSvg_WriteSvg(t *testing.T) {
+	s := NewSvg()
+	shape := &dummy{}
+	s.Append(shape)
+	w := bytes.NewBufferString("")
+	s.WriteSvg(w)
+	if w.String() == "" {
+		t.Error("No svg written")
 	}
 }
 
 type dummy struct{}
 
-func (d *dummy) WriteSvg(io.Writer) error {
-	return nil
+func (d *dummy) WriteSvg(w io.Writer) error {
+	_, err := w.Write([]byte("..."))
+	return err
 }

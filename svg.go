@@ -1,8 +1,18 @@
+// package draw provides svg writing features
 package draw
 
 import (
 	"io"
 )
+
+// NewSvg returns an empty Svg of size 100x100
+func NewSvg() *Svg {
+	return &Svg{
+		width:   100,
+		height:  100,
+		Content: make([]SvgWriter, 0),
+	}
+}
 
 type Svg struct {
 	width, height int
