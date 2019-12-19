@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 )
 
@@ -39,15 +40,15 @@ func (c *ExitDot) Direction() Direction  { return LR }
 func (c *ExitDot) SetClass(class string) { c.class = class }
 
 func (c *ExitDot) WriteSvg(out io.Writer) error {
-	w, err := newTagPrinter(out)
+	w, err := draw.NewTagPrinter(out)
 	x, y := c.Position()
 	x += c.Radius
 	y += c.Radius
-	w.printf(
+	w.Printf(
 		`<circle class="%s" cx="%v" cy="%v" r="%v" />\n`,
 		c.class, x+2, y+2, c.Radius,
 	)
-	w.printf(
+	w.Printf(
 		`<circle class="%s-dot" cx="%v" cy="%v" r="%v" />\n`,
 		c.class, x+2, y+2, c.Radius-4,
 	)

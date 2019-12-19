@@ -5,6 +5,7 @@ import (
 	"io"
 	"math"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 )
 
@@ -30,25 +31,25 @@ func (a *Arrow) String() string {
 }
 
 func (arrow *Arrow) WriteSvg(out io.Writer) error {
-	w, err := newTagPrinter(out)
+	w, err := draw.NewTagPrinter(out)
 	x1, y1 := arrow.Start.XY()
 	x2, y2 := arrow.End.XY()
-	w.printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class, x1, y1, x2, y2)
-	w.print("\n")
+	w.Printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class, x1, y1, x2, y2)
+	w.Print("\n")
 	if arrow.Tail != nil {
-		w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x1, y1)
+		w.Printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x1, y1)
 		alignTail(arrow.Tail, x1, y1)
 		arrow.Tail.SetClass(arrow.class + "-tail")
 		arrow.Tail.WriteSvg(out)
-		w.print("</g>\n")
+		w.Print("</g>\n")
 	}
 	if arrow.Head != nil {
-		w.printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
+		w.Printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
 		arrow.Head.SetX(arrow.End.X)
 		arrow.Head.SetY(arrow.End.Y)
 		arrow.Head.SetClass(arrow.class + "-head")
 		arrow.Head.WriteSvg(out)
-		w.print("</g>\n")
+		w.Print("</g>\n")
 	}
 	return *err
 }

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 )
 
@@ -32,9 +33,9 @@ func (t *Triangle) Direction() Direction { return LR }
 func (t *Triangle) SetClass(c string)    { t.class = c }
 
 func (tri *Triangle) WriteSvg(out io.Writer) error {
-	w, err := newTagPrinter(out)
+	w, err := draw.NewTagPrinter(out)
 	// the path is drawn as if it points straight to the right
-	w.printf(`<path class="%s" d="M%v,%v l-8,-4 l 0,8 Z" />`,
+	w.Printf(`<path class="%s" d="M%v,%v l-8,-4 l 0,8 Z" />`,
 		tri.class, tri.pos.X, tri.pos.Y)
 	return *err
 }

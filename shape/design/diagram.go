@@ -3,6 +3,7 @@ package design
 import (
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/shape"
 )
 
@@ -18,7 +19,7 @@ func NewDiagram() Diagram {
 
 // Diagram is a generic SVG image with box related styling
 type Diagram struct {
-	shape.Svg
+	draw.Svg
 	shape.Aligner
 	shape.Style
 
@@ -128,6 +129,10 @@ func (d *Diagram) WriteSvg(w io.Writer) error {
 // are visible. Returns the new width and height
 func (diagram *Diagram) AdaptSize() (int, int) {
 	for _, s := range diagram.Content {
+		s, ok := s.(shape.Shape)
+		if !ok {
+			continue
+		}
 		x, y := s.Position()
 		switch s := s.(type) {
 		case *shape.Line:

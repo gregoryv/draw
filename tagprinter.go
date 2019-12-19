@@ -1,11 +1,11 @@
-package shape
+package draw
 
 import (
 	"fmt"
 	"io"
 )
 
-func newTagPrinter(w io.Writer) (*tagPrinter, *error) {
+func NewTagPrinter(w io.Writer) (*tagPrinter, *error) {
 	tag := &tagPrinter{w: w}
 	return tag, &tag.err
 }
@@ -20,14 +20,14 @@ type tagPrinter struct {
 	err error
 }
 
-func (ec *tagPrinter) printf(format string, args ...interface{}) {
+func (ec *tagPrinter) Printf(format string, args ...interface{}) {
 	if ec.err != nil {
 		return
 	}
 	_, ec.err = fmt.Fprintf(ec.w, format, args...)
 }
 
-func (ec *tagPrinter) print(args ...interface{}) {
+func (ec *tagPrinter) Print(args ...interface{}) {
 	if ec.err != nil {
 		return
 	}

@@ -41,7 +41,10 @@ func (d *ClassDiagram) Struct(obj interface{}) VRecord {
 func (d *ClassDiagram) WriteSvg(w io.Writer) error {
 	rel := d.implements()
 	rel = append(rel, d.compositions()...)
-	d.Diagram.Prepend(rel...)
+	for _, s := range rel {
+		s, _ := s.(shape.Shape)
+		d.Diagram.Prepend(s)
+	}
 	return d.Diagram.WriteSvg(w)
 }
 

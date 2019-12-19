@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 )
 
@@ -42,16 +43,16 @@ func (r *Component) Direction() Direction { return LR }
 func (r *Component) SetClass(c string)    { r.class = c }
 
 func (r *Component) WriteSvg(out io.Writer) error {
-	w, err := newTagPrinter(out)
-	w.printf(
+	w, err := draw.NewTagPrinter(out)
+	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.X, r.Y, r.Width(), r.Height())
-	w.printf("\n")
+	w.Printf("\n")
 	// small boxes
-	w.printf(
+	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.X-r.sbWidth/2, r.Y+r.sbHeight, r.sbWidth, r.sbHeight)
-	w.printf(
+	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.X-r.sbWidth/2, r.Y+r.Height()-r.sbHeight*2, r.sbWidth, r.sbHeight)
 

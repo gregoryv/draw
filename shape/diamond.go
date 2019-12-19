@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 )
 
@@ -43,13 +44,13 @@ func (d *Diamond) Direction() Direction { return LR }
 func (d *Diamond) SetClass(c string)    { d.class = c }
 
 func (d *Diamond) WriteSvg(out io.Writer) error {
-	w, err := newTagPrinter(out)
+	w, err := draw.NewTagPrinter(out)
 	x, y := d.pos.XY()
 	y += d.height / 2
 	w2 := d.width / 2
 	h2 := d.height / 2
 	// the path is drawn from left to right
-	w.printf(`<path class="%s" d="M%v,%v l %v,%v %v,%v %v,%v %v,%v" />`,
+	w.Printf(`<path class="%s" d="M%v,%v l %v,%v %v,%v %v,%v %v,%v" />`,
 		d.class, x, y, w2, -h2, w2, h2, -w2, h2, -w2, -h2)
 	return *err
 }

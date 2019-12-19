@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	"github.com/gregoryv/asserter"
+	"github.com/gregoryv/draw"
 )
 
 func TestArrow(t *testing.T) {
@@ -119,7 +120,8 @@ func (t *OneArrow) HasBothTailAndHead() {
 
 func (t *OneArrow) saveAs(filename string) {
 	t.Helper()
-	d := &Svg{width: 100, height: 100}
+	d := &draw.Svg{}
+	d.SetSize(100, 100)
 	d.Append(t.Arrow)
 
 	fh, err := os.Create(filename)
@@ -192,13 +194,14 @@ func (t *ArrowBetweenShapes) StartsAndEndsAtEdgeOfShapes() {
 	writeSvgTo(t.T, "testdata/arrow_between_shapes.svg", svg)
 }
 
-func newSvg(width, height int, shapes ...Shape) *Svg {
-	svg := &Svg{width: width, height: height}
+func newSvg(width, height int, shapes ...draw.SvgWriter) *draw.Svg {
+	svg := &draw.Svg{}
+	svg.SetSize(width, height)
 	svg.Append(shapes...)
 	return svg
 }
 
-func writeSvgTo(t *testing.T, filename string, svg *Svg) {
+func writeSvgTo(t *testing.T, filename string, svg *draw.Svg) {
 	t.Helper()
 	fh, err := os.Create(filename)
 	if err != nil {

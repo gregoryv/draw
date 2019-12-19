@@ -5,6 +5,7 @@ import (
 	"io"
 	"strings"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 )
 
@@ -58,7 +59,7 @@ func (n *Note) WriteSvg(out io.Writer) error {
 	w := n.Width()
 	h := n.Height()
 	flap := 10
-	t, err := newTagPrinter(out)
+	t, err := draw.NewTagPrinter(out)
 	/*
 	   x,y
 	    +---------------+        -
@@ -68,15 +69,15 @@ func (n *Note) WriteSvg(out io.Writer) error {
 	    +-----------------+
 	   y+h               x+w
 	*/
-	t.printf(`<path class="%s-box" d="M%v,%v `, n.class, x, y)
-	t.printf(`v %v h %v v %v l %v,%v L %v,%v M%v,%v h %v v %v"/>`,
+	t.Printf(`<path class="%s-box" d="M%v,%v `, n.class, x, y)
+	t.Printf(`v %v h %v v %v l %v,%v L %v,%v M%v,%v h %v v %v"/>`,
 		h, w, -(h - flap), -flap, -flap, x, y, x+w, y+flap, -flap, -flap)
-	t.print("\n")
+	t.Print("\n")
 	x += n.Pad.Left
 	for i, line := range strings.Split(n.Text, "\n") {
-		t.printf(`<text class="note" font-size="%vpx" x="%v" y="%v">%s</text>`,
+		t.Printf(`<text class="note" font-size="%vpx" x="%v" y="%v">%s</text>`,
 			n.Font.Height, x, y+(n.Font.LineHeight*(i+1)), line)
-		t.print("\n")
+		t.Print("\n")
 	}
 	return *err
 }

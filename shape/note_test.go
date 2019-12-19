@@ -3,6 +3,8 @@ package shape
 import (
 	"os"
 	"testing"
+
+	"github.com/gregoryv/draw"
 )
 
 func TestNote(t *testing.T) {
@@ -16,7 +18,8 @@ possible in notes`)
 
 func saveAsSvg(t *testing.T, shape Shape, filename string) {
 	t.Helper()
-	d := &Svg{width: 300, height: 100}
+	d := &draw.Svg{}
+	d.SetSize(300, 100)
 	d.Append(shape)
 
 	fh, err := os.Create(filename)

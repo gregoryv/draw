@@ -5,6 +5,7 @@ import (
 	"io"
 	"math"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 )
 
@@ -39,11 +40,11 @@ func (r *Rect) Direction() Direction { return LR }
 func (r *Rect) SetClass(c string)    { r.class = c }
 
 func (r *Rect) WriteSvg(out io.Writer) error {
-	w, err := newTagPrinter(out)
-	w.printf(
+	w, err := draw.NewTagPrinter(out)
+	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.X, r.Y, r.Width(), r.Height())
-	w.printf("\n")
+	w.Printf("\n")
 	r.title().WriteSvg(w)
 	return *err
 }

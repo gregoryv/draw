@@ -1,6 +1,7 @@
-package shape
+package draw
 
 import (
+	"io"
 	"testing"
 
 	"github.com/gregoryv/asserter"
@@ -38,7 +39,7 @@ func (t *OneSvg) IsEmpty() {
 
 func (t *OneSvg) AppendsShapeAsFirstElementInContent() {
 	t.Helper()
-	shape := &Arrow{}
+	shape := &dummy{}
 	t.Append(shape)
 	if t.Content[0] != shape {
 		t.Error("Not first")
@@ -47,7 +48,7 @@ func (t *OneSvg) AppendsShapeAsFirstElementInContent() {
 
 func (t *OneSvg) AppendsShapesLastToContent() {
 	t.Helper()
-	shape := &Arrow{}
+	shape := &dummy{}
 	t.Append(shape)
 	if t.Content[len(t.Content)-1] != shape {
 		t.Error("Not last")
@@ -56,9 +57,15 @@ func (t *OneSvg) AppendsShapesLastToContent() {
 
 func (t *OneSvg) PrependsShapeFirstToContent() {
 	t.Helper()
-	shape := &Arrow{}
+	shape := &dummy{}
 	t.Prepend(shape)
 	if t.Content[0] != shape {
 		t.Error("Not first")
 	}
+}
+
+type dummy struct{}
+
+func (d *dummy) WriteSvg(io.Writer) error {
+	return nil
 }

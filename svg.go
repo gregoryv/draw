@@ -1,4 +1,4 @@
-package shape
+package draw
 
 import (
 	"io"
@@ -6,29 +6,29 @@ import (
 
 type Svg struct {
 	width, height int
-	Content       []Shape
+	Content       []SvgWriter
 }
 
 func (shape *Svg) WriteSvg(out io.Writer) error {
-	w, err := newTagPrinter(out)
-	w.printf(`<svg
+	w, err := NewTagPrinter(out)
+	w.Printf(`<svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   width="%v" height="%v" font-family="Arial, Helvetica, sans-serif">`, shape.width, shape.height)
 
 	for _, s := range shape.Content {
-		w.print("\n")
+		w.Print("\n")
 		s.WriteSvg(w)
 	}
-	w.print("</svg>")
+	w.Print("</svg>")
 	return *err
 }
 
-func (svg *Svg) Append(shapes ...Shape) {
+func (svg *Svg) Append(shapes ...SvgWriter) {
 	svg.Content = append(svg.Content, shapes...)
 }
 
-func (svg *Svg) Prepend(shapes ...Shape) {
+func (svg *Svg) Prepend(shapes ...SvgWriter) {
 	svg.Content = append(shapes, svg.Content...)
 }
 
@@ -38,3 +38,7 @@ func (svg *Svg) Height() int { return svg.height }
 func (svg *Svg) SetWidth(w int)   { svg.width = w }
 func (svg *Svg) SetHeight(h int)  { svg.height = h }
 func (svg *Svg) SetSize(w, h int) { svg.SetWidth(w); svg.SetHeight(h) }
+
+type SvgWriter interface {
+	WriteSvg(io.Writer) error
+}

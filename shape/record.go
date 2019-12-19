@@ -6,6 +6,7 @@ import (
 	"io"
 	"reflect"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 )
 
@@ -40,11 +41,11 @@ func (r *Record) Direction() Direction { return LR }
 func (r *Record) SetClass(c string)    { r.class = c }
 
 func (r *Record) WriteSvg(out io.Writer) error {
-	w, err := newTagPrinter(out)
-	w.printf(
+	w, err := draw.NewTagPrinter(out)
+	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.X, r.Y, r.Width(), r.Height())
-	w.printf("\n")
+	w.Printf("\n")
 	var y = boxHeight(r.Font, r.Pad, 1) + r.Pad.Top
 	hasFields := len(r.Fields) != 0
 	if hasFields {
@@ -61,7 +62,7 @@ func (r *Record) WriteSvg(out io.Writer) error {
 			}
 			label.WriteSvg(w)
 			y += r.Font.LineHeight
-			w.printf("\n")
+			w.Printf("\n")
 		}
 	}
 	if len(r.Methods) != 0 {
@@ -81,7 +82,7 @@ func (r *Record) WriteSvg(out io.Writer) error {
 			}
 			label.WriteSvg(w)
 			y += r.Font.LineHeight
-			w.printf("\n")
+			w.Printf("\n")
 		}
 	}
 	r.title().WriteSvg(w)

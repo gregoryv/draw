@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 )
 
@@ -33,20 +34,20 @@ func (c *Actor) Direction() Direction  { return LR }
 func (c *Actor) SetClass(class string) { c.class = class }
 
 func (c *Actor) WriteSvg(out io.Writer) error {
-	w, err := newTagPrinter(out)
+	w, err := draw.NewTagPrinter(out)
 	x, y := c.Position()
 	r := c.rad()
 	d := r * 2
 	// head
-	w.printf(
+	w.Printf(
 		`<circle class="%s" cx="%v" cy="%v" r="%v" />`,
 		c.class, x+d, y+r, r,
 	)
-	w.print("\n")
+	w.Print("\n")
 	// body
-	w.printf(`<path class="%s" d="M%v,%v l 0,%v m -%v,-%v l %v,0 m -%v,%v l -%v,%v m %v,-%v l %v,%v Z" />`,
+	w.Printf(`<path class="%s" d="M%v,%v l 0,%v m -%v,-%v l %v,0 m -%v,%v l -%v,%v m %v,-%v l %v,%v Z" />`,
 		c.class, x+d, y+d, r*3, d, d, c.Width(), d, d, d, d, d, d, d, d)
-	w.print("\n")
+	w.Print("\n")
 	return *err
 }
 
