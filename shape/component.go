@@ -62,10 +62,8 @@ func (r *Component) WriteSvg(out io.Writer) error {
 
 func (r *Component) title() *Label {
 	return &Label{
-		pos: xy.Position{
-			r.X + r.Pad.Left + r.sbWidth/2,
-			r.Y + r.Pad.Top/2,
-		},
+		x:     r.X + r.Pad.Left + r.sbWidth/2,
+		y:     r.Y + r.Pad.Top/2,
 		Font:  r.Font,
 		Text:  r.Title,
 		class: "record-title",
