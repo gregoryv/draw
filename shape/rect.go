@@ -51,7 +51,7 @@ func (r *Rect) WriteSvg(out io.Writer) error {
 
 func (r *Rect) title() *Label {
 	return &Label{
-		Pos: xy.Position{
+		pos: xy.Position{
 			r.X + r.Pad.Left,
 			r.Y + r.Pad.Top/2,
 		},

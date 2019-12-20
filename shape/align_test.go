@@ -17,12 +17,12 @@ func TestAlignVertical(t *testing.T) {
 		{
 			aligner.VAlignCenter,
 			&Label{
-				Pos:  xy.Position{10, 10},
+				pos:  xy.Position{10, 10},
 				Text: "1234",
 				Font: DefaultFont,
 			},
 			&Label{
-				Pos:  xy.Position{50, 40},
+				pos:  xy.Position{50, 40},
 				Text: "12",
 				Font: DefaultFont,
 			},
@@ -31,12 +31,12 @@ func TestAlignVertical(t *testing.T) {
 		{
 			aligner.VAlignLeft,
 			&Label{
-				Pos:  xy.Position{10, 10},
+				pos:  xy.Position{10, 10},
 				Text: "1234",
 				Font: DefaultFont,
 			},
 			&Label{
-				Pos:  xy.Position{50, 40},
+				pos:  xy.Position{50, 40},
 				Text: "12",
 				Font: DefaultFont,
 			},
@@ -45,12 +45,12 @@ func TestAlignVertical(t *testing.T) {
 		{
 			aligner.VAlignRight,
 			&Label{
-				Pos:  xy.Position{10, 10},
+				pos:  xy.Position{10, 10},
 				Text: "1234",
 				Font: DefaultFont,
 			},
 			&Label{
-				Pos:  xy.Position{50, 40},
+				pos:  xy.Position{50, 40},
 				Text: "12",
 				Font: DefaultFont,
 			},
@@ -81,14 +81,14 @@ func TestAlignHorizontal(t *testing.T) {
 	}{
 		{
 			aligner.HAlignTop,
-			&Label{Pos: xy.Position{10, 10}},
-			&Label{Pos: xy.Position{50, 40}},
+			&Label{pos: xy.Position{10, 10}},
+			&Label{pos: xy.Position{50, 40}},
 			50, 10,
 		},
 		{
 			aligner.HAlignBottom,
-			&Label{Pos: xy.Position{10, 10}},
-			&Label{Pos: xy.Position{50, 40}},
+			&Label{pos: xy.Position{10, 10}},
+			&Label{pos: xy.Position{50, 40}},
 			50, 10,
 		},
 		{
@@ -119,7 +119,7 @@ func TestAlignHorizontal(t *testing.T) {
 			aligner.HAlignCenter,
 			NewLine(0, 10, 0, 20),
 			&Label{
-				Pos:  xy.Position{0, 20},
+				pos:  xy.Position{0, 20},
 				Font: Font{LineHeight: 10},
 			},
 			0, 20,
@@ -127,11 +127,11 @@ func TestAlignHorizontal(t *testing.T) {
 		{
 			aligner.HAlignCenter,
 			&Label{
-				Pos:  xy.Position{0, 20},
+				pos:  xy.Position{0, 20},
 				Font: Font{LineHeight: 10},
 			},
 			&Label{
-				Pos:  xy.Position{0, 20},
+				pos:  xy.Position{0, 20},
 				Font: Font{LineHeight: 6},
 			},
 			0, 28,

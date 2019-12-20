@@ -52,7 +52,7 @@ func (r *Record) WriteSvg(out io.Writer) error {
 		r.writeSeparator(w, r.Y+y)
 		for _, txt := range r.Fields {
 			label := &Label{
-				Pos: xy.Position{
+				pos: xy.Position{
 					r.X + r.Pad.Left,
 					r.Y + y,
 				},
@@ -72,7 +72,7 @@ func (r *Record) WriteSvg(out io.Writer) error {
 		r.writeSeparator(w, r.Y+y)
 		for _, txt := range r.Methods {
 			label := &Label{
-				Pos: xy.Position{
+				pos: xy.Position{
 					r.X + r.Pad.Left,
 					r.Y + y,
 				},
@@ -100,7 +100,7 @@ func (r *Record) writeSeparator(w io.Writer, y1 int) error {
 
 func (r *Record) title() *Label {
 	return &Label{
-		Pos: xy.Position{
+		pos: xy.Position{
 			r.X + r.Pad.Left,
 			r.Y + r.Pad.Top,
 		},

@@ -18,7 +18,7 @@ func NewLabel(text string) *Label {
 }
 
 type Label struct {
-	Pos   xy.Position
+	pos   xy.Position
 	Text  string
 	Font  Font
 	Pad   Padding
@@ -26,15 +26,15 @@ type Label struct {
 }
 
 func (l *Label) String() string {
-	return fmt.Sprintf("label %s at %v", l.Text, l.Pos)
+	return fmt.Sprintf("label %s at %v", l.Text, l.pos)
 }
 
 func (l *Label) Position() (int, int) {
-	return l.Pos.XY()
+	return l.pos.XY()
 }
 
-func (l *Label) SetX(x int) { l.Pos.X = x }
-func (l *Label) SetY(y int) { l.Pos.Y = y }
+func (l *Label) SetX(x int) { l.pos.X = x }
+func (l *Label) SetY(y int) { l.pos.Y = y }
 func (l *Label) Width() int {
 	return l.Font.TextWidth(l.Text)
 }
