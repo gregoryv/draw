@@ -19,7 +19,7 @@ func NewNote(text string) *Note {
 }
 
 type Note struct {
-	pos  xy.Position
+	x, y int
 	Text string
 
 	Font
@@ -28,12 +28,12 @@ type Note struct {
 }
 
 func (n *Note) String() string {
-	return fmt.Sprintf("Note at %v", n.pos)
+	return fmt.Sprintf("Note %v", n.Text)
 }
-func (note *Note) Position() (int, int) { return note.pos.XY() }
-func (note *Note) Direction() Direction { return LR }
-func (note *Note) SetX(x int)           { note.pos.X = x }
-func (note *Note) SetY(y int)           { note.pos.Y = y }
+func (n *Note) Position() (int, int) { return n.x, n.y }
+func (n *Note) Direction() Direction { return LR }
+func (n *Note) SetX(x int)           { n.x = x }
+func (n *Note) SetY(y int)           { n.y = y }
 
 func (n *Note) Width() int {
 	var width int
@@ -55,7 +55,7 @@ func (n *Note) Height() int {
 func (n *Note) SetClass(c string) { n.class = c }
 
 func (n *Note) WriteSvg(out io.Writer) error {
-	x, y := n.pos.XY()
+	x, y := n.Position()
 	w := n.Width()
 	h := n.Height()
 	flap := 10

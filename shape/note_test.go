@@ -10,7 +10,7 @@ import (
 func TestNote(t *testing.T) {
 	n := NewNote(`Multiline text is
 possible in notes`)
-	n.pos.Y = 20
+	n.SetY(20)
 	saveAsSvg(t, n, "testdata/note.svg")
 	testShape(t, n)
 
