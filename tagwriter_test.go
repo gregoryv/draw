@@ -3,6 +3,7 @@ package draw
 import (
 	"bytes"
 	"fmt"
+	"os"
 	"strings"
 	"testing"
 )
@@ -24,4 +25,13 @@ func TestTagWriter(t *testing.T) {
 	if strings.Index(buf.String(), " not ") > -1 {
 		t.Error(buf.String())
 	}
+}
+
+func ExampleNewTagWriter() {
+	w, err := NewTagWriter(os.Stdout)
+	w.Print("hello")
+	*err = fmt.Errorf("stop subsequent calls")
+	w.Printf("cruel %s", "world")
+	// output:
+	// hello
 }
