@@ -17,15 +17,15 @@ func NewActor() *Actor {
 }
 
 type Actor struct {
-	pos    xy.Position // top left
+	x, y   int // top left
 	height int
 	class  string
 }
 
 func (c *Actor) String() string        { return fmt.Sprintf("Actor") }
-func (c *Actor) Position() (int, int)  { return c.pos.XY() }
-func (c *Actor) SetX(x int)            { c.pos.X = x }
-func (c *Actor) SetY(y int)            { c.pos.Y = y }
+func (c *Actor) Position() (int, int)  { return c.x, c.y }
+func (c *Actor) SetX(x int)            { c.x = x }
+func (c *Actor) SetY(y int)            { c.y = y }
 func (c *Actor) Width() int            { return c.rad() * 4 }
 func (c *Actor) Height() int           { return c.height }
 func (c *Actor) SetHeight(h int)       { c.height = h }
