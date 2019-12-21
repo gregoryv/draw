@@ -10,10 +10,14 @@ import (
 )
 
 func NewArrow(x1, y1, x2, y2 int) *Arrow {
+	head := NewTriangle()
+	head.SetX(x2)
+	head.SetY(y2)
+	head.SetClass("arrow-head")
 	return &Arrow{
 		Start: xy.Position{x1, y1},
 		End:   xy.Position{x2, y2},
-		Head:  NewTriangle(x2, y2, "arrow-head"),
+		Head:  head,
 		class: "arrow",
 	}
 }

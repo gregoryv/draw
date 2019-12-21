@@ -13,7 +13,7 @@ func TestShapes(t *testing.T) {
 	shapes := []Shape{
 		NewComponent("a"),
 		NewRect("rect"),
-		NewTriangle(0, 0, ""),
+		NewTriangle(),
 		NewLabel("l"),
 		NewLine(1, 1, 7, 7),
 		NewExitDot(),

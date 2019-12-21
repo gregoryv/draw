@@ -7,11 +7,9 @@ import (
 	"github.com/gregoryv/draw"
 )
 
-func NewTriangle(x, y int, class string) *Triangle {
+func NewTriangle() *Triangle {
 	return &Triangle{
-		x:     x,
-		y:     y,
-		class: class,
+		class: "arrow-head",
 	}
 }
 
