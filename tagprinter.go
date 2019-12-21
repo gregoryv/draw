@@ -7,12 +7,9 @@ import (
 
 // NewTagPrinter returns a printer nexus.
 func NewTagWriter(w io.Writer) (*TagWriter, *error) {
-	tag := &TagWriter{w: w}
-	return tag, &tag.err
+	t := &TagWriter{w: w}
+	return t, &t.err
 }
-
-type printFunc func(...interface{})
-type printFfunc func(string, ...interface{})
 
 // TagPrinter is used to write out svg tags and if an error has
 // occured previously it's methods do nothing.
@@ -21,23 +18,23 @@ type TagWriter struct {
 	err error
 }
 
-func (ec *TagWriter) Printf(format string, args ...interface{}) {
-	if ec.err != nil {
+func (t *TagWriter) Printf(format string, args ...interface{}) {
+	if t.err != nil {
 		return
 	}
-	_, ec.err = fmt.Fprintf(ec.w, format, args...)
+	_, t.err = fmt.Fprintf(t.w, format, args...)
 }
 
-func (ec *TagWriter) Print(args ...interface{}) {
-	if ec.err != nil {
+func (t *TagWriter) Print(args ...interface{}) {
+	if t.err != nil {
 		return
 	}
-	_, ec.err = fmt.Fprint(ec.w, args...)
+	_, t.err = fmt.Fprint(t.w, args...)
 }
 
-func (ec *TagWriter) Write(b []byte) (int, error) {
-	if ec.err != nil {
-		return 0, ec.err
+func (t *TagWriter) Write(b []byte) (int, error) {
+	if t.err != nil {
+		return 0, t.err
 	}
-	return ec.w.Write(b)
+	return t.w.Write(b)
 }
