@@ -16,7 +16,7 @@ func NewDot() *Dot {
 }
 
 type Dot struct {
-	pos    xy.Position
+	x, y   int
 	Radius int
 	class  string
 }
@@ -26,11 +26,11 @@ func (c *Dot) String() string {
 }
 
 func (c *Dot) Position() (int, int) {
-	return c.pos.XY()
+	return c.x, c.y
 }
 
-func (c *Dot) SetX(x int) { c.pos.X = x }
-func (c *Dot) SetY(y int) { c.pos.Y = y }
+func (c *Dot) SetX(x int) { c.x = x }
+func (c *Dot) SetY(y int) { c.y = y }
 func (c *Dot) Width() int {
 	return c.Radius * 2
 }
