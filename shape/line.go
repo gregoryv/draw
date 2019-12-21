@@ -22,49 +22,49 @@ type Line struct {
 	class string
 }
 
-func (line *Line) String() string {
-	return fmt.Sprintf("Line from %v to %v", line.Start, line.End)
+func (l *Line) String() string {
+	return fmt.Sprintf("Line from %v to %v", l.Start, l.End)
 }
 
-func (line *Line) WriteSvg(w io.Writer) error {
+func (l *Line) WriteSvg(w io.Writer) error {
 	_, err := fmt.Fprintf(w,
 		`<line class="%s" x1="%v" y1="%v" x2="%v" y2="%v"/>`,
-		line.class,
-		line.Start.X, line.Start.Y,
-		line.End.X, line.End.Y,
+		l.class,
+		l.Start.X, l.Start.Y,
+		l.End.X, l.End.Y,
 	)
 	return err
 }
 
-func (line *Line) Position() (int, int) {
-	return line.Start.XY()
+func (l *Line) Position() (int, int) {
+	return l.Start.XY()
 }
 
-func (line *Line) Width() int {
-	return intAbs(line.Start.X - line.End.X)
+func (l *Line) Width() int {
+	return intAbs(l.Start.X - l.End.X)
 }
 
-func (line *Line) Height() int {
-	return intAbs(line.Start.Y - line.End.Y)
+func (l *Line) Height() int {
+	return intAbs(l.Start.Y - l.End.Y)
 }
 
-func (line *Line) SetX(x int) {
-	diff := line.Start.X - x
-	line.Start.X = x
-	line.End.X = line.End.X - diff
+func (l *Line) SetX(x int) {
+	diff := l.Start.X - x
+	l.Start.X = x
+	l.End.X = l.End.X - diff
 }
 
-func (line *Line) SetY(y int) {
-	diff := line.Start.Y - y
-	line.Start.Y = y
-	line.End.Y = line.End.Y - diff
+func (l *Line) SetY(y int) {
+	diff := l.Start.Y - y
+	l.Start.Y = y
+	l.End.Y = l.End.Y - diff
 }
 
-func (line *Line) Direction() Direction {
-	if line.Start.X <= line.End.X {
+func (l *Line) Direction() Direction {
+	if l.Start.X <= l.End.X {
 		return LR
 	}
 	return RL
 }
 
-func (line *Line) SetClass(c string) { line.class = c }
+func (l *Line) SetClass(c string) { l.class = c }

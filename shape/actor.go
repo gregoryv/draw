@@ -22,35 +22,35 @@ type Actor struct {
 	class  string
 }
 
-func (c *Actor) String() string        { return fmt.Sprintf("Actor") }
-func (c *Actor) Position() (int, int)  { return c.x, c.y }
-func (c *Actor) SetX(x int)            { c.x = x }
-func (c *Actor) SetY(y int)            { c.y = y }
-func (c *Actor) Width() int            { return c.rad() * 4 }
-func (c *Actor) Height() int           { return c.height }
-func (c *Actor) SetHeight(h int)       { c.height = h }
-func (c *Actor) rad() int              { return c.height / 6 }
-func (c *Actor) Direction() Direction  { return LR }
-func (c *Actor) SetClass(class string) { c.class = class }
+func (a *Actor) String() string        { return fmt.Sprintf("Actor") }
+func (a *Actor) Position() (int, int)  { return a.x, a.y }
+func (a *Actor) SetX(x int)            { a.x = x }
+func (a *Actor) SetY(y int)            { a.y = y }
+func (a *Actor) Width() int            { return a.rad() * 4 }
+func (a *Actor) Height() int           { return a.height }
+func (a *Actor) SetHeight(h int)       { a.height = h }
+func (a *Actor) rad() int              { return a.height / 6 }
+func (a *Actor) Direction() Direction  { return LR }
+func (a *Actor) SetClass(class string) { a.class = class }
 
-func (c *Actor) WriteSvg(out io.Writer) error {
+func (a *Actor) WriteSvg(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
-	x, y := c.Position()
-	r := c.rad()
+	x, y := a.Position()
+	r := a.rad()
 	d := r * 2
 	// head
 	w.Printf(
 		`<circle class="%s" cx="%v" cy="%v" r="%v" />`,
-		c.class, x+d, y+r, r,
+		a.class, x+d, y+r, r,
 	)
 	w.Print("\n")
 	// body
 	w.Printf(`<path class="%s" d="M%v,%v l 0,%v m -%v,-%v l %v,0 m -%v,%v l -%v,%v m %v,-%v l %v,%v Z" />`,
-		c.class, x+d, y+d, r*3, d, d, c.Width(), d, d, d, d, d, d, d, d)
+		a.class, x+d, y+d, r*3, d, d, a.Width(), d, d, d, d, d, d, d, d)
 	w.Print("\n")
 	return *err
 }
 
-func (c *Actor) Edge(start xy.Position) xy.Position {
-	return boxEdge(start, c)
+func (a *Actor) Edge(start xy.Position) xy.Position {
+	return boxEdge(start, a)
 }

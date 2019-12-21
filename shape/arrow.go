@@ -34,25 +34,25 @@ func (a *Arrow) String() string {
 	return fmt.Sprintf("Arrow from %v to %v", a.Start, a.End)
 }
 
-func (arrow *Arrow) WriteSvg(out io.Writer) error {
+func (a *Arrow) WriteSvg(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
-	x1, y1 := arrow.Start.XY()
-	x2, y2 := arrow.End.XY()
-	w.Printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class, x1, y1, x2, y2)
+	x1, y1 := a.Start.XY()
+	x2, y2 := a.End.XY()
+	w.Printf(`<path class="%s" d="M%v,%v L%v,%v" />`, a.class, x1, y1, x2, y2)
 	w.Print("\n")
-	if arrow.Tail != nil {
-		w.Printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x1, y1)
-		alignTail(arrow.Tail, x1, y1)
-		arrow.Tail.SetClass(arrow.class + "-tail")
-		arrow.Tail.WriteSvg(out)
+	if a.Tail != nil {
+		w.Printf(`<g transform="rotate(%v %v %v)">`, a.angle(), x1, y1)
+		alignTail(a.Tail, x1, y1)
+		a.Tail.SetClass(a.class + "-tail")
+		a.Tail.WriteSvg(out)
 		w.Print("</g>\n")
 	}
-	if arrow.Head != nil {
-		w.Printf(`<g transform="rotate(%v %v %v)">`, arrow.angle(), x2, y2)
-		arrow.Head.SetX(arrow.End.X)
-		arrow.Head.SetY(arrow.End.Y)
-		arrow.Head.SetClass(arrow.class + "-head")
-		arrow.Head.WriteSvg(out)
+	if a.Head != nil {
+		w.Printf(`<g transform="rotate(%v %v %v)">`, a.angle(), x2, y2)
+		a.Head.SetX(a.End.X)
+		a.Head.SetY(a.End.Y)
+		a.Head.SetClass(a.class + "-head")
+		a.Head.WriteSvg(out)
 		w.Print("</g>\n")
 	}
 	return *err
@@ -75,10 +75,10 @@ func (arrow *Arrow) absAngle() float64 {
 
 // angle returns degrees the head of an arrow should rotate depending
 // on direction
-func (arrow *Arrow) angle() int {
+func (a *Arrow) angle() int {
 	var (
-		start = arrow.Start
-		end   = arrow.End
+		start = a.Start
+		end   = a.End
 		// straight arrows
 		right = start.LeftOf(end) && start.Y == end.Y
 		left  = start.RightOf(end) && start.Y == end.Y
@@ -93,22 +93,22 @@ func (arrow *Arrow) angle() int {
 		return 90
 	case up:
 		return -90
-	case arrow.DirQ1():
+	case a.DirQ1():
 		a := float64(end.Y - start.Y)
 		b := float64(end.X - start.X)
 		A := math.Atan(a / b)
 		return radians2degrees(A)
-	case arrow.DirQ2():
+	case a.DirQ2():
 		a := float64(end.Y - start.Y)
 		b := float64(start.X - end.X)
 		A := math.Atan(a / b)
 		return 180 - radians2degrees(A)
-	case arrow.DirQ3():
+	case a.DirQ3():
 		a := float64(start.Y - end.Y)
 		b := float64(start.X - end.X)
 		A := math.Atan(a / b)
 		return radians2degrees(A) + 180
-	case arrow.DirQ4():
+	case a.DirQ4():
 		a := float64(start.Y - end.Y)
 		b := float64(end.X - start.X)
 		A := math.Atan(a / b)
@@ -145,46 +145,46 @@ func (a *Arrow) DirQ4() bool {
 	return start.LeftOf(end) && end.Above(start)
 }
 
-func (arrow *Arrow) endpoints() (xy.Position, xy.Position) {
-	return arrow.Start, arrow.End
+func (a *Arrow) endpoints() (xy.Position, xy.Position) {
+	return a.Start, a.End
 }
 
 func radians2degrees(A float64) int {
 	return int(A * 180 / math.Pi)
 }
 
-func (arrow *Arrow) Height() int {
-	return intAbs(arrow.Start.Y - arrow.End.Y)
+func (a *Arrow) Height() int {
+	return intAbs(a.Start.Y - a.End.Y)
 }
 
-func (arrow *Arrow) Width() int {
-	return intAbs(arrow.Start.X - arrow.End.X)
+func (a *Arrow) Width() int {
+	return intAbs(a.Start.X - a.End.X)
 }
 
-func (arrow *Arrow) Position() (int, int) {
-	return arrow.Start.XY()
+func (a *Arrow) Position() (int, int) {
+	return a.Start.XY()
 }
 
-func (arrow *Arrow) SetX(x int) {
-	diff := arrow.Start.X - x
-	arrow.Start.X = x
-	arrow.End.X = arrow.End.X - diff // Set X2 so the entire arrow moves
+func (a *Arrow) SetX(x int) {
+	diff := a.Start.X - x
+	a.Start.X = x
+	a.End.X = a.End.X - diff // Set X2 so the entire arrow moves
 }
 
-func (arrow *Arrow) SetY(y int) {
-	diff := arrow.Start.Y - y
-	arrow.Start.Y = y
-	arrow.End.Y = arrow.End.Y - diff // Set Y2 so the entire arrow moves
+func (a *Arrow) SetY(y int) {
+	diff := a.Start.Y - y
+	a.Start.Y = y
+	a.End.Y = a.End.Y - diff // Set Y2 so the entire arrow moves
 }
 
-func (arrow *Arrow) Direction() Direction {
-	if arrow.Start.LeftOf(arrow.End) {
+func (a *Arrow) Direction() Direction {
+	if a.Start.LeftOf(a.End) {
 		return LR
 	}
 	return RL
 }
 
-func (arrow *Arrow) SetClass(c string) { arrow.class = c }
+func (a *Arrow) SetClass(c string) { a.class = c }
 
 func NewArrowBetween(a, b Shape) *Arrow {
 	ax, ay := a.Position()

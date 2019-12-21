@@ -32,57 +32,57 @@ type Component struct {
 	sbHeight int
 }
 
-func (r *Component) String() string {
-	return fmt.Sprintf("R %q", r.Title)
+func (c *Component) String() string {
+	return fmt.Sprintf("R %q", c.Title)
 }
 
-func (r *Component) Position() (int, int) { return r.X, r.Y }
-func (r *Component) SetX(x int)           { r.X = x }
-func (r *Component) SetY(y int)           { r.Y = y }
-func (r *Component) Direction() Direction { return LR }
-func (r *Component) SetClass(c string)    { r.class = c }
+func (c *Component) Position() (int, int) { return c.X, c.Y }
+func (c *Component) SetX(x int)           { c.X = x }
+func (c *Component) SetY(y int)           { c.Y = y }
+func (c *Component) Direction() Direction { return LR }
+func (c *Component) SetClass(v string)    { c.class = v }
 
-func (r *Component) WriteSvg(out io.Writer) error {
+func (c *Component) WriteSvg(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
-		r.class, r.X, r.Y, r.Width(), r.Height())
+		c.class, c.X, c.Y, c.Width(), c.Height())
 	w.Printf("\n")
 	// small boxes
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
-		r.class, r.X-r.sbWidth/2, r.Y+r.sbHeight, r.sbWidth, r.sbHeight)
+		c.class, c.X-c.sbWidth/2, c.Y+c.sbHeight, c.sbWidth, c.sbHeight)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
-		r.class, r.X-r.sbWidth/2, r.Y+r.Height()-r.sbHeight*2, r.sbWidth, r.sbHeight)
+		c.class, c.X-c.sbWidth/2, c.Y+c.Height()-c.sbHeight*2, c.sbWidth, c.sbHeight)
 
-	r.title().WriteSvg(w)
+	c.title().WriteSvg(w)
 	return *err
 }
 
-func (r *Component) title() *Label {
+func (c *Component) title() *Label {
 	return &Label{
-		x:     r.X + r.Pad.Left + r.sbWidth/2,
-		y:     r.Y + r.Pad.Top/2,
-		Font:  r.Font,
-		Text:  r.Title,
+		x:     c.X + c.Pad.Left + c.sbWidth/2,
+		y:     c.Y + c.Pad.Top/2,
+		Font:  c.Font,
+		Text:  c.Title,
 		class: "record-title",
 	}
 }
 
-func (r *Component) SetFont(f Font)         { r.Font = f }
-func (r *Component) SetTextPad(pad Padding) { r.Pad = pad }
+func (c *Component) SetFont(f Font)         { c.Font = f }
+func (c *Component) SetTextPad(pad Padding) { c.Pad = pad }
 
-func (r *Component) Height() int {
-	return boxHeight(r.Font, r.Pad, 1)
+func (c *Component) Height() int {
+	return boxHeight(c.Font, c.Pad, 1)
 }
 
-func (r *Component) Width() int {
-	return boxWidth(r.Font, r.Pad, r.Title) + r.sbWidth/2
+func (c *Component) Width() int {
+	return boxWidth(c.Font, c.Pad, c.Title) + c.sbWidth/2
 }
 
 // Edge returns intersecting position of a line starting at start and
 // pointing to the components center.
-func (r *Component) Edge(start xy.Position) xy.Position {
-	return boxEdge(start, r)
+func (c *Component) Edge(start xy.Position) xy.Position {
+	return boxEdge(start, c)
 }

@@ -21,39 +21,39 @@ type ExitDot struct {
 	class  string
 }
 
-func (c *ExitDot) String() string {
+func (e *ExitDot) String() string {
 	return fmt.Sprintf("ExitDot")
 }
 
-func (c *ExitDot) Position() (int, int) { return c.x, c.y }
+func (e *ExitDot) Position() (int, int) { return e.x, e.y }
 
-func (c *ExitDot) SetX(x int) { c.x = x }
-func (c *ExitDot) SetY(y int) { c.y = y }
-func (c *ExitDot) Width() int {
+func (e *ExitDot) SetX(x int) { e.x = x }
+func (e *ExitDot) SetY(y int) { e.y = y }
+func (e *ExitDot) Width() int {
 	// If the style shanges the width will be slightly off, no biggy.
-	return c.Radius*2 + 4
+	return e.Radius*2 + 4
 }
-func (c *ExitDot) Height() int           { return c.Width() }
-func (c *ExitDot) Direction() Direction  { return LR }
-func (c *ExitDot) SetClass(class string) { c.class = class }
+func (e *ExitDot) Height() int           { return e.Width() }
+func (e *ExitDot) Direction() Direction  { return LR }
+func (e *ExitDot) SetClass(class string) { e.class = class }
 
-func (c *ExitDot) WriteSvg(out io.Writer) error {
+func (e *ExitDot) WriteSvg(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
-	x, y := c.Position()
-	x += c.Radius
-	y += c.Radius
+	x, y := e.Position()
+	x += e.Radius
+	y += e.Radius
 	w.Printf(
 		`<circle class="%s" cx="%v" cy="%v" r="%v" />\n`,
-		c.class, x+2, y+2, c.Radius,
+		e.class, x+2, y+2, e.Radius,
 	)
 	w.Printf(
 		`<circle class="%s-dot" cx="%v" cy="%v" r="%v" />\n`,
-		c.class, x+2, y+2, c.Radius-4,
+		e.class, x+2, y+2, e.Radius-4,
 	)
 
 	return *err
 }
 
-func (c *ExitDot) Edge(start xy.Position) xy.Position {
-	return boxEdge(start, c)
+func (e *ExitDot) Edge(start xy.Position) xy.Position {
+	return boxEdge(start, e)
 }

@@ -7,12 +7,12 @@ import (
 	"io/ioutil"
 )
 
-func NewStyle(dest io.Writer) Style {
+func NewStyle(w io.Writer) Style {
 	return Style{
 		Font:    DefaultFont,
 		TextPad: DefaultTextPad,
 		Pad:     DefaultPad,
-		dest:    dest,
+		dest:    w,
 	}
 }
 
@@ -84,35 +84,35 @@ var ClassAttributes = map[string]string{
 
 // Write adds a style attribute based on class. Limited to 1 class
 // only and assumes the entire classname attribute is found.
-func (style *Style) Write(p []byte) (int, error) {
-	style.written = 0
-	class, i := style.scanClass(p)
+func (s *Style) Write(p []byte) (int, error) {
+	s.written = 0
+	class, i := s.scanClass(p)
 	if i == -1 {
-		return style.dest.Write(p)
+		return s.dest.Write(p)
 	}
-	write := style.write
-	s, found := style.styles[string(class)]
+	write := s.write
+	st, found := s.styles[string(class)]
 	if !found {
-		s, found = ClassAttributes[string(class)]
+		st, found = ClassAttributes[string(class)]
 	}
 	if found {
-		write([]byte(s))
+		write([]byte(st))
 	} else {
 		write([]byte(`class="`))
 		write(class)
 		write([]byte(`"`))
 	}
 	write(p[i:]) // the rest
-	return style.written, style.err
+	return s.written, s.err
 }
 
-func (style *Style) write(s []byte) {
-	if style.err != nil {
+func (s *Style) write(b []byte) {
+	if s.err != nil {
 		return
 	}
-	n, err := style.dest.Write(s)
-	style.written += n
-	style.err = err
+	n, err := s.dest.Write(b)
+	s.written += n
+	s.err = err
 }
 
 var field = []byte(`class="`)
@@ -120,12 +120,12 @@ var field = []byte(`class="`)
 // scanClass returns name of class and position after the attribute.
 // position is -1 if no class was found. Everything up to the class,
 // except the class attribute is written to the underlyinge writer.
-func (style *Style) scanClass(p []byte) ([]byte, int) {
+func (s *Style) scanClass(p []byte) ([]byte, int) {
 	i := bytes.Index(p, field)
 	if i == -1 {
 		return []byte{}, -1
 	}
-	style.write(p[:i])
+	s.write(p[:i])
 	var (
 		class = make([]byte, 0)
 		j     int
@@ -147,9 +147,9 @@ func (style *Style) scanClass(p []byte) ([]byte, int) {
 	return class, i + j
 }
 
-func (s *Style) SetOutput(out io.Writer) {
-	if out == nil {
-		out = ioutil.Discard
+func (s *Style) SetOutput(w io.Writer) {
+	if w == nil {
+		w = ioutil.Discard
 	}
-	s.dest = out
+	s.dest = w
 }

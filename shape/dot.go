@@ -21,35 +21,35 @@ type Dot struct {
 	class  string
 }
 
-func (c *Dot) String() string {
+func (d *Dot) String() string {
 	return fmt.Sprintf("Dot")
 }
 
-func (c *Dot) Position() (int, int) {
-	return c.x, c.y
+func (d *Dot) Position() (int, int) {
+	return d.x, d.y
 }
 
-func (c *Dot) SetX(x int) { c.x = x }
-func (c *Dot) SetY(y int) { c.y = y }
-func (c *Dot) Width() int {
-	return c.Radius * 2
+func (d *Dot) SetX(x int) { d.x = x }
+func (d *Dot) SetY(y int) { d.y = y }
+func (d *Dot) Width() int {
+	return d.Radius * 2
 }
-func (c *Dot) Height() int           { return c.Width() }
-func (c *Dot) Direction() Direction  { return LR }
-func (c *Dot) SetClass(class string) { c.class = class }
+func (d *Dot) Height() int           { return d.Width() }
+func (d *Dot) Direction() Direction  { return LR }
+func (d *Dot) SetClass(class string) { d.class = class }
 
-func (c *Dot) WriteSvg(out io.Writer) error {
+func (d *Dot) WriteSvg(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
-	x, y := c.Position()
-	x += c.Radius
-	y += c.Radius
+	x, y := d.Position()
+	x += d.Radius
+	y += d.Radius
 	w.Printf(
 		`<circle class="%s" cx="%v" cy="%v" r="%v" />\n`,
-		c.class, x, y, c.Radius,
+		d.class, x, y, d.Radius,
 	)
 	return *err
 }
 
-func (c *Dot) Edge(start xy.Position) xy.Position {
-	return boxEdge(start, c)
+func (d *Dot) Edge(start xy.Position) xy.Position {
+	return boxEdge(start, d)
 }

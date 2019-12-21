@@ -16,18 +16,18 @@ type Adjuster struct {
 }
 
 // At sets the x, y coordinates of the wrapped shape
-func (adjust *Adjuster) At(x, y int) {
-	adjust.shapes[0].SetX(x)
-	adjust.shapes[0].SetY(y)
+func (a *Adjuster) At(x, y int) {
+	a.shapes[0].SetX(x)
+	a.shapes[0].SetY(y)
 }
 
 // RightOf places the wrapped shape to the right of o. Optional space
 // to override default.
-func (adjust *Adjuster) RightOf(o Shape, space ...int) {
+func (a *Adjuster) RightOf(o Shape, space ...int) {
 	next := o
-	for _, s := range adjust.shapes {
+	for _, s := range a.shapes {
 		x, y := next.Position()
-		s.SetX(x + next.Width() + adjust.space(space))
+		s.SetX(x + next.Width() + a.space(space))
 		s.SetY(y)
 		next = s
 	}
@@ -35,11 +35,11 @@ func (adjust *Adjuster) RightOf(o Shape, space ...int) {
 
 // LeftOf places the wrapped shape to the left of o. Optional space
 // to override default.
-func (adjust *Adjuster) LeftOf(o Shape, space ...int) {
+func (a *Adjuster) LeftOf(o Shape, space ...int) {
 	next := o
-	for _, s := range adjust.shapes {
+	for _, s := range a.shapes {
 		x, y := next.Position()
-		s.SetX(x - (next.Width() + adjust.space(space)))
+		s.SetX(x - (next.Width() + a.space(space)))
 		s.SetY(y)
 		next = s
 	}
@@ -47,11 +47,11 @@ func (adjust *Adjuster) LeftOf(o Shape, space ...int) {
 
 // Below places the wrapped shape below o. Optional space to override
 // default.
-func (adjust *Adjuster) Below(o Shape, space ...int) {
+func (a *Adjuster) Below(o Shape, space ...int) {
 	next := o
-	for _, s := range adjust.shapes {
+	for _, s := range a.shapes {
 		x, y := next.Position()
-		s.SetY(y + next.Height() + adjust.space(space))
+		s.SetY(y + next.Height() + a.space(space))
 		s.SetX(x)
 		next = s
 	}
@@ -59,19 +59,19 @@ func (adjust *Adjuster) Below(o Shape, space ...int) {
 
 // Above places the wrapped shape above o. Optional space to override
 // default.
-func (adjust *Adjuster) Above(o Shape, space ...int) {
+func (a *Adjuster) Above(o Shape, space ...int) {
 	next := o
-	for _, s := range adjust.shapes {
+	for _, s := range a.shapes {
 		x, y := next.Position()
-		s.SetY(y - (next.Height() + adjust.space(space)))
+		s.SetY(y - (next.Height() + a.space(space)))
 		s.SetX(x)
 		next = s
 	}
 }
 
-func (adjust *Adjuster) space(space []int) int {
+func (a *Adjuster) space(space []int) int {
 	if len(space) == 0 {
-		return adjust.defaultSpace
+		return a.defaultSpace
 	}
 	return space[0]
 }
