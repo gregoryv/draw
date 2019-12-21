@@ -16,7 +16,7 @@ func NewExitDot() *ExitDot {
 }
 
 type ExitDot struct {
-	pos    xy.Position
+	x, y   int
 	Radius int
 	class  string
 }
@@ -25,12 +25,10 @@ func (c *ExitDot) String() string {
 	return fmt.Sprintf("ExitDot")
 }
 
-func (c *ExitDot) Position() (int, int) {
-	return c.pos.XY()
-}
+func (c *ExitDot) Position() (int, int) { return c.x, c.y }
 
-func (c *ExitDot) SetX(x int) { c.pos.X = x }
-func (c *ExitDot) SetY(y int) { c.pos.Y = y }
+func (c *ExitDot) SetX(x int) { c.x = x }
+func (c *ExitDot) SetY(y int) { c.y = y }
 func (c *ExitDot) Width() int {
 	// If the style shanges the width will be slightly off, no biggy.
 	return c.Radius*2 + 4
