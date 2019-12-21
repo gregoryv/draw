@@ -25,19 +25,19 @@ func NewDecision() *Diamond {
 }
 
 type Diamond struct {
-	pos    xy.Position
+	x, y   int
 	width  int
 	height int
 	class  string
 }
 
 func (d *Diamond) String() string {
-	return fmt.Sprintf("Diamond at %v", d.pos)
+	return fmt.Sprintf("Diamond at %v,%v", d.x, d.y)
 }
 
-func (d *Diamond) Position() (int, int) { return d.pos.XY() }
-func (d *Diamond) SetX(x int)           { d.pos.X = x }
-func (d *Diamond) SetY(y int)           { d.pos.Y = y - d.height/2 }
+func (d *Diamond) Position() (int, int) { return d.x, d.y }
+func (d *Diamond) SetX(x int)           { d.x = x }
+func (d *Diamond) SetY(y int)           { d.y = y - d.height/2 }
 func (d *Diamond) Width() int           { return d.width }
 func (d *Diamond) Height() int          { return d.height }
 func (d *Diamond) Direction() Direction { return LR }
@@ -45,7 +45,7 @@ func (d *Diamond) SetClass(c string)    { d.class = c }
 
 func (d *Diamond) WriteSvg(out io.Writer) error {
 	w, err := draw.NewTagPrinter(out)
-	x, y := d.pos.XY()
+	x, y := d.Position()
 	y += d.height / 2
 	w2 := d.width / 2
 	h2 := d.height / 2
