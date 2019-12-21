@@ -28,30 +28,29 @@ type Diagram struct {
 
 // Place adds the shape to the diagram returning an adjuster for
 // positioning.
-func (diagram *Diagram) Place(s ...shape.Shape) *shape.Adjuster {
+func (d *Diagram) Place(s ...shape.Shape) *shape.Adjuster {
 	for _, s := range s {
-		diagram.applyStyle(s)
-		diagram.Append(s)
+		d.applyStyle(s)
+		d.Append(s)
 	}
 	return shape.NewAdjuster(s...)
 }
 
 // PlaceGrid place all the shapes into a grid starting at X,Y
 // position. Row height is adapted to heighest element.
-func (diagram *Diagram) PlaceGrid(cols, X, Y int, s ...shape.Shape) {
+func (d *Diagram) PlaceGrid(cols, X, Y int, s ...shape.Shape) {
 	row := make([]shape.Shape, cols)
 	var x, y int
 	var h shape.Shape
 	for i, s := range s {
 		switch {
 		case i == 0:
-			diagram.Place(s).At(X, Y)
+			d.Place(s).At(X, Y)
 		case y == 0:
-			diagram.Place(s).RightOf(row[x-1])
-			//			diagram.HAlignCenter(row[x-1], s)
+			d.Place(s).RightOf(row[x-1])
 		default:
-			diagram.Place(s).Below(h)
-			diagram.VAlignCenter(row[x], s)
+			d.Place(s).Below(h)
+			d.VAlignCenter(row[x], s)
 		}
 		row[x] = s
 		x++
@@ -76,30 +75,31 @@ func highest(s ...shape.Shape) shape.Shape {
 }
 
 // LinkAll places arrows between each shape, s0->s1->...->sn
-func (diagram *Diagram) LinkAll(s ...shape.Shape) {
+func (d *Diagram) LinkAll(s ...shape.Shape) {
 	for i, next := range s[1:] {
-		diagram.Place(shape.NewArrowBetween(s[i], next))
+		d.Place(shape.NewArrowBetween(s[i], next))
 	}
 }
 
-// Link places an arrow with a optional label above it between the two shapes.
-func (diagram *Diagram) Link(from, to shape.Shape, txt ...string) *shape.Arrow {
+// Link places an arrow with a optional label above it between the two
+// shapes.
+func (d *Diagram) Link(from, to shape.Shape, txt ...string) *shape.Arrow {
 	lnk := shape.NewArrowBetween(from, to)
-	diagram.Place(lnk)
+	d.Place(lnk)
 	if len(txt) > 0 {
 		label := shape.NewLabel(txt[0])
-		diagram.Place(label).Above(lnk, 20)
-		diagram.VAlignCenter(lnk, label)
+		d.Place(label).Above(lnk, 20)
+		d.VAlignCenter(lnk, label)
 	}
 	return lnk
 }
 
-func (diagram *Diagram) applyStyle(s interface{}) {
+func (d *Diagram) applyStyle(s interface{}) {
 	if s, ok := s.(shape.HasFont); ok {
-		s.SetFont(diagram.Font)
+		s.SetFont(d.Font)
 	}
 	if s, ok := s.(shape.HasTextPad); ok {
-		s.SetTextPad(diagram.TextPad)
+		s.SetTextPad(d.TextPad)
 	}
 }
 
@@ -127,8 +127,8 @@ func (d *Diagram) WriteSvg(w io.Writer) error {
 
 // AdaptSize adapts the diagram size to the shapes inside it so all
 // are visible. Returns the new width and height
-func (diagram *Diagram) AdaptSize() (int, int) {
-	for _, s := range diagram.Content {
+func (d *Diagram) AdaptSize() (int, int) {
+	for _, s := range d.Content {
 		s, ok := s.(shape.Shape)
 		if !ok {
 			continue
@@ -143,15 +143,15 @@ func (diagram *Diagram) AdaptSize() (int, int) {
 			y = min(s.Start.Y, s.End.Y)
 		}
 		w := x + s.Width()
-		if w > diagram.Width() {
-			diagram.SetWidth(w)
+		if w > d.Width() {
+			d.SetWidth(w)
 		}
 		h := y + s.Height()
-		if h > diagram.Height() {
-			diagram.SetHeight(h)
+		if h > d.Height() {
+			d.SetHeight(h)
 		}
 	}
-	return diagram.Width(), diagram.Height()
+	return d.Width(), d.Height()
 }
 
 func min(a, b int) int {
