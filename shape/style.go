@@ -59,6 +59,7 @@ var ClassAttributes = map[string]string{
 	"aggregate-arrow-head":  `stroke="black" fill="#ffffff"`,
 	"aggregate-arrow-tail":  `stroke="black" fill="#ffffff"`,
 	"line":                  `stroke="black"`,
+	"triangle":              `stroke="black"`,
 	"column-line":           `stroke="#d3d3d3"`,
 	"record":                `stroke="#d3d3d3" fill="#ffffff"`,
 	"record-line":           `stroke="#d3d3d3"`,

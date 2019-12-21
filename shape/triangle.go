@@ -9,7 +9,7 @@ import (
 
 func NewTriangle() *Triangle {
 	return &Triangle{
-		class: "arrow-head",
+		class: "triangle",
 	}
 }
 
