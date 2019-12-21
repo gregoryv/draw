@@ -1,4 +1,7 @@
-// Package draw provides svg writing features
+/*
+Package draw provides svg writing features.
+
+*/
 package draw
 
 import (
@@ -19,35 +22,35 @@ type Svg struct {
 	Content       []SvgWriter
 }
 
-func (shape *Svg) WriteSvg(out io.Writer) error {
+func (s *Svg) WriteSvg(out io.Writer) error {
 	w, err := NewTagWriter(out)
 	w.Printf(`<svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="%v" height="%v" font-family="Arial, Helvetica, sans-serif">`, shape.width, shape.height)
+  width="%v" height="%v" font-family="Arial, Helvetica, sans-serif">`, s.width, s.height)
 
-	for _, s := range shape.Content {
+	for _, c := range s.Content {
 		w.Print("\n")
-		s.WriteSvg(w)
+		c.WriteSvg(w)
 	}
 	w.Print("</svg>")
 	return *err
 }
 
-func (svg *Svg) Append(shapes ...SvgWriter) {
-	svg.Content = append(svg.Content, shapes...)
+func (s *Svg) Append(w ...SvgWriter) {
+	s.Content = append(s.Content, w...)
 }
 
-func (svg *Svg) Prepend(shapes ...SvgWriter) {
-	svg.Content = append(shapes, svg.Content...)
+func (s *Svg) Prepend(w ...SvgWriter) {
+	s.Content = append(w, s.Content...)
 }
 
-func (svg *Svg) Width() int  { return svg.width }
-func (svg *Svg) Height() int { return svg.height }
+func (s *Svg) Width() int  { return s.width }
+func (s *Svg) Height() int { return s.height }
 
-func (svg *Svg) SetWidth(w int)   { svg.width = w }
-func (svg *Svg) SetHeight(h int)  { svg.height = h }
-func (svg *Svg) SetSize(w, h int) { svg.SetWidth(w); svg.SetHeight(h) }
+func (s *Svg) SetWidth(w int)   { s.width = w }
+func (s *Svg) SetHeight(h int)  { s.height = h }
+func (s *Svg) SetSize(w, h int) { s.SetWidth(w); s.SetHeight(h) }
 
 type SvgWriter interface {
 	WriteSvg(io.Writer) error
