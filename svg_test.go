@@ -3,10 +3,21 @@ package draw
 import (
 	"bytes"
 	"io"
+	"os"
 	"testing"
 
 	"github.com/gregoryv/asserter"
 )
+
+func ExampleNewSvg() {
+	s := NewSvg()
+	s.WriteSvg(os.Stdout)
+	// output:
+	// <svg
+	//   xmlns="http://www.w3.org/2000/svg"
+	//   xmlns:xlink="http://www.w3.org/1999/xlink"
+	//   width="100" height="100" font-family="Arial, Helvetica, sans-serif"></svg>
+}
 
 func TestSvg_SetSize(t *testing.T) {
 	s := &Svg{}
