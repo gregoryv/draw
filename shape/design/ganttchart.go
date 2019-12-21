@@ -24,6 +24,7 @@ func NewGanttChart(days int, start ...time.Time) *GanttChart {
 		tasks:   make([]*Task, 0),
 		padLeft: 16,
 		padTop:  10,
+		Mark:    time.Now(),
 	}
 	if len(start) > 0 {
 		d.start = start[0]
@@ -38,6 +39,16 @@ type GanttChart struct {
 	tasks []*Task
 
 	padLeft, padTop int
+
+	// Set a marker at this date.
+	Mark time.Time
+}
+
+// isToday returns true if time.Now matches start + ndays
+func (d *GanttChart) isToday(ndays int) bool {
+	t := d.start.AddDate(0, 0, ndays)
+	return t.Year() == d.Mark.Year() &&
+		t.YearDay() == d.Mark.YearDay()
 }
 
 // Add new task. Default color is green.
@@ -100,6 +111,11 @@ func (d *GanttChart) WriteSvg(w io.Writer) error {
 			col.SetX(offset)
 		} else {
 			d.Place(col).RightOf(lastDay, 4)
+		}
+		if d.isToday(i) {
+			x, y := col.Position()
+			mark := shape.NewLine(x, y, x+10, y)
+			d.Place(mark)
 		}
 		lastDay = col
 		now = now.AddDate(0, 0, 1)
