@@ -59,7 +59,7 @@ func (n *Note) WriteSvg(out io.Writer) error {
 	w := n.Width()
 	h := n.Height()
 	flap := 10
-	t, err := draw.NewTagPrinter(out)
+	t, err := draw.NewTagWriter(out)
 	/*
 	   x,y
 	    +---------------+        -

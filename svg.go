@@ -1,4 +1,4 @@
-// package draw provides svg writing features
+// Package draw provides svg writing features
 package draw
 
 import (
@@ -20,7 +20,7 @@ type Svg struct {
 }
 
 func (shape *Svg) WriteSvg(out io.Writer) error {
-	w, err := NewTagPrinter(out)
+	w, err := NewTagWriter(out)
 	w.Printf(`<svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"

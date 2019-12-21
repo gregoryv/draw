@@ -35,7 +35,7 @@ func (a *Arrow) String() string {
 }
 
 func (arrow *Arrow) WriteSvg(out io.Writer) error {
-	w, err := draw.NewTagPrinter(out)
+	w, err := draw.NewTagWriter(out)
 	x1, y1 := arrow.Start.XY()
 	x2, y2 := arrow.End.XY()
 	w.Printf(`<path class="%s" d="M%v,%v L%v,%v" />`, arrow.class, x1, y1, x2, y2)

@@ -38,7 +38,7 @@ func (c *ExitDot) Direction() Direction  { return LR }
 func (c *ExitDot) SetClass(class string) { c.class = class }
 
 func (c *ExitDot) WriteSvg(out io.Writer) error {
-	w, err := draw.NewTagPrinter(out)
+	w, err := draw.NewTagWriter(out)
 	x, y := c.Position()
 	x += c.Radius
 	y += c.Radius

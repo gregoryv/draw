@@ -34,7 +34,7 @@ func (c *Actor) Direction() Direction  { return LR }
 func (c *Actor) SetClass(class string) { c.class = class }
 
 func (c *Actor) WriteSvg(out io.Writer) error {
-	w, err := draw.NewTagPrinter(out)
+	w, err := draw.NewTagWriter(out)
 	x, y := c.Position()
 	r := c.rad()
 	d := r * 2

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 
+- Exposed TagWriter
 - shape.Svg moved to draw.Svg
 
 ## [0.8.0] 2019-12-18

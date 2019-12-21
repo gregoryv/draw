@@ -44,7 +44,7 @@ func (d *Diamond) Direction() Direction { return LR }
 func (d *Diamond) SetClass(c string)    { d.class = c }
 
 func (d *Diamond) WriteSvg(out io.Writer) error {
-	w, err := draw.NewTagPrinter(out)
+	w, err := draw.NewTagWriter(out)
 	x, y := d.Position()
 	y += d.height / 2
 	w2 := d.width / 2

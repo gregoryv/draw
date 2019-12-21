@@ -41,7 +41,7 @@ func (r *Record) Direction() Direction { return LR }
 func (r *Record) SetClass(c string)    { r.class = c }
 
 func (r *Record) WriteSvg(out io.Writer) error {
-	w, err := draw.NewTagPrinter(out)
+	w, err := draw.NewTagWriter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.X, r.Y, r.Width(), r.Height())

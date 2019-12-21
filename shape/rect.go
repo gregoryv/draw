@@ -40,7 +40,7 @@ func (r *Rect) Direction() Direction { return LR }
 func (r *Rect) SetClass(c string)    { r.class = c }
 
 func (r *Rect) WriteSvg(out io.Writer) error {
-	w, err := draw.NewTagPrinter(out)
+	w, err := draw.NewTagWriter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.X, r.Y, r.Width(), r.Height())

@@ -38,7 +38,7 @@ func (c *Circle) Direction() Direction  { return LR }
 func (c *Circle) SetClass(class string) { c.class = class }
 
 func (c *Circle) WriteSvg(out io.Writer) error {
-	w, err := draw.NewTagPrinter(out)
+	w, err := draw.NewTagWriter(out)
 	x, y := c.Position()
 	x += c.Radius
 	y += c.Radius

@@ -7,9 +7,9 @@ import (
 	"testing"
 )
 
-func TestTagPrinter(t *testing.T) {
+func TestTagWriter(t *testing.T) {
 	buf := bytes.NewBufferString("")
-	w, err := NewTagPrinter(buf)
+	w, err := NewTagWriter(buf)
 	if err == nil {
 		t.Fatal(err)
 	}
