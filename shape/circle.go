@@ -16,7 +16,7 @@ func NewCircle(radius int) *Circle {
 }
 
 type Circle struct {
-	pos    xy.Position // top left
+	x, y   int // top left
 	Radius int
 	class  string
 }
@@ -25,12 +25,10 @@ func (c *Circle) String() string {
 	return fmt.Sprintf("Circle")
 }
 
-func (c *Circle) Position() (int, int) {
-	return c.pos.XY()
-}
+func (c *Circle) Position() (int, int) { return c.x, c.y }
 
-func (c *Circle) SetX(x int) { c.pos.X = x }
-func (c *Circle) SetY(y int) { c.pos.Y = y }
+func (c *Circle) SetX(x int) { c.x = x }
+func (c *Circle) SetY(y int) { c.y = y }
 func (c *Circle) Width() int {
 	stroke := 2
 	return (c.Radius+stroke)*2 - 2
