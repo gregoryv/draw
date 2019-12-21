@@ -8,6 +8,12 @@ import (
 	"github.com/gregoryv/draw/shape"
 )
 
+func NewGanttChartFrom(days, yyyy, mm, dd int) *GanttChart {
+	str := fmt.Sprintf("%v-%v-%vT01:00:00.000Z", yyyy, mm, dd)
+	t, _ := time.Parse(time.RFC3339, str)
+	return NewGanttChart(days, t)
+}
+
 // NewGanttChart returns a chart showing days from optional
 // start time. If no start is given, time.Now() is used.
 func NewGanttChart(days int, start ...time.Time) *GanttChart {
