@@ -44,6 +44,7 @@ func expectPanic(t *testing.T) {
 func TestGanttChart_MarkDate(t *testing.T) {
 	d := NewGanttChartFrom(20, "20191002")
 	d.MarkDate("20191003")
+	d.MarkDate("20191204") // Ok even if it's outside the visible span
 }
 func TestGanttChart_MarkDate_panics(t *testing.T) {
 	defer expectPanic(t)
