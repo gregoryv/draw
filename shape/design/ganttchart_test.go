@@ -23,6 +23,8 @@ func TestGanttChart_WriteSvg(t *testing.T) {
 
 func TestNewGanttChart(t *testing.T) {
 	NewGanttChartFrom(20, 2019, 10, 2)
+	NewGanttChartFrom(20, 2019, 1, 1)
+	NewGanttChartFrom(20, 2019, 2, 28)
 }
 
 func TestNewGanttChartFrom_panics(t *testing.T) {

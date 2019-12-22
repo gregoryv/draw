@@ -30,8 +30,8 @@
 <rect class="weekend" x="363" y="34" width="30" height="74"/>
 <text class="record-title" font-size="12px" x="369" y="52"></text>
 <text class="label" font-size="10px" x="365" y="46">30</text>
-<text class="label" font-size="12px" x="380" y="26">December</text>
 <text class="label" font-size="10px" x="380" y="46">01</text>
+<text class="label" font-size="12px" x="380" y="26">December</text>
 <text class="label" font-size="10px" x="395" y="46">02</text>
 <text class="label" font-size="10px" x="410" y="46">03</text>
 <text class="label" font-size="10px" x="425" y="46">04</text>

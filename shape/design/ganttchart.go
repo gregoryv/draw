@@ -106,11 +106,6 @@ func (d *GanttChart) WriteSvg(w io.Writer) error {
 	columns := make([]*shape.Label, d.days)
 	for i := 0; i < d.days; i++ {
 		day := now.Day()
-		if day == 1 {
-			label := shape.NewLabel(now.Month().String())
-			d.Place(label).Above(lastDay, 4)
-			shape.Move(label, lastDay.Width()+4, 0)
-		}
 		col := newCol(day)
 		columns[i] = col
 		if now.Weekday() == time.Saturday {
@@ -126,6 +121,10 @@ func (d *GanttChart) WriteSvg(w io.Writer) error {
 			col.SetX(offset)
 		} else {
 			d.Place(col).RightOf(lastDay, 4)
+		}
+		if day == 1 {
+			label := shape.NewLabel(now.Month().String())
+			d.Place(label).Above(col, 4)
 		}
 		if d.isToday(i) {
 			x, y := col.Position()
