@@ -1,0 +1,55 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="526" height="160" font-family="Arial, Helvetica, sans-serif">
+<text class="label" font-size="12px" x="16" y="26">2019</text>
+<text class="label" font-size="10px" x="80" y="46">11</text>
+<text class="label" font-size="10px" x="95" y="46">12</text>
+<text class="label" font-size="10px" x="110" y="46">13</text>
+<text class="label" font-size="10px" x="125" y="46">14</text>
+<text class="label" font-size="10px" x="140" y="46">15</text>
+<rect class="weekend" x="153" y="34" width="30" height="74"/>
+<text class="record-title" font-size="12px" x="159" y="52"></text>
+<text class="label" font-size="10px" x="155" y="46">16</text>
+<text class="label" font-size="10px" x="170" y="46">17</text>
+<text class="label" font-size="10px" x="185" y="46">18</text>
+<text class="label" font-size="10px" x="200" y="46">19</text>
+<text class="label" font-size="10px" x="215" y="46">20</text>
+<line class="line" x1="215" y1="30" x2="225" y2="30"/>
+<text class="label" font-size="10px" x="230" y="46">21</text>
+<text class="label" font-size="10px" x="245" y="46">22</text>
+<rect class="weekend" x="258" y="34" width="30" height="74"/>
+<text class="record-title" font-size="12px" x="264" y="52"></text>
+<text class="label" font-size="10px" x="260" y="46">23</text>
+<text class="label" font-size="10px" x="275" y="46">24</text>
+<text class="label" font-size="10px" x="290" y="46">25</text>
+<text class="label" font-size="10px" x="305" y="46">26</text>
+<text class="label" font-size="10px" x="320" y="46">27</text>
+<text class="label" font-size="10px" x="335" y="46">28</text>
+<text class="label" font-size="10px" x="350" y="46">29</text>
+<rect class="weekend" x="363" y="34" width="30" height="74"/>
+<text class="record-title" font-size="12px" x="369" y="52"></text>
+<text class="label" font-size="10px" x="365" y="46">30</text>
+<text class="label" font-size="12px" x="380" y="26">December</text>
+<text class="label" font-size="10px" x="380" y="46">01</text>
+<text class="label" font-size="10px" x="395" y="46">02</text>
+<text class="label" font-size="10px" x="410" y="46">03</text>
+<text class="label" font-size="10px" x="425" y="46">04</text>
+<text class="label" font-size="10px" x="440" y="46">05</text>
+<text class="label" font-size="10px" x="455" y="46">06</text>
+<rect class="weekend" x="468" y="34" width="30" height="74"/>
+<text class="record-title" font-size="12px" x="474" y="52"></text>
+<text class="label" font-size="10px" x="470" y="46">07</text>
+<text class="label" font-size="10px" x="485" y="46">08</text>
+<text class="label" font-size="10px" x="500" y="46">09</text>
+<text class="label" font-size="10px" x="515" y="46">10</text>
+<text class="label" font-size="12px" x="16" y="66">Develop</text>
+<rect class="span-green" x="80" y="52" width="146" height="12"/>
+<text class="record-title" font-size="12px" x="86" y="70"></text>
+<text class="label" font-size="12px" x="16" y="86">Release</text>
+<rect class="span-red" x="230" y="72" width="11" height="12"/>
+<text class="record-title" font-size="12px" x="236" y="90"></text>
+<text class="label" font-size="12px" x="16" y="106">Vacation</text>
+<rect class="span-blue" x="290" y="92" width="206" height="12"/>
+<text class="record-title" font-size="12px" x="296" y="110"></text>
+<text class="caption" font-size="12px" x="167" y="154">Figure 1. Project estimated delivery</text></svg>
