@@ -8,9 +8,14 @@ import (
 	"github.com/gregoryv/draw/shape"
 )
 
+// NewGanttChartFrom returns a GanttChart spanning days from the given
+// date.  Panics if date cannot be resolved.
 func NewGanttChartFrom(days, yyyy, mm, dd int) *GanttChart {
-	str := fmt.Sprintf("%v-%v-%vT01:00:00.000Z", yyyy, mm, dd)
-	t, _ := time.Parse(time.RFC3339, str)
+	str := fmt.Sprintf("%v-%02v-%02vT01:00:00.000Z", yyyy, mm, dd)
+	t, err := time.Parse(time.RFC3339, str)
+	if err != nil {
+		panic(err)
+	}
 	return NewGanttChart(days, t)
 }
 
@@ -42,6 +47,16 @@ type GanttChart struct {
 
 	// Set a marker at this date.
 	Mark time.Time
+}
+
+func (d *GanttChart) MarkDate(yyyy, mm, dd int) error {
+	str := fmt.Sprintf("%v-%02v-%02vT01:00:00.000Z", yyyy, mm, dd)
+	date, err := time.Parse(time.RFC3339, str)
+	if err != nil {
+		return err
+	}
+	d.Mark = date
+	return nil
 }
 
 // isToday returns true if time.Now matches start + ndays

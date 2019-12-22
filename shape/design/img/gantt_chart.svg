@@ -15,6 +15,7 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="185" y="46">18</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="200" y="46">19</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="215" y="46">20</text>
+<line stroke="black" x1="215" y1="30" x2="225" y2="30"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="230" y="46">21</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="245" y="46">22</text>
 <rect font-family="Arial,Helvetica,sans-serif" fill="#f3f3f3" x="258" y="34" width="30" height="74"/>
