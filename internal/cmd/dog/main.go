@@ -1,32 +1,27 @@
+// Document generation for example diagrams
 package main
 
 import (
 	"database/sql"
+	"flag"
+	"path"
 
 	"github.com/gregoryv/draw/internal/app"
 	"github.com/gregoryv/draw/shape"
 	"github.com/gregoryv/draw/shape/design"
 )
 
-//go:generate go run .
+//go:generate go run . ../../../img/
 func main() {
-	var (
-		d   = design.NewSequenceDiagram()
-		cli = d.AddStruct(app.Client{})
-		srv = d.AddStruct(app.Server{})
-		db  = d.AddStruct(sql.DB{})
-	)
-	d.Link(cli, srv, "connect()")
-	d.Link(srv, db, "SELECT").Class = "highlight"
-	d.Link(db, srv, "Rows")
-	d.Link(srv, srv, "Transform to view model").Class = "highlight"
-	d.Link(srv, cli, "Send HTML")
-	d.SaveAs("../../../shape/design/img/app_sequence_diagram.svg")
-
-	genOverview()
+	flag.Parse()
+	root := flag.Arg(0)
+	if root == "" {
+		root = "./"
+	}
+	overview().SaveAs(path.Join(root, "overview.svg"))
 }
 
-func genOverview() {
+func overview() *design.SequenceDiagram {
 	var (
 		d   = design.NewSequenceDiagram()
 		cli = d.AddStruct(app.Client{})
@@ -69,5 +64,5 @@ func genOverview() {
 	d.VAlignRight(note, actor)
 
 	d.Place(shape.NewArrowBetween(actor, note))
-	d.SaveAs("../../../overview.svg")
+	return d
 }

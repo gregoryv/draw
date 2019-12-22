@@ -63,22 +63,6 @@ func ExampleClassDiagram() {
 	d.SaveAs("img/class_example.svg")
 }
 
-func ExampleSequenceDiagram() {
-	var (
-		d   = design.NewSequenceDiagram()
-		cli = "Client"
-		srv = "Server"
-		db  = "Database"
-	)
-	d.AddColumns(cli, srv, db)
-	d.Link(cli, srv, "connect()")
-	d.Link(srv, db, "SELECT").Class = "highlight"
-	d.Link(db, srv, "Rows")
-	d.Link(srv, srv, "Transform to view model").Class = "highlight"
-	d.Link(srv, cli, "Send HTML")
-	d.SaveAs("img/sequence_diagram.svg")
-}
-
 func ExampleDiagram() {
 	var (
 		record     = shape.NewRecord("Record")
@@ -170,7 +154,7 @@ func ExampleGanttChart() {
 
 func TestExamples(t *testing.T) {
 	ExampleClassDiagram()
-	ExampleSequenceDiagram()
+	//ExampleSequenceDiagram()
 	ExampleDiagram()
 	ExampleActivityDiagram()
 	ExampleGanttChart()
