@@ -10,12 +10,8 @@ import (
 
 // NewGanttChartFrom returns a GanttChart spanning days from the given
 // date.  Panics if date cannot be resolved.
-func NewGanttChartFrom(days, yyyy, mm, dd int) *GanttChart {
-	str := fmt.Sprintf("%v-%02v-%02vT01:00:00.000Z", yyyy, mm, dd)
-	t, err := time.Parse(time.RFC3339, str)
-	if err != nil {
-		panic(err)
-	}
+func NewGanttChartFrom(days int, from DateStr) *GanttChart {
+	t := from.Time()
 	return NewGanttChart(days, t)
 }
 
@@ -181,4 +177,18 @@ func (d *GanttChart) taskWidth() int {
 		}
 	}
 	return x + d.padLeft
+}
+
+type DateStr string
+
+func (y DateStr) Time() time.Time {
+	if len(y) < 8 {
+		panic(fmt.Sprintf("unexpeced format yyyymmdd: %s", y))
+	}
+	str := fmt.Sprintf("%s-%02s-%02sT00:00:00.000Z", y[:4], y[4:6], y[6:])
+	t, err := time.Parse(time.RFC3339, str)
+	if err != nil {
+		panic(err)
+	}
+	return t
 }

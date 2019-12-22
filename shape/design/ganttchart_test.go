@@ -3,6 +3,7 @@ package design
 import (
 	"bytes"
 	"testing"
+	"time"
 
 	"github.com/gregoryv/golden"
 )
@@ -10,7 +11,7 @@ import (
 func TestGanttChart_WriteSvg(t *testing.T) {
 	w := bytes.NewBufferString("")
 	var (
-		d = NewGanttChartFrom(30, 2019, 11, 11)
+		d = NewGanttChartFrom(30, "20191111")
 	)
 	d.MarkDate(2019, 11, 20)
 	d.Add("Develop", 0, 10)
@@ -22,14 +23,14 @@ func TestGanttChart_WriteSvg(t *testing.T) {
 }
 
 func TestNewGanttChart(t *testing.T) {
-	NewGanttChartFrom(20, 2019, 10, 2)
-	NewGanttChartFrom(20, 2019, 1, 1)
-	NewGanttChartFrom(20, 2019, 2, 28)
+	NewGanttChartFrom(20, "20191002")
+	NewGanttChartFrom(20, "20190101")
+	NewGanttChartFrom(20, "20190228")
 }
 
 func TestNewGanttChartFrom_panics(t *testing.T) {
 	defer expectPanic(t)
-	NewGanttChartFrom(20, 2019, 10, -2)
+	NewGanttChartFrom(20, "201910-2")
 }
 
 func expectPanic(t *testing.T) {
@@ -41,7 +42,7 @@ func expectPanic(t *testing.T) {
 }
 
 func TestGanttChart_MarkDate(t *testing.T) {
-	d := NewGanttChartFrom(20, 2019, 10, 2)
+	d := NewGanttChartFrom(20, "20191002")
 	ok := func(err error) {
 		t.Helper()
 		if err != nil {
@@ -57,4 +58,31 @@ func TestGanttChart_MarkDate(t *testing.T) {
 		}
 	}
 	bad(d.MarkDate(-1, 0, 0))
+}
+
+func TestDateStr(t *testing.T) {
+	var v DateStr = "20191101"
+	got := v.Time()
+	if got.Year() != 2019 {
+		t.Errorf("bad year %v", got.Year())
+	}
+	if got.Month() != time.November {
+		t.Errorf("bad month %v", got.Month())
+	}
+	if got.Day() != 1 {
+		t.Errorf("bad day %v", got.Day())
+	}
+}
+
+func TestDateStr_bad_format(t *testing.T) {
+	t.Run("", func(t *testing.T) {
+		defer expectPanic(t)
+		var v DateStr = "hello"
+		v.Time()
+	})
+	t.Run("", func(t *testing.T) {
+		defer expectPanic(t)
+		var v DateStr = "20191199"
+		v.Time()
+	})
 }
