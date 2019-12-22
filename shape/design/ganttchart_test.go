@@ -13,7 +13,7 @@ func TestGanttChart_WriteSvg(t *testing.T) {
 	var (
 		d = NewGanttChartFrom(30, "20191111")
 	)
-	d.MarkDate(2019, 11, 20)
+	d.MarkDate("20191120")
 	d.Add("Develop", 0, 10)
 	d.Add("Release", 10, 1).Red()
 	d.Add("Vacation", 14, 14).Blue()
@@ -43,21 +43,12 @@ func expectPanic(t *testing.T) {
 
 func TestGanttChart_MarkDate(t *testing.T) {
 	d := NewGanttChartFrom(20, "20191002")
-	ok := func(err error) {
-		t.Helper()
-		if err != nil {
-			t.Error(err)
-		}
-	}
-	ok(d.MarkDate(2019, 10, 3))
-
-	bad := func(err error) {
-		t.Helper()
-		if err == nil {
-			t.Error("should fail")
-		}
-	}
-	bad(d.MarkDate(-1, 0, 0))
+	d.MarkDate("20191003")
+}
+func TestGanttChart_MarkDate_panics(t *testing.T) {
+	defer expectPanic(t)
+	d := NewGanttChartFrom(20, "20191002")
+	d.MarkDate("")
 }
 
 func TestDateStr(t *testing.T) {

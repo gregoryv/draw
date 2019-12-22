@@ -45,14 +45,8 @@ type GanttChart struct {
 	Mark time.Time
 }
 
-func (d *GanttChart) MarkDate(yyyy, mm, dd int) error {
-	str := fmt.Sprintf("%v-%02v-%02vT01:00:00.000Z", yyyy, mm, dd)
-	date, err := time.Parse(time.RFC3339, str)
-	if err != nil {
-		return err
-	}
-	d.Mark = date
-	return nil
+func (d *GanttChart) MarkDate(yyyymmdd DateStr) {
+	d.Mark = yyyymmdd.Time()
 }
 
 // isToday returns true if time.Now matches start + ndays

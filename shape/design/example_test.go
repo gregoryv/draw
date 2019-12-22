@@ -145,7 +145,7 @@ func ExampleGanttChart() {
 	var (
 		d = design.NewGanttChartFrom(30, "20191111")
 	)
-	d.MarkDate(2019, 11, 20)
+	d.MarkDate("20191120")
 	d.Add("Develop", 0, 10)
 	d.Add("Release", 10, 1).Red()
 	d.Add("Vacation", 14, 14).Blue()
