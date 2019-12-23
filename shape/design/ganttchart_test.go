@@ -3,7 +3,6 @@ package design
 import (
 	"bytes"
 	"testing"
-	"time"
 
 	"github.com/gregoryv/golden"
 )
@@ -46,35 +45,9 @@ func TestGanttChart_MarkDate(t *testing.T) {
 	d.MarkDate("20191003")
 	d.MarkDate("20191204") // Ok even if it's outside the visible span
 }
+
 func TestGanttChart_MarkDate_panics(t *testing.T) {
 	defer expectPanic(t)
 	d := NewGanttChartFrom(20, "20191002")
 	d.MarkDate("")
-}
-
-func TestDateStr(t *testing.T) {
-	var v DateStr = "20191101"
-	got := v.Time()
-	if got.Year() != 2019 {
-		t.Errorf("bad year %v", got.Year())
-	}
-	if got.Month() != time.November {
-		t.Errorf("bad month %v", got.Month())
-	}
-	if got.Day() != 1 {
-		t.Errorf("bad day %v", got.Day())
-	}
-}
-
-func TestDateStr_bad_format(t *testing.T) {
-	t.Run("", func(t *testing.T) {
-		defer expectPanic(t)
-		var v DateStr = "hello"
-		v.Time()
-	})
-	t.Run("", func(t *testing.T) {
-		defer expectPanic(t)
-		var v DateStr = "20191199"
-		v.Time()
-	})
 }

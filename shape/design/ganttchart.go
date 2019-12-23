@@ -5,12 +5,13 @@ import (
 	"io"
 	"time"
 
+	"github.com/gregoryv/draw/internal/date"
 	"github.com/gregoryv/draw/shape"
 )
 
 // NewGanttChartFrom returns a GanttChart spanning days from the given
 // date.  Panics if date cannot be resolved.
-func NewGanttChartFrom(days int, from DateStr) *GanttChart {
+func NewGanttChartFrom(days int, from date.DateStr) *GanttChart {
 	t := from.Time()
 	return NewGanttChart(days, t)
 }
@@ -45,7 +46,7 @@ type GanttChart struct {
 	Mark time.Time
 }
 
-func (d *GanttChart) MarkDate(yyyymmdd DateStr) {
+func (d *GanttChart) MarkDate(yyyymmdd date.DateStr) {
 	d.Mark = yyyymmdd.Time()
 }
 
@@ -171,29 +172,4 @@ func (d *GanttChart) taskWidth() int {
 		}
 	}
 	return x + d.padLeft
-}
-
-// DateStr has the format of yyyymmdd
-type DateStr string
-
-func (s DateStr) Time() time.Time {
-	var (
-		year  string
-		month string
-		day   string
-	)
-	switch len(s) {
-	case 8:
-		year = string(s[:4])
-		month = string(s[4:6])
-		day = string(s[6:])
-	default:
-		panic(fmt.Sprintf("unexpeced format yyyymmdd: %s", s))
-	}
-	str := fmt.Sprintf("%s-%02s-%02sT00:00:00.000Z", year, month, day)
-	t, err := time.Parse(time.RFC3339, str)
-	if err != nil {
-		panic(err)
-	}
-	return t
 }
