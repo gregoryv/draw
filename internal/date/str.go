@@ -6,9 +6,9 @@ import (
 )
 
 // DateStr has the format of yyyymmdd
-type DateStr string
+type String string
 
-func (s DateStr) Time() time.Time {
+func (s String) Time() time.Time {
 	var (
 		year  string
 		month string

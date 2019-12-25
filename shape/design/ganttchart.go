@@ -11,7 +11,7 @@ import (
 
 // NewGanttChartFrom returns a GanttChart spanning days from the given
 // date.  Panics if date cannot be resolved.
-func NewGanttChartFrom(days int, from date.DateStr) *GanttChart {
+func NewGanttChartFrom(days int, from date.String) *GanttChart {
 	t := from.Time()
 	return NewGanttChart(days, t)
 }
@@ -46,7 +46,7 @@ type GanttChart struct {
 	Mark time.Time
 }
 
-func (d *GanttChart) MarkDate(yyyymmdd date.DateStr) {
+func (d *GanttChart) MarkDate(yyyymmdd date.String) {
 	d.Mark = yyyymmdd.Time()
 }
 

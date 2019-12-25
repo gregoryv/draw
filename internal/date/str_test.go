@@ -6,7 +6,7 @@ import (
 )
 
 func TestDateStr(t *testing.T) {
-	var v DateStr = "20191101"
+	var v String = "20191101"
 	got := v.Time()
 	if got.Year() != 2019 {
 		t.Errorf("bad year %v", got.Year())
@@ -22,12 +22,12 @@ func TestDateStr(t *testing.T) {
 func TestDateStr_bad_format(t *testing.T) {
 	t.Run("", func(t *testing.T) {
 		defer expectPanic(t)
-		var v DateStr = "hello"
+		var v String = "hello"
 		v.Time()
 	})
 	t.Run("", func(t *testing.T) {
 		defer expectPanic(t)
-		var v DateStr = "20191199"
+		var v String = "20191199"
 		v.Time()
 	})
 }
