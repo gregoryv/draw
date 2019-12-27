@@ -65,9 +65,18 @@ func (d *GanttChart) Add(txt string) *Task {
 }
 
 // Add new task. Default color is green.
-func (d *GanttChart) Place(task *Task, offset, days int) {
+func (d *GanttChart) Place(task *Task, offset, days int) *GanttAdjuster {
 	task.offset = offset
 	task.days = days
+	return NewGanttAdjuster(task)
+}
+
+type GanttAdjuster struct {
+	parent *Task
+}
+
+func NewGanttAdjuster(parent *Task) *GanttAdjuster {
+	return &GanttAdjuster{parent: parent}
 }
 
 // NewTask returns a green task.
