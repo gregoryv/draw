@@ -30,4 +30,9 @@ func (s String) Time() time.Time {
 	return t
 }
 
+func (s String) DaysAfter(t time.Time) int {
+	dur := s.Time().Sub(t)
+	return int(dur.Hours() / 24)
+}
+
 // todo datestr+span

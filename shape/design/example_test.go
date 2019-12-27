@@ -149,9 +149,9 @@ func ExampleGanttChart() {
 		vac = d.Add("Vacation").Blue()
 	)
 	d.MarkDate("20191120")
-	d.Place(dev, 0, 10)
-	d.Place(rel, 10, 1)
-	d.Place(vac, 14, 14)
+	d.Place(dev).At("20191111", 10)
+	d.Place(rel).At("20191121", 1)
+	d.Place(vac).At("20191125", 14)
 	d.SetCaption("Figure 1. Project estimated delivery")
 	d.SaveAs("img/gantt_chart.svg")
 }
