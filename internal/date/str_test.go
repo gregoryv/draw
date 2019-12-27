@@ -6,13 +6,16 @@ import (
 )
 
 func TestString_DaysAfter(t *testing.T) {
-	a := String("20010101")
-	b := String("20010102")
-	got := b.DaysAfter(a.Time())
-	exp := 1
-	if got != exp {
-		t.Errorf("%s-%s got days %v, expected %v", a, b, got, exp)
+	ok := func(a, b String, exp int) {
+		t.Helper()
+		got := b.DaysAfter(a.Time())
+		if got != exp {
+			t.Errorf("%s-%s got days %v, expected %v", a, b, got, exp)
+		}
 	}
+	ok("20010101", "20010102", 1)
+	ok("20010101", "20010103", 2)
+	ok("20010102", "20010101", -1)
 }
 
 func TestString(t *testing.T) {

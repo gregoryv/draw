@@ -75,6 +75,9 @@ type GanttAdjuster struct {
 
 func (a *GanttAdjuster) At(from date.String, days int) {
 	a.task.offset = from.DaysAfter(a.start)
+	if a.task.offset < 0 {
+		a.task.offset = 0
+	}
 	a.task.days = days
 }
 
