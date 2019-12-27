@@ -17,7 +17,7 @@ func TestGanttChart_WriteSvg(t *testing.T) {
 	)
 	d.MarkDate("20191120")
 	d.Place(dev).At("20191111", 10)
-	d.Place(rel).At("20191121", 1)
+	d.Place(rel).After(dev, 1)
 	d.Place(vac).At("20191125", 14)
 	d.SetCaption("Figure 1. Project estimated delivery")
 	d.WriteSvg(w)

@@ -82,6 +82,11 @@ func (a *GanttAdjuster) At(from date.String, days int) {
 	a.task.days = days
 }
 
+func (a *GanttAdjuster) After(parent *Task, days int) {
+	a.task.offset = parent.offset + parent.days
+	a.task.days = days
+}
+
 // NewTask returns a green task.
 func NewTask(txt string, offset, days int) *Task {
 	return &Task{
