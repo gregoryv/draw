@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-// DateStr has the format of yyyymmdd
+// String has the format of yyyymmdd
 type String string
 
 func (s String) Time() time.Time {

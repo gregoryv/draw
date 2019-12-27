@@ -143,12 +143,15 @@ func ExampleActivityDiagram() {
 
 func ExampleGanttChart() {
 	var (
-		d = design.NewGanttChartFrom(30, "20191111")
+		d   = design.NewGanttChartFrom(30, "20191111")
+		dev = d.Add("Develop")
+		rel = d.Add("Release").Red()
+		vac = d.Add("Vacation").Blue()
 	)
 	d.MarkDate("20191120")
-	d.Add("Develop", 0, 10)
-	d.Add("Release", 10, 1).Red()
-	d.Add("Vacation", 14, 14).Blue()
+	d.Place(dev, 0, 10)
+	d.Place(rel, 10, 1)
+	d.Place(vac, 14, 14)
 	d.SetCaption("Figure 1. Project estimated delivery")
 	d.SaveAs("img/gantt_chart.svg")
 }

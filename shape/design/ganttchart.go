@@ -57,11 +57,17 @@ func (d *GanttChart) isToday(ndays int) bool {
 		t.YearDay() == d.Mark.YearDay()
 }
 
-// Add new task. Default color is green.
-func (d *GanttChart) Add(txt string, offset, days int) *Task {
-	task := NewTask(txt, offset, days)
+// Add new task from start spanning 3 days. Default color is green.
+func (d *GanttChart) Add(txt string) *Task {
+	task := NewTask(txt, 0, 3)
 	d.tasks = append(d.tasks, task)
 	return task
+}
+
+// Add new task. Default color is green.
+func (d *GanttChart) Place(task *Task, offset, days int) {
+	task.offset = offset
+	task.days = days
 }
 
 // NewTask returns a green task.
@@ -82,15 +88,15 @@ type Task struct {
 }
 
 // Red sets class of task to span-red
-func (t *Task) Red() { t.class = "span-red" }
+func (t *Task) Red() *Task { t.class = "span-red"; return t }
 
 // Blue sets class of task to span-blue
-func (t *Task) Blue() { t.class = "span-blue" }
+func (t *Task) Blue() *Task { t.class = "span-blue"; return t }
 
 func (d *GanttChart) WriteSvg(w io.Writer) error {
 	now := d.start
 	year := shape.NewLabel(fmt.Sprintf("%v", now.Year()))
-	d.Place(year).At(d.padLeft, d.padTop)
+	d.Diagram.Place(year).At(d.padLeft, d.padTop)
 	offset := d.padLeft + d.taskWidth()
 
 	var lastDay *shape.Label
@@ -104,23 +110,23 @@ func (d *GanttChart) WriteSvg(w io.Writer) error {
 			bg.SetClass("weekend")
 			bg.SetWidth(col.Width()*2 + 8)
 			bg.SetHeight(len(d.tasks)*col.Font.LineHeight + d.padTop + d.Diagram.Font.LineHeight)
-			d.Place(bg).RightOf(lastDay, 4)
+			d.Diagram.Place(bg).RightOf(lastDay, 4)
 			shape.Move(bg, -2, 4)
 		}
 		if i == 0 {
-			d.Place(col).Below(year, 4)
+			d.Diagram.Place(col).Below(year, 4)
 			col.SetX(offset)
 		} else {
-			d.Place(col).RightOf(lastDay, 4)
+			d.Diagram.Place(col).RightOf(lastDay, 4)
 		}
 		if day == 1 {
 			label := shape.NewLabel(now.Month().String())
-			d.Place(label).Above(col, 4)
+			d.Diagram.Place(label).Above(col, 4)
 		}
 		if d.isToday(i) {
 			x, y := col.Position()
 			mark := shape.NewLine(x, y, x+10, y)
-			d.Place(mark)
+			d.Diagram.Place(mark)
 		}
 		lastDay = col
 		now = now.AddDate(0, 0, 1)
@@ -130,10 +136,10 @@ func (d *GanttChart) WriteSvg(w io.Writer) error {
 	for i, t := range d.tasks {
 		label := shape.NewLabel(t.txt)
 		if i == 0 {
-			d.Place(label).Below(lastDay, 4)
+			d.Diagram.Place(label).Below(lastDay, 4)
 			d.VAlignLeft(year, label)
 		} else {
-			d.Place(label).Below(lastTask, 4)
+			d.Diagram.Place(label).Below(lastTask, 4)
 		}
 		lastTask = label
 
@@ -147,7 +153,7 @@ func (d *GanttChart) WriteSvg(w io.Writer) error {
 		rect.SetHeight(d.Diagram.Font.Height)
 		rect.SetClass(t.class)
 
-		d.Place(rect).Below(col, 4)
+		d.Diagram.Place(rect).Below(col, 4)
 		d.HAlignCenter(label, rect)
 	}
 	return d.Diagram.WriteSvg(w)
