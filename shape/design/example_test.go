@@ -143,7 +143,7 @@ func ExampleActivityDiagram() {
 
 func ExampleGanttChart() {
 	var (
-		d   = design.NewGanttChartFrom(30, "20191111")
+		d   = design.NewGanttChart("20191111", 30)
 		dev = d.Add("Develop")
 		rel = d.Add("Release").Red()
 		vac = d.Add("Vacation").Blue()

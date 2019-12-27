@@ -9,27 +9,23 @@ import (
 	"github.com/gregoryv/draw/shape"
 )
 
-// NewGanttChartFrom returns a GanttChart spanning days from the given
-// date.  Panics if date cannot be resolved.
-func NewGanttChartFrom(days int, from date.String) *GanttChart {
-	t := from.Time()
-	return NewGanttChart(days, t)
+// NewGanttChart returns a GanttChart spanning days from the given
+// date. Panics if date cannot be resolved.
+func NewGanttChart(from date.String, days int) *GanttChart {
+	return newGanttChart(from.Time(), days)
 }
 
-// NewGanttChart returns a chart showing days from optional
+// newGanttChart returns a chart showing days from optional
 // start time. If no start is given, time.Now() is used.
-func NewGanttChart(days int, start ...time.Time) *GanttChart {
+func newGanttChart(start time.Time, days int) *GanttChart {
 	d := &GanttChart{
 		Diagram: NewDiagram(),
-		start:   time.Now(),
+		start:   start,
 		days:    days,
 		tasks:   make([]*Task, 0),
 		padLeft: 16,
 		padTop:  10,
 		Mark:    time.Now(),
-	}
-	if len(start) > 0 {
-		d.start = start[0]
 	}
 	return d
 }
