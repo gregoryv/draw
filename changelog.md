@@ -8,10 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 
 - Mark current day by default in gantt chart
-- NewGanttChartFrom constructor
 
 ### Changed
 
+- NewGanttChart constructor uses date.String
 - Exposed TagWriter
 - shape.Svg moved to draw.Svg
 

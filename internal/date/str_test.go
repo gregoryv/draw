@@ -5,7 +5,17 @@ import (
 	"time"
 )
 
-func TestDateStr(t *testing.T) {
+func TestString_DaysAfter(t *testing.T) {
+	a := String("20010101")
+	b := String("20010102")
+	got := b.DaysAfter(a.Time())
+	exp := 1
+	if got != exp {
+		t.Errorf("%s-%s got days %v, expected %v", a, b, got, exp)
+	}
+}
+
+func TestString(t *testing.T) {
 	var v String = "20191101"
 	got := v.Time()
 	if got.Year() != 2019 {
@@ -19,7 +29,7 @@ func TestDateStr(t *testing.T) {
 	}
 }
 
-func TestDateStr_bad_format(t *testing.T) {
+func TestString_bad_format(t *testing.T) {
 	t.Run("", func(t *testing.T) {
 		defer expectPanic(t)
 		var v String = "hello"
