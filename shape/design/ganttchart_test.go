@@ -4,8 +4,19 @@ import (
 	"bytes"
 	"testing"
 
+	"github.com/gregoryv/draw/internal/date"
 	"github.com/gregoryv/golden"
 )
+
+func TestGanttAdjuster_At(t *testing.T) {
+	task := NewTask("hepp", 0, 1)
+	a := &GanttAdjuster{
+		start: date.String("20191001").Time(), // ie. diagram start
+		task:  task,
+	}
+	// start before start of diagram
+	a.At("20190930", 10)
+}
 
 func TestGanttChart_WriteSvg(t *testing.T) {
 	w := bytes.NewBufferString("")
