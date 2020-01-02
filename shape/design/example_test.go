@@ -135,8 +135,10 @@ func ExampleActivityDiagram() {
 	d.VAlignCenter(start, push, run, dec, deploy, endOk)
 	d.HAlignCenter(dec, endFail)
 
-	d.LinkAll(start, push, run, dec, deploy, endOk)
+	d.LinkAll(start, push, run, dec)
 	d.Link(dec, endFail, "Tests failed")
+	d.Link(dec, deploy, "ok")
+	d.Link(deploy, endOk)
 
 	d.SaveAs("img/activity_diagram.svg")
 }

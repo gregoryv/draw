@@ -21,13 +21,14 @@
 <path stroke="black" d="M86,164 L86,194" />
 <g transform="rotate(90 86 194)"><path stroke="black" fill="#ffffff" d="M86,194 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M86,214 L86,254" />
-<g transform="rotate(90 86 254)"><path stroke="black" fill="#ffffff" d="M86,254 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" d="M86,280 L86,320" />
-<g transform="rotate(90 86 320)"><path stroke="black" fill="#ffffff" d="M86,320 l-8,-4 l 0,8 Z" /></g>
-
 <path stroke="black" d="M96,204 L180,204" />
 <g transform="rotate(0 180 204)"><path stroke="black" fill="#ffffff" d="M180,204 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="107" y="200">Tests failed</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="103" y="200">Tests failed</text>
+<path stroke="black" d="M86,214 L86,254" />
+<g transform="rotate(90 86 254)"><path stroke="black" fill="#ffffff" d="M86,254 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="230">ok</text>
+<path stroke="black" d="M86,280 L86,320" />
+<g transform="rotate(90 86 320)"><path stroke="black" fill="#ffffff" d="M86,320 l-8,-4 l 0,8 Z" /></g>
+</svg>

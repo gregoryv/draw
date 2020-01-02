@@ -25,12 +25,22 @@ func (d *ActivityDiagram) LinkAll(s ...shape.Shape) {
 // shapes.
 func (d *ActivityDiagram) Link(from, to shape.Shape, txt ...string) *shape.Arrow {
 	lnk := shape.NewArrowBetween(from, to)
+	lnk.SetClass("activity-arrow")
 	d.Place(lnk)
 	if len(txt) > 0 {
-		lnk.SetClass("activity-arrow")
-		label := shape.NewLabel(txt[0])
-		d.Place(label).Above(lnk, 20)
-		d.VAlignCenter(lnk, label)
+		d.placeLabel(lnk, txt[0])
 	}
 	return lnk
+}
+
+func (d *ActivityDiagram) placeLabel(lnk *shape.Arrow, txt string) {
+	label := shape.NewLabel(txt)
+	switch lnk.Direction() {
+	case shape.RightDir, shape.LeftDir:
+		d.Place(label).Above(lnk, 20)
+		d.VAlignCenter(lnk, label)
+		shape.Move(label, -4, 0)
+	case shape.Up, shape.Down:
+		d.Place(label).RightOf(lnk, 5)
+	}
 }
