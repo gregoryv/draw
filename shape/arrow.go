@@ -177,11 +177,24 @@ func (a *Arrow) SetY(y int) {
 	a.End.Y = a.End.Y - diff // Set Y2 so the entire arrow moves
 }
 
+// Direction returns vertical or horizontal direction, Other if at an angle.
+// If Other, use arrow.DirQn() methods to check to which quadrant.
 func (a *Arrow) Direction() Direction {
-	if a.Start.LeftOf(a.End) {
-		return RightDir
+	if a.Start.X == a.End.X {
+		// vertical
+		if a.Start.Above(a.End) {
+			return Down
+		}
+		return Up
 	}
-	return LeftDir
+	if a.Start.Y == a.End.Y {
+		// horizontal
+		if a.Start.LeftOf(a.End) {
+			return RightDir
+		}
+		return LeftDir
+	}
+	return Other
 }
 
 func (a *Arrow) SetClass(c string) { a.class = c }

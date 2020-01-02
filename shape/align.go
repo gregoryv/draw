@@ -84,7 +84,8 @@ const (
 type Direction int
 
 const (
-	RightDir Direction = iota
+	Other Direction = iota
+	RightDir
 	LeftDir
 	Up
 	Down
