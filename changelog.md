@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 
+- ActivityDiagram helper methods, e.g Start, Then, If and Exit
 - Mark current day by default in gantt chart
 
 ### Changed
@@ -15,6 +16,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - NewGanttChart constructor uses date.String
 - Exposed TagWriter
 - shape.Svg moved to draw.Svg
+
+### Fixed
+
+- Label positioned correctly in activity diagram for vertical arrows
 
 ## [0.8.0] 2019-12-18
 ### Added

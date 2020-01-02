@@ -119,26 +119,16 @@ multilines`)
 
 func ExampleActivityDiagram() {
 	var (
-		d       = design.NewActivityDiagram()
-		start   = shape.NewDot()
-		push    = shape.NewState("Push commit")
-		dec     = shape.NewDecision()
-		run     = shape.NewState("Run git hook")
-		deploy  = shape.NewState("Deploy")
-		endOk   = shape.NewExitDot()
-		endFail = shape.NewExitDot()
+		d = design.NewActivityDiagram()
 	)
-	d.Place(start).At(80, 20)
-	d.Place(push, run, dec, deploy, endOk).Below(start, 40)
-	d.Place(endFail).RightOf(dec, 80)
+	d.Start().At(80, 20)
+	d.Then("Push commit")
+	d.Then("Run git hook")
+	dec := d.Decide()
+	d.Then("Deploy", "ok")
+	d.Exit()
 
-	d.VAlignCenter(start, push, run, dec, deploy, endOk)
-	d.HAlignCenter(dec, endFail)
-
-	d.LinkAll(start, push, run, dec)
-	d.Link(dec, endFail, "Tests failed")
-	d.Link(dec, deploy, "ok")
-	d.Link(deploy, endOk)
+	d.If(dec, "Tests failed", shape.NewExitDot())
 
 	d.SaveAs("img/activity_diagram.svg")
 }

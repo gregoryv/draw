@@ -5,11 +5,14 @@ import "github.com/gregoryv/draw/shape"
 func NewActivityDiagram() *ActivityDiagram {
 	return &ActivityDiagram{
 		Diagram: NewDiagram(),
+		Spacing: 40,
 	}
 }
 
 type ActivityDiagram struct {
 	Diagram
+	last    shape.Shape
+	Spacing int
 }
 
 // LinkAll places arrows between each shape, s0->s1->...->sn
@@ -43,4 +46,57 @@ func (d *ActivityDiagram) placeLabel(lnk *shape.Arrow, txt string) {
 	case shape.Up, shape.Down:
 		d.Place(label).RightOf(lnk, 5)
 	}
+}
+
+func (d *ActivityDiagram) Place(next ...shape.Shape) *shape.Adjuster {
+	d.last = next[0]
+	return d.Diagram.Place(next...)
+}
+
+func (d *ActivityDiagram) Then(label string, txt ...string) *shape.Adjuster {
+	next := shape.NewState(label)
+	adj := d.Diagram.Place(next)
+	adj.Below(d.last, d.Spacing)
+	d.VAlignCenter(d.last, next)
+	d.Link(d.last, next, txt...)
+	d.last = next
+	return adj
+}
+
+// Decide adds a diamond below the last activity
+func (d *ActivityDiagram) Decide() *shape.Diamond {
+	next := shape.NewDecision()
+	adj := d.Diagram.Place(next)
+	adj.Below(d.last, d.Spacing+next.Height()/2)
+	d.VAlignCenter(d.last, next)
+	d.Link(d.last, next)
+	d.last = next
+	return next
+}
+
+// Exit adds an ExitDot below the last activity
+func (d *ActivityDiagram) Exit(txt ...string) *shape.ExitDot {
+	next := shape.NewExitDot()
+	adj := d.Diagram.Place(next)
+	adj.Below(d.last, d.Spacing)
+	d.VAlignCenter(d.last, next)
+	d.Link(d.last, next, txt...)
+	d.last = next
+	return next
+}
+
+// If adds next state to the right with a label.
+func (d *ActivityDiagram) If(after shape.Shape, txt string, next shape.Shape) *shape.Adjuster {
+	adj := d.Diagram.Place(next)
+	adj.RightOf(after, d.Font.TextWidth(txt)+d.Spacing)
+	d.HAlignCenter(after, next)
+	d.Link(after, next, txt)
+	d.last = next
+	return adj
+}
+
+func (d *ActivityDiagram) Start() *shape.Adjuster {
+	start := shape.NewDot()
+	d.last = start
+	return d.Place(start)
 }

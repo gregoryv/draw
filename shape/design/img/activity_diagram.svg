@@ -1,34 +1,34 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="204" height="344" font-family="Arial, Helvetica, sans-serif">
+  width="221" height="354" font-family="Arial, Helvetica, sans-serif">
 <circle stroke="black" cx="86" cy="26" r="6" />\n
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="43" y="72" width="86" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="49" y="90">Push commit</text>
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="44" y="138" width="85" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="50" y="156">Run git hook</text>
-<path stroke="#d3d3d3" fill="#ffffff" d="M76,204 l 10,-10 10,10 -10,10 -10,-10" />
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="59" y="254" width="55" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="65" y="272">Deploy</text>
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="86" cy="332" r="10" />\n<circle stroke="black" cx="86" cy="332" r="6" />\n
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="192" cy="204" r="10" />\n<circle stroke="black" cx="192" cy="204" r="6" />\n
 <path stroke="black" d="M86,32 L86,72" />
 <g transform="rotate(90 86 72)"><path stroke="black" fill="#ffffff" d="M86,72 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M86,98 L86,138" />
-<g transform="rotate(90 86 138)"><path stroke="black" fill="#ffffff" d="M86,138 l-8,-4 l 0,8 Z" /></g>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="43" y="138" width="85" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="49" y="156">Run git hook</text>
+<path stroke="black" d="M85,98 L85,138" />
+<g transform="rotate(90 85 138)"><path stroke="black" fill="#ffffff" d="M85,138 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M86,164 L86,194" />
-<g transform="rotate(90 86 194)"><path stroke="black" fill="#ffffff" d="M86,194 l-8,-4 l 0,8 Z" /></g>
+<path stroke="#d3d3d3" fill="#ffffff" d="M75,214 l 10,-10 10,10 -10,10 -10,-10" />
+<path stroke="black" d="M85,164 L85,204" />
+<g transform="rotate(90 85 204)"><path stroke="black" fill="#ffffff" d="M85,204 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" d="M96,204 L180,204" />
-<g transform="rotate(0 180 204)"><path stroke="black" fill="#ffffff" d="M180,204 l-8,-4 l 0,8 Z" /></g>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="58" y="264" width="55" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="64" y="282">Deploy</text>
+<path stroke="black" d="M85,224 L85,264" />
+<g transform="rotate(90 85 264)"><path stroke="black" fill="#ffffff" d="M85,264 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="103" y="200">Tests failed</text>
-<path stroke="black" d="M86,214 L86,254" />
-<g transform="rotate(90 86 254)"><path stroke="black" fill="#ffffff" d="M86,254 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="90" y="240">ok</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="85" cy="342" r="10" />\n<circle stroke="black" cx="85" cy="342" r="6" />\n
+<path stroke="black" d="M85,290 L85,330" />
+<g transform="rotate(90 85 330)"><path stroke="black" fill="#ffffff" d="M85,330 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="230">ok</text>
-<path stroke="black" d="M86,280 L86,320" />
-<g transform="rotate(90 86 320)"><path stroke="black" fill="#ffffff" d="M86,320 l-8,-4 l 0,8 Z" /></g>
-</svg>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="209" cy="214" r="10" />\n<circle stroke="black" cx="209" cy="214" r="6" />\n
+<path stroke="black" d="M95,214 L197,214" />
+<g transform="rotate(0 197 214)"><path stroke="black" fill="#ffffff" d="M197,214 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="111" y="210">Tests failed</text></svg>
