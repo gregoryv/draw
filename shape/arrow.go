@@ -179,9 +179,9 @@ func (a *Arrow) SetY(y int) {
 
 func (a *Arrow) Direction() Direction {
 	if a.Start.LeftOf(a.End) {
-		return LR
+		return RightDir
 	}
-	return RL
+	return LeftDir
 }
 
 func (a *Arrow) SetClass(c string) { a.class = c }

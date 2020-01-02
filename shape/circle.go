@@ -34,7 +34,7 @@ func (c *Circle) Width() int {
 	return (c.Radius+stroke)*2 - 2
 }
 func (c *Circle) Height() int           { return c.Width() }
-func (c *Circle) Direction() Direction  { return LR }
+func (c *Circle) Direction() Direction  { return RightDir }
 func (c *Circle) SetClass(class string) { c.class = class }
 
 func (c *Circle) WriteSvg(out io.Writer) error {

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 
+- Renamed Direction constants LR and RL to RightDir and LeftDir
 - NewGanttChart constructor uses date.String
 - Exposed TagWriter
 - shape.Svg moved to draw.Svg

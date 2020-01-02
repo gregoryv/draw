@@ -33,7 +33,7 @@ func (r *State) String() string {
 func (r *State) Position() (int, int) { return r.X, r.Y }
 func (r *State) SetX(x int)           { r.X = x }
 func (r *State) SetY(y int)           { r.Y = y }
-func (r *State) Direction() Direction { return LR }
+func (r *State) Direction() Direction { return RightDir }
 func (r *State) SetClass(c string)    { r.class = c }
 
 func (r *State) WriteSvg(out io.Writer) error {

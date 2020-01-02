@@ -27,7 +27,7 @@ func (t *Triangle) SetX(x int)           { t.x = x }
 func (t *Triangle) SetY(y int)           { t.y = y }
 func (t *Triangle) Width() int           { return 8 }
 func (t *Triangle) Height() int          { return 4 }
-func (t *Triangle) Direction() Direction { return LR }
+func (t *Triangle) Direction() Direction { return RightDir }
 func (t *Triangle) SetClass(c string)    { t.class = c }
 
 func (t *Triangle) WriteSvg(out io.Writer) error {

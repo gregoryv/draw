@@ -62,7 +62,7 @@ func (t *OneArrow) CanPointDownAndLeft() {
 	t.End.X = t.Start.X - 10
 	t.End.Y = t.Start.Y + 30
 	dir := t.Direction()
-	t.assert(dir == RL).Errorf("Direction not right to left: %v", dir)
+	t.assert(dir == LeftDir).Errorf("Direction not right to left: %v", dir)
 	t.saveAs("testdata/arrow_points_down_and_left.svg")
 }
 
@@ -70,7 +70,7 @@ func (t *OneArrow) CanPointDownAndRight() {
 	t.End.X = t.Start.X + 20
 	t.End.Y = t.Start.Y + 30
 	dir := t.Direction()
-	t.assert(dir == LR).Errorf("Direction not left to right: %v", dir)
+	t.assert(dir == RightDir).Errorf("Direction not left to right: %v", dir)
 	t.saveAs("testdata/arrow_points_down_and_right.svg")
 }
 
@@ -78,7 +78,7 @@ func (t *OneArrow) CanPointRight() {
 	t.End.X = t.Start.X + 50
 	t.End.Y = t.Start.Y
 	dir := t.Direction()
-	t.assert(dir == LR).Errorf("Direction not left to right: %v", dir)
+	t.assert(dir == RightDir).Errorf("Direction not left to right: %v", dir)
 	t.saveAs("testdata/arrow_points_right.svg")
 }
 
@@ -86,7 +86,7 @@ func (t *OneArrow) CanPointLeft() {
 	t.End.X = t.Start.X - 40
 	t.End.Y = t.Start.Y
 	dir := t.Direction()
-	t.assert(dir == RL).Errorf("Direction not right to left: %v", dir)
+	t.assert(dir == LeftDir).Errorf("Direction not right to left: %v", dir)
 	t.saveAs("testdata/arrow_points_left.svg")
 }
 

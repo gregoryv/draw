@@ -31,7 +31,7 @@ func (n *Note) String() string {
 	return fmt.Sprintf("Note %v", n.Text)
 }
 func (n *Note) Position() (int, int) { return n.x, n.y }
-func (n *Note) Direction() Direction { return LR }
+func (n *Note) Direction() Direction { return RightDir }
 func (n *Note) SetX(x int)           { n.x = x }
 func (n *Note) SetY(y int)           { n.y = y }
 
