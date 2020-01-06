@@ -66,7 +66,7 @@ func (c *Component) title() *Label {
 		y:     c.Y + c.Pad.Top/2,
 		Font:  c.Font,
 		Text:  c.Title,
-		class: "record-title",
+		class: c.class + "-title",
 	}
 }
 
