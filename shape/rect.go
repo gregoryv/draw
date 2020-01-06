@@ -55,7 +55,7 @@ func (r *Rect) title() *Label {
 		y:     r.Y + r.Pad.Top/2,
 		Font:  r.Font,
 		Text:  r.Title,
-		class: "record-title",
+		class: r.class + "-title",
 	}
 }
 

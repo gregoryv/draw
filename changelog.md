@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Fixed
 
-- Component label inherits class + "-title"
+- Component and rect labels use class + "-title"
 
 ## [0.9.0] 2020-01-02
 ### Added
