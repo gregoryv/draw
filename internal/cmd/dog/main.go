@@ -33,8 +33,10 @@ func overview() *design.SequenceDiagram {
 		end   = shape.NewExitDot()
 
 		circle = design.NewStruct(shape.Circle{})
-		shp    = design.NewInterface((*shape.Shape)(nil))
-		note   = shape.NewNote("Anything is possible!\nGo draw your next design")
+		cyl    = shape.NewCylinder(40, 70)
+
+		shp  = design.NewInterface((*shape.Shape)(nil))
+		note = shape.NewNote("Anything is possible!\nGo draw your next design")
 
 		actor = shape.NewActor()
 	)
@@ -51,6 +53,7 @@ func overview() *design.SequenceDiagram {
 	d.Place(shp).RightOf(start, 100)
 	d.Place(circle).RightOf(shp, 100)
 	d.HAlignCenter(shp, circle)
+	d.Place(cyl).Below(circle)
 
 	lnk := shape.NewArrowBetween(circle, shp)
 	lnk.SetClass("implements-arrow")

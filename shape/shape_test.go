@@ -3,11 +3,44 @@ package shape
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
+	"strings"
 	"testing"
 
 	"github.com/gregoryv/asserter"
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 )
+
+func TestSaveShapes(t *testing.T) {
+	shapes := []Shape{
+		NewComponent("a"),
+		NewRect("rect"),
+		NewTriangle(),
+		NewLabel("l"),
+		NewLine(1, 1, 7, 7),
+		NewExitDot(),
+		NewDot(),
+		NewCircle(24),
+		NewCylinder(40, 80),
+		NewState("Waiting for push"),
+		NewDecision(),
+		NewActor(),
+	}
+	for _, shape := range shapes {
+		img := draw.NewSvg()
+		img.Append(shape)
+		file := fmt.Sprintf("img/%T.svg", shape)
+		file = strings.Replace(file, "*shape.", "", 1)
+		w, err := os.Create(file)
+		if err != nil {
+			t.Fatal(err)
+		}
+		style := NewStyle(w)
+		img.WriteSvg(&style)
+		w.Close()
+	}
+}
 
 func TestShapes(t *testing.T) {
 	shapes := []Shape{
@@ -19,6 +52,7 @@ func TestShapes(t *testing.T) {
 		NewExitDot(),
 		NewDot(),
 		NewCircle(24),
+		NewCylinder(40, 80),
 		NewState("Waiting for push"),
 		NewDecision(),
 		NewActor(),
@@ -133,6 +167,7 @@ func testShape(t *testing.T, shape Shape) {
 			t.Fail()
 		}
 	})
+
 }
 
 type resizable interface {

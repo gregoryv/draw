@@ -1,0 +1,5 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="100" height="100" font-family="Arial, Helvetica, sans-serif">
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="12" cy="12" r="10" />\n<circle stroke="black" cx="12" cy="12" r="6" />\n</svg>
