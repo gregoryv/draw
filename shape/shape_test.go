@@ -26,6 +26,7 @@ func TestShapes(t *testing.T) {
 	for _, shape := range shapes {
 		testShape(t, shape)
 	}
+	SetClass("x", shapes...)
 }
 
 func testShape(t *testing.T, shape Shape) {

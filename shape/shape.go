@@ -15,3 +15,9 @@ type Shape interface {
 	SetClass(string)
 	WriteSvg(io.Writer) error
 }
+
+func SetClass(class string, shapes ...Shape) {
+	for _, s := range shapes {
+		s.SetClass(class)
+	}
+}
