@@ -11,14 +11,20 @@ import (
 func NewCylinder(radius, height int) *Cylinder {
 	return &Cylinder{
 		Radius: radius,
+		Font:   DefaultFont,
+		Pad:    DefaultTextPad,
 		height: height,
 		class:  "cylinder",
 	}
 }
 
 type Cylinder struct {
-	x, y   int // top left
 	Radius int
+
+	Font Font
+	Pad  Padding
+
+	x, y   int // top left
 	height int
 	class  string
 }
@@ -39,10 +45,14 @@ func (c *Cylinder) Height() int           { return c.height }
 func (c *Cylinder) Direction() Direction  { return RightDir }
 func (c *Cylinder) SetClass(class string) { c.class = class }
 
+func (c *Cylinder) ry() float64 {
+	return float64(c.Radius) * 0.2
+}
+
 func (c *Cylinder) WriteSvg(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	rx := c.Radius
-	ry := int(float64(rx) * 0.2)
+	ry := int(c.ry())
 	x, y := c.Position()
 	cx := x + rx
 	cy := y + ry
