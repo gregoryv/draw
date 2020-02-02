@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 
-- Cylinder shape
+- Cylinder and database shapes
 - Func shape.SetClass for setting class of many shapes
 
 ### Fixed
