@@ -148,10 +148,27 @@ func ExampleGanttChart() {
 	d.SaveAs("img/gantt_chart.svg")
 }
 
+func ExampleGanttChart_year() {
+	var (
+		d   = design.NewGanttChart("20191111", 365)
+		dev = d.Add("Develop")
+		rel = d.Add("Release").Red()
+		vac = d.Add("Vacation").Blue()
+	)
+	d.Weeks = true
+	d.MarkDate("20191120")
+	d.Place(dev).At("20191111", 10)
+	d.Place(rel).After(dev, 1)
+	d.Place(vac).At("20191125", 14)
+	d.SetCaption("Figure 1. Project estimated delivery")
+	d.SaveAs("img/gantt_year.svg")
+}
+
 func TestExamples(t *testing.T) {
 	ExampleClassDiagram()
 	//ExampleSequenceDiagram()
 	ExampleDiagram()
 	ExampleActivityDiagram()
 	ExampleGanttChart()
+	ExampleGanttChart_year()
 }

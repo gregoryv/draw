@@ -42,6 +42,8 @@ type GanttChart struct {
 
 	// Set a marker at this date.
 	Mark time.Time
+
+	Weeks bool
 }
 
 func (d *GanttChart) MarkDate(yyyymmdd date.String) {
@@ -103,17 +105,31 @@ func (d *GanttChart) WriteSvg(w io.Writer) error {
 		y := i*lineHeight + headerHeight
 		d.Diagram.Place(rect).At(start, y)
 	}
+	// adjust the bars
+	for j, t := range d.tasks {
+		var width float64
+		var x float64
+		for i := 0; i < d.days; i++ {
+			var dayWidth float64
+			if d.Weeks {
+				dayWidth = float64(columns[i/7].Width()) / 7
+			} else {
+				dayWidth = float64(columns[i].Width() + d.colSpace)
+			}
 
-	for i := 0; i < d.days; i++ {
-		dayWidth := columns[i].Width() + d.colSpace
-		for j, t := range d.tasks {
 			switch {
 			case i == t.offset:
-				bars[j].SetX(start + i*dayWidth)
+				x = float64(start) + float64(i)*dayWidth
+				width += dayWidth
 			case i > t.offset && i < t.offset+t.days:
-				bars[j].SetWidth(bars[j].Width() + dayWidth)
+				width += dayWidth
 			}
 		}
+		if !d.Weeks {
+			width -= float64(d.colSpace)
+		}
+		bars[j].SetX(int(x))
+		bars[j].SetWidth(int(width + float64(t.days/7*d.colSpace)))
 	}
 
 	return d.Diagram.WriteSvg(w)
@@ -126,35 +142,48 @@ func (d *GanttChart) addHeader() []*shape.Label {
 	offset := d.padLeft + d.taskWidth()
 
 	var lastDay *shape.Label
-	columns := make([]*shape.Label, d.days)
+	columns := make([]*shape.Label, 0)
+	var col *shape.Label
 	for i := 0; i < d.days; i++ {
 		day := now.Day()
-		col := newCol(day)
-		columns[i] = col
-		if now.Weekday() == time.Saturday {
-			bg := shape.NewRect("")
-			bg.SetClass("weekend")
-			bg.SetWidth((col.Width() + d.colSpace) * 2)
-			bg.SetHeight(len(d.tasks)*col.Font.LineHeight + d.padTop + d.Diagram.Font.LineHeight + d.colSpace)
-			d.Diagram.Place(bg).RightOf(lastDay, d.colSpace)
-			shape.Move(bg, -d.colSpace/2, d.colSpace)
+		colName := day
+		if d.Weeks {
+			_, colName = now.ISOWeek()
 		}
-		if i == 0 {
-			d.Diagram.Place(col).Below(year, d.colSpace)
-			col.SetX(offset)
-		} else {
-			d.Diagram.Place(col).RightOf(lastDay, d.colSpace)
-		}
-		if day == 1 {
-			label := shape.NewLabel(now.Month().String())
-			d.Diagram.Place(label).Above(col, d.colSpace)
+		wday := now.Weekday()
+		if day == 1 || d.Weeks && wday == 1 || !d.Weeks {
+			col = newCol(colName)
+			columns = append(columns, col)
+
+			if !d.Weeks && now.Weekday() == time.Saturday {
+				bg := shape.NewRect("")
+				bg.SetClass("weekend")
+				bg.SetWidth((col.Width() + d.colSpace) * 2)
+				bg.SetHeight(len(d.tasks)*col.Font.LineHeight + d.padTop + d.Diagram.Font.LineHeight + d.colSpace)
+				d.Diagram.Place(bg).RightOf(lastDay, d.colSpace)
+				shape.Move(bg, -d.colSpace/2, d.colSpace)
+			}
+			if i == 0 {
+				d.Diagram.Place(col).Below(year, d.colSpace)
+				col.SetX(offset)
+			} else {
+				d.Diagram.Place(col).RightOf(lastDay, d.colSpace)
+			}
+			if day == 1 {
+				monthName := now.Month().String()
+				if d.Weeks {
+					monthName = monthName[:3]
+				}
+				label := shape.NewLabel(monthName)
+				d.Diagram.Place(label).Above(col, d.colSpace)
+			}
+			lastDay = col
 		}
 		if d.isToday(i) {
 			x, y := col.Position()
 			mark := shape.NewLine(x, y, x+10, y)
 			d.Diagram.Place(mark)
 		}
-		lastDay = col
 		now = now.AddDate(0, 0, 1)
 	}
 	return columns

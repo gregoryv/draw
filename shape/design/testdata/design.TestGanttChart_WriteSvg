@@ -44,12 +44,12 @@
 <text class="label" font-size="10px" x="500" y="46">09</text>
 <text class="label" font-size="10px" x="515" y="46">10</text>
 <text class="label" font-size="12px" x="16" y="69">Develop</text>
-<rect class="span-green" x="80" y="58" width="151" height="12"/>
+<rect class="span-green" x="80" y="58" width="150" height="12"/>
 <text class="span-green-title" font-size="12px" x="86" y="76"></text>
 <text class="label" font-size="12px" x="16" y="85">Release</text>
-<rect class="span-red" x="230" y="74" width="16" height="12"/>
+<rect class="span-red" x="230" y="74" width="11" height="12"/>
 <text class="span-red-title" font-size="12px" x="236" y="92"></text>
 <text class="label" font-size="12px" x="16" y="101">Vacation</text>
-<rect class="span-blue" x="290" y="90" width="211" height="12"/>
+<rect class="span-blue" x="290" y="90" width="214" height="12"/>
 <text class="span-blue-title" font-size="12px" x="296" y="108"></text>
 <text class="caption" font-size="12px" x="167" y="158">Figure 1. Project estimated delivery</text></svg>
