@@ -9,7 +9,7 @@ import (
 )
 
 func TestGanttAdjuster_At(t *testing.T) {
-	task := NewTask("hepp", 0, 1)
+	task := NewTask("hepp")
 	a := &GanttAdjuster{
 		start: date.String("20191001").Time(), // ie. diagram start
 		task:  task,

@@ -46,28 +46,29 @@ type GanttChart struct {
 	Weeks bool
 }
 
-func (d *GanttChart) MarkDate(yyyymmdd date.String) {
-	d.Mark = yyyymmdd.Time()
+func (g *GanttChart) MarkDate(yyyymmdd date.String) {
+	g.Mark = yyyymmdd.Time()
 }
 
 // isToday returns true if time.Now matches start + ndays
-func (d *GanttChart) isToday(ndays int) bool {
-	t := d.start.AddDate(0, 0, ndays)
-	return t.Year() == d.Mark.Year() &&
-		t.YearDay() == d.Mark.YearDay()
+func (g *GanttChart) isToday(ndays int) bool {
+	t := g.start.AddDate(0, 0, ndays)
+	sameYear := t.Year() == g.Mark.Year()
+	sameDay := t.YearDay() == g.Mark.YearDay()
+	return sameYear && sameDay
 }
 
 // Add new task from start spanning 3 days. Default color is green.
-func (d *GanttChart) Add(txt string) *Task {
-	task := NewTask(txt, 0, 3)
-	d.tasks = append(d.tasks, task)
+func (g *GanttChart) Add(txt string) *Task {
+	task := NewTask(txt)
+	g.tasks = append(g.tasks, task)
 	return task
 }
 
 // Add new task. Default color is green.
-func (d *GanttChart) Place(task *Task) *GanttAdjuster {
+func (g *GanttChart) Place(task *Task) *GanttAdjuster {
 	return &GanttAdjuster{
-		start: d.start,
+		start: g.start,
 		task:  task,
 	}
 }
@@ -78,16 +79,13 @@ type GanttAdjuster struct {
 }
 
 func (a *GanttAdjuster) At(from date.String, days int) {
-	a.task.offset = from.DaysAfter(a.start)
-	if a.task.offset < 0 {
-		a.task.offset = 0
-	}
-	a.task.days = days
+	a.task.from = from.Time()
+	a.task.to = from.Time().AddDate(0, 0, days)
 }
 
 func (a *GanttAdjuster) After(parent *Task, days int) {
-	a.task.offset = parent.offset + parent.days
-	a.task.days = days
+	a.task.from = parent.to
+	a.task.to = parent.to.AddDate(0, 0, days)
 }
 
 func (d *GanttChart) WriteSvg(w io.Writer) error {
@@ -106,30 +104,31 @@ func (d *GanttChart) WriteSvg(w io.Writer) error {
 		d.Diagram.Place(rect).At(start, y)
 	}
 	// adjust the bars
-	for j, t := range d.tasks {
-		var width float64
-		var x float64
-		for i := 0; i < d.days; i++ {
-			var dayWidth float64
-			if d.Weeks {
-				dayWidth = float64(columns[i/7].Width()) / 7
-			} else {
-				dayWidth = float64(columns[i].Width() + d.colSpace)
-			}
 
+	for j, t := range d.tasks {
+		var width int
+		for i := 0; i < d.days; i++ {
+			now := d.start.AddDate(0, 0, i)
+			var col *shape.Label
+			if d.Weeks {
+				col = columns[i/7]
+			} else {
+				col = columns[i]
+			}
 			switch {
-			case i == t.offset:
-				x = float64(start) + float64(i)*dayWidth
-				width += dayWidth
-			case i > t.offset && i < t.offset+t.days:
-				width += dayWidth
+			case now.Equal(t.from):
+				d.VAlignLeft(col, bars[j])
+			case now.After(t.from) && now.Before(t.to) || now.Equal(t.to):
+				if !d.Weeks || (d.Weeks && now.Weekday() == time.Sunday) {
+					width += col.Width()
+					width += d.colSpace
+				}
 			}
 		}
 		if !d.Weeks {
-			width -= float64(d.colSpace)
+			width -= d.colSpace
 		}
-		bars[j].SetX(int(x))
-		bars[j].SetWidth(int(width + float64(t.days/7*d.colSpace)))
+		bars[j].SetWidth(width)
 	}
 
 	return d.Diagram.WriteSvg(w)
@@ -220,20 +219,18 @@ func (d *GanttChart) taskWidth() int {
 }
 
 // NewTask returns a green task.
-func NewTask(txt string, offset, days int) *Task {
+func NewTask(txt string) *Task {
 	return &Task{
-		txt:    txt,
-		offset: offset,
-		days:   days,
-		class:  "span-green",
+		txt:   txt,
+		class: "span-green",
 	}
 }
 
 // Task is the colorized span of a gantt chart.
 type Task struct {
-	txt          string
-	offset, days int
-	class        string
+	txt      string
+	from, to time.Time
+	class    string
 }
 
 // Red sets class of task to span-red
