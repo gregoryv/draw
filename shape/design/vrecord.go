@@ -7,6 +7,12 @@ import (
 	"github.com/gregoryv/draw/shape"
 )
 
+// VRecord represents a type struct or interface as a record shape.
+type VRecord struct {
+	*shape.Record
+	t reflect.Type
+}
+
 // NewStruct returns a VRecord of the given object, panics if not
 // struct.
 func NewStruct(obj interface{}) VRecord {
@@ -15,17 +21,9 @@ func NewStruct(obj interface{}) VRecord {
 		panic(fmt.Sprintf("Expected struct kind got %v", t.Kind()))
 	}
 	return VRecord{
-		Record:   shape.NewStructRecord(obj),
-		t:        t,
-		isStruct: true,
+		Record: shape.NewStructRecord(obj),
+		t:      t,
 	}
-}
-
-// VRecord represents a type struct or interface as a record shape.
-type VRecord struct {
-	*shape.Record
-	t        reflect.Type
-	isStruct bool
 }
 
 // TitleOnly hides fields and methods.
@@ -42,9 +40,8 @@ func NewInterface(obj interface{}) VRecord {
 		panic(fmt.Sprintf("Expected ptr kind got %v", t.Kind()))
 	}
 	return VRecord{
-		Record:   shape.NewInterfaceRecord(obj),
-		t:        t,
-		isStruct: false,
+		Record: shape.NewInterfaceRecord(obj),
+		t:      t,
 	}
 }
 
