@@ -7,6 +7,23 @@ import (
 	"github.com/gregoryv/draw/shape"
 )
 
+func NewVRecord(v interface{}) *VRecord {
+	t := reflect.TypeOf(v)
+	title := fmt.Sprintf("%s %s", t, t.Kind())
+	if t.Kind() == reflect.Ptr {
+		t = t.Elem()
+		if t.Kind() == reflect.Interface {
+			title = fmt.Sprintf("%s %s", t, t.Kind())
+		}
+	}
+	rec := shape.NewRecord(title)
+	// todo add methods and fields if any
+	return &VRecord{
+		Record: rec,
+		t:      t,
+	}
+}
+
 // VRecord represents a type struct or interface as a record shape.
 type VRecord struct {
 	*shape.Record

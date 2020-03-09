@@ -7,6 +7,22 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
+type myOwn int
+type myStr struct{ f string }
+
+func Test_NewVRecord_types(t *testing.T) {
+	ok := func(v interface{}, exp string) {
+		vr := NewVRecord(v)
+		got := vr.Title
+		if got != exp {
+			t.Error("got: ", got, "exp: ", exp)
+		}
+	}
+	ok(myOwn(1), "design.myOwn int")
+	ok(myStr{}, "design.myStr struct")
+	ok((*io.Reader)(nil), "io.Reader interface")
+}
+
 func TestVRecord(t *testing.T) {
 	r := NewStruct(VRecord{})
 	before := len(r.Fields)
