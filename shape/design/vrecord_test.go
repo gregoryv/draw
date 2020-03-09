@@ -24,22 +24,12 @@ func Test_NewVRecord_types(t *testing.T) {
 }
 
 func TestVRecord(t *testing.T) {
-	r := NewStruct(VRecord{})
+	r := NewVRecord(VRecord{})
 	before := len(r.Fields)
 	r.TitleOnly()
 	got := len(r.Fields)
 	assert := asserter.New(t)
 	assert(got != before).Error("Did not hide fields")
-}
-
-func TestNewStruct(t *testing.T) {
-	x := struct {
-		Field string
-	}{}
-	s := NewStruct(x)
-	if len(s.Fields) != 1 {
-		t.Error("Expected one field")
-	}
 }
 
 func TestNewInterface(t *testing.T) {
@@ -62,9 +52,9 @@ type C struct{}
 func TestVRecord_ComposedOf(t *testing.T) {
 	ok := func(a, b interface{}) {
 		t.Helper()
-		A := NewStruct(a)
-		B := NewStruct(b)
-		if !A.ComposedOf(&B) {
+		A := NewVRecord(a)
+		B := NewVRecord(b)
+		if !A.ComposedOf(B) {
 			t.Fail()
 		}
 	}
@@ -72,9 +62,9 @@ func TestVRecord_ComposedOf(t *testing.T) {
 
 	bad := func(a, b interface{}) {
 		t.Helper()
-		A := NewStruct(a)
-		B := NewStruct(b)
-		if A.ComposedOf(&B) {
+		A := NewVRecord(a)
+		B := NewVRecord(b)
+		if A.ComposedOf(B) {
 			t.Fail()
 		}
 	}
@@ -84,9 +74,9 @@ func TestVRecord_ComposedOf(t *testing.T) {
 func TestVRecord_Aggregates(t *testing.T) {
 	ok := func(a, b interface{}) {
 		t.Helper()
-		A := NewStruct(a)
-		B := NewStruct(b)
-		if !A.Aggregates(&B) {
+		A := NewVRecord(a)
+		B := NewVRecord(b)
+		if !A.Aggregates(B) {
 			t.Fail()
 		}
 	}
@@ -94,9 +84,9 @@ func TestVRecord_Aggregates(t *testing.T) {
 
 	bad := func(a, b interface{}) {
 		t.Helper()
-		A := NewStruct(a)
-		B := NewStruct(b)
-		if A.Aggregates(&B) {
+		A := NewVRecord(a)
+		B := NewVRecord(b)
+		if A.Aggregates(B) {
 			t.Fail()
 		}
 	}

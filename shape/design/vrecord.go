@@ -80,13 +80,6 @@ type VRecord struct {
 	t reflect.Type
 }
 
-// NewStruct returns a VRecord of the given object, panics if not
-// struct.
-func NewStruct(obj interface{}) VRecord {
-	r := NewVRecord(obj)
-	return *r
-}
-
 // NewInterface returns a VRecord of the given object, panics if not
 // interface.
 func NewInterface(obj interface{}) VRecord {

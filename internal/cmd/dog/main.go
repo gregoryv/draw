@@ -32,7 +32,7 @@ func overview() *design.SequenceDiagram {
 		run   = shape.NewState("Run")
 		end   = shape.NewExitDot()
 
-		circle = design.NewStruct(shape.Circle{})
+		circle = design.NewVRecord(shape.Circle{})
 		cyl    = shape.NewCylinder(40, 70)
 
 		shp  = design.NewInterface((*shape.Shape)(nil))

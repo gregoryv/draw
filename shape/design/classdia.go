@@ -32,9 +32,9 @@ func (d *ClassDiagram) Interface(obj interface{}) VRecord {
 }
 
 func (d *ClassDiagram) Struct(obj interface{}) VRecord {
-	vr := NewStruct(obj)
-	d.structs = append(d.structs, vr)
-	return vr
+	vr := NewVRecord(obj)
+	d.structs = append(d.structs, *vr)
+	return *vr
 }
 
 // WriteSvg renders the diagram as SVG to the given writer.
