@@ -156,6 +156,7 @@ func ExampleGanttChart_year() {
 		vac = d.Add("Vacation").Blue()
 	)
 	d.Weeks = true
+	d.MarkDate("20200404")
 	d.Place(dev).At("20191111", 60)
 	d.Place(rel).After(dev, 1)
 	d.Place(vac).At("20200404", 21)
