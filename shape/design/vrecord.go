@@ -1,6 +1,7 @@
 package design
 
 import (
+	"bytes"
 	"fmt"
 	"reflect"
 
@@ -17,11 +18,60 @@ func NewVRecord(v interface{}) *VRecord {
 		}
 	}
 	rec := shape.NewRecord(title)
+
+	if t.Kind() == reflect.Struct {
+		addFields(rec, t)
+		addMethods(rec, t)
+	}
+	if t.Kind() == reflect.Interface {
+		addMethods(rec, t)
+	}
+
 	// todo add methods and fields if any
 	return &VRecord{
 		Record: rec,
 		t:      t,
 	}
+}
+
+func addFields(r *shape.Record, t reflect.Type) {
+	for i := 0; i < t.NumField(); i++ {
+		field := t.Field(i)
+		if isPublic(field.Name) {
+			r.Fields = append(r.Fields, field.Name)
+		}
+	}
+}
+
+func addMethods(r *shape.Record, t reflect.Type) {
+	for i := 0; i < t.NumMethod(); i++ {
+		m := t.Method(i)
+		if isPublic(m.Name) {
+			r.Methods = append(r.Methods, m.Name+"()")
+		}
+	}
+}
+
+func isPublic(name string) bool {
+	up := bytes.ToUpper([]byte(name))
+	return []byte(name)[0] == up[0]
+}
+
+// NewStructRecord returns a record shape based on a Go struct type.
+// Reflection is used.
+func NewStructRecord(obj interface{}) *shape.Record {
+	t := reflect.TypeOf(obj)
+	rec := shape.NewRecord(t.String() + " struct")
+	addFields(rec, t)
+	addMethods(rec, reflect.PtrTo(t))
+	return rec
+}
+
+func NewInterfaceRecord(obj interface{}) *shape.Record {
+	t := reflect.TypeOf(obj).Elem()
+	rec := shape.NewRecord(t.String() + " interface")
+	addMethods(rec, t)
+	return rec
 }
 
 // VRecord represents a type struct or interface as a record shape.
@@ -33,33 +83,21 @@ type VRecord struct {
 // NewStruct returns a VRecord of the given object, panics if not
 // struct.
 func NewStruct(obj interface{}) VRecord {
-	t := reflect.TypeOf(obj)
-	if t.Kind() != reflect.Struct {
-		panic(fmt.Sprintf("Expected struct kind got %v", t.Kind()))
-	}
-	return VRecord{
-		Record: shape.NewStructRecord(obj),
-		t:      t,
-	}
+	r := NewVRecord(obj)
+	return *r
+}
+
+// NewInterface returns a VRecord of the given object, panics if not
+// interface.
+func NewInterface(obj interface{}) VRecord {
+	r := NewVRecord(obj)
+	return *r
 }
 
 // TitleOnly hides fields and methods.
 func (vr *VRecord) TitleOnly() {
 	vr.HideFields()
 	vr.HideMethods()
-}
-
-// NewInterface returns a VRecord of the given object, panics if not
-// interface.
-func NewInterface(obj interface{}) VRecord {
-	t := reflect.TypeOf(obj).Elem()
-	if t.Kind() != reflect.Interface {
-		panic(fmt.Sprintf("Expected ptr kind got %v", t.Kind()))
-	}
-	return VRecord{
-		Record: shape.NewInterfaceRecord(obj),
-		t:      t,
-	}
 }
 
 func (vr *VRecord) Implements(iface *VRecord) bool {

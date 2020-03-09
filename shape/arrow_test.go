@@ -176,15 +176,11 @@ type ArrowBetweenShapes struct {
 	assert
 }
 
-type A struct{}
-
-type B struct{}
-
 func (t *ArrowBetweenShapes) StartsAndEndsAtEdgeOfShapes() {
-	a := NewStructRecord(A{})
+	a := NewRecord("A")
 	a.SetX(10)
 	a.SetY(100)
-	b := NewStructRecord(B{})
+	b := NewRecord("B")
 	b.SetX(80)
 	b.SetY(40)
 

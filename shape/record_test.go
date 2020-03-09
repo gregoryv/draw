@@ -34,16 +34,6 @@ func TestOneRecord(t *testing.T) {
 	it.SWidthAdapts()
 	it.RendersAsSvg()
 
-	it = NewOneRecord(t, NewStructRecord(Record{}))
-	it.HasFields()
-	it.HasMethods()
-	it.CanHideFields()
-	it.CanHideMethods()
-
-	it = NewOneRecord(t, NewInterfaceRecord((*Shape)(nil)))
-	it.IsMissingFields()
-	it.HasMethods()
-
 	it = NewOneRecord(t, NewRecord("simple"))
 	it.IsMissingFields()
 	it.IsStyled()

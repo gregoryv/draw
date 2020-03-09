@@ -1,10 +1,8 @@
 package shape
 
 import (
-	"bytes"
 	"fmt"
 	"io"
-	"reflect"
 
 	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
@@ -115,24 +113,6 @@ func (r *Record) hasFields() bool  { return len(r.Fields) != 0 }
 func (r *Record) hasMethods() bool { return len(r.Methods) != 0 }
 func (r *Record) isEmpty() bool    { return !r.hasFields() && !r.hasMethods() }
 
-func (r *Record) addFields(t reflect.Type) {
-	for i := 0; i < t.NumField(); i++ {
-		field := t.Field(i)
-		if isPublic(field.Name) {
-			r.Fields = append(r.Fields, field.Name)
-		}
-	}
-}
-
-func (rec *Record) addMethods(t reflect.Type) {
-	for i := 0; i < t.NumMethod(); i++ {
-		m := t.Method(i)
-		if isPublic(m.Name) {
-			rec.Methods = append(rec.Methods, m.Name+"()")
-		}
-	}
-}
-
 func (r *Record) HideMethod(m string) (found bool) {
 	rest := make([]string, 0)
 	for _, n := range r.Methods {
@@ -144,28 +124,6 @@ func (r *Record) HideMethod(m string) (found bool) {
 	}
 	r.Methods = rest
 	return
-}
-
-func isPublic(name string) bool {
-	up := bytes.ToUpper([]byte(name))
-	return []byte(name)[0] == up[0]
-}
-
-// NewStructRecord returns a record shape based on a Go struct type.
-// Reflection is used.
-func NewStructRecord(obj interface{}) *Record {
-	t := reflect.TypeOf(obj)
-	rec := NewRecord(t.String() + " struct")
-	rec.addFields(t)
-	rec.addMethods(reflect.PtrTo(t))
-	return rec
-}
-
-func NewInterfaceRecord(obj interface{}) *Record {
-	t := reflect.TypeOf(obj).Elem()
-	rec := NewRecord(t.String() + " interface")
-	rec.addMethods(t)
-	return rec
 }
 
 func (r *Record) Height() int {
