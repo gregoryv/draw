@@ -80,13 +80,6 @@ type VRecord struct {
 	t reflect.Type
 }
 
-// NewInterface returns a VRecord of the given object, panics if not
-// interface.
-func NewInterface(obj interface{}) VRecord {
-	r := NewVRecord(obj)
-	return *r
-}
-
 // TitleOnly hides fields and methods.
 func (vr *VRecord) TitleOnly() {
 	vr.HideFields()

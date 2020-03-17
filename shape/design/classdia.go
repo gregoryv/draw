@@ -26,9 +26,9 @@ func NewClassDiagram() *ClassDiagram {
 }
 
 func (d *ClassDiagram) Interface(obj interface{}) VRecord {
-	vr := NewInterface(obj)
-	d.interfaces = append(d.interfaces, vr)
-	return vr
+	vr := NewVRecord(obj)
+	d.interfaces = append(d.interfaces, *vr)
+	return *vr
 }
 
 func (d *ClassDiagram) Struct(obj interface{}) VRecord {

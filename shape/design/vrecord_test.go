@@ -32,13 +32,6 @@ func TestVRecord(t *testing.T) {
 	assert(got != before).Error("Did not hide fields")
 }
 
-func TestNewInterface(t *testing.T) {
-	i := NewInterface((*io.Writer)(nil))
-	if len(i.Methods) != 1 {
-		t.Error("Expected one method")
-	}
-}
-
 func mustCatchPanic(t asserter.T) {
 	t.Helper()
 	e := recover()

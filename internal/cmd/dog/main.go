@@ -35,7 +35,7 @@ func overview() *design.SequenceDiagram {
 		circle = design.NewVRecord(shape.Circle{})
 		cyl    = shape.NewCylinder(40, 70)
 
-		shp  = design.NewInterface((*shape.Shape)(nil))
+		shp  = design.NewVRecord((*shape.Shape)(nil))
 		note = shape.NewNote("Anything is possible!\nGo draw your next design")
 
 		actor = shape.NewActor()
