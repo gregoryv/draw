@@ -57,23 +57,6 @@ func isPublic(name string) bool {
 	return []byte(name)[0] == up[0]
 }
 
-// NewStructRecord returns a record shape based on a Go struct type.
-// Reflection is used.
-func NewStructRecord(obj interface{}) *shape.Record {
-	t := reflect.TypeOf(obj)
-	rec := shape.NewRecord(t.String() + " struct")
-	addFields(rec, t)
-	addMethods(rec, reflect.PtrTo(t))
-	return rec
-}
-
-func NewInterfaceRecord(obj interface{}) *shape.Record {
-	t := reflect.TypeOf(obj).Elem()
-	rec := shape.NewRecord(t.String() + " interface")
-	addMethods(rec, t)
-	return rec
-}
-
 // VRecord represents a type struct or interface as a record shape.
 type VRecord struct {
 	*shape.Record
