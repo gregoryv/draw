@@ -7,11 +7,22 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
-func TestRecord(t *testing.T) {
+func TestRecord_HideMethods(t *testing.T) {
 	r := NewRecord("a")
-	r.Fields = []string{"bb", "ccc"}
 	r.Methods = []string{"dddd", "eeeee"}
-	testShape(t, r)
+	r.HideMethods()
+	if len(r.Methods) > 0 {
+		t.Error("Record still has methods")
+	}
+}
+
+func TestRecord_HideFields(t *testing.T) {
+	r := NewRecord("a")
+	r.Fields = []string{"dddd", "eeeee"}
+	r.HideFields()
+	if len(r.Fields) > 0 {
+		t.Error("Record still has fields")
+	}
 }
 
 func TestRecord_HasMethod(t *testing.T) {

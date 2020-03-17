@@ -44,6 +44,9 @@ func TestSaveShapes(t *testing.T) {
 }
 
 func TestShapes(t *testing.T) {
+	r := NewRecord("a")
+	r.Fields = []string{"bb", "ccc"}
+	r.Methods = []string{"dddd", "eeeee"}
 	shapes := []Shape{
 		NewComponent("a"),
 		NewRect("rect"),
@@ -58,6 +61,7 @@ func TestShapes(t *testing.T) {
 		NewState("Waiting for push"),
 		NewDecision(),
 		NewActor(),
+		r,
 	}
 	for _, shape := range shapes {
 		testShape(t, shape)
