@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="221" height="354" font-family="Arial, Helvetica, sans-serif">
+  width="297" height="354" font-family="Arial, Helvetica, sans-serif">
 <circle stroke="black" cx="86" cy="26" r="6" />\n
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="43" y="72" width="86" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="49" y="90">Push commit</text>
@@ -31,4 +31,19 @@
 <path stroke="black" d="M95,214 L197,214" />
 <g transform="rotate(0 197 214)"><path stroke="black" fill="#ffffff" d="M197,214 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="111" y="210">Tests failed</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="111" y="210">Tests failed</text>
+<circle stroke="black" cx="186" cy="26" r="6" />\n
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="222" y="13" width="64" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="31">Push tag</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="212" y="76" width="85" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="94">Run git hook</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="254" cy="144" r="10" />\n<circle stroke="black" cx="254" cy="144" r="6" />\n
+<path stroke="black" d="M192,26 L222,26" />
+<g transform="rotate(0 222 26)"><path stroke="black" fill="#ffffff" d="M222,26 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M254,39 L254,76" />
+<g transform="rotate(90 254 76)"><path stroke="black" fill="#ffffff" d="M254,76 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M254,102 L254,132" />
+<g transform="rotate(90 254 132)"><path stroke="black" fill="#ffffff" d="M254,132 l-8,-4 l 0,8 Z" /></g>
+</svg>
