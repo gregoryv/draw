@@ -147,8 +147,17 @@ func (d *SequenceDiagram) top() int {
 	return d.Pad.Top
 }
 
+// AddColumns adds the names as columns in the given order.
 func (d *SequenceDiagram) AddColumns(names ...string) {
-	d.columns = append(d.columns, names...)
+	for _, name := range names {
+		d.Add(name)
+	}
+}
+
+// Add the name as next column and return name.
+func (d *SequenceDiagram) Add(name string) string {
+	d.columns = append(d.columns, name)
+	return name
 }
 
 func (d *SequenceDiagram) SaveAs(filename string) error {
