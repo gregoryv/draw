@@ -166,6 +166,12 @@ func (d *SequenceDiagram) SaveAs(filename string) error {
 
 func (d *SequenceDiagram) AddStruct(obj interface{}) string {
 	name := reflect.TypeOf(obj).String()
-	d.AddColumns(name)
+	d.Add(name)
+	return name
+}
+
+func (d *SequenceDiagram) AddInterface(obj interface{}) string {
+	name := reflect.TypeOf(obj).Elem().String()
+	d.Add(name)
 	return name
 }
