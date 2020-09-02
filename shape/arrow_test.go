@@ -194,7 +194,7 @@ func (t *ArrowBetweenShapes) StartsAndEndsAtEdgeOfShapes() {
 	writeSvgTo(t.T, "testdata/arrow_between_shapes.svg", svg)
 }
 
-func newSvg(width, height int, shapes ...draw.SvgWriter) *draw.SVG {
+func newSvg(width, height int, shapes ...draw.SVGWriter) *draw.SVG {
 	svg := &draw.SVG{}
 	svg.SetSize(width, height)
 	svg.Append(shapes...)

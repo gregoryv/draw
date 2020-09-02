@@ -21,13 +21,13 @@ func NewSvg() *SVG {
 	return &SVG{
 		width:   100,
 		height:  100,
-		Content: make([]SvgWriter, 0),
+		Content: make([]SVGWriter, 0),
 	}
 }
 
 type SVG struct {
 	width, height int
-	Content       []SvgWriter
+	Content       []SVGWriter
 }
 
 func (s *SVG) WriteSvg(out io.Writer) error {
@@ -45,11 +45,11 @@ func (s *SVG) WriteSvg(out io.Writer) error {
 	return *err
 }
 
-func (s *SVG) Append(w ...SvgWriter) {
+func (s *SVG) Append(w ...SVGWriter) {
 	s.Content = append(s.Content, w...)
 }
 
-func (s *SVG) Prepend(w ...SvgWriter) {
+func (s *SVG) Prepend(w ...SVGWriter) {
 	s.Content = append(w, s.Content...)
 }
 
@@ -60,6 +60,6 @@ func (s *SVG) SetWidth(w int)   { s.width = w }
 func (s *SVG) SetHeight(h int)  { s.height = h }
 func (s *SVG) SetSize(w, h int) { s.SetWidth(w); s.SetHeight(h) }
 
-type SvgWriter interface {
+type SVGWriter interface {
 	WriteSvg(io.Writer) error
 }
