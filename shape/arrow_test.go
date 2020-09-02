@@ -124,7 +124,7 @@ func (t *OneArrow) HasBothTailAndHead() {
 
 func (t *OneArrow) saveAs(filename string) {
 	t.Helper()
-	d := &draw.Svg{}
+	d := &draw.SVG{}
 	d.SetSize(100, 100)
 	d.Append(t.Arrow)
 
@@ -194,14 +194,14 @@ func (t *ArrowBetweenShapes) StartsAndEndsAtEdgeOfShapes() {
 	writeSvgTo(t.T, "testdata/arrow_between_shapes.svg", svg)
 }
 
-func newSvg(width, height int, shapes ...draw.SvgWriter) *draw.Svg {
-	svg := &draw.Svg{}
+func newSvg(width, height int, shapes ...draw.SvgWriter) *draw.SVG {
+	svg := &draw.SVG{}
 	svg.SetSize(width, height)
 	svg.Append(shapes...)
 	return svg
 }
 
-func writeSvgTo(t *testing.T, filename string, svg *draw.Svg) {
+func writeSvgTo(t *testing.T, filename string, svg *draw.SVG) {
 	t.Helper()
 	fh, err := os.Create(filename)
 	if err != nil {

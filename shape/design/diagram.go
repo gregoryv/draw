@@ -19,7 +19,7 @@ func NewDiagram() Diagram {
 
 // Diagram is a generic SVG image with box related styling
 type Diagram struct {
-	draw.Svg
+	draw.SVG
 	shape.Aligner
 	shape.Style
 
@@ -122,7 +122,7 @@ func (d *Diagram) WriteSvg(w io.Writer) error {
 		d.AdaptSize()
 		d.SetHeight(d.Height() + d.Caption.Font.Height/2) // Fit protruding letters like 'g'
 	}
-	return d.Svg.WriteSvg(w)
+	return d.SVG.WriteSvg(w)
 }
 
 // AdaptSize adapts the diagram size to the shapes inside it so all

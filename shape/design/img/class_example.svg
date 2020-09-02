@@ -97,7 +97,7 @@
 <rect stroke="#d3d3d3" fill="#ffffff" x="235" y="348" width="134" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="368">design.Relation struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="435" y="422" width="135" height="122"/>
-<line stroke="#d3d3d3" x1="435" y1="452" x2="570" y2="452"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="441" y="468">Svg</text>
+<line stroke="#d3d3d3" x1="435" y1="452" x2="570" y2="452"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="441" y="468">SVG</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="441" y="484">Aligner</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="441" y="500">Style</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="441" y="516">Caption</text>

@@ -17,20 +17,20 @@ import (
 )
 
 // NewSvg returns an empty Svg of size 100x100
-func NewSvg() *Svg {
-	return &Svg{
+func NewSvg() *SVG {
+	return &SVG{
 		width:   100,
 		height:  100,
 		Content: make([]SvgWriter, 0),
 	}
 }
 
-type Svg struct {
+type SVG struct {
 	width, height int
 	Content       []SvgWriter
 }
 
-func (s *Svg) WriteSvg(out io.Writer) error {
+func (s *SVG) WriteSvg(out io.Writer) error {
 	w, err := NewTagWriter(out)
 	w.Printf(`<svg
   xmlns="http://www.w3.org/2000/svg"
@@ -45,20 +45,20 @@ func (s *Svg) WriteSvg(out io.Writer) error {
 	return *err
 }
 
-func (s *Svg) Append(w ...SvgWriter) {
+func (s *SVG) Append(w ...SvgWriter) {
 	s.Content = append(s.Content, w...)
 }
 
-func (s *Svg) Prepend(w ...SvgWriter) {
+func (s *SVG) Prepend(w ...SvgWriter) {
 	s.Content = append(w, s.Content...)
 }
 
-func (s *Svg) Width() int  { return s.width }
-func (s *Svg) Height() int { return s.height }
+func (s *SVG) Width() int  { return s.width }
+func (s *SVG) Height() int { return s.height }
 
-func (s *Svg) SetWidth(w int)   { s.width = w }
-func (s *Svg) SetHeight(h int)  { s.height = h }
-func (s *Svg) SetSize(w, h int) { s.SetWidth(w); s.SetHeight(h) }
+func (s *SVG) SetWidth(w int)   { s.width = w }
+func (s *SVG) SetHeight(h int)  { s.height = h }
+func (s *SVG) SetSize(w, h int) { s.SetWidth(w); s.SetHeight(h) }
 
 type SvgWriter interface {
 	WriteSvg(io.Writer) error

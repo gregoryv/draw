@@ -106,7 +106,7 @@ func (d *SequenceDiagram) WriteSvg(w io.Writer) error {
 
 // Width returns the total width of the diagram
 func (d *SequenceDiagram) Width() int {
-	w := d.Svg.Width()
+	w := d.SVG.Width()
 	if w != 0 {
 		return w
 	}
@@ -115,7 +115,7 @@ func (d *SequenceDiagram) Width() int {
 
 // Height returns the total height of the diagram
 func (d *SequenceDiagram) Height() int {
-	h := d.Svg.Height()
+	h := d.SVG.Height()
 	if h != 0 {
 		return h
 	}

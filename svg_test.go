@@ -20,7 +20,7 @@ func ExampleNewSvg() {
 }
 
 func TestSvg_SetSize(t *testing.T) {
-	s := &Svg{}
+	s := &SVG{}
 	s.SetSize(1, 2)
 	assert := asserter.New(t)
 	assert().Equals(s.Width(), 1)

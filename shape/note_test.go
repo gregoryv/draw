@@ -18,7 +18,7 @@ possible in notes`)
 
 func saveAsSvg(t *testing.T, shape Shape, filename string) {
 	t.Helper()
-	d := &draw.Svg{}
+	d := &draw.SVG{}
 	d.SetSize(300, 100)
 	d.Append(shape)
 
