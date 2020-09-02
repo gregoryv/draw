@@ -107,7 +107,7 @@ func (t *OneRecord) IsStyled() {
 func (t *OneRecord) RendersAsSvg() {
 	t.Helper()
 	buf := &bytes.Buffer{}
-	t.WriteSvg(buf)
+	t.WriteSVG(buf)
 	assert := asserter.New(t)
 	assert().Contains(buf.String(), "<rect ")
 }

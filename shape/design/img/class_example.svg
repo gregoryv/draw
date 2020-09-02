@@ -56,7 +56,7 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="130">SetX()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="146">SetY()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="162">Width()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="178">WriteSvg()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="178">WriteSVG()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="40">shape.Shape interface</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="20" y="120" width="125" height="148"/>
 <line stroke="#d3d3d3" x1="20" y1="150" x2="145" y2="150"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="166">X</text>

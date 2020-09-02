@@ -11,7 +11,7 @@ import (
 
 func ExampleNewSvg() {
 	s := NewSvg()
-	s.WriteSvg(os.Stdout)
+	s.WriteSVG(os.Stdout)
 	// output:
 	// <svg
 	//   xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ func TestSvg_WriteSvg(t *testing.T) {
 	shape := &dummy{}
 	s.Append(shape)
 	w := bytes.NewBufferString("")
-	s.WriteSvg(w)
+	s.WriteSVG(w)
 	if w.String() == "" {
 		t.Error("No svg written")
 	}
@@ -70,7 +70,7 @@ func TestSvg_WriteSvg(t *testing.T) {
 
 type dummy struct{}
 
-func (d *dummy) WriteSvg(w io.Writer) error {
+func (d *dummy) WriteSVG(w io.Writer) error {
 	_, err := w.Write([]byte("..."))
 	return err
 }

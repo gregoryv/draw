@@ -45,7 +45,7 @@ func (l *Label) Height() int          { return l.Font.LineHeight }
 func (l *Label) Direction() Direction { return RightDir }
 func (l *Label) SetClass(c string)    { l.class = c }
 
-func (l *Label) WriteSvg(w io.Writer) error {
+func (l *Label) WriteSVG(w io.Writer) error {
 	x, y := l.Position()
 	y += l.Font.LineHeight
 	_, err := fmt.Fprintf(w,

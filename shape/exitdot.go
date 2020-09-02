@@ -37,7 +37,7 @@ func (e *ExitDot) Height() int           { return e.Width() }
 func (e *ExitDot) Direction() Direction  { return RightDir }
 func (e *ExitDot) SetClass(class string) { e.class = class }
 
-func (e *ExitDot) WriteSvg(out io.Writer) error {
+func (e *ExitDot) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	x, y := e.Position()
 	x += e.Radius

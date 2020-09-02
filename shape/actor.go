@@ -33,7 +33,7 @@ func (a *Actor) rad() int              { return a.height / 6 }
 func (a *Actor) Direction() Direction  { return RightDir }
 func (a *Actor) SetClass(class string) { a.class = class }
 
-func (a *Actor) WriteSvg(out io.Writer) error {
+func (a *Actor) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	x, y := a.Position()
 	r := a.rad()

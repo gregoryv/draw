@@ -88,7 +88,7 @@ func (a *GanttAdjuster) After(parent *Task, days int) {
 	a.task.to = parent.to.AddDate(0, 0, days)
 }
 
-func (d *GanttChart) WriteSvg(w io.Writer) error {
+func (d *GanttChart) WriteSVG(w io.Writer) error {
 	columns := d.addHeader()
 	bars := make([]*shape.Rect, len(d.tasks))
 	start := d.padLeft + d.taskWidth()
@@ -131,7 +131,7 @@ func (d *GanttChart) WriteSvg(w io.Writer) error {
 		bars[j].SetWidth(width)
 	}
 
-	return d.Diagram.WriteSvg(w)
+	return d.Diagram.WriteSVG(w)
 }
 
 func (d *GanttChart) addHeader() []*shape.Label {

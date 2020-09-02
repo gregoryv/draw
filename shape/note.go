@@ -54,7 +54,7 @@ func (n *Note) Height() int {
 }
 func (n *Note) SetClass(c string) { n.class = c }
 
-func (n *Note) WriteSvg(out io.Writer) error {
+func (n *Note) WriteSVG(out io.Writer) error {
 	x, y := n.Position()
 	w := n.Width()
 	h := n.Height()

@@ -39,13 +39,13 @@ func (r *Rect) SetY(y int)           { r.Y = y }
 func (r *Rect) Direction() Direction { return RightDir }
 func (r *Rect) SetClass(c string)    { r.class = c }
 
-func (r *Rect) WriteSvg(out io.Writer) error {
+func (r *Rect) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.X, r.Y, r.Width(), r.Height())
 	w.Printf("\n")
-	r.title().WriteSvg(w)
+	r.title().WriteSVG(w)
 	return *err
 }
 

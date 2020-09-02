@@ -8,8 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [unreleased]
 ### Changed
 
-- Type Svg renamed to SVG
-- Type SvgWriter renamed to SVGWriter
+- Renamed type Svg to SVG
+- Renamed type SvgWriter to SVGWriter
+- Renamed WriteSvg to WriteSVG
 
 ## [0.11.0] 2020-03-17
 ### Changed

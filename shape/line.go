@@ -26,7 +26,7 @@ func (l *Line) String() string {
 	return fmt.Sprintf("Line from %v to %v", l.Start, l.End)
 }
 
-func (l *Line) WriteSvg(w io.Writer) error {
+func (l *Line) WriteSVG(w io.Writer) error {
 	_, err := fmt.Fprintf(w,
 		`<line class="%s" x1="%v" y1="%v" x2="%v" y2="%v"/>`,
 		l.class,

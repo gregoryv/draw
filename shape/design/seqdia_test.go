@@ -23,7 +23,7 @@ func TestSequenceDiagram_WithCaption(t *testing.T) {
 	d := NewSequenceDiagram()
 	before := d.Width()
 	d.SetCaption("should affect width")
-	d.WriteSvg(ioutil.Discard) // caption is not added until written
+	d.WriteSVG(ioutil.Discard) // caption is not added until written
 	after := d.Width()
 	if before == after {
 		t.Fail()
@@ -68,7 +68,7 @@ func (t *one_sequence_diagram) has_fixed_size() { t.SetWidth(10); t.SetHeight(10
 func (t *one_sequence_diagram) is_empty() {
 	t.Helper()
 	w := bytes.NewBufferString("")
-	t.WriteSvg(w)
+	t.WriteSVG(w)
 	golden.Assert(t, w.String())
 }
 
@@ -82,6 +82,6 @@ func (t *one_sequence_diagram) is_not_empty() {
 func (t *one_sequence_diagram) is_rendered_with_fixed_size() {
 	t.Helper()
 	w := bytes.NewBufferString("")
-	t.WriteSvg(w)
+	t.WriteSVG(w)
 	golden.Assert(t, w.String())
 }

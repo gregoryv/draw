@@ -13,7 +13,7 @@ type Shape interface {
 	// The direction and position is needed when aligning shapes.
 	Direction() Direction
 	SetClass(string)
-	WriteSvg(io.Writer) error
+	WriteSVG(io.Writer) error
 }
 
 func SetClass(class string, shapes ...Shape) {

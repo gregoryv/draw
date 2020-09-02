@@ -134,7 +134,7 @@ func (t *OneArrow) saveAs(filename string) {
 		return
 	}
 	style := NewStyle(fh)
-	d.WriteSvg(&style)
+	d.WriteSVG(&style)
 	fh.Close()
 }
 
@@ -142,7 +142,7 @@ func (t *OneArrow) CanHaveASpecificClass() {
 	t.Helper()
 	t.class = "special"
 	buf := &bytes.Buffer{}
-	t.WriteSvg(buf)
+	t.WriteSVG(buf)
 	t.assert().Contains(buf.String(), "special")
 }
 
@@ -208,6 +208,6 @@ func writeSvgTo(t *testing.T, filename string, svg *draw.SVG) {
 		t.Fatal(err)
 	}
 	style := NewStyle(fh)
-	svg.WriteSvg(&style)
+	svg.WriteSVG(&style)
 	fh.Close()
 }

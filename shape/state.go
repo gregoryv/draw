@@ -36,13 +36,13 @@ func (r *State) SetY(y int)           { r.Y = y }
 func (r *State) Direction() Direction { return RightDir }
 func (r *State) SetClass(c string)    { r.class = c }
 
-func (r *State) WriteSvg(out io.Writer) error {
+func (r *State) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.X, r.Y, r.Width(), r.Height())
 	w.Printf("\n")
-	r.title().WriteSvg(w)
+	r.title().WriteSVG(w)
 	return *err
 }
 

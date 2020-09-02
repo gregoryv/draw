@@ -30,7 +30,7 @@ type SVG struct {
 	Content       []SVGWriter
 }
 
-func (s *SVG) WriteSvg(out io.Writer) error {
+func (s *SVG) WriteSVG(out io.Writer) error {
 	w, err := NewTagWriter(out)
 	w.Printf(`<svg
   xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ func (s *SVG) WriteSvg(out io.Writer) error {
 
 	for _, c := range s.Content {
 		w.Print("\n")
-		c.WriteSvg(w)
+		c.WriteSVG(w)
 	}
 	w.Print("</svg>")
 	return *err
@@ -61,5 +61,5 @@ func (s *SVG) SetHeight(h int)  { s.height = h }
 func (s *SVG) SetSize(w, h int) { s.SetWidth(w); s.SetHeight(h) }
 
 type SVGWriter interface {
-	WriteSvg(io.Writer) error
+	WriteSVG(io.Writer) error
 }

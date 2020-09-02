@@ -38,7 +38,7 @@ func (r *Record) SetY(y int)           { r.Y = y }
 func (r *Record) Direction() Direction { return RightDir }
 func (r *Record) SetClass(c string)    { r.class = c }
 
-func (r *Record) WriteSvg(out io.Writer) error {
+func (r *Record) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
@@ -57,7 +57,7 @@ func (r *Record) WriteSvg(out io.Writer) error {
 				Text:  txt,
 				class: "field",
 			}
-			label.WriteSvg(w)
+			label.WriteSVG(w)
 			y += r.Font.LineHeight
 			w.Printf("\n")
 		}
@@ -75,12 +75,12 @@ func (r *Record) WriteSvg(out io.Writer) error {
 				Text:  txt,
 				class: "method",
 			}
-			label.WriteSvg(w)
+			label.WriteSVG(w)
 			y += r.Font.LineHeight
 			w.Printf("\n")
 		}
 	}
-	r.title().WriteSvg(w)
+	r.title().WriteSVG(w)
 	return *err
 }
 
@@ -90,7 +90,7 @@ func (r *Record) writeSeparator(w io.Writer, y1 int) error {
 		r.X+r.Width(), y1,
 	)
 	line.SetClass("record-line")
-	return line.WriteSvg(w)
+	return line.WriteSVG(w)
 }
 
 func (r *Record) title() *Label {

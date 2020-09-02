@@ -28,7 +28,7 @@ type SequenceDiagram struct {
 }
 
 // WriteSvg renders the diagram as SVG to the given writer.
-func (d *SequenceDiagram) WriteSvg(w io.Writer) error {
+func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 	var (
 		colWidth = d.ColWidth
 
@@ -101,7 +101,7 @@ func (d *SequenceDiagram) WriteSvg(w io.Writer) error {
 			y += d.plainHeight()
 		}
 	}
-	return d.Diagram.WriteSvg(w)
+	return d.Diagram.WriteSVG(w)
 }
 
 // Width returns the total width of the diagram

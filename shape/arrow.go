@@ -34,7 +34,7 @@ func (a *Arrow) String() string {
 	return fmt.Sprintf("Arrow from %v to %v", a.Start, a.End)
 }
 
-func (a *Arrow) WriteSvg(out io.Writer) error {
+func (a *Arrow) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	x1, y1 := a.Start.XY()
 	x2, y2 := a.End.XY()
@@ -44,7 +44,7 @@ func (a *Arrow) WriteSvg(out io.Writer) error {
 		w.Printf(`<g transform="rotate(%v %v %v)">`, a.angle(), x1, y1)
 		alignTail(a.Tail, x1, y1)
 		a.Tail.SetClass(a.class + "-tail")
-		a.Tail.WriteSvg(out)
+		a.Tail.WriteSVG(out)
 		w.Print("</g>\n")
 	}
 	if a.Head != nil {
@@ -52,7 +52,7 @@ func (a *Arrow) WriteSvg(out io.Writer) error {
 		a.Head.SetX(a.End.X)
 		a.Head.SetY(a.End.Y)
 		a.Head.SetClass(a.class + "-head")
-		a.Head.WriteSvg(out)
+		a.Head.WriteSVG(out)
 		w.Print("</g>\n")
 	}
 	return *err

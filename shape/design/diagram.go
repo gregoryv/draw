@@ -108,7 +108,7 @@ func (d *Diagram) SaveAs(filename string) error {
 	return saveAs(d, d.Style, filename)
 }
 
-func (d *Diagram) WriteSvg(w io.Writer) error {
+func (d *Diagram) WriteSVG(w io.Writer) error {
 	if d.Width() == 0 && d.Height() == 0 {
 		d.AdaptSize()
 	}
@@ -122,7 +122,7 @@ func (d *Diagram) WriteSvg(w io.Writer) error {
 		d.AdaptSize()
 		d.SetHeight(d.Height() + d.Caption.Font.Height/2) // Fit protruding letters like 'g'
 	}
-	return d.SVG.WriteSvg(w)
+	return d.SVG.WriteSVG(w)
 }
 
 // AdaptSize adapts the diagram size to the shapes inside it so all

@@ -30,7 +30,7 @@ func (t *Triangle) Height() int          { return 4 }
 func (t *Triangle) Direction() Direction { return RightDir }
 func (t *Triangle) SetClass(c string)    { t.class = c }
 
-func (t *Triangle) WriteSvg(out io.Writer) error {
+func (t *Triangle) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	// the path is drawn as if it points straight to the right
 	w.Printf(`<path class="%s" d="M%v,%v l-8,-4 l 0,8 Z" />`,

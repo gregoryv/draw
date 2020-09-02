@@ -43,7 +43,7 @@ func (d *Diamond) Height() int          { return d.height }
 func (d *Diamond) Direction() Direction { return RightDir }
 func (d *Diamond) SetClass(c string)    { d.class = c }
 
-func (d *Diamond) WriteSvg(out io.Writer) error {
+func (d *Diamond) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	x, y := d.Position()
 	y += d.height / 2

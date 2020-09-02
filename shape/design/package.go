@@ -9,7 +9,7 @@ import (
 )
 
 type svgWriter interface {
-	WriteSvg(io.Writer) error
+	WriteSVG(io.Writer) error
 }
 
 // saveAs saves diagram using default style to filename
@@ -20,5 +20,5 @@ func saveAs(dia svgWriter, style shape.Style, filename string) error {
 	}
 	defer fh.Close()
 	style.SetOutput(fh)
-	return dia.WriteSvg(&style)
+	return dia.WriteSVG(&style)
 }

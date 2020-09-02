@@ -49,7 +49,7 @@ func (c *Cylinder) ry() float64 {
 	return float64(c.Radius) * 0.2
 }
 
-func (c *Cylinder) WriteSvg(out io.Writer) error {
+func (c *Cylinder) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	rx := c.Radius
 	ry := int(c.ry())

@@ -42,7 +42,7 @@ func (c *Component) SetY(y int)           { c.Y = y }
 func (c *Component) Direction() Direction { return RightDir }
 func (c *Component) SetClass(v string)    { c.class = v }
 
-func (c *Component) WriteSvg(out io.Writer) error {
+func (c *Component) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
@@ -56,7 +56,7 @@ func (c *Component) WriteSvg(out io.Writer) error {
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		c.class, c.X-c.sbWidth/2, c.Y+c.Height()-c.sbHeight*2, c.sbWidth, c.sbHeight)
 
-	c.title().WriteSvg(w)
+	c.title().WriteSVG(w)
 	return *err
 }
 

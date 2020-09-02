@@ -24,9 +24,9 @@ type Database struct {
 	Title string
 }
 
-func (d *Database) WriteSvg(out io.Writer) error {
+func (d *Database) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
-	d.Cylinder.WriteSvg(w)
+	d.Cylinder.WriteSVG(w)
 
 	l := &Label{
 		x:     d.x + d.Pad.Left,
@@ -35,7 +35,7 @@ func (d *Database) WriteSvg(out io.Writer) error {
 		Text:  d.Title,
 		class: d.class + "-title",
 	}
-	l.WriteSvg(w)
+	l.WriteSVG(w)
 
 	return *err
 }

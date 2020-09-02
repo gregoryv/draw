@@ -35,12 +35,12 @@ func TestDiagram(t *testing.T) {
 		d := NewDiagram()
 		d.Place(shape.NewLine(0, 0, 100, 100))
 		adjusted := &bytes.Buffer{}
-		d.WriteSvg(adjusted)
+		d.WriteSVG(adjusted)
 
 		d.SetWidth(5)
 		d.SetHeight(10)
 		fixed := &bytes.Buffer{}
-		d.WriteSvg(fixed)
+		d.WriteSVG(fixed)
 
 		assert := asserter.New(t)
 		assert(adjusted.String() != fixed.String())
@@ -62,7 +62,7 @@ func TestDiagram(t *testing.T) {
 
 type dummy struct{}
 
-func (d *dummy) WriteSvg(w io.Writer) error {
+func (d *dummy) WriteSVG(w io.Writer) error {
 	_, err := w.Write([]byte("..."))
 	return err
 }

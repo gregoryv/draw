@@ -28,6 +28,6 @@ func saveAsSvg(t *testing.T, shape Shape, filename string) {
 		return
 	}
 	style := NewStyle(fh)
-	d.WriteSvg(&style)
+	d.WriteSVG(&style)
 	fh.Close()
 }

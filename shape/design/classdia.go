@@ -37,15 +37,15 @@ func (d *ClassDiagram) Struct(obj interface{}) VRecord {
 	return *vr
 }
 
-// WriteSvg renders the diagram as SVG to the given writer.
-func (d *ClassDiagram) WriteSvg(w io.Writer) error {
+// WriteSVG renders the diagram as SVG to the given writer.
+func (d *ClassDiagram) WriteSVG(w io.Writer) error {
 	rel := d.implements()
 	rel = append(rel, d.compositions()...)
 	for _, s := range rel {
 		s, _ := s.(shape.Shape)
 		d.Diagram.Prepend(s)
 	}
-	return d.Diagram.WriteSvg(w)
+	return d.Diagram.WriteSVG(w)
 }
 
 func (d *ClassDiagram) implements() []shape.Shape {

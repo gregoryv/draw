@@ -38,7 +38,7 @@ func TestSaveShapes(t *testing.T) {
 			t.Fatal(err)
 		}
 		style := NewStyle(w)
-		img.WriteSvg(&style)
+		img.WriteSVG(&style)
 		w.Close()
 	}
 }
@@ -111,7 +111,7 @@ func testShape(t *testing.T, shape Shape) {
 	})
 
 	t.Run("Can be written as SVG", func(t *testing.T) {
-		err := shape.WriteSvg(ioutil.Discard)
+		err := shape.WriteSVG(ioutil.Discard)
 		assert := asserter.New(t)
 		assert(err == nil).Error(err)
 	})

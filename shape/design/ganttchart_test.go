@@ -31,7 +31,7 @@ func TestGanttChart_WriteSvg(t *testing.T) {
 	d.Place(rel).After(dev, 1)
 	d.Place(vac).At("20191125", 14)
 	d.SetCaption("Figure 1. Project estimated delivery")
-	d.WriteSvg(w)
+	d.WriteSVG(w)
 	golden.Assert(t, w.String())
 }
 

@@ -38,7 +38,7 @@ func (d *Dot) Height() int           { return d.Width() }
 func (d *Dot) Direction() Direction  { return RightDir }
 func (d *Dot) SetClass(class string) { d.class = class }
 
-func (d *Dot) WriteSvg(out io.Writer) error {
+func (d *Dot) WriteSVG(out io.Writer) error {
 	w, err := draw.NewTagWriter(out)
 	x, y := d.Position()
 	x += d.Radius
