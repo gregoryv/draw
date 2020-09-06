@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ## [unreleased]
+### Added
+
+- Diagrams can be inlined using InlineSVG method
+
 ### Changed
 
 - Renamed type Svg to SVG

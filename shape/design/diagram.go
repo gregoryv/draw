@@ -108,6 +108,12 @@ func (d *Diagram) SaveAs(filename string) error {
 	return saveAs(d, d.Style, filename)
 }
 
+// InlineSVG writes SVG to the given writer replacing classes with the
+// style of the diagram.
+func (d *Diagram) InlineSVG(w io.Writer) error {
+	return inlineSVG(w, d, &d.Style)
+}
+
 func (d *Diagram) WriteSVG(w io.Writer) error {
 	if d.Width() == 0 && d.Height() == 0 {
 		d.AdaptSize()

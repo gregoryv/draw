@@ -88,6 +88,12 @@ func (a *GanttAdjuster) After(parent *Task, days int) {
 	a.task.to = parent.to.AddDate(0, 0, days)
 }
 
+// InlineSVG
+func (d *GanttChart) InlineSVG(w io.Writer) error {
+	return inlineSVG(w, d, &d.Style)
+}
+
+// WriteSVG writes SVG to the given writer.
 func (d *GanttChart) WriteSVG(w io.Writer) error {
 	columns := d.addHeader()
 	bars := make([]*shape.Rect, len(d.tasks))

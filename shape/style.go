@@ -154,6 +154,8 @@ func (s *Style) scanClass(p []byte) ([]byte, int) {
 	return class, i + j
 }
 
+// SetOutput sets the underlying writer when style is used as
+// writer. Use nil to disable writing.
 func (s *Style) SetOutput(w io.Writer) {
 	if w == nil {
 		w = ioutil.Discard

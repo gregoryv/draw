@@ -18,8 +18,14 @@ func TestGanttAdjuster_At(t *testing.T) {
 	a.At("20190930", 10)
 }
 
-func TestGanttChart_WriteSvg(t *testing.T) {
-	w := bytes.NewBufferString("")
+func TestGanttChart_InlineSVG(t *testing.T) {
+	d := NewGanttChart("20191111", 30)
+	dev := d.Add("Develop")
+	d.Place(dev).At("20191111", 10)
+	checkInlining(t, d)
+}
+
+func TestGanttChart_WriteSVG(t *testing.T) {
 	var (
 		d   = NewGanttChart("20191111", 30)
 		dev = d.Add("Develop")
@@ -31,7 +37,8 @@ func TestGanttChart_WriteSvg(t *testing.T) {
 	d.Place(rel).After(dev, 1)
 	d.Place(vac).At("20191125", 14)
 	d.SetCaption("Figure 1. Project estimated delivery")
-	d.WriteSVG(w)
+	var w bytes.Buffer
+	d.WriteSVG(&w)
 	golden.Assert(t, w.String())
 }
 
