@@ -1,0 +1,53 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="208" height="1176" font-family="Arial, Helvetica, sans-serif">
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="36">Actor</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="158" cy="25" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M158,30 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="112">Arrow</text>
+<path stroke="black" d="M128,104 L188,104" />
+<g transform="rotate(0 188 104)"><path stroke="black" fill="#ffffff" d="M188,104 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="188">Circle</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="157" cy="179" r="20" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="264">Component</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="116" y="243" width="85" height="26"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="111" y="248" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="111" y="259" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="127" y="261">Component</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="340">Cylinder</text>
+<path stroke="black" stroke-width="1" fill="#ffffff" d="M 127 318 L 127 340 C 127 352, 187 352, 187 340 L 187 318" />
+<ellipse stroke="black" stroke-width="1" fill="#ffffff" cx="157" cy="318" rx="30" ry="6" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="416">Database</text>
+<path stroke="black" stroke-width="1" fill="#ffffff" d="M 124 393 L 124 417 C 124 429, 190 429, 190 417 L 190 393" />
+<ellipse stroke="black" stroke-width="1" fill="#ffffff" cx="157" cy="393" rx="33" ry="6" />
+<text class="database-title" font-size="12px" x="130" y="413">database</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="492">Diamond</text>
+<path stroke="#d3d3d3" fill="#333333" d="M152,480 l 6,-4 6,4 -6,4 -6,-4" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="568">Dot</text>
+<circle stroke="black" cx="158" cy="560" r="6" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="644">ExitDot</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="158" cy="636" r="10" />\n<circle stroke="black" cx="158" cy="636" r="6" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="720">Label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="718">label-text</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="796">Line</text>
+<line stroke="black" x1="128" y1="788" x2="188" y2="788"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="872">Note</text>
+<path stroke="#d3d3d3" fill="#ffffcc" d="M109,844 v 41 h 99 v -31 l -10,-10 L 109,844 M208,854 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="119" y="860">This describes</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="119" y="876">something...</text>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="948">Record</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="127" y="903" width="63" height="74"/>
+<line stroke="#d3d3d3" x1="127" y1="933" x2="190" y2="933"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="949">fields</text>
+<line stroke="#d3d3d3" x1="127" y1="955" x2="190" y2="955"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="971">methods</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="923">record</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1024">Rect</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="120" y="1003" width="77" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="126" y="1021">a rectangle</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1100">State</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="134" y="1079" width="48" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="140" y="1097">active</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1176">Triangle</text>
+<path stroke="black" d="M154,1166 l-8,-4 l 0,8 Z" /></svg>
