@@ -17,11 +17,6 @@ func TestDiagram(t *testing.T) {
 		e = shape.NewCircle(30)
 		g = shape.NewComponent("component")
 	)
-	t.Run("Inlining", func(t *testing.T) {
-		d := NewDiagram()
-		d.Place(b).At(10, 10)
-		checkInlining(t, &d)
-	})
 
 	t.Run("Adapts in size", func(t *testing.T) {
 		d := NewDiagram()

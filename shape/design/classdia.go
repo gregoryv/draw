@@ -37,12 +37,6 @@ func (d *ClassDiagram) Struct(obj interface{}) VRecord {
 	return *vr
 }
 
-// InlineSVG writes SVG to the given writer replacing classes with the
-// style of the diagram.
-func (d *ClassDiagram) InlineSVG(w io.Writer) error {
-	return inlineSVG(w, d, &d.Style)
-}
-
 // WriteSVG renders the diagram as SVG to the given writer.
 func (d *ClassDiagram) WriteSVG(w io.Writer) error {
 	rel := d.implements()

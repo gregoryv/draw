@@ -30,10 +30,6 @@ type SVG struct {
 	Content       []SVGWriter
 }
 
-// WriteSVG writes SVG to the given writer with fixed font-family.
-//
-// A fixed font is needed to calculate correct withs and heights of
-// shapes.
 func (s *SVG) WriteSVG(out io.Writer) error {
 	w, err := NewTagWriter(out)
 	w.Printf(`<svg
@@ -63,15 +59,6 @@ func (s *SVG) Height() int { return s.height }
 func (s *SVG) SetWidth(w int)   { s.width = w }
 func (s *SVG) SetHeight(h int)  { s.height = h }
 func (s *SVG) SetSize(w, h int) { s.SetWidth(w); s.SetHeight(h) }
-
-type SVGInlineWriter interface {
-	SVGInliner
-	SVGWriter
-}
-
-type SVGInliner interface {
-	InlineSVG(io.Writer) error
-}
 
 type SVGWriter interface {
 	WriteSVG(io.Writer) error
