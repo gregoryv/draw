@@ -1,19 +1,15 @@
-// Package design provides svg diagram creators
+// Package design provides diagram creators
 package design
 
 import (
-	"io"
 	"os"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/shape"
 )
 
-type svgWriter interface {
-	WriteSVG(io.Writer) error
-}
-
-// saveAs saves diagram using default style to filename
-func saveAs(dia svgWriter, style shape.Style, filename string) error {
+// saveAs saves diagram with inlined style to the given filename
+func saveAs(dia draw.SVGWriter, style shape.Style, filename string) error {
 	fh, err := os.Create(filename)
 	if err != nil {
 		return err
