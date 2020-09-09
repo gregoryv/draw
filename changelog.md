@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [unreleased]
 ### Changed
 
+- Moved draw/shape/design package to draw/design
 - Renamed type Svg to SVG
 - Renamed type SvgWriter to SVGWriter
 - Renamed WriteSvg to WriteSVG

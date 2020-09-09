@@ -7,6 +7,6 @@
 - Cross platform
 - No external dependencies
 - SVG output
-- Diagrams: [Sequence](shape/design/#sequence-diagram), [Activity](shape/design/#activity-diagram), [Class](shape/design/#class-diagram) and [more...](shape/design/#generic-diagram)
+- Diagrams: [Sequence](design/#sequence-diagram), [Activity](design/#activity-diagram), [Class](design/#class-diagram) and [more...](design/#generic-diagram)
 
 ![](overview.svg)

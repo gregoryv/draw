@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"testing"
 
+	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/internal/app"
-	"github.com/gregoryv/draw/shape/design"
 )
 
 func ExampleSequenceDiagram() {

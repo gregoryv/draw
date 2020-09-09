@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/gregoryv/draw/shape/design"
+	"github.com/gregoryv/draw/design"
 )
 
 func TestRenderAllDiagrams(t *testing.T) {

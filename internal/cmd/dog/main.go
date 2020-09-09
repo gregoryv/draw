@@ -6,9 +6,9 @@ import (
 	"flag"
 	"path"
 
+	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/internal/app"
 	"github.com/gregoryv/draw/shape"
-	"github.com/gregoryv/draw/shape/design"
 )
 
 //go:generate go run . ../../../img/
