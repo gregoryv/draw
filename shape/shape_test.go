@@ -29,7 +29,7 @@ func TestSaveShapes(t *testing.T) {
 		NewActor(),
 	}
 	for _, shape := range shapes {
-		img := draw.NewSvg()
+		img := draw.NewSVG()
 		img.Append(shape)
 		file := fmt.Sprintf("img/%T.svg", shape)
 		file = strings.Replace(file, "*shape.", "", 1)

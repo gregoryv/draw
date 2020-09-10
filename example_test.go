@@ -3,7 +3,7 @@ package draw
 import "os"
 
 func ExampleNewSvg() {
-	s := NewSvg()
+	s := NewSVG()
 	s.WriteSVG(os.Stdout)
 	// output:
 	// <svg

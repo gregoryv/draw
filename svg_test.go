@@ -8,7 +8,7 @@ import (
 	"github.com/gregoryv/asserter"
 )
 
-func TestSvg_SetSize(t *testing.T) {
+func TestSVG_SetSize(t *testing.T) {
 	s := &SVG{}
 	s.SetSize(1, 2)
 	assert := asserter.New(t)
@@ -16,15 +16,15 @@ func TestSvg_SetSize(t *testing.T) {
 	assert().Equals(s.Height(), 2)
 }
 
-func TestSvg_empty_by_default(t *testing.T) {
-	s := NewSvg()
+func TestSVG_empty_by_default(t *testing.T) {
+	s := NewSVG()
 	if len(s.Content) != 0 {
 		t.Error("Not empty")
 	}
 }
 
-func TestSvg_Append(t *testing.T) {
-	s := NewSvg()
+func TestSVG_Append(t *testing.T) {
+	s := NewSVG()
 	shape := &dummy{}
 	s.Append(shape)
 	if s.Content[0] != shape {
@@ -38,7 +38,7 @@ func TestSvg_Append(t *testing.T) {
 }
 
 func TestPrepend(t *testing.T) {
-	s := NewSvg()
+	s := NewSVG()
 	shape := &dummy{}
 	s.Prepend(shape)
 	if s.Content[0] != shape {
@@ -46,8 +46,8 @@ func TestPrepend(t *testing.T) {
 	}
 }
 
-func TestSvg_WriteSvg(t *testing.T) {
-	s := NewSvg()
+func TestSVG_WriteSvg(t *testing.T) {
+	s := NewSVG()
 	shape := &dummy{}
 	s.Append(shape)
 	w := bytes.NewBufferString("")

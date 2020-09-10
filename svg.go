@@ -1,7 +1,7 @@
 /*
 Package draw provides SVG writing features.
 
-	s := NewSvg()
+	s := NewSVG()
 	s.WriteSVG(os.Stdout)
 
 	<svg
@@ -16,8 +16,8 @@ import (
 	"io"
 )
 
-// NewSvg returns an empty Svg of size 100x100
-func NewSvg() *SVG {
+// NewSVG returns an empty SVG of size 100x100
+func NewSVG() *SVG {
 	return &SVG{
 		width:   100,
 		height:  100,
