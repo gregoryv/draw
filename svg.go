@@ -1,8 +1,8 @@
 /*
-Package draw provides svg writing features.
+Package draw provides SVG writing features.
 
 	s := NewSvg()
-	s.WriteSvg(os.Stdout)
+	s.WriteSVG(os.Stdout)
 
 	<svg
 	  xmlns="http://www.w3.org/2000/svg"
