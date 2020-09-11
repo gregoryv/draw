@@ -25,7 +25,7 @@ type one_adjuster struct {
 
 func (t *one_adjuster) has_default_spacing() {
 	s := t.space([]int{})
-	if s != t.defaultSpace {
+	if s != t.Spacing {
 		t.Error("No default spacing")
 	}
 }

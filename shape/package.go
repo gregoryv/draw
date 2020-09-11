@@ -15,6 +15,7 @@ var (
 	DefaultFont    = draw.DefaultFont
 	DefaultPad     = draw.DefaultPad
 	DefaultTextPad = draw.DefaultTextPad
+	DefaultSpacing = draw.DefaultSpacing
 )
 
 func boxHeight(font Font, pad Padding, lines int) int {

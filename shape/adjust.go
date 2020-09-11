@@ -1,18 +1,18 @@
 package shape
 
-// NewAdjuster returns an adjuster with default space of 30 pixels.
+// NewAdjuster returns an adjuster using DefaultSpacing.
 func NewAdjuster(s ...Shape) *Adjuster {
 	return &Adjuster{
-		shapes:       s,
-		defaultSpace: 30,
+		shapes:  s,
+		Spacing: DefaultSpacing,
 	}
 }
 
 // Adjuster is used to position a shape relative to other shapes or at
 // a specific xy position.
 type Adjuster struct {
-	shapes       []Shape
-	defaultSpace int
+	shapes  []Shape
+	Spacing int
 }
 
 // At sets the x, y coordinates of the wrapped shape
@@ -71,7 +71,7 @@ func (a *Adjuster) Above(o Shape, space ...int) {
 
 func (a *Adjuster) space(space []int) int {
 	if len(space) == 0 {
-		return a.defaultSpace
+		return a.Spacing
 	}
 	return space[0]
 }

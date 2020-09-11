@@ -43,6 +43,7 @@ func ExampleClassDiagram() {
 	d.Place(diaarrow).Below(circle)
 	d.Place(triangle).Below(diaarrow)
 	d.HAlignBottom(record, arrow, line)
+	shape.Move(line, 30, 30)
 
 	d.Place(fnt).Below(record, 170)
 	d.Place(style).RightOf(fnt, 90)

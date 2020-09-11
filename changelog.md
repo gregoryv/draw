@@ -6,8 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
-- Moved type shape.Style to package draw
-- Renamed NewSvg to NewSVG
+- Add default spacing to shape.Adjuster
+- Move type shape.Style to package draw
+- Rename NewSvg to NewSVG
 
 ## [0.12.0] 2020-09-09
 ### Changed

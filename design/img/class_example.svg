@@ -2,9 +2,9 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   font-family="Arial,Helvetica,sans-serif" width="838" height="738">
-<path stroke="black" d="M284,348 L145,241" />
-<g transform="rotate(217 284 348)"><path stroke="black" fill="#ffffff" d="M284,348 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(217 145 241)"><path stroke="black" fill="#ffffff" d="M145,241 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" d="M287,378 L145,250" />
+<g transform="rotate(222 287 378)"><path stroke="black" fill="#ffffff" d="M287,378 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(222 145 250)"><path stroke="black" fill="#ffffff" d="M145,250 l-8,-4 l 0,8 Z" /></g>
 
 <path stroke="black" d="M567,483 L647,483" />
 <g transform="rotate(0 567 483)"><path stroke="black" fill="#777777" d="M567,483 l 6,-4 6,4 -6,4 -6,-4" /></g>
@@ -39,7 +39,7 @@
 <path stroke="black" stroke-dasharray="5,5,5" d="M639,53 L359,92" />
 <g transform="rotate(173 359 92)"><path stroke="black" fill="#ffffff" d="M359,92 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M289,200 L289,184" />
+<path stroke="black" stroke-dasharray="5,5,5" d="M289,230 L289,184" />
 <g transform="rotate(-90 289 184)"><path stroke="black" fill="#ffffff" d="M289,184 l-8,-4 l 0,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M434,184 L359,142" />
@@ -67,10 +67,10 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="246">Font</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="262">Pad</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="140">shape.Record struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="200" width="109" height="68"/>
-<line stroke="#d3d3d3" x1="235" y1="230" x2="344" y2="230"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="246">Start</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="262">End</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="220">shape.Line struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="230" width="109" height="68"/>
+<line stroke="#d3d3d3" x1="235" y1="260" x2="344" y2="260"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="276">Start</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="292">End</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="250">shape.Line struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="434" y="168" width="117" height="100"/>
 <line stroke="#d3d3d3" x1="434" y1="198" x2="551" y2="198"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="214">Start</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="230">End</text>
@@ -89,13 +89,14 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="500">LineHeight</text>
 <line stroke="#d3d3d3" x1="31" y1="506" x2="133" y2="506"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="522">TextWidth()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="458">draw.Font struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="237" y="441" width="105" height="84"/>
-<line stroke="#d3d3d3" x1="237" y1="471" x2="342" y2="471"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="487">Font</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="503">TextPad</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="519">Pad</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="461">draw.Style struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="348" width="134" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="368">design.Relation struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="237" y="433" width="105" height="100"/>
+<line stroke="#d3d3d3" x1="237" y1="463" x2="342" y2="463"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="479">Font</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="495">TextPad</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="511">Pad</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="527">Spacing</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="453">draw.Style struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="378" width="134" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="398">design.Relation struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="432" y="422" width="135" height="122"/>
 <line stroke="#d3d3d3" x1="432" y1="452" x2="567" y2="452"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="468">SVG</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="484">Aligner</text>
@@ -111,7 +112,8 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="527">VAlignLeft()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="543">VAlignRight()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="437">shape.Aligner struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="31" y="598" width="130" height="26"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="31" y="598" width="130" height="52"/>
+<line stroke="#d3d3d3" x1="31" y1="628" x2="161" y2="628"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="644">Spacing</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="618">shape.Adjuster struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="647" y="602" width="191" height="84"/>
 <line stroke="#d3d3d3" x1="647" y1="632" x2="838" y2="632"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="648">Diagram</text>

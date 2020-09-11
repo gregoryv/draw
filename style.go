@@ -12,6 +12,7 @@ func NewStyle(w io.Writer) Style {
 		Font:    DefaultFont,
 		TextPad: DefaultTextPad,
 		Pad:     DefaultPad,
+		Spacing: DefaultSpacing,
 		dest:    w,
 	}
 }
@@ -20,6 +21,7 @@ type Style struct {
 	Font
 	TextPad Padding // Surrounding text
 	Pad     Padding // E.g. records
+	Spacing int     // Between shapes in e.g. diagrams
 	dest    io.Writer
 	err     error
 	written int
@@ -30,6 +32,7 @@ var (
 	DefaultFont    = Font{Height: 12, LineHeight: 16, charWidths: arial}
 	DefaultTextPad = Padding{Left: 6, Top: 4, Bottom: 6, Right: 10}
 	DefaultPad     = Padding{Left: 10, Top: 2, Bottom: 7, Right: 10}
+	DefaultSpacing = 30 // between elements
 )
 
 // ClassAttributes define mapping between classes and svg attributes.
