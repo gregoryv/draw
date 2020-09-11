@@ -1,4 +1,4 @@
-package shape
+package draw
 
 type Font struct {
 	Height     int

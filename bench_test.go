@@ -1,17 +1,18 @@
-package shape
+package draw_test
 
 import (
 	"io/ioutil"
 	"testing"
 
 	"github.com/gregoryv/draw"
+	"github.com/gregoryv/draw/shape"
 )
 
 func BenchmarkWriteSvg(b *testing.B) {
 	svg := &draw.SVG{}
-	svg.Append(&Record{})
+	svg.Append(&shape.Record{})
 
-	style := NewStyle(ioutil.Discard)
+	style := draw.NewStyle(ioutil.Discard)
 	for i := 0; i < b.N; i++ {
 		svg.WriteSVG(&style)
 	}

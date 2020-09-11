@@ -4,12 +4,18 @@ package shape
 import (
 	"math"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 )
 
-type Padding struct {
-	Left, Top, Right, Bottom int
-}
+type Padding = draw.Padding
+type Font = draw.Font
+
+var (
+	DefaultFont    = draw.DefaultFont
+	DefaultPad     = draw.DefaultPad
+	DefaultTextPad = draw.DefaultTextPad
+)
 
 func boxHeight(font Font, pad Padding, lines int) int {
 	return (pad.Top + pad.Bottom) + lines*font.LineHeight
