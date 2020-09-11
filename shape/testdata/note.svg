@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="300" height="100" font-family="Arial, Helvetica, sans-serif">
+  font-family="Arial,Helvetica,sans-serif" width="300" height="100">
 <path stroke="#d3d3d3" fill="#ffffcc" d="M0,20 v 41 h 112 v -31 l -10,-10 L 0,20 M112,30 h -10 v -10"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="36">Multiline text is</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="52">possible in notes</text>
