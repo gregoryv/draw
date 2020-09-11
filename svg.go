@@ -35,7 +35,7 @@ func (s *SVG) WriteSVG(out io.Writer) error {
 	w.Printf(`<svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="%v" height="%v" font-family="Arial, Helvetica, sans-serif">`, s.width, s.height)
+  class="root" width="%v" height="%v">`, s.width, s.height)
 
 	for _, c := range s.Content {
 		w.Print("\n")

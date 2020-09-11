@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="208" height="1176" font-family="Arial, Helvetica, sans-serif">
+  font-family="Arial,Helvetica,sans-serif" width="208" height="1176">
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="36">Actor</text>
 <circle stroke="black" stroke-width="2" fill="#ffffff" cx="158" cy="25" r="5" />
 <path stroke="black" stroke-width="2" fill="#ffffff" d="M158,30 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />

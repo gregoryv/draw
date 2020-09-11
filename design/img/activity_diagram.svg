@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="297" height="354" font-family="Arial, Helvetica, sans-serif">
+  font-family="Arial,Helvetica,sans-serif" width="297" height="354">
 <circle stroke="black" cx="86" cy="26" r="6" />\n
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="43" y="72" width="86" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="49" y="90">Push commit</text>

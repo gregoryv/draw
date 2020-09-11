@@ -68,6 +68,7 @@ var ClassAttributes = map[string]string{
 	"record-title":          `font-family="Arial,Helvetica,sans-serif"`,
 	"rect":                  `stroke="#d3d3d3" fill="#ffffff"`,
 	"rect-title":            `font-family="Arial,Helvetica,sans-serif"`,
+	"root":                  `font-family="Arial,Helvetica,sans-serif"`, // root svg tag
 	"span-green":            `stroke="#d3d3d3" fill="#ccff99" rx="5" ry="5"`,
 	"span-green-title":      `font-family="Arial,Helvetica,sans-serif"`,
 	"span-blue":             `stroke="#d3d3d3" fill="#99e6ff" rx="5" ry="5"`,

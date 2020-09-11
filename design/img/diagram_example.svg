@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="252" height="359" font-family="Arial, Helvetica, sans-serif">
+  font-family="Arial,Helvetica,sans-serif" width="252" height="359">
 <rect stroke="#d3d3d3" fill="#ffffff" x="10" y="30" width="56" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="50">Record</text>
 <path stroke="black" d="M130,80 L180,70" />
