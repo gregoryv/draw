@@ -27,6 +27,7 @@ func TestSaveShapes(t *testing.T) {
 		NewState("Waiting for push"),
 		NewDecision(),
 		NewActor(),
+		NewInternet(),
 	}
 	for _, shape := range shapes {
 		img := draw.NewSVG()

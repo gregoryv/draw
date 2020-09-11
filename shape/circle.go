@@ -30,7 +30,7 @@ func (c *Circle) Position() (int, int) { return c.x, c.y }
 func (c *Circle) SetX(x int) { c.x = x }
 func (c *Circle) SetY(y int) { c.y = y }
 func (c *Circle) Width() int {
-	stroke := 2
+	stroke := 1
 	return (c.Radius+stroke)*2 - 2
 }
 func (c *Circle) Height() int           { return c.Width() }

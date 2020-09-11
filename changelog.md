@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Add shape.Internet
 - Add default spacing to shape.Adjuster
 - Move type shape.Style to package draw
 - Rename NewSvg to NewSVG
