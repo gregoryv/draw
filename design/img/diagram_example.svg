@@ -41,7 +41,7 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="226">Notes support</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="242">multilines</text>
 
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="30" cy="291" r="10" />\n
+<circle stroke="#d3d3d3" stroke-width="2" fill="#ffffff" cx="30" cy="291" r="10" />\n
 <circle stroke="black" cx="78" cy="292" r="6" />\n
 <circle stroke="black" stroke-width="2" fill="#ffffff" cx="126" cy="292" r="10" />\n<circle stroke="black" cx="126" cy="292" r="6" />\n
 <path stroke="black" d="M42,292 L72,292" />

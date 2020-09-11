@@ -39,9 +39,9 @@ var (
 // Setting attributes that modify size or position is not advised.
 var ClassAttributes = map[string]string{
 	"actor":                 `stroke="black" stroke-width="2" fill="#ffffff"`,
-	"circle":                `stroke="black" stroke-width="2" fill="#ffffff"`,
-	"cylinder":              `stroke="black" stroke-width="1" fill="#ffffff"`,
-	"database":              `stroke="black" stroke-width="1" fill="#ffffff"`,
+	"circle":                `stroke="#d3d3d3" stroke-width="2" fill="#ffffff"`,
+	"cylinder":              `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
+	"database":              `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
 	"dot":                   `stroke="black"`,
 	"exit":                  `stroke="black" stroke-width="2" fill="#ffffff"`,
 	"exit-dot":              `stroke="black"`,

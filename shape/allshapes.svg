@@ -11,17 +11,17 @@
 <g transform="rotate(0 188 104)"><path stroke="black" fill="#ffffff" d="M188,104 l-8,-4 l 0,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="188">Circle</text>
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="157" cy="179" r="20" />\n
+<circle stroke="#d3d3d3" stroke-width="2" fill="#ffffff" cx="157" cy="179" r="20" />\n
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="264">Component</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="116" y="243" width="85" height="26"/>
 <rect stroke="#d3d3d3" fill="#ffffff" x="111" y="248" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="111" y="259" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="127" y="261">Component</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="340">Cylinder</text>
-<path stroke="black" stroke-width="1" fill="#ffffff" d="M 127 318 L 127 340 C 127 352, 187 352, 187 340 L 187 318" />
-<ellipse stroke="black" stroke-width="1" fill="#ffffff" cx="157" cy="318" rx="30" ry="6" />
+<path stroke="#d3d3d3" stroke-width="1" fill="#ffffff" d="M 127 318 L 127 340 C 127 352, 187 352, 187 340 L 187 318" />
+<ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="157" cy="318" rx="30" ry="6" />
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="416">Database</text>
-<path stroke="black" stroke-width="1" fill="#ffffff" d="M 124 393 L 124 417 C 124 429, 190 429, 190 417 L 190 393" />
-<ellipse stroke="black" stroke-width="1" fill="#ffffff" cx="157" cy="393" rx="33" ry="6" />
+<path stroke="#d3d3d3" stroke-width="1" fill="#ffffff" d="M 124 393 L 124 417 C 124 429, 190 429, 190 417 L 190 393" />
+<ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="157" cy="393" rx="33" ry="6" />
 <text class="database-title" font-size="12px" x="130" y="413">database</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="492">Diamond</text>
 <path stroke="#d3d3d3" fill="#333333" d="M152,480 l 6,-4 6,4 -6,4 -6,-4" />
