@@ -27,7 +27,7 @@ func saveAsSvg(t *testing.T, shape Shape, filename string) {
 		t.Error(err)
 		return
 	}
-	style := NewStyle(fh)
+	style := draw.NewStyle(fh)
 	d.WriteSVG(&style)
 	fh.Close()
 }

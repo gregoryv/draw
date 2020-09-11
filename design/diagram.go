@@ -13,7 +13,7 @@ import (
 // styling
 func NewDiagram() Diagram {
 	return Diagram{
-		Style: shape.NewStyle(nil),
+		Style: draw.NewStyle(nil),
 	}
 }
 
@@ -21,7 +21,7 @@ func NewDiagram() Diagram {
 type Diagram struct {
 	draw.SVG
 	shape.Aligner
-	shape.Style
+	draw.Style
 
 	Caption *shape.Label
 }

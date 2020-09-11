@@ -37,7 +37,7 @@ func TestSaveShapes(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
-		style := NewStyle(w)
+		style := draw.NewStyle(w)
 		img.WriteSVG(&style)
 		w.Close()
 	}

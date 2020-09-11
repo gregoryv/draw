@@ -3,6 +3,7 @@ package design_test
 import (
 	"testing"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/shape"
 )
@@ -22,7 +23,7 @@ func ExampleClassDiagram() {
 
 	var (
 		fnt      = d.Struct(shape.Font{})
-		style    = d.Struct(shape.Style{})
+		style    = d.Struct(draw.Style{})
 		seqdia   = d.Struct(design.SequenceDiagram{})
 		classdia = d.Struct(design.ClassDiagram{})
 		dia      = d.Struct(design.Diagram{})
