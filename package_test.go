@@ -42,50 +42,68 @@ func Test_overview(t *testing.T) {
 		cli = d.AddStruct(app.Client{})
 		srv = d.AddStruct(app.Server{})
 		db  = d.AddStruct(sql.DB{})
-
-		start = shape.NewDot()
-		run   = shape.NewState("Run")
-		end   = shape.NewExitDot()
-
-		circle = design.NewVRecord(shape.Circle{})
-		cyl    = shape.NewCylinder(40, 70)
-
-		shp  = design.NewVRecord((*shape.Shape)(nil))
-		note = shape.NewNote("Anything is possible!\nGo draw your next design")
-
-		actor = shape.NewActor()
 	)
-	circle.HideMethods()
 	d.Link(cli, srv, "connect()")
 	d.Link(srv, db, "...")
 
+	// Flow part
+	var (
+		start = shape.NewDot()
+		run   = shape.NewState("Run")
+		end   = shape.NewExitDot()
+	)
 	d.Place(start).At(100, 140)
 	d.Place(run, end).Below(start)
-
 	d.VAlignCenter(start, run, end)
 	d.LinkAll(start, run, end)
 
+	// Class diagram (manual)
+	var (
+		circle = design.NewVRecord(shape.Circle{})
+		shp    = design.NewVRecord((*shape.Shape)(nil))
+	)
+	circle.HideMethods()
 	d.Place(shp).RightOf(start, 100)
 	d.Place(circle).RightOf(shp, 100)
-	d.HAlignCenter(shp, circle)
-	d.Place(cyl).Below(circle)
-
+	d.HAlignBottom(shp, circle)
 	lnk := shape.NewArrowBetween(circle, shp)
 	lnk.SetClass("implements-arrow")
 	d.Place(lnk)
-	label := shape.NewLabel("implements")
-	d.Place(label).Above(lnk, 20)
-	d.VAlignCenter(lnk, label)
 
-	d.Place(note).Above(circle)
+	// Actors and notes
+	var (
+		note  = shape.NewNote("Anything is possible!\nGo draw your next design")
+		actor = shape.NewActor()
+	)
+	d.Place(note).Above(circle, 60)
+	shape.Move(note, 50, 0)
 	d.Place(actor).Above(note)
-	d.VAlignRight(note, actor)
-
+	d.VAlignLeft(note, actor)
 	d.Place(shape.NewArrowBetween(actor, note))
 
+	// components
+	var (
+		dbcomp  = shape.NewDatabase("database")
+		inet    = shape.NewInternet()
+		service = shape.NewComponent("Service")
+		browser = shape.NewComponent("Browser")
+	)
+	browser.SetClass("external")
+	d.Place(service).RightOf(note, 70)
+	shape.Move(service, 0, -70)
+	d.Place(dbcomp).RightOf(service)
+	d.Place(inet).Below(service)
+	d.Place(browser).Below(inet)
+	d.VAlignCenter(service, inet, browser)
+
+	d.SetCaption("gregoryv/draw provided shapes and diagrams")
+	// Write it out inlined
 	var buf bytes.Buffer
 	d.Style.SetOutput(&buf)
 	d.WriteSVG(&d.Style)
 
 	golden.AssertWith(t, buf.String(), "overview.svg")
 }
+
+// The overview is used as social preview in github.
+// Transform to png with e.g. inkscape -z -w 890 -h 356 overview.svg -e overview.png
