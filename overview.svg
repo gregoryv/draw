@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="610" height="304" font-family="Arial, Helvetica, sans-serif">
+  font-family="Arial,Helvetica,sans-serif" width="610" height="348">
 <circle stroke="black" cx="106" cy="146" r="6" />\n
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="87" y="182" width="39" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="93" y="200">Run</text>
@@ -20,11 +20,14 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="250">SetX()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="266">SetY()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="282">Width()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="298">WriteSvg()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="298">WriteSVG()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="160">shape.Shape interface</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="451" y="196" width="117" height="52"/>
 <line stroke="#d3d3d3" x1="451" y1="226" x2="568" y2="226"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="242">Radius</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="216">shape.Circle struct</text>
+<path stroke="#d3d3d3" stroke-width="1" fill="#ffffff" d="M 451 286 L 451 332 C 451 348, 531 348, 531 332 L 531 286" />
+<ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="491" cy="286" rx="40" ry="8" />
+
 <path stroke="black" stroke-dasharray="5,5,5" d="M451,222 L351,222" />
 <g transform="rotate(180 351 222)"><path stroke="black" fill="#ffffff" d="M351,222 l-8,-4 l 0,8 Z" /></g>
 

@@ -1,27 +1,42 @@
-// Document generation for example diagrams
-package main
+package draw_test
 
 import (
+	"bytes"
 	"database/sql"
-	"flag"
-	"path"
+	"io/ioutil"
+	"os"
+	"testing"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/internal/app"
 	"github.com/gregoryv/draw/shape"
+	"github.com/gregoryv/golden"
 )
 
-//go:generate go run . ../../../img/
-func main() {
-	flag.Parse()
-	root := flag.Arg(0)
-	if root == "" {
-		root = "./"
+func BenchmarkWriteSvg(b *testing.B) {
+	svg := &draw.SVG{}
+	svg.Append(&shape.Record{})
+
+	style := draw.NewStyle(ioutil.Discard)
+	for i := 0; i < b.N; i++ {
+		svg.WriteSVG(&style)
 	}
-	overview().SaveAs(path.Join(root, "overview.svg"))
+	b.StopTimer()
+	b.ReportAllocs()
 }
 
-func overview() *design.SequenceDiagram {
+func ExampleNewSvg() {
+	s := draw.NewSVG()
+	s.WriteSVG(os.Stdout)
+	// output:
+	// <svg
+	//   xmlns="http://www.w3.org/2000/svg"
+	//   xmlns:xlink="http://www.w3.org/1999/xlink"
+	//   class="root" width="100" height="100"></svg>
+}
+
+func Test_overview(t *testing.T) {
 	var (
 		d   = design.NewSequenceDiagram()
 		cli = d.AddStruct(app.Client{})
@@ -67,5 +82,10 @@ func overview() *design.SequenceDiagram {
 	d.VAlignRight(note, actor)
 
 	d.Place(shape.NewArrowBetween(actor, note))
-	return d
+
+	var buf bytes.Buffer
+	d.Style.SetOutput(&buf)
+	d.WriteSVG(&d.Style)
+
+	golden.AssertWith(t, buf.String(), "overview.svg")
 }
