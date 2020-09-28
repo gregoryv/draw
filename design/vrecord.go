@@ -76,7 +76,7 @@ func (vr *VRecord) Implements(iface *VRecord) bool {
 func (vr *VRecord) ComposedOf(d *VRecord) bool {
 	for i := 0; i < vr.t.NumField(); i++ {
 		field := vr.t.Field(i)
-		if field.Type == d.t {
+		if field.Type == d.t || field.Type == reflect.SliceOf(d.t) {
 			return true
 		}
 	}
@@ -86,7 +86,7 @@ func (vr *VRecord) ComposedOf(d *VRecord) bool {
 func (vr *VRecord) Aggregates(d *VRecord) bool {
 	for i := 0; i < vr.t.NumField(); i++ {
 		field := vr.t.Field(i)
-		if field.Type == reflect.PtrTo(d.t) {
+		if field.Type == reflect.PtrTo(d.t) || field.Type == reflect.SliceOf(reflect.PtrTo(d.t)) {
 			return true
 		}
 	}
