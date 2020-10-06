@@ -9,7 +9,7 @@ func TestClassDiagram_OtherType(t *testing.T) {
 	var (
 		d        = NewClassDiagram()
 		car      = d.Struct(Car{})
-		wheel    = d.Struct(Wheel{})
+		wheel    = d.Struct(&Wheel{})
 		stringer = d.Interface((*fmt.Stringer)(nil))
 	)
 	d.Place(car).At(10, 10)

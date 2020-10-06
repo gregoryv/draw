@@ -1,21 +1,22 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="291" height="160">
-<path stroke="black" d="M66,78 L68,108" />
-<g transform="rotate(86 66 78)"><path stroke="black" fill="#ffffff" d="M66,78 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(86 68 108)"><path stroke="black" fill="#ffffff" d="M68,108 l-8,-4 l 0,8 Z" /></g>
+  font-family="Arial,Helvetica,sans-serif" width="281" height="182">
+<path stroke="black" d="M64,78 L65,108" />
+<g transform="rotate(88 64 78)"><path stroke="black" fill="#ffffff" d="M64,78 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(88 65 108)"><path stroke="black" fill="#ffffff" d="M65,108 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M133,134 L163,134" />
-<g transform="rotate(0 163 134)"><path stroke="black" fill="#ffffff" d="M163,134 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M123,140 L153,138" />
+<g transform="rotate(-3 153 138)"><path stroke="black" fill="#ffffff" d="M153,138 l-8,-4 l 0,8 Z" /></g>
 
 <rect stroke="#d3d3d3" fill="#ffffff" x="10" y="10" width="108" height="68"/>
 <line stroke="#d3d3d3" x1="10" y1="40" x2="118" y2="40"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="56">Model</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="72">Wheels</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="30">design.Car struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="10" y="108" width="123" height="52"/>
-<line stroke="#d3d3d3" x1="10" y1="138" x2="133" y2="138"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="154">Make</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="128">design.Wheel struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="163" y="108" width="128" height="52"/>
-<line stroke="#d3d3d3" x1="163" y1="138" x2="291" y2="138"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="169" y="154">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="169" y="128">fmt.Stringer interface</text></svg>
+<rect stroke="#d3d3d3" fill="#ffffff" x="10" y="108" width="113" height="74"/>
+<line stroke="#d3d3d3" x1="10" y1="138" x2="123" y2="138"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="154">Make</text>
+<line stroke="#d3d3d3" x1="10" y1="160" x2="123" y2="160"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="176">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="128">*design.Wheel ptr</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="153" y="108" width="128" height="52"/>
+<line stroke="#d3d3d3" x1="153" y1="138" x2="281" y2="138"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="159" y="154">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="159" y="128">fmt.Stringer interface</text></svg>

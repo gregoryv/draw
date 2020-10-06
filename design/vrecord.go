@@ -22,6 +22,10 @@ func NewVRecord(v interface{}) *VRecord {
 	if t.Kind() == reflect.Struct {
 		addFields(rec, t)
 		addMethods(rec, t)
+		// and add any pointer to struct methods
+		if t := reflect.TypeOf(v); t.Kind() == reflect.Ptr {
+			addMethods(rec, t)
+		}
 	}
 	if t.Kind() == reflect.Interface {
 		addMethods(rec, t)
