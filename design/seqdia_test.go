@@ -3,6 +3,7 @@ package design
 import (
 	"bytes"
 	"io/ioutil"
+	"strings"
 	"testing"
 
 	"github.com/gregoryv/asserter"
@@ -27,6 +28,20 @@ func TestSequenceDiagram_WithCaption(t *testing.T) {
 	after := d.Width()
 	if before == after {
 		t.Fail()
+	}
+}
+
+func TestSequenceDiagram_Inline(t *testing.T) {
+	var (
+		d = NewSequenceDiagram()
+		a = d.Add("a")
+		b = d.Add("b")
+	)
+	d.Link(a, b, "text")
+	d.SetCaption("should affect width")
+	got := d.Inline()
+	if strings.Contains(got, "class") {
+		t.Error("found class attributes\n", got)
 	}
 }
 

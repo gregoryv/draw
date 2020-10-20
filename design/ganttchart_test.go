@@ -2,6 +2,7 @@ package design
 
 import (
 	"bytes"
+	"strings"
 	"testing"
 
 	"github.com/gregoryv/draw/internal/date"
@@ -33,6 +34,24 @@ func TestGanttChart_WriteSvg(t *testing.T) {
 	d.SetCaption("Figure 1. Project estimated delivery")
 	d.WriteSVG(w)
 	golden.Assert(t, w.String())
+}
+
+func TestGanttChart_Inline(t *testing.T) {
+	var (
+		d   = NewGanttChart("20191111", 30)
+		dev = d.Add("Develop")
+		rel = d.Add("Release").Red()
+		vac = d.Add("Vacation").Blue()
+	)
+	d.MarkDate("20191120")
+	d.Place(dev).At("20191111", 10)
+	d.Place(rel).After(dev, 1)
+	d.Place(vac).At("20191125", 14)
+	d.SetCaption("Figure 1. Project estimated delivery")
+	got := d.Inline()
+	if strings.Contains(got, "class") {
+		t.Error("found class attributes\n", got)
+	}
 }
 
 func TestNewGanttChart(t *testing.T) {

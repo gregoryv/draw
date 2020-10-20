@@ -3,6 +3,7 @@ package design
 import (
 	"bytes"
 	"io"
+	"strings"
 	"testing"
 
 	"github.com/gregoryv/asserter"
@@ -10,13 +11,6 @@ import (
 )
 
 func TestDiagram(t *testing.T) {
-	var (
-		a = shape.NewRect("grid")
-		b = shape.NewLabel("layout")
-		c = shape.NewLabel("1")
-		e = shape.NewCircle(30)
-		g = shape.NewComponent("component")
-	)
 
 	t.Run("Adapts in size", func(t *testing.T) {
 		d := NewDiagram()
@@ -47,7 +41,14 @@ func TestDiagram(t *testing.T) {
 	})
 
 	t.Run("Shapes can be placed in a grid", func(t *testing.T) {
-		d := NewDiagram()
+		var (
+			d = NewDiagram()
+			a = shape.NewRect("grid")
+			b = shape.NewLabel("layout")
+			c = shape.NewLabel("1")
+			e = shape.NewCircle(30)
+			g = shape.NewComponent("component")
+		)
 		cols := 2
 		d.PlaceGrid(
 			cols, 50, 20,
@@ -57,6 +58,25 @@ func TestDiagram(t *testing.T) {
 		d.SetHeight(d.Height() + 10)
 		d.SetWidth(d.Width() + 10)
 		d.SaveAs("img/grid_layout.svg")
+	})
+
+	t.Run("can be inlined", func(t *testing.T) {
+		var (
+			d      = NewDiagram()
+			rect   = shape.NewRect("grid")
+			label  = shape.NewLabel("layout")
+			circle = shape.NewCircle(30)
+			comp   = shape.NewComponent("component")
+		)
+		cols := 2
+		d.PlaceGrid(
+			cols, 50, 20,
+			rect, label, circle, comp,
+		)
+		got := d.Inline()
+		if strings.Contains(got, "class") {
+			t.Error("found class attributes\n", got)
+		}
 	})
 }
 

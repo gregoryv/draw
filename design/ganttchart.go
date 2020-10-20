@@ -5,6 +5,7 @@ import (
 	"io"
 	"time"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/internal/date"
 	"github.com/gregoryv/draw/shape"
 )
@@ -205,6 +206,10 @@ func newCol(day int) *shape.Label {
 
 func (d *GanttChart) SaveAs(filename string) error {
 	return saveAs(d, d.Diagram.Style, filename)
+}
+
+func (d *GanttChart) Inline() string {
+	return draw.Inline(d, d.Diagram.Style)
 }
 
 func (d *GanttChart) taskWidth() int {
