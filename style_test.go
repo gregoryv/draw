@@ -14,7 +14,7 @@ func TestStyle_CSS(t *testing.T) {
 	if !strings.Contains(css, ".database") {
 		t.Error("missing .database\n", css)
 	}
-	if !strings.Contains(css, `stroke="black";\n`) {
+	if !strings.Contains(css, `stroke="black";`) {
 		t.Error(`missing stroke="black";`, css)
 	}
 }
