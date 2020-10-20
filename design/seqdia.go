@@ -4,6 +4,7 @@ import (
 	"io"
 	"reflect"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/shape"
 )
 
@@ -162,6 +163,11 @@ func (d *SequenceDiagram) Add(name string) string {
 
 func (d *SequenceDiagram) SaveAs(filename string) error {
 	return saveAs(d, d.Style, filename)
+}
+
+// Inline returns rendered SVG with inlined style
+func (d *SequenceDiagram) Inline() string {
+	return draw.Inline(d, d.Style)
 }
 
 func (d *SequenceDiagram) AddStruct(obj interface{}) string {

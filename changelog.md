@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Add Inline method to diagrams
 - Add type ClassAttributes with CSS method for easy inlining in HTML
 
 ## [0.14.0] 2020-10-06

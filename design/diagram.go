@@ -108,6 +108,11 @@ func (d *Diagram) SaveAs(filename string) error {
 	return saveAs(d, d.Style, filename)
 }
 
+// Inline returns rendered SVG with inlined style
+func (d *Diagram) Inline() string {
+	return draw.Inline(d, d.Style)
+}
+
 func (d *Diagram) WriteSVG(w io.Writer) error {
 	if d.Width() == 0 && d.Height() == 0 {
 		d.AdaptSize()

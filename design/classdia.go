@@ -4,6 +4,7 @@ import (
 	"io"
 	"reflect"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/shape"
 )
 
@@ -117,6 +118,11 @@ func (d *ClassDiagram) HideRealizations() {
 // SaveAs saves the diagram to filename as SVG
 func (d *ClassDiagram) SaveAs(filename string) error {
 	return saveAs(d, d.Style, filename)
+}
+
+// Inline returns rendered SVG with inlined style
+func (d *ClassDiagram) Inline() string {
+	return draw.Inline(d, d.Style)
 }
 
 // Relation defines a relation between two records
