@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
+	"strings"
 )
 
 func NewStyle(w io.Writer) Style {
@@ -37,7 +38,28 @@ var (
 
 // ClassAttributes define mapping between classes and svg attributes.
 // Setting attributes that modify size or position is not advised.
-var ClassAttributes = map[string]string{
+type ClassAttributes map[string]string
+
+// CSS returns cascading rules for embedding in html
+func (me ClassAttributes) CSS() string {
+	var s strings.Builder
+	for class, rules := range me {
+		s.WriteString(".")
+		s.WriteString(class)
+		s.WriteString(" {\n")
+		rules = strings.TrimSpace(rules) + " "
+		r := strings.Split(rules, `" `)
+		for _, rule := range r[:len(r)-1] {
+			s.WriteString("  ")
+			s.WriteString(rule)
+			s.WriteString("\";\n")
+		}
+		s.WriteString("}\n\n")
+	}
+	return s.String()
+}
+
+var DefaultClassAttributes = ClassAttributes{
 	"actor":                 `stroke="black" stroke-width="2" fill="#ffffff"`,
 	"circle":                `stroke="#d3d3d3" stroke-width="2" fill="#ffffff"`,
 	"cylinder":              `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
@@ -107,7 +129,7 @@ func (s *Style) Write(p []byte) (int, error) {
 	write := s.write
 	st, found := s.styles[string(class)]
 	if !found {
-		st, found = ClassAttributes[string(class)]
+		st, found = DefaultClassAttributes[string(class)]
 	}
 	if found {
 		write([]byte(st))

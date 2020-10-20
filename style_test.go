@@ -3,12 +3,23 @@ package draw
 import (
 	"bytes"
 	"fmt"
+	"strings"
 	"testing"
 
 	"github.com/gregoryv/asserter"
 )
 
-func TestStyl_rejects_bad_elements(t *testing.T) {
+func TestStyle_CSS(t *testing.T) {
+	css := DefaultClassAttributes.CSS()
+	if !strings.Contains(css, ".database") {
+		t.Error("missing .database\n", css)
+	}
+	if !strings.Contains(css, `stroke="black";\n`) {
+		t.Error(`missing stroke="black";`, css)
+	}
+}
+
+func TestStyle_rejects_bad_elements(t *testing.T) {
 	defer func() {
 		e := recover()
 		if e == nil {
