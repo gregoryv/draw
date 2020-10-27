@@ -27,6 +27,16 @@ func BenchmarkWriteSvg(b *testing.B) {
 	b.ReportAllocs()
 }
 
+func TestInline_is_same_as_String(t *testing.T) {
+	d := design.NewSequenceDiagram()
+	got := d.Inline()
+	exp := d.String()
+	if got != exp {
+		t.Error(got, exp)
+	}
+
+}
+
 func ExampleInline() {
 	d := design.NewSequenceDiagram()
 	fmt.Println(d.Inline())

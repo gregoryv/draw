@@ -170,6 +170,9 @@ func (d *SequenceDiagram) Inline() string {
 	return draw.Inline(d, d.Style)
 }
 
+// String returns rendered SVG with inlined style
+func (d *SequenceDiagram) String() string { return d.Inline() }
+
 func (d *SequenceDiagram) AddStruct(obj interface{}) string {
 	name := reflect.TypeOf(obj).String()
 	d.Add(name)

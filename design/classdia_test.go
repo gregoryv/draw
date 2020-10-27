@@ -7,20 +7,28 @@ import (
 )
 
 func TestClassDiagram_OtherType(t *testing.T) {
-	var (
-		d        = NewClassDiagram()
-		car      = d.Struct(Car{})
-		wheel    = d.Struct(&Wheel{})
-		stringer = d.Interface((*fmt.Stringer)(nil))
-	)
-	d.Place(car).At(10, 10)
-	d.Place(wheel).Below(car)
-	d.Place(stringer).RightOf(wheel)
-
-	d.SaveAs("testdata/classdia_test.svg")
+	newClassDiagram().SaveAs("testdata/classdia_test.svg")
 }
 
 func TestClassDiagram_Inline(t *testing.T) {
+	got := newClassDiagram().Inline()
+	if strings.Contains(got, "class") {
+		t.Error("found class attributes\n", got)
+	}
+}
+
+func TestClassDiagram_Inline_same_as_stringer(t *testing.T) {
+	got := newClassDiagram().Inline()
+	exp := newClassDiagram().String()
+	if got != exp {
+		t.Errorf(
+			"inline is \n%s\n\n and stringer is \n %s",
+			got, exp,
+		)
+	}
+}
+
+func newClassDiagram() *ClassDiagram {
 	var (
 		d        = NewClassDiagram()
 		car      = d.Struct(Car{})
@@ -30,11 +38,7 @@ func TestClassDiagram_Inline(t *testing.T) {
 	d.Place(car).At(10, 10)
 	d.Place(wheel).Below(car)
 	d.Place(stringer).RightOf(wheel)
-
-	got := d.Inline()
-	if strings.Contains(got, "class") {
-		t.Error("found class attributes\n", got)
-	}
+	return d
 }
 
 type Car struct {

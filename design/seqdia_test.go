@@ -45,6 +45,20 @@ func TestSequenceDiagram_Inline(t *testing.T) {
 	}
 }
 
+func TestSequenceDiagram_String(t *testing.T) {
+	var (
+		d = NewSequenceDiagram()
+		a = d.Add("a")
+		b = d.Add("b")
+	)
+	d.Link(a, b, "text")
+	d.SetCaption("should affect width")
+	got := d.String()
+	if strings.Contains(got, "class") {
+		t.Error("found class attributes\n", got)
+	}
+}
+
 func TestSequenceDiagram_AddStruct(t *testing.T) {
 	d := NewSequenceDiagram()
 	before := d.Width()

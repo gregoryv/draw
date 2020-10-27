@@ -4,7 +4,6 @@ import (
 	"io"
 	"reflect"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/shape"
 )
 
@@ -120,10 +119,8 @@ func (d *ClassDiagram) SaveAs(filename string) error {
 	return saveAs(d, d.Style, filename)
 }
 
-// Inline returns rendered SVG with inlined style
-func (d *ClassDiagram) Inline() string {
-	return draw.Inline(d, d.Style)
-}
+// String returns rendered SVG with inlined style
+func (d *ClassDiagram) String() string { return d.Inline() }
 
 // Relation defines a relation between two records
 type Relation struct {

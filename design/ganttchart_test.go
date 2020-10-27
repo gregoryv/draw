@@ -37,20 +37,20 @@ func TestGanttChart_WriteSvg(t *testing.T) {
 }
 
 func TestGanttChart_Inline(t *testing.T) {
-	var (
-		d   = NewGanttChart("20191111", 30)
-		dev = d.Add("Develop")
-		rel = d.Add("Release").Red()
-		vac = d.Add("Vacation").Blue()
-	)
-	d.MarkDate("20191120")
-	d.Place(dev).At("20191111", 10)
-	d.Place(rel).After(dev, 1)
-	d.Place(vac).At("20191125", 14)
-	d.SetCaption("Figure 1. Project estimated delivery")
-	got := d.Inline()
+	got := newTestChart().Inline()
 	if strings.Contains(got, "class") {
 		t.Error("found class attributes\n", got)
+	}
+}
+
+func TestGanttChart_Inline_same_as_stringer(t *testing.T) {
+	got := newTestChart().Inline()
+	exp := newTestChart().String()
+	if got != exp {
+		t.Errorf(
+			"inline is \n%s\n\n and stringer is \n %s",
+			got, exp,
+		)
 	}
 }
 
@@ -65,14 +65,6 @@ func TestNewGanttChartFrom_panics(t *testing.T) {
 	NewGanttChart("201910-2", 20)
 }
 
-func expectPanic(t *testing.T) {
-	t.Helper()
-	e := recover()
-	if e == nil {
-		t.Error("Expected panic")
-	}
-}
-
 func TestGanttChart_MarkDate(t *testing.T) {
 	d := NewGanttChart("20191002", 20)
 	d.MarkDate("20191003")
@@ -83,4 +75,27 @@ func TestGanttChart_MarkDate_panics(t *testing.T) {
 	defer expectPanic(t)
 	d := NewGanttChart("20191002", 20)
 	d.MarkDate("")
+}
+
+func newTestChart() *GanttChart {
+	var (
+		d   = NewGanttChart("20191111", 30)
+		dev = d.Add("Develop")
+		rel = d.Add("Release").Red()
+		vac = d.Add("Vacation").Blue()
+	)
+	d.MarkDate("20191120")
+	d.Place(dev).At("20191111", 10)
+	d.Place(rel).After(dev, 1)
+	d.Place(vac).At("20191125", 14)
+	d.SetCaption("Figure 1. Project estimated delivery")
+	return d
+}
+
+func expectPanic(t *testing.T) {
+	t.Helper()
+	e := recover()
+	if e == nil {
+		t.Error("Expected panic")
+	}
 }
