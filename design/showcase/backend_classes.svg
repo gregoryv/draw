@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="217" height="180">
+  font-family="Arial,Helvetica,sans-serif" width="218" height="182">
 <path stroke="black" stroke-dasharray="5,5,5" d="M87,102 L86,72" />
 <g transform="rotate(268 86 72)"><path stroke="black" fill="#ffffff" d="M86,72 l-8,-4 l 0,8 Z" /></g>
 
@@ -10,4 +10,4 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="40">http.Handler interface</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="20" y="102" width="136" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="122">showcase.Index struct</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="0" y="174">Figure 3. Index implements http.Handler</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="0" y="175">Figure 3. Index implements http.Handler</text></svg>

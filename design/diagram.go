@@ -156,6 +156,8 @@ func (d *Diagram) AdaptSize() (int, int) {
 			d.SetHeight(h)
 		}
 	}
+	d.SetWidth(d.Width() + 1)   // Fixes right most pixels not visible
+	d.SetHeight(d.Height() + 1) // Fixes bottom pixels not visible
 	return d.Width(), d.Height()
 }
 

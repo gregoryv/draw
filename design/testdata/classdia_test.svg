@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="281" height="182">
+  font-family="Arial,Helvetica,sans-serif" width="282" height="183">
 <path stroke="black" d="M64,78 L65,108" />
 <g transform="rotate(88 64 78)"><path stroke="black" fill="#ffffff" d="M64,78 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(88 65 108)"><path stroke="black" fill="#ffffff" d="M65,108 l-8,-4 l 0,8 Z" /></g>

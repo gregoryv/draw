@@ -21,8 +21,8 @@ func TestDiagram(t *testing.T) {
 		d.Append(&dummy{}) // Not a shape, should be skipped
 		w, h := d.AdaptSize()
 		assert := asserter.New(t)
-		assert(w == 100).Errorf("width did not adapt: %v", w)
-		assert(h == 130).Errorf("height did not adapt: %v", h)
+		assert(w == 101).Errorf("width did not adapt: %v", w)
+		assert(h == 131).Errorf("height did not adapt: %v", h)
 	})
 
 	t.Run("Can have fixed size", func(t *testing.T) {

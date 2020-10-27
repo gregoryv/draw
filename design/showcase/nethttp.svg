@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="505" height="316">
+  font-family="Arial,Helvetica,sans-serif" width="507" height="318">
 <path stroke="black" stroke-dasharray="5,5,5" d="M255,216 L255,186" />
 <g transform="rotate(-90 255 186)"><path stroke="black" fill="#ffffff" d="M255,186 l-8,-4 l 0,8 Z" /></g>
 
@@ -32,4 +32,4 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="242">BaseContext</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="258">ConnContext</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="40">http.Server struct</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="124" y="310">Figure 1. ServeMux routes requests to handlers</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="124" y="311">Figure 1. ServeMux routes requests to handlers</text></svg>

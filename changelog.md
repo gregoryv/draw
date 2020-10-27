@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- AdaptSize makes width and height +1 pixel
 - Add Inline method to diagrams
 - Add type ClassAttributes with CSS method for easy inlining in HTML
 

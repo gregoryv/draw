@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="838" height="738">
+  font-family="Arial,Helvetica,sans-serif" width="840" height="740">
 <path stroke="black" d="M287,378 L145,250" />
 <g transform="rotate(222 287 378)"><path stroke="black" fill="#ffffff" d="M287,378 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(222 145 250)"><path stroke="black" fill="#ffffff" d="M145,250 l-8,-4 l 0,8 Z" /></g>
@@ -123,4 +123,4 @@
 <rect stroke="#d3d3d3" fill="#ffffff" x="417" y="634" width="166" height="52"/>
 <line stroke="#d3d3d3" x1="417" y1="664" x2="583" y2="664"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="680">Diagram</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="654">design.ClassDiagram struct</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="732">Figure 1. Class diagram of design and design.shape packages</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="733">Figure 1. Class diagram of design and design.shape packages</text></svg>

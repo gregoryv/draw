@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="890" height="356">
+  font-family="Arial,Helvetica,sans-serif" width="892" height="358">
 <circle stroke="black" cx="106" cy="146" r="6" />\n
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="87" y="182" width="39" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="93" y="200">Run</text>
@@ -61,4 +61,4 @@
 <g transform="rotate(0 418 90)"><path stroke="black" fill="#ffffff" d="M418,90 l-8,-4 l 0,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="318" y="87">...</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="320" y="350">gregoryv/draw provided shapes and diagrams</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="320" y="351">gregoryv/draw provided shapes and diagrams</text></svg>
