@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.15.0] 2020-10-27
 
+- This version broke class diagram relations
 - Diagrams implement stringer interface
 - AdaptSize makes width and height +1 pixel
 - Add Inline method to diagrams
