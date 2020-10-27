@@ -3,6 +3,7 @@ package draw_test
 import (
 	"bytes"
 	"database/sql"
+	"fmt"
 	"io/ioutil"
 	"os"
 	"testing"
@@ -24,6 +25,16 @@ func BenchmarkWriteSvg(b *testing.B) {
 	}
 	b.StopTimer()
 	b.ReportAllocs()
+}
+
+func ExampleInline() {
+	d := design.NewSequenceDiagram()
+	fmt.Println(d.Inline())
+	// output:
+	// <svg
+	//   xmlns="http://www.w3.org/2000/svg"
+	//   xmlns:xlink="http://www.w3.org/1999/xlink"
+	//   font-family="Arial,Helvetica,sans-serif" width="1" height="1"></svg>
 }
 
 func ExampleNewSvg() {
