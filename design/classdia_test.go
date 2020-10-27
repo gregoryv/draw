@@ -2,12 +2,15 @@ package design
 
 import (
 	"fmt"
+	"io/ioutil"
 	"strings"
 	"testing"
 )
 
 func TestClassDiagram_OtherType(t *testing.T) {
 	newClassDiagram().SaveAs("testdata/classdia_test.svg")
+	data := newClassDiagram().String()
+	ioutil.WriteFile("testdata/classdia_inlined.svg", []byte(data), 0644)
 }
 
 func TestClassDiagram_Inline(t *testing.T) {

@@ -4,9 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.15.1] 2020-10-27
+
+- Fix missing relations in inlined class diagrams
+
 ## [0.15.0] 2020-10-27
 
-- This version broke class diagram relations
 - Diagrams implement stringer interface
 - AdaptSize makes width and height +1 pixel
 - Add Inline method to diagrams
