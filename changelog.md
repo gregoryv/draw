@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [unreleased]
+
+- Add VRecord.Slice method for slice composition and aggregates
+
 ## [0.15.1] 2020-10-27
 
 - Fix missing relations in inlined class diagrams

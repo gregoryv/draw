@@ -13,6 +13,7 @@ type ClassDiagram struct {
 
 	interfaces []VRecord
 	structs    []VRecord
+	slices     []VRecord
 }
 
 // NewClassDiagram returns a diagram representing structs and
@@ -23,6 +24,7 @@ func NewClassDiagram() *ClassDiagram {
 		Diagram:    NewDiagram(),
 		interfaces: make([]VRecord, 0),
 		structs:    make([]VRecord, 0),
+		slices:     make([]VRecord, 0),
 	}
 }
 
@@ -35,6 +37,12 @@ func (d *ClassDiagram) Interface(obj interface{}) VRecord {
 func (d *ClassDiagram) Struct(obj interface{}) VRecord {
 	vr := NewVRecord(obj)
 	d.structs = append(d.structs, *vr)
+	return *vr
+}
+
+func (d *ClassDiagram) Slice(obj interface{}) VRecord {
+	vr := NewVRecord(obj)
+	d.slices = append(d.slices, *vr)
 	return *vr
 }
 
@@ -77,6 +85,22 @@ func (d *ClassDiagram) compositions() []shape.Shape {
 			}
 			if struct_.Aggregates(&struct2) {
 				arrow := shape.NewArrowBetween(struct_, struct2)
+				arrow.Tail = shape.NewDiamond()
+				arrow.SetClass("aggregate-arrow")
+				arrow.Tail.SetClass("aggregate-arrow-tail")
+				rel = append(rel, arrow)
+			}
+		}
+		for _, slice := range d.slices {
+			if struct_.ComposedOf(&slice) {
+				arrow := shape.NewArrowBetween(struct_, slice)
+				arrow.Tail = shape.NewDiamond()
+				arrow.SetClass("compose-arrow")
+				arrow.Tail.SetClass("compose-arrow-tail")
+				rel = append(rel, arrow)
+			}
+			if struct_.Aggregates(&slice) {
+				arrow := shape.NewArrowBetween(struct_, slice)
 				arrow.Tail = shape.NewDiamond()
 				arrow.SetClass("aggregate-arrow")
 				arrow.Tail.SetClass("aggregate-arrow-tail")

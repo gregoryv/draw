@@ -35,7 +35,7 @@ func newClassDiagram() *ClassDiagram {
 	var (
 		d        = NewClassDiagram()
 		car      = d.Struct(Car{})
-		wheel    = d.Struct(&Wheel{})
+		wheel    = d.Slice(make(Wheels, 4))
 		stringer = d.Interface((*fmt.Stringer)(nil))
 	)
 	d.Place(car).At(10, 10)
@@ -45,13 +45,15 @@ func newClassDiagram() *ClassDiagram {
 }
 
 type Car struct {
-	Model  string
-	Wheels []*Wheel
+	Model string
+	Wheels
 }
 
 type Wheel struct {
 	Make string
 }
+
+type Wheels []Wheel
 
 // String
 func (me *Wheel) String() string { return me.Make }
