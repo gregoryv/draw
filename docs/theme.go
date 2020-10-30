@@ -12,6 +12,12 @@ func Theme() *CSS {
 	css.Style("article",
 		"margin: 1em 1.62em",
 	)
+	css.Style(".writtenby",
+		"float: right",
+	)
+	css.Style(".toc",
+		"font-weight: bold",
+	)
 	css.Style("p, li",
 		"font-family: sans-serif",
 	)
@@ -39,6 +45,14 @@ func Theme() *CSS {
 
 	css.Style("code",
 		"font-family: Inconsolata",
+	)
+
+	css.Style(".left",
+		"float: left",
+		"margin-right: 6em",
+	)
+	css.Style(".right",
+		"float: left",
 	)
 	return css
 }

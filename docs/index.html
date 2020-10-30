@@ -11,6 +11,12 @@ padding: 0 0;
 article {
 margin: 1em 1.62em;
 }
+.writtenby {
+float: right;
+}
+.toc {
+font-weight: bold;
+}
 p, li {
 font-family: sans-serif;
 }
@@ -36,19 +42,27 @@ display: block;
 code {
 font-family: Inconsolata;
 }
+.left {
+float: left;
+margin-right: 6em;
+}
+.right {
+float: left;
+}
 </style>
 </head>
 <body>
 <article>
-<h1>draw</h1>
+<h1>Draw - programming software design diagrams</h1>
 <p>Go module providing SVG rendering features. It comes with
              subpackages for shapes and software design diagrams. For
              software written in Go this module can help in keeping
              design diagrams uptodate. Diagrams is just Go-code, no
              special syntax is needed. Refactoring is applied together
              with your other code.  </p>
-<p>Written by Gregory Vin&ccaron;i&cacute;</p>
-<nav>Table of contents<ul>
+<span class="writtenby">Written by Gregory Vin&ccaron;i&cacute;</span><div class="left"><nav><h4>Table of contents</h4>
+<ul>
+<li class="h2"><a href="#install">Install</a></li>
 <li class="h2"><a href="#apidocumentation">API documentation</a></li>
 <li class="h2"><a href="#diagrams">Diagrams</a></li>
 <li class="h3"><a href="#class">Class</a></li>
@@ -60,13 +74,16 @@ font-family: Inconsolata;
 <li class="h2"><a href="#changelog">Changelog</a></li>
 </ul>
 </nav>
-<h2 id="apidocumentation">API documentation</h2>
+</div>
+<div class="right"><h2 id="install">Install</h2>
+<pre><code>    go get <a href="https://github.com/gregoryv/draw">github.com/gregoryv/draw/</a>...</code></pre><h2 id="apidocumentation">API documentation</h2>
 <ul>
 <li><a href="https://godoc.org/github.com/gregoryv/draw">draw</a></li>
 <li><a href="https://godoc.org/github.com/gregoryv/draw/shape">draw/shape</a> - SVG shapes</li>
 <li><a href="https://godoc.org/github.com/gregoryv/draw/design">draw/design</a> - software design diagrams</li>
 </ul>
-<h2 id="diagrams">Diagrams</h2>
+</div>
+<br clear="all"/><h2 id="diagrams">Diagrams</h2>
 <h3 id="class">Class</h3>
 <p>In class diagrams the author wants to convey design
 			relations between various entities. However the relations

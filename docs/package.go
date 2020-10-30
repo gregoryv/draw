@@ -26,9 +26,9 @@ func NewProjectsPage() *Page {
 }
 
 func NewProjectArticle() *Element {
-	nav := Nav("Table of contents")
+	nav := Nav(H4("Table of contents"))
 	article := Article(
-		H1("draw"),
+		H1("Draw - programming software design diagrams"),
 		P(
 
 			`Go module providing SVG rendering features. It comes with
@@ -39,26 +39,39 @@ func NewProjectArticle() *Element {
              with your other code.  `,
 			//
 		),
-		P(
+		Span(Class("writtenby"),
 			`Written by `, gregory,
 		),
-		nav,
-		H2("API documentation"),
-		Ul(
-			Li(
-				A(Href(godoc("github.com/gregoryv/draw")), "draw"),
+		Div(Class("left"),
+			nav,
+		),
+		Div(Class("right"),
+			H2("Install"),
+			Pre(
+				Code(
+					"    go get ",
+					A(Href("https://github.com/gregoryv/draw"), "github.com/gregoryv/draw/"),
+					"...",
+				),
 			),
-			Li(
-				A(Href(godoc("github.com/gregoryv/draw/shape")), "draw/shape"),
-				" - SVG shapes",
-			),
-			Li(
-				A(Href(godoc("github.com/gregoryv/draw/design")), "draw/design"),
-				" - software design diagrams",
+
+			H2("API documentation"),
+			Ul(
+				Li(
+					A(Href(godoc("github.com/gregoryv/draw")), "draw"),
+				),
+				Li(
+					A(Href(godoc("github.com/gregoryv/draw/shape")), "draw/shape"),
+					" - SVG shapes",
+				),
+				Li(
+					A(Href(godoc("github.com/gregoryv/draw/design")), "draw/design"),
+					" - software design diagrams",
+				),
 			),
 		),
+		Br(Attr("clear", "all")),
 		H2("Diagrams"),
-
 		H3("Class"),
 
 		P(
