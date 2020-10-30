@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>html, body {
+margin: 0 0;
+padding: 0 0;
+}
+article {
+margin: 1em 1.62em;
+}
+* {
+font-family: sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: serif;
+}
+p {
+line-height: 1.5em;
+}
+nav>ul {
+list-style-type: none;
+line-height: 1.5em;
+}
+li.h3 {
+margin-left: 1em;
+list-style-type: none;
+}
+</style>
+</head>
+<body>
+<article>
+<h1>draw</h1>
+<p>Go module providing SVG rendering features. It comes with
+             subpackages for shapes and software design diagrams. For
+             software written in Go this module can help in keeping
+             design diagrams uptodate. Diagrams is just Go-code, no
+             special syntax is needed. Refactoring is applied together
+             with your other code.  </p>
+<p>Written by Gregory Vin&ccaron;i&cacute;</p>
+<nav>Table of contents<ul>
+<li class="h2"><a href="#apidocumentation">API documentation</a></li>
+<li class="h2"><a href="#diagrams">Diagrams</a></li>
+<li class="h3"><a href="#class">Class</a></li>
+<li class="h3"><a href="#activity">Activity</a></li>
+<li class="h3"><a href="#sequence">Sequence</a></li>
+<li class="h3"><a href="#ganttchart">Gantt chart</a></li>
+<li class="h3"><a href="#generic">Generic</a></li>
+<li class="h2"><a href="#shapes">Shapes</a></li>
+</ul>
+</nav>
+<h2 id="apidocumentation">API documentation</h2>
+<ul>
+<li><a href="https://godoc.org/github.com/gregoryv/draw">draw</a></li>
+<li><a href="https://godoc.org/github.com/gregoryv/draw/shape">draw/shape</a></li>
+<li><a href="https://godoc.org/github.com/gregoryv/draw/design">draw/design</a></li>
+</ul>
+<h2 id="diagrams">Diagrams</h2>
+<h3 id="class">Class</h3>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="840" height="740">
+<path stroke="black" d="M287,378 L145,250" />
+<g transform="rotate(222 287 378)"><path stroke="black" fill="#ffffff" d="M287,378 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(222 145 250)"><path stroke="black" fill="#ffffff" d="M145,250 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M567,483 L647,483" />
+<g transform="rotate(0 567 483)"><path stroke="black" fill="#777777" d="M567,483 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(0 647 483)"><path stroke="black" fill="#ffffff" d="M647,483 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M432,483 L342,483" />
+<g transform="rotate(180 432 483)"><path stroke="black" fill="#777777" d="M432,483 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(180 342 483)"><path stroke="black" fill="#ffffff" d="M342,483 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M499,634 L499,544" />
+<g transform="rotate(-90 499 634)"><path stroke="black" fill="#777777" d="M499,634 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(-90 499 544)"><path stroke="black" fill="#ffffff" d="M499,544 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M678,602 L567,528" />
+<g transform="rotate(213 678 602)"><path stroke="black" fill="#777777" d="M678,602 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(213 567 528)"><path stroke="black" fill="#ffffff" d="M567,528 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M237,483 L133,483" />
+<g transform="rotate(180 237 483)"><path stroke="black" fill="#777777" d="M237,483 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(180 133 483)"><path stroke="black" fill="#ffffff" d="M133,483 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M82,268 L82,438" />
+<g transform="rotate(90 82 268)"><path stroke="black" fill="#777777" d="M82,268 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(90 82 438)"><path stroke="black" fill="#ffffff" d="M82,438 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M639,160 L359,113" />
+<g transform="rotate(189 359 113)"><path stroke="black" fill="#ffffff" d="M359,113 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M639,112 L359,104" />
+<g transform="rotate(181 359 104)"><path stroke="black" fill="#ffffff" d="M359,104 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M639,53 L359,92" />
+<g transform="rotate(173 359 92)"><path stroke="black" fill="#ffffff" d="M359,92 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M289,230 L289,184" />
+<g transform="rotate(-90 289 184)"><path stroke="black" fill="#ffffff" d="M289,184 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M434,184 L359,142" />
+<g transform="rotate(209 359 142)"><path stroke="black" fill="#ffffff" d="M359,142 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M145,165 L220,132" />
+<g transform="rotate(-23 220 132)"><path stroke="black" fill="#ffffff" d="M220,132 l-8,-4 l 0,8 Z" /></g>
+
+<rect stroke="#d3d3d3" fill="#ffffff" x="220" y="20" width="139" height="164"/>
+<line stroke="#d3d3d3" x1="220" y1="50" x2="359" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="66">Direction()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="82">Height()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="98">Position()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="114">SetClass()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="130">SetX()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="146">SetY()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="162">Width()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="178">WriteSVG()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="40">shape.Shape interface</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="20" y="120" width="125" height="148"/>
+<line stroke="#d3d3d3" x1="20" y1="150" x2="145" y2="150"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="166">X</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="182">Y</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="198">Title</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="214">Fields</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="230">Methods</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="246">Font</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="262">Pad</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="140">shape.Record struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="230" width="109" height="68"/>
+<line stroke="#d3d3d3" x1="235" y1="260" x2="344" y2="260"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="276">Start</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="292">End</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="250">shape.Line struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="434" y="168" width="117" height="100"/>
+<line stroke="#d3d3d3" x1="434" y1="198" x2="551" y2="198"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="214">Start</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="230">End</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="246">Tail</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="262">Head</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="188">shape.Arrow struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="639" y="20" width="117" height="52"/>
+<line stroke="#d3d3d3" x1="639" y1="50" x2="756" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="66">Radius</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="40">shape.Circle struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="639" y="102" width="135" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="122">shape.Diamond struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="639" y="158" width="130" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="178">shape.Triangle struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="31" y="438" width="102" height="90"/>
+<line stroke="#d3d3d3" x1="31" y1="468" x2="133" y2="468"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="484">Height</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="500">LineHeight</text>
+<line stroke="#d3d3d3" x1="31" y1="506" x2="133" y2="506"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="522">TextWidth()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="458">draw.Font struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="237" y="433" width="105" height="100"/>
+<line stroke="#d3d3d3" x1="237" y1="463" x2="342" y2="463"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="479">Font</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="495">TextPad</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="511">Pad</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="527">Spacing</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="453">draw.Style struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="378" width="134" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="398">design.Relation struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="432" y="422" width="135" height="122"/>
+<line stroke="#d3d3d3" x1="432" y1="452" x2="567" y2="452"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="468">SVG</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="484">Aligner</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="500">Style</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="516">Caption</text>
+<line stroke="#d3d3d3" x1="432" y1="522" x2="567" y2="522"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="538">TextWidth()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="442">design.Diagram struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="647" y="417" width="124" height="132"/>
+<line stroke="#d3d3d3" x1="647" y1="447" x2="771" y2="447"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="463">HAlignBottom()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="479">HAlignCenter()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="495">HAlignTop()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="511">VAlignCenter()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="527">VAlignLeft()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="543">VAlignRight()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="437">shape.Aligner struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="31" y="598" width="130" height="52"/>
+<line stroke="#d3d3d3" x1="31" y1="628" x2="161" y2="628"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="644">Spacing</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="618">shape.Adjuster struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="647" y="602" width="191" height="84"/>
+<line stroke="#d3d3d3" x1="647" y1="632" x2="838" y2="632"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="648">Diagram</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="664">ColWidth</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="680">VMargin</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="622">design.SequenceDiagram struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="417" y="634" width="166" height="52"/>
+<line stroke="#d3d3d3" x1="417" y1="664" x2="583" y2="664"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="680">Diagram</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="654">design.ClassDiagram struct</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="733">Figure 1. Class diagram of design and design.shape packages</text></svg><h3 id="activity">Activity</h3>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="298" height="355">
+<circle stroke="black" cx="86" cy="26" r="6" />\n
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="43" y="72" width="86" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="49" y="90">Push commit</text>
+<path stroke="black" d="M86,32 L86,72" />
+<g transform="rotate(90 86 72)"><path stroke="black" fill="#ffffff" d="M86,72 l-8,-4 l 0,8 Z" /></g>
+
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="43" y="138" width="85" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="49" y="156">Run git hook</text>
+<path stroke="black" d="M85,98 L85,138" />
+<g transform="rotate(90 85 138)"><path stroke="black" fill="#ffffff" d="M85,138 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="#d3d3d3" fill="#ffffff" d="M75,214 l 10,-10 10,10 -10,10 -10,-10" />
+<path stroke="black" d="M85,164 L85,204" />
+<g transform="rotate(90 85 204)"><path stroke="black" fill="#ffffff" d="M85,204 l-8,-4 l 0,8 Z" /></g>
+
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="58" y="264" width="55" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="64" y="282">Deploy</text>
+<path stroke="black" d="M85,224 L85,264" />
+<g transform="rotate(90 85 264)"><path stroke="black" fill="#ffffff" d="M85,264 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="90" y="240">ok</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="85" cy="342" r="10" />\n<circle stroke="black" cx="85" cy="342" r="6" />\n
+<path stroke="black" d="M85,290 L85,330" />
+<g transform="rotate(90 85 330)"><path stroke="black" fill="#ffffff" d="M85,330 l-8,-4 l 0,8 Z" /></g>
+
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="209" cy="214" r="10" />\n<circle stroke="black" cx="209" cy="214" r="6" />\n
+<path stroke="black" d="M95,214 L197,214" />
+<g transform="rotate(0 197 214)"><path stroke="black" fill="#ffffff" d="M197,214 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="111" y="210">Tests failed</text>
+<circle stroke="black" cx="186" cy="26" r="6" />\n
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="222" y="13" width="64" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="31">Push tag</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="212" y="76" width="85" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="94">Run git hook</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="254" cy="144" r="10" />\n<circle stroke="black" cx="254" cy="144" r="6" />\n
+<path stroke="black" d="M192,26 L222,26" />
+<g transform="rotate(0 222 26)"><path stroke="black" fill="#ffffff" d="M222,26 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M254,39 L254,76" />
+<g transform="rotate(90 254 76)"><path stroke="black" fill="#ffffff" d="M254,76 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M254,102 L254,132" />
+<g transform="rotate(90 254 132)"><path stroke="black" fill="#ffffff" d="M254,132 l-8,-4 l 0,8 Z" /></g>
+</svg><h3 id="sequence">Sequence</h3>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="437" height="223">
+<line stroke="#d3d3d3" x1="38" y1="24" x2="38" y2="222"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">app.Client</text>
+<line stroke="#d3d3d3" x1="228" y1="24" x2="228" y2="222"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="18">app.Server</text>
+<line stroke="#d3d3d3" x1="418" y1="24" x2="418" y2="222"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="400" y="18">sql.DB</text>
+<path stroke="black" d="M38,57 L228,57" />
+<g transform="rotate(0 228 57)"><path stroke="black" fill="#ffffff" d="M228,57 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="107" y="54">connect()</text>
+<path stroke="red" d="M228,90 L418,90" />
+<g transform="rotate(0 418 90)"><path stroke="red" fill="#ffffff" d="M418,90 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="299" y="87">SELECT</text>
+<path stroke="black" d="M418,123 L228,123" />
+<g transform="rotate(180 228 123)"><path stroke="black" fill="#ffffff" d="M228,123 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="308" y="120">Rows</text>
+<line stroke="red" x1="228" y1="156" x2="243" y2="156"/>
+<line stroke="red" x1="243" y1="156" x2="243" y2="188"/>
+<path stroke="red" d="M243,188 L228,188" />
+<g transform="rotate(180 228 188)"><path stroke="red" fill="#ffffff" d="M228,188 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="175">Transform to view model</text>
+<path stroke="black" d="M228,211 L38,211" />
+<g transform="rotate(180 38 211)"><path stroke="black" fill="#ffffff" d="M38,211 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="101" y="208">Send HTML</text></svg><h3 id="ganttchart">Gantt chart</h3>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="528" height="166">
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="26">2019</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="80" y="46">11</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="95" y="46">12</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="110" y="46">13</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="125" y="46">14</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="140" y="46">15</text>
+<rect font-family="Arial,Helvetica,sans-serif" fill="#f3f3f3" x="153" y="34" width="30" height="78"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="159" y="52"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="155" y="46">16</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="170" y="46">17</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="185" y="46">18</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="200" y="46">19</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="215" y="46">20</text>
+<line stroke="black" x1="215" y1="30" x2="225" y2="30"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="230" y="46">21</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="245" y="46">22</text>
+<rect font-family="Arial,Helvetica,sans-serif" fill="#f3f3f3" x="258" y="34" width="30" height="78"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="264" y="52"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="260" y="46">23</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="275" y="46">24</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="290" y="46">25</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="305" y="46">26</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="320" y="46">27</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="335" y="46">28</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="350" y="46">29</text>
+<rect font-family="Arial,Helvetica,sans-serif" fill="#f3f3f3" x="363" y="34" width="30" height="78"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="369" y="52"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="365" y="46">30</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="380" y="46">01</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="26">December</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="395" y="46">02</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="410" y="46">03</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="425" y="46">04</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="440" y="46">05</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="455" y="46">06</text>
+<rect font-family="Arial,Helvetica,sans-serif" fill="#f3f3f3" x="468" y="34" width="30" height="78"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="474" y="52"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="470" y="46">07</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="485" y="46">08</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="500" y="46">09</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="515" y="46">10</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="69">Develop</text>
+<rect stroke="#d3d3d3" fill="#ccff99" rx="5" ry="5" x="80" y="58" width="146" height="12"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="86" y="76"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="85">Release</text>
+<rect stroke="#d3d3d3" fill="#ff9999" rx="5" ry="5" x="230" y="74" width="11" height="12"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="236" y="92"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="101">Vacation</text>
+<rect stroke="#d3d3d3" fill="#99e6ff" rx="5" ry="5" x="290" y="90" width="206" height="12"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="296" y="108"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="168" y="159">Figure 1. Project estimated delivery</text></svg><h3 id="generic">Generic</h3>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="253" height="358">
+<rect stroke="#d3d3d3" fill="#ffffff" x="10" y="30" width="56" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="50">Record</text>
+<path stroke="black" d="M130,80 L180,70" />
+<g transform="rotate(-11 180 70)"><path stroke="black" fill="#ffffff" d="M180,70 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M130,80 L100,70" />
+<g transform="rotate(198 100 70)"><path stroke="black" fill="#ffffff" d="M100,70 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M130,80 L80,100" />
+<g transform="rotate(159 80 100)"><path stroke="black" fill="#ffffff" d="M80,100 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M130,80 L170,100" />
+<g transform="rotate(26 170 100)"><path stroke="black" fill="#ffffff" d="M170,100 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M130,80 L220,80" />
+<g transform="rotate(0 220 80)"><path stroke="black" fill="#ffffff" d="M220,80 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M130,80 L80,80" />
+<g transform="rotate(180 80 80)"><path stroke="black" fill="#ffffff" d="M80,80 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M130,80 L130,40" />
+<g transform="rotate(-90 130 40)"><path stroke="black" fill="#ffffff" d="M130,40 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M130,80 L130,120" />
+<g transform="rotate(90 130 120)"><path stroke="black" fill="#ffffff" d="M130,120 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="216" y="46">Label</text>
+<path stroke="black" d="M20,150 L150,150" />
+<g transform="rotate(0 20 150)"><circle stroke="black" fill="#777777" cx="23" cy="150" r="3" />\n</g>
+<g transform="rotate(0 150 150)"><path stroke="black" fill="#ffffff" d="M150,150 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M20,180 L150,180" />
+<g transform="rotate(0 20 180)"><path stroke="black" fill="#777777" d="M20,180 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(0 150 180)"><path stroke="black" fill="#ffffff" d="M150,180 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="#d3d3d3" fill="#ffffcc" d="M20,210 v 41 h 96 v -31 l -10,-10 L 20,210 M116,220 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="226">Notes support</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="242">multilines</text>
+
+<circle stroke="#d3d3d3" stroke-width="2" fill="#ffffff" cx="30" cy="291" r="10" />\n
+<circle stroke="black" cx="76" cy="291" r="6" />\n
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="124" cy="291" r="10" />\n<circle stroke="black" cx="124" cy="291" r="6" />\n
+<path stroke="black" d="M40,291 L70,291" />
+<g transform="rotate(0 70 291)"><path stroke="black" fill="#ffffff" d="M70,291 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M82,291 L112,291" />
+<g transform="rotate(0 112 291)"><path stroke="black" fill="#ffffff" d="M112,291 l-8,-4 l 0,8 Z" /></g>
+
+<rect stroke="#d3d3d3" fill="#ffffff" x="180" y="180" width="72" height="26"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="175" y="185" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="175" y="196" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="191" y="198">database</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="20" y="331" width="41" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="349">Rect</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="91" y="331" width="132" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="97" y="349">Waiting for go routine</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="186" y="236" width="60" height="26"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="181" y="241" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="181" y="252" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="197" y="254">service</text>
+<path stroke="black" d="M216,236 L216,206" />
+<g transform="rotate(-90 216 206)"><path stroke="black" fill="#ffffff" d="M216,206 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="216" y="202"></text></svg><h2 id="shapes">Shapes</h2>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="209" height="1253">
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="36">Actor</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="158" cy="25" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M158,30 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="112">Arrow</text>
+<path stroke="black" d="M128,104 L188,104" />
+<g transform="rotate(0 188 104)"><path stroke="black" fill="#ffffff" d="M188,104 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="188">Circle</text>
+<circle stroke="#d3d3d3" stroke-width="2" fill="#ffffff" cx="158" cy="180" r="20" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="264">Component</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="116" y="243" width="85" height="26"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="111" y="248" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="111" y="259" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="127" y="261">Component</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="340">Cylinder</text>
+<path stroke="#d3d3d3" stroke-width="1" fill="#ffffff" d="M 127 318 L 127 340 C 127 352, 187 352, 187 340 L 187 318" />
+<ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="157" cy="318" rx="30" ry="6" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="416">Database</text>
+<path stroke="#d3d3d3" stroke-width="1" fill="#ffffff" d="M 124 393 L 124 417 C 124 429, 190 429, 190 417 L 190 393" />
+<ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="157" cy="393" rx="33" ry="6" />
+<text class="database-title" font-size="12px" x="130" y="413">database</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="492">Diamond</text>
+<path stroke="#d3d3d3" fill="#333333" d="M152,480 l 6,-4 6,4 -6,4 -6,-4" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="568">Dot</text>
+<circle stroke="black" cx="158" cy="560" r="6" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="644">ExitDot</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="158" cy="636" r="10" />\n<circle stroke="black" cx="158" cy="636" r="6" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="720">Internet</text>
+<circle stroke="#d3d3d3" fill="#e2e2e2" cx="158" cy="712" r="40" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="137" y="718">Internet</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="796">Label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="794">label-text</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="872">Line</text>
+<line stroke="black" x1="128" y1="864" x2="188" y2="864"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="948">Note</text>
+<path stroke="#d3d3d3" fill="#ffffcc" d="M109,920 v 41 h 99 v -31 l -10,-10 L 109,920 M208,930 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="119" y="936">This describes</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="119" y="952">something...</text>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1024">Record</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="127" y="979" width="63" height="74"/>
+<line stroke="#d3d3d3" x1="127" y1="1009" x2="190" y2="1009"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1025">fields</text>
+<line stroke="#d3d3d3" x1="127" y1="1031" x2="190" y2="1031"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1047">methods</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="999">record</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1100">Rect</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="120" y="1079" width="77" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="126" y="1097">a rectangle</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1176">State</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="134" y="1155" width="48" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="140" y="1173">active</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1252">Triangle</text>
+<path stroke="black" d="M154,1242 l-8,-4 l 0,8 Z" /></svg></article>
+</body>
+</html>
