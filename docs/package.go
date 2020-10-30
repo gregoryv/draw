@@ -33,8 +33,8 @@ func NewProjectArticle() *Element {
 
 			`Go module providing SVG rendering features. It comes with
              subpackages for shapes and software design diagrams. For
-             software written in Go this module can help in keeping
-             design diagrams uptodate. Diagrams is just Go-code, no
+             software written in Go, this module can help keep
+             its design diagrams up-to-date. Diagrams are just Go-code, no
              special syntax is needed. Refactoring is applied together
              with your other code.  `,
 			//
