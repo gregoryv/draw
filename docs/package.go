@@ -1,6 +1,10 @@
 package docs
 
 import (
+	"bufio"
+	"bytes"
+	"os"
+
 	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/shape"
 	. "github.com/gregoryv/web"
@@ -55,6 +59,7 @@ func NewProjectArticle() *Element {
 
 		H3("Class"),
 		ExampleClassDiagram().Inline(),
+		"Source: ", A(Href("class_example.go"), "class_example.go"),
 
 		H3("Activity"),
 		ExampleActivityDiagram().Inline(),
@@ -127,4 +132,41 @@ func AllShapes() *design.Diagram {
 	add("Triangle", shape.NewTriangle())
 
 	return &d
+}
+
+// LoadFile returns a pre web element wrapping the contents from the
+// given file. If to == -1 all lines to the end of file are returned.
+func LoadFile(filename string, span ...int) *Element {
+	from, to := 0, -1
+	if len(span) == 2 {
+		from, to = span[0], span[1]
+	}
+	v := loadFile(filename, from, to)
+	class := "srcfile"
+	if from == 0 && to == -1 {
+		class += " complete"
+	}
+	return Pre(Class(class), Code(Class("go"), v))
+}
+
+func loadFile(filename string, from, to int) string {
+	var buf bytes.Buffer
+	fh, err := os.Open(filename)
+	if err != nil {
+		panic(err)
+	}
+	scanner := bufio.NewScanner(fh)
+	for i := from; i > 1; i-- {
+		scanner.Scan()
+		to--
+	}
+
+	for scanner.Scan() {
+		to--
+		buf.WriteString(scanner.Text() + "\n")
+		if to == 0 {
+			break
+		}
+	}
+	return buf.String()
 }

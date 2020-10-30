@@ -4,6 +4,7 @@ import . "github.com/gregoryv/web"
 
 func Theme() *CSS {
 	css := NewCSS()
+	css.Import("https://fonts.googleapis.com/css?family=Inconsolata")
 	css.Style("html, body",
 		"margin: 0 0",
 		"padding: 0 0",
@@ -27,6 +28,17 @@ func Theme() *CSS {
 	css.Style("li.h3",
 		"margin-left: 1em",
 		"list-style-type: none",
+	)
+
+	// source code
+	css.Style(".srcfile",
+		"background-color: #e2e2e2",
+		"padding: .6em 0 .6em 0",
+		"display: block",
+	)
+
+	css.Style("code",
+		"font-family: Inconsolata",
 	)
 	return css
 }
