@@ -2,6 +2,7 @@
 package design
 
 import (
+	"bytes"
 	"os"
 
 	"github.com/gregoryv/draw"
@@ -16,4 +17,10 @@ func saveAs(dia draw.SVGWriter, style draw.Style, filename string) error {
 	defer fh.Close()
 	style.SetOutput(fh)
 	return dia.WriteSVG(&style)
+}
+
+func toString(d draw.SVGWriter) string {
+	var buf bytes.Buffer
+	d.WriteSVG(&buf)
+	return buf.String()
 }

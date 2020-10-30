@@ -113,8 +113,8 @@ func (d *Diagram) Inline() string {
 	return draw.Inline(d, d.Style)
 }
 
-// String returns rendered SVG with inlined style
-func (d *Diagram) String() string { return d.Inline() }
+// String returns rendered SVG
+func (d *Diagram) String() string { return toString(d) }
 
 func (d *Diagram) WriteSVG(w io.Writer) error {
 	if d.Width() == 0 && d.Height() == 0 {

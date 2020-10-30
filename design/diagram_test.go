@@ -78,22 +78,6 @@ func TestDiagram(t *testing.T) {
 			t.Error("found class attributes\n", got)
 		}
 	})
-
-	t.Run("inline is same as stringer", func(t *testing.T) {
-		var (
-			d    = NewDiagram()
-			rect = shape.NewRect("grid")
-		)
-		d.Place(rect).At(10, 10)
-		got := d.Inline()
-		exp := d.String()
-		if got != exp {
-			t.Errorf(
-				"inline is \n%s\n\n and stringer is \n %s",
-				got, exp,
-			)
-		}
-	})
 }
 
 type dummy struct{}

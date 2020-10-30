@@ -213,8 +213,8 @@ func (d *GanttChart) Inline() string {
 	return draw.Inline(d, d.Diagram.Style)
 }
 
-// String returns rendered SVG with inlined style
-func (d *GanttChart) String() string { return d.Inline() }
+// String returns rendered SVG
+func (d *GanttChart) String() string { return toString(d) }
 
 func (d *GanttChart) taskWidth() int {
 	x := 0

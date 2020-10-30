@@ -54,8 +54,8 @@ func TestSequenceDiagram_String(t *testing.T) {
 	d.Link(a, b, "text")
 	d.SetCaption("should affect width")
 	got := d.String()
-	if strings.Contains(got, "class") {
-		t.Error("found class attributes\n", got)
+	if !strings.Contains(got, "class") {
+		t.Error("missing class attributes\n", got)
 	}
 }
 

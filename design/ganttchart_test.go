@@ -43,14 +43,10 @@ func TestGanttChart_Inline(t *testing.T) {
 	}
 }
 
-func TestGanttChart_Inline_same_as_stringer(t *testing.T) {
-	got := newTestChart().Inline()
-	exp := newTestChart().String()
-	if got != exp {
-		t.Errorf(
-			"inline is \n%s\n\n and stringer is \n %s",
-			got, exp,
-		)
+func TestGanttChart_String(t *testing.T) {
+	got := newTestChart().String()
+	if !strings.Contains(got, "class") {
+		t.Error("missing class attributes\n", got)
 	}
 }
 

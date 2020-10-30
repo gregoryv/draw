@@ -149,8 +149,8 @@ func (d *ClassDiagram) Inline() string {
 	return draw.Inline(d, d.Style)
 }
 
-// String returns rendered SVG with inlined style
-func (d *ClassDiagram) String() string { return d.Inline() }
+// String returns rendered SVG
+func (d *ClassDiagram) String() string { return toString(d) }
 
 // Relation defines a relation between two records
 type Relation struct {
