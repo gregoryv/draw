@@ -12,7 +12,7 @@ func Theme() *CSS {
 	css.Style("article",
 		"margin: 1em 1.62em",
 	)
-	css.Style("*",
+	css.Style("p, li",
 		"font-family: sans-serif",
 	)
 	css.Style("h1,h2,h3,h4,h5,h6",

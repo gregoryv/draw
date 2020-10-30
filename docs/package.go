@@ -50,16 +50,37 @@ func NewProjectArticle() *Element {
 			),
 			Li(
 				A(Href(godoc("github.com/gregoryv/draw/shape")), "draw/shape"),
+				" - SVG shapes",
 			),
 			Li(
 				A(Href(godoc("github.com/gregoryv/draw/design")), "draw/design"),
+				" - software design diagrams",
 			),
 		),
 		H2("Diagrams"),
 
 		H3("Class"),
-		ExampleClassDiagram().Inline(),
+
+		P(
+
+			`In class diagrams the author wants to convey design
+			relations between various entities. However the relations
+			and most of the element naming can be generated from the
+			source code. The author should only need to add positional
+			information.`,
+			//
+		),
+		ExampleClassDiagram().Inline(), Br(),
 		"Source: ", A(Href("class_example.go"), "class_example.go"),
+		P(
+
+			`VRecords describe each entity using package name and
+			type. Methods and fields are shown only by name if
+			visible. Details such as arguments and return values are
+			left to the API documentation. Relations are automatically
+			rendererd between entities if there is one.`,
+			//
+		),
 
 		H3("Activity"),
 		ExampleActivityDiagram().Inline(),
@@ -75,6 +96,9 @@ func NewProjectArticle() *Element {
 
 		H2("Shapes"),
 		AllShapes().Inline(),
+
+		H2("Changelog"),
+		LoadFile("../changelog.md"),
 	)
 	toc.GenerateIDs(article, "h2", "h3")
 	nav.With(toc.ParseTOC(article, "h2", "h3"))
