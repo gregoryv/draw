@@ -83,7 +83,7 @@ func NewProjectArticle() *Element {
 			H2("About"),
 			P(
 				`Written by `, A(Href("https://github.com/gregoryv"), gregory), Br(),
-				"MIT License",
+				A(Href("#license"), "MIT License"),
 			),
 		),
 		Br(Attr("clear", "all")),
@@ -142,6 +142,9 @@ func NewProjectArticle() *Element {
 
 		H2("Changelog"),
 		LoadFile("../changelog.md", 7, -1),
+
+		H2("License"),
+		LoadFile("../LICENSE"),
 	)
 	toc.GenerateIDs(article, "h2", "h3")
 	nav.With(toc.ParseTOC(article, "h2", "h3"))
