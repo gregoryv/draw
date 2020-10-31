@@ -35,16 +35,22 @@ func Theme() *CSS {
 		"margin-left: 1em",
 		"list-style-type: none",
 	)
+	css.Style("td",
+		"vertical-align: top",
+	)
 
 	// source code
 	css.Style(".srcfile",
-		"background-color: #e2e2e2",
-		"padding: .6em 0 .6em 0",
+		"padding: .6em 1.6em .6em 1.6em",
 		"display: block",
+		"margin-top: 1.6em",
+		"margin-bottom: 1.6em",
+		"background-color: #eaeaea",
 	)
 
 	css.Style("code",
 		"font-family: Inconsolata",
+		"-moz-tab-size: 4",
 	)
 
 	css.Style(".left",

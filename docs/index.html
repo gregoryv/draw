@@ -34,13 +34,19 @@ li.h3 {
 margin-left: 1em;
 list-style-type: none;
 }
+td {
+vertical-align: top;
+}
 .srcfile {
-background-color: #e2e2e2;
-padding: .6em 0 .6em 0;
+padding: .6em 1.6em .6em 1.6em;
 display: block;
+margin-top: 1.6em;
+margin-bottom: 1.6em;
+background-color: #eaeaea;
 }
 code {
 font-family: Inconsolata;
+-moz-tab-size: 4;
 }
 .left {
 float: left;
@@ -64,6 +70,7 @@ float: left;
 <ul>
 <li class="h2"><a href="#install">Install</a></li>
 <li class="h2"><a href="#apidocumentation">API documentation</a></li>
+<li class="h2"><a href="#examplesource">Example source</a></li>
 <li class="h2"><a href="#diagrams">Diagrams</a></li>
 <li class="h3"><a href="#class">Class</a></li>
 <li class="h3"><a href="#activity">Activity</a></li>
@@ -83,7 +90,62 @@ float: left;
 <li><a href="https://godoc.org/github.com/gregoryv/draw/design">draw/design</a> - software design diagrams</li>
 </ul>
 </div>
-<br clear="all"/><h2 id="diagrams">Diagrams</h2>
+<br clear="all"/><h2 id="examplesource">Example source</h2>
+<table>
+<tr><td><pre class="srcfile"><code class="go">	var (
+		d      = design.NewClassDiagram()
+		part   = d.Interface((*Part)(nil))
+		door   = d.Struct(Door{})
+		window = d.Struct(Window{})
+		house  = d.Struct(House{})
+		note   = shape.NewNote(`Relations are auto-
+matically rendered`)
+	)
+	d.Place(part).At(20, 20)        // absolute positioning
+	d.Place(door).RightOf(part, 70) // optional extra spacing
+	d.Place(window).Below(door)
+	d.Place(house).RightOf(door, 70)
+	d.Place(note).Below(house)
+	shape.Move(note, -20, 20)
+	d.SetCaption("Small example diagram")
+</code></pre></td><td><svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="496" height="233">
+<path stroke="black" d="M381,78 L326,102" />
+<g transform="rotate(157 381 78)"><path stroke="black" fill="#ffffff" d="M381,78 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(157 326 102)"><path stroke="black" fill="#ffffff" d="M326,102 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M381,51 L311,48" />
+<g transform="rotate(182 381 51)"><path stroke="black" fill="#777777" d="M381,51 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(182 311 48)"><path stroke="black" fill="#ffffff" d="M311,48 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,102 L137,72" />
+<g transform="rotate(203 137 72)"><path stroke="black" fill="#ffffff" d="M137,72 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,46 L137,46" />
+<g transform="rotate(180 137 46)"><path stroke="black" fill="#ffffff" d="M137,46 l-8,-4 l 0,8 Z" /></g>
+
+<rect stroke="#d3d3d3" fill="#ffffff" x="20" y="20" width="117" height="52"/>
+<line stroke="#d3d3d3" x1="20" y1="50" x2="137" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="66">Materials()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="40">docs.Part interface</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="207" y="20" width="104" height="52"/>
+<line stroke="#d3d3d3" x1="207" y1="50" x2="311" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="66">Material</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="40">docs.Door struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="207" y="102" width="121" height="52"/>
+<line stroke="#d3d3d3" x1="207" y1="132" x2="328" y2="132"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="148">Model</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="122">docs.Window struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="381" y="20" width="113" height="68"/>
+<line stroke="#d3d3d3" x1="381" y1="50" x2="494" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="66">Frontdoor</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="82">Windows</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="40">docs.House struct</text>
+<path stroke="#d3d3d3" fill="#ffffcc" d="M361,138 v 41 h 124 v -31 l -10,-10 L 361,138 M485,148 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="371" y="154">Relations are auto-</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="371" y="170">matically rendered</text>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="183" y="226">Small example diagram</text></svg></td></tr>
+</table>
+<h2 id="diagrams">Diagrams</h2>
 <h3 id="class">Class</h3>
 <p>In class diagrams the author wants to convey design
 			relations between various entities. However the relations

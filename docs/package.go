@@ -71,6 +71,19 @@ func NewProjectArticle() *Element {
 			),
 		),
 		Br(Attr("clear", "all")),
+
+		H2("Example source"),
+		Table(
+			Tr(
+				Td(
+					LoadFile("small_example.go", 9, 24),
+				),
+				Td(
+					ExampleSmallClassDiagram().Inline(),
+				),
+			),
+		),
+
 		H2("Diagrams"),
 		H3("Class"),
 
