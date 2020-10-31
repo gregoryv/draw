@@ -15,6 +15,7 @@ func NewProjectsPage() *Page {
 	page := NewPage(Html(
 		Head(
 			Meta(Charset("utf-8")),
+			Meta(Name("viewport"), Content("width=device-width, initial-scale=1")),
 			Style(
 				Theme(),
 			),
@@ -52,9 +53,6 @@ func NewProjectArticle() *Element {
              it easy to include them in API documentation.`,
 			//
 		),
-		Span(Class("writtenby"),
-			`Written by `, A(Href("https://github.com/gregoryv"), gregory),
-		),
 		Div(Class("left"),
 			nav,
 		),
@@ -82,6 +80,11 @@ func NewProjectArticle() *Element {
 					" - software design diagrams",
 				),
 			),
+			H2("About"),
+			P(
+				`Written by `, A(Href("https://github.com/gregoryv"), gregory), Br(),
+				"MIT License",
+			),
 		),
 		Br(Attr("clear", "all")),
 
@@ -89,9 +92,9 @@ func NewProjectArticle() *Element {
 		Table(
 			Tr(
 				Td(
-					LoadFile("small_example.go", 9, 24),
+					LoadFile("small_example.go", 8, 25),
 				),
-				Td(
+				Td(Br(), Br(),
 					ExampleSmallClassDiagram().Inline(),
 				),
 			),

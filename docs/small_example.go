@@ -12,15 +12,14 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 		door   = d.Struct(Door{})
 		window = d.Struct(Window{})
 		house  = d.Struct(House{})
-		note   = shape.NewNote(`Relations are auto-
-matically rendered`)
+		note   = shape.NewNote(`Relations are automatically rendered`)
 	)
 	d.Place(part).At(20, 20)        // absolute positioning
 	d.Place(door).RightOf(part, 70) // optional extra spacing
 	d.Place(window).Below(door)
 	d.Place(house).RightOf(door, 70)
-	d.Place(note).Below(house)
-	shape.Move(note, -20, 20)
+	d.Place(note).Below(window, 20)
+	d.VAlignLeft(part, note)
 	d.SetCaption("Small example diagram")
 	return d
 }

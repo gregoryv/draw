@@ -3,13 +3,19 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<style>@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Source+Sans+Pro&family=Source+Serif+Pro:wght@600');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Lancelot&family=Open+Sans');
 html, body {
 margin: 0 0;
 padding: 0 0;
+font-family: 'Source Sans Pro', sans-serif;
 }
 article {
 margin: 1em 1.62em;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Source Serif Pro', serif;
 }
 .writtenby {
 float: right;
@@ -18,10 +24,7 @@ float: right;
 font-weight: bold;
 }
 p, li {
-font-family: sans-serif;
-}
-h1,h2,h3,h4,h5,h6 {
-font-family: serif;
+font-family: 'Open Sans', sans-serif;
 }
 p {
 line-height: 1.5em;
@@ -74,10 +77,11 @@ float: left;
              directly updated when the source code changes. SVG
              diagrams can easily be rendered to any io.Writer making
              it easy to include them in API documentation.</p>
-<span class="writtenby">Written by <a href="https://github.com/gregoryv">Gregory Vin&ccaron;i&cacute;</a></span><div class="left"><nav><h4>Table of contents</h4>
+<div class="left"><nav><h4>Table of contents</h4>
 <ul>
 <li class="h2"><a href="#install">Install</a></li>
 <li class="h2"><a href="#apidocumentation">API documentation</a></li>
+<li class="h2"><a href="#about">About</a></li>
 <li class="h2"><a href="#examplesource">Example source</a></li>
 <li class="h2"><a href="#diagrams">Diagrams</a></li>
 <li class="h3"><a href="#class">Class</a></li>
@@ -97,29 +101,33 @@ float: left;
 <li><a href="https://godoc.org/github.com/gregoryv/draw/shape">draw/shape</a> - SVG shapes</li>
 <li><a href="https://godoc.org/github.com/gregoryv/draw/design">draw/design</a> - software design diagrams</li>
 </ul>
+<h2 id="about">About</h2>
+<p>Written by <a href="https://github.com/gregoryv">Gregory Vin&ccaron;i&cacute;</a><br/>MIT License</p>
 </div>
 <br clear="all"/><h2 id="examplesource">Example source</h2>
 <table>
-<tr><td><pre class="srcfile"><code class="go">	var (
+<tr><td><pre class="srcfile"><code class="go">func ExampleSmallClassDiagram() *design.ClassDiagram {
+	var (
 		d      = design.NewClassDiagram()
 		part   = d.Interface((*Part)(nil))
 		door   = d.Struct(Door{})
 		window = d.Struct(Window{})
 		house  = d.Struct(House{})
-		note   = shape.NewNote(`Relations are auto-
-matically rendered`)
+		note   = shape.NewNote(`Relations are automatically rendered`)
 	)
 	d.Place(part).At(20, 20)        // absolute positioning
 	d.Place(door).RightOf(part, 70) // optional extra spacing
 	d.Place(window).Below(door)
 	d.Place(house).RightOf(door, 70)
-	d.Place(note).Below(house)
-	shape.Move(note, -20, 20)
+	d.Place(note).Below(window, 20)
+	d.VAlignLeft(part, note)
 	d.SetCaption("Small example diagram")
-</code></pre></td><td><svg
+	return d
+}
+</code></pre></td><td><br/><br/><svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="496" height="233">
+  font-family="Arial,Helvetica,sans-serif" width="496" height="253">
 <path stroke="black" d="M381,78 L326,102" />
 <g transform="rotate(157 381 78)"><path stroke="black" fill="#ffffff" d="M381,78 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(157 326 102)"><path stroke="black" fill="#ffffff" d="M326,102 l-8,-4 l 0,8 Z" /></g>
@@ -147,11 +155,10 @@ matically rendered`)
 <line stroke="#d3d3d3" x1="381" y1="50" x2="494" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="66">Frontdoor</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="82">Windows</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="40">docs.House struct</text>
-<path stroke="#d3d3d3" fill="#ffffcc" d="M361,138 v 41 h 124 v -31 l -10,-10 L 361,138 M485,148 h -10 v -10"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="371" y="154">Relations are auto-</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="371" y="170">matically rendered</text>
+<path stroke="#d3d3d3" fill="#ffffcc" d="M20,174 v 25 h 221 v -15 l -10,-10 L 20,174 M241,184 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="190">Relations are automatically rendered</text>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="183" y="226">Small example diagram</text></svg></td></tr>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="183" y="246">Small example diagram</text></svg></td></tr>
 </table>
 <h2 id="diagrams">Diagrams</h2>
 <h3 id="class">Class</h3>
