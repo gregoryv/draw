@@ -92,15 +92,16 @@ func NewProjectArticle() *Element {
 			`In class diagrams the author wants to convey design
 			relations between various entities. However the relations
 			and most of the element naming can be generated from the
-			source code. The author should only need to add positional
-			information.`,
+			source code. The author should add what is needed for a
+			clear picture, ie. selecting entities to show and position
+			them in a perceptible manner.`,
 			//
 		),
 		ExampleClassDiagram().Inline(), Br(),
 		"Source: ", A(Href("class_example.go"), "class_example.go"),
 		P(
 
-			`VRecords describe each entity using package name and
+			`Records describe each entity using package name and
 			type. Methods and fields are shown only by name if
 			visible. Details such as arguments and return values are
 			left to the API documentation. Relations are automatically
