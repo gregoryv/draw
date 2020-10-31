@@ -81,6 +81,7 @@ func NewProjectArticle() *Element {
 				),
 			),
 			H2("About"),
+			Img(Src("me_circle.png"), Class("me")),
 			P(
 				`Written by `, A(Href("https://github.com/gregoryv"), gregory), Br(),
 				A(Href("#license"), "MIT License"),

@@ -41,6 +41,11 @@ func Theme() *CSS {
 		"vertical-align: top",
 	)
 
+	css.Style("img.me",
+		"float: left",
+		"margin-right: 2em",
+	)
+
 	// source code
 	css.Style(".srcfile",
 		"padding: .6em 1.6em .6em 1.6em",
