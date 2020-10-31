@@ -29,18 +29,31 @@ func NewProjectArticle() *Element {
 	nav := Nav(H4("Table of contents"))
 	article := Article(
 		H1("Draw - programming software design diagrams"),
+
 		P(
 
-			`Go module providing SVG rendering features. It comes with
-             subpackages for shapes and software design diagrams. For
-             software written in Go, this module can help keep
-             its design diagrams up-to-date. Diagrams are just Go-code, no
-             special syntax is needed. Refactoring is applied together
-             with your other code.  `,
+			`Draw Go module provides SVG rendering features focusing on
+             creating software design diagrams. It does this by
+             providing an API for developers to program their diagrams
+             as opposed to defining them in a parsable text
+             format. This has the positive effect of diagrams being
+             refactored in the same way the rest of your code
+             is. Keeping your diagrams up-to-date becomes fairly
+             easy.`,
+			//
+		),
+		P(
+
+			`Using reflection; type and names from entities in your
+             source code are directly used in the diagrams. Thus
+             making them suitable for prototyping, as they are
+             directly updated when the source code changes. SVG
+             diagrams can easily be rendered to any io.Writer making
+             it easy to include them in API documentation.`,
 			//
 		),
 		Span(Class("writtenby"),
-			`Written by `, gregory,
+			`Written by `, A(Href("https://github.com/gregoryv"), gregory),
 		),
 		Div(Class("left"),
 			nav,
@@ -125,7 +138,7 @@ func NewProjectArticle() *Element {
 		AllShapes().Inline(),
 
 		H2("Changelog"),
-		LoadFile("../changelog.md"),
+		LoadFile("../changelog.md", 7, -1),
 	)
 	toc.GenerateIDs(article, "h2", "h3")
 	nav.With(toc.ParseTOC(article, "h2", "h3"))
