@@ -27,6 +27,8 @@ type Rect struct {
 	class string
 
 	width, height int
+
+	textAlign string
 }
 
 func (r *Rect) String() string {

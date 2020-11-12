@@ -60,6 +60,13 @@ func (me ClassAttributes) CSS() string {
 }
 
 var DefaultClassAttributes = ClassAttributes{
+	"area-red-label":   `font-style="italic" font-family="Arial,Helvetica,sans-serif"`,
+	"area-green-label": `font-style="italic" font-family="Arial,Helvetica,sans-serif"`,
+	"area-blue-label":  `font-style="italic" font-family="Arial,Helvetica,sans-serif"`,
+	"area-red":         `stroke="black" stroke-width="0" fill="#ff9999" fill-opacity="0.1"`,
+	"area-green":       `stroke="black" stroke-width="0" fill="#ccff99" fill-opacity="0.1"`,
+	"area-blue":        `stroke="black" stroke-width="0" fill="#99e6ff" fill-opacity="0.1"`,
+
 	"actor":                 `stroke="black" stroke-width="2" fill="#ffffff"`,
 	"circle":                `stroke="#d3d3d3" stroke-width="2" fill="#ffffff"`,
 	"cylinder":              `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,

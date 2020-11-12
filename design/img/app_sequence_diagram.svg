@@ -1,13 +1,19 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="437" height="223">
+  font-family="Arial,Helvetica,sans-serif" width="447" height="259">
+<rect stroke="black" stroke-width="0" fill="#ff9999" fill-opacity="0.1" x="188" y="2" width="258" height="256"/>
+<text class="area-red-title" font-size="12px" x="194" y="20"></text>
+<rect stroke="black" stroke-width="0" fill="#99e6ff" fill-opacity="0.1" x="0" y="2" width="268" height="256"/>
+<text class="area-blue-title" font-size="12px" x="6" y="20"></text>
 <line stroke="#d3d3d3" x1="38" y1="24" x2="38" y2="222"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">app.Client</text>
 <line stroke="#d3d3d3" x1="228" y1="24" x2="228" y2="222"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="18">app.Server</text>
+<text font-style="italic" font-family="Arial,Helvetica,sans-serif" font-size="12px" x="102" y="251">Public https</text>
 <line stroke="#d3d3d3" x1="418" y1="24" x2="418" y2="222"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="400" y="18">sql.DB</text>
+<text font-style="italic" font-family="Arial,Helvetica,sans-serif" font-size="12px" x="265" y="251">Private rpc via Gob</text>
 <path stroke="black" d="M38,57 L228,57" />
 <g transform="rotate(0 228 57)"><path stroke="black" fill="#ffffff" d="M228,57 l-8,-4 l 0,8 Z" /></g>
 

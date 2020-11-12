@@ -26,6 +26,30 @@ type SequenceDiagram struct {
 
 	columns []string
 	links   []*Link
+	groups  []group
+}
+
+type group struct {
+	fromColumn string
+	toColumn   string
+	text       string
+	class      string
+}
+
+// Group adds a colored area below span of columns. Predefined classes
+// are red, green, blue.
+func (me *SequenceDiagram) Group(fromColumn, toColumn, text, class string) {
+	g := group{
+		fromColumn: fromColumn,
+		toColumn:   toColumn,
+		text:       text,
+		class:      class,
+	}
+	if me.groups == nil {
+		me.groups = []group{g}
+		return
+	}
+	me.groups = append(me.groups, g)
 }
 
 // WriteSvg renders the diagram as SVG to the given writer.
@@ -39,12 +63,15 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 		y2  = d.Height()
 	)
 	lines := make([]*shape.Line, len(d.columns))
+	labels := make(map[string]shape.Shape)
+	// columns and vertical lines
 	for i, column := range d.columns {
 		label := shape.NewLabel(column)
 		label.Font = d.Font
 		label.Pad = d.Pad
 		label.SetX(i * colWidth)
 		label.SetY(top)
+		labels[column] = label
 
 		firstColumn := i == 0
 		if firstColumn {
@@ -57,6 +84,35 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 
 		d.VAlignCenter(lines[i], label)
 		d.Place(lines[i], label)
+
+		// groups
+		for _, group := range d.groups {
+			if group.toColumn == column { // assume from is already there
+				r := shape.NewRect("") // add align label
+
+				alabel := shape.NewLabel(group.text)
+				alabel.Font = d.Font
+				alabel.Pad = d.Pad
+				alabel.SetClass("area-" + group.class + "-label")
+
+				from := labels[group.fromColumn]
+				to := label
+				x, y := from.Position()
+				x2, _ := to.Position()
+				width := x2 + to.Width() + to.Pad.Left + to.Pad.Right - x
+				r.SetX(x - to.Pad.Left)
+				r.SetY(y)
+				r.SetWidth(width)
+				r.SetClass("area-" + group.class)
+				r.SetHeight(y2 + d.top() + 2*label.Height())
+				d.Prepend(r) // behind
+
+				d.Place(alabel).Below(r)
+				d.VAlignCenter(r, alabel)
+				d.HAlignBottom(r, alabel)
+				shape.Move(alabel, 0, -alabel.Pad.Bottom)
+			}
+		}
 	}
 
 	y := y1 + d.plainHeight()
