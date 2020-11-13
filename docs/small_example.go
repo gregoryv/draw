@@ -1,6 +1,8 @@
 package docs
 
 import (
+	"io/ioutil"
+
 	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/shape"
 )
@@ -21,6 +23,11 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 	d.Place(note).Below(window, 20)
 	d.VAlignLeft(part, note)
 	d.SetCaption("Small example diagram")
+
+	// Output options
+	d.SaveAs("classdiagram.svg") // save to file
+	d.WriteSVG(ioutil.Discard)   // write to any writer
+	_ = d.Inline()               // return a string
 	return d
 }
 

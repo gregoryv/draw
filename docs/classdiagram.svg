@@ -1,0 +1,35 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="496" height="253">
+<path stroke="black" d="M381,78 L326,102" />
+<g transform="rotate(157 381 78)"><path stroke="black" fill="#ffffff" d="M381,78 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(157 326 102)"><path stroke="black" fill="#ffffff" d="M326,102 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M381,51 L311,48" />
+<g transform="rotate(182 381 51)"><path stroke="black" fill="#777777" d="M381,51 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(182 311 48)"><path stroke="black" fill="#ffffff" d="M311,48 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,102 L137,72" />
+<g transform="rotate(203 137 72)"><path stroke="black" fill="#ffffff" d="M137,72 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,46 L137,46" />
+<g transform="rotate(180 137 46)"><path stroke="black" fill="#ffffff" d="M137,46 l-8,-4 l 0,8 Z" /></g>
+
+<rect stroke="#d3d3d3" fill="#ffffff" x="20" y="20" width="117" height="52"/>
+<line stroke="#d3d3d3" x1="20" y1="50" x2="137" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="66">Materials()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="40">docs.Part interface</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="207" y="20" width="104" height="52"/>
+<line stroke="#d3d3d3" x1="207" y1="50" x2="311" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="66">Material</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="40">docs.Door struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="207" y="102" width="121" height="52"/>
+<line stroke="#d3d3d3" x1="207" y1="132" x2="328" y2="132"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="148">Model</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="122">docs.Window struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="381" y="20" width="113" height="68"/>
+<line stroke="#d3d3d3" x1="381" y1="50" x2="494" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="66">Frontdoor</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="82">Windows</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="40">docs.House struct</text>
+<path stroke="#d3d3d3" fill="#ffffcc" d="M20,174 v 25 h 221 v -15 l -10,-10 L 20,174 M241,184 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="190">Relations are automatically rendered</text>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="183" y="246">Small example diagram</text></svg>

@@ -111,7 +111,8 @@ float: left;
 </div>
 <br clear="all"/><h2 id="examplesource">Example source</h2>
 <table>
-<tr><td><pre class="srcfile"><code class="go">func ExampleSmallClassDiagram() *design.ClassDiagram {
+<tr><td><pre class="srcfile"><code class="go">
+func ExampleSmallClassDiagram() *design.ClassDiagram {
 	var (
 		d      = design.NewClassDiagram()
 		part   = d.Interface((*Part)(nil))
@@ -127,12 +128,59 @@ float: left;
 	d.Place(note).Below(window, 20)
 	d.VAlignLeft(part, note)
 	d.SetCaption("Small example diagram")
+
+	// Output options
+	d.SaveAs("classdiagram.svg") // save to file
+	d.WriteSVG(ioutil.Discard)   // write to any writer
+	_ = d.Inline()               // return a string
 	return d
 }
 </code></pre></td><td><br/><br/><svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="496" height="253">
+  font-family="Arial,Helvetica,sans-serif" width="499" height="412">
+<path stroke="black" d="M381,78 L326,102" />
+<g transform="rotate(157 381 78)"><path stroke="black" fill="#ffffff" d="M381,78 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(157 326 102)"><path stroke="black" fill="#ffffff" d="M326,102 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M381,51 L311,48" />
+<g transform="rotate(182 381 51)"><path stroke="black" fill="#777777" d="M381,51 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(182 311 48)"><path stroke="black" fill="#ffffff" d="M311,48 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,102 L137,72" />
+<g transform="rotate(203 137 72)"><path stroke="black" fill="#ffffff" d="M137,72 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,46 L137,46" />
+<g transform="rotate(180 137 46)"><path stroke="black" fill="#ffffff" d="M137,46 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M381,78 L326,102" />
+<g transform="rotate(157 381 78)"><path stroke="black" fill="#ffffff" d="M381,78 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(157 326 102)"><path stroke="black" fill="#ffffff" d="M326,102 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M381,51 L311,48" />
+<g transform="rotate(182 381 51)"><path stroke="black" fill="#777777" d="M381,51 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(182 311 48)"><path stroke="black" fill="#ffffff" d="M311,48 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,102 L137,72" />
+<g transform="rotate(203 137 72)"><path stroke="black" fill="#ffffff" d="M137,72 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,46 L137,46" />
+<g transform="rotate(180 137 46)"><path stroke="black" fill="#ffffff" d="M137,46 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M381,78 L326,102" />
+<g transform="rotate(157 381 78)"><path stroke="black" fill="#ffffff" d="M381,78 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(157 326 102)"><path stroke="black" fill="#ffffff" d="M326,102 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" d="M381,51 L311,48" />
+<g transform="rotate(182 381 51)"><path stroke="black" fill="#777777" d="M381,51 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(182 311 48)"><path stroke="black" fill="#ffffff" d="M311,48 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,102 L137,72" />
+<g transform="rotate(203 137 72)"><path stroke="black" fill="#ffffff" d="M137,72 l-8,-4 l 0,8 Z" /></g>
+
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,46 L137,46" />
+<g transform="rotate(180 137 46)"><path stroke="black" fill="#ffffff" d="M137,46 l-8,-4 l 0,8 Z" /></g>
+
 <path stroke="black" d="M381,78 L326,102" />
 <g transform="rotate(157 381 78)"><path stroke="black" fill="#ffffff" d="M381,78 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(157 326 102)"><path stroke="black" fill="#ffffff" d="M326,102 l-8,-4 l 0,8 Z" /></g>
@@ -163,7 +211,10 @@ float: left;
 <path stroke="#d3d3d3" fill="#ffffcc" d="M20,174 v 25 h 221 v -15 l -10,-10 L 20,174 M241,184 h -10 v -10"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="190">Relations are automatically rendered</text>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="183" y="246">Small example diagram</text></svg></td></tr>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="405">Small example diagram</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="405">Small example diagram</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="405">Small example diagram</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="405">Small example diagram</text></svg></td></tr>
 </table>
 <h2 id="diagrams">Diagrams</h2>
 <h3 id="class">Class</h3>

@@ -93,7 +93,7 @@ func NewProjectArticle() *Element {
 		Table(
 			Tr(
 				Td(
-					LoadFile("small_example.go", 8, 25),
+					LoadFile("small_example.go", 9, 32),
 				),
 				Td(Br(), Br(),
 					ExampleSmallClassDiagram().Inline(),
