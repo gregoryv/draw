@@ -17,6 +17,13 @@ func Theme() *CSS {
 	css.Style("h1, h2, h3, h4, h5, h6",
 		"font-family: 'Source Serif Pro', serif",
 	)
+	css.Style("h2 a, h3 a",
+		"text-decoration: none",
+		"color: black",
+	)
+	css.Style("h2:hover a, h3:hover a",
+		"text-decoration: underline",
+	)
 	css.Style(".writtenby",
 		"float: right",
 	)
@@ -40,7 +47,6 @@ func Theme() *CSS {
 	css.Style("td",
 		"vertical-align: top",
 	)
-
 	css.Style("img.me",
 		"float: left",
 		"margin-right: 2em",

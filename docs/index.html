@@ -17,6 +17,13 @@ margin: 1em 1.62em;
 h1, h2, h3, h4, h5, h6 {
 font-family: 'Source Serif Pro', serif;
 }
+h2 a, h3 a {
+text-decoration: none;
+color: black;
+}
+h2:hover a, h3:hover a {
+text-decoration: underline;
+}
 .writtenby {
 float: right;
 }
@@ -97,17 +104,17 @@ float: left;
 </ul>
 </nav>
 </div>
-<div class="right"><h2 id="install">Install</h2>
-<pre><code>    go get <a href="https://github.com/gregoryv/draw">github.com/gregoryv/draw/</a>...</code></pre><h2 id="apidocumentation">API documentation</h2>
+<div class="right"><h2 id="install"><a href="#install">Install</a></h2>
+<pre><code>    go get <a href="https://github.com/gregoryv/draw">github.com/gregoryv/draw/</a>...</code></pre><h2 id="apidocumentation"><a href="#apidocumentation">API documentation</a></h2>
 <ul>
 <li><a href="https://godoc.org/github.com/gregoryv/draw">draw</a></li>
 <li><a href="https://godoc.org/github.com/gregoryv/draw/shape">draw/shape</a> - SVG shapes</li>
 <li><a href="https://godoc.org/github.com/gregoryv/draw/design">draw/design</a> - software design diagrams</li>
 </ul>
-<h2 id="about">About</h2>
+<h2 id="about"><a href="#about">About</a></h2>
 <img src="me_circle.png" class="me"/><p>Written by <a href="https://github.com/gregoryv">Gregory Vin&ccaron;i&cacute;</a><br/><a href="#license">MIT License</a></p>
 </div>
-<br clear="all"/><h2 id="examplesource">Example source</h2>
+<br clear="all"/><h2 id="examplesource"><a href="#examplesource">Example source</a></h2>
 <table>
 <tr><td><pre class="srcfile"><code class="go">package docs
 
@@ -220,14 +227,14 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="405">Small example diagram</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="405">Small example diagram</text></svg></td></tr>
 </table>
-<h2 id="diagrams">Diagrams</h2>
-<h3 id="class">Class</h3>
+<h2 id="diagrams"><a href="#diagrams">Diagrams</a></h2>
+<h3 id="class"><a href="#class">Class</a></h3>
 <p>In class diagrams the author wants to convey design
-			relations between various entities. However the relations
-			and most of the element naming can be generated from the
-			source code. The author should add what is needed for a
-			clear picture, ie. selecting entities to show and position
-			them in a perceptible manner.</p>
+		   relations between various entities. However the relations
+		   and most of the element naming can be generated from the
+		   source code. The author should add what is needed for a
+		   clear picture, ie. selecting entities to show and position
+		   them in a perceptible manner.</p>
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -354,11 +361,11 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <line stroke="#d3d3d3" x1="417" y1="664" x2="583" y2="664"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="680">Diagram</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="654">design.ClassDiagram struct</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="733">Figure 1. Class diagram of design and design.shape packages</text></svg><br/>Source: <a href="class_example.go">class_example.go</a><p>Records describe each entity using package name and
-			type. Methods and fields are shown only by name if
-			visible. Details such as arguments and return values are
-			left to the API documentation. Relations are automatically
-			rendererd between entities if there is one.</p>
-<h3 id="activity">Activity</h3>
+		   type. Methods and fields are shown only by name if
+		   visible. Details such as arguments and return values are
+		   left to the API documentation. Relations are automatically
+		   rendererd between entities if there is one.</p>
+<h3 id="activity"><a href="#activity">Activity</a></h3>
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -407,7 +414,7 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 
 <path stroke="black" d="M254,102 L254,132" />
 <g transform="rotate(90 254 132)"><path stroke="black" fill="#ffffff" d="M254,132 l-8,-4 l 0,8 Z" /></g>
-</svg><h3 id="sequence">Sequence</h3>
+</svg><h3 id="sequence"><a href="#sequence">Sequence</a></h3>
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -448,7 +455,7 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <path stroke="black" d="M228,244 L608,244" />
 <g transform="rotate(0 608 244)"><path stroke="black" fill="#ffffff" d="M608,244 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="381" y="241">Publish event</text></svg><h3 id="ganttchart">Gantt chart</h3>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="381" y="241">Publish event</text></svg><h3 id="ganttchart"><a href="#ganttchart">Gantt chart</a></h3>
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -503,7 +510,7 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="101">Vacation</text>
 <rect stroke="#d3d3d3" fill="#99e6ff" rx="5" ry="5" x="290" y="90" width="206" height="12"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="296" y="108"></text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="168" y="159">Figure 1. Project estimated delivery</text></svg><h3 id="generic">Generic</h3>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="168" y="159">Figure 1. Project estimated delivery</text></svg><h3 id="generic"><a href="#generic">Generic</a></h3>
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -567,7 +574,7 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <path stroke="black" d="M216,236 L216,206" />
 <g transform="rotate(-90 216 206)"><path stroke="black" fill="#ffffff" d="M216,206 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="216" y="202"></text></svg><h2 id="shapes">Shapes</h2>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="216" y="202"></text></svg><h2 id="shapes"><a href="#shapes">Shapes</a></h2>
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -623,7 +630,7 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="134" y="1155" width="48" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="140" y="1173">active</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1252">Triangle</text>
-<path stroke="black" d="M154,1242 l-8,-4 l 0,8 Z" /></svg><h2 id="changelog">Changelog</h2>
+<path stroke="black" d="M154,1242 l-8,-4 l 0,8 Z" /></svg><h2 id="changelog"><a href="#changelog">Changelog</a></h2>
 <pre class="srcfile"><code class="go">## [unreleased]
 
 - Add SequenceDiagram.Group method for grouping columns with a labeled text area
@@ -790,7 +797,7 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 - Class diagram
 - Record shape with fields and methods
 - Arrow, line and label shapes
-</code></pre><h2 id="license">License</h2>
+</code></pre><h2 id="license"><a href="#license">License</a></h2>
 <pre class="srcfile complete"><code class="go">MIT License
 
 Copyright (c) 2019 Gregory Vinčić

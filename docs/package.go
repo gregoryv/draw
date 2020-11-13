@@ -95,27 +95,21 @@ func NewProjectArticle() *Element {
 		H2("Diagrams"),
 		H3("Class"),
 
-		P(
+		P(`In class diagrams the author wants to convey design
+		   relations between various entities. However the relations
+		   and most of the element naming can be generated from the
+		   source code. The author should add what is needed for a
+		   clear picture, ie. selecting entities to show and position
+		   them in a perceptible manner.`),
 
-			`In class diagrams the author wants to convey design
-			relations between various entities. However the relations
-			and most of the element naming can be generated from the
-			source code. The author should add what is needed for a
-			clear picture, ie. selecting entities to show and position
-			them in a perceptible manner.`,
-			//
-		),
 		ExampleClassDiagram().Inline(), Br(),
 		"Source: ", A(Href("class_example.go"), "class_example.go"),
-		P(
 
-			`Records describe each entity using package name and
-			type. Methods and fields are shown only by name if
-			visible. Details such as arguments and return values are
-			left to the API documentation. Relations are automatically
-			rendererd between entities if there is one.`,
-			//
-		),
+		P(`Records describe each entity using package name and
+		   type. Methods and fields are shown only by name if
+		   visible. Details such as arguments and return values are
+		   left to the API documentation. Relations are automatically
+		   rendererd between entities if there is one.`),
 
 		H3("Activity"),
 		ExampleActivityDiagram().Inline(),
@@ -138,8 +132,7 @@ func NewProjectArticle() *Element {
 		H2("License"),
 		LoadFile("../LICENSE"),
 	)
-	toc.GenerateIDs(article, "h2", "h3")
-	nav.With(toc.ParseTOC(article, "h2", "h3"))
+	toc.MakeTOC(nav, article, "h2", "h3")
 	return article
 }
 
