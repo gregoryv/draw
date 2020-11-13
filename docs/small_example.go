@@ -1,8 +1,6 @@
 package docs
 
 import (
-	"io/ioutil"
-
 	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/shape"
 )
@@ -10,10 +8,10 @@ import (
 func ExampleSmallClassDiagram() *design.ClassDiagram {
 	var (
 		d      = design.NewClassDiagram()
-		part   = d.Interface((*Part)(nil))
+		house  = d.Struct(House{})
 		door   = d.Struct(Door{})
 		window = d.Struct(Window{})
-		house  = d.Struct(House{})
+		part   = d.Interface((*Part)(nil))
 		note   = shape.NewNote(`Relations are automatically rendered`)
 	)
 	d.Place(part).At(20, 20)        // absolute positioning
@@ -26,34 +24,7 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 
 	// Output options
 	d.SaveAs("classdiagram.svg") // save to file
-	d.WriteSVG(ioutil.Discard)   // write to any writer
+	d.WriteSVG(w)                // write to any writer
 	_ = d.Inline()               // return a string
 	return d
-}
-
-type House struct {
-	Frontdoor Door      // aggregation
-	Windows   []*Window // composition
-}
-
-func (me *House) Rooms() int { return 0 }
-
-type Door struct {
-	Material string
-}
-
-func (me *Door) Materials() []string {
-	return []string{}
-}
-
-type Window struct {
-	Model string
-}
-
-func (me *Window) Materials() []string {
-	return []string{}
-}
-
-type Part interface {
-	Materials() []string
 }

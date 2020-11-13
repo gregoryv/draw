@@ -31,28 +31,19 @@ func NewProjectArticle() *Element {
 	article := Article(
 		H1("Draw - programming software design diagrams"),
 
-		P(
+		P(`Draw Go module provides SVG rendering features focusing on
+           creating software design diagrams.`),
 
-			`Draw Go module provides SVG rendering features focusing on
-             creating software design diagrams. It does this by
-             providing an API for developers to program their diagrams
-             as opposed to defining them in a parsable text
-             format. This has the positive effect of diagrams being
-             refactored in the same way the rest of your code
-             is. Keeping your diagrams up-to-date becomes fairly
-             easy.`,
-			//
-		),
-		P(
-
-			`Using reflection; type and names from entities in your
-             source code are directly used in the diagrams. Thus
-             making them suitable for prototyping, as they are
-             directly updated when the source code changes. SVG
-             diagrams can easily be rendered to any io.Writer making
-             it easy to include them in API documentation.`,
-			//
-		),
+		P(`Why? <br><em>Let programmers do what they are good
+           at</em>. By providing an API, creating diagrams is no
+           different from other programming. <br><em>Speed</em>; once you
+           know the API programming a sequence diagram is actually
+           much faster than drawing it by hand.  <br><em>Keep
+           uptodate</em>; diagrams describe software, which moves
+           fast. Keeping diagram in sync is a tedious task if manually
+           drawn.  Being code, they are refactored with the same tools
+           as the rest of the code and in most cases with little or no
+           extra effort.`),
 		Div(Class("left"),
 			nav,
 		),
@@ -93,7 +84,7 @@ func NewProjectArticle() *Element {
 		Table(
 			Tr(
 				Td(
-					LoadFile("small_example.go", 9, 32),
+					LoadFile("small_example.go", 1, -1),
 				),
 				Td(Br(), Br(),
 					ExampleSmallClassDiagram().Inline(),

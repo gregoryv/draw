@@ -68,19 +68,17 @@ float: left;
 <article>
 <h1>Draw - programming software design diagrams</h1>
 <p>Draw Go module provides SVG rendering features focusing on
-             creating software design diagrams. It does this by
-             providing an API for developers to program their diagrams
-             as opposed to defining them in a parsable text
-             format. This has the positive effect of diagrams being
-             refactored in the same way the rest of your code
-             is. Keeping your diagrams up-to-date becomes fairly
-             easy.</p>
-<p>Using reflection; type and names from entities in your
-             source code are directly used in the diagrams. Thus
-             making them suitable for prototyping, as they are
-             directly updated when the source code changes. SVG
-             diagrams can easily be rendered to any io.Writer making
-             it easy to include them in API documentation.</p>
+           creating software design diagrams.</p>
+<p>Why? <br><em>Let programmers do what they are good
+           at</em>. By providing an API, creating diagrams is no
+           different from other programming. <br><em>Speed</em>; once you
+           know the API programming a sequence diagram is actually
+           much faster than drawing it by hand.  <br><em>Keep
+           uptodate</em>; diagrams describe software, which moves
+           fast. Keeping diagram in sync is a tedious task if manually
+           drawn.  Being code, they are refactored with the same tools
+           as the rest of the code and in most cases with little or no
+           extra effort.</p>
 <div class="left"><nav><h4>Table of contents</h4>
 <ul>
 <li class="h2"><a href="#install">Install</a></li>
@@ -111,14 +109,20 @@ float: left;
 </div>
 <br clear="all"/><h2 id="examplesource">Example source</h2>
 <table>
-<tr><td><pre class="srcfile"><code class="go">
+<tr><td><pre class="srcfile"><code class="go">package docs
+
+import (
+	"github.com/gregoryv/draw/design"
+	"github.com/gregoryv/draw/shape"
+)
+
 func ExampleSmallClassDiagram() *design.ClassDiagram {
 	var (
 		d      = design.NewClassDiagram()
-		part   = d.Interface((*Part)(nil))
+		house  = d.Struct(House{})
 		door   = d.Struct(Door{})
 		window = d.Struct(Window{})
-		house  = d.Struct(House{})
+		part   = d.Interface((*Part)(nil))
 		note   = shape.NewNote(`Relations are automatically rendered`)
 	)
 	d.Place(part).At(20, 20)        // absolute positioning
@@ -131,7 +135,7 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 
 	// Output options
 	d.SaveAs("classdiagram.svg") // save to file
-	d.WriteSVG(ioutil.Discard)   // write to any writer
+	d.WriteSVG(w)                // write to any writer
 	_ = d.Inline()               // return a string
 	return d
 }
