@@ -407,13 +407,18 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="437" height="223">
-<line stroke="#d3d3d3" x1="38" y1="24" x2="38" y2="222"/>
+  font-family="Arial,Helvetica,sans-serif" width="634" height="298">
+<rect stroke="black" stroke-width="0" fill="#ff9999" fill-opacity="0.1" x="228" y="24" width="380" height="273"/>
+<text class="area-red-title" font-size="12px" x="234" y="42"></text>
+<line stroke="#d3d3d3" x1="38" y1="24" x2="38" y2="255"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">app.Client</text>
-<line stroke="#d3d3d3" x1="228" y1="24" x2="228" y2="222"/>
+<line stroke="#d3d3d3" x1="228" y1="24" x2="228" y2="255"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="18">app.Server</text>
-<line stroke="#d3d3d3" x1="418" y1="24" x2="418" y2="222"/>
+<line stroke="#d3d3d3" x1="418" y1="24" x2="418" y2="255"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="400" y="18">sql.DB</text>
+<line stroke="#d3d3d3" x1="608" y1="24" x2="608" y2="255"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="583" y="18">aws.SQS</text>
+<text font-style="italic" font-family="Arial,Helvetica,sans-serif" font-size="12px" x="328" y="290">Private RPC using Gob encoding</text>
 <path stroke="black" d="M38,57 L228,57" />
 <g transform="rotate(0 228 57)"><path stroke="black" fill="#ffffff" d="M228,57 l-8,-4 l 0,8 Z" /></g>
 
@@ -435,7 +440,11 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <path stroke="black" d="M228,211 L38,211" />
 <g transform="rotate(180 38 211)"><path stroke="black" fill="#ffffff" d="M38,211 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="101" y="208">Send HTML</text></svg><h3 id="ganttchart">Gantt chart</h3>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="101" y="208">Send HTML</text>
+<path stroke="black" d="M228,244 L608,244" />
+<g transform="rotate(0 608 244)"><path stroke="black" fill="#ffffff" d="M608,244 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="381" y="241">Publish event</text></svg><h3 id="ganttchart">Gantt chart</h3>
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
