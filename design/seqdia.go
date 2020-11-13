@@ -63,7 +63,7 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 		y2  = d.Height()
 	)
 	lines := make([]*shape.Line, len(d.columns))
-	labels := make(map[string]shape.Shape)
+	vlines := make(map[string]*shape.Line)
 	// columns and vertical lines
 	for i, column := range d.columns {
 		label := shape.NewLabel(column)
@@ -71,7 +71,6 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 		label.Pad = d.Pad
 		label.SetX(i * colWidth)
 		label.SetY(top)
-		labels[column] = label
 
 		firstColumn := i == 0
 		if firstColumn {
@@ -84,6 +83,7 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 
 		d.VAlignCenter(lines[i], label)
 		d.Place(lines[i], label)
+		vlines[column] = line // save for groups
 
 		// groups
 		for _, group := range d.groups {
@@ -95,16 +95,16 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 				alabel.Pad = d.Pad
 				alabel.SetClass("area-" + group.class + "-label")
 
-				from := labels[group.fromColumn]
-				to := label
+				from := vlines[group.fromColumn]
+				to := line
 				x, y := from.Position()
 				x2, _ := to.Position()
-				width := x2 + to.Width() + to.Pad.Left + to.Pad.Right - x
-				r.SetX(x - to.Pad.Left)
+				width := x2 - x
+				r.SetX(x)
 				r.SetY(y)
 				r.SetWidth(width)
 				r.SetClass("area-" + group.class)
-				r.SetHeight(y2 + d.top() + 2*label.Height())
+				r.SetHeight(y2 + d.top() + label.Height())
 				d.Prepend(r) // behind
 
 				d.Place(alabel).Below(r)
