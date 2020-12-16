@@ -104,7 +104,7 @@ func NewDirection(from, to xy.Position) Direction {
 	}
 }
 
-type Direction int
+type Direction uint
 
 const (
 	DirectionRight Direction = (1 << iota)
@@ -117,3 +117,8 @@ const (
 	DirectionUpLeft    = DirectionUp | DirectionLeft
 	DirectionUpRight   = DirectionUp | DirectionRight
 )
+
+// Method
+func (d Direction) Is(dir Direction) bool {
+	return (d & dir) == dir
+}

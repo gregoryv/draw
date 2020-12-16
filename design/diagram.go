@@ -83,15 +83,18 @@ func (d *Diagram) LinkAll(s ...shape.Shape) {
 
 // Link places an arrow with a optional label above it between the two
 // shapes.
-func (d *Diagram) Link(from, to shape.Shape, txt ...string) *shape.Arrow {
-	lnk := shape.NewArrowBetween(from, to)
+func (d *Diagram) Link(from, to shape.Shape, txt ...string) (lnk *shape.Arrow, label *shape.Label) {
+	lnk = shape.NewArrowBetween(from, to)
 	d.Place(lnk)
+
 	if len(txt) > 0 {
-		label := shape.NewLabel(txt[0])
-		d.Place(label).Above(lnk, 20)
-		d.VAlignCenter(lnk, label)
+		label = shape.NewLabel(txt[0])
+
+		// find center of arrow
+		x, y := lnk.CenterPosition()
+		d.Place(label).At(x+label.Pad.Left, y-label.Font.Height)
 	}
-	return lnk
+	return
 }
 
 func (d *Diagram) applyStyle(s interface{}) {

@@ -69,9 +69,15 @@ func alignTail(s Shape, x, y int) {
 	}
 }
 
-func (arrow *Arrow) absAngle() float64 {
-	return math.Abs(float64(arrow.angle()))
+// AbsAngle
+func (a *Arrow) AbsAngle() int { return int(a.absAngle()) }
+
+func (a *Arrow) absAngle() float64 {
+	return math.Abs(float64(a.angle()))
 }
+
+// Angle returns value in degrees. Right = 0, down = 90, left: 180, up = -90
+func (a *Arrow) Angle() int { return a.angle() }
 
 // angle returns degrees the head of an arrow should rotate depending
 // on direction
@@ -163,6 +169,25 @@ func (a *Arrow) Width() int {
 
 func (a *Arrow) Position() (int, int) {
 	return a.Start.XY()
+}
+
+// CenterPosition
+func (a *Arrow) CenterPosition() (x int, y int) {
+	d := a.Direction()
+
+	if d.Is(DirectionRight) {
+		x = a.Start.X + a.Width()/2
+	} else {
+		x = a.Start.X - a.Width()/2
+	}
+
+	if d.Is(DirectionDown) {
+		y = a.Start.Y + a.Height()/2
+	} else {
+		y = a.Start.Y - a.Height()/2
+	}
+
+	return
 }
 
 func (a *Arrow) SetX(x int) {

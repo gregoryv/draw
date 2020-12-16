@@ -106,7 +106,6 @@ func newClassDiagram() *ClassDiagram {
 	d.Place(wheel).Below(car)
 	d.Place(stringer).RightOf(wheel)
 	d.Place(driver).Below(stringer, 100)
-
 	d.Link(stringer, driver, "labeled")
 	return d
 }
