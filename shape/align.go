@@ -1,5 +1,7 @@
 package shape
 
+import "github.com/gregoryv/draw/xy"
+
 // Aligner type aligns multiple shapes
 type Aligner struct{}
 
@@ -81,12 +83,37 @@ const (
 	Center
 )
 
+func NewDirection(from, to xy.Position) Direction {
+	switch {
+	case from.LeftOf(to) && from.Y == to.Y:
+		return DirectionRight
+	case from.LeftOf(to) && from.Above(to):
+		return DirectionDownRight
+	case from.Above(to) && from.X == to.X:
+		return DirectionDown
+	case from.RightOf(to) && from.Above(to):
+		return DirectionDownLeft
+	case from.RightOf(to) && from.Y == to.Y:
+		return DirectionLeft
+	case from.Below(to) && from.RightOf(to):
+		return DirectionUpLeft
+	case from.Below(to) && from.X == to.X:
+		return DirectionUp
+	default: // from.LeftOf(to) && from.Below(to):
+		return DirectionUpRight
+	}
+}
+
 type Direction int
 
 const (
-	DirectionOther Direction = (1 << iota)
-	DirectionRight
+	DirectionRight Direction = (1 << iota)
 	DirectionLeft
 	DirectionUp
 	DirectionDown
+
+	DirectionDownRight = DirectionDown | DirectionRight
+	DirectionDownLeft  = DirectionDown | DirectionLeft
+	DirectionUpLeft    = DirectionUp | DirectionLeft
+	DirectionUpRight   = DirectionUp | DirectionRight
 )

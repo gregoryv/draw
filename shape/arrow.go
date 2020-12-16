@@ -180,21 +180,7 @@ func (a *Arrow) SetY(y int) {
 // Direction returns vertical or horizontal direction, Other if at an angle.
 // If Other, use arrow.DirQn() methods to check to which quadrant.
 func (a *Arrow) Direction() Direction {
-	if a.Start.X == a.End.X {
-		// vertical
-		if a.Start.Above(a.End) {
-			return DirectionDown
-		}
-		return DirectionUp
-	}
-	if a.Start.Y == a.End.Y {
-		// horizontal
-		if a.Start.LeftOf(a.End) {
-			return DirectionRight
-		}
-		return DirectionLeft
-	}
-	return DirectionOther
+	return NewDirection(a.Start, a.End)
 }
 
 func (a *Arrow) SetClass(c string) { a.class = c }

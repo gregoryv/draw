@@ -62,7 +62,7 @@ func (t *OneArrow) CanPointDownAndLeft() {
 	t.End.X = t.Start.X - 10
 	t.End.Y = t.Start.Y + 30
 	dir := t.Direction()
-	t.assert(dir == DirectionOther).Errorf("Direction not Other: %v", dir)
+	t.assert(dir == DirectionDownLeft).Errorf("Direction: %v", dir)
 	t.saveAs("testdata/arrow_points_down_and_left.svg")
 }
 
@@ -70,7 +70,7 @@ func (t *OneArrow) CanPointDownAndRight() {
 	t.End.X = t.Start.X + 20
 	t.End.Y = t.Start.Y + 30
 	dir := t.Direction()
-	t.assert(dir == DirectionOther).Errorf("Direction not other: %v", dir)
+	t.assert(dir == DirectionDownRight).Errorf("Direction: %v", dir)
 	t.saveAs("testdata/arrow_points_down_and_right.svg")
 }
 

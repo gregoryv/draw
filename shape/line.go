@@ -61,10 +61,7 @@ func (l *Line) SetY(y int) {
 }
 
 func (l *Line) Direction() Direction {
-	if l.Start.X <= l.End.X {
-		return DirectionRight
-	}
-	return DirectionLeft
+	return NewDirection(l.Start, l.End)
 }
 
 func (l *Line) SetClass(c string) { l.class = c }
