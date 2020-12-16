@@ -34,7 +34,7 @@ func (e *ExitDot) Width() int {
 	return e.Radius*2 + 4
 }
 func (e *ExitDot) Height() int           { return e.Width() }
-func (e *ExitDot) Direction() Direction  { return RightDir }
+func (e *ExitDot) Direction() Direction  { return DirectionRight }
 func (e *ExitDot) SetClass(class string) { e.class = class }
 
 func (e *ExitDot) WriteSVG(out io.Writer) error {

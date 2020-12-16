@@ -42,7 +42,7 @@ func (c *Cylinder) Width() int {
 	return (c.Radius+stroke)*2 - 2
 }
 func (c *Cylinder) Height() int           { return c.height }
-func (c *Cylinder) Direction() Direction  { return RightDir }
+func (c *Cylinder) Direction() Direction  { return DirectionRight }
 func (c *Cylinder) SetClass(class string) { c.class = class }
 
 func (c *Cylinder) ry() float64 {

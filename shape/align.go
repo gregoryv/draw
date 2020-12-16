@@ -61,7 +61,7 @@ func vAlign(adjust Alignment, objects ...Shape) {
 		case Right:
 			shape.SetX(x + first.Width() - shape.Width())
 		case Center:
-			if first.Direction() == LeftDir {
+			if first.Direction() == DirectionLeft {
 				shape.SetX(x - (first.Width()+shape.Width())/2)
 			} else {
 				shape.SetX(x + (first.Width()-shape.Width())/2)
@@ -84,9 +84,9 @@ const (
 type Direction int
 
 const (
-	Other Direction = iota
-	RightDir
-	LeftDir
-	Up
-	Down
+	DirectionOther Direction = (1 << iota)
+	DirectionRight
+	DirectionLeft
+	DirectionUp
+	DirectionDown
 )

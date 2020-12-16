@@ -38,7 +38,7 @@ func (r *Rect) String() string {
 func (r *Rect) Position() (int, int) { return r.X, r.Y }
 func (r *Rect) SetX(x int)           { r.X = x }
 func (r *Rect) SetY(y int)           { r.Y = y }
-func (r *Rect) Direction() Direction { return RightDir }
+func (r *Rect) Direction() Direction { return DirectionRight }
 func (r *Rect) SetClass(c string)    { r.class = c }
 
 func (r *Rect) WriteSVG(out io.Writer) error {

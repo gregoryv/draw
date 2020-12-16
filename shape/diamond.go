@@ -40,7 +40,7 @@ func (d *Diamond) SetX(x int)           { d.x = x }
 func (d *Diamond) SetY(y int)           { d.y = y - d.height/2 }
 func (d *Diamond) Width() int           { return d.width }
 func (d *Diamond) Height() int          { return d.height }
-func (d *Diamond) Direction() Direction { return RightDir }
+func (d *Diamond) Direction() Direction { return DirectionRight }
 func (d *Diamond) SetClass(c string)    { d.class = c }
 
 func (d *Diamond) WriteSVG(out io.Writer) error {

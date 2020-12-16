@@ -39,11 +39,11 @@ func (d *ActivityDiagram) Link(from, to shape.Shape, txt ...string) *shape.Arrow
 func (d *ActivityDiagram) placeLabel(lnk *shape.Arrow, txt string) {
 	label := shape.NewLabel(txt)
 	switch lnk.Direction() {
-	case shape.RightDir, shape.LeftDir:
+	case shape.DirectionRight, shape.DirectionLeft:
 		d.Place(label).Above(lnk, 20)
 		d.VAlignCenter(lnk, label)
 		shape.Move(label, -4, 0)
-	case shape.Up, shape.Down:
+	case shape.DirectionUp, shape.DirectionDown:
 		d.Place(label).RightOf(lnk, 5)
 	}
 }

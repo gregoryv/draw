@@ -42,7 +42,7 @@ func (l *Label) Width() int {
 }
 
 func (l *Label) Height() int          { return l.Font.LineHeight }
-func (l *Label) Direction() Direction { return RightDir }
+func (l *Label) Direction() Direction { return DirectionRight }
 func (l *Label) SetClass(c string)    { l.class = c }
 
 func (l *Label) WriteSVG(w io.Writer) error {

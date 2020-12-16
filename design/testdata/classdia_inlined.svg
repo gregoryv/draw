@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  class="root" width="294" height="199">
+  class="root" width="294" height="325">
 <path class="compose-arrow" d="M67,116 L70,146" />
 <g transform="rotate(84 67 116)"><path class="compose-arrow-tail" d="M67,116 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(84 70 146)"><path class="compose-arrow-head" d="M70,146 l-8,-4 l 0,8 Z" /></g>
@@ -19,4 +19,10 @@
 <text class="record-title" font-size="12px" x="16" y="166">design.Wheels slice</text>
 <rect class="record" x="165" y="146" width="128" height="52"/>
 <line class="record-line" x1="165" y1="176" x2="293" y2="176"/><text class="method" font-size="12px" x="171" y="192">String()</text>
-<text class="record-title" font-size="12px" x="171" y="166">fmt.Stringer interface</text></svg>
+<text class="record-title" font-size="12px" x="171" y="166">fmt.Stringer interface</text>
+<rect class="record" x="165" y="298" width="121" height="26"/>
+<text class="record-title" font-size="12px" x="171" y="318">design.Driver struct</text>
+<path class="arrow" d="M228,198 L225,298" />
+<g transform="rotate(92 225 298)"><path class="arrow-head" d="M225,298 l-8,-4 l 0,8 Z" /></g>
+
+<text class="label" font-size="12px" x="209" y="94">labeled</text></svg>

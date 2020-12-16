@@ -100,10 +100,14 @@ func newClassDiagram() *ClassDiagram {
 		car      = d.Struct(Car{})
 		wheel    = d.Slice(make(Wheels, 4))
 		stringer = d.Interface((*fmt.Stringer)(nil))
+		driver   = d.Struct(Driver{})
 	)
 	d.Place(car).At(10, 10)
 	d.Place(wheel).Below(car)
 	d.Place(stringer).RightOf(wheel)
+	d.Place(driver).Below(stringer, 100)
+
+	d.Link(stringer, driver, "labeled")
 	return d
 }
 
@@ -126,3 +130,5 @@ type Wheels []Wheel
 
 // String
 func (me *Wheel) String() string { return me.Make }
+
+type Driver struct{}

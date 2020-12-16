@@ -35,7 +35,7 @@ func (r *Record) String() string {
 func (r *Record) Position() (int, int) { return r.X, r.Y }
 func (r *Record) SetX(x int)           { r.X = x }
 func (r *Record) SetY(y int)           { r.Y = y }
-func (r *Record) Direction() Direction { return RightDir }
+func (r *Record) Direction() Direction { return DirectionRight }
 func (r *Record) SetClass(c string)    { r.class = c }
 
 func (r *Record) WriteSVG(out io.Writer) error {

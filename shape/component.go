@@ -39,7 +39,7 @@ func (c *Component) String() string {
 func (c *Component) Position() (int, int) { return c.X, c.Y }
 func (c *Component) SetX(x int)           { c.X = x }
 func (c *Component) SetY(y int)           { c.Y = y }
-func (c *Component) Direction() Direction { return RightDir }
+func (c *Component) Direction() Direction { return DirectionRight }
 func (c *Component) SetClass(v string)    { c.class = v }
 
 func (c *Component) WriteSVG(out io.Writer) error {

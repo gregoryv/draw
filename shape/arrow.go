@@ -183,18 +183,18 @@ func (a *Arrow) Direction() Direction {
 	if a.Start.X == a.End.X {
 		// vertical
 		if a.Start.Above(a.End) {
-			return Down
+			return DirectionDown
 		}
-		return Up
+		return DirectionUp
 	}
 	if a.Start.Y == a.End.Y {
 		// horizontal
 		if a.Start.LeftOf(a.End) {
-			return RightDir
+			return DirectionRight
 		}
-		return LeftDir
+		return DirectionLeft
 	}
-	return Other
+	return DirectionOther
 }
 
 func (a *Arrow) SetClass(c string) { a.class = c }
