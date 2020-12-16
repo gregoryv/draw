@@ -112,6 +112,12 @@ type Car struct {
 	Wheels
 }
 
+// String
+func (me Car) String() string { return me.Model }
+
+// running
+func (me *Car) Running() bool { return false }
+
 type Wheel struct {
 	Make string
 }

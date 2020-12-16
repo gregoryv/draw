@@ -21,11 +21,8 @@ func NewVRecord(v interface{}) *VRecord {
 
 	if t.Kind() == reflect.Struct {
 		addFields(rec, t)
-		addMethods(rec, t)
-		// and add any pointer to struct methods
-		if t := reflect.TypeOf(v); t.Kind() == reflect.Ptr {
-			addMethods(rec, t)
-		}
+		// always use pointer as the language works this way
+		addMethods(rec, reflect.PtrTo(t))
 	}
 	if t.Kind() == reflect.Interface {
 		addMethods(rec, t)
@@ -50,12 +47,11 @@ func addFields(r *shape.Record, t reflect.Type) {
 func addMethods(r *shape.Record, t reflect.Type) {
 	for i := 0; i < t.NumMethod(); i++ {
 		m := t.Method(i)
-		if isPublic(m.Name) {
-			r.Methods = append(r.Methods, m.Name+"()")
-		}
+		r.Methods = append(r.Methods, m.Name+"()")
 	}
 }
 
+// todo here so we can toggle manually added private methods
 func isPublic(name string) bool {
 	up := bytes.ToUpper([]byte(name))
 	return []byte(name)[0] == up[0]

@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Fix Class diagram to show pointer receiver methods
 - Add SequenceDiagram.Group method for grouping columns with a labeled text area
 
 ## [0.16.0] 2020-10-30

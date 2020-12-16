@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="507" height="318">
+  font-family="Arial,Helvetica,sans-serif" width="526" height="452">
 <path stroke="black" stroke-dasharray="5,5,5" d="M255,216 L255,186" />
 <g transform="rotate(-90 255 186)"><path stroke="black" fill="#ffffff" d="M255,186 l-8,-4 l 0,8 Z" /></g>
 
@@ -15,10 +15,13 @@
 <rect stroke="#d3d3d3" fill="#ffffff" x="189" y="134" width="133" height="52"/>
 <line stroke="#d3d3d3" x1="189" y1="164" x2="322" y2="164"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="195" y="180">ServeHTTP()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="195" y="154">http.Handler interface</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="192" y="216" width="126" height="26"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="192" y="216" width="126" height="84"/>
+<line stroke="#d3d3d3" x1="192" y1="246" x2="318" y2="246"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="262">Handle()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="278">HandleFunc()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="294">Handler()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="236">http.ServeMux struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="374" y="20" width="131" height="244"/>
-<line stroke="#d3d3d3" x1="374" y1="50" x2="505" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="66">Addr</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="374" y="20" width="150" height="378"/>
+<line stroke="#d3d3d3" x1="374" y1="50" x2="524" y2="50"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="66">Addr</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="82">Handler</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="98">TLSConfig</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="114">ReadTimeout</text>
@@ -31,5 +34,13 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="226">ErrorLog</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="242">BaseContext</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="258">ConnContext</text>
+<line stroke="#d3d3d3" x1="374" y1="264" x2="524" y2="264"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="280">Close()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="296">ListenAndServe()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="312">ListenAndServeTLS()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="328">RegisterOnShutdown()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="344">Serve()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="360">ServeTLS()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="376">SetKeepAlivesEnabled()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="392">Shutdown()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="40">http.Server struct</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="124" y="311">Figure 1. ServeMux routes requests to handlers</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="134" y="445">Figure 1. ServeMux routes requests to handlers</text></svg>
