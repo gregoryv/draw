@@ -44,7 +44,7 @@ func (r *Record) WriteSVG(out io.Writer) error {
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.X, r.Y, r.Width(), r.Height())
 	w.Printf("\n")
-	var y = boxHeight(r.Font, r.Pad, 1) + r.Pad.Top
+	var y = boxHeight(r.Font, r.Pad, 1)
 	hasFields := len(r.Fields) != 0
 	if hasFields {
 		r.writeSeparator(w, r.Y+y)
@@ -96,7 +96,7 @@ func (r *Record) writeSeparator(w io.Writer, y1 int) error {
 func (r *Record) title() *Label {
 	return &Label{
 		x:     r.X + r.Pad.Left,
-		y:     r.Y + r.Pad.Top,
+		y:     r.Y,
 		Font:  r.Font,
 		Text:  r.Title,
 		class: "record-title",

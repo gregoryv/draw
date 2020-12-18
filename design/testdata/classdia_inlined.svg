@@ -10,18 +10,18 @@
 <g transform="rotate(34 189 146)"><path class="implements-arrow-head" d="M189,146 l-8,-4 l 0,8 Z" /></g>
 
 <rect class="record" x="10" y="10" width="108" height="106"/>
-<line class="record-line" x1="10" y1="40" x2="118" y2="40"/><text class="field" font-size="12px" x="16" y="56">Model</text>
-<text class="field" font-size="12px" x="16" y="72">Wheels</text>
-<line class="record-line" x1="10" y1="78" x2="118" y2="78"/><text class="method" font-size="12px" x="16" y="94">Running()</text>
-<text class="method" font-size="12px" x="16" y="110">String()</text>
-<text class="record-title" font-size="12px" x="16" y="30">design.Car struct</text>
+<line class="record-line" x1="10" y1="36" x2="118" y2="36"/><text class="field" font-size="12px" x="16" y="52">Model</text>
+<text class="field" font-size="12px" x="16" y="68">Wheels</text>
+<line class="record-line" x1="10" y1="74" x2="118" y2="74"/><text class="method" font-size="12px" x="16" y="90">Running()</text>
+<text class="method" font-size="12px" x="16" y="106">String()</text>
+<text class="record-title" font-size="12px" x="16" y="26">design.Car struct</text>
 <rect class="record" x="10" y="146" width="125" height="26"/>
-<text class="record-title" font-size="12px" x="16" y="166">design.Wheels slice</text>
+<text class="record-title" font-size="12px" x="16" y="162">design.Wheels slice</text>
 <rect class="record" x="165" y="146" width="128" height="52"/>
-<line class="record-line" x1="165" y1="176" x2="293" y2="176"/><text class="method" font-size="12px" x="171" y="192">String()</text>
-<text class="record-title" font-size="12px" x="171" y="166">fmt.Stringer interface</text>
+<line class="record-line" x1="165" y1="172" x2="293" y2="172"/><text class="method" font-size="12px" x="171" y="188">String()</text>
+<text class="record-title" font-size="12px" x="171" y="162">fmt.Stringer interface</text>
 <rect class="record" x="165" y="298" width="121" height="26"/>
-<text class="record-title" font-size="12px" x="171" y="318">design.Driver struct</text>
+<text class="record-title" font-size="12px" x="171" y="314">design.Driver struct</text>
 <path class="arrow" d="M228,198 L225,298" />
 <g transform="rotate(92 225 298)"><path class="arrow-head" d="M225,298 l-8,-4 l 0,8 Z" /></g>
 

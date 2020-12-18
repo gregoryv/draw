@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Remove double padding for record titles
 - Improve label alignment in Diagram.Link method
 
 ## [0.17.0] 2020-12-16
