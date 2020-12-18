@@ -116,6 +116,43 @@ multilines`)
 	d.Place(srv).Below(comp)
 	d.VAlignCenter(comp, srv)
 	d.Link(srv, comp, "")
+
+	// labeled arrows
+	d1 := shape.NewDot()
+	d.Place(d1).At(600, 200)
+
+	d2 := shape.NewDot()
+	d.Place(d2).RightOf(d1, 120)
+	d.Link(d1, d2, "label")
+
+	d2 = shape.NewDot()
+	d.Place(d2).At(660, 260)
+	d.Link(d1, d2, "label")
+
+	d2 = shape.NewDot()
+	d.Place(d2).Below(d1, 120)
+	d.Link(d1, d2, "label")
+
+	d2 = shape.NewDot()
+	d.Place(d2).At(520, 280)
+	d.Link(d1, d2, "label")
+
+	d2 = shape.NewDot()
+	d.Place(d2).LeftOf(d1, 120)
+	d.Link(d1, d2, "label")
+
+	d2 = shape.NewDot()
+	d.Place(d2).At(520, 120)
+	d.Link(d1, d2, "label")
+
+	d2 = shape.NewDot()
+	d.Place(d2).Above(d1, 120)
+	d.Link(d1, d2, "label")
+
+	d2 = shape.NewDot()
+	d.Place(d2).At(660, 120)
+	d.Link(d1, d2, "label")
+
 	d.SaveAs("img/diagram_example.svg")
 }
 
