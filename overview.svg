@@ -13,18 +13,18 @@
 <g transform="rotate(90 106 238)"><path stroke="black" fill="#ffffff" d="M106,238 l-8,-4 l 0,8 Z" /></g>
 
 <rect stroke="#d3d3d3" fill="#ffffff" x="212" y="140" width="139" height="164"/>
-<line stroke="#d3d3d3" x1="212" y1="170" x2="351" y2="170"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="186">Direction()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="202">Height()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="218">Position()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="234">SetClass()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="250">SetX()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="266">SetY()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="282">Width()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="298">WriteSVG()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="160">shape.Shape interface</text>
+<line stroke="#d3d3d3" x1="212" y1="166" x2="351" y2="166"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="182">Direction()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="198">Height()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="214">Position()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="230">SetClass()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="246">SetX()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="262">SetY()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="278">Width()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="294">WriteSVG()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="156">shape.Shape interface</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="451" y="252" width="117" height="52"/>
-<line stroke="#d3d3d3" x1="451" y1="282" x2="568" y2="282"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="298">Radius</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="272">shape.Circle struct</text>
+<line stroke="#d3d3d3" x1="451" y1="278" x2="568" y2="278"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="294">Radius</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="268">shape.Circle struct</text>
 <path stroke="black" stroke-dasharray="5,5,5" d="M451,263 L351,239" />
 <g transform="rotate(193 351 239)"><path stroke="black" fill="#ffffff" d="M351,239 l-8,-4 l 0,8 Z" /></g>
 
