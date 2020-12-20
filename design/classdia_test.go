@@ -127,6 +127,8 @@ type Wheel struct {
 
 type Wheels []Wheel
 
+func (me Wheels) Count() int { return len(me) }
+
 // String
 func (me *Wheel) String() string { return me.Make }
 

@@ -27,7 +27,9 @@ func NewVRecord(v interface{}) *VRecord {
 	if t.Kind() == reflect.Interface {
 		addMethods(rec, t)
 	}
-
+	if t.Kind() == reflect.Slice {
+		addMethods(rec, t)
+	}
 	// todo add methods and fields if any
 	return &VRecord{
 		Record: rec,

@@ -1,28 +1,30 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  class="root" width="294" height="325">
-<path class="compose-arrow" d="M67,116 L70,146" />
-<g transform="rotate(84 67 116)"><path class="compose-arrow-tail" d="M67,116 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(84 70 146)"><path class="compose-arrow-head" d="M70,146 l-8,-4 l 0,8 Z" /></g>
+  class="root" width="294" height="341">
+<path class="compose-arrow" d="M68,132 L70,162" />
+<g transform="rotate(86 68 132)"><path class="compose-arrow-tail" d="M68,132 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(86 70 162)"><path class="compose-arrow-head" d="M70,162 l-8,-4 l 0,8 Z" /></g>
 
-<path class="implements-arrow" d="M118,98 L189,146" />
-<g transform="rotate(34 189 146)"><path class="implements-arrow-head" d="M189,146 l-8,-4 l 0,8 Z" /></g>
+<path class="implements-arrow" d="M118,109 L192,162" />
+<g transform="rotate(35 192 162)"><path class="implements-arrow-head" d="M192,162 l-8,-4 l 0,8 Z" /></g>
 
-<rect class="record" x="10" y="10" width="108" height="106"/>
+<rect class="record" x="10" y="10" width="108" height="122"/>
 <line class="record-line" x1="10" y1="36" x2="118" y2="36"/><text class="field" font-size="12px" x="16" y="52">Model</text>
 <text class="field" font-size="12px" x="16" y="68">Wheels</text>
-<line class="record-line" x1="10" y1="74" x2="118" y2="74"/><text class="method" font-size="12px" x="16" y="90">Running()</text>
-<text class="method" font-size="12px" x="16" y="106">String()</text>
+<line class="record-line" x1="10" y1="74" x2="118" y2="74"/><text class="method" font-size="12px" x="16" y="90">Count()</text>
+<text class="method" font-size="12px" x="16" y="106">Running()</text>
+<text class="method" font-size="12px" x="16" y="122">String()</text>
 <text class="record-title" font-size="12px" x="16" y="26">design.Car struct</text>
-<rect class="record" x="10" y="146" width="125" height="26"/>
-<text class="record-title" font-size="12px" x="16" y="162">design.Wheels slice</text>
-<rect class="record" x="165" y="146" width="128" height="52"/>
-<line class="record-line" x1="165" y1="172" x2="293" y2="172"/><text class="method" font-size="12px" x="171" y="188">String()</text>
-<text class="record-title" font-size="12px" x="171" y="162">fmt.Stringer interface</text>
-<rect class="record" x="165" y="298" width="121" height="26"/>
-<text class="record-title" font-size="12px" x="171" y="314">design.Driver struct</text>
-<path class="arrow" d="M228,198 L225,298" />
-<g transform="rotate(92 225 298)"><path class="arrow-head" d="M225,298 l-8,-4 l 0,8 Z" /></g>
+<rect class="record" x="10" y="162" width="125" height="52"/>
+<line class="record-line" x1="10" y1="188" x2="135" y2="188"/><text class="method" font-size="12px" x="16" y="204">Count()</text>
+<text class="record-title" font-size="12px" x="16" y="178">design.Wheels slice</text>
+<rect class="record" x="165" y="162" width="128" height="52"/>
+<line class="record-line" x1="165" y1="188" x2="293" y2="188"/><text class="method" font-size="12px" x="171" y="204">String()</text>
+<text class="record-title" font-size="12px" x="171" y="178">fmt.Stringer interface</text>
+<rect class="record" x="165" y="314" width="121" height="26"/>
+<text class="record-title" font-size="12px" x="171" y="330">design.Driver struct</text>
+<path class="arrow" d="M228,214 L225,314" />
+<g transform="rotate(92 225 314)"><path class="arrow-head" d="M225,314 l-8,-4 l 0,8 Z" /></g>
 
-<text class="label" font-size="12px" x="237" y="252">labeled</text></svg>
+<text class="label" font-size="12px" x="237" y="268">labeled</text></svg>

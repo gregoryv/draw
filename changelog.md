@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Include slice methods in VRecord
 - Remove double padding for record titles
 - Improve label alignment in Diagram.Link method
 
