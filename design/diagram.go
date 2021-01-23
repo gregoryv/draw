@@ -11,8 +11,8 @@ import (
 //
 // TODO: size and padding affects eg. records, but is related to the
 // styling
-func NewDiagram() Diagram {
-	return Diagram{
+func NewDiagram() *Diagram {
+	return &Diagram{
 		Style: draw.NewStyle(nil),
 	}
 }

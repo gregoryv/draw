@@ -10,7 +10,7 @@ func NewActivityDiagram() *ActivityDiagram {
 }
 
 type ActivityDiagram struct {
-	Diagram
+	*Diagram
 	last    shape.Shape
 	Spacing int
 }

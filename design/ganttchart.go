@@ -33,7 +33,7 @@ func newGanttChart(start time.Time, days int) *GanttChart {
 }
 
 type GanttChart struct {
-	Diagram
+	*Diagram
 	start time.Time
 	days  int
 	tasks []*Task

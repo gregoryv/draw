@@ -9,7 +9,7 @@ import (
 )
 
 type ClassDiagram struct {
-	Diagram
+	*Diagram
 
 	interfaces []VRecord
 	structs    []VRecord

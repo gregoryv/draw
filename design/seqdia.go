@@ -20,7 +20,7 @@ func NewSequenceDiagram() *SequenceDiagram {
 
 // SequenceDiagram defines columns and links between columns.
 type SequenceDiagram struct {
-	Diagram
+	*Diagram
 	ColWidth int
 	VMargin  int // top margin for each horizontal lane
 
