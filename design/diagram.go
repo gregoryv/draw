@@ -33,7 +33,9 @@ func (d *Diagram) Place(s ...shape.Shape) *shape.Adjuster {
 		d.applyStyle(s)
 		d.Append(s)
 	}
-	return shape.NewAdjuster(s...)
+	adj := shape.NewAdjuster(s...)
+	adj.Spacing = d.Style.Spacing
+	return adj
 }
 
 // PlaceGrid place all the shapes into a grid starting at X,Y

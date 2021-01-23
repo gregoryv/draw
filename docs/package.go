@@ -186,7 +186,7 @@ func AllShapes() *design.Diagram {
 	add("State", shape.NewState("active"))
 	add("Triangle", shape.NewTriangle())
 
-	return &d
+	return d
 }
 
 // LoadFile returns a pre web element wrapping the contents from the

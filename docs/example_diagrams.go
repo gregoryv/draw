@@ -59,7 +59,7 @@ multilines`)
 	d.Place(srv).Below(comp)
 	d.VAlignCenter(comp, srv)
 	d.Link(srv, comp, "")
-	return &d
+	return d
 }
 
 func ExampleActivityDiagram() *design.ActivityDiagram {
