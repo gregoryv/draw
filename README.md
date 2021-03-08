@@ -10,3 +10,5 @@
 - Diagrams: [Sequence](design/#sequence-diagram), [Activity](design/#activity-diagram), [Class](design/#class-diagram) and [more...](design/#generic-diagram)
 
 ![](overview.svg)
+
+<a href="https://www.buymeacoffee.com/gregoryv" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
