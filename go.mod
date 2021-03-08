@@ -1,6 +1,6 @@
 module github.com/gregoryv/draw
 
-go 1.12
+go 1.16
 
 require (
 	github.com/gregoryv/asserter v0.4.0
