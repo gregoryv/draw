@@ -14,6 +14,7 @@ import (
 
 func TestSaveShapes(t *testing.T) {
 	shapes := []Shape{
+		NewDiamond(),
 		NewComponent("a"),
 		NewRect("rect"),
 		NewTriangle(),
