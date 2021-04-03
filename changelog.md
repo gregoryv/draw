@@ -6,7 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
-- Adjuster respects diagram style.Spacing 
+- Add labeled hexagon shape
+- Fix label alignment
+- Adjuster respects diagram style.Spacing
 - NewDiagram returns a pointer to diagram
 - Diagram variations embed reference to diagram
 
