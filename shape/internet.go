@@ -39,10 +39,10 @@ func (r *Internet) title() *Label {
 		Text:  r.Title,
 		class: "internet-title",
 	}
+	label.Font.LineHeight = DefaultFont.Height
 	align := Aligner{}
 	align.VAlignCenter(&r.Circle, label)
 	align.HAlignCenter(&r.Circle, label)
-	Move(label, 0, -18) // todo above HAlignCenter is broken
 	return label
 }
 

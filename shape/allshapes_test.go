@@ -34,6 +34,8 @@ func Test_write_allshapes(t *testing.T) {
 	add("Diamond", NewDiamond())
 	add("Dot", NewDot())
 	add("ExitDot", NewExitDot())
+
+	add("Hexagon", NewHexagon("Hexagon", 80, 40, 20))
 	add("Internet", NewInternet())
 	add("Label", NewLabel("label-text"))
 	Move(last, 0, -18) // todo labels do not align properly

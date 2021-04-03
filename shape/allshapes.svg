@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="209" height="1253">
+  font-family="Arial,Helvetica,sans-serif" width="209" height="1329">
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="36">Actor</text>
 <circle stroke="black" stroke-width="2" fill="#ffffff" cx="158" cy="25" r="5" />
 <path stroke="black" stroke-width="2" fill="#ffffff" d="M158,30 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
@@ -29,28 +29,31 @@
 <circle stroke="black" cx="158" cy="560" r="6" />\n
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="644">ExitDot</text>
 <circle stroke="black" stroke-width="2" fill="#ffffff" cx="158" cy="636" r="10" />\n<circle stroke="black" cx="158" cy="636" r="6" />\n
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="720">Internet</text>
-<circle stroke="#d3d3d3" fill="#e2e2e2" cx="158" cy="712" r="40" />\n
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="137" y="718">Internet</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="796">Label</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="794">label-text</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="872">Line</text>
-<line stroke="black" x1="128" y1="864" x2="188" y2="864"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="948">Note</text>
-<path stroke="#d3d3d3" fill="#ffffcc" d="M109,920 v 41 h 99 v -31 l -10,-10 L 109,920 M208,930 h -10 v -10"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="119" y="936">This describes</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="119" y="952">something...</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="720">Hexagon</text>
+<path stroke="#d3d3d3" fill="#ffffff" d="M138,692 l 40,0 20,20 -20,20 -40,0 -20,-20 20,-20" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="716">Hexagon</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="796">Internet</text>
+<circle stroke="#d3d3d3" fill="#e2e2e2" cx="158" cy="788" r="40" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="137" y="794">Internet</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="872">Label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="854">label-text</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="948">Line</text>
+<line stroke="black" x1="128" y1="940" x2="188" y2="940"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1024">Note</text>
+<path stroke="#d3d3d3" fill="#ffffcc" d="M109,996 v 41 h 99 v -31 l -10,-10 L 109,996 M208,1006 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="119" y="1012">This describes</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="119" y="1028">something...</text>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1024">Record</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="127" y="979" width="63" height="74"/>
-<line stroke="#d3d3d3" x1="127" y1="1005" x2="190" y2="1005"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1021">fields</text>
-<line stroke="#d3d3d3" x1="127" y1="1027" x2="190" y2="1027"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1043">methods</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="995">record</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1100">Rect</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="120" y="1079" width="77" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="126" y="1097">a rectangle</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1176">State</text>
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="134" y="1155" width="48" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="140" y="1173">active</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1252">Triangle</text>
-<path stroke="black" d="M154,1242 l-8,-4 l 0,8 Z" /></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1100">Record</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="127" y="1055" width="63" height="74"/>
+<line stroke="#d3d3d3" x1="127" y1="1081" x2="190" y2="1081"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1097">fields</text>
+<line stroke="#d3d3d3" x1="127" y1="1103" x2="190" y2="1103"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1119">methods</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1071">record</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1176">Rect</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="120" y="1155" width="77" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="126" y="1173">a rectangle</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1252">State</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="134" y="1231" width="48" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="140" y="1249">active</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1328">Triangle</text>
+<path stroke="black" d="M154,1318 l-8,-4 l 0,8 Z" /></svg>

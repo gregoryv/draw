@@ -14,6 +14,7 @@ import (
 
 func TestSaveShapes(t *testing.T) {
 	shapes := []Shape{
+		NewHexagon("hexagon", 80, 50, 20),
 		NewDiamond(),
 		NewComponent("a"),
 		NewRect("rect"),
@@ -50,6 +51,7 @@ func TestShapes(t *testing.T) {
 	r.Fields = []string{"bb", "ccc"}
 	r.Methods = []string{"dddd", "eeeee"}
 	shapes := []Shape{
+		NewHexagon("hexagon", 80, 50, 20),
 		NewComponent("a"),
 		NewRect("rect"),
 		NewTriangle(),
