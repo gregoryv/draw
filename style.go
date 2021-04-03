@@ -93,6 +93,7 @@ var DefaultClassAttributes = ClassAttributes{
 	"aggregate-arrow-head":  `stroke="black" fill="#ffffff"`,
 	"aggregate-arrow-tail":  `stroke="black" fill="#ffffff"`,
 	"external":              `stroke="#d3d3d3" fill="#e2e2e2"`,
+	"dim":                   `stroke="#d3d3d3" fill="#e2e2e2"`,
 	"hexagon":               `stroke="#d3d3d3" fill="#ffffff"`,
 	"hexagon-title":         `font-family="Arial,Helvetica,sans-serif"`,
 	"internet":              `stroke="#d3d3d3" fill="#e2e2e2"`,
