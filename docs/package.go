@@ -173,7 +173,6 @@ func AllShapes() *design.Diagram {
 	add("ExitDot", shape.NewExitDot())
 	add("Internet", shape.NewInternet())
 	add("Label", shape.NewLabel("label-text"))
-	shape.Move(last, 0, -18) // todo labels do not align properly
 	add("Line", shape.NewLine(240, 0, 300, 0))
 	add("Note", shape.NewNote("This describes\nsomething..."))
 

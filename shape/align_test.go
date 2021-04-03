@@ -88,8 +88,8 @@ func TestAlignHorizontal(t *testing.T) {
 	}{
 		{
 			aligner.HAlignTop,
-			&Label{x: 10, y: 10},
-			&Label{x: 50, y: 40},
+			&Label{Font: DefaultFont, x: 10, y: 10},
+			&Label{Font: DefaultFont, x: 50, y: 40},
 			50, 10,
 		},
 		{
@@ -100,8 +100,8 @@ func TestAlignHorizontal(t *testing.T) {
 		},
 		{
 			aligner.HAlignCenter,
-			&Label{x: 10, y: 10},
-			&Label{x: 50, y: 40},
+			&Label{Font: DefaultFont, x: 10, y: 10},
+			&Label{Font: DefaultFont, x: 50, y: 40},
 			50, 10,
 		},
 		{
