@@ -8,14 +8,6 @@ import (
 	"github.com/gregoryv/draw/shape"
 )
 
-type ClassDiagram struct {
-	*Diagram
-
-	interfaces []VRecord
-	structs    []VRecord
-	slices     []VRecord
-}
-
 // NewClassDiagram returns a diagram representing structs and
 // interfaces.  Relations are reflected from the types and drawn as
 // arrows.
@@ -26,6 +18,14 @@ func NewClassDiagram() *ClassDiagram {
 		structs:    make([]VRecord, 0),
 		slices:     make([]VRecord, 0),
 	}
+}
+
+type ClassDiagram struct {
+	*Diagram
+
+	interfaces []VRecord
+	structs    []VRecord
+	slices     []VRecord
 }
 
 func (d *ClassDiagram) Interface(obj interface{}) VRecord {
