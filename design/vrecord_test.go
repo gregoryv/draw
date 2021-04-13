@@ -23,13 +23,13 @@ func Test_NewVRecord_types(t *testing.T) {
 	ok((*io.Reader)(nil), "io.Reader interface")
 }
 
-func TestVRecord(t *testing.T) {
+func TestVRecord_TitleOnly_hides_fields(t *testing.T) {
 	r := NewVRecord(VRecord{})
 	before := len(r.Fields)
 	r.TitleOnly()
 	got := len(r.Fields)
 	assert := asserter.New(t)
-	assert(got != before).Error("Did not hide fields")
+	assert(got != before).Fail()
 }
 
 func mustCatchPanic(t asserter.T) {
