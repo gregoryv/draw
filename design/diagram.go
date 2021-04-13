@@ -39,7 +39,7 @@ func (d *Diagram) Place(s ...shape.Shape) *shape.Adjuster {
 }
 
 // PlaceGrid place all the shapes into a grid starting at X,Y
-// position. Row height is adapted to heighest element.
+// position. Row height is adapted to highest element.
 func (d *Diagram) PlaceGrid(cols, X, Y int, s ...shape.Shape) {
 	row := make([]shape.Shape, cols)
 	var x, y int
