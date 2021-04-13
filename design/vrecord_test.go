@@ -40,15 +40,13 @@ func mustCatchPanic(t asserter.T) {
 	}
 }
 
-type C struct{}
-
 func TestVRecord_ComposedOf(t *testing.T) {
 	ok := func(a, b interface{}) {
 		t.Helper()
 		A := NewVRecord(a)
 		B := NewVRecord(b)
 		if !A.ComposedOf(B) {
-			t.Fail()
+			t.Errorf("%v composes %v", A, B)
 		}
 	}
 	ok(struct{ c C }{}, C{})
@@ -58,7 +56,7 @@ func TestVRecord_ComposedOf(t *testing.T) {
 		A := NewVRecord(a)
 		B := NewVRecord(b)
 		if A.ComposedOf(B) {
-			t.Fail()
+			t.Errorf("%v doesn't compose %v", A, B)
 		}
 	}
 	bad(struct{ c *C }{}, C{})
@@ -70,18 +68,23 @@ func TestVRecord_Aggregates(t *testing.T) {
 		A := NewVRecord(a)
 		B := NewVRecord(b)
 		if !A.Aggregates(B) {
-			t.Fail()
+			t.Errorf("%v aggregates of %v", A, B)
 		}
 	}
 	ok(struct{ c *C }{}, C{})
+	ok(struct{ c []*C }{}, C{})
+	ok(struct{ c *MySlice }{}, MySlice{})
 
 	bad := func(a, b interface{}) {
 		t.Helper()
 		A := NewVRecord(a)
 		B := NewVRecord(b)
 		if A.Aggregates(B) {
-			t.Fail()
+			t.Errorf("%v doesn't aggregate %v", A, B)
 		}
 	}
 	bad(struct{ c C }{}, C{})
 }
+
+type C struct{}
+type MySlice []C

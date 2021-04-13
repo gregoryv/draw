@@ -76,7 +76,7 @@ func exampleClassDiagram() *ClassDiagram {
 
 func TestClassDiagram_OtherType(t *testing.T) {
 	newClassDiagram().SaveAs("testdata/classdia_test.svg")
-	data := newClassDiagram().String()
+	data := newClassDiagram().Inline()
 	ioutil.WriteFile("testdata/classdia_inlined.svg", []byte(data), 0644)
 }
 
@@ -99,11 +99,14 @@ func newClassDiagram() *ClassDiagram {
 		d        = NewClassDiagram()
 		car      = d.Struct(Car{})
 		wheel    = d.Slice(make(Wheels, 4))
+		speakers = d.Slice(make(Speakers, 0))
+		speaker  = d.Struct(Speaker{})
 		stringer = d.Interface((*fmt.Stringer)(nil))
 		driver   = d.Struct(Driver{})
 	)
 	d.Place(car).At(10, 10)
 	d.Place(wheel).Below(car)
+	d.Place(speakers, speaker).RightOf(car)
 	d.Place(stringer).RightOf(wheel)
 	d.Place(driver).Below(stringer, 100)
 	d.Link(stringer, driver, "labeled")
@@ -113,6 +116,7 @@ func newClassDiagram() *ClassDiagram {
 type Car struct {
 	Model string
 	Wheels
+	*Speakers
 }
 
 // String
@@ -133,3 +137,7 @@ func (me Wheels) Count() int { return len(me) }
 func (me *Wheel) String() string { return me.Make }
 
 type Driver struct{}
+
+type Speakers []Speaker
+
+type Speaker struct{}

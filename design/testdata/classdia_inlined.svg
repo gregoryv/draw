@@ -1,30 +1,39 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  class="root" width="294" height="341">
-<path class="compose-arrow" d="M68,132 L70,162" />
-<g transform="rotate(86 68 132)"><path class="compose-arrow-tail" d="M68,132 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(86 70 162)"><path class="compose-arrow-head" d="M70,162 l-8,-4 l 0,8 Z" /></g>
+  font-family="Arial,Helvetica,sans-serif" width="449" height="357">
+<path stroke="black" d="M118,58 L180,36" />
+<g transform="rotate(-19 118 58)"><path stroke="black" fill="#ffffff" d="M118,58 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(-19 180 36)"><path stroke="black" fill="#ffffff" d="M180,36 l-8,-4 l 0,8 Z" /></g>
 
-<path class="implements-arrow" d="M118,109 L192,162" />
-<g transform="rotate(35 192 162)"><path class="implements-arrow-head" d="M192,162 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" d="M68,148 L70,178" />
+<g transform="rotate(86 68 148)"><path stroke="black" fill="#777777" d="M68,148 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(86 70 178)"><path stroke="black" fill="#ffffff" d="M70,178 l-8,-4 l 0,8 Z" /></g>
 
-<rect class="record" x="10" y="10" width="108" height="122"/>
-<line class="record-line" x1="10" y1="36" x2="118" y2="36"/><text class="field" font-size="12px" x="16" y="52">Model</text>
-<text class="field" font-size="12px" x="16" y="68">Wheels</text>
-<line class="record-line" x1="10" y1="74" x2="118" y2="74"/><text class="method" font-size="12px" x="16" y="90">Count()</text>
-<text class="method" font-size="12px" x="16" y="106">Running()</text>
-<text class="method" font-size="12px" x="16" y="122">String()</text>
-<text class="record-title" font-size="12px" x="16" y="26">design.Car struct</text>
-<rect class="record" x="10" y="162" width="125" height="52"/>
-<line class="record-line" x1="10" y1="188" x2="135" y2="188"/><text class="method" font-size="12px" x="16" y="204">Count()</text>
-<text class="record-title" font-size="12px" x="16" y="178">design.Wheels slice</text>
-<rect class="record" x="165" y="162" width="128" height="52"/>
-<line class="record-line" x1="165" y1="188" x2="293" y2="188"/><text class="method" font-size="12px" x="171" y="204">String()</text>
-<text class="record-title" font-size="12px" x="171" y="178">fmt.Stringer interface</text>
-<rect class="record" x="165" y="314" width="121" height="26"/>
-<text class="record-title" font-size="12px" x="171" y="330">design.Driver struct</text>
-<path class="arrow" d="M228,214 L225,314" />
-<g transform="rotate(92 225 314)"><path class="arrow-head" d="M225,314 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M118,120 L194,178" />
+<g transform="rotate(37 194 178)"><path stroke="black" fill="#ffffff" d="M194,178 l-8,-4 l 0,8 Z" /></g>
 
-<text class="label" font-size="12px" x="237" y="268">labeled</text></svg>
+<rect stroke="#d3d3d3" fill="#ffffff" x="10" y="10" width="108" height="138"/>
+<line stroke="#d3d3d3" x1="10" y1="36" x2="118" y2="36"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="52">Model</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="68">Wheels</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="84">Speakers</text>
+<line stroke="#d3d3d3" x1="10" y1="90" x2="118" y2="90"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="106">Count()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="122">Running()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="138">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="26">design.Car struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="10" y="178" width="125" height="52"/>
+<line stroke="#d3d3d3" x1="10" y1="204" x2="135" y2="204"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="220">Count()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="194">design.Wheels slice</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="148" y="10" width="136" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="154" y="26">design.Speakers slice</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="314" y="10" width="134" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="320" y="26">design.Speaker struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="165" y="178" width="128" height="52"/>
+<line stroke="#d3d3d3" x1="165" y1="204" x2="293" y2="204"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="171" y="220">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="171" y="194">fmt.Stringer interface</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="165" y="330" width="121" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="171" y="346">design.Driver struct</text>
+<path stroke="black" d="M228,230 L225,330" />
+<g transform="rotate(92 225 330)"><path stroke="black" fill="#ffffff" d="M225,330 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="237" y="284">labeled</text></svg>
