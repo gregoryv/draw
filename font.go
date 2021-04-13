@@ -7,6 +7,8 @@ type Font struct {
 	charWidths map[rune]float32
 }
 
+// TextWidth returns the width of the given text based on a 12px arial
+// font.
 func (f Font) TextWidth(txt string) int {
 	var width float32
 	for _, r := range txt {
