@@ -99,6 +99,13 @@ func (d *ClassDiagram) compositions() []shape.Shape {
 				arrow.Tail.SetClass("compose-arrow-tail")
 				rel = append(rel, arrow)
 			}
+			if slice.ComposedOf(&struct_) {
+				arrow := shape.NewArrowBetween(slice, struct_)
+				arrow.Tail = shape.NewDiamond()
+				arrow.SetClass("compose-arrow")
+				arrow.Tail.SetClass("compose-arrow-tail")
+				rel = append(rel, arrow)
+			}
 			if struct_.Aggregates(&slice) {
 				arrow := shape.NewArrowBetween(struct_, slice)
 				arrow.Tail = shape.NewDiamond()

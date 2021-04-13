@@ -75,6 +75,9 @@ func (vr *VRecord) Implements(iface *VRecord) bool {
 }
 
 func (vr *VRecord) ComposedOf(d *VRecord) bool {
+	if vr.t.Kind() == reflect.Slice {
+		return vr.t.ConvertibleTo(reflect.SliceOf(d.t))
+	}
 	for i := 0; i < vr.t.NumField(); i++ {
 		field := vr.t.Field(i)
 		if field.Type == d.t || field.Type == reflect.SliceOf(d.t) {

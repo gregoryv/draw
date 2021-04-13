@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Show relations between slices and structs in ClassDiagram
 - Add SequenceDiagram.Skip method for adding a dashed spacing
 - Replace draw.TagWriter with nexus.Printer
 
