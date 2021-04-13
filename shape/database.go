@@ -3,7 +3,7 @@ package shape
 import (
 	"io"
 
-	"github.com/gregoryv/draw"
+	"github.com/gregoryv/nexus"
 )
 
 func NewDatabase(title string) *Database {
@@ -25,7 +25,7 @@ type Database struct {
 }
 
 func (d *Database) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	d.Cylinder.WriteSVG(w)
 
 	l := &Label{

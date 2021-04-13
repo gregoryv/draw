@@ -5,8 +5,8 @@ import (
 	"io"
 	"strings"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
 )
 
 func NewNote(text string) *Note {
@@ -59,7 +59,7 @@ func (n *Note) WriteSVG(out io.Writer) error {
 	w := n.Width()
 	h := n.Height()
 	flap := 10
-	t, err := draw.NewTagWriter(out)
+	t, err := nexus.NewPrinter(out)
 	/*
 	   x,y
 	    +---------------+        -

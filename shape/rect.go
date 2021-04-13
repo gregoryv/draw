@@ -5,8 +5,8 @@ import (
 	"io"
 	"math"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
 )
 
 func NewRect(title string) *Rect {
@@ -42,7 +42,7 @@ func (r *Rect) Direction() Direction { return DirectionRight }
 func (r *Rect) SetClass(c string)    { r.class = c }
 
 func (r *Rect) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.X, r.Y, r.Width(), r.Height())

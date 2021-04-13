@@ -5,8 +5,8 @@ import (
 	"io"
 	"math"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
 )
 
 func NewArrow(x1, y1, x2, y2 int) *Arrow {
@@ -35,7 +35,7 @@ func (a *Arrow) String() string {
 }
 
 func (a *Arrow) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	x1, y1 := a.Start.XY()
 	x2, y2 := a.End.XY()
 	w.Printf(`<path class="%s" d="M%v,%v L%v,%v" />`, a.class, x1, y1, x2, y2)

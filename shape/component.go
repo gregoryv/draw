@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
 )
 
 func NewComponent(title string) *Component {
@@ -43,7 +43,7 @@ func (c *Component) Direction() Direction { return DirectionRight }
 func (c *Component) SetClass(v string)    { c.class = v }
 
 func (c *Component) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		c.class, c.X, c.Y, c.Width(), c.Height())

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
 )
 
 func NewDot() *Dot {
@@ -39,7 +39,7 @@ func (d *Dot) Direction() Direction  { return DirectionRight }
 func (d *Dot) SetClass(class string) { d.class = class }
 
 func (d *Dot) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	x, y := d.Position()
 	x += d.Radius
 	y += d.Radius

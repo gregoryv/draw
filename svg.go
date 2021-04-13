@@ -14,6 +14,8 @@ package draw
 
 import (
 	"io"
+
+	"github.com/gregoryv/nexus"
 )
 
 // NewSVG returns an empty SVG of size 100x100
@@ -31,7 +33,7 @@ type SVG struct {
 }
 
 func (s *SVG) WriteSVG(out io.Writer) error {
-	w, err := NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	w.Printf(`<svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"

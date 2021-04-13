@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/gregoryv/draw"
+	"github.com/gregoryv/nexus"
 )
 
 func NewTriangle() *Triangle {
@@ -31,7 +31,7 @@ func (t *Triangle) Direction() Direction { return DirectionRight }
 func (t *Triangle) SetClass(c string)    { t.class = c }
 
 func (t *Triangle) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	// the path is drawn as if it points straight to the right
 	w.Printf(`<path class="%s" d="M%v,%v l-8,-4 l 0,8 Z" />`,
 		t.class, t.x, t.y)

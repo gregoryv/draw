@@ -3,7 +3,7 @@ package shape
 import (
 	"io"
 
-	"github.com/gregoryv/draw"
+	"github.com/gregoryv/nexus"
 )
 
 func NewInternet() *Internet {
@@ -26,7 +26,7 @@ type Internet struct {
 }
 
 func (r *Internet) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	r.Circle.WriteSVG(w)
 	w.Printf("\n")
 	r.title().WriteSVG(w)

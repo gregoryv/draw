@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
 )
 
 func NewCircle(radius int) *Circle {
@@ -38,7 +38,7 @@ func (c *Circle) Direction() Direction  { return DirectionRight }
 func (c *Circle) SetClass(class string) { c.class = class }
 
 func (c *Circle) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	x, y := c.Position()
 	x += c.Radius
 	y += c.Radius

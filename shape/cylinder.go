@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
 )
 
 func NewCylinder(radius, height int) *Cylinder {
@@ -50,7 +50,7 @@ func (c *Cylinder) ry() float64 {
 }
 
 func (c *Cylinder) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	rx := c.Radius
 	ry := int(c.ry())
 	x, y := c.Position()

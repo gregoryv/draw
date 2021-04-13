@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
 )
 
 func NewDiamond() *Diamond {
@@ -44,7 +44,7 @@ func (d *Diamond) Direction() Direction { return DirectionRight }
 func (d *Diamond) SetClass(c string)    { d.class = c }
 
 func (d *Diamond) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	x, y := d.Position()
 	y += d.height / 2
 	w2 := d.width / 2

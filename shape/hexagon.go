@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
 )
 
 // NewHexagon with a title. Radiusmust be > 0 and is the distance from
@@ -49,7 +49,7 @@ func (r *Hexagon) Direction() Direction { return DirectionRight }
 func (r *Hexagon) SetClass(c string)    { r.class = c }
 
 func (r *Hexagon) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	x, y := r.Position()
 	rad := r.radius
 	hlen := r.width - 2*rad

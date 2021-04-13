@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
 )
 
 // NewActor returns a new actor with a default height.
@@ -34,7 +34,7 @@ func (a *Actor) Direction() Direction  { return DirectionRight }
 func (a *Actor) SetClass(class string) { a.class = class }
 
 func (a *Actor) WriteSVG(out io.Writer) error {
-	w, err := draw.NewTagWriter(out)
+	w, err := nexus.NewPrinter(out)
 	x, y := a.Position()
 	r := a.rad()
 	d := r * 2
