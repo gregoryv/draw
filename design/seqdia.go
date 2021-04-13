@@ -64,6 +64,8 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 	)
 	lines := make([]*shape.Line, len(d.columns))
 	vlines := make(map[string]*shape.Line)
+	// save x values for rendering skip lines
+	columnX := make([]int, len(d.columns))
 	// columns and vertical lines
 	for i, column := range d.columns {
 		label := shape.NewLabel(column)
@@ -75,11 +77,13 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 		firstColumn := i == 0
 		if firstColumn {
 			x += label.Width() / 2
+			columnX = append(columnX, x)
 		}
 		line := shape.NewLine(x, y1, x, y2)
 		line.SetClass("column-line")
 		lines[i] = line
 		x += colWidth
+		columnX = append(columnX, x)
 
 		d.VAlignCenter(lines[i], label)
 		d.Place(lines[i], label)
@@ -117,6 +121,15 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 
 	y := y1 + d.plainHeight()
 	for _, lnk := range d.links {
+		if lnk == skip {
+			for _, x := range columnX {
+				dots := shape.NewLine(x, y, x, y+d.Font.LineHeight*2)
+				dots.SetClass("skip")
+				d.Place(dots)
+			}
+			y += d.plainHeight()
+			continue
+		}
 		fromX := lines[lnk.fromIndex].Start.X
 		toX := lines[lnk.toIndex].Start.X
 		label := shape.NewLabel(lnk.text)

@@ -8,6 +8,10 @@ import (
 	"github.com/gregoryv/draw/internal/app"
 )
 
+func TestExample(t *testing.T) {
+	ExampleSequenceDiagram()
+}
+
 func ExampleSequenceDiagram() {
 	var (
 		d   = design.NewSequenceDiagram()
@@ -22,10 +26,7 @@ func ExampleSequenceDiagram() {
 	d.Link(srv, db, "SELECT").Class = "highlight"
 	d.Link(db, srv, "Rows")
 	d.Link(srv, srv, "Transform to view model").Class = "highlight"
+	d.Skip()
 	d.Link(srv, cli, "Send HTML")
 	d.SaveAs("img/app_sequence_diagram.svg")
-}
-
-func TestExample(t *testing.T) {
-	ExampleSequenceDiagram()
 }

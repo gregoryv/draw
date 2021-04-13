@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Add SequenceDiagram.Skip method for adding a dashed spacing
 - Replace draw.TagWriter with nexus.Printer
 
 ## [0.19.0] 2021-04-05

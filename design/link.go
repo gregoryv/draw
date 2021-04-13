@@ -32,9 +32,16 @@ func (d *SequenceDiagram) Link(from, to, text string) *Link {
 	return lnk
 }
 
+// Skip adds dotted distance on all columns
+func (d *SequenceDiagram) Skip() {
+	d.links = append(d.links, skip)
+}
+
 func (d *SequenceDiagram) ClearLinks() {
 	d.links = make([]*Link, 0)
 }
+
+var skip *Link = &Link{}
 
 // Link represents an arrow in a sequence diagram
 type Link struct {
