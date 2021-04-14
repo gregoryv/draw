@@ -15,11 +15,7 @@ func TestArrow(t *testing.T) {
 }
 
 func TestOneArrow(t *testing.T) {
-	it := &OneArrow{
-		T:      t,
-		assert: asserter.New(t),
-		Arrow:  NewArrow(50, 50, 50, 50),
-	}
+	it := NewOneArrow(t)
 	it.CanPointUpAndRight()
 	it.CanPointUpAndLeft()
 	it.CanPointDownAndLeft()
@@ -38,10 +34,14 @@ func TestOneArrow(t *testing.T) {
 	it.IsVisible()
 }
 
+func NewOneArrow(t *testing.T) *OneArrow {
+	return &OneArrow{t, NewArrow(50, 50, 50, 50), asserter.New(t)}
+}
+
 type OneArrow struct {
 	*testing.T
-	assert
 	*Arrow
+	assert
 }
 
 type assert = asserter.AssertFunc
