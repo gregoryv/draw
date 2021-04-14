@@ -27,7 +27,7 @@ func Test_OnePoint(t *testing.T) {
 	it.IsNotLeftOf(q)
 	it.IsNotRightOf(q)
 	it.IsNotAbove(q)
-	it.is_not_below(q)
+	it.IsNotBelow(q)
 	it.is_same_as(q)
 	it.has_quick_access_to_coordinates()
 	it.is_stringable()
@@ -66,7 +66,7 @@ func (t OnePoint) IsNotAbove(q Point) {
 	}
 }
 
-func (t OnePoint) is_not_below(q Point) {
+func (t OnePoint) IsNotBelow(q Point) {
 	t.Helper()
 	if t.Below(q) {
 		t.Errorf("%v should not be below %v", t.Point, q)
