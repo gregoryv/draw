@@ -14,30 +14,30 @@ func TestAdjusterAt(t *testing.T) {
 	it.can_position_shapes()
 }
 
-func new_one_adjuster(t *testing.T) *one_adjuster {
-	return &one_adjuster{t, NewAdjuster(&Line{})}
+func new_one_adjuster(t *testing.T) *OneAdjuster {
+	return &OneAdjuster{t, NewAdjuster(&Line{})}
 }
 
-type one_adjuster struct {
+type OneAdjuster struct {
 	*testing.T
 	*Adjuster
 }
 
-func (t *one_adjuster) has_default_spacing() {
+func (t *OneAdjuster) has_default_spacing() {
 	s := t.space([]int{})
 	if s != t.Spacing {
 		t.Error("No default spacing")
 	}
 }
 
-func (t *one_adjuster) takes_optional_spacing() {
+func (t *OneAdjuster) takes_optional_spacing() {
 	s := t.space([]int{1})
 	if s != 1 {
 		t.Error("no optional spacing")
 	}
 }
 
-func (t *one_adjuster) can_position_shapes() {
+func (t *OneAdjuster) can_position_shapes() {
 	t.At(1, 1)
 	s := t.shapes[0]
 	x, y := s.Position()
