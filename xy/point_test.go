@@ -1,6 +1,7 @@
 package xy
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -22,7 +23,7 @@ func TestPoint_Distance(t *testing.T) {
 }
 
 func Test_OnePoint(t *testing.T) {
-	it := OnePoint{t, Point{10, 10}}
+	it := OnePoint{t, &Point{10, 10}}
 	q := Point{10, 10}
 	it.IsNotLeftOf(q)
 	it.IsNotRightOf(q)
@@ -30,12 +31,12 @@ func Test_OnePoint(t *testing.T) {
 	it.IsNotBelow(q)
 	it.IsEqualTo(q)
 	it.HasQuickAccessToCoordinates()
-	it.is_stringable()
+	it.ImplementsStringer()
 }
 
 type OnePoint struct {
 	*testing.T
-	Point
+	*Point
 }
 
 func (t OnePoint) is_left_of(q Point) {
@@ -88,10 +89,6 @@ func (t OnePoint) HasQuickAccessToCoordinates() {
 	}
 }
 
-func (t OnePoint) is_stringable() {
-	t.Helper()
-	str := t.String()
-	if str == "" {
-		t.Errorf("%v is not stringable", t.Point)
-	}
+func (t OnePoint) ImplementsStringer() {
+	_ = fmt.Stringer(t.Point)
 }
