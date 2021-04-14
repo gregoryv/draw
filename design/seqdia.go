@@ -123,7 +123,7 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 	for _, lnk := range d.links {
 		if lnk == skip {
 			for _, x := range columnX {
-				dots := shape.NewLine(x, y, x, y+d.Font.LineHeight*2)
+				dots := shape.NewLine(x, y, x, y+d.Font.LineHeight)
 				dots.SetClass("skip")
 				d.Place(dots)
 			}
