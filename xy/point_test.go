@@ -29,7 +29,7 @@ func Test_OnePoint(t *testing.T) {
 	it.IsNotAbove(q)
 	it.IsNotBelow(q)
 	it.IsEqualTo(q)
-	it.has_quick_access_to_coordinates()
+	it.HasQuickAccessToCoordinates()
 	it.is_stringable()
 }
 
@@ -80,7 +80,7 @@ func (t OnePoint) IsEqualTo(q Point) {
 	}
 }
 
-func (t OnePoint) has_quick_access_to_coordinates() {
+func (t OnePoint) HasQuickAccessToCoordinates() {
 	t.Helper()
 	x, y := t.XY()
 	if x != t.X || y != t.Y {
