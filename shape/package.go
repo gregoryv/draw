@@ -33,7 +33,7 @@ func intAbs(v int) int {
 type Edge interface {
 	// Edge returns the intersecting position to a shape from start
 	// position.
-	Edge(start xy.Position) xy.Position
+	Edge(start xy.Point) xy.Point
 }
 
 type HasFont interface {

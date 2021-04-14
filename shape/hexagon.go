@@ -93,6 +93,6 @@ func (r *Hexagon) SetHeight(h int)        { r.height = h }
 
 // Edge returns intersecting position of a line starting at start and
 // pointing to the rect center.
-func (r *Hexagon) Edge(start xy.Position) xy.Position {
+func (r *Hexagon) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, r)
 }

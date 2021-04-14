@@ -9,15 +9,15 @@ import (
 
 func NewLine(x1, y1 int, x2, y2 int) *Line {
 	return &Line{
-		Start: xy.Position{x1, y1},
-		End:   xy.Position{x2, y2},
+		Start: xy.Point{x1, y1},
+		End:   xy.Point{x2, y2},
 		class: "line",
 	}
 }
 
 type Line struct {
-	Start xy.Position
-	End   xy.Position
+	Start xy.Point
+	End   xy.Point
 
 	class string
 }

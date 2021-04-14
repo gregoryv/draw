@@ -144,7 +144,7 @@ func testShape(t *testing.T, shape Shape) {
 			// t.Errorf("%T", shape)
 			return
 		}
-		s.Edge(xy.Position{0, 0})
+		s.Edge(xy.Point{0, 0})
 	})
 
 	t.Run("Is resizable", func(t *testing.T) {

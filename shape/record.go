@@ -158,6 +158,6 @@ func (r *Record) Width() int {
 
 // Edge returns intersecting position of a line starting at start and
 // pointing to the records center.
-func (r *Record) Edge(start xy.Position) xy.Position {
+func (r *Record) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, r)
 }

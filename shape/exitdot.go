@@ -54,6 +54,6 @@ func (e *ExitDot) WriteSVG(out io.Writer) error {
 	return *err
 }
 
-func (e *ExitDot) Edge(start xy.Position) xy.Position {
+func (e *ExitDot) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, e)
 }

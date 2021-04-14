@@ -72,6 +72,6 @@ func (c *Cylinder) WriteSVG(out io.Writer) error {
 	return *err
 }
 
-func (c *Cylinder) Edge(start xy.Position) xy.Position {
+func (c *Cylinder) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, c)
 }

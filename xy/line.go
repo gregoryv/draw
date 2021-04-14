@@ -4,22 +4,22 @@ import "fmt"
 
 func NewLine(x1, y1, x2, y2 int) *Line {
 	return &Line{
-		Position{x1, y1},
-		Position{x2, y2},
+		Point{x1, y1},
+		Point{x2, y2},
 	}
 }
 
 type Line struct {
-	Start, End Position
+	Start, End Point
 }
 
 func (l1 *Line) String() string {
 	return fmt.Sprint(l1.Start, " -- ", l1.End)
 }
 
-// Intersect returns the position if two lines intersect.
+// Intersect returns the Point if two lines intersect.
 // https://en.wikipedia.org/wiki/Line-line_intersection
-func (l1 *Line) Intersect(l2 *Line) (Position, error) {
+func (l1 *Line) Intersect(l2 *Line) (Point, error) {
 	x1, y1 := l1.Start.XYfloat64()
 	x2, y2 := l1.End.XYfloat64()
 	x3, y3 := l2.Start.XYfloat64()
@@ -32,7 +32,7 @@ func (l1 *Line) Intersect(l2 *Line) (Position, error) {
 	un := (x1-x2)*(y1-y3) - (y1-y2)*(x1-x3)
 	u := -1 * (un / d)
 
-	P := Position{}
+	P := Point{}
 	switch {
 	case 0.0 <= t && t <= 1.0:
 		P.X = int(x1 + t*(x2-x1))
@@ -47,9 +47,9 @@ func (l1 *Line) Intersect(l2 *Line) (Position, error) {
 	return P, nil
 }
 
-// IntersectSegment returns position where lines intersect.
+// IntersectSegment returns Point where lines intersect.
 // http://geomalgorithms.com/a05-_intersect-1.html#intersect2D_2Segments()
-func (l1 *Line) IntersectSegment(l2 *Line) (Position, error) {
+func (l1 *Line) IntersectSegment(l2 *Line) (Point, error) {
 	p, err := l1.Intersect(l2)
 	if err != nil {
 		return p, err
@@ -60,7 +60,7 @@ func (l1 *Line) IntersectSegment(l2 *Line) (Position, error) {
 	return p, nil
 }
 
-func (l *Line) Contains(p Position) bool {
+func (l *Line) Contains(p Point) bool {
 	if l.Start.X != l.End.X { // not vertical
 		switch {
 		case l.Start.X <= p.X && p.X <= l.End.X:

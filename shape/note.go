@@ -82,6 +82,6 @@ func (n *Note) WriteSVG(out io.Writer) error {
 	return *err
 }
 
-func (n *Note) Edge(start xy.Position) xy.Position {
+func (n *Note) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, n)
 }

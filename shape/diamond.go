@@ -55,6 +55,6 @@ func (d *Diamond) WriteSVG(out io.Writer) error {
 	return *err
 }
 
-func (d *Diamond) Edge(start xy.Position) xy.Position {
+func (d *Diamond) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, d)
 }

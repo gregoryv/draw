@@ -28,7 +28,7 @@ type Label struct {
 }
 
 func (l *Label) String() string {
-	return fmt.Sprintf("label %s at %v", l.Text, &xy.Position{X: l.x, Y: l.y})
+	return fmt.Sprintf("label %s at %v", l.Text, &xy.Point{X: l.x, Y: l.y})
 }
 
 func (l *Label) Position() (int, int) {
@@ -54,6 +54,6 @@ func (l *Label) WriteSVG(w io.Writer) error {
 	return err
 }
 
-func (l *Label) Edge(start xy.Position) xy.Position {
+func (l *Label) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, l)
 }

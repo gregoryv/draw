@@ -15,16 +15,16 @@ func NewArrow(x1, y1, x2, y2 int) *Arrow {
 	head.SetY(y2)
 	head.SetClass("arrow-head")
 	return &Arrow{
-		Start: xy.Position{x1, y1},
-		End:   xy.Position{x2, y2},
+		Start: xy.Point{x1, y1},
+		End:   xy.Point{x2, y2},
 		Head:  head,
 		class: "arrow",
 	}
 }
 
 type Arrow struct {
-	Start xy.Position
-	End   xy.Position
+	Start xy.Point
+	End   xy.Point
 	Tail  Shape
 	Head  Shape
 	class string
@@ -151,7 +151,7 @@ func (a *Arrow) DirQ4() bool {
 	return start.LeftOf(end) && end.Above(start)
 }
 
-func (a *Arrow) endpoints() (xy.Position, xy.Position) {
+func (a *Arrow) endpoints() (xy.Point, xy.Point) {
 	return a.Start, a.End
 }
 

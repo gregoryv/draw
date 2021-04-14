@@ -49,6 +49,6 @@ func (c *Circle) WriteSVG(out io.Writer) error {
 	return *err
 }
 
-func (c *Circle) Edge(start xy.Position) xy.Position {
+func (c *Circle) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, c)
 }

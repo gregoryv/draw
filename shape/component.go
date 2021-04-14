@@ -83,6 +83,6 @@ func (c *Component) Width() int {
 
 // Edge returns intersecting position of a line starting at start and
 // pointing to the components center.
-func (c *Component) Edge(start xy.Position) xy.Position {
+func (c *Component) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, c)
 }

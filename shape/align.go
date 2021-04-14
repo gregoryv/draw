@@ -69,7 +69,7 @@ const (
 	Center
 )
 
-func NewDirection(from, to xy.Position) Direction {
+func NewDirection(from, to xy.Point) Direction {
 	switch {
 	case from.LeftOf(to) && from.Y == to.Y:
 		return DirectionRight

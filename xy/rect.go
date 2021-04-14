@@ -1,6 +1,6 @@
 package xy
 
 type Rect struct {
-	TopLeft     Position
-	BottomRight Position
+	TopLeft     Point
+	BottomRight Point
 }

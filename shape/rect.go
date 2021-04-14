@@ -83,7 +83,7 @@ func (r *Rect) SetHeight(h int) { r.height = h }
 
 // Edge returns intersecting position of a line starting at start and
 // pointing to the rect center.
-func (r *Rect) Edge(start xy.Position) xy.Position {
+func (r *Rect) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, r)
 }
 
@@ -93,9 +93,9 @@ type Box interface {
 	Height() int
 }
 
-func boxEdge(start xy.Position, r Box) xy.Position {
+func boxEdge(start xy.Point, r Box) xy.Point {
 	x, y := r.Position()
-	center := xy.Position{
+	center := xy.Point{
 		x + r.Width()/2,
 		y + r.Height()/2,
 	}
@@ -103,7 +103,7 @@ func boxEdge(start xy.Position, r Box) xy.Position {
 
 	var (
 		d      float64 = math.MaxFloat64
-		pos    xy.Position
+		pos    xy.Point
 		lowY   = y + r.Height()
 		rightX = x + r.Width()
 		top    = xy.NewLine(x, y, rightX, y)

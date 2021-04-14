@@ -51,6 +51,6 @@ func (a *Actor) WriteSVG(out io.Writer) error {
 	return *err
 }
 
-func (a *Actor) Edge(start xy.Position) xy.Position {
+func (a *Actor) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, a)
 }
