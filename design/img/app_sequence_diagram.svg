@@ -32,13 +32,13 @@
 <g transform="rotate(180 228 188)"><path stroke="red" fill="#ffffff" d="M228,188 l-8,-4 l 0,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="175">Transform to view model</text>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="0" y1="211" x2="0" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="0" y1="211" x2="0" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="0" y1="211" x2="0" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="38" y1="211" x2="38" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="228" y1="211" x2="228" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="418" y1="211" x2="418" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="608" y1="211" x2="608" y2="227"/>
+<line stroke="#ffffff" stroke-dasharray="6,3,6" x1="0" y1="211" x2="0" y2="227"/>
+<line stroke="#ffffff" stroke-dasharray="6,3,6" x1="0" y1="211" x2="0" y2="227"/>
+<line stroke="#ffffff" stroke-dasharray="6,3,6" x1="0" y1="211" x2="0" y2="227"/>
+<line stroke="#ffffff" stroke-dasharray="6,3,6" x1="38" y1="211" x2="38" y2="227"/>
+<line stroke="#ffffff" stroke-dasharray="6,3,6" x1="228" y1="211" x2="228" y2="227"/>
+<line stroke="#ffffff" stroke-dasharray="6,3,6" x1="418" y1="211" x2="418" y2="227"/>
+<line stroke="#ffffff" stroke-dasharray="6,3,6" x1="608" y1="211" x2="608" y2="227"/>
 <path stroke="black" d="M228,244 L38,244" />
 <g transform="rotate(180 38 244)"><path stroke="black" fill="#ffffff" d="M38,244 l-8,-4 l 0,8 Z" /></g>
 
