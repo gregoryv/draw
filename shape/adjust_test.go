@@ -9,7 +9,7 @@ import (
 func TestAdjusterAt(t *testing.T) {
 	it := NewOneAdjuster(t)
 	it.HasDefaultSpacing()
-	it.takes_optional_spacing()
+	it.TakesOptionalSpacing()
 	it.can_position_shapes()
 }
 
@@ -29,7 +29,7 @@ func (t *OneAdjuster) HasDefaultSpacing() {
 	}
 }
 
-func (t *OneAdjuster) takes_optional_spacing() {
+func (t *OneAdjuster) TakesOptionalSpacing() {
 	s := t.space([]int{1})
 	if s != 1 {
 		t.Error("no optional spacing")
