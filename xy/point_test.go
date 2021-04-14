@@ -28,7 +28,7 @@ func Test_OnePoint(t *testing.T) {
 	it.IsNotRightOf(q)
 	it.IsNotAbove(q)
 	it.IsNotBelow(q)
-	it.is_same_as(q)
+	it.IsEqualTo(q)
 	it.has_quick_access_to_coordinates()
 	it.is_stringable()
 }
@@ -73,7 +73,7 @@ func (t OnePoint) IsNotBelow(q Point) {
 	}
 }
 
-func (t OnePoint) is_same_as(q Point) {
+func (t OnePoint) IsEqualTo(q Point) {
 	t.Helper()
 	if !t.Equals(q) {
 		t.Errorf("%v should be equal to %v", t.Point, q)
