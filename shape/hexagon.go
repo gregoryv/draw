@@ -8,7 +8,7 @@ import (
 	"github.com/gregoryv/nexus"
 )
 
-// NewHexagon with a title. Radiusmust be > 0 and is the distance from
+// NewHexagon with a title. Radius must be > 0 and is the distance from
 // left/right corners to imaginary vertical line.
 func NewHexagon(title string, width, height, radius int) *Hexagon {
 	if radius < 1 {
