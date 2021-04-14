@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Test_OnePoint(t *testing.T) {
+func TestOnePoint(t *testing.T) {
 	it := OnePoint{t, &Point{10, 10}}
 	q := Point{10, 10}
 	it.IsNotLeftOf(q)

@@ -22,6 +22,7 @@ func NewComponent(title string) *Component {
 type Component struct {
 	X, Y  int
 	Title string
+	href  string // optional link
 
 	Font  Font
 	Pad   Padding
@@ -41,6 +42,7 @@ func (c *Component) SetX(x int)           { c.X = x }
 func (c *Component) SetY(y int)           { c.Y = y }
 func (c *Component) Direction() Direction { return DirectionRight }
 func (c *Component) SetClass(v string)    { c.class = v }
+func (c *Component) SetHref(v string)     { c.href = v }
 
 func (c *Component) WriteSVG(out io.Writer) error {
 	w, err := nexus.NewPrinter(out)
@@ -66,6 +68,7 @@ func (c *Component) title() *Label {
 		y:     c.Y + c.Pad.Top/2,
 		Font:  c.Font,
 		Text:  c.Title,
+		href:  c.href,
 		class: c.class + "-title",
 	}
 }

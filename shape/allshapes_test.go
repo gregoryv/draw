@@ -14,7 +14,7 @@ func Test_write_allshapes(t *testing.T) {
 
 	actorLbl, actor := NewLabel("Actor"), NewActor()
 	d.Place(actorLbl).At(20, 20)
-	d.Place(actor).RightOf(actorLbl, vspace+40)
+	d.Place(actor).RightOf(actorLbl, vspace+70)
 
 	var lastLabel, last shape.Shape = actorLbl, actor
 	add := func(txt string, shape Shape) {
@@ -29,6 +29,9 @@ func Test_write_allshapes(t *testing.T) {
 	add("Arrow", NewArrow(240, 0, 300, 0))
 	add("Circle", NewCircle(20))
 	add("Component", NewComponent("Component"))
+	lcomp := NewComponent("Component")
+	lcomp.SetHref("https://gregoryv.github.io/draw")
+	add("Component(linked)", lcomp)
 	add("Cylinder", NewCylinder(30, 40))
 	add("Database", NewDatabase("database"))
 	add("Diamond", NewDiamond())

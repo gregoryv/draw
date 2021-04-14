@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Add Label.SetHref and Component.SetHref
 - Rename type xy.Position to xy.Point
 - Show relations between slices and structs in ClassDiagram
 - Add SequenceDiagram.Skip method for adding a dashed spacing

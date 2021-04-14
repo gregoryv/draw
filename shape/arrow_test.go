@@ -10,10 +10,6 @@ import (
 	"github.com/gregoryv/draw"
 )
 
-func TestArrow(t *testing.T) {
-	testShape(t, NewArrow(0, 0, 50, 50))
-}
-
 func TestOneArrow(t *testing.T) {
 	it := NewOneArrow(t)
 	it.CanPointUpAndRight()
@@ -161,6 +157,26 @@ func (t *OneArrow) IsVisible() {
 	w := t.Width()
 	t.assert(h > 0 || w > 0).Errorf("%v not visible", t.Arrow)
 }
+
+func TestArrow(t *testing.T) {
+	testShape(t, NewArrow(0, 0, 50, 50))
+}
+
+func TestArrow_AbsAngle(t *testing.T) {
+	a := NewArrow(0, 0, 10, 10)
+	got := a.AbsAngle()
+	assert := asserter.New(t)
+	assert().Equals(got, 45)
+}
+
+func TestArrow_Angle(t *testing.T) {
+	a := NewArrow(0, 0, 10, 10)
+	got := a.Angle()
+	assert := asserter.New(t)
+	assert().Equals(got, 45)
+}
+
+// ----------------------------------------
 
 func TestArrowBetweenShapes(t *testing.T) {
 	it := &ArrowBetweenShapes{

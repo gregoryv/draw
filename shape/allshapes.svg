@@ -1,59 +1,62 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="209" height="1329">
+  font-family="Arial,Helvetica,sans-serif" width="239" height="1405">
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="36">Actor</text>
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="158" cy="25" r="5" />
-<path stroke="black" stroke-width="2" fill="#ffffff" d="M158,30 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="188" cy="25" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M188,30 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="112">Arrow</text>
-<path stroke="black" d="M128,104 L188,104" />
-<g transform="rotate(0 188 104)"><path stroke="black" fill="#ffffff" d="M188,104 l-8,-4 l 0,8 Z" /></g>
+<path stroke="black" d="M158,104 L218,104" />
+<g transform="rotate(0 218 104)"><path stroke="black" fill="#ffffff" d="M218,104 l-8,-4 l 0,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="188">Circle</text>
-<circle stroke="#d3d3d3" stroke-width="2" fill="#ffffff" cx="158" cy="180" r="20" />\n
+<circle stroke="#d3d3d3" stroke-width="2" fill="#ffffff" cx="188" cy="180" r="20" />\n
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="264">Component</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="116" y="243" width="85" height="26"/>
-<rect stroke="#d3d3d3" fill="#ffffff" x="111" y="248" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="111" y="259" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="127" y="261">Component</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="340">Cylinder</text>
-<path stroke="#d3d3d3" stroke-width="1" fill="#ffffff" d="M 127 318 L 127 340 C 127 352, 187 352, 187 340 L 187 318" />
-<ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="157" cy="318" rx="30" ry="6" />
+<rect stroke="#d3d3d3" fill="#ffffff" x="146" y="243" width="85" height="26"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="141" y="248" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="141" y="259" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="157" y="261">Component</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="340">Component(linked)</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="146" y="319" width="85" height="26"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="141" y="324" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="141" y="335" width="10" height="5"/><a href="https://gregoryv.github.io/draw"><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="157" y="337">Component</text></a>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="416">Cylinder</text>
+<path stroke="#d3d3d3" stroke-width="1" fill="#ffffff" d="M 157 394 L 157 416 C 157 428, 217 428, 217 416 L 217 394" />
+<ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="187" cy="394" rx="30" ry="6" />
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="416">Database</text>
-<path stroke="#d3d3d3" stroke-width="1" fill="#ffffff" d="M 124 393 L 124 417 C 124 429, 190 429, 190 417 L 190 393" />
-<ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="157" cy="393" rx="33" ry="6" />
-<text class="database-title" font-size="12px" x="130" y="413">database</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="492">Diamond</text>
-<path stroke="#d3d3d3" fill="#333333" d="M152,480 l 6,-4 6,4 -6,4 -6,-4" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="568">Dot</text>
-<circle stroke="black" cx="158" cy="560" r="6" />\n
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="644">ExitDot</text>
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="158" cy="636" r="10" />\n<circle stroke="black" cx="158" cy="636" r="6" />\n
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="720">Hexagon</text>
-<path stroke="#d3d3d3" fill="#ffffff" d="M138,692 l 40,0 20,20 -20,20 -40,0 -20,-20 20,-20" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="716">Hexagon</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="796">Internet</text>
-<circle stroke="#d3d3d3" fill="#e2e2e2" cx="158" cy="788" r="40" />\n
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="137" y="794">Internet</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="872">Label</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="872">label-text</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="948">Line</text>
-<line stroke="black" x1="128" y1="940" x2="188" y2="940"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1024">Note</text>
-<path stroke="#d3d3d3" fill="#ffffcc" d="M109,996 v 41 h 99 v -31 l -10,-10 L 109,996 M208,1006 h -10 v -10"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="119" y="1012">This describes</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="119" y="1028">something...</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="492">Database</text>
+<path stroke="#d3d3d3" stroke-width="1" fill="#ffffff" d="M 154 469 L 154 493 C 154 505, 220 505, 220 493 L 220 469" />
+<ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="187" cy="469" rx="33" ry="6" />
+<text class="database-title" font-size="12px" x="160" y="489">database</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="568">Diamond</text>
+<path stroke="#d3d3d3" fill="#333333" d="M182,556 l 6,-4 6,4 -6,4 -6,-4" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="644">Dot</text>
+<circle stroke="black" cx="188" cy="636" r="6" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="720">ExitDot</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="188" cy="712" r="10" />\n<circle stroke="black" cx="188" cy="712" r="6" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="796">Hexagon</text>
+<path stroke="#d3d3d3" fill="#ffffff" d="M168,768 l 40,0 20,20 -20,20 -40,0 -20,-20 20,-20" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="163" y="792">Hexagon</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="872">Internet</text>
+<circle stroke="#d3d3d3" fill="#e2e2e2" cx="188" cy="864" r="40" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="167" y="870">Internet</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="948">Label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="163" y="948">label-text</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1024">Line</text>
+<line stroke="black" x1="158" y1="1016" x2="218" y2="1016"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1100">Note</text>
+<path stroke="#d3d3d3" fill="#ffffcc" d="M139,1072 v 41 h 99 v -31 l -10,-10 L 139,1072 M238,1082 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="149" y="1088">This describes</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="149" y="1104">something...</text>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1100">Record</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="127" y="1055" width="63" height="74"/>
-<line stroke="#d3d3d3" x1="127" y1="1081" x2="190" y2="1081"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1097">fields</text>
-<line stroke="#d3d3d3" x1="127" y1="1103" x2="190" y2="1103"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1119">methods</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1071">record</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1176">Rect</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="120" y="1155" width="77" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="126" y="1173">a rectangle</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1252">State</text>
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="134" y="1231" width="48" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="140" y="1249">active</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1328">Triangle</text>
-<path stroke="black" d="M154,1318 l-8,-4 l 0,8 Z" /></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1176">Record</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="157" y="1131" width="63" height="74"/>
+<line stroke="#d3d3d3" x1="157" y1="1157" x2="220" y2="1157"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="163" y="1173">fields</text>
+<line stroke="#d3d3d3" x1="157" y1="1179" x2="220" y2="1179"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="163" y="1195">methods</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="163" y="1147">record</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1252">Rect</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="150" y="1231" width="77" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="156" y="1249">a rectangle</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1328">State</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="164" y="1307" width="48" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="170" y="1325">active</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1404">Triangle</text>
+<path stroke="black" d="M184,1394 l-8,-4 l 0,8 Z" /></svg>
