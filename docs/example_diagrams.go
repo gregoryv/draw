@@ -1,10 +1,7 @@
 package docs
 
 import (
-	"database/sql"
-
 	"github.com/gregoryv/draw/design"
-	"github.com/gregoryv/draw/internal/app"
 	"github.com/gregoryv/draw/shape"
 )
 
@@ -59,51 +56,6 @@ multilines`)
 	d.Place(srv).Below(comp)
 	d.VAlignCenter(comp, srv)
 	d.Link(srv, comp, "")
-	return d
-}
-
-func ExampleActivityDiagram() *design.ActivityDiagram {
-	var (
-		d = design.NewActivityDiagram()
-	)
-	d.Start().At(80, 20)
-	d.Then("Push commit")
-	d.Then("Run git hook")
-	dec := d.Decide()
-	d.Then("Deploy", "ok")
-	d.Exit()
-	d.If(dec, "Tests failed", shape.NewExitDot())
-	// manual part
-	var (
-		start = shape.NewDot()
-		push  = shape.NewState("Push tag")
-		hook  = shape.NewState("Run git hook")
-		exit  = shape.NewExitDot()
-	)
-	d.Place(start).At(180, 20)
-	d.Place(push).RightOf(start)
-	d.Place(hook, exit).Below(push)
-	d.HAlignCenter(start, push)
-	d.VAlignCenter(push, hook, exit)
-	d.LinkAll(start, push, hook, exit)
-	return d
-}
-
-func ExampleSequenceDiagram() *design.SequenceDiagram {
-	var (
-		d   = design.NewSequenceDiagram()
-		cli = d.AddStruct(app.Client{})
-		srv = d.AddStruct(app.Server{})
-		db  = d.AddStruct(sql.DB{})
-		sqs = d.Add("aws.SQS")
-	)
-	d.Group(srv, sqs, "Private RPC using Gob encoding", "red")
-	d.Link(cli, srv, "connect()")
-	d.Link(srv, db, "SELECT").Class = "highlight"
-	d.Link(db, srv, "Rows")
-	d.Link(srv, srv, "Transform to view model").Class = "highlight"
-	d.Link(srv, cli, "Send HTML")
-	d.Link(srv, sqs, "Publish event")
 	return d
 }
 

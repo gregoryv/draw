@@ -477,7 +477,41 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 		   left to the API documentation. Relations are automatically
 		   rendererd between entities if there is one.</p>
 <h3 id="activity"><a href="#activity">Activity</a></h3>
-<svg
+<table>
+<tr><td><pre class="srcfile"><code class="go">package docs
+
+import (
+	"github.com/gregoryv/draw/design"
+	"github.com/gregoryv/draw/shape"
+)
+
+func ExampleActivityDiagram() *design.ActivityDiagram {
+	var (
+		d = design.NewActivityDiagram()
+	)
+	d.Start().At(80, 20)
+	d.Then("Push commit")
+	d.Then("Run git hook")
+	dec := d.Decide()
+	d.Then("Deploy", "ok")
+	d.Exit()
+	d.If(dec, "Tests failed", shape.NewExitDot())
+	// manual part
+	var (
+		start = shape.NewDot()
+		push  = shape.NewState("Push tag")
+		hook  = shape.NewState("Run git hook")
+		exit  = shape.NewExitDot()
+	)
+	d.Place(start).At(180, 20)
+	d.Place(push).RightOf(start)
+	d.Place(hook, exit).Below(push)
+	d.HAlignCenter(start, push)
+	d.VAlignCenter(push, hook, exit)
+	d.LinkAll(start, push, hook, exit)
+	return d
+}
+</code></pre></td><td><br/><br/><svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   font-family="Arial,Helvetica,sans-serif" width="298" height="355">
@@ -525,8 +559,44 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 
 <path stroke="black" d="M254,102 L254,132" />
 <g transform="rotate(90 254 132)"><path stroke="black" fill="#ffffff" d="M254,132 l-8,-4 l 0,8 Z" /></g>
-</svg><h3 id="sequence"><a href="#sequence">Sequence</a></h3>
-<svg
+</svg></td></tr>
+</table>
+<h3 id="sequence"><a href="#sequence">Sequence</a></h3>
+<p>Sequence diagrams are ment to describe a sequence of
+		events, specifically calling methods or remote API calls. I've
+		tried to emphasize the horizontal arrows over vertical lines
+		and keep visual effects to a minimum. For now there is only
+		one arrow variation. I found that embedding information by the
+		subtle head variations and arrow line styling is hard to
+		read.</p>
+<table>
+<tr><td><pre class="srcfile"><code class="go">package docs
+
+import (
+	"database/sql"
+
+	"github.com/gregoryv/draw/design"
+	"github.com/gregoryv/draw/internal/app"
+)
+
+func ExampleSequenceDiagram() *design.SequenceDiagram {
+	var (
+		d   = design.NewSequenceDiagram()
+		cli = d.AddStruct(app.Client{})
+		srv = d.AddStruct(app.Server{})
+		db  = d.AddStruct(sql.DB{})
+		sqs = d.Add("aws.SQS")
+	)
+	d.Group(srv, sqs, "Private RPC using Gob encoding", "red")
+	d.Link(cli, srv, "connect()")
+	d.Link(srv, db, "SELECT").Class = "highlight"
+	d.Link(db, srv, "Rows")
+	d.Link(srv, srv, "Transform to view model").Class = "highlight"
+	d.Link(srv, cli, "Send HTML")
+	d.Link(srv, sqs, "Publish event")
+	return d
+}
+</code></pre></td><td><br/><br/><svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   font-family="Arial,Helvetica,sans-serif" width="634" height="298">
@@ -566,7 +636,9 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <path stroke="black" d="M228,244 L608,244" />
 <g transform="rotate(0 608 244)"><path stroke="black" fill="#ffffff" d="M608,244 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="381" y="241">Publish event</text></svg><h3 id="ganttchart"><a href="#ganttchart">Gantt chart</a></h3>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="381" y="241">Publish event</text></svg></td></tr>
+</table>
+<h3 id="ganttchart"><a href="#ganttchart">Gantt chart</a></h3>
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"

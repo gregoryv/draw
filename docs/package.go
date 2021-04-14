@@ -112,10 +112,37 @@ func NewProjectArticle() *Element {
 		   rendererd between entities if there is one.`),
 
 		H3("Activity"),
-		ExampleActivityDiagram().Inline(),
+		Table(
+			Tr(
+				Td(
+					LoadFile("activity_example.go", 1, -1),
+				),
+				Td(Br(), Br(),
+					ExampleActivityDiagram().Inline(),
+				),
+			),
+		),
 
 		H3("Sequence"),
-		ExampleSequenceDiagram().Inline(),
+
+		P(`Sequence diagrams are ment to describe a sequence of
+		events, specifically calling methods or remote API calls. I've
+		tried to emphasize the horizontal arrows over vertical lines
+		and keep visual effects to a minimum. For now there is only
+		one arrow variation. I found that embedding information by the
+		subtle head variations and arrow line styling is hard to
+		read.`),
+
+		Table(
+			Tr(
+				Td(
+					LoadFile("sequence_example.go", 1, -1),
+				),
+				Td(Br(), Br(),
+					ExampleSequenceDiagram().Inline(),
+				),
+			),
+		),
 
 		H3("Gantt chart"),
 		ExampleGanttChart().Inline(),
