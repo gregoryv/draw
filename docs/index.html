@@ -91,7 +91,7 @@ float: left;
 <li class="h2"><a href="#install">Install</a></li>
 <li class="h2"><a href="#apidocumentation">API documentation</a></li>
 <li class="h2"><a href="#about">About</a></li>
-<li class="h2"><a href="#examplesource">Example source</a></li>
+<li class="h2"><a href="#quickstart">Quick start</a></li>
 <li class="h2"><a href="#diagrams">Diagrams</a></li>
 <li class="h3"><a href="#class">Class</a></li>
 <li class="h3"><a href="#activity">Activity</a></li>
@@ -114,7 +114,16 @@ float: left;
 <h2 id="about"><a href="#about">About</a></h2>
 <img src="me_circle.png" class="me"/><p>Written by <a href="https://github.com/gregoryv">Gregory Vin&ccaron;i&cacute;</a><br/><a href="#license">MIT License</a></p>
 </div>
-<br clear="all"/><h2 id="examplesource"><a href="#examplesource">Example source</a></h2>
+<br clear="all"/><h2 id="quickstart"><a href="#quickstart">Quick start</a></h2>
+<p>Each diagram is a Go type specifically designed to provide
+		an easy and intuitive way of "programming" diagrams. Elements
+		are either fixed strings or taken from the source code by
+		using concrete instances of real types. This is what makes
+		refactoring update diagrams aswell.<br/>Once you selected
+		elements to include in your diagram place them out and
+		position them relative to each other. Relative placement has
+		the benefit of adaptive diagrams once you add more methods or
+		fields to your structs.</p>
 <table>
 <tr><td><pre class="srcfile"><code class="go">package docs
 
@@ -139,59 +148,12 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 	d.Place(note).Below(window, 20)
 	d.VAlignLeft(part, note)
 	d.SetCaption("Small example diagram")
-
-	// Output options
-	d.SaveAs("classdiagram.svg") // save to file
-	d.WriteSVG(w)                // write to any writer
-	_ = d.Inline()               // return a string
 	return d
 }
 </code></pre></td><td><br/><br/><svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="499" height="456">
-<path stroke="black" d="M381,96 L328,126" />
-<g transform="rotate(151 381 96)"><path stroke="black" fill="#ffffff" d="M381,96 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(151 328 126)"><path stroke="black" fill="#ffffff" d="M328,126 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" d="M381,62 L311,59" />
-<g transform="rotate(182 381 62)"><path stroke="black" fill="#777777" d="M381,62 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(182 311 59)"><path stroke="black" fill="#ffffff" d="M311,59 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" stroke-dasharray="5,5,5" d="M207,124 L120,72" />
-<g transform="rotate(210 120 72)"><path stroke="black" fill="#ffffff" d="M120,72 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" stroke-dasharray="5,5,5" d="M207,53 L137,49" />
-<g transform="rotate(183 137 49)"><path stroke="black" fill="#ffffff" d="M137,49 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" d="M381,96 L328,126" />
-<g transform="rotate(151 381 96)"><path stroke="black" fill="#ffffff" d="M381,96 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(151 328 126)"><path stroke="black" fill="#ffffff" d="M328,126 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" d="M381,62 L311,59" />
-<g transform="rotate(182 381 62)"><path stroke="black" fill="#777777" d="M381,62 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(182 311 59)"><path stroke="black" fill="#ffffff" d="M311,59 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" stroke-dasharray="5,5,5" d="M207,124 L120,72" />
-<g transform="rotate(210 120 72)"><path stroke="black" fill="#ffffff" d="M120,72 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" stroke-dasharray="5,5,5" d="M207,53 L137,49" />
-<g transform="rotate(183 137 49)"><path stroke="black" fill="#ffffff" d="M137,49 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" d="M381,96 L328,126" />
-<g transform="rotate(151 381 96)"><path stroke="black" fill="#ffffff" d="M381,96 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(151 328 126)"><path stroke="black" fill="#ffffff" d="M328,126 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" d="M381,62 L311,59" />
-<g transform="rotate(182 381 62)"><path stroke="black" fill="#777777" d="M381,62 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(182 311 59)"><path stroke="black" fill="#ffffff" d="M311,59 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" stroke-dasharray="5,5,5" d="M207,124 L120,72" />
-<g transform="rotate(210 120 72)"><path stroke="black" fill="#ffffff" d="M120,72 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" stroke-dasharray="5,5,5" d="M207,53 L137,49" />
-<g transform="rotate(183 137 49)"><path stroke="black" fill="#ffffff" d="M137,49 l-8,-4 l 0,8 Z" /></g>
-
+  font-family="Arial,Helvetica,sans-serif" width="496" height="297">
 <path stroke="black" d="M381,96 L328,126" />
 <g transform="rotate(151 381 96)"><path stroke="black" fill="#ffffff" d="M381,96 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(151 328 126)"><path stroke="black" fill="#ffffff" d="M328,126 l-8,-4 l 0,8 Z" /></g>
@@ -225,11 +187,39 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <path stroke="#d3d3d3" fill="#ffffcc" d="M20,218 v 25 h 221 v -15 l -10,-10 L 20,218 M241,228 h -10 v -10"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="234">Relations are automatically rendered</text>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="449">Small example diagram</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="449">Small example diagram</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="449">Small example diagram</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="184" y="449">Small example diagram</text></svg></td></tr>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="183" y="290">Small example diagram</text></svg></td></tr>
 </table>
+<p>Once a diagram is done, you can render the SVG in different ways</p>
+<ul>
+<li><code>SaveAs(filename)</code></li>
+<li><code>Inline()</code> - returns SVG as string with all classes replaced with styling</li>
+<li><code>WriteSVG(io.Writer)</code></li>
+</ul>
+<p>These pages for instance are generated using the <a href="https://github.com/gregoryv/web">github.com/gregoryv/web</a> package using the Inline()
+		method and looks something like the below code</p>
+<pre class="srcfile"><code class="go">package docs
+
+import . "github.com/gregoryv/web"
+
+func Example_RenderInlinedDiagram() {
+	page := NewPage(
+		Html(
+			Body(
+				H1("An example"),
+				ExampleSmallClassDiagram().Inline(),
+			),
+		),
+	)
+	page.SaveAs("mypage.html")
+}
+</code></pre><p>Styling is currently provided by <code>draw.ClassAttributes</code> and can be changed to some
+			degree. For now font size and family should not be changed
+			as size of shapes will not adapt to the styling
+			values. The idea is however that the default styling
+			should be left alone.</p>
+<p>There are more design diagram types available, take a look
+		and do let me know if you are missing something that could
+		benefit the community.</p>
 <h2 id="diagrams"><a href="#diagrams">Diagrams</a></h2>
 <h3 id="class"><a href="#class">Class</a></h3>
 <p>In class diagrams the author wants to convey design

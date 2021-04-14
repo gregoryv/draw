@@ -21,10 +21,5 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 	d.Place(note).Below(window, 20)
 	d.VAlignLeft(part, note)
 	d.SetCaption("Small example diagram")
-
-	// Output options
-	d.SaveAs("classdiagram.svg") // save to file
-	d.WriteSVG(w)                // write to any writer
-	_ = d.Inline()               // return a string
 	return d
 }

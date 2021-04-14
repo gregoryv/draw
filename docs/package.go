@@ -80,7 +80,18 @@ func NewProjectArticle() *Element {
 		),
 		Br(Attr("clear", "all")),
 
-		H2("Example source"),
+		H2("Quick start"),
+
+		P(`Each diagram is a Go type specifically designed to provide
+		an easy and intuitive way of "programming" diagrams. Elements
+		are either fixed strings or taken from the source code by
+		using concrete instances of real types. This is what makes
+		refactoring update diagrams aswell.`, Br(), `Once you selected
+		elements to include in your diagram place them out and
+		position them relative to each other. Relative placement has
+		the benefit of adaptive diagrams once you add more methods or
+		fields to your structs.`),
+
 		Table(
 			Tr(
 				Td(
@@ -91,6 +102,31 @@ func NewProjectArticle() *Element {
 				),
 			),
 		),
+
+		P(`Once a diagram is done, you can render the SVG in different ways`),
+		Ul(
+			Li(Code("SaveAs(filename)")),
+			Li(Code("Inline()"), " - returns SVG as string with all classes replaced with styling"),
+			Li(Code("WriteSVG(io.Writer)")),
+		),
+
+		P(`These pages for instance are generated using the `,
+			A(Href("https://github.com/gregoryv/web"),
+				`github.com/gregoryv/web`), ` package using the Inline()
+		method and looks something like the below code`),
+
+		LoadFile("doc_example.go", 1, -1),
+
+		P(`Styling is currently provided by `,
+			Code("draw.ClassAttributes"), ` and can be changed to some
+			degree. For now font size and family should not be changed
+			as size of shapes will not adapt to the styling
+			values. The idea is however that the default styling
+			should be left alone.`),
+
+		P(`There are more design diagram types available, take a look
+		and do let me know if you are missing something that could
+		benefit the community.`),
 
 		H2("Diagrams"),
 		H3("Class"),
