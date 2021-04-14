@@ -24,7 +24,7 @@ func TestPoint_Distance(t *testing.T) {
 func Test_OnePoint(t *testing.T) {
 	it := OnePoint{t, Point{10, 10}}
 	q := Point{10, 10}
-	it.is_not_left_of(q)
+	it.IsNotLeftOf(q)
 	it.is_not_right_of(q)
 	it.is_not_above(q)
 	it.is_not_below(q)
@@ -45,7 +45,7 @@ func (t OnePoint) is_left_of(q Point) {
 	}
 }
 
-func (t OnePoint) is_not_left_of(q Point) {
+func (t OnePoint) IsNotLeftOf(q Point) {
 	t.Helper()
 	if t.LeftOf(q) {
 		t.Errorf("%v should not be left of %v", t.Point, q)
