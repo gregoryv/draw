@@ -10,7 +10,7 @@ func TestAdjusterAt(t *testing.T) {
 	it := NewOneAdjuster(t)
 	it.HasDefaultSpacing()
 	it.TakesOptionalSpacing()
-	it.can_position_shapes()
+	it.CanPositionShapes()
 }
 
 func NewOneAdjuster(t *testing.T) *OneAdjuster {
@@ -36,7 +36,7 @@ func (t *OneAdjuster) TakesOptionalSpacing() {
 	}
 }
 
-func (t *OneAdjuster) can_position_shapes() {
+func (t *OneAdjuster) CanPositionShapes() {
 	t.At(1, 1)
 	s := t.shapes[0]
 	x, y := s.Position()
