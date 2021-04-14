@@ -8,7 +8,7 @@ import (
 
 func TestAdjusterAt(t *testing.T) {
 	it := NewOneAdjuster(t)
-	it.has_default_spacing()
+	it.HasDefaultSpacing()
 	it.takes_optional_spacing()
 	it.can_position_shapes()
 }
@@ -22,7 +22,7 @@ type OneAdjuster struct {
 	*Adjuster
 }
 
-func (t *OneAdjuster) has_default_spacing() {
+func (t *OneAdjuster) HasDefaultSpacing() {
 	s := t.space([]int{})
 	if s != t.Spacing {
 		t.Error("No default spacing")
