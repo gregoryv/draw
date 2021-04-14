@@ -25,7 +25,7 @@ func Test_OnePoint(t *testing.T) {
 	it := OnePoint{t, Point{10, 10}}
 	q := Point{10, 10}
 	it.IsNotLeftOf(q)
-	it.is_not_right_of(q)
+	it.IsNotRightOf(q)
 	it.is_not_above(q)
 	it.is_not_below(q)
 	it.is_same_as(q)
@@ -52,7 +52,7 @@ func (t OnePoint) IsNotLeftOf(q Point) {
 	}
 }
 
-func (t OnePoint) is_not_right_of(q Point) {
+func (t OnePoint) IsNotRightOf(q Point) {
 	t.Helper()
 	if t.RightOf(q) {
 		t.Errorf("%v should not be right of %v", t.Point, q)
