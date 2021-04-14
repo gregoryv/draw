@@ -5,23 +5,6 @@ import (
 	"testing"
 )
 
-func TestPoint_Distance(t *testing.T) {
-	var p Point
-	cases := []struct {
-		q   Point
-		exp float64
-	}{
-		{Point{0, 2}, 2},
-	}
-	for _, c := range cases {
-		got := p.Distance(c.q)
-		if got != c.exp {
-			t.Error(got, c.exp)
-		}
-	}
-
-}
-
 func Test_OnePoint(t *testing.T) {
 	it := OnePoint{t, &Point{10, 10}}
 	q := Point{10, 10}
@@ -91,4 +74,23 @@ func (t OnePoint) HasQuickAccessToCoordinates() {
 
 func (t OnePoint) ImplementsStringer() {
 	_ = fmt.Stringer(t.Point)
+}
+
+func TestPoint_Distance(t *testing.T) {
+	var p Point
+	cases := []struct {
+		q   Point
+		exp float64
+	}{
+		{Point{0, 2}, 2},
+		{Point{2, 0}, 2},
+		{Point{-2, 0}, 2},
+		{Point{0, -2}, 2},
+	}
+	for _, c := range cases {
+		got := p.Distance(c.q)
+		if got != c.exp {
+			t.Error(got, c.exp)
+		}
+	}
 }
