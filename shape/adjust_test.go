@@ -25,16 +25,12 @@ type OneAdjuster struct {
 
 func (t *OneAdjuster) HasDefaultSpacing() {
 	s := t.space([]int{})
-	if s != t.Spacing {
-		t.Error("No default spacing")
-	}
+	t.assert(s == t.Spacing).Error("No default spacing")
 }
 
 func (t *OneAdjuster) TakesOptionalSpacing() {
 	s := t.space([]int{1})
-	if s != 1 {
-		t.Error("no optional spacing")
-	}
+	t.assert(s == 1).Error("no optional spacing")
 }
 
 func (t *OneAdjuster) CanPositionShapes() {
