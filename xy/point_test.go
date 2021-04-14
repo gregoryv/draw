@@ -39,7 +39,7 @@ type OnePoint struct {
 	*Point
 }
 
-func (t OnePoint) is_left_of(q Point) {
+func (t OnePoint) IsLeftOf(q Point) {
 	t.Helper()
 	if !t.LeftOf(q) {
 		t.Errorf("%v should be left of %v", t.Point, q)
