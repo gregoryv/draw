@@ -7,14 +7,13 @@ import (
 )
 
 func TestAdjusterAt(t *testing.T) {
-	it := new_one_adjuster(t)
-
+	it := NewOneAdjuster(t)
 	it.has_default_spacing()
 	it.takes_optional_spacing()
 	it.can_position_shapes()
 }
 
-func new_one_adjuster(t *testing.T) *OneAdjuster {
+func NewOneAdjuster(t *testing.T) *OneAdjuster {
 	return &OneAdjuster{t, NewAdjuster(&Line{})}
 }
 
