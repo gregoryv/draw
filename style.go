@@ -107,7 +107,7 @@ var DefaultClassAttributes = ClassAttributes{
 	"rect":                  `stroke="#d3d3d3" fill="#ffffff"`,
 	"rect-title":            `font-family="Arial,Helvetica,sans-serif"`,
 	"root":                  `font-family="Arial,Helvetica,sans-serif"`, // root svg tag
-	"skip":                  `stroke="#ffffff" stroke-dasharray="6,3,6"`,
+	"skip":                  `stroke="#ffffff" stroke-dasharray="2,2,2"`,
 	"span-green":            `stroke="#d3d3d3" fill="#ccff99" rx="5" ry="5"`,
 	"span-green-title":      `font-family="Arial,Helvetica,sans-serif"`,
 	"span-blue":             `stroke="#d3d3d3" fill="#99e6ff" rx="5" ry="5"`,
