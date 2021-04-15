@@ -3,6 +3,7 @@ package docs
 import (
 	"bufio"
 	"bytes"
+	"log"
 	"os"
 
 	"github.com/gregoryv/draw/design"
@@ -52,7 +53,8 @@ func NewProjectArticle() *Element {
 			Pre(
 				Code(
 					"    go get ",
-					A(Href("https://github.com/gregoryv/draw"), "github.com/gregoryv/draw/"),
+					A(Href("https://github.com/gregoryv/draw"),
+						"github.com/gregoryv/draw/"),
 					"...",
 				),
 			),
@@ -63,11 +65,13 @@ func NewProjectArticle() *Element {
 					A(Href(godoc("github.com/gregoryv/draw")), "draw"),
 				),
 				Li(
-					A(Href(godoc("github.com/gregoryv/draw/shape")), "draw/shape"),
+					A(Href(godoc("github.com/gregoryv/draw/shape")),
+						"draw/shape"),
 					" - SVG shapes",
 				),
 				Li(
-					A(Href(godoc("github.com/gregoryv/draw/design")), "draw/design"),
+					A(Href(godoc("github.com/gregoryv/draw/design")),
+						"draw/design"),
 					" - software design diagrams",
 				),
 			),
@@ -115,7 +119,7 @@ func NewProjectArticle() *Element {
 				`github.com/gregoryv/web`), ` package using the Inline()
 		method and looks something like the below code`),
 
-		LoadFile("doc_example.go", 1, -1),
+		LoadFile("doc_example_test.go", 1, -1),
 
 		P(`Styling is currently provided by `,
 			Code("draw.ClassAttributes"), ` and can be changed to some
@@ -270,7 +274,9 @@ func loadFile(filename string, from, to int) string {
 	var buf bytes.Buffer
 	fh, err := os.Open(filename)
 	if err != nil {
-		panic(err)
+		log.SetFlags(log.Llongfile)
+		log.Output(3, err.Error())
+		os.Exit(1)
 	}
 	scanner := bufio.NewScanner(fh)
 	for i := from; i > 1; i-- {
