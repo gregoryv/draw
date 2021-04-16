@@ -476,80 +476,57 @@ import (
 )
 
 func ExampleActivityDiagram() *design.ActivityDiagram {
-	var (
-		d = design.NewActivityDiagram()
-	)
+	d := design.NewActivityDiagram()
+	d.Spacing = 50
 	d.Start().At(80, 20)
-	d.Then("Push commit")
-	d.Then("Run git hook")
-	dec := d.Decide()
-	d.Then("Deploy", "ok")
-	d.Exit()
-	d.If(dec, "Tests failed", shape.NewExitDot())
-	// manual part
-	var (
-		start = shape.NewDot()
-		push  = shape.NewState("Push tag")
-		hook  = shape.NewState("Run git hook")
-		exit  = shape.NewExitDot()
-	)
-	d.Place(start).At(180, 20)
-	d.Place(push).RightOf(start)
-	d.Place(hook, exit).Below(push)
-	d.HAlignCenter(start, push)
-	d.VAlignCenter(push, hook, exit)
-	d.LinkAll(start, push, hook, exit)
+	d.Then("Commited", "Push")
+	d.Then("Build complete", "run git hook")
+
+	test := d.Decide("run tests")
+	d.Then("Verified", "ok")
+	d.Exit("deploy")
+
+	d.If(test, "failed", shape.NewExitDot())
 	return d
 }
 </code></pre></td><td><br/><br/><svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="298" height="355">
+  font-family="Arial,Helvetica,sans-serif" width="201" height="405">
 <circle stroke="black" cx="86" cy="26" r="6" />\n
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="43" y="72" width="86" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="49" y="90">Push commit</text>
-<path stroke="black" d="M86,32 L86,72" />
-<g transform="rotate(90 86 72)"><path stroke="black" fill="#ffffff" d="M86,72 l-8,-4 l 0,8 Z" /></g>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="50" y="82" width="72" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="56" y="100">Commited</text>
+<path stroke="black" d="M86,32 L86,82" />
+<g transform="rotate(90 86 82)"><path stroke="black" fill="#ffffff" d="M86,82 l-8,-4 l 0,8 Z" /></g>
 
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="43" y="138" width="85" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="49" y="156">Run git hook</text>
-<path stroke="black" d="M85,98 L85,138" />
-<g transform="rotate(90 85 138)"><path stroke="black" fill="#ffffff" d="M85,138 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="57">Push</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="38" y="158" width="97" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="44" y="176">Build complete</text>
+<path stroke="black" d="M86,108 L86,158" />
+<g transform="rotate(90 86 158)"><path stroke="black" fill="#ffffff" d="M86,158 l-8,-4 l 0,8 Z" /></g>
 
-<path stroke="#d3d3d3" fill="#ffffff" d="M75,214 l 10,-10 10,10 -10,10 -10,-10" />
-<path stroke="black" d="M85,164 L85,204" />
-<g transform="rotate(90 85 204)"><path stroke="black" fill="#ffffff" d="M85,204 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="133">run git hook</text>
+<path stroke="#d3d3d3" fill="#ffffff" d="M76,244 l 10,-10 10,10 -10,10 -10,-10" />
+<path stroke="black" d="M86,184 L86,234" />
+<g transform="rotate(90 86 234)"><path stroke="black" fill="#ffffff" d="M86,234 l-8,-4 l 0,8 Z" /></g>
 
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="58" y="264" width="55" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="64" y="282">Deploy</text>
-<path stroke="black" d="M85,224 L85,264" />
-<g transform="rotate(90 85 264)"><path stroke="black" fill="#ffffff" d="M85,264 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="209">run tests</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="57" y="304" width="58" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="63" y="322">Verified</text>
+<path stroke="black" d="M86,254 L86,304" />
+<g transform="rotate(90 86 304)"><path stroke="black" fill="#ffffff" d="M86,304 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="90" y="240">ok</text>
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="85" cy="342" r="10" />\n<circle stroke="black" cx="85" cy="342" r="6" />\n
-<path stroke="black" d="M85,290 L85,330" />
-<g transform="rotate(90 85 330)"><path stroke="black" fill="#ffffff" d="M85,330 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="279">ok</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="86" cy="392" r="10" />\n<circle stroke="black" cx="86" cy="392" r="6" />\n
+<path stroke="black" d="M86,330 L86,380" />
+<g transform="rotate(90 86 380)"><path stroke="black" fill="#ffffff" d="M86,380 l-8,-4 l 0,8 Z" /></g>
 
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="209" cy="214" r="10" />\n<circle stroke="black" cx="209" cy="214" r="6" />\n
-<path stroke="black" d="M95,214 L197,214" />
-<g transform="rotate(0 197 214)"><path stroke="black" fill="#ffffff" d="M197,214 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="355">deploy</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="188" cy="244" r="10" />\n<circle stroke="black" cx="188" cy="244" r="6" />\n
+<path stroke="black" d="M96,244 L176,244" />
+<g transform="rotate(0 176 244)"><path stroke="black" fill="#ffffff" d="M176,244 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="111" y="210">Tests failed</text>
-<circle stroke="black" cx="186" cy="26" r="6" />\n
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="222" y="13" width="64" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="228" y="31">Push tag</text>
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="212" y="76" width="85" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="94">Run git hook</text>
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="254" cy="144" r="10" />\n<circle stroke="black" cx="254" cy="144" r="6" />\n
-<path stroke="black" d="M192,26 L222,26" />
-<g transform="rotate(0 222 26)"><path stroke="black" fill="#ffffff" d="M222,26 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" d="M254,39 L254,76" />
-<g transform="rotate(90 254 76)"><path stroke="black" fill="#ffffff" d="M254,76 l-8,-4 l 0,8 Z" /></g>
-
-<path stroke="black" d="M254,102 L254,132" />
-<g transform="rotate(90 254 132)"><path stroke="black" fill="#ffffff" d="M254,132 l-8,-4 l 0,8 Z" /></g>
-</svg></td></tr>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="117" y="240">failed</text></svg></td></tr>
 </table>
 <h3 id="sequence"><a href="#sequence">Sequence</a></h3>
 <p>Sequence diagrams are ment to describe a sequence of

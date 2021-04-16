@@ -9,25 +9,14 @@ func ExampleActivityDiagram() {
 	var (
 		d = design.NewActivityDiagram()
 	)
+	d.Spacing = 60
 	d.Start().At(80, 20)
-	d.Then("Push commit")
-	d.Then("Run git hook")
-	dec := d.Decide()
-	d.Then("Deploy", "ok")
-	d.Exit()
-	d.If(dec, "Tests failed", shape.NewExitDot())
-	// manual part
-	var (
-		start = shape.NewDot()
-		push  = shape.NewState("Push tag")
-		hook  = shape.NewState("Run git hook")
-		exit  = shape.NewExitDot()
-	)
-	d.Place(start).At(180, 20)
-	d.Place(push).RightOf(start)
-	d.Place(hook, exit).Below(push)
-	d.HAlignCenter(start, push)
-	d.VAlignCenter(push, hook, exit)
-	d.LinkAll(start, push, hook, exit)
+	d.Then("Commited", "Push")
+	d.Then("Build complete", "run git hook")
+	dec := d.Decide("run tests")
+	d.Then("Verified", "ok")
+	d.Exit("deploy")
+	d.If(dec, "failed", shape.NewExitDot())
+
 	d.SaveAs("img/activity_diagram.svg")
 }

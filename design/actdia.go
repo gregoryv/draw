@@ -45,6 +45,8 @@ func (d *ActivityDiagram) placeLabel(lnk *shape.Arrow, txt string) {
 		shape.Move(label, -4, 0)
 	case shape.DirectionUp, shape.DirectionDown:
 		d.Place(label).RightOf(lnk, 5)
+		d.HAlignCenter(lnk, label)
+		shape.Move(label, 0, -8) // todo fix HAlignCenter instead
 	}
 }
 
@@ -64,12 +66,12 @@ func (d *ActivityDiagram) Then(label string, txt ...string) *shape.Adjuster {
 }
 
 // Decide adds a diamond below the last activity
-func (d *ActivityDiagram) Decide() *shape.Diamond {
+func (d *ActivityDiagram) Decide(txt ...string) *shape.Diamond {
 	next := shape.NewDecision()
 	adj := d.Diagram.Place(next)
 	adj.Below(d.last, d.Spacing+next.Height()/2)
 	d.VAlignCenter(d.last, next)
-	d.Link(d.last, next)
+	d.Link(d.last, next, txt...)
 	d.last = next
 	return next
 }
