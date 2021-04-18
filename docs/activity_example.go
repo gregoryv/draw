@@ -2,20 +2,21 @@ package docs
 
 import (
 	"github.com/gregoryv/draw/design"
-	"github.com/gregoryv/draw/shape"
 )
 
 func ExampleActivityDiagram() *design.ActivityDiagram {
 	d := design.NewActivityDiagram()
 	d.Spacing = 50
+
 	d.Start().At(80, 20)
-	d.Then("Commited", "Push")
-	d.Then("Build complete", "run git hook")
+	d.Trans("push", "Commited")
+	d.Trans("run git hook", "Build complete")
 
 	test := d.Decide("run tests")
-	d.Then("Verified", "ok")
-	d.Exit("deploy")
+	d.Trans("ok", "Verified")
+	d.Trans("", "EXIT")
 
-	d.If(test, "failed", shape.NewExitDot())
+	d.Or(test)
+	d.TransRight("fails", "EXIT")
 	return d
 }

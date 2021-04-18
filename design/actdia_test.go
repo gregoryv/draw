@@ -2,21 +2,28 @@ package design_test
 
 import (
 	"github.com/gregoryv/draw/design"
-	"github.com/gregoryv/draw/shape"
 )
 
 func ExampleActivityDiagram() {
-	var (
-		d = design.NewActivityDiagram()
-	)
-	d.Spacing = 60
+	d := design.NewActivityDiagram()
+
 	d.Start().At(80, 20)
-	d.Then("Commited", "Push")
-	d.Then("Build complete", "run git hook")
-	dec := d.Decide("run tests")
-	d.Then("Verified", "ok")
-	d.Exit("deploy")
-	d.If(dec, "failed", shape.NewExitDot())
+	d.Trans("push", "Commited")
+	d.Trans("run git hook", "Build complete")
+
+	test := d.Decide("unit test")
+	d.TransRight("fails", "EXIT")
+
+	d.Or(test)
+	d.Trans("ok", "Verified")
+
+	d.Trans("deploy to stage", "Deployed")
+
+	itest := d.Decide("integration test")
+	d.TransRight("fails", "EXIT")
+
+	d.Or(itest)
+	d.Trans("ok", "Verified")
 
 	d.SaveAs("img/activity_diagram.svg")
 }

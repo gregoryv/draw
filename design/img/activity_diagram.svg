@@ -1,14 +1,14 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="211" height="455">
+  font-family="Arial,Helvetica,sans-serif" width="203" height="623">
 <circle stroke="black" cx="86" cy="26" r="6" />\n
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="50" y="92" width="72" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="56" y="110">Commited</text>
 <path stroke="black" d="M86,32 L86,92" />
 <g transform="rotate(90 86 92)"><path stroke="black" fill="#ffffff" d="M86,92 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="62">Push</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="62">push</text>
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="38" y="178" width="97" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="44" y="196">Build complete</text>
 <path stroke="black" d="M86,118 L86,178" />
@@ -19,20 +19,37 @@
 <path stroke="black" d="M86,204 L86,264" />
 <g transform="rotate(90 86 264)"><path stroke="black" fill="#ffffff" d="M86,264 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="234">run tests</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="234">unit test</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="190" cy="274" r="10" />\n<circle stroke="black" cx="190" cy="274" r="6" />\n
+<path stroke="black" d="M96,274 L178,274" />
+<g transform="rotate(0 178 274)"><path stroke="black" fill="#ffffff" d="M178,274 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="122" y="270">fails</text>
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="57" y="344" width="58" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="63" y="362">Verified</text>
 <path stroke="black" d="M86,284 L86,344" />
 <g transform="rotate(90 86 344)"><path stroke="black" fill="#ffffff" d="M86,344 l-8,-4 l 0,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="314">ok</text>
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="86" cy="442" r="10" />\n<circle stroke="black" cx="86" cy="442" r="6" />\n
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="52" y="430" width="69" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="58" y="448">Deployed</text>
 <path stroke="black" d="M86,370 L86,430" />
 <g transform="rotate(90 86 430)"><path stroke="black" fill="#ffffff" d="M86,430 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="400">deploy</text>
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="198" cy="274" r="10" />\n<circle stroke="black" cx="198" cy="274" r="6" />\n
-<path stroke="black" d="M96,274 L186,274" />
-<g transform="rotate(0 186 274)"><path stroke="black" fill="#ffffff" d="M186,274 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="400">deploy to stage</text>
+<path stroke="#d3d3d3" fill="#ffffff" d="M76,526 l 10,-10 10,10 -10,10 -10,-10" />
+<path stroke="black" d="M86,456 L86,516" />
+<g transform="rotate(90 86 516)"><path stroke="black" fill="#ffffff" d="M86,516 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="122" y="270">failed</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="486">integration test</text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="190" cy="526" r="10" />\n<circle stroke="black" cx="190" cy="526" r="6" />\n
+<path stroke="black" d="M96,526 L178,526" />
+<g transform="rotate(0 178 526)"><path stroke="black" fill="#ffffff" d="M178,526 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="122" y="522">fails</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="57" y="596" width="58" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="63" y="614">Verified</text>
+<path stroke="black" d="M86,536 L86,596" />
+<g transform="rotate(90 86 596)"><path stroke="black" fill="#ffffff" d="M86,596 l-8,-4 l 0,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="566">ok</text></svg>

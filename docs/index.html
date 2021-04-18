@@ -472,34 +472,35 @@ func Example_RenderInlinedDiagram() {
 
 import (
 	"github.com/gregoryv/draw/design"
-	"github.com/gregoryv/draw/shape"
 )
 
 func ExampleActivityDiagram() *design.ActivityDiagram {
 	d := design.NewActivityDiagram()
 	d.Spacing = 50
+
 	d.Start().At(80, 20)
-	d.Then("Commited", "Push")
-	d.Then("Build complete", "run git hook")
+	d.Trans("push", "Commited")
+	d.Trans("run git hook", "Build complete")
 
 	test := d.Decide("run tests")
-	d.Then("Verified", "ok")
-	d.Exit("deploy")
+	d.Trans("ok", "Verified")
+	d.Trans("", "EXIT")
 
-	d.If(test, "failed", shape.NewExitDot())
+	d.Or(test)
+	d.TransRight("fails", "EXIT")
 	return d
 }
 </code></pre></td><td><br/><br/><svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="201" height="405">
+  font-family="Arial,Helvetica,sans-serif" width="193" height="405">
 <circle stroke="black" cx="86" cy="26" r="6" />\n
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="50" y="82" width="72" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="56" y="100">Commited</text>
 <path stroke="black" d="M86,32 L86,82" />
 <g transform="rotate(90 86 82)"><path stroke="black" fill="#ffffff" d="M86,82 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="57">Push</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="57">push</text>
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="38" y="158" width="97" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="44" y="176">Build complete</text>
 <path stroke="black" d="M86,108 L86,158" />
@@ -521,12 +522,12 @@ func ExampleActivityDiagram() *design.ActivityDiagram {
 <path stroke="black" d="M86,330 L86,380" />
 <g transform="rotate(90 86 380)"><path stroke="black" fill="#ffffff" d="M86,380 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="355">deploy</text>
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="188" cy="244" r="10" />\n<circle stroke="black" cx="188" cy="244" r="6" />\n
-<path stroke="black" d="M96,244 L176,244" />
-<g transform="rotate(0 176 244)"><path stroke="black" fill="#ffffff" d="M176,244 l-8,-4 l 0,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="355"></text>
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="180" cy="244" r="10" />\n<circle stroke="black" cx="180" cy="244" r="6" />\n
+<path stroke="black" d="M96,244 L168,244" />
+<g transform="rotate(0 168 244)"><path stroke="black" fill="#ffffff" d="M168,244 l-8,-4 l 0,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="117" y="240">failed</text></svg></td></tr>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="117" y="240">fails</text></svg></td></tr>
 </table>
 <h3 id="sequence"><a href="#sequence">Sequence</a></h3>
 <p>Sequence diagrams are ment to describe a sequence of
@@ -781,7 +782,13 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="140" y="1173">active</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1252">Triangle</text>
 <path stroke="black" d="M154,1242 l-8,-4 l 0,8 Z" /></svg><h2 id="changelog"><a href="#changelog">Changelog</a></h2>
-<pre class="srcfile"><code class="go">## [0.20.0] 2021-04-16
+<pre class="srcfile"><code class="go">## [unreleased]
+
+- Replace ActivityDiagram.If with Or when switching decision
+- Replace ActivityDiagram.Then with Trans and add TransRight methods
+- Activity diagram default spacing increased from 40 to 60
+
+## [0.20.0] 2021-04-16
 
 - Add Label.SetHref and Component.SetHref
 - Rename type xy.Position to xy.Point
