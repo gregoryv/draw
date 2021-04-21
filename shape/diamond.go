@@ -35,6 +35,7 @@ func (d *Diamond) String() string {
 	return fmt.Sprintf("Diamond at %v,%v", d.x, d.y)
 }
 
+// fixme should point to top left corner
 func (d *Diamond) Position() (int, int) { return d.x, d.y }
 func (d *Diamond) SetX(x int)           { d.x = x }
 func (d *Diamond) SetY(y int)           { d.y = y - d.height/2 }

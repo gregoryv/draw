@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/gregoryv/draw/design"
+	"github.com/gregoryv/draw/docs"
 	"github.com/gregoryv/draw/shape"
 	. "github.com/gregoryv/draw/shape"
 )
@@ -56,4 +57,8 @@ func Test_write_allshapes(t *testing.T) {
 	add("Triangle", NewTriangle())
 
 	d.SaveAs("allshapes.svg")
+}
+
+func Test_write_testview(t *testing.T) {
+	docs.ExampleDiagram().SaveAs("testdata/testview.svg")
 }
