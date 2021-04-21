@@ -38,7 +38,7 @@ func (d *Diamond) String() string {
 // fixme should point to top left corner
 func (d *Diamond) Position() (int, int) { return d.x, d.y }
 func (d *Diamond) SetX(x int)           { d.x = x }
-func (d *Diamond) SetY(y int)           { d.y = y - d.height/2 }
+func (d *Diamond) SetY(y int)           { d.y = y }
 func (d *Diamond) Width() int           { return d.width }
 func (d *Diamond) Height() int          { return d.height }
 func (d *Diamond) Direction() Direction { return DirectionRight }
@@ -47,7 +47,6 @@ func (d *Diamond) SetClass(c string)    { d.class = c }
 func (d *Diamond) WriteSVG(out io.Writer) error {
 	w, err := nexus.NewPrinter(out)
 	x, y := d.Position()
-	y += d.height / 2
 	w2 := d.width / 2
 	h2 := d.height / 2
 	// the path is drawn from left to right
