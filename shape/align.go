@@ -59,6 +59,16 @@ func vAlign(adjust Alignment, objects ...Shape) {
 	}
 }
 
+func centerAt(s Shape, p xy.Point) {
+	x, y := p.XY()
+	centerXY(s, x, y)
+}
+
+func centerXY(s Shape, x, y int) {
+	s.SetX(x - s.Width()/2)
+	s.SetY(y - s.Height()/2)
+}
+
 type Alignment int
 
 const (
