@@ -10,10 +10,9 @@ func ExampleClassDiagram() *design.ClassDiagram {
 	var (
 		d        = design.NewClassDiagram()
 		record   = d.Struct(shape.Record{})
-		arrow    = d.Struct(shape.Line{})
 		line     = d.Struct(shape.Line{})
 		circle   = d.Struct(shape.Circle{})
-		diaarrow = d.Struct(shape.Diamond{})
+		diamond  = d.Struct(shape.Diamond{})
 		triangle = d.Struct(shape.Triangle{})
 		shapE    = d.Interface((*shape.Shape)(nil))
 	)
@@ -33,25 +32,22 @@ func ExampleClassDiagram() *design.ClassDiagram {
 
 	d.Place(shapE).At(220, 20)
 	d.Place(record).At(20, 120)
-	d.Place(line).Below(shapE, 90)
-	d.VAlignCenter(shapE, line)
 
-	d.Place(arrow).RightOf(line, 90)
 	d.Place(circle).RightOf(shapE, 280)
-	d.Place(diaarrow).Below(circle)
-	d.Place(triangle).Below(diaarrow)
-	d.HAlignBottom(record, arrow, line)
-	shape.Move(line, 30, 30)
+	d.Place(line).RightOf(circle, 50)
+	d.Place(diamond).Below(circle, 50)
+	d.Place(triangle).Below(diamond)
 
 	d.Place(fnt).Below(record, 170)
 	d.Place(style).RightOf(fnt, 90)
-	d.VAlignCenter(shapE, line, style)
+	d.VAlignCenter(shapE, style)
 	d.VAlignCenter(record, fnt)
 
-	d.Place(rel).Below(line, 80)
+	d.Place(rel).Below(shapE, 20)
 	d.Place(dia).RightOf(style, 90)
 	d.Place(aligner).RightOf(dia, 80)
 	d.HAlignCenter(fnt, style, dia, aligner)
+	d.HAlignCenter(record, rel)
 
 	d.Place(adj).Below(fnt, 70)
 	d.Place(seqdia).Below(aligner, 90)
