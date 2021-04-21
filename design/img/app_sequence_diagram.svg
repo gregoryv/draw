@@ -15,21 +15,21 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="400" y="18">sql.DB</text>
 <text font-style="italic" font-family="Arial,Helvetica,sans-serif" font-size="12px" x="271" y="312">Private rpc via Gob</text>
 <path stroke="black" d="M38,57 L228,57" />
-<g transform="rotate(0 228 57)"><path stroke="black" fill="#ffffff" d="M228,57 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 228 57)"><path stroke="black" fill="#ffffff" d="M224,65 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="107" y="54">connect()</text>
 <path stroke="red" d="M228,90 L418,90" />
-<g transform="rotate(0 418 90)"><path stroke="red" fill="#ffffff" d="M418,90 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 418 90)"><path stroke="red" fill="#ffffff" d="M414,98 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="299" y="87">SELECT</text>
 <path stroke="black" d="M418,123 L228,123" />
-<g transform="rotate(180 228 123)"><path stroke="black" fill="#ffffff" d="M228,123 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(270 228 123)"><path stroke="black" fill="#ffffff" d="M224,131 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="308" y="120">Rows</text>
 <line stroke="red" x1="228" y1="156" x2="243" y2="156"/>
 <line stroke="red" x1="243" y1="156" x2="243" y2="188"/>
 <path stroke="red" d="M243,188 L228,188" />
-<g transform="rotate(180 228 188)"><path stroke="red" fill="#ffffff" d="M228,188 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(270 228 188)"><path stroke="red" fill="#ffffff" d="M224,196 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="175">Transform to view model</text>
 <line stroke="#ffffff" stroke-dasharray="2,2,2" x1="0" y1="211" x2="0" y2="227"/>
@@ -40,6 +40,6 @@
 <line stroke="#ffffff" stroke-dasharray="2,2,2" x1="418" y1="211" x2="418" y2="227"/>
 <line stroke="#ffffff" stroke-dasharray="2,2,2" x1="608" y1="211" x2="608" y2="227"/>
 <path stroke="black" d="M228,244 L38,244" />
-<g transform="rotate(180 38 244)"><path stroke="black" fill="#ffffff" d="M38,244 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(270 38 244)"><path stroke="black" fill="#ffffff" d="M34,252 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="101" y="241">Send HTML</text></svg>

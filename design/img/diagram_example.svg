@@ -5,37 +5,37 @@
 <rect stroke="#d3d3d3" fill="#ffffff" x="10" y="30" width="56" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="46">Record</text>
 <path stroke="black" d="M130,80 L180,70" />
-<g transform="rotate(-11 180 70)"><path stroke="black" fill="#ffffff" d="M180,70 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(79 180 70)"><path stroke="black" fill="#ffffff" d="M176,78 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M130,80 L100,70" />
-<g transform="rotate(198 100 70)"><path stroke="black" fill="#ffffff" d="M100,70 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(288 100 70)"><path stroke="black" fill="#ffffff" d="M96,78 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M130,80 L80,100" />
-<g transform="rotate(159 80 100)"><path stroke="black" fill="#ffffff" d="M80,100 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(249 80 100)"><path stroke="black" fill="#ffffff" d="M76,108 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M130,80 L170,100" />
-<g transform="rotate(26 170 100)"><path stroke="black" fill="#ffffff" d="M170,100 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(116 170 100)"><path stroke="black" fill="#ffffff" d="M166,108 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M130,80 L220,80" />
-<g transform="rotate(0 220 80)"><path stroke="black" fill="#ffffff" d="M220,80 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 220 80)"><path stroke="black" fill="#ffffff" d="M216,88 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M130,80 L80,80" />
-<g transform="rotate(180 80 80)"><path stroke="black" fill="#ffffff" d="M80,80 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(270 80 80)"><path stroke="black" fill="#ffffff" d="M76,88 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M130,80 L130,40" />
-<g transform="rotate(-90 130 40)"><path stroke="black" fill="#ffffff" d="M130,40 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(0 130 40)"><path stroke="black" fill="#ffffff" d="M126,48 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M130,80 L130,120" />
-<g transform="rotate(90 130 120)"><path stroke="black" fill="#ffffff" d="M130,120 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(180 130 120)"><path stroke="black" fill="#ffffff" d="M126,128 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="216" y="46">Label</text>
 <path stroke="black" d="M20,150 L150,150" />
 <g transform="rotate(0 20 150)"><circle stroke="black" fill="#777777" cx="23" cy="150" r="3" />\n</g>
-<g transform="rotate(0 150 150)"><path stroke="black" fill="#ffffff" d="M150,150 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 150 150)"><path stroke="black" fill="#ffffff" d="M146,158 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M20,180 L150,180" />
 <g transform="rotate(0 20 180)"><path stroke="black" fill="#777777" d="M20,180 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(0 150 180)"><path stroke="black" fill="#ffffff" d="M150,180 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 150 180)"><path stroke="black" fill="#ffffff" d="M146,188 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="#d3d3d3" fill="#ffffcc" d="M20,210 v 41 h 96 v -31 l -10,-10 L 20,210 M116,220 h -10 v -10"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="226">Notes support</text>
@@ -45,10 +45,10 @@
 <circle stroke="black" cx="76" cy="291" r="6" />\n
 <circle stroke="black" stroke-width="2" fill="#ffffff" cx="124" cy="291" r="10" />\n<circle stroke="black" cx="124" cy="291" r="6" />\n
 <path stroke="black" d="M40,291 L70,291" />
-<g transform="rotate(0 70 291)"><path stroke="black" fill="#ffffff" d="M70,291 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 70 291)"><path stroke="black" fill="#ffffff" d="M66,299 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M82,291 L112,291" />
-<g transform="rotate(0 112 291)"><path stroke="black" fill="#ffffff" d="M112,291 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 112 291)"><path stroke="black" fill="#ffffff" d="M108,299 l4,-8 l 4,8 Z" /></g>
 
 <rect stroke="#d3d3d3" fill="#ffffff" x="180" y="180" width="72" height="26"/>
 <rect stroke="#d3d3d3" fill="#ffffff" x="175" y="185" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="175" y="196" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="191" y="198">database</text>
@@ -59,47 +59,47 @@
 <rect stroke="#d3d3d3" fill="#ffffff" x="186" y="236" width="60" height="26"/>
 <rect stroke="#d3d3d3" fill="#ffffff" x="181" y="241" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="181" y="252" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="197" y="254">service</text>
 <path stroke="black" d="M216,236 L216,206" />
-<g transform="rotate(-90 216 206)"><path stroke="black" fill="#ffffff" d="M216,206 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(0 216 206)"><path stroke="black" fill="#ffffff" d="M212,214 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="225"></text>
 <circle stroke="black" cx="606" cy="206" r="6" />\n
 <circle stroke="black" cx="738" cy="206" r="6" />\n
 <path stroke="black" d="M612,206 L732,206" />
-<g transform="rotate(0 732 206)"><path stroke="black" fill="#ffffff" d="M732,206 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 732 206)"><path stroke="black" fill="#ffffff" d="M728,214 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="658" y="199">label</text>
 <circle stroke="black" cx="666" cy="266" r="6" />\n
 <path stroke="black" d="M612,212 L660,260" />
-<g transform="rotate(45 660 260)"><path stroke="black" fill="#ffffff" d="M660,260 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(135 660 260)"><path stroke="black" fill="#ffffff" d="M656,268 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="646" y="240">label</text>
 <circle stroke="black" cx="606" cy="338" r="6" />\n
 <path stroke="black" d="M606,212 L606,332" />
-<g transform="rotate(90 606 332)"><path stroke="black" fill="#ffffff" d="M606,332 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(180 606 332)"><path stroke="black" fill="#ffffff" d="M602,340 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="616" y="276">label</text>
 <circle stroke="black" cx="526" cy="286" r="6" />\n
 <path stroke="black" d="M600,212 L532,280" />
-<g transform="rotate(135 532 280)"><path stroke="black" fill="#ffffff" d="M532,280 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(225 532 280)"><path stroke="black" fill="#ffffff" d="M528,288 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="576" y="250">label</text>
 <circle stroke="black" cx="474" cy="206" r="6" />\n
 <path stroke="black" d="M600,206 L480,206" />
-<g transform="rotate(180 480 206)"><path stroke="black" fill="#ffffff" d="M480,206 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(270 480 206)"><path stroke="black" fill="#ffffff" d="M476,214 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="527" y="199">label</text>
 <circle stroke="black" cx="526" cy="126" r="6" />\n
 <path stroke="black" d="M600,200 L532,132" />
-<g transform="rotate(225 532 132)"><path stroke="black" fill="#ffffff" d="M532,132 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(315 532 132)"><path stroke="black" fill="#ffffff" d="M528,140 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="576" y="170">label</text>
 <circle stroke="black" cx="606" cy="74" r="6" />\n
 <path stroke="black" d="M606,200 L606,80" />
-<g transform="rotate(-90 606 80)"><path stroke="black" fill="#ffffff" d="M606,80 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(0 606 80)"><path stroke="black" fill="#ffffff" d="M602,88 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="616" y="144">label</text>
 <circle stroke="black" cx="666" cy="126" r="6" />\n
 <path stroke="black" d="M610,200 L661,132" />
-<g transform="rotate(-53 661 132)"><path stroke="black" fill="#ffffff" d="M661,132 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(37 661 132)"><path stroke="black" fill="#ffffff" d="M657,140 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="170">label</text></svg>

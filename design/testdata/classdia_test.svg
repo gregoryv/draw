@@ -4,25 +4,25 @@
   font-family="Arial,Helvetica,sans-serif" width="449" height="439">
 <path stroke="black" d="M284,23 L314,23" />
 <g transform="rotate(0 284 23)"><path stroke="black" fill="#777777" d="M284,23 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(0 314 23)"><path stroke="black" fill="#ffffff" d="M314,23 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 314 23)"><path stroke="black" fill="#ffffff" d="M310,31 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M71,230 L71,260" />
 <g transform="rotate(90 71 230)"><path stroke="black" fill="#777777" d="M71,230 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(90 71 260)"><path stroke="black" fill="#ffffff" d="M71,260 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(180 71 260)"><path stroke="black" fill="#ffffff" d="M67,268 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M118,58 L180,36" />
 <g transform="rotate(-19 118 58)"><path stroke="black" fill="#ffffff" d="M118,58 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(-19 180 36)"><path stroke="black" fill="#ffffff" d="M180,36 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(71 180 36)"><path stroke="black" fill="#ffffff" d="M176,44 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M68,148 L70,178" />
 <g transform="rotate(86 68 148)"><path stroke="black" fill="#777777" d="M68,148 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(86 70 178)"><path stroke="black" fill="#ffffff" d="M70,178 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(176 70 178)"><path stroke="black" fill="#ffffff" d="M66,186 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M133,292 L163,290" />
-<g transform="rotate(-3 163 290)"><path stroke="black" fill="#ffffff" d="M163,290 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(87 163 290)"><path stroke="black" fill="#ffffff" d="M159,298 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M118,148 L206,260" />
-<g transform="rotate(51 206 260)"><path stroke="black" fill="#ffffff" d="M206,260 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(141 206 260)"><path stroke="black" fill="#ffffff" d="M202,268 l4,-8 l 4,8 Z" /></g>
 
 <rect stroke="#d3d3d3" fill="#ffffff" x="10" y="10" width="108" height="138"/>
 <line stroke="#d3d3d3" x1="10" y1="36" x2="118" y2="36"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="52">Model</text>
@@ -49,6 +49,6 @@
 <rect stroke="#d3d3d3" fill="#ffffff" x="163" y="412" width="121" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="169" y="428">design.Driver struct</text>
 <path stroke="black" d="M226,312 L223,412" />
-<g transform="rotate(92 223 412)"><path stroke="black" fill="#ffffff" d="M223,412 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(182 223 412)"><path stroke="black" fill="#ffffff" d="M219,420 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="235" y="366">labeled</text></svg>

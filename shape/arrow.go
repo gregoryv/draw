@@ -48,8 +48,8 @@ func (a *Arrow) WriteSVG(out io.Writer) error {
 		w.Print("</g>\n")
 	}
 	if a.Head != nil {
-		w.Printf(`<g transform="rotate(%v %v %v)">`, a.angle(), x2, y2)
-		a.Head.SetX(a.End.X)
+		w.Printf(`<g transform="rotate(%v %v %v)">`, a.angle()+90, x2, y2)
+		a.Head.SetX(a.End.X - a.Head.Width()/2)
 		a.Head.SetY(a.End.Y)
 		a.Head.SetClass(a.class + "-head")
 		a.Head.WriteSVG(out)

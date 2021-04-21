@@ -13,23 +13,23 @@
 <line stroke="#d3d3d3" x1="570" y1="24" x2="570" y2="200"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="543" y="18">http.Client</text>
 <path stroke="black" d="M50,57 L180,57" />
-<g transform="rotate(0 180 57)"><path stroke="black" fill="#ffffff" d="M180,57 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 180 57)"><path stroke="black" fill="#ffffff" d="M176,65 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="45" y="54">&amp;Index{} : myhandler</text>
 <path stroke="black" d="M50,90 L310,90" />
-<g transform="rotate(0 310 90)"><path stroke="black" fill="#ffffff" d="M310,90 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 310 90)"><path stroke="black" fill="#ffffff" d="M306,98 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="78" y="87">Handle(&#34;/path&#34;, myhandler)</text>
 <path stroke="black" d="M50,123 L440,123" />
-<g transform="rotate(0 440 123)"><path stroke="black" fill="#ffffff" d="M440,123 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 440 123)"><path stroke="black" fill="#ffffff" d="M436,131 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="135" y="120">ListenAndServe(&#34;:8080&#34;, mux)</text>
 <path stroke="black" d="M570,156 L440,156" />
-<g transform="rotate(180 440 156)"><path stroke="black" fill="#ffffff" d="M440,156 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(270 440 156)"><path stroke="black" fill="#ffffff" d="M436,164 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="477" y="153">GET /path </text>
 <path stroke="black" d="M440,189 L310,189" />
-<g transform="rotate(180 310 189)"><path stroke="black" fill="#ffffff" d="M310,189 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(270 310 189)"><path stroke="black" fill="#ffffff" d="M306,197 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="288" y="186">routes request to registered func</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="247">Figure 2. ServeMux is the router</text></svg>

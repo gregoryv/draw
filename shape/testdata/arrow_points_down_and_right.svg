@@ -3,5 +3,5 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   font-family="Arial,Helvetica,sans-serif" width="100" height="100">
 <path stroke="black" d="M50,50 L70,80" />
-<g transform="rotate(56 70 80)"><path stroke="black" fill="#ffffff" d="M70,80 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(146 70 80)"><path stroke="black" fill="#ffffff" d="M66,88 l4,-8 l 4,8 Z" /></g>
 </svg>

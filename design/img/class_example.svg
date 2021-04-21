@@ -4,49 +4,49 @@
   font-family="Arial,Helvetica,sans-serif" width="840" height="1480">
 <path stroke="black" d="M290,496 L145,326" />
 <g transform="rotate(229 290 496)"><path stroke="black" fill="#ffffff" d="M290,496 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(229 145 326)"><path stroke="black" fill="#ffffff" d="M145,326 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(319 145 326)"><path stroke="black" fill="#ffffff" d="M141,334 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M567,601 L647,601" />
 <g transform="rotate(0 567 601)"><path stroke="black" fill="#777777" d="M567,601 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(0 647 601)"><path stroke="black" fill="#ffffff" d="M647,601 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 647 601)"><path stroke="black" fill="#ffffff" d="M643,609 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M432,601 L342,601" />
 <g transform="rotate(180 432 601)"><path stroke="black" fill="#777777" d="M432,601 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(180 342 601)"><path stroke="black" fill="#ffffff" d="M342,601 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(270 342 601)"><path stroke="black" fill="#ffffff" d="M338,609 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M499,888 L499,798" />
 <g transform="rotate(-90 499 888)"><path stroke="black" fill="#ffffff" d="M499,888 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(-90 499 798)"><path stroke="black" fill="#ffffff" d="M499,798 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(0 499 798)"><path stroke="black" fill="#ffffff" d="M495,806 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M647,915 L567,745" />
 <g transform="rotate(244 647 915)"><path stroke="black" fill="#ffffff" d="M647,915 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(244 567 745)"><path stroke="black" fill="#ffffff" d="M567,745 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(334 567 745)"><path stroke="black" fill="#ffffff" d="M563,753 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M237,601 L133,601" />
 <g transform="rotate(180 237 601)"><path stroke="black" fill="#777777" d="M237,601 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(180 133 601)"><path stroke="black" fill="#ffffff" d="M133,601 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(270 133 601)"><path stroke="black" fill="#ffffff" d="M129,609 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M82,386 L82,556" />
 <g transform="rotate(90 82 386)"><path stroke="black" fill="#777777" d="M82,386 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(90 82 556)"><path stroke="black" fill="#ffffff" d="M82,556 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(180 82 556)"><path stroke="black" fill="#ffffff" d="M78,564 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M639,238 L359,129" />
-<g transform="rotate(201 359 129)"><path stroke="black" fill="#ffffff" d="M359,129 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(291 359 129)"><path stroke="black" fill="#ffffff" d="M355,137 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M639,162 L359,114" />
-<g transform="rotate(189 359 114)"><path stroke="black" fill="#ffffff" d="M359,114 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(279 359 114)"><path stroke="black" fill="#ffffff" d="M355,122 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M639,70 L359,95" />
-<g transform="rotate(175 359 95)"><path stroke="black" fill="#ffffff" d="M359,95 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(265 359 95)"><path stroke="black" fill="#ffffff" d="M355,103 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M289,326 L289,184" />
-<g transform="rotate(-90 289 184)"><path stroke="black" fill="#ffffff" d="M289,184 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(0 289 184)"><path stroke="black" fill="#ffffff" d="M285,192 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M434,221 L359,159" />
-<g transform="rotate(219 359 159)"><path stroke="black" fill="#ffffff" d="M359,159 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(309 359 159)"><path stroke="black" fill="#ffffff" d="M355,167 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M145,206 L220,152" />
-<g transform="rotate(-35 220 152)"><path stroke="black" fill="#ffffff" d="M220,152 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(55 220 152)"><path stroke="black" fill="#ffffff" d="M216,160 l4,-8 l 4,8 Z" /></g>
 
 <rect stroke="#d3d3d3" fill="#ffffff" x="220" y="20" width="139" height="164"/>
 <line stroke="#d3d3d3" x1="220" y1="46" x2="359" y2="46"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="62">Direction()</text>

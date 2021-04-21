@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Triangle points upwards and Position returns top left
 - Replace ActivityDiagram.If with Or when switching decision
 - Replace ActivityDiagram.Then with Trans and add TransRight methods
 - Activity diagram default spacing increased from 40 to 60
