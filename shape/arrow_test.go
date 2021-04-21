@@ -10,6 +10,16 @@ import (
 	"github.com/gregoryv/draw"
 )
 
+func TestArrow_Height(t *testing.T) {
+	var (
+		a = NewArrow(50, 50, 50, 50)
+	)
+	got := a.Height()
+	if got == 0 {
+		t.Error("unexpected", got)
+	}
+}
+
 func TestOneArrow(t *testing.T) {
 	it := NewOneArrow(t)
 	it.CanPointUpAndRight()

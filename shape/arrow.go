@@ -158,11 +158,36 @@ func radians2degrees(A float64) int {
 }
 
 func (a *Arrow) Height() int {
-	return intAbs(a.Start.Y - a.End.Y)
+	v := []int{intAbs(a.Start.Y - a.End.Y)}
+	if a.Head != nil {
+		v = append(v, a.Head.Height())
+	}
+	if a.Tail != nil {
+		v = append(v, a.Tail.Height())
+	}
+	return maxOf(v...)
 }
 
 func (a *Arrow) Width() int {
-	return intAbs(a.Start.X - a.End.X)
+	v := []int{intAbs(a.Start.X - a.End.X)}
+	if a.Head != nil {
+		v = append(v, a.Head.Width())
+	}
+	if a.Tail != nil {
+		v = append(v, a.Tail.Width())
+	}
+	return maxOf(v...)
+}
+
+func maxOf(v ...int) int {
+	var max int
+	for _, v := range v {
+		if v < max {
+			continue
+		}
+		max = v
+	}
+	return max
 }
 
 func (a *Arrow) Position() (int, int) {

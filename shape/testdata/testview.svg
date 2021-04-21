@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="253" height="358">
+  font-family="Arial,Helvetica,sans-serif" width="253" height="374">
 <rect stroke="#d3d3d3" fill="#ffffff" x="10" y="30" width="56" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="46">Record</text>
 <path stroke="black" d="M130,80 L180,70" />
@@ -33,32 +33,32 @@
 <g transform="rotate(0 20 150)"><circle stroke="black" fill="#777777" cx="23" cy="150" r="3" />\n</g>
 <g transform="rotate(90 150 150)"><path stroke="black" fill="#ffffff" d="M146,158 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M20,180 L150,180" />
-<g transform="rotate(0 20 180)"><path stroke="black" fill="#777777" d="M20,180 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(90 150 180)"><path stroke="black" fill="#ffffff" d="M146,188 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M20,188 L150,188" />
+<g transform="rotate(0 20 188)"><path stroke="black" fill="#777777" d="M20,188 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(90 150 188)"><path stroke="black" fill="#ffffff" d="M146,196 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="#d3d3d3" fill="#ffffcc" d="M20,210 v 41 h 96 v -31 l -10,-10 L 20,210 M116,220 h -10 v -10"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="226">Notes support</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="242">multilines</text>
+<path stroke="#d3d3d3" fill="#ffffcc" d="M20,226 v 41 h 96 v -31 l -10,-10 L 20,226 M116,236 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="242">Notes support</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="258">multilines</text>
 
-<circle stroke="#d3d3d3" stroke-width="2" fill="#ffffff" cx="30" cy="291" r="10" />\n
-<circle stroke="black" cx="76" cy="291" r="6" />\n
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="124" cy="291" r="10" />\n<circle stroke="black" cx="124" cy="291" r="6" />\n
-<path stroke="black" d="M40,291 L70,291" />
-<g transform="rotate(90 70 291)"><path stroke="black" fill="#ffffff" d="M66,299 l4,-8 l 4,8 Z" /></g>
+<circle stroke="#d3d3d3" stroke-width="2" fill="#ffffff" cx="30" cy="307" r="10" />\n
+<circle stroke="black" cx="76" cy="307" r="6" />\n
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="124" cy="307" r="10" />\n<circle stroke="black" cx="124" cy="307" r="6" />\n
+<path stroke="black" d="M40,307 L70,307" />
+<g transform="rotate(90 70 307)"><path stroke="black" fill="#ffffff" d="M66,315 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M82,291 L112,291" />
-<g transform="rotate(90 112 291)"><path stroke="black" fill="#ffffff" d="M108,299 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M82,307 L112,307" />
+<g transform="rotate(90 112 307)"><path stroke="black" fill="#ffffff" d="M108,315 l4,-8 l 4,8 Z" /></g>
 
-<rect stroke="#d3d3d3" fill="#ffffff" x="180" y="180" width="72" height="26"/>
-<rect stroke="#d3d3d3" fill="#ffffff" x="175" y="185" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="175" y="196" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="191" y="198">database</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="20" y="331" width="41" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="349">Rect</text>
-<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="91" y="331" width="132" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="97" y="349">Waiting for go routine</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="186" y="236" width="60" height="26"/>
-<rect stroke="#d3d3d3" fill="#ffffff" x="181" y="241" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="181" y="252" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="197" y="254">service</text>
-<path stroke="black" d="M216,236 L216,206" />
-<g transform="rotate(0 216 206)"><path stroke="black" fill="#ffffff" d="M212,214 l4,-8 l 4,8 Z" /></g>
+<rect stroke="#d3d3d3" fill="#ffffff" x="180" y="188" width="72" height="26"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="175" y="193" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="175" y="204" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="191" y="206">database</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="20" y="347" width="41" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="365">Rect</text>
+<rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="91" y="347" width="132" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="97" y="365">Waiting for go routine</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="186" y="244" width="60" height="26"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="181" y="249" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="181" y="260" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="197" y="262">service</text>
+<path stroke="black" d="M216,244 L216,214" />
+<g transform="rotate(0 216 214)"><path stroke="black" fill="#ffffff" d="M212,222 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="225"></text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="222" y="233"></text></svg>
