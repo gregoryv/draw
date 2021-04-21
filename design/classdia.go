@@ -136,7 +136,7 @@ func (d *ClassDiagram) HideRealizations() {
 		for i := 0; i < struct_.t.NumField(); i++ {
 			field := struct_.t.Field(i)
 			for _, struct2 := range d.structs {
-				if field.Type == struct2.t {
+				if field.Type == struct2.t || field.Type == reflect.PtrTo(struct2.t) {
 					for _, m := range struct2.Methods {
 						struct_.HideMethod(m)
 					}
