@@ -27,7 +27,7 @@
 <ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="187" cy="469" rx="33" ry="6" />
 <text class="database-title" font-size="12px" x="160" y="489">database</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="568">Diamond</text>
-<path stroke="#d3d3d3" fill="#333333" d="M182,560 l 6,-4 6,4 -6,4 -6,-4" />
+<path stroke="#d3d3d3" fill="#333333" d="M182,556 l 6,-4 6,4 -6,4 -6,-4" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="644">Dot</text>
 <circle stroke="black" cx="188" cy="636" r="6" />\n
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="720">ExitDot</text>
