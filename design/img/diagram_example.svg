@@ -61,7 +61,7 @@
 <path stroke="black" d="M216,244 L216,214" />
 <g transform="rotate(0 216 214)"><path stroke="black" fill="#ffffff" d="M212,222 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="222" y="233"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="230" y="233"></text>
 <circle stroke="black" cx="606" cy="206" r="6" />\n
 <circle stroke="black" cx="738" cy="206" r="6" />\n
 <path stroke="black" d="M612,206 L732,206" />
@@ -77,7 +77,7 @@
 <path stroke="black" d="M606,212 L606,332" />
 <g transform="rotate(180 606 332)"><path stroke="black" fill="#ffffff" d="M602,340 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="612" y="276">label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="620" y="276">label</text>
 <circle stroke="black" cx="526" cy="286" r="6" />\n
 <path stroke="black" d="M600,212 L532,280" />
 <g transform="rotate(225 532 280)"><path stroke="black" fill="#ffffff" d="M528,288 l4,-8 l 4,8 Z" /></g>
@@ -97,7 +97,7 @@
 <path stroke="black" d="M606,200 L606,80" />
 <g transform="rotate(0 606 80)"><path stroke="black" fill="#ffffff" d="M602,88 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="612" y="144">label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="620" y="144">label</text>
 <circle stroke="black" cx="666" cy="126" r="6" />\n
 <path stroke="black" d="M610,200 L661,132" />
 <g transform="rotate(37 661 132)"><path stroke="black" fill="#ffffff" d="M657,140 l4,-8 l 4,8 Z" /></g>

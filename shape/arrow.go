@@ -204,23 +204,10 @@ func (a *Arrow) Position() (int, int) {
 	return x, y
 }
 
-// CenterPosition
-func (a *Arrow) CenterPosition() (x int, y int) {
-	d := a.Direction()
-
-	if d.Is(DirectionRight) {
-		x = a.Start.X + a.Width()/2
-	} else {
-		x = a.Start.X - a.Width()/2
-	}
-
-	if d.Is(DirectionDown) {
-		y = a.Start.Y + a.Height()/2
-	} else {
-		y = a.Start.Y - a.Height()/2
-	}
-
-	return
+// CenterPosition returns the center x, y values
+func (a *Arrow) CenterPosition() (int, int) {
+	x, y := a.Position()
+	return x + a.Width()/2, y + a.Height()/2
 }
 
 func (a *Arrow) SetX(x int) {
