@@ -3,6 +3,6 @@
   xmlns:xlink="http://www.w3.org/1999/xlink"
   font-family="Arial,Helvetica,sans-serif" width="100" height="100">
 <path stroke="black" d="M50,50 L50,10" />
-<g transform="rotate(-90 50 50)"><path stroke="black" fill="#777777" d="M50,50 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(-90 50 10)"><path stroke="black" fill="#ffffff" d="M50,10 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(-90 50 50)"><path stroke="black" fill="#777777" d="M50,54 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(-90 50 10)"><path stroke="black" fill="#ffffff" d="M50,14 l 6,-4 6,4 -6,4 -6,-4" /></g>
 </svg>
