@@ -6,7 +6,6 @@ import (
 
 func ExampleActivityDiagram() *design.ActivityDiagram {
 	d := design.NewActivityDiagram()
-	d.Spacing = 50
 
 	d.Start().At(80, 20)
 	d.Trans("push", "Commited")
