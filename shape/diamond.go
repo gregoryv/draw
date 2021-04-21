@@ -51,8 +51,15 @@ func (d *Diamond) WriteSVG(out io.Writer) error {
 	w2 := d.width / 2
 	h2 := d.height / 2
 	// the path is drawn from left to right
+	/*
+	     +
+	    / \
+	   +   +
+	    \ /
+	     +
+	*/
 	w.Printf(`<path class="%s" d="M%v,%v l %v,%v %v,%v %v,%v %v,%v" />`,
-		d.class, x, y, w2, -h2, w2, h2, -w2, h2, -w2, -h2)
+		d.class, x, y+h2, w2, -h2, w2, h2, -w2, h2, -w2, -h2)
 	return *err
 }
 

@@ -506,7 +506,7 @@ func ExampleActivityDiagram() *design.ActivityDiagram {
 <g transform="rotate(180 86 178)"><path stroke="black" fill="#ffffff" d="M82,186 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="148">run git hook</text>
-<path stroke="#d3d3d3" fill="#ffffff" d="M76,274 l 10,-10 10,10 -10,10 -10,-10" />
+<path stroke="#d3d3d3" fill="#ffffff" d="M76,284 l 10,-10 10,10 -10,10 -10,-10" />
 <path stroke="black" d="M86,204 L86,264" />
 <g transform="rotate(180 86 264)"><path stroke="black" fill="#ffffff" d="M82,272 l4,-8 l 4,8 Z" /></g>
 
@@ -751,7 +751,7 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="157" cy="393" rx="33" ry="6" />
 <text class="database-title" font-size="12px" x="130" y="413">database</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="492">Diamond</text>
-<path stroke="#d3d3d3" fill="#333333" d="M152,480 l 6,-4 6,4 -6,4 -6,-4" />
+<path stroke="#d3d3d3" fill="#333333" d="M152,484 l 6,-4 6,4 -6,4 -6,-4" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="568">Dot</text>
 <circle stroke="black" cx="158" cy="560" r="6" />\n
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="644">ExitDot</text>
@@ -783,6 +783,7 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <path stroke="black" d="M154,1248 l4,-8 l 4,8 Z" /></svg><h2 id="changelog"><a href="#changelog">Changelog</a></h2>
 <pre class="srcfile"><code class="go">## [unreleased]
 
+- Diamond.Position returns top left
 - Triangle points upwards and Position returns top left
 - Replace ActivityDiagram.If with Or when switching decision
 - Replace ActivityDiagram.Then with Trans and add TransRight methods

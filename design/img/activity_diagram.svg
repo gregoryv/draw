@@ -15,7 +15,7 @@
 <g transform="rotate(180 86 178)"><path stroke="black" fill="#ffffff" d="M82,186 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="148">run git hook</text>
-<path stroke="#d3d3d3" fill="#ffffff" d="M76,274 l 10,-10 10,10 -10,10 -10,-10" />
+<path stroke="#d3d3d3" fill="#ffffff" d="M76,284 l 10,-10 10,10 -10,10 -10,-10" />
 <path stroke="black" d="M86,204 L86,264" />
 <g transform="rotate(180 86 264)"><path stroke="black" fill="#ffffff" d="M82,272 l4,-8 l 4,8 Z" /></g>
 
@@ -37,7 +37,7 @@
 <g transform="rotate(180 86 430)"><path stroke="black" fill="#ffffff" d="M82,438 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="91" y="400">deploy to stage</text>
-<path stroke="#d3d3d3" fill="#ffffff" d="M76,526 l 10,-10 10,10 -10,10 -10,-10" />
+<path stroke="#d3d3d3" fill="#ffffff" d="M76,536 l 10,-10 10,10 -10,10 -10,-10" />
 <path stroke="black" d="M86,456 L86,516" />
 <g transform="rotate(180 86 516)"><path stroke="black" fill="#ffffff" d="M82,524 l4,-8 l 4,8 Z" /></g>
 

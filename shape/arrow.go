@@ -49,8 +49,7 @@ func (a *Arrow) WriteSVG(out io.Writer) error {
 	}
 	if a.Head != nil {
 		w.Printf(`<g transform="rotate(%v %v %v)">`, a.angle()+90, x2, y2)
-		a.Head.SetX(a.End.X - a.Head.Width()/2)
-		a.Head.SetY(a.End.Y)
+		alignHead(a.Head, x2, y2)
 		a.Head.SetClass(a.class + "-head")
 		a.Head.WriteSVG(out)
 		w.Print("</g>\n")
@@ -59,14 +58,13 @@ func (a *Arrow) WriteSVG(out io.Writer) error {
 }
 
 func alignTail(s Shape, x, y int) {
-	switch s := s.(type) {
-	case *Circle:
-		s.SetX(x)
-		s.SetY(y - s.Radius)
-	default:
-		s.SetX(x)
-		s.SetY(y)
-	}
+	s.SetX(x)
+	s.SetY(y - s.Height()/2)
+}
+
+func alignHead(s Shape, x, y int) {
+	s.SetX(x - s.Width()/2) // specific to triangle
+	s.SetY(y)
 }
 
 // AbsAngle
