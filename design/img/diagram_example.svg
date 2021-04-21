@@ -87,7 +87,7 @@
 <path stroke="black" d="M600,206 L480,206" />
 <g transform="rotate(270 480 206)"><path stroke="black" fill="#ffffff" d="M476,214 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="527" y="191">label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="526" y="191">label</text>
 <circle stroke="black" cx="526" cy="126" r="6" />\n
 <path stroke="black" d="M600,200 L532,132" />
 <g transform="rotate(315 532 132)"><path stroke="black" fill="#ffffff" d="M528,140 l4,-8 l 4,8 Z" /></g>

@@ -190,8 +190,18 @@ func maxOf(v ...int) int {
 	return max
 }
 
+// ----------------------------------------
+
 func (a *Arrow) Position() (int, int) {
-	return a.Start.XY()
+	x, y := a.Start.XY()
+	if a.End.LeftOf(a.Start) {
+		x = a.End.X
+	}
+	if a.End.Above(a.Start) {
+		y = a.End.Y
+	}
+
+	return x, y
 }
 
 // CenterPosition

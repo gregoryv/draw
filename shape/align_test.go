@@ -30,7 +30,6 @@ func TestAlignVertical(t *testing.T) {
 			},
 			17, 40,
 		},
-
 		{
 			aligner.VAlignLeft,
 			&Label{

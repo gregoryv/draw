@@ -32,7 +32,7 @@
 <path stroke="black" d="M570,156 L440,156" />
 <g transform="rotate(270 440 156)"><path stroke="black" fill="#ffffff" d="M436,164 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="477" y="153">GET /path </text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="476" y="153">GET /path </text>
 <path stroke="black" d="M440,189 L310,189" />
 <g transform="rotate(270 310 189)"><path stroke="black" fill="#ffffff" d="M306,197 l4,-8 l 4,8 Z" /></g>
 

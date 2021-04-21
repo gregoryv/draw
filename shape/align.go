@@ -49,12 +49,7 @@ func vAlign(adjust Alignment, objects ...Shape) {
 		case Right:
 			shape.SetX(x + first.Width() - shape.Width())
 		case Center:
-			if first.Direction() == DirectionLeft {
-				shape.SetX(x - (first.Width()+shape.Width())/2)
-			} else {
-				shape.SetX(x + (first.Width()-shape.Width())/2)
-			}
-
+			shape.SetX(x + (first.Width()-shape.Width())/2)
 		}
 	}
 }
