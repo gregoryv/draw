@@ -15,7 +15,8 @@
 <text class="label" font-size="10px" x="185" y="46">18</text>
 <text class="label" font-size="10px" x="200" y="46">19</text>
 <text class="label" font-size="10px" x="215" y="46">20</text>
-<line class="line" x1="215" y1="30" x2="225" y2="30"/>
+<path class="line" d="M215,30 L225,30" />
+
 <text class="label" font-size="10px" x="230" y="46">21</text>
 <text class="label" font-size="10px" x="245" y="46">22</text>
 <rect class="weekend" x="258" y="34" width="30" height="78"/>

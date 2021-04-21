@@ -2,7 +2,9 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   class="root" width="10" height="10">
-<line class="column-line" x1="13" y1="24" x2="13" y2="10"/>
+<path class="column-line" d="M13,24 L13,10" />
+
 <text class="label" font-size="12px" x="10" y="18">a</text>
-<line class="column-line" x1="203" y1="24" x2="203" y2="10"/>
+<path class="column-line" d="M203,24 L203,10" />
+
 <text class="label" font-size="12px" x="200" y="18">b</text></svg>
