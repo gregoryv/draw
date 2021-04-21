@@ -6,12 +6,15 @@
 <text class="area-red-title" font-size="12px" x="234" y="42"></text>
 <rect stroke="black" stroke-width="0" fill="#99e6ff" fill-opacity="0.1" x="38" y="24" width="190" height="295"/>
 <text class="area-blue-title" font-size="12px" x="44" y="42"></text>
-<line stroke="#d3d3d3" x1="38" y1="24" x2="38" y2="277"/>
+<path stroke="#d3d3d3" d="M38,24 L38,277" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">app.Client</text>
-<line stroke="#d3d3d3" x1="228" y1="24" x2="228" y2="277"/>
+<path stroke="#d3d3d3" d="M228,24 L228,277" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="18">app.Server</text>
 <text font-style="italic" font-family="Arial,Helvetica,sans-serif" font-size="12px" x="101" y="312">Public https</text>
-<line stroke="#d3d3d3" x1="418" y1="24" x2="418" y2="277"/>
+<path stroke="#d3d3d3" d="M418,24 L418,277" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="400" y="18">sql.DB</text>
 <text font-style="italic" font-family="Arial,Helvetica,sans-serif" font-size="12px" x="271" y="312">Private rpc via Gob</text>
 <path stroke="black" d="M38,57 L228,57" />
@@ -26,19 +29,28 @@
 <g transform="rotate(270 228 123)"><path stroke="black" fill="#ffffff" d="M224,131 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="308" y="120">Rows</text>
-<line stroke="red" x1="228" y1="156" x2="243" y2="156"/>
-<line stroke="red" x1="243" y1="156" x2="243" y2="188"/>
+<path stroke="red" d="M228,156 L243,156" />
+
+<path stroke="red" d="M243,156 L243,188" />
+
 <path stroke="red" d="M243,188 L228,188" />
 <g transform="rotate(270 228 188)"><path stroke="red" fill="#ffffff" d="M224,196 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="175">Transform to view model</text>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="0" y1="211" x2="0" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="0" y1="211" x2="0" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="0" y1="211" x2="0" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="38" y1="211" x2="38" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="228" y1="211" x2="228" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="418" y1="211" x2="418" y2="227"/>
-<line stroke="#ffffff" stroke-dasharray="2,2,2" x1="608" y1="211" x2="608" y2="227"/>
+<path stroke="#ffffff" stroke-dasharray="2,2,2" d="M0,211 L0,227" />
+
+<path stroke="#ffffff" stroke-dasharray="2,2,2" d="M0,211 L0,227" />
+
+<path stroke="#ffffff" stroke-dasharray="2,2,2" d="M0,211 L0,227" />
+
+<path stroke="#ffffff" stroke-dasharray="2,2,2" d="M38,211 L38,227" />
+
+<path stroke="#ffffff" stroke-dasharray="2,2,2" d="M228,211 L228,227" />
+
+<path stroke="#ffffff" stroke-dasharray="2,2,2" d="M418,211 L418,227" />
+
+<path stroke="#ffffff" stroke-dasharray="2,2,2" d="M608,211 L608,227" />
+
 <path stroke="black" d="M228,244 L38,244" />
 <g transform="rotate(270 38 244)"><path stroke="black" fill="#ffffff" d="M34,252 l4,-8 l 4,8 Z" /></g>
 

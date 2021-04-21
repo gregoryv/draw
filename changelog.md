@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Line and arrow Height and Width methods consider head and tail shapes
 - Diamond.Position returns top left
 - Triangle points upwards and Position returns top left
 - Replace ActivityDiagram.If with Or when switching decision

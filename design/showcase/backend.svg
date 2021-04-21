@@ -2,15 +2,20 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   font-family="Arial,Helvetica,sans-serif" width="600" height="254">
-<line stroke="#d3d3d3" x1="50" y1="24" x2="50" y2="200"/>
+<path stroke="#d3d3d3" d="M50,24 L50,200" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">showcase.App</text>
-<line stroke="#d3d3d3" x1="180" y1="24" x2="180" y2="200"/>
+<path stroke="#d3d3d3" d="M180,24 L180,200" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="136" y="18">showcase.Index</text>
-<line stroke="#d3d3d3" x1="310" y1="24" x2="310" y2="200"/>
+<path stroke="#d3d3d3" d="M310,24 L310,200" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="271" y="18">http.ServeMux</text>
-<line stroke="#d3d3d3" x1="440" y1="24" x2="440" y2="200"/>
+<path stroke="#d3d3d3" d="M440,24 L440,200" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="411" y="18">http.Server</text>
-<line stroke="#d3d3d3" x1="570" y1="24" x2="570" y2="200"/>
+<path stroke="#d3d3d3" d="M570,24 L570,200" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="543" y="18">http.Client</text>
 <path stroke="black" d="M50,57 L180,57" />
 <g transform="rotate(90 180 57)"><path stroke="black" fill="#ffffff" d="M176,65 l4,-8 l 4,8 Z" /></g>

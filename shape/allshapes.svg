@@ -41,7 +41,8 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="948">Label</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="163" y="948">label-text</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1024">Line</text>
-<line stroke="black" x1="158" y1="1016" x2="218" y2="1016"/>
+<path stroke="black" d="M158,1016 L218,1016" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1100">Note</text>
 <path stroke="#d3d3d3" fill="#ffffcc" d="M139,1072 v 41 h 99 v -31 l -10,-10 L 139,1072 M238,1082 h -10 v -10"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="149" y="1088">This describes</text>
@@ -49,8 +50,10 @@
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1176">Record</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="157" y="1131" width="63" height="74"/>
-<line stroke="#d3d3d3" x1="157" y1="1157" x2="220" y2="1157"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="163" y="1173">fields</text>
-<line stroke="#d3d3d3" x1="157" y1="1179" x2="220" y2="1179"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="163" y="1195">methods</text>
+<path stroke="#d3d3d3" d="M157,1157 L220,1157" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="163" y="1173">fields</text>
+<path stroke="#d3d3d3" d="M157,1179 L220,1179" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="163" y="1195">methods</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="163" y="1147">record</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1252">Rect</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="150" y="1231" width="77" height="26"/>

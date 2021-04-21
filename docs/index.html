@@ -169,20 +169,27 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <g transform="rotate(273 137 49)"><path stroke="black" fill="#ffffff" d="M133,57 l4,-8 l 4,8 Z" /></g>
 
 <rect stroke="#d3d3d3" fill="#ffffff" x="20" y="20" width="117" height="52"/>
-<line stroke="#d3d3d3" x1="20" y1="46" x2="137" y2="46"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="62">Materials()</text>
+<path stroke="#d3d3d3" d="M20,46 L137,46" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="62">Materials()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="36">docs.Part interface</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="207" y="20" width="104" height="74"/>
-<line stroke="#d3d3d3" x1="207" y1="46" x2="311" y2="46"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="62">Material</text>
-<line stroke="#d3d3d3" x1="207" y1="68" x2="311" y2="68"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="84">Materials()</text>
+<path stroke="#d3d3d3" d="M207,46 L311,46" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="62">Material</text>
+<path stroke="#d3d3d3" d="M207,68 L311,68" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="84">Materials()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="36">docs.Door struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="207" y="124" width="121" height="74"/>
-<line stroke="#d3d3d3" x1="207" y1="150" x2="328" y2="150"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="166">Model</text>
-<line stroke="#d3d3d3" x1="207" y1="172" x2="328" y2="172"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="188">Materials()</text>
+<path stroke="#d3d3d3" d="M207,150 L328,150" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="166">Model</text>
+<path stroke="#d3d3d3" d="M207,172 L328,172" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="188">Materials()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="140">docs.Window struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="381" y="20" width="113" height="90"/>
-<line stroke="#d3d3d3" x1="381" y1="46" x2="494" y2="46"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="62">Frontdoor</text>
+<path stroke="#d3d3d3" d="M381,46 L494,46" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="62">Frontdoor</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="78">Windows</text>
-<line stroke="#d3d3d3" x1="381" y1="84" x2="494" y2="84"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="100">Rooms()</text>
+<path stroke="#d3d3d3" d="M381,84 L494,84" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="100">Rooms()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="36">docs.House struct</text>
 <path stroke="#d3d3d3" fill="#ffffcc" d="M20,218 v 25 h 221 v -15 l -10,-10 L 20,218 M241,228 h -10 v -10"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="234">Relations are automatically rendered</text>
@@ -256,6 +263,10 @@ func Example_RenderInlinedDiagram() {
 <g transform="rotate(180 237 601)"><path stroke="black" fill="#777777" d="M237,601 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(270 133 601)"><path stroke="black" fill="#ffffff" d="M129,609 l4,-8 l 4,8 Z" /></g>
 
+<path stroke="black" d="M332,364 L434,303" />
+<g transform="rotate(-30 332 364)"><path stroke="black" fill="#777777" d="M332,364 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(60 434 303)"><path stroke="black" fill="#ffffff" d="M430,311 l4,-8 l 4,8 Z" /></g>
+
 <path stroke="black" d="M82,386 L82,556" />
 <g transform="rotate(90 82 386)"><path stroke="black" fill="#777777" d="M82,386 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(180 82 556)"><path stroke="black" fill="#ffffff" d="M78,564 l4,-8 l 4,8 Z" /></g>
@@ -269,7 +280,7 @@ func Example_RenderInlinedDiagram() {
 <path stroke="black" stroke-dasharray="5,5,5" d="M639,70 L359,95" />
 <g transform="rotate(265 359 95)"><path stroke="black" fill="#ffffff" d="M355,103 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M289,326 L289,184" />
+<path stroke="black" stroke-dasharray="5,5,5" d="M289,364 L289,184" />
 <g transform="rotate(0 289 184)"><path stroke="black" fill="#ffffff" d="M285,192 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M434,221 L359,159" />
@@ -279,7 +290,8 @@ func Example_RenderInlinedDiagram() {
 <g transform="rotate(55 220 152)"><path stroke="black" fill="#ffffff" d="M216,160 l4,-8 l 4,8 Z" /></g>
 
 <rect stroke="#d3d3d3" fill="#ffffff" x="220" y="20" width="139" height="164"/>
-<line stroke="#d3d3d3" x1="220" y1="46" x2="359" y2="46"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="62">Direction()</text>
+<path stroke="#d3d3d3" d="M220,46 L359,46" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="62">Direction()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="78">Height()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="94">Position()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="110">SetClass()</text>
@@ -289,14 +301,16 @@ func Example_RenderInlinedDiagram() {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="174">WriteSVG()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="36">shape.Shape interface</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="20" y="120" width="125" height="266"/>
-<line stroke="#d3d3d3" x1="20" y1="146" x2="145" y2="146"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="162">X</text>
+<path stroke="#d3d3d3" d="M20,146 L145,146" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="162">X</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="178">Y</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="194">Title</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="210">Fields</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="226">Methods</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="242">Font</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="258">Pad</text>
-<line stroke="#d3d3d3" x1="20" y1="264" x2="145" y2="264"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="280">Edge()</text>
+<path stroke="#d3d3d3" d="M20,264 L145,264" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="280">Edge()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="296">HideFields()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="312">HideMethod()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="328">HideMethods()</text>
@@ -304,17 +318,18 @@ func Example_RenderInlinedDiagram() {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="360">SetTextPad()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="376">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="136">shape.Record struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="326" width="109" height="90"/>
-<line stroke="#d3d3d3" x1="235" y1="352" x2="344" y2="352"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="368">Start</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="384">End</text>
-<line stroke="#d3d3d3" x1="235" y1="390" x2="344" y2="390"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="406">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="342">shape.Line struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="364" width="109" height="52"/>
+<path stroke="#d3d3d3" d="M235,390 L344,390" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="406">Arrow</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="380">shape.Line struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="434" y="152" width="117" height="234"/>
-<line stroke="#d3d3d3" x1="434" y1="178" x2="551" y2="178"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="194">Start</text>
+<path stroke="#d3d3d3" d="M434,178 L551,178" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="194">Start</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="210">End</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="226">Tail</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="242">Head</text>
-<line stroke="#d3d3d3" x1="434" y1="248" x2="551" y2="248"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="264">AbsAngle()</text>
+<path stroke="#d3d3d3" d="M434,248 L551,248" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="264">AbsAngle()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="280">Angle()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="296">CenterPosition()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="312">DirQ1()</text>
@@ -324,38 +339,48 @@ func Example_RenderInlinedDiagram() {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="376">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="168">shape.Arrow struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="639" y="20" width="117" height="90"/>
-<line stroke="#d3d3d3" x1="639" y1="46" x2="756" y2="46"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="62">Radius</text>
-<line stroke="#d3d3d3" x1="639" y1="68" x2="756" y2="68"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="84">Edge()</text>
+<path stroke="#d3d3d3" d="M639,46 L756,46" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="62">Radius</text>
+<path stroke="#d3d3d3" d="M639,68 L756,68" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="84">Edge()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="100">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="36">shape.Circle struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="639" y="140" width="135" height="68"/>
-<line stroke="#d3d3d3" x1="639" y1="166" x2="774" y2="166"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="182">Edge()</text>
+<path stroke="#d3d3d3" d="M639,166 L774,166" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="182">Edge()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="198">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="156">shape.Diamond struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="639" y="238" width="130" height="52"/>
-<line stroke="#d3d3d3" x1="639" y1="264" x2="769" y2="264"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="280">String()</text>
+<path stroke="#d3d3d3" d="M639,264 L769,264" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="280">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="254">shape.Triangle struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="31" y="556" width="102" height="90"/>
-<line stroke="#d3d3d3" x1="31" y1="582" x2="133" y2="582"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="598">Height</text>
+<path stroke="#d3d3d3" d="M31,582 L133,582" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="598">Height</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="614">LineHeight</text>
-<line stroke="#d3d3d3" x1="31" y1="620" x2="133" y2="620"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="636">TextWidth()</text>
+<path stroke="#d3d3d3" d="M31,620 L133,620" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="636">TextWidth()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="572">draw.Font struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="237" y="532" width="105" height="138"/>
-<line stroke="#d3d3d3" x1="237" y1="558" x2="342" y2="558"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="574">Font</text>
+<path stroke="#d3d3d3" d="M237,558 L342,558" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="574">Font</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="590">TextPad</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="606">Pad</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="622">Spacing</text>
-<line stroke="#d3d3d3" x1="237" y1="628" x2="342" y2="628"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="644">SetOutput()</text>
+<path stroke="#d3d3d3" d="M237,628 L342,628" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="644">SetOutput()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="660">Write()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="548">draw.Style struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="235" y="496" width="134" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="512">design.Relation struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="432" y="404" width="135" height="394"/>
-<line stroke="#d3d3d3" x1="432" y1="430" x2="567" y2="430"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="446">SVG</text>
+<path stroke="#d3d3d3" d="M432,430 L567,430" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="446">SVG</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="462">Aligner</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="478">Style</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="494">Caption</text>
-<line stroke="#d3d3d3" x1="432" y1="500" x2="567" y2="500"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="516">AdaptSize()</text>
+<path stroke="#d3d3d3" d="M432,500 L567,500" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="516">AdaptSize()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="532">Append()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="548">Height()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="564">Inline()</text>
@@ -375,7 +400,8 @@ func Example_RenderInlinedDiagram() {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="788">WriteSVG()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="420">design.Diagram struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="647" y="535" width="124" height="132"/>
-<line stroke="#d3d3d3" x1="647" y1="561" x2="771" y2="561"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="577">HAlignBottom()</text>
+<path stroke="#d3d3d3" d="M647,561 L771,561" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="577">HAlignBottom()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="593">HAlignCenter()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="609">HAlignTop()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="625">VAlignCenter()</text>
@@ -383,18 +409,22 @@ func Example_RenderInlinedDiagram() {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="657">VAlignRight()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="551">shape.Aligner struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="31" y="716" width="130" height="138"/>
-<line stroke="#d3d3d3" x1="31" y1="742" x2="161" y2="742"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="758">Spacing</text>
-<line stroke="#d3d3d3" x1="31" y1="764" x2="161" y2="764"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="780">Above()</text>
+<path stroke="#d3d3d3" d="M31,742 L161,742" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="758">Spacing</text>
+<path stroke="#d3d3d3" d="M31,764 L161,764" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="780">Above()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="796">At()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="812">Below()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="828">LeftOf()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="844">RightOf()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="732">shape.Adjuster struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="647" y="808" width="191" height="202"/>
-<line stroke="#d3d3d3" x1="647" y1="834" x2="838" y2="834"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="850">Diagram</text>
+<path stroke="#d3d3d3" d="M647,834 L838,834" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="850">Diagram</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="866">ColWidth</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="882">VMargin</text>
-<line stroke="#d3d3d3" x1="647" y1="888" x2="838" y2="888"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="904">Add()</text>
+<path stroke="#d3d3d3" d="M647,888 L838,888" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="904">Add()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="920">AddColumns()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="936">AddInterface()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="952">AddStruct()</text>
@@ -403,8 +433,10 @@ func Example_RenderInlinedDiagram() {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="1000">Skip()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="824">design.SequenceDiagram struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="417" y="888" width="166" height="122"/>
-<line stroke="#d3d3d3" x1="417" y1="914" x2="583" y2="914"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="930">Diagram</text>
-<line stroke="#d3d3d3" x1="417" y1="936" x2="583" y2="936"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="952">HideRealizations()</text>
+<path stroke="#d3d3d3" d="M417,914 L583,914" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="930">Diagram</text>
+<path stroke="#d3d3d3" d="M417,936 L583,936" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="952">HideRealizations()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="968">Interface()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="984">Slice()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="1000">Struct()</text>
@@ -517,13 +549,17 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
   font-family="Arial,Helvetica,sans-serif" width="634" height="298">
 <rect stroke="black" stroke-width="0" fill="#ff9999" fill-opacity="0.1" x="228" y="24" width="380" height="273"/>
 <text class="area-red-title" font-size="12px" x="234" y="42"></text>
-<line stroke="#d3d3d3" x1="38" y1="24" x2="38" y2="255"/>
+<path stroke="#d3d3d3" d="M38,24 L38,255" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">app.Client</text>
-<line stroke="#d3d3d3" x1="228" y1="24" x2="228" y2="255"/>
+<path stroke="#d3d3d3" d="M228,24 L228,255" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="18">app.Server</text>
-<line stroke="#d3d3d3" x1="418" y1="24" x2="418" y2="255"/>
+<path stroke="#d3d3d3" d="M418,24 L418,255" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="400" y="18">sql.DB</text>
-<line stroke="#d3d3d3" x1="608" y1="24" x2="608" y2="255"/>
+<path stroke="#d3d3d3" d="M608,24 L608,255" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="583" y="18">aws.SQS</text>
 <text font-style="italic" font-family="Arial,Helvetica,sans-serif" font-size="12px" x="328" y="290">Private RPC using Gob encoding</text>
 <path stroke="black" d="M38,57 L228,57" />
@@ -538,8 +574,10 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <g transform="rotate(270 228 123)"><path stroke="black" fill="#ffffff" d="M224,131 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="308" y="120">Rows</text>
-<line stroke="red" x1="228" y1="156" x2="243" y2="156"/>
-<line stroke="red" x1="243" y1="156" x2="243" y2="188"/>
+<path stroke="red" d="M228,156 L243,156" />
+
+<path stroke="red" d="M243,156 L243,188" />
+
 <path stroke="red" d="M243,188 L228,188" />
 <g transform="rotate(270 228 188)"><path stroke="red" fill="#ffffff" d="M224,196 l4,-8 l 4,8 Z" /></g>
 
@@ -571,7 +609,8 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="185" y="46">18</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="200" y="46">19</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="215" y="46">20</text>
-<line stroke="black" x1="215" y1="30" x2="225" y2="30"/>
+<path stroke="black" d="M215,30 L225,30" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="230" y="46">21</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="245" y="46">22</text>
 <rect font-family="Arial,Helvetica,sans-serif" fill="#f3f3f3" x="258" y="34" width="30" height="78"/>
@@ -710,7 +749,8 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="796">Label</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="796">label-text</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="872">Line</text>
-<line stroke="black" x1="128" y1="864" x2="188" y2="864"/>
+<path stroke="black" d="M128,864 L188,864" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="948">Note</text>
 <path stroke="#d3d3d3" fill="#ffffcc" d="M109,920 v 41 h 99 v -31 l -10,-10 L 109,920 M208,930 h -10 v -10"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="119" y="936">This describes</text>
@@ -718,8 +758,10 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1024">Record</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="127" y="979" width="63" height="74"/>
-<line stroke="#d3d3d3" x1="127" y1="1005" x2="190" y2="1005"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1021">fields</text>
-<line stroke="#d3d3d3" x1="127" y1="1027" x2="190" y2="1027"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1043">methods</text>
+<path stroke="#d3d3d3" d="M127,1005 L190,1005" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1021">fields</text>
+<path stroke="#d3d3d3" d="M127,1027 L190,1027" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="1043">methods</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="133" y="995">record</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1100">Rect</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="120" y="1079" width="77" height="26"/>
@@ -731,6 +773,7 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <path stroke="black" d="M154,1248 l4,-8 l 4,8 Z" /></svg><h2 id="changelog"><a href="#changelog">Changelog</a></h2>
 <pre class="srcfile"><code class="go">## [unreleased]
 
+- Line and arrow Height and Width methods consider head and tail shapes
 - Diamond.Position returns top left
 - Triangle points upwards and Position returns top left
 - Replace ActivityDiagram.If with Or when switching decision

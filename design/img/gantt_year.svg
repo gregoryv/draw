@@ -34,7 +34,8 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="440" y="46">14</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="455" y="46">14</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="455" y="26">Apr</text>
-<line stroke="black" x1="455" y1="30" x2="465" y2="30"/>
+<path stroke="black" d="M455,30 L465,30" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="470" y="46">15</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="485" y="46">16</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="10px" x="500" y="46">17</text>

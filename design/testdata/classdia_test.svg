@@ -25,26 +25,32 @@
 <g transform="rotate(141 206 260)"><path stroke="black" fill="#ffffff" d="M202,268 l4,-8 l 4,8 Z" /></g>
 
 <rect stroke="#d3d3d3" fill="#ffffff" x="10" y="10" width="108" height="138"/>
-<line stroke="#d3d3d3" x1="10" y1="36" x2="118" y2="36"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="52">Model</text>
+<path stroke="#d3d3d3" d="M10,36 L118,36" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="52">Model</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="68">Wheels</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="84">Speakers</text>
-<line stroke="#d3d3d3" x1="10" y1="90" x2="118" y2="90"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="106">Count()</text>
+<path stroke="#d3d3d3" d="M10,90 L118,90" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="106">Count()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="122">Running()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="138">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="26">design.Car struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="10" y="178" width="125" height="52"/>
-<line stroke="#d3d3d3" x1="10" y1="204" x2="135" y2="204"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="220">Count()</text>
+<path stroke="#d3d3d3" d="M10,204 L135,204" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="220">Count()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="194">design.Wheels slice</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="10" y="260" width="123" height="74"/>
-<line stroke="#d3d3d3" x1="10" y1="286" x2="133" y2="286"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="302">Make</text>
-<line stroke="#d3d3d3" x1="10" y1="308" x2="133" y2="308"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="324">String()</text>
+<path stroke="#d3d3d3" d="M10,286 L133,286" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="302">Make</text>
+<path stroke="#d3d3d3" d="M10,308 L133,308" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="324">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="16" y="276">design.Wheel struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="148" y="10" width="136" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="154" y="26">design.Speakers slice</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="314" y="10" width="134" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="320" y="26">design.Speaker struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="163" y="260" width="128" height="52"/>
-<line stroke="#d3d3d3" x1="163" y1="286" x2="291" y2="286"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="169" y="302">String()</text>
+<path stroke="#d3d3d3" d="M163,286 L291,286" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="169" y="302">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="169" y="276">fmt.Stringer interface</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="163" y="412" width="121" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="169" y="428">design.Driver struct</text>

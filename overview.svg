@@ -13,7 +13,8 @@
 <g transform="rotate(180 106 238)"><path stroke="black" fill="#ffffff" d="M102,246 l4,-8 l 4,8 Z" /></g>
 
 <rect stroke="#d3d3d3" fill="#ffffff" x="212" y="140" width="139" height="164"/>
-<line stroke="#d3d3d3" x1="212" y1="166" x2="351" y2="166"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="182">Direction()</text>
+<path stroke="#d3d3d3" d="M212,166 L351,166" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="182">Direction()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="198">Height()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="214">Position()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="230">SetClass()</text>
@@ -23,7 +24,8 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="294">WriteSVG()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="156">shape.Shape interface</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="451" y="252" width="117" height="52"/>
-<line stroke="#d3d3d3" x1="451" y1="278" x2="568" y2="278"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="294">Radius</text>
+<path stroke="#d3d3d3" d="M451,278 L568,278" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="294">Radius</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="268">shape.Circle struct</text>
 <path stroke="black" stroke-dasharray="5,5,5" d="M451,263 L351,239" />
 <g transform="rotate(283 351 239)"><path stroke="black" fill="#ffffff" d="M347,247 l4,-8 l 4,8 Z" /></g>
@@ -47,11 +49,14 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="740" y="172">Internet</text>
 <rect stroke="#d3d3d3" fill="#e2e2e2" x="728" y="236" width="66" height="26"/>
 <rect stroke="#d3d3d3" fill="#e2e2e2" x="723" y="241" width="10" height="5"/><rect stroke="#d3d3d3" fill="#e2e2e2" x="723" y="252" width="10" height="5"/><text class="external-title" font-size="12px" x="739" y="254">Browser</text>
-<line stroke="#d3d3d3" x1="38" y1="24" x2="38" y2="101"/>
+<path stroke="#d3d3d3" d="M38,24 L38,101" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">app.Client</text>
-<line stroke="#d3d3d3" x1="228" y1="24" x2="228" y2="101"/>
+<path stroke="#d3d3d3" d="M228,24 L228,101" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="18">app.Server</text>
-<line stroke="#d3d3d3" x1="418" y1="24" x2="418" y2="101"/>
+<path stroke="#d3d3d3" d="M418,24 L418,101" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="400" y="18">sql.DB</text>
 <path stroke="black" d="M38,57 L228,57" />
 <g transform="rotate(90 228 57)"><path stroke="black" fill="#ffffff" d="M224,65 l4,-8 l 4,8 Z" /></g>
