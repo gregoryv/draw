@@ -21,7 +21,6 @@ func exampleClassDiagram() *ClassDiagram {
 	var (
 		d        = NewClassDiagram()
 		record   = d.Struct(shape.Record{})
-		arrow    = d.Struct(shape.Arrow{})
 		line     = d.Struct(shape.Line{})
 		circle   = d.Struct(shape.Circle{})
 		diaarrow = d.Struct(shape.Diamond{})
@@ -47,11 +46,10 @@ func exampleClassDiagram() *ClassDiagram {
 	d.Place(line).Below(shapE, 90)
 	d.VAlignCenter(shapE, line)
 
-	d.Place(arrow).RightOf(line, 90)
 	d.Place(circle).RightOf(shapE, 280)
 	d.Place(diaarrow).Below(circle)
 	d.Place(triangle).Below(diaarrow)
-	d.HAlignBottom(record, arrow, line)
+	d.HAlignBottom(record, line)
 	shape.Move(line, 30, 30)
 
 	d.Place(fnt).Below(record, 170)

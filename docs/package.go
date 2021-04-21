@@ -230,7 +230,7 @@ func AllShapes() *design.Diagram {
 		last = s
 	}
 
-	add("Arrow", shape.NewArrow(240, 0, 300, 0))
+	add("Arrow", shape.NewLine(240, 0, 300, 0))
 	add("Circle", shape.NewCircle(20))
 	add("Component", shape.NewComponent("Component"))
 	add("Cylinder", shape.NewCylinder(30, 40))

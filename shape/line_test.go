@@ -46,7 +46,7 @@ func NewOneArrow(t *testing.T) *OneArrow {
 
 type OneArrow struct {
 	*testing.T
-	*Arrow
+	*Line
 	assert
 }
 
@@ -132,7 +132,7 @@ func (t *OneArrow) saveAs(filename string) {
 	t.Helper()
 	d := &draw.SVG{}
 	d.SetSize(100, 100)
-	d.Append(t.Arrow)
+	d.Append(t.Line)
 
 	fh, err := os.Create(filename)
 	if err != nil {
@@ -165,22 +165,22 @@ func (t *OneArrow) IsVisible() {
 	t.Helper()
 	h := t.Height()
 	w := t.Width()
-	t.assert(h > 0 || w > 0).Errorf("%v not visible", t.Arrow)
+	t.assert(h > 0 || w > 0).Errorf("%v not visible", t.Line)
 }
 
-func TestArrow(t *testing.T) {
-	testShape(t, NewArrow(0, 0, 50, 50))
+func TestLine(t *testing.T) {
+	testShape(t, NewLine(0, 0, 50, 50))
 }
 
 func TestArrow_AbsAngle(t *testing.T) {
-	a := NewArrow(0, 0, 10, 10)
+	a := NewLine(0, 0, 10, 10)
 	got := a.AbsAngle()
 	assert := asserter.New(t)
 	assert().Equals(got, 45)
 }
 
 func TestArrow_Angle(t *testing.T) {
-	a := NewArrow(0, 0, 10, 10)
+	a := NewLine(0, 0, 10, 10)
 	got := a.Angle()
 	assert := asserter.New(t)
 	assert().Equals(got, 45)

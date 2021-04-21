@@ -263,10 +263,6 @@ func Example_RenderInlinedDiagram() {
 <g transform="rotate(180 237 601)"><path stroke="black" fill="#777777" d="M237,601 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(270 133 601)"><path stroke="black" fill="#ffffff" d="M129,609 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M332,364 L434,303" />
-<g transform="rotate(-30 332 364)"><path stroke="black" fill="#777777" d="M332,364 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(60 434 303)"><path stroke="black" fill="#ffffff" d="M430,311 l4,-8 l 4,8 Z" /></g>
-
 <path stroke="black" d="M82,386 L82,556" />
 <g transform="rotate(90 82 386)"><path stroke="black" fill="#777777" d="M82,386 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(180 82 556)"><path stroke="black" fill="#ffffff" d="M78,564 l4,-8 l 4,8 Z" /></g>
@@ -280,11 +276,11 @@ func Example_RenderInlinedDiagram() {
 <path stroke="black" stroke-dasharray="5,5,5" d="M639,70 L359,95" />
 <g transform="rotate(265 359 95)"><path stroke="black" fill="#ffffff" d="M355,103 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M289,364 L289,184" />
-<g transform="rotate(0 289 184)"><path stroke="black" fill="#ffffff" d="M285,192 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M0,0 L289,184" />
+<g transform="rotate(122 289 184)"><path stroke="black" fill="#ffffff" d="M285,192 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M434,221 L359,159" />
-<g transform="rotate(309 359 159)"><path stroke="black" fill="#ffffff" d="M355,167 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M434,223 L359,160" />
+<g transform="rotate(310 359 160)"><path stroke="black" fill="#ffffff" d="M355,168 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M145,206 L220,152" />
 <g transform="rotate(55 220 152)"><path stroke="black" fill="#ffffff" d="M216,160 l4,-8 l 4,8 Z" /></g>
@@ -318,17 +314,29 @@ func Example_RenderInlinedDiagram() {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="360">SetTextPad()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="376">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="136">shape.Record struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="364" width="109" height="52"/>
-<path stroke="#d3d3d3" d="M235,390 L344,390" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="406">Arrow</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="380">shape.Line struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="434" y="152" width="117" height="234"/>
-<path stroke="#d3d3d3" d="M434,178 L551,178" />
+<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="182" width="109" height="234"/>
+<path stroke="#d3d3d3" d="M235,208 L344,208" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="224">Start</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="240">End</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="256">Tail</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="272">Head</text>
+<path stroke="#d3d3d3" d="M235,278 L344,278" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="294">AbsAngle()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="310">Angle()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="326">CenterPosition()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="342">DirQ1()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="358">DirQ2()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="374">DirQ3()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="390">DirQ4()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="406">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="198">shape.Line struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="434" y="152" width="109" height="234"/>
+<path stroke="#d3d3d3" d="M434,178 L543,178" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="194">Start</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="210">End</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="226">Tail</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="242">Head</text>
-<path stroke="#d3d3d3" d="M434,248 L551,248" />
+<path stroke="#d3d3d3" d="M434,248 L543,248" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="264">AbsAngle()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="280">Angle()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="296">CenterPosition()</text>
@@ -337,7 +345,7 @@ func Example_RenderInlinedDiagram() {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="344">DirQ3()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="360">DirQ4()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="376">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="168">shape.Arrow struct</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="168">shape.Line struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="639" y="20" width="117" height="90"/>
 <path stroke="#d3d3d3" d="M639,46 L756,46" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="62">Radius</text>
@@ -563,15 +571,12 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="583" y="18">aws.SQS</text>
 <text font-style="italic" font-family="Arial,Helvetica,sans-serif" font-size="12px" x="328" y="290">Private RPC using Gob encoding</text>
 <path stroke="black" d="M38,57 L228,57" />
-<g transform="rotate(90 228 57)"><path stroke="black" fill="#ffffff" d="M224,65 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="107" y="54">connect()</text>
 <path stroke="red" d="M228,90 L418,90" />
-<g transform="rotate(90 418 90)"><path stroke="red" fill="#ffffff" d="M414,98 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="299" y="87">SELECT</text>
 <path stroke="black" d="M418,123 L228,123" />
-<g transform="rotate(270 228 123)"><path stroke="black" fill="#ffffff" d="M224,131 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="307" y="120">Rows</text>
 <path stroke="red" d="M228,156 L243,156" />
@@ -579,15 +584,12 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <path stroke="red" d="M243,156 L243,188" />
 
 <path stroke="red" d="M243,188 L228,188" />
-<g transform="rotate(270 228 188)"><path stroke="red" fill="#ffffff" d="M224,196 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="175">Transform to view model</text>
 <path stroke="black" d="M228,211 L38,211" />
-<g transform="rotate(270 38 211)"><path stroke="black" fill="#ffffff" d="M34,219 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="100" y="208">Send HTML</text>
 <path stroke="black" d="M228,244 L608,244" />
-<g transform="rotate(90 608 244)"><path stroke="black" fill="#ffffff" d="M604,252 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="381" y="241">Publish event</text></svg></td></tr>
 </table>
@@ -721,8 +723,7 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <path stroke="black" stroke-width="2" fill="#ffffff" d="M158,30 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="112">Arrow</text>
-<path stroke="black" d="M128,100 L188,100" />
-<g transform="rotate(90 188 100)"><path stroke="black" fill="#ffffff" d="M184,108 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M128,104 L188,104" />
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="188">Circle</text>
 <circle stroke="#d3d3d3" stroke-width="2" fill="#ffffff" cx="158" cy="180" r="20" />\n
@@ -771,7 +772,11 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="140" y="1173">active</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1252">Triangle</text>
 <path stroke="black" d="M154,1248 l4,-8 l 4,8 Z" /></svg><h2 id="changelog"><a href="#changelog">Changelog</a></h2>
-<pre class="srcfile"><code class="go">## [0.21.2] 2021-04-21
+<pre class="srcfile"><code class="go">## [unreleased]
+
+- Remove type Arrow, use Line
+
+## [0.21.2] 2021-04-21
 ## [0.21.1] 2021-04-21
 ## [0.21.0] 2021-04-21
 

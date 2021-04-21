@@ -85,7 +85,7 @@ func (d *Diagram) LinkAll(s ...shape.Shape) {
 
 // Link places an arrow with a optional label above it between the two
 // shapes.
-func (d *Diagram) Link(from, to shape.Shape, txt ...string) (lnk *shape.Arrow, label *shape.Label) {
+func (d *Diagram) Link(from, to shape.Shape, txt ...string) (lnk *shape.Line, label *shape.Label) {
 	lnk = shape.NewArrowBetween(from, to)
 	d.Place(lnk)
 
@@ -153,11 +153,7 @@ func (d *Diagram) AdaptSize() (int, int) {
 			continue
 		}
 		x, y := s.Position()
-		switch s := s.(type) {
-		case *shape.Line:
-			x = min(s.Start.X, s.End.X)
-			y = min(s.Start.Y, s.End.Y)
-		case *shape.Arrow:
+		if s, ok := s.(*shape.Line); ok {
 			x = min(s.Start.X, s.End.X)
 			y = min(s.Start.Y, s.End.Y)
 		}

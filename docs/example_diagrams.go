@@ -32,7 +32,7 @@ multilines`)
 		d      = design.NewDiagram()
 	)
 	d.Place(record).At(10, 30)
-	for _, arrow := range []*shape.Arrow{
+	for _, arrow := range []*shape.Line{
 		q1arrow, q2arrow, q3arrow, q4arrow,
 		rightarrow, leftarrow,
 		uparrow, downarrow,

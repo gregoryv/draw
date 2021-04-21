@@ -7,8 +7,7 @@
 <path stroke="black" stroke-width="2" fill="#ffffff" d="M188,30 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="112">Arrow</text>
-<path stroke="black" d="M158,100 L218,100" />
-<g transform="rotate(90 218 100)"><path stroke="black" fill="#ffffff" d="M214,108 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M158,104 L218,104" />
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="188">Circle</text>
 <circle stroke="#d3d3d3" stroke-width="2" fill="#ffffff" cx="188" cy="180" r="20" />\n

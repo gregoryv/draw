@@ -10,7 +10,7 @@ func ExampleClassDiagram() *design.ClassDiagram {
 	var (
 		d        = design.NewClassDiagram()
 		record   = d.Struct(shape.Record{})
-		arrow    = d.Struct(shape.Arrow{})
+		arrow    = d.Struct(shape.Line{})
 		line     = d.Struct(shape.Line{})
 		circle   = d.Struct(shape.Circle{})
 		diaarrow = d.Struct(shape.Diamond{})

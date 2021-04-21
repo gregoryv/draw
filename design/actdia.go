@@ -28,7 +28,7 @@ func (d *ActivityDiagram) LinkAll(s ...shape.Shape) {
 
 // Link places an arrow with a optional label above it between the two
 // shapes.
-func (d *ActivityDiagram) Link(from, to shape.Shape, action ...string) *shape.Arrow {
+func (d *ActivityDiagram) Link(from, to shape.Shape, action ...string) *shape.Line {
 	lnk := shape.NewArrowBetween(from, to)
 	lnk.SetClass("activity-arrow")
 	d.Place(lnk)
@@ -38,7 +38,7 @@ func (d *ActivityDiagram) Link(from, to shape.Shape, action ...string) *shape.Ar
 	return lnk
 }
 
-func (d *ActivityDiagram) placeLabel(lnk *shape.Arrow, action string) {
+func (d *ActivityDiagram) placeLabel(lnk *shape.Line, action string) {
 	label := shape.NewLabel(action)
 	switch lnk.Direction() {
 	case shape.DirectionRight, shape.DirectionLeft:

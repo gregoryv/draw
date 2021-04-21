@@ -12,7 +12,7 @@ func ExampleClassDiagram() {
 	var (
 		d        = design.NewClassDiagram()
 		record   = d.Struct(shape.Record{})
-		arrow    = d.Struct(shape.Arrow{})
+		arrow    = d.Struct(shape.Line{})
 		line     = d.Struct(shape.Line{})
 		circle   = d.Struct(shape.Circle{})
 		diaarrow = d.Struct(shape.Diamond{})
@@ -69,17 +69,17 @@ func ExampleDiagram() {
 	var (
 		record     = shape.NewRecord("Record")
 		x, y       = 130, 80
-		q1arrow    = shape.NewArrow(x, y, x+50, y-10)
-		q2arrow    = shape.NewArrow(x, y, x-30, y-10)
-		q3arrow    = shape.NewArrow(x, y, x-50, y+20)
-		q4arrow    = shape.NewArrow(x, y, x+40, y+20)
-		rightarrow = shape.NewArrow(x, y, x+90, y)
-		leftarrow  = shape.NewArrow(x, y, x-50, y)
-		uparrow    = shape.NewArrow(x, y, x, y-40)
-		downarrow  = shape.NewArrow(x, y, x, y+40)
+		q1arrow    = shape.NewLine(x, y, x+50, y-10)
+		q2arrow    = shape.NewLine(x, y, x-30, y-10)
+		q3arrow    = shape.NewLine(x, y, x-50, y+20)
+		q4arrow    = shape.NewLine(x, y, x+40, y+20)
+		rightarrow = shape.NewLine(x, y, x+90, y)
+		leftarrow  = shape.NewLine(x, y, x-50, y)
+		uparrow    = shape.NewLine(x, y, x, y-40)
+		downarrow  = shape.NewLine(x, y, x, y+40)
 		label      = shape.NewLabel("Label")
-		withtail   = shape.NewArrow(20, 100, 150, 100)
-		diaarrow   = shape.NewArrow(20, 120, 150, 120)
+		withtail   = shape.NewLine(20, 100, 150, 100)
+		diaarrow   = shape.NewLine(20, 120, 150, 120)
 		note       = shape.NewNote(`Notes support
 multilines`)
 		comp   = shape.NewComponent("database")
@@ -92,7 +92,7 @@ multilines`)
 		d      = design.NewDiagram()
 	)
 	d.Place(record).At(10, 30)
-	for _, arrow := range []*shape.Arrow{
+	for _, arrow := range []*shape.Line{
 		q1arrow, q2arrow, q3arrow, q4arrow,
 		rightarrow, leftarrow,
 		uparrow, downarrow,

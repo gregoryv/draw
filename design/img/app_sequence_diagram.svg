@@ -18,15 +18,12 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="400" y="18">sql.DB</text>
 <text font-style="italic" font-family="Arial,Helvetica,sans-serif" font-size="12px" x="271" y="312">Private rpc via Gob</text>
 <path stroke="black" d="M38,57 L228,57" />
-<g transform="rotate(90 228 57)"><path stroke="black" fill="#ffffff" d="M224,65 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="107" y="54">connect()</text>
 <path stroke="red" d="M228,90 L418,90" />
-<g transform="rotate(90 418 90)"><path stroke="red" fill="#ffffff" d="M414,98 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="299" y="87">SELECT</text>
 <path stroke="black" d="M418,123 L228,123" />
-<g transform="rotate(270 228 123)"><path stroke="black" fill="#ffffff" d="M224,131 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="307" y="120">Rows</text>
 <path stroke="red" d="M228,156 L243,156" />
@@ -34,7 +31,6 @@
 <path stroke="red" d="M243,156 L243,188" />
 
 <path stroke="red" d="M243,188 L228,188" />
-<g transform="rotate(270 228 188)"><path stroke="red" fill="#ffffff" d="M224,196 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="175">Transform to view model</text>
 <path stroke="#ffffff" stroke-dasharray="2,2,2" d="M0,211 L0,227" />
@@ -52,6 +48,5 @@
 <path stroke="#ffffff" stroke-dasharray="2,2,2" d="M608,211 L608,227" />
 
 <path stroke="black" d="M228,244 L38,244" />
-<g transform="rotate(270 38 244)"><path stroke="black" fill="#ffffff" d="M34,252 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="100" y="241">Send HTML</text></svg>

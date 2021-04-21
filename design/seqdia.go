@@ -149,7 +149,7 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 			label.SetX(fromX + l1.Width() + d.TextPad.Left)
 			label.SetY(y + 3)
 
-			arrow := shape.NewArrow(
+			arrow := shape.NewLine(
 				l2.End.X,
 				l2.End.Y,
 				l1.Start.X,
@@ -159,7 +159,7 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 			d.Place(l1, l2, arrow, label)
 			y += d.selfHeight()
 		} else {
-			arrow := shape.NewArrow(
+			arrow := shape.NewLine(
 				fromX,
 				y,
 				toX,
