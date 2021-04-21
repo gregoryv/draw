@@ -1,7 +1,6 @@
 package draw_test
 
 import (
-	"bytes"
 	"database/sql"
 	"fmt"
 	"io/ioutil"
@@ -13,7 +12,6 @@ import (
 	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/internal/app"
 	"github.com/gregoryv/draw/shape"
-	"github.com/gregoryv/golden"
 )
 
 func BenchmarkWriteSvg(b *testing.B) {
@@ -34,7 +32,6 @@ func TestInline(t *testing.T) {
 	if strings.Contains(got, "class") {
 		t.Error("found class attribute\n", got)
 	}
-
 }
 
 func ExampleInline() {
@@ -57,7 +54,7 @@ func ExampleNewSvg() {
 	//   class="root" width="100" height="100"></svg>
 }
 
-func Test_overview(t *testing.T) {
+func Example_overview() {
 	var (
 		d   = design.NewSequenceDiagram()
 		cli = d.AddStruct(app.Client{})
@@ -118,12 +115,8 @@ func Test_overview(t *testing.T) {
 	d.VAlignCenter(service, inet, browser)
 
 	d.SetCaption("gregoryv/draw provided shapes and diagrams")
-	// Write it out inlined
-	var buf bytes.Buffer
-	d.Style.SetOutput(&buf)
-	d.WriteSVG(&d.Style)
-
-	golden.AssertWith(t, buf.String(), "overview.svg")
+	d.SaveAs("overview.svg")
+	// output:
 }
 
 // The overview is used as social preview in github.

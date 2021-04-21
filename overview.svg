@@ -7,10 +7,10 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="93" y="200">Run</text>
 <circle stroke="black" stroke-width="2" fill="#ffffff" cx="106" cy="250" r="10" />\n<circle stroke="black" cx="106" cy="250" r="6" />\n
 <path stroke="black" d="M106,152 L106,182" />
-<g transform="rotate(90 106 182)"><path stroke="black" fill="#ffffff" d="M106,182 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(180 106 182)"><path stroke="black" fill="#ffffff" d="M102,190 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M106,208 L106,238" />
-<g transform="rotate(90 106 238)"><path stroke="black" fill="#ffffff" d="M106,238 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(180 106 238)"><path stroke="black" fill="#ffffff" d="M102,246 l4,-8 l 4,8 Z" /></g>
 
 <rect stroke="#d3d3d3" fill="#ffffff" x="212" y="140" width="139" height="164"/>
 <line stroke="#d3d3d3" x1="212" y1="166" x2="351" y2="166"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="182">Direction()</text>
@@ -26,7 +26,7 @@
 <line stroke="#d3d3d3" x1="451" y1="278" x2="568" y2="278"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="294">Radius</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="268">shape.Circle struct</text>
 <path stroke="black" stroke-dasharray="5,5,5" d="M451,263 L351,239" />
-<g transform="rotate(193 351 239)"><path stroke="black" fill="#ffffff" d="M351,239 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(283 351 239)"><path stroke="black" fill="#ffffff" d="M347,247 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="#d3d3d3" fill="#ffffcc" d="M501,140 v 41 h 159 v -31 l -10,-10 L 501,140 M660,150 h -10 v -10"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="511" y="156">Anything is possible!</text>
@@ -36,7 +36,7 @@
 <path stroke="black" stroke-width="2" fill="#ffffff" d="M511,79 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
 
 <path stroke="black" d="M521,96 L561,140" />
-<g transform="rotate(47 561 140)"><path stroke="black" fill="#ffffff" d="M561,140 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(137 561 140)"><path stroke="black" fill="#ffffff" d="M557,148 l4,-8 l 4,8 Z" /></g>
 
 <rect stroke="#d3d3d3" fill="#ffffff" x="730" y="70" width="62" height="26"/>
 <rect stroke="#d3d3d3" fill="#ffffff" x="725" y="75" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="725" y="86" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="741" y="88">Service</text>
@@ -54,11 +54,11 @@
 <line stroke="#d3d3d3" x1="418" y1="24" x2="418" y2="101"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="400" y="18">sql.DB</text>
 <path stroke="black" d="M38,57 L228,57" />
-<g transform="rotate(0 228 57)"><path stroke="black" fill="#ffffff" d="M228,57 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 228 57)"><path stroke="black" fill="#ffffff" d="M224,65 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="107" y="54">connect()</text>
 <path stroke="black" d="M228,90 L418,90" />
-<g transform="rotate(0 418 90)"><path stroke="black" fill="#ffffff" d="M418,90 l-8,-4 l 0,8 Z" /></g>
+<g transform="rotate(90 418 90)"><path stroke="black" fill="#ffffff" d="M414,98 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="318" y="87">...</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="320" y="351">gregoryv/draw provided shapes and diagrams</text></svg>
