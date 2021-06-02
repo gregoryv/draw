@@ -10,7 +10,6 @@ func ExampleClassDiagram() *design.ClassDiagram {
 	var (
 		d        = design.NewClassDiagram()
 		record   = d.Struct(shape.Record{})
-		line     = d.Struct(shape.Line{})
 		circle   = d.Struct(shape.Circle{})
 		diamond  = d.Struct(shape.Diamond{})
 		triangle = d.Struct(shape.Triangle{})
@@ -30,15 +29,14 @@ func ExampleClassDiagram() *design.ClassDiagram {
 	)
 	d.HideRealizations()
 
-	d.Place(shapE).At(220, 20)
-	d.Place(record).At(20, 120)
+	d.Place(shapE).At(280, 20)
+	d.Place(record).At(20, 160)
 
 	d.Place(circle).RightOf(shapE, 280)
-	d.Place(line).RightOf(circle, 50)
 	d.Place(diamond).Below(circle, 50)
 	d.Place(triangle).Below(diamond)
 
-	d.Place(fnt).Below(record, 170)
+	d.Place(fnt).Below(record, 120)
 	d.Place(style).RightOf(fnt, 90)
 	d.VAlignCenter(shapE, style)
 	d.VAlignCenter(record, fnt)
