@@ -89,12 +89,13 @@ func NewProjectArticle() *Element {
 		P(`Each diagram is a Go type specifically designed to provide
 		an easy and intuitive way of "programming" diagrams. Elements
 		are either fixed strings or taken from the source code by
-		using concrete instances of real types. This is what makes
-		refactoring update diagrams aswell.`, Br(), `Once you selected
-		elements to include in your diagram place them out and
-		position them relative to each other. Relative placement has
-		the benefit of adaptive diagrams once you add more methods or
-		fields to your structs.`),
+		using concrete instances of real types. This allows for
+		refactoring to also update diagrams within a package.`, Br(),
+			`Once you selected elements to include in your diagram place
+		them out and position them relative to each other. Relative
+		placement has the benefit of adaptive diagrams once you add
+		more methods or fields to your structs. It works for most
+		cases, eliminating manual updates.`),
 
 		Table(
 			Tr(
