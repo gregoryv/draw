@@ -4,11 +4,22 @@ import (
 	"bytes"
 	"fmt"
 	"reflect"
+	"strings"
 
 	"github.com/gregoryv/draw/shape"
 )
 
 func NewVRecord(v interface{}) *VRecord {
+	return newVRecord(v, false)
+}
+
+// NewDetailedVRecord returns a VRecord including method argument and
+// return types.
+func NewDetailedVRecord(v interface{}) *VRecord {
+	return newVRecord(v, true)
+}
+
+func newVRecord(v interface{}, detailed bool) *VRecord {
 	t := reflect.TypeOf(v)
 	title := fmt.Sprintf("%s %s", t, t.Kind())
 	if t.Kind() == reflect.Ptr {
@@ -19,16 +30,17 @@ func NewVRecord(v interface{}) *VRecord {
 	}
 	rec := shape.NewRecord(title)
 
-	if t.Kind() == reflect.Struct {
+	switch {
+	case t.Kind() == reflect.Struct:
 		addFields(rec, t)
 		// always use pointer as the language works this way
-		addMethods(rec, reflect.PtrTo(t))
-	}
-	if t.Kind() == reflect.Interface {
-		addMethods(rec, t)
-	}
-	if t.Kind() == reflect.Slice {
-		addMethods(rec, t)
+		addMethods(rec, reflect.PtrTo(t), detailed)
+
+	case t.Kind() == reflect.Interface:
+		addMethods(rec, t, detailed)
+
+	case t.Kind() == reflect.Slice:
+		addMethods(rec, t, detailed)
 	}
 	return &VRecord{
 		Record: rec,
@@ -45,11 +57,41 @@ func addFields(r *shape.Record, t reflect.Type) {
 	}
 }
 
-func addMethods(r *shape.Record, t reflect.Type) {
+func addMethods(r *shape.Record, t reflect.Type, detailed bool) {
 	for i := 0; i < t.NumMethod(); i++ {
 		m := t.Method(i)
-		r.Methods = append(r.Methods, m.Name+"()")
+		// todo include full method if wanted
+		r.Methods = append(r.Methods, methodSignature(m, detailed))
 	}
+}
+
+func methodSignature(m reflect.Method, detailed bool) (sign string) {
+	var sb strings.Builder
+	sb.WriteString(m.Name)
+	sb.WriteString("(")
+	if !detailed {
+		sb.WriteString(")")
+		return sb.String()
+	}
+
+	fn := m.Func
+	t := fn.Type()
+	for i := 1; i < t.NumIn(); i++ {
+		arg := t.In(i)
+		if i > 1 {
+			sb.WriteString(", ")
+		}
+		sb.WriteString(arg.String())
+	}
+	sb.WriteString(") ")
+	for i := 0; i < t.NumOut(); i++ {
+		arg := t.Out(i)
+		if i > 0 {
+			sb.WriteString(", ")
+		}
+		sb.WriteString(arg.String())
+	}
+	return sb.String()
 }
 
 // todo here so we can toggle manually added private methods

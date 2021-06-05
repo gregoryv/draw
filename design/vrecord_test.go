@@ -1,11 +1,27 @@
 package design
 
 import (
+	"fmt"
 	"io"
 	"testing"
 
 	"github.com/gregoryv/asserter"
 )
+
+func Example_VRecord_methods() {
+	vr := NewDetailedVRecord(&car{})
+	for _, m := range vr.Record.Methods {
+		fmt.Println(m)
+	}
+	// output:
+	// Model(int) string
+}
+
+type car struct{}
+
+func (me *car) Model(x int) string {
+	return ""
+}
 
 type myOwn int
 type myStr struct{ f string }
