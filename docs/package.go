@@ -147,6 +147,10 @@ func NewProjectArticle() *Element {
 
 		H3("Activity"),
 
+		P(`Activity diagrams start in one position and show states and
+		activities transitioning from one stated to another ending in
+		one or more exits.`),
+
 		ExampleActivityDiagram().Inline(),
 		LoadFile("activity_example.go", 1, -1),
 
