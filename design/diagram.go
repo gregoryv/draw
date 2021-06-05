@@ -121,7 +121,7 @@ func (d *Diagram) SaveAs(filename string) error {
 
 // Inline returns rendered SVG with inlined style
 func (d *Diagram) Inline() string {
-	return draw.Inline(d, d.Style)
+	return inline(d, d.Style)
 }
 
 // String returns rendered SVG

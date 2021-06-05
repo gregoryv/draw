@@ -4,7 +4,6 @@ import (
 	"io"
 	"reflect"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/shape"
 )
 
@@ -153,7 +152,7 @@ func (d *ClassDiagram) SaveAs(filename string) error {
 
 // Inline returns rendered SVG with inlined style
 func (d *ClassDiagram) Inline() string {
-	return draw.Inline(d, d.Style)
+	return inline(d, d.Style)
 }
 
 // String returns rendered SVG

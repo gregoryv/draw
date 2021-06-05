@@ -24,3 +24,11 @@ func toString(d draw.SVGWriter) string {
 	d.WriteSVG(&buf)
 	return buf.String()
 }
+
+// inline me returns SVG with inlined style.
+func inline(w draw.SVGWriter, style draw.Style) string {
+	var buf bytes.Buffer
+	style.SetOutput(&buf)
+	w.WriteSVG(&style)
+	return buf.String()
+}

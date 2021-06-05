@@ -5,7 +5,6 @@ import (
 	"io"
 	"time"
 
-	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/internal/date"
 	"github.com/gregoryv/draw/shape"
 )
@@ -210,7 +209,7 @@ func (d *GanttChart) SaveAs(filename string) error {
 
 // Inline returns rendered SVG with inlined style
 func (d *GanttChart) Inline() string {
-	return draw.Inline(d, d.Diagram.Style)
+	return inline(d, d.Diagram.Style)
 }
 
 // String returns rendered SVG
