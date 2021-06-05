@@ -14,37 +14,7 @@ import (
 	"github.com/gregoryv/draw/shape"
 )
 
-func BenchmarkWriteSvg(b *testing.B) {
-	svg := &draw.SVG{}
-	svg.Append(&shape.Record{})
-
-	style := draw.NewStyle(ioutil.Discard)
-	for i := 0; i < b.N; i++ {
-		svg.WriteSVG(&style)
-	}
-	b.StopTimer()
-	b.ReportAllocs()
-}
-
-func TestInline(t *testing.T) {
-	d := design.NewSequenceDiagram()
-	got := d.Inline()
-	if strings.Contains(got, "class") {
-		t.Error("found class attribute\n", got)
-	}
-}
-
-func ExampleInline() {
-	d := design.NewSequenceDiagram()
-	fmt.Println(d.Inline())
-	// output:
-	// <svg
-	//   xmlns="http://www.w3.org/2000/svg"
-	//   xmlns:xlink="http://www.w3.org/1999/xlink"
-	//   font-family="Arial,Helvetica,sans-serif" width="1" height="1"></svg>
-}
-
-func ExampleNewSvg() {
+func Example_NewSVG() {
 	s := draw.NewSVG()
 	s.WriteSVG(os.Stdout)
 	// output:
@@ -54,6 +24,18 @@ func ExampleNewSvg() {
 	//   class="root" width="100" height="100"></svg>
 }
 
+func Example_inline() {
+	d := design.NewSequenceDiagram()
+	fmt.Println(d.Inline())
+	// output:
+	// <svg
+	//   xmlns="http://www.w3.org/2000/svg"
+	//   xmlns:xlink="http://www.w3.org/1999/xlink"
+	//   font-family="Arial,Helvetica,sans-serif" width="1" height="1"></svg>
+}
+
+// The overview is used as social preview in github.
+// Transform to png with e.g. inkscape -z -w 890 -h 356 overview.svg -e overview.png
 func Example_overview() {
 	var (
 		d   = design.NewSequenceDiagram()
@@ -119,5 +101,22 @@ func Example_overview() {
 	// output:
 }
 
-// The overview is used as social preview in github.
-// Transform to png with e.g. inkscape -z -w 890 -h 356 overview.svg -e overview.png
+func BenchmarkWriteSvg(b *testing.B) {
+	svg := &draw.SVG{}
+	svg.Append(&shape.Record{})
+
+	style := draw.NewStyle(ioutil.Discard)
+	for i := 0; i < b.N; i++ {
+		svg.WriteSVG(&style)
+	}
+	b.StopTimer()
+	b.ReportAllocs()
+}
+
+func TestInline(t *testing.T) {
+	d := design.NewSequenceDiagram()
+	got := d.Inline()
+	if strings.Contains(got, "class") {
+		t.Error("found class attribute\n", got)
+	}
+}
