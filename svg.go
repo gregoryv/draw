@@ -58,9 +58,12 @@ func (s *SVG) Prepend(w ...SVGWriter) {
 func (s *SVG) Width() int  { return s.width }
 func (s *SVG) Height() int { return s.height }
 
-func (s *SVG) SetWidth(w int)   { s.width = w }
-func (s *SVG) SetHeight(h int)  { s.height = h }
-func (s *SVG) SetSize(w, h int) { s.SetWidth(w); s.SetHeight(h) }
+func (s *SVG) SetWidth(w int)  { s.width = w }
+func (s *SVG) SetHeight(h int) { s.height = h }
+func (s *SVG) SetSize(width, height int) {
+	s.width = width
+	s.height = height
+}
 
 type SVGWriter interface {
 	WriteSVG(io.Writer) error
