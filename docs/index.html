@@ -13,6 +13,7 @@ font-family: 'Source Sans Pro', sans-serif;
 }
 article {
 margin: 1em 1.62em;
+max-width: 21cm;
 }
 h1, h2, h3, h4, h5, h6 {
 font-family: 'Source Serif Pro', serif;
@@ -124,60 +125,34 @@ float: left;
 		placement has the benefit of adaptive diagrams once you add
 		more methods or fields to your structs. It works for most
 		cases, eliminating manual updates.</p>
-<table>
-<tr><td><pre class="srcfile"><code class="go">package docs
-
-import (
-	"github.com/gregoryv/draw/design"
-	"github.com/gregoryv/draw/shape"
-)
-
-func ExampleSmallClassDiagram() *design.ClassDiagram {
-	var (
-		d      = design.NewClassDiagram()
-		house  = d.Struct(House{})
-		door   = d.Struct(Door{})
-		window = d.Struct(Window{})
-		part   = d.Interface((*Part)(nil))
-		note   = shape.NewNote(`Relations are automatically rendered`)
-	)
-	d.Place(part).At(20, 20)        // absolute positioning
-	d.Place(door).RightOf(part, 70) // optional extra spacing
-	d.Place(window).Below(door)
-	d.Place(house).RightOf(door, 70)
-	d.Place(note).Below(window, 20)
-	d.VAlignLeft(part, note)
-	d.SetCaption("Small example diagram")
-	return d
-}
-</code></pre></td><td><br/><br/><svg
+<svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="496" height="297">
+  font-family="Arial,Helvetica,sans-serif" width="707" height="252">
 <path stroke="black" d="M381,96 L328,126" />
 <g transform="rotate(151 381 96)"><path stroke="black" fill="#ffffff" d="M381,96 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(241 328 126)"><path stroke="black" fill="#ffffff" d="M324,134 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M381,62 L311,59" />
-<g transform="rotate(182 381 62)"><path stroke="black" fill="#777777" d="M381,62 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(272 311 59)"><path stroke="black" fill="#ffffff" d="M307,67 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M381,65 L311,65" />
+<g transform="rotate(180 381 65)"><path stroke="black" fill="#777777" d="M381,65 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(270 311 65)"><path stroke="black" fill="#ffffff" d="M307,73 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M207,124 L120,72" />
-<g transform="rotate(300 120 72)"><path stroke="black" fill="#ffffff" d="M116,80 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,130 L129,91" />
+<g transform="rotate(296 129 91)"><path stroke="black" fill="#ffffff" d="M125,99 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M207,53 L137,49" />
-<g transform="rotate(273 137 49)"><path stroke="black" fill="#ffffff" d="M133,57 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M207,65 L137,65" />
+<g transform="rotate(270 137 65)"><path stroke="black" fill="#ffffff" d="M133,73 l4,-8 l 4,8 Z" /></g>
 
-<rect stroke="#d3d3d3" fill="#ffffff" x="20" y="20" width="117" height="52"/>
-<path stroke="#d3d3d3" d="M20,46 L137,46" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="62">Materials()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="36">docs.Part interface</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="207" y="20" width="104" height="74"/>
-<path stroke="#d3d3d3" d="M207,46 L311,46" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="62">Material</text>
-<path stroke="#d3d3d3" d="M207,68 L311,68" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="84">Materials()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="36">docs.Door struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="20" y="39" width="117" height="52"/>
+<path stroke="#d3d3d3" d="M20,65 L137,65" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="81">Materials()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="55">docs.Part interface</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="207" y="28" width="104" height="74"/>
+<path stroke="#d3d3d3" d="M207,54 L311,54" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="70">Material</text>
+<path stroke="#d3d3d3" d="M207,76 L311,76" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="92">Materials()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="44">docs.Door struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="207" y="124" width="121" height="74"/>
 <path stroke="#d3d3d3" d="M207,150 L328,150" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="213" y="166">Model</text>
@@ -191,12 +166,37 @@ func ExampleSmallClassDiagram() *design.ClassDiagram {
 <path stroke="#d3d3d3" d="M381,84 L494,84" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="100">Rooms()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="387" y="36">docs.House struct</text>
-<path stroke="#d3d3d3" fill="#ffffcc" d="M20,218 v 25 h 221 v -15 l -10,-10 L 20,218 M241,228 h -10 v -10"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="30" y="234">Relations are automatically rendered</text>
+<path stroke="#d3d3d3" fill="#ffffcc" d="M564,44 v 41 h 141 v -31 l -10,-10 L 564,44 M705,54 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="574" y="60">Relations are automa-</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="574" y="76">tically rendered</text>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="183" y="290">Small example diagram</text></svg></td></tr>
-</table>
-<p>Once a diagram is done, you can render the SVG in different ways</p>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="288" y="245">Small example diagram</text></svg><pre class="srcfile"><code class="go">package docs
+
+import (
+	"github.com/gregoryv/draw/design"
+	"github.com/gregoryv/draw/shape"
+)
+
+func ExampleSmallClassDiagram() *design.ClassDiagram {
+	var (
+		d      = design.NewClassDiagram()
+		house  = d.Struct(House{})
+		door   = d.Struct(Door{})
+		window = d.Struct(Window{})
+		part   = d.Interface((*Part)(nil))
+		note   = shape.NewNote(`Relations are automa-
+tically rendered`)
+	)
+	d.Place(part).At(20, 20)        // absolute positioning
+	d.Place(door).RightOf(part, 70) // optional extra spacing
+	d.Place(window).Below(door)
+	d.Place(house, note).RightOf(door, 70)
+
+	d.HAlignCenter(house, door, part, note)
+	d.SetCaption("Small example diagram")
+	return d
+}
+</code></pre><p>Once a diagram is done, you can render the SVG in different ways</p>
 <ul>
 <li><code>SaveAs(filename)</code></li>
 <li><code>Inline()</code> - returns SVG as string with all classes replaced with styling</li>
@@ -238,43 +238,43 @@ func Example_RenderInlinedDiagram() {
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="900" height="1054">
+  font-family="Arial,Helvetica,sans-serif" width="775" height="1054">
 <path stroke="black" d="M280,293 L145,293" />
 <g transform="rotate(180 280 293)"><path stroke="black" fill="#ffffff" d="M280,293 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(270 145 293)"><path stroke="black" fill="#ffffff" d="M141,301 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M627,591 L707,591" />
-<g transform="rotate(0 627 591)"><path stroke="black" fill="#777777" d="M627,591 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(90 707 591)"><path stroke="black" fill="#ffffff" d="M703,599 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M522,591 L582,591" />
+<g transform="rotate(0 522 591)"><path stroke="black" fill="#777777" d="M522,591 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(90 582 591)"><path stroke="black" fill="#ffffff" d="M578,599 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M492,591 L402,591" />
-<g transform="rotate(180 492 591)"><path stroke="black" fill="#777777" d="M492,591 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(270 402 591)"><path stroke="black" fill="#ffffff" d="M398,599 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M387,591 L317,591" />
+<g transform="rotate(180 387 591)"><path stroke="black" fill="#777777" d="M387,591 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(270 317 591)"><path stroke="black" fill="#ffffff" d="M313,599 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M559,878 L559,788" />
-<g transform="rotate(-90 559 878)"><path stroke="black" fill="#ffffff" d="M559,878 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(0 559 788)"><path stroke="black" fill="#ffffff" d="M555,796 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M454,878 L454,788" />
+<g transform="rotate(-90 454 878)"><path stroke="black" fill="#ffffff" d="M454,878 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(0 454 788)"><path stroke="black" fill="#ffffff" d="M450,796 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M722,798 L627,677" />
-<g transform="rotate(231 722 798)"><path stroke="black" fill="#ffffff" d="M722,798 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(321 627 677)"><path stroke="black" fill="#ffffff" d="M623,685 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M604,798 L522,684" />
+<g transform="rotate(234 604 798)"><path stroke="black" fill="#ffffff" d="M604,798 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(324 522 684)"><path stroke="black" fill="#ffffff" d="M518,692 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M297,591 L133,591" />
-<g transform="rotate(180 297 591)"><path stroke="black" fill="#777777" d="M297,591 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<path stroke="black" d="M212,591 L133,591" />
+<g transform="rotate(180 212 591)"><path stroke="black" fill="#777777" d="M212,591 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(270 133 591)"><path stroke="black" fill="#ffffff" d="M129,599 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M82,426 L82,546" />
 <g transform="rotate(90 82 426)"><path stroke="black" fill="#777777" d="M82,426 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(180 82 546)"><path stroke="black" fill="#ffffff" d="M78,554 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M704,258 L419,132" />
-<g transform="rotate(293 419 132)"><path stroke="black" fill="#ffffff" d="M415,140 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M636,258 L419,140" />
+<g transform="rotate(298 419 140)"><path stroke="black" fill="#ffffff" d="M415,148 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M699,179 L419,117" />
-<g transform="rotate(282 419 117)"><path stroke="black" fill="#ffffff" d="M415,125 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M619,175 L419,121" />
+<g transform="rotate(285 419 121)"><path stroke="black" fill="#ffffff" d="M415,129 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M699,70 L419,95" />
-<g transform="rotate(265 419 95)"><path stroke="black" fill="#ffffff" d="M415,103 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M619,71 L419,94" />
+<g transform="rotate(264 419 94)"><path stroke="black" fill="#ffffff" d="M415,102 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M145,247 L280,151" />
 <g transform="rotate(55 280 151)"><path stroke="black" fill="#ffffff" d="M276,159 l4,-8 l 4,8 Z" /></g>
@@ -308,22 +308,22 @@ func Example_RenderInlinedDiagram() {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="400">SetTextPad()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="416">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="176">shape.Record struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="699" y="20" width="117" height="90"/>
-<path stroke="#d3d3d3" d="M699,46 L816,46" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="705" y="62">Radius</text>
-<path stroke="#d3d3d3" d="M699,68 L816,68" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="705" y="84">Edge()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="705" y="100">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="705" y="36">shape.Circle struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="699" y="160" width="135" height="68"/>
-<path stroke="#d3d3d3" d="M699,186 L834,186" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="705" y="202">Edge()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="705" y="218">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="705" y="176">shape.Diamond struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="699" y="258" width="130" height="52"/>
-<path stroke="#d3d3d3" d="M699,284 L829,284" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="705" y="300">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="705" y="274">shape.Triangle struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="619" y="20" width="117" height="90"/>
+<path stroke="#d3d3d3" d="M619,46 L736,46" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="62">Radius</text>
+<path stroke="#d3d3d3" d="M619,68 L736,68" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="84">Edge()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="100">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="36">shape.Circle struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="619" y="160" width="135" height="68"/>
+<path stroke="#d3d3d3" d="M619,186 L754,186" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="202">Edge()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="218">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="176">shape.Diamond struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="619" y="258" width="130" height="52"/>
+<path stroke="#d3d3d3" d="M619,284 L749,284" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="300">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="274">shape.Triangle struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="31" y="546" width="102" height="90"/>
 <path stroke="#d3d3d3" d="M31,572 L133,572" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="588">Height</text>
@@ -331,53 +331,53 @@ func Example_RenderInlinedDiagram() {
 <path stroke="#d3d3d3" d="M31,610 L133,610" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="626">TextWidth()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="562">draw.Font struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="297" y="522" width="105" height="138"/>
-<path stroke="#d3d3d3" d="M297,548 L402,548" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="303" y="564">Font</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="303" y="580">TextPad</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="303" y="596">Pad</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="303" y="612">Spacing</text>
-<path stroke="#d3d3d3" d="M297,618 L402,618" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="303" y="634">SetOutput()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="303" y="650">Write()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="303" y="538">draw.Style struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="212" y="522" width="105" height="138"/>
+<path stroke="#d3d3d3" d="M212,548 L317,548" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="564">Font</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="580">TextPad</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="596">Pad</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="612">Spacing</text>
+<path stroke="#d3d3d3" d="M212,618 L317,618" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="634">SetOutput()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="650">Write()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="538">draw.Style struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="280" y="280" width="134" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="296">design.Relation struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="492" y="394" width="135" height="394"/>
-<path stroke="#d3d3d3" d="M492,420 L627,420" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="436">SVG</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="452">Aligner</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="468">Style</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="484">Caption</text>
-<path stroke="#d3d3d3" d="M492,490 L627,490" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="506">AdaptSize()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="522">Append()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="538">Height()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="554">Inline()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="570">Link()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="586">LinkAll()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="602">Place()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="618">PlaceGrid()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="634">Prepend()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="650">SaveAs()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="666">SetCaption()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="682">SetHeight()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="698">SetSize()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="714">SetWidth()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="730">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="746">TextWidth()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="762">Width()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="778">WriteSVG()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="498" y="410">design.Diagram struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="707" y="525" width="124" height="132"/>
-<path stroke="#d3d3d3" d="M707,551 L831,551" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="567">HAlignBottom()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="583">HAlignCenter()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="599">HAlignTop()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="615">VAlignCenter()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="631">VAlignLeft()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="647">VAlignRight()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="541">shape.Aligner struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="387" y="394" width="135" height="394"/>
+<path stroke="#d3d3d3" d="M387,420 L522,420" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="436">SVG</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="452">Aligner</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="468">Style</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="484">Caption</text>
+<path stroke="#d3d3d3" d="M387,490 L522,490" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="506">AdaptSize()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="522">Append()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="538">Height()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="554">Inline()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="570">Link()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="586">LinkAll()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="602">Place()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="618">PlaceGrid()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="634">Prepend()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="650">SaveAs()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="666">SetCaption()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="682">SetHeight()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="698">SetSize()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="714">SetWidth()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="730">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="746">TextWidth()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="762">Width()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="778">WriteSVG()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="410">design.Diagram struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="582" y="525" width="124" height="132"/>
+<path stroke="#d3d3d3" d="M582,551 L706,551" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="567">HAlignBottom()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="583">HAlignCenter()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="599">HAlignTop()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="615">VAlignCenter()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="631">VAlignLeft()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="647">VAlignRight()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="541">shape.Aligner struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="31" y="706" width="130" height="138"/>
 <path stroke="#d3d3d3" d="M31,732 L161,732" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="748">Spacing</text>
@@ -388,58 +388,36 @@ func Example_RenderInlinedDiagram() {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="818">LeftOf()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="834">RightOf()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="722">shape.Adjuster struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="707" y="798" width="191" height="202"/>
-<path stroke="#d3d3d3" d="M707,824 L898,824" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="840">Diagram</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="856">ColWidth</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="872">VMargin</text>
-<path stroke="#d3d3d3" d="M707,878 L898,878" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="894">Add()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="910">AddColumns()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="926">AddInterface()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="942">AddStruct()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="958">ClearLinks()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="974">Group()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="990">Skip()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="713" y="814">design.SequenceDiagram struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="477" y="878" width="166" height="122"/>
-<path stroke="#d3d3d3" d="M477,904 L643,904" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="483" y="920">Diagram</text>
-<path stroke="#d3d3d3" d="M477,926 L643,926" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="483" y="942">HideRealizations()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="483" y="958">Interface()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="483" y="974">Slice()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="483" y="990">Struct()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="483" y="894">design.ClassDiagram struct</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="279" y="1047">Figure 1. Class diagram of design and design.shape packages</text></svg><br/>Source: <a href="class_example.go">class_example.go</a><p>Records describe each entity using package name and
+<rect stroke="#d3d3d3" fill="#ffffff" x="582" y="798" width="191" height="202"/>
+<path stroke="#d3d3d3" d="M582,824 L773,824" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="840">Diagram</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="856">ColWidth</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="872">VMargin</text>
+<path stroke="#d3d3d3" d="M582,878 L773,878" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="894">Add()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="910">AddColumns()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="926">AddInterface()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="942">AddStruct()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="958">ClearLinks()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="974">Group()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="990">Skip()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="814">design.SequenceDiagram struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="372" y="878" width="166" height="122"/>
+<path stroke="#d3d3d3" d="M372,904 L538,904" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="920">Diagram</text>
+<path stroke="#d3d3d3" d="M372,926 L538,926" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="942">HideRealizations()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="958">Interface()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="974">Slice()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="990">Struct()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="894">design.ClassDiagram struct</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="217" y="1047">Figure 1. Class diagram of design and design.shape packages</text></svg><br/>Source: <a href="class_example.go">class_example.go</a><p>Records describe each entity using package name and
 		   type. Methods and fields are shown only by name if
 		   visible. Details such as arguments and return values are
 		   left to the API documentation. Relations are automatically
 		   rendererd between entities if there is one.</p>
 <h3 id="activity"><a href="#activity">Activity</a></h3>
-<table>
-<tr><td><pre class="srcfile"><code class="go">package docs
-
-import (
-	"github.com/gregoryv/draw/design"
-)
-
-func ExampleActivityDiagram() *design.ActivityDiagram {
-	d := design.NewActivityDiagram()
-
-	d.Start().At(80, 20)
-	d.Trans("push", "Commited")
-	d.Trans("run git hook", "Build complete")
-
-	test := d.Decide("run tests")
-	d.Trans("ok", "Verified")
-	d.Trans("", "EXIT")
-
-	d.Or(test)
-	d.TransRight("fails", "EXIT")
-	return d
-}
-</code></pre></td><td><br/><br/><svg
+<svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   font-family="Arial,Helvetica,sans-serif" width="203" height="465">
@@ -476,9 +454,28 @@ func ExampleActivityDiagram() *design.ActivityDiagram {
 <path stroke="black" d="M96,284 L178,284" />
 <g transform="rotate(90 178 284)"><path stroke="black" fill="#ffffff" d="M174,292 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="122" y="272">fails</text></svg></td></tr>
-</table>
-<h3 id="sequence"><a href="#sequence">Sequence</a></h3>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="122" y="272">fails</text></svg><pre class="srcfile"><code class="go">package docs
+
+import (
+	"github.com/gregoryv/draw/design"
+)
+
+func ExampleActivityDiagram() *design.ActivityDiagram {
+	d := design.NewActivityDiagram()
+
+	d.Start().At(80, 20)
+	d.Trans("push", "Commited")
+	d.Trans("run git hook", "Build complete")
+
+	test := d.Decide("run tests")
+	d.Trans("ok", "Verified")
+	d.Trans("", "EXIT")
+
+	d.Or(test)
+	d.TransRight("fails", "EXIT")
+	return d
+}
+</code></pre><h3 id="sequence"><a href="#sequence">Sequence</a></h3>
 <p>Sequence diagrams are ment to describe a sequence of
 		events, specifically calling methods or remote API calls. I've
 		tried to emphasize the horizontal arrows over vertical lines
@@ -486,34 +483,7 @@ func ExampleActivityDiagram() *design.ActivityDiagram {
 		one arrow variation. I found that embedding information by the
 		subtle head variations and arrow line styling is hard to
 		read.</p>
-<table>
-<tr><td><pre class="srcfile"><code class="go">package docs
-
-import (
-	"database/sql"
-
-	"github.com/gregoryv/draw/design"
-	"github.com/gregoryv/draw/internal/app"
-)
-
-func ExampleSequenceDiagram() *design.SequenceDiagram {
-	var (
-		d   = design.NewSequenceDiagram()
-		cli = d.AddStruct(app.Client{})
-		srv = d.AddStruct(app.Server{})
-		db  = d.AddStruct(sql.DB{})
-		sqs = d.Add("aws.SQS")
-	)
-	d.Group(srv, sqs, "Private RPC using Gob encoding", "red")
-	d.Link(cli, srv, "connect()")
-	d.Link(srv, db, "SELECT").Class = "highlight"
-	d.Link(db, srv, "Rows")
-	d.Link(srv, srv, "Transform to view model").Class = "highlight"
-	d.Link(srv, cli, "Send HTML")
-	d.Link(srv, sqs, "Publish event")
-	return d
-}
-</code></pre></td><td><br/><br/><svg
+<svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   font-family="Arial,Helvetica,sans-serif" width="634" height="298">
@@ -553,9 +523,33 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="100" y="208">Send HTML</text>
 <path stroke="black" d="M228,244 L608,244" />
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="381" y="241">Publish event</text></svg></td></tr>
-</table>
-<h3 id="ganttchart"><a href="#ganttchart">Gantt chart</a></h3>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="381" y="241">Publish event</text></svg><pre class="srcfile"><code class="go">package docs
+
+import (
+	"database/sql"
+
+	"github.com/gregoryv/draw/design"
+	"github.com/gregoryv/draw/internal/app"
+)
+
+func ExampleSequenceDiagram() *design.SequenceDiagram {
+	var (
+		d   = design.NewSequenceDiagram()
+		cli = d.AddStruct(app.Client{})
+		srv = d.AddStruct(app.Server{})
+		db  = d.AddStruct(sql.DB{})
+		sqs = d.Add("aws.SQS")
+	)
+	d.Group(srv, sqs, "Private RPC using Gob encoding", "red")
+	d.Link(cli, srv, "connect()")
+	d.Link(srv, db, "SELECT").Class = "highlight"
+	d.Link(db, srv, "Rows")
+	d.Link(srv, srv, "Transform to view model").Class = "highlight"
+	d.Link(srv, cli, "Send HTML")
+	d.Link(srv, sqs, "Publish event")
+	return d
+}
+</code></pre><h3 id="ganttchart"><a href="#ganttchart">Gantt chart</a></h3>
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"

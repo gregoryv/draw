@@ -97,16 +97,9 @@ func NewProjectArticle() *Element {
 		more methods or fields to your structs. It works for most
 		cases, eliminating manual updates.`),
 
-		Table(
-			Tr(
-				Td(
-					LoadFile("small_example.go", 1, -1),
-				),
-				Td(Br(), Br(),
-					ExampleSmallClassDiagram().Inline(),
-				),
-			),
-		),
+		ExampleSmallClassDiagram().Inline(),
+
+		LoadFile("small_example.go", 1, -1),
 
 		P(`Once a diagram is done, you can render the SVG in different ways`),
 		Ul(
@@ -153,16 +146,9 @@ func NewProjectArticle() *Element {
 		   rendererd between entities if there is one.`),
 
 		H3("Activity"),
-		Table(
-			Tr(
-				Td(
-					LoadFile("activity_example.go", 1, -1),
-				),
-				Td(Br(), Br(),
-					ExampleActivityDiagram().Inline(),
-				),
-			),
-		),
+
+		ExampleActivityDiagram().Inline(),
+		LoadFile("activity_example.go", 1, -1),
 
 		H3("Sequence"),
 
@@ -174,16 +160,8 @@ func NewProjectArticle() *Element {
 		subtle head variations and arrow line styling is hard to
 		read.`),
 
-		Table(
-			Tr(
-				Td(
-					LoadFile("sequence_example.go", 1, -1),
-				),
-				Td(Br(), Br(),
-					ExampleSequenceDiagram().Inline(),
-				),
-			),
-		),
+		ExampleSequenceDiagram().Inline(),
+		LoadFile("sequence_example.go", 1, -1),
 
 		H3("Gantt chart"),
 		ExampleGanttChart().Inline(),

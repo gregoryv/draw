@@ -32,18 +32,17 @@ func ExampleClassDiagram() *design.ClassDiagram {
 	d.Place(shapE).At(280, 20)
 	d.Place(record).At(20, 160)
 
-	d.Place(circle).RightOf(shapE, 280)
+	d.Place(circle).RightOf(shapE, 200)
 	d.Place(diamond).Below(circle, 50)
 	d.Place(triangle).Below(diamond)
 
 	d.Place(fnt).Below(record, 120)
 	d.Place(style).RightOf(fnt, 90)
-	d.VAlignCenter(shapE, style)
 	d.VAlignCenter(record, fnt)
 
 	d.Place(rel).Below(shapE, 20)
-	d.Place(dia).RightOf(style, 90)
-	d.Place(aligner).RightOf(dia, 80)
+	d.Place(dia).RightOf(style, 70)
+	d.Place(aligner).RightOf(dia, 60)
 	d.HAlignCenter(fnt, style, dia, aligner)
 	d.HAlignCenter(record, rel)
 
