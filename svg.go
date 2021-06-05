@@ -32,6 +32,8 @@ type SVG struct {
 	Content       []SVGWriter
 }
 
+// WriteSVG writes <svg> </svg> tags and it's content to the given
+// writer.
 func (s *SVG) WriteSVG(out io.Writer) error {
 	w, err := nexus.NewPrinter(out)
 	w.Printf(`<svg
@@ -58,8 +60,13 @@ func (s *SVG) Prepend(w ...SVGWriter) {
 func (s *SVG) Width() int  { return s.width }
 func (s *SVG) Height() int { return s.height }
 
-func (s *SVG) SetWidth(w int)  { s.width = w }
+// SetWidth sets the SVG width in pixels.
+func (s *SVG) SetWidth(w int) { s.width = w }
+
+// SetHeight sets the SVG height in pixels.
 func (s *SVG) SetHeight(h int) { s.height = h }
+
+// SetSize sets the SVG size in pixels
 func (s *SVG) SetSize(width, height int) {
 	s.width = width
 	s.height = height
