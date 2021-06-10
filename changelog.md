@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Update dependencies
 - Remove func draw.Inline(), moved to design as private
 - Remove type Arrow, use Line
 
