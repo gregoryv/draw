@@ -59,9 +59,11 @@
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="400" y="18">sql.DB</text>
 <path stroke="black" d="M38,57 L228,57" />
+<g transform="rotate(90 228 57)"><path stroke="black" fill="#ffffff" d="M224,65 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="107" y="54">connect()</text>
 <path stroke="black" d="M228,90 L418,90" />
+<g transform="rotate(90 418 90)"><path stroke="black" fill="#ffffff" d="M414,98 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="318" y="87">...</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="320" y="351">gregoryv/draw provided shapes and diagrams</text></svg>
