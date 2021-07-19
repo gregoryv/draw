@@ -518,12 +518,15 @@ func ExampleActivityDiagram() *design.ActivityDiagram {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="583" y="18">aws.SQS</text>
 <text font-style="italic" font-family="Arial,Helvetica,sans-serif" font-size="12px" x="328" y="290">Private RPC using Gob encoding</text>
 <path stroke="black" d="M38,57 L228,57" />
+<g transform="rotate(90 228 57)"><path stroke="black" fill="#ffffff" d="M224,65 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="107" y="54">connect()</text>
 <path stroke="red" d="M228,90 L418,90" />
+<g transform="rotate(90 418 90)"><path stroke="red" fill="#ffffff" d="M414,98 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="299" y="87">SELECT</text>
 <path stroke="black" d="M418,123 L228,123" />
+<g transform="rotate(270 228 123)"><path stroke="black" fill="#ffffff" d="M224,131 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="307" y="120">Rows</text>
 <path stroke="red" d="M228,156 L243,156" />
@@ -531,12 +534,15 @@ func ExampleActivityDiagram() *design.ActivityDiagram {
 <path stroke="red" d="M243,156 L243,188" />
 
 <path stroke="red" d="M243,188 L228,188" />
+<g transform="rotate(270 228 188)"><path stroke="red" fill="#ffffff" d="M224,196 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="175">Transform to view model</text>
 <path stroke="black" d="M228,211 L38,211" />
+<g transform="rotate(270 38 211)"><path stroke="black" fill="#ffffff" d="M34,219 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="100" y="208">Send HTML</text>
 <path stroke="black" d="M228,244 L608,244" />
+<g transform="rotate(90 608 244)"><path stroke="black" fill="#ffffff" d="M604,252 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="381" y="241">Publish event</text></svg><pre class="srcfile"><code class="go">package docs
 
@@ -743,8 +749,13 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="140" y="1173">active</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1252">Triangle</text>
 <path stroke="black" d="M154,1248 l4,-8 l 4,8 Z" /></svg><h2 id="changelog"><a href="#changelog">Changelog</a></h2>
-<pre class="srcfile"><code class="go">## [unreleased]
+<pre class="srcfile"><code class="go">## [0.22.1] 2021-06-14
 
+- Fix arrows in sequence diagram, bug introduced in v0.22.0
+
+## [0.22.0] 2021-06-10
+
+- Update dependencies
 - Remove func draw.Inline(), moved to design as private
 - Remove type Arrow, use Line
 
