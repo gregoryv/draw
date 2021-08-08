@@ -74,8 +74,11 @@ func methodSignature(m reflect.Method, detailed bool) (sign string) {
 		return sb.String()
 	}
 
-	fn := m.Func
-	t := fn.Type()
+	if m.Func.Kind() == reflect.Invalid {
+		sb.WriteString(")")
+		return sb.String()
+	}
+	t := m.Func.Type()
 	for i := 1; i < t.NumIn(); i++ {
 		arg := t.In(i)
 		if i > 1 {

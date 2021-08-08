@@ -1,215 +1,177 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="840" height="1064">
-<path stroke="black" d="M290,496 L145,326" />
-<g transform="rotate(229 290 496)"><path stroke="black" fill="#ffffff" d="M290,496 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(319 145 326)"><path stroke="black" fill="#ffffff" d="M141,334 l4,-8 l 4,8 Z" /></g>
+  font-family="Arial,Helvetica,sans-serif" width="775" height="1054">
+<path stroke="black" d="M280,293 L145,293" />
+<g transform="rotate(180 280 293)"><path stroke="black" fill="#ffffff" d="M280,293 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(270 145 293)"><path stroke="black" fill="#ffffff" d="M141,301 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M567,601 L647,601" />
-<g transform="rotate(0 567 601)"><path stroke="black" fill="#777777" d="M567,601 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(90 647 601)"><path stroke="black" fill="#ffffff" d="M643,609 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M522,591 L582,591" />
+<g transform="rotate(0 522 591)"><path stroke="black" fill="#777777" d="M522,591 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(90 582 591)"><path stroke="black" fill="#ffffff" d="M578,599 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M432,601 L342,601" />
-<g transform="rotate(180 432 601)"><path stroke="black" fill="#777777" d="M432,601 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(270 342 601)"><path stroke="black" fill="#ffffff" d="M338,609 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M387,591 L317,591" />
+<g transform="rotate(180 387 591)"><path stroke="black" fill="#777777" d="M387,591 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(270 317 591)"><path stroke="black" fill="#ffffff" d="M313,599 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M499,888 L499,798" />
-<g transform="rotate(-90 499 888)"><path stroke="black" fill="#ffffff" d="M499,888 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(0 499 798)"><path stroke="black" fill="#ffffff" d="M495,806 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M454,878 L454,788" />
+<g transform="rotate(-90 454 878)"><path stroke="black" fill="#ffffff" d="M454,878 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(0 454 788)"><path stroke="black" fill="#ffffff" d="M450,796 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M662,808 L567,687" />
-<g transform="rotate(231 662 808)"><path stroke="black" fill="#ffffff" d="M662,808 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(321 567 687)"><path stroke="black" fill="#ffffff" d="M563,695 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M604,798 L522,684" />
+<g transform="rotate(234 604 798)"><path stroke="black" fill="#ffffff" d="M604,798 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(324 522 684)"><path stroke="black" fill="#ffffff" d="M518,692 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M237,601 L133,601" />
-<g transform="rotate(180 237 601)"><path stroke="black" fill="#777777" d="M237,601 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(270 133 601)"><path stroke="black" fill="#ffffff" d="M129,609 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M212,591 L133,591" />
+<g transform="rotate(180 212 591)"><path stroke="black" fill="#777777" d="M212,591 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(270 133 591)"><path stroke="black" fill="#ffffff" d="M129,599 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M82,386 L82,556" />
-<g transform="rotate(90 82 386)"><path stroke="black" fill="#777777" d="M82,386 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(180 82 556)"><path stroke="black" fill="#ffffff" d="M78,564 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M82,426 L82,546" />
+<g transform="rotate(90 82 426)"><path stroke="black" fill="#777777" d="M82,426 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(180 82 546)"><path stroke="black" fill="#ffffff" d="M78,554 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M639,238 L359,129" />
-<g transform="rotate(291 359 129)"><path stroke="black" fill="#ffffff" d="M355,137 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M636,258 L419,140" />
+<g transform="rotate(298 419 140)"><path stroke="black" fill="#ffffff" d="M415,148 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M639,162 L359,114" />
-<g transform="rotate(279 359 114)"><path stroke="black" fill="#ffffff" d="M355,122 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M619,175 L419,121" />
+<g transform="rotate(285 419 121)"><path stroke="black" fill="#ffffff" d="M415,129 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M639,70 L359,95" />
-<g transform="rotate(265 359 95)"><path stroke="black" fill="#ffffff" d="M355,103 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M619,71 L419,94" />
+<g transform="rotate(264 419 94)"><path stroke="black" fill="#ffffff" d="M415,102 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M0,0 L289,184" />
-<g transform="rotate(122 289 184)"><path stroke="black" fill="#ffffff" d="M285,192 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M145,247 L280,151" />
+<g transform="rotate(55 280 151)"><path stroke="black" fill="#ffffff" d="M276,159 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M434,223 L359,160" />
-<g transform="rotate(310 359 160)"><path stroke="black" fill="#ffffff" d="M355,168 l4,-8 l 4,8 Z" /></g>
-
-<path stroke="black" stroke-dasharray="5,5,5" d="M145,206 L220,152" />
-<g transform="rotate(55 220 152)"><path stroke="black" fill="#ffffff" d="M216,160 l4,-8 l 4,8 Z" /></g>
-
-<rect stroke="#d3d3d3" fill="#ffffff" x="220" y="20" width="139" height="164"/>
-<path stroke="#d3d3d3" d="M220,46 L359,46" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="62">Direction()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="78">Height()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="94">Position()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="110">SetClass()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="126">SetX()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="142">SetY()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="158">Width()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="174">WriteSVG()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="226" y="36">shape.Shape interface</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="20" y="120" width="125" height="266"/>
-<path stroke="#d3d3d3" d="M20,146 L145,146" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="162">X</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="178">Y</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="194">Title</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="210">Fields</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="226">Methods</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="242">Font</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="258">Pad</text>
-<path stroke="#d3d3d3" d="M20,264 L145,264" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="280">Edge()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="296">HideFields()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="312">HideMethod()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="328">HideMethods()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="344">SetFont()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="360">SetTextPad()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="376">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="136">shape.Record struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="182" width="109" height="234"/>
-<path stroke="#d3d3d3" d="M235,208 L344,208" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="224">Start</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="240">End</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="256">Tail</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="272">Head</text>
-<path stroke="#d3d3d3" d="M235,278 L344,278" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="294">AbsAngle()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="310">Angle()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="326">CenterPosition()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="342">DirQ1()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="358">DirQ2()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="374">DirQ3()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="390">DirQ4()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="406">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="198">shape.Line struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="434" y="152" width="109" height="234"/>
-<path stroke="#d3d3d3" d="M434,178 L543,178" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="194">Start</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="210">End</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="226">Tail</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="242">Head</text>
-<path stroke="#d3d3d3" d="M434,248 L543,248" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="264">AbsAngle()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="280">Angle()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="296">CenterPosition()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="312">DirQ1()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="328">DirQ2()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="344">DirQ3()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="360">DirQ4()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="376">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="440" y="168">shape.Line struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="639" y="20" width="117" height="90"/>
-<path stroke="#d3d3d3" d="M639,46 L756,46" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="62">Radius</text>
-<path stroke="#d3d3d3" d="M639,68 L756,68" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="84">Edge()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="100">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="36">shape.Circle struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="639" y="140" width="135" height="68"/>
-<path stroke="#d3d3d3" d="M639,166 L774,166" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="182">Edge()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="198">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="156">shape.Diamond struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="639" y="238" width="130" height="52"/>
-<path stroke="#d3d3d3" d="M639,264 L769,264" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="280">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="254">shape.Triangle struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="31" y="556" width="102" height="90"/>
-<path stroke="#d3d3d3" d="M31,582 L133,582" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="598">Height</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="614">LineHeight</text>
-<path stroke="#d3d3d3" d="M31,620 L133,620" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="636">TextWidth()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="572">draw.Font struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="237" y="532" width="105" height="138"/>
-<path stroke="#d3d3d3" d="M237,558 L342,558" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="574">Font</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="590">TextPad</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="606">Pad</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="622">Spacing</text>
-<path stroke="#d3d3d3" d="M237,628 L342,628" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="644">SetOutput()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="660">Write()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="243" y="548">draw.Style struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="235" y="496" width="134" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="241" y="512">design.Relation struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="432" y="404" width="135" height="394"/>
-<path stroke="#d3d3d3" d="M432,430 L567,430" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="446">SVG</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="462">Aligner</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="478">Style</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="494">Caption</text>
-<path stroke="#d3d3d3" d="M432,500 L567,500" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="516">AdaptSize()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="532">Append()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="548">Height()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="564">Inline()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="580">Link()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="596">LinkAll()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="612">Place()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="628">PlaceGrid()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="644">Prepend()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="660">SaveAs()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="676">SetCaption()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="692">SetHeight()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="708">SetSize()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="724">SetWidth()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="740">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="756">TextWidth()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="772">Width()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="788">WriteSVG()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="438" y="420">design.Diagram struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="647" y="535" width="124" height="132"/>
-<path stroke="#d3d3d3" d="M647,561 L771,561" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="577">HAlignBottom()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="593">HAlignCenter()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="609">HAlignTop()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="625">VAlignCenter()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="641">VAlignLeft()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="657">VAlignRight()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="551">shape.Aligner struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="31" y="716" width="130" height="138"/>
-<path stroke="#d3d3d3" d="M31,742 L161,742" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="758">Spacing</text>
-<path stroke="#d3d3d3" d="M31,764 L161,764" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="780">Above()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="796">At()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="812">Below()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="828">LeftOf()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="844">RightOf()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="732">shape.Adjuster struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="647" y="808" width="191" height="202"/>
-<path stroke="#d3d3d3" d="M647,834 L838,834" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="850">Diagram</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="866">ColWidth</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="882">VMargin</text>
-<path stroke="#d3d3d3" d="M647,888 L838,888" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="904">Add()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="920">AddColumns()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="936">AddInterface()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="952">AddStruct()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="968">ClearLinks()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="984">Group()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="1000">Skip()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="653" y="824">design.SequenceDiagram struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="417" y="888" width="166" height="122"/>
-<path stroke="#d3d3d3" d="M417,914 L583,914" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="930">Diagram</text>
-<path stroke="#d3d3d3" d="M417,936 L583,936" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="952">HideRealizations()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="968">Interface()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="984">Slice()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="1000">Struct()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="423" y="904">design.ClassDiagram struct</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="249" y="1057">Figure 1. Class diagram of design and design.shape packages</text></svg>
+<rect stroke="#d3d3d3" fill="#ffffff" x="280" y="20" width="139" height="164"/>
+<path stroke="#d3d3d3" d="M280,46 L419,46" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="62">Direction()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="78">Height()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="94">Position()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="110">SetClass()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="126">SetX()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="142">SetY()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="158">Width()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="174">WriteSVG()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="36">shape.Shape interface</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="20" y="160" width="125" height="266"/>
+<path stroke="#d3d3d3" d="M20,186 L145,186" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="202">X</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="218">Y</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="234">Title</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="250">Fields</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="266">Methods</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="282">Font</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="298">Pad</text>
+<path stroke="#d3d3d3" d="M20,304 L145,304" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="320">Edge()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="336">HideFields()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="352">HideMethod()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="368">HideMethods()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="384">SetFont()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="400">SetTextPad()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="416">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="176">shape.Record struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="619" y="20" width="117" height="90"/>
+<path stroke="#d3d3d3" d="M619,46 L736,46" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="62">Radius</text>
+<path stroke="#d3d3d3" d="M619,68 L736,68" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="84">Edge()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="100">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="36">shape.Circle struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="619" y="160" width="135" height="68"/>
+<path stroke="#d3d3d3" d="M619,186 L754,186" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="202">Edge()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="218">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="176">shape.Diamond struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="619" y="258" width="130" height="52"/>
+<path stroke="#d3d3d3" d="M619,284 L749,284" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="300">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="274">shape.Triangle struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="31" y="546" width="102" height="90"/>
+<path stroke="#d3d3d3" d="M31,572 L133,572" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="588">Height</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="604">LineHeight</text>
+<path stroke="#d3d3d3" d="M31,610 L133,610" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="626">TextWidth()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="562">draw.Font struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="212" y="522" width="105" height="138"/>
+<path stroke="#d3d3d3" d="M212,548 L317,548" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="564">Font</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="580">TextPad</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="596">Pad</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="612">Spacing</text>
+<path stroke="#d3d3d3" d="M212,618 L317,618" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="634">SetOutput()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="650">Write()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="538">draw.Style struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="280" y="280" width="134" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="286" y="296">design.Relation struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="387" y="394" width="135" height="394"/>
+<path stroke="#d3d3d3" d="M387,420 L522,420" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="436">SVG</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="452">Aligner</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="468">Style</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="484">Caption</text>
+<path stroke="#d3d3d3" d="M387,490 L522,490" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="506">AdaptSize()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="522">Append()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="538">Height()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="554">Inline()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="570">Link()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="586">LinkAll()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="602">Place()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="618">PlaceGrid()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="634">Prepend()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="650">SaveAs()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="666">SetCaption()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="682">SetHeight()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="698">SetSize()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="714">SetWidth()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="730">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="746">TextWidth()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="762">Width()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="778">WriteSVG()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="393" y="410">design.Diagram struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="582" y="525" width="124" height="132"/>
+<path stroke="#d3d3d3" d="M582,551 L706,551" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="567">HAlignBottom()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="583">HAlignCenter()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="599">HAlignTop()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="615">VAlignCenter()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="631">VAlignLeft()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="647">VAlignRight()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="541">shape.Aligner struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="31" y="706" width="130" height="138"/>
+<path stroke="#d3d3d3" d="M31,732 L161,732" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="748">Spacing</text>
+<path stroke="#d3d3d3" d="M31,754 L161,754" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="770">Above()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="786">At()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="802">Below()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="818">LeftOf()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="834">RightOf()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="722">shape.Adjuster struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="582" y="798" width="191" height="202"/>
+<path stroke="#d3d3d3" d="M582,824 L773,824" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="840">Diagram</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="856">ColWidth</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="872">VMargin</text>
+<path stroke="#d3d3d3" d="M582,878 L773,878" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="894">Add()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="910">AddColumns()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="926">AddInterface()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="942">AddStruct()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="958">ClearLinks()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="974">Group()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="990">Skip()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="814">design.SequenceDiagram struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="372" y="878" width="166" height="122"/>
+<path stroke="#d3d3d3" d="M372,904 L538,904" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="920">Diagram</text>
+<path stroke="#d3d3d3" d="M372,926 L538,926" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="942">HideRealizations()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="958">Interface()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="974">Slice()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="990">Struct()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="894">design.ClassDiagram struct</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="217" y="1047">Figure 1. Class diagram of design and design.shape packages</text></svg>
