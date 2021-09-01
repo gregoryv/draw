@@ -85,24 +85,6 @@ func Test_arrowHasBothTailAndHead(t *testing.T) {
 	saveAs(t, a, "testdata/arrow_with_tail_and_head.svg")
 }
 
-type assert = asserter.AssertFunc
-
-func saveAs(t *testing.T, line *Line, filename string) {
-	t.Helper()
-	d := &draw.SVG{}
-	d.SetSize(100, 100)
-	d.Append(line)
-
-	fh, err := os.Create(filename)
-	if err != nil {
-		t.Error(err)
-		return
-	}
-	style := draw.NewStyle(fh)
-	d.WriteSVG(&style)
-	fh.Close()
-}
-
 func TestLine(t *testing.T) {
 	testShape(t, NewLine(0, 0, 50, 50))
 }
@@ -123,21 +105,7 @@ func TestArrow_Angle(t *testing.T) {
 
 // ----------------------------------------
 
-func TestArrowBetweenShapes(t *testing.T) {
-	it := &ArrowBetweenShapes{
-		T:      t,
-		assert: asserter.New(t),
-	}
-
-	it.StartsAndEndsAtEdgeOfShapes()
-}
-
-type ArrowBetweenShapes struct {
-	*testing.T
-	assert
-}
-
-func (t *ArrowBetweenShapes) StartsAndEndsAtEdgeOfShapes() {
+func Test_ArrowBetweenShapes(t *testing.T) {
 	a := NewRecord("A")
 	a.SetX(10)
 	a.SetY(100)
@@ -146,20 +114,24 @@ func (t *ArrowBetweenShapes) StartsAndEndsAtEdgeOfShapes() {
 	b.SetY(40)
 
 	arrow := NewArrowBetween(a, b)
-	svg := newSvg(200, 200, arrow, a, b)
+	svg := &draw.SVG{}
+	svg.SetSize(200, 200)
+	svg.Append(arrow, a, b)
 	label := NewLabel(fmt.Sprintf("Angle: %v", arrow.absAngle()))
 	label.SetX(100)
 	label.SetY(80)
 
 	svg.Append(label)
-	writeSvgTo(t.T, "testdata/arrow_between_shapes.svg", svg)
+	writeSvgTo(t, "testdata/arrow_between_shapes.svg", svg)
 }
 
-func newSvg(width, height int, shapes ...draw.SVGWriter) *draw.SVG {
-	svg := &draw.SVG{}
-	svg.SetSize(width, height)
-	svg.Append(shapes...)
-	return svg
+func saveAs(t *testing.T, line *Line, filename string) {
+	t.Helper()
+	d := &draw.SVG{}
+	d.SetSize(100, 100)
+	d.Append(line)
+
+	writeSvgTo(t, filename, d)
 }
 
 func writeSvgTo(t *testing.T, filename string, svg *draw.SVG) {
@@ -172,3 +144,5 @@ func writeSvgTo(t *testing.T, filename string, svg *draw.SVG) {
 	svg.WriteSVG(&style)
 	fh.Close()
 }
+
+type assert = asserter.AssertFunc
