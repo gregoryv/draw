@@ -1,14 +1,10 @@
 package docs
 
 import (
-	"bufio"
-	"bytes"
-	"log"
-	"os"
-
 	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/shape"
 	. "github.com/gregoryv/web"
+	"github.com/gregoryv/web/files"
 	"github.com/gregoryv/web/toc"
 )
 
@@ -259,34 +255,10 @@ func LoadFile(filename string, span ...int) *Element {
 	if len(span) == 2 {
 		from, to = span[0], span[1]
 	}
-	v := loadFile(filename, from, to)
+	v := files.MustLoadLines(filename, from, to)
 	class := "srcfile"
 	if from == 0 && to == -1 {
 		class += " complete"
 	}
 	return Pre(Class(class), Code(Class("go"), v))
-}
-
-func loadFile(filename string, from, to int) string {
-	var buf bytes.Buffer
-	fh, err := os.Open(filename)
-	if err != nil {
-		log.SetFlags(log.Llongfile)
-		log.Output(3, err.Error())
-		os.Exit(1)
-	}
-	scanner := bufio.NewScanner(fh)
-	for i := from; i > 1; i-- {
-		scanner.Scan()
-		to--
-	}
-
-	for scanner.Scan() {
-		to--
-		buf.WriteString(scanner.Text() + "\n")
-		if to == 0 {
-			break
-		}
-	}
-	return buf.String()
 }
