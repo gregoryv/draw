@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"bytes"
 	"fmt"
 	"os"
 	"testing"
@@ -58,52 +57,35 @@ func Test_arrowDirections(t *testing.T) {
 	}
 
 	for file, c := range arrows {
-		saveAs(t, c.Line, file)
-		dir := c.Line.Direction()
-		if dir != c.Direction {
-			t.Errorf("Direction: %v", dir)
-		}
+		t.Run(file, func(t *testing.T) {
+			saveAs(t, c.Line, file)
+			dir := c.Line.Direction()
+			if dir != c.Direction {
+				t.Errorf("Direction: %v", dir)
+			}
+		})
 	}
 }
 
-func TestOneArrow(t *testing.T) {
-	it := NewOneArrow(t)
-	// when
-	it.HasATail()
-	it.HasBothTailAndHead()
-
-	it.CanHaveASpecificClass()
-	it.CanMove()
-	it.IsVisible()
+func Test_arrowWithTailOnly(t *testing.T) {
+	a := NewArrow(50, 50, 100, 50)
+	a.Tail = NewCircle(3)
+	a.Head = nil
+	saveAs(t, a, "testdata/arrow_with_tail.svg")
 }
 
-func NewOneArrow(t *testing.T) *OneArrow {
-	return &OneArrow{t, NewArrow(50, 50, 50, 10), asserter.New(t)}
-}
-
-type OneArrow struct {
-	*testing.T
-	*Line
-	assert
+func Test_arrowHasBothTailAndHead(t *testing.T) {
+	a := NewArrow(50, 50, 100, 50)
+	a.Tail = NewDiamond()
+	a.Tail.SetX(20)
+	a.Tail.SetY(24)
+	a.Head = NewDiamond()
+	a.Head.SetX(16)
+	a.Head.SetY(8)
+	saveAs(t, a, "testdata/arrow_with_tail_and_head.svg")
 }
 
 type assert = asserter.AssertFunc
-
-func (t *OneArrow) HasATail() {
-	t.Tail = NewCircle(3)
-	t.Head = nil
-	t.saveAs("testdata/arrow_with_tail.svg")
-}
-
-func (t *OneArrow) HasBothTailAndHead() {
-	t.Tail = NewDiamond()
-	t.Tail.SetX(20)
-	t.Tail.SetY(24)
-	t.Head = NewDiamond()
-	t.Head.SetX(16)
-	t.Head.SetY(8)
-	t.saveAs("testdata/arrow_with_tail_and_head.svg")
-}
 
 func saveAs(t *testing.T, line *Line, filename string) {
 	t.Helper()
@@ -119,46 +101,6 @@ func saveAs(t *testing.T, line *Line, filename string) {
 	style := draw.NewStyle(fh)
 	d.WriteSVG(&style)
 	fh.Close()
-}
-
-func (t *OneArrow) saveAs(filename string) {
-	t.Helper()
-	d := &draw.SVG{}
-	d.SetSize(100, 100)
-	d.Append(t.Line)
-
-	fh, err := os.Create(filename)
-	if err != nil {
-		t.Error(err)
-		return
-	}
-	style := draw.NewStyle(fh)
-	d.WriteSVG(&style)
-	fh.Close()
-}
-
-func (t *OneArrow) CanHaveASpecificClass() {
-	t.Helper()
-	t.class = "special"
-	buf := &bytes.Buffer{}
-	t.WriteSVG(buf)
-	t.assert().Contains(buf.String(), "special")
-}
-
-func (t *OneArrow) CanMove() {
-	t.Helper()
-	x, y := t.Position()
-	t.SetX(x + 1)
-	t.SetY(y + 1)
-	t.assert(x != t.Start.X).Error("start X still the same")
-	t.assert(y != t.Start.Y).Error("start Y still the same")
-}
-
-func (t *OneArrow) IsVisible() {
-	t.Helper()
-	h := t.Height()
-	w := t.Width()
-	t.assert(h > 0 || w > 0).Errorf("%v not visible", t.Line)
 }
 
 func TestLine(t *testing.T) {
