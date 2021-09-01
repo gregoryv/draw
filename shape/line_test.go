@@ -11,26 +11,63 @@ import (
 )
 
 func TestArrow_Height(t *testing.T) {
-	var (
-		a = NewArrow(50, 50, 50, 50)
-	)
-	got := a.Height()
-	if got == 0 {
-		t.Error("unexpected", got)
+	// start and stop is the same, but head adds a height
+	a := NewArrow(50, 50, 50, 50)
+	if got := a.Height(); got == 0 {
+		t.Error("unexpected height", got)
+	}
+}
+
+func Test_arrowDirections(t *testing.T) {
+	arrows := map[string]struct {
+		*Line
+		Direction
+	}{
+		"testdata/arrow_points_up_and_right.svg": {
+			NewArrow(50, 50, 80, 20),
+			DirectionUpRight,
+		},
+		"testdata/arrow_points_up_and_left.svg": {
+			NewArrow(50, 50, 20, 20),
+			DirectionUpLeft,
+		},
+		"testdata/arrow_points_down_and_left.svg": {
+			NewArrow(50, 50, 40, 80),
+			DirectionDownLeft,
+		},
+		"testdata/arrow_points_down_and_right.svg": {
+			NewArrow(50, 50, 70, 80),
+			DirectionDownRight,
+		},
+		"testdata/arrow_points_right.svg": {
+			NewArrow(50, 50, 100, 50),
+			DirectionRight,
+		},
+		"testdata/arrow_points_left.svg": {
+			NewArrow(50, 50, 10, 50),
+			DirectionLeft,
+		},
+		"testdata/arrow_points_down.svg": {
+			NewArrow(50, 50, 50, 100),
+			DirectionDown,
+		},
+		"testdata/arrow_points_up.svg": {
+			NewArrow(50, 50, 50, 10),
+			DirectionUp,
+		},
+	}
+
+	for file, c := range arrows {
+		saveAs(t, c.Line, file)
+		dir := c.Line.Direction()
+		if dir != c.Direction {
+			t.Errorf("Direction: %v", dir)
+		}
 	}
 }
 
 func TestOneArrow(t *testing.T) {
 	it := NewOneArrow(t)
-	it.CanPointUpAndRight()
-	it.CanPointUpAndLeft()
-	it.CanPointDownAndLeft()
-	it.CanPointDownAndRight()
-	// also
-	it.CanPointRight()
-	it.CanPointLeft()
-	it.CanPointDown()
-	it.CanPointUp()
 	// when
 	it.HasATail()
 	it.HasBothTailAndHead()
@@ -41,7 +78,7 @@ func TestOneArrow(t *testing.T) {
 }
 
 func NewOneArrow(t *testing.T) *OneArrow {
-	return &OneArrow{t, NewArrow(50, 50, 50, 50), asserter.New(t)}
+	return &OneArrow{t, NewArrow(50, 50, 50, 10), asserter.New(t)}
 }
 
 type OneArrow struct {
@@ -51,66 +88,6 @@ type OneArrow struct {
 }
 
 type assert = asserter.AssertFunc
-
-func (t *OneArrow) CanPointUpAndRight() {
-	t.End.X = t.Start.X + 30
-	t.End.Y = t.Start.Y - 30
-	t.saveAs("testdata/arrow_points_up_and_right.svg")
-}
-
-func (t *OneArrow) CanPointUpAndLeft() {
-	t.End.X = t.Start.X - 30
-	t.End.Y = t.Start.Y - 30
-	t.saveAs("testdata/arrow_points_up_and_left.svg")
-}
-
-func (t *OneArrow) CanPointDownAndLeft() {
-	t.End.X = t.Start.X - 10
-	t.End.Y = t.Start.Y + 30
-	dir := t.Direction()
-	t.assert(dir == DirectionDownLeft).Errorf("Direction: %v", dir)
-	t.saveAs("testdata/arrow_points_down_and_left.svg")
-}
-
-func (t *OneArrow) CanPointDownAndRight() {
-	t.End.X = t.Start.X + 20
-	t.End.Y = t.Start.Y + 30
-	dir := t.Direction()
-	t.assert(dir == DirectionDownRight).Errorf("Direction: %v", dir)
-	t.saveAs("testdata/arrow_points_down_and_right.svg")
-}
-
-func (t *OneArrow) CanPointRight() {
-	t.End.X = t.Start.X + 50
-	t.End.Y = t.Start.Y
-	dir := t.Direction()
-	t.assert(dir == DirectionRight).Errorf("Direction not left to right: %v", dir)
-	t.saveAs("testdata/arrow_points_right.svg")
-}
-
-func (t *OneArrow) CanPointLeft() {
-	t.End.X = t.Start.X - 40
-	t.End.Y = t.Start.Y
-	dir := t.Direction()
-	t.assert(dir == DirectionLeft).Errorf("Direction not right to left: %v", dir)
-	t.saveAs("testdata/arrow_points_left.svg")
-}
-
-func (t *OneArrow) CanPointDown() {
-	t.End.X = t.Start.X
-	t.End.Y = t.Start.Y + 50
-	dir := t.Direction()
-	t.assert(dir == DirectionDown).Errorf("Direction not Down: %v", dir)
-	t.saveAs("testdata/arrow_points_down.svg")
-}
-
-func (t *OneArrow) CanPointUp() {
-	t.End.X = t.Start.X
-	t.End.Y = t.Start.Y - 40
-	dir := t.Direction()
-	t.assert(dir == DirectionUp).Errorf("Direction not Up: %v", dir)
-	t.saveAs("testdata/arrow_points_up.svg")
-}
 
 func (t *OneArrow) HasATail() {
 	t.Tail = NewCircle(3)
@@ -126,6 +103,22 @@ func (t *OneArrow) HasBothTailAndHead() {
 	t.Head.SetX(16)
 	t.Head.SetY(8)
 	t.saveAs("testdata/arrow_with_tail_and_head.svg")
+}
+
+func saveAs(t *testing.T, line *Line, filename string) {
+	t.Helper()
+	d := &draw.SVG{}
+	d.SetSize(100, 100)
+	d.Append(line)
+
+	fh, err := os.Create(filename)
+	if err != nil {
+		t.Error(err)
+		return
+	}
+	style := draw.NewStyle(fh)
+	d.WriteSVG(&style)
+	fh.Close()
 }
 
 func (t *OneArrow) saveAs(filename string) {
