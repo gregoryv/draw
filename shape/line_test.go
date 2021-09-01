@@ -144,5 +144,3 @@ func writeSvgTo(t *testing.T, filename string, svg *draw.SVG) {
 	svg.WriteSVG(&style)
 	fh.Close()
 }
-
-type assert = asserter.AssertFunc

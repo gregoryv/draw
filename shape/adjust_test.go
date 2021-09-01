@@ -20,7 +20,7 @@ func NewOneAdjuster(t *testing.T) *OneAdjuster {
 type OneAdjuster struct {
 	*testing.T
 	*Adjuster
-	assert
+	assert asserter.AssertFunc
 }
 
 func (t *OneAdjuster) HasDefaultSpacing() {

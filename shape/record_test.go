@@ -30,7 +30,7 @@ func NewOneRecord(t *testing.T) *OneRecord {
 type OneRecord struct {
 	*testing.T
 	*Record
-	assert
+	assert asserter.AssertFunc
 }
 
 func (t *OneRecord) CanHideFields() {
