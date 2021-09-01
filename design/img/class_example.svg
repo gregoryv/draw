@@ -18,9 +18,9 @@
 <g transform="rotate(-90 454 878)"><path stroke="black" fill="#ffffff" d="M454,878 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(0 454 788)"><path stroke="black" fill="#ffffff" d="M450,796 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M604,798 L522,684" />
-<g transform="rotate(234 604 798)"><path stroke="black" fill="#ffffff" d="M604,798 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(324 522 684)"><path stroke="black" fill="#ffffff" d="M518,692 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M596,782 L522,682" />
+<g transform="rotate(233 596 782)"><path stroke="black" fill="#ffffff" d="M596,782 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(323 522 682)"><path stroke="black" fill="#ffffff" d="M518,690 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" d="M212,591 L133,591" />
 <g transform="rotate(180 212 591)"><path stroke="black" fill="#777777" d="M212,591 l 6,-4 6,4 -6,4 -6,-4" /></g>
@@ -151,20 +151,21 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="818">LeftOf()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="834">RightOf()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="722">shape.Adjuster struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="582" y="798" width="191" height="202"/>
-<path stroke="#d3d3d3" d="M582,824 L773,824" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="840">Diagram</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="856">ColWidth</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="872">VMargin</text>
-<path stroke="#d3d3d3" d="M582,878 L773,878" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="894">Add()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="910">AddColumns()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="926">AddInterface()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="942">AddStruct()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="958">ClearLinks()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="974">Group()</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="582" y="782" width="191" height="218"/>
+<path stroke="#d3d3d3" d="M582,808 L773,808" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="824">Diagram</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="840">ColWidth</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="856">VMargin</text>
+<path stroke="#d3d3d3" d="M582,862 L773,862" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="878">Add()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="894">AddColumns()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="910">AddInterface()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="926">AddStruct()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="942">ClearLinks()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="958">Group()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="974">Return()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="990">Skip()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="814">design.SequenceDiagram struct</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="588" y="798">design.SequenceDiagram struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="372" y="878" width="166" height="122"/>
 <path stroke="#d3d3d3" d="M372,904 L538,904" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="920">Diagram</text>

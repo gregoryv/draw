@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"math"
+	"strings"
 
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
@@ -35,6 +36,7 @@ type Line struct {
 	End   xy.Point
 	Tail  Shape
 	Head  Shape
+
 	class string
 }
 
@@ -46,7 +48,11 @@ func (a *Line) WriteSVG(out io.Writer) error {
 	w, err := nexus.NewPrinter(out)
 	x1, y1 := a.Start.XY()
 	x2, y2 := a.End.XY()
-	w.Printf(`<path class="%s" d="M%v,%v L%v,%v" />`, a.class, x1, y1, x2, y2)
+	var dashed string
+	if strings.Contains(a.class, "dashed") {
+		dashed = `stroke-dasharray="5,5" `
+	}
+	w.Printf(`<path %sclass="%s" d="M%v,%v L%v,%v" />`, dashed, a.class, x1, y1, x2, y2)
 	w.Print("\n")
 	if a.Tail != nil {
 		w.Printf(`<g transform="rotate(%v %v %v)">`, a.angle(), x1, y1)

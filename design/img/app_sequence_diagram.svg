@@ -51,7 +51,7 @@
 
 <path stroke="#ffffff" stroke-dasharray="2,2,2" d="M608,211 L608,227" />
 
-<path stroke="black" d="M228,244 L38,244" />
+<path stroke-dasharray="5,5" stroke="black" d="M228,244 L38,244" />
 <g transform="rotate(270 38 244)"><path stroke="black" fill="#ffffff" d="M34,252 l4,-8 l 4,8 Z" /></g>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="100" y="241">Send HTML</text></svg>

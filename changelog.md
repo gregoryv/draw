@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Add SequenceDiagram.Return method for drawing dashed arrows
+
 ## [0.22.1] 2021-06-14
 
 - Fix arrows in sequence diagram, bug introduced in v0.22.0

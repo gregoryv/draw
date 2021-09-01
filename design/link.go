@@ -2,6 +2,15 @@ package design
 
 import "fmt"
 
+// Return adds a link between from and to indicating a return signal.
+func (d *SequenceDiagram) Return(from, to, text string) *Link {
+	l := d.Link(from, to, text)
+	l.Class = "dashed-arrow"
+	return l
+}
+
+// Link adds a link between from and to indicating a func call or data
+// flow.
 func (d *SequenceDiagram) Link(from, to, text string) *Link {
 	fromIndex := -1
 	toIndex := -1
