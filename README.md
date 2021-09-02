@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/gregoryv/draw.svg?branch=main)](https://travis-ci.org/gregoryv/draw)
 [![codecov](https://codecov.io/gh/gregoryv/draw/branch/main/graph/badge.svg)](https://codecov.io/gh/gregoryv/draw)
-[![Maintainability](https://api.codeclimate.com/v1/badges/b0001c5ba7cd098b183d/maintainability)](https://codeclimate.com/github/gregoryv/draw/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/86799d699c1e4ac69531/maintainability)](https://codeclimate.com/github/gregoryv/draw/maintainability)
 
 [draw](https://godoc.org/github.com/gregoryv/draw) - package for writing software design diagrams
 
