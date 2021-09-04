@@ -14,7 +14,8 @@
     d.Link(srv, db, "SELECT").Class = "highlight"
     d.Link(db, srv, "Rows")
     d.Link(srv, srv, "Transform to view model").Class = "highlight"
-    d.Link(srv, cli, "Send HTML")
+    d.Skip()
+	d.Return(srv, cli, "Send HTML")
 
 ## Activity diagram
 
