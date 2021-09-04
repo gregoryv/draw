@@ -9,7 +9,7 @@ import (
 )
 
 // NewStyle returns a style based on the default values,
-// eg. DefaultFont in this package.
+// eg. draw.DefaultFont in this package.
 func NewStyle() Style {
 	return Style{
 		Font:    DefaultFont,
@@ -199,6 +199,7 @@ func (s *Style) scanClass(p []byte) ([]byte, int) {
 	return class, i + j
 }
 
+// SetOutput sets the destination of calls to Write.
 func (s *Style) SetOutput(w io.Writer) {
 	if w == nil {
 		w = ioutil.Discard
