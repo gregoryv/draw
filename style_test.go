@@ -26,8 +26,9 @@ func TestStyle_rejects_bad_elements(t *testing.T) {
 			t.Error("Styler should panic on malformed xml")
 		}
 	}()
-	buf := &bytes.Buffer{}
-	s := NewStyle(buf)
+	var buf bytes.Buffer
+	s := NewStyle()
+	s.SetOutput(&buf)
 	input := `<line class=">`
 	s.Write([]byte(input))
 	if buf.String() != input {
@@ -61,7 +62,8 @@ func TestStyle_Write_adds_style_to_classed_elements(t *testing.T) {
 	for _, c := range cases {
 		t.Run(c.input, func(t *testing.T) {
 			var buf bytes.Buffer
-			s := NewStyle(&buf)
+			s := NewStyle()
+			s.SetOutput(&buf)
 			s.Write([]byte(c.input))
 			got := buf.String()
 			assert := asserter.New(t)
@@ -81,6 +83,6 @@ func TestStyle_write(t *testing.T) {
 }
 
 func TestStyle_SetOutput(t *testing.T) {
-	s := NewStyle(nil)
+	s := NewStyle()
 	s.SetOutput(nil)
 }

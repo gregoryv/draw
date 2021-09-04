@@ -752,6 +752,8 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <path stroke="black" d="M154,1248 l4,-8 l 4,8 Z" /></svg><h2 id="changelog"><a href="#changelog">Changelog</a></h2>
 <pre class="srcfile"><code class="go">## [unreleased]
 
+- NewStyle does not take writer, defaults to ioutil.Discard.
+  Use Style.SetOutput
 - Add SequenceDiagram.Return method for drawing dashed arrows
 
 ## [0.22.1] 2021-06-14

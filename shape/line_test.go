@@ -140,7 +140,8 @@ func writeSvgTo(t *testing.T, filename string, svg *draw.SVG) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	style := draw.NewStyle(fh)
+	style := draw.NewStyle()
+	style.SetOutput(fh)
 	svg.WriteSVG(&style)
 	fh.Close()
 }

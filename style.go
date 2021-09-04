@@ -8,13 +8,15 @@ import (
 	"strings"
 )
 
-func NewStyle(w io.Writer) Style {
+// NewStyle returns a style based on the default values,
+// eg. DefaultFont in this package.
+func NewStyle() Style {
 	return Style{
 		Font:    DefaultFont,
 		TextPad: DefaultTextPad,
 		Pad:     DefaultPad,
 		Spacing: DefaultSpacing,
-		dest:    w,
+		dest:    ioutil.Discard,
 	}
 }
 

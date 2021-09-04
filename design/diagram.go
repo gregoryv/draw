@@ -13,7 +13,7 @@ import (
 // styling
 func NewDiagram() *Diagram {
 	return &Diagram{
-		Style: draw.NewStyle(nil),
+		Style: draw.NewStyle(),
 	}
 }
 

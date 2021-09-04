@@ -3,7 +3,6 @@ package draw_test
 import (
 	"database/sql"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"strings"
 	"testing"
@@ -105,7 +104,7 @@ func BenchmarkWriteSvg(b *testing.B) {
 	svg := &draw.SVG{}
 	svg.Append(&shape.Record{})
 
-	style := draw.NewStyle(ioutil.Discard)
+	style := draw.NewStyle()
 	for i := 0; i < b.N; i++ {
 		svg.WriteSVG(&style)
 	}

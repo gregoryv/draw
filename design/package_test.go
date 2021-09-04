@@ -7,7 +7,7 @@ import (
 )
 
 func Test_saveAs(t *testing.T) {
-	err := saveAs(&SequenceDiagram{}, draw.NewStyle(nil), "/")
+	err := saveAs(&SequenceDiagram{}, draw.NewStyle(), "/")
 	if err == nil {
 		t.Fail()
 	}

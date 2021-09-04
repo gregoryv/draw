@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- NewStyle does not take writer, defaults to ioutil.Discard.
+  Use Style.SetOutput
 - Add SequenceDiagram.Return method for drawing dashed arrows
 
 ## [0.22.1] 2021-06-14
