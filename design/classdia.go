@@ -22,6 +22,8 @@ func NewClassDiagram() *ClassDiagram {
 type ClassDiagram struct {
 	*Diagram
 
+	// todo in Go anything can have methods. This separation seems to be bad
+	// as is seen in the method ClassDiagram.compositions()
 	interfaces []VRecord
 	structs    []VRecord
 	slices     []VRecord

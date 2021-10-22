@@ -106,6 +106,9 @@ var DefaultClassAttributes = ClassAttributes{
 	"line":                  `stroke="black"`,
 	"triangle":              `stroke="black"`,
 	"column-line":           `stroke="#d3d3d3"`,
+	"process":              `stroke="black" fill="#ffffff"`,
+	"process-title":        `font-family="Arial,Helvetica,sans-serif"`,
+
 	"record":                `stroke="#d3d3d3" fill="#ffffff"`,
 	"record-line":           `stroke="#d3d3d3"`,
 	"record-title":          `font-family="Arial,Helvetica,sans-serif"`,

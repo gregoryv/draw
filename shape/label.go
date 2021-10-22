@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html/template"
 	"io"
+	"strings"
 
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
@@ -43,10 +44,12 @@ func (l *Label) Position() (int, int) {
 func (l *Label) SetX(x int) { l.x = x }
 func (l *Label) SetY(y int) { l.y = y }
 func (l *Label) Width() int {
-	return l.Font.TextWidth(l.Text)
+	return l.Font.TextWidth(longestLine(l.Text))
 }
 
-func (l *Label) Height() int          { return l.Font.LineHeight }
+func (l *Label) Height() int {
+	return l.Font.LineHeight * (strings.Count(l.Text, "\n") + 1)
+}
 func (l *Label) Direction() Direction { return DirectionRight }
 func (l *Label) SetClass(c string)    { l.class = c }
 
@@ -58,8 +61,17 @@ func (l *Label) WriteSVG(out io.Writer) error {
 	if l.href != "" {
 		w.Printf(`<a href="%s">`, l.href)
 	}
-	w.Printf(`<text class="%s" font-size="%vpx" x="%v" y="%v">%s</text>`,
-		l.class, l.Font.Height, x, y, l.Text)
+	// support multilines
+	for i, line := range strings.Split(l.Text, "\n") {
+		if i > 0 { // write new line "after" each <text>, but not last
+			w.Print("\n")
+		}
+		w.Printf(`<text class="%s" font-size="%vpx" x="%v" y="%v">%s</text>`,
+			l.class, l.Font.Height, x, y+(l.Font.LineHeight*i), line)
+	}
+	// single line
+	//	w.Printf(`<text class="%s" font-size="%vpx" x="%v" y="%v">%s</text>`,
+	//		l.class, l.Font.Height, x, y, l.Text)
 	if l.href != "" {
 		w.Printf(`</a>`)
 	}
@@ -68,4 +80,18 @@ func (l *Label) WriteSVG(out io.Writer) error {
 
 func (l *Label) Edge(start xy.Point) xy.Point {
 	return boxEdge(start, l)
+}
+
+func longestLine(text string) string {
+	lines := strings.Split(text, "\n")
+	var max int
+	var longest string
+	for _, line := range lines {
+		if len(line) < max {
+			continue
+		}
+		max = len(line)
+		longest = line
+	}
+	return longest
 }

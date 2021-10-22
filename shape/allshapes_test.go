@@ -11,7 +11,7 @@ import (
 
 func Test_write_allshapes(t *testing.T) {
 	d := design.NewDiagram()
-	vspace := 60
+	vspace := 90
 
 	actorLbl, actor := NewLabel("Actor"), NewActor()
 	d.Place(actorLbl).At(20, 20)
@@ -46,6 +46,8 @@ func Test_write_allshapes(t *testing.T) {
 
 	add("Line", NewLine(240, 0, 300, 0))
 	add("Note", NewNote("This describes\nsomething..."))
+
+	add("Process", NewProcess("Circle with a label"))
 
 	rec := NewRecord("record")
 	rec.Fields = []string{"fields"}
