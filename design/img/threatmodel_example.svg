@@ -29,4 +29,6 @@
 <path stroke="black" d="M291,133 L351,158" />
 <g transform="rotate(112 351 158)"><path stroke="black" fill="#ffffff" d="M347,166 l4,-8 l 4,8 Z" /></g>
 
+<path stroke="black" stroke-width="2" stroke-dasharray="5,5,5" d="M202,90 L196,152" />
+
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="130" y="241">Figure 3. Threat model diagram</text></svg>

@@ -70,6 +70,7 @@ var DefaultClassAttributes = ClassAttributes{
 	"area-blue":        `stroke="black" stroke-width="0" fill="#99e6ff" fill-opacity="0.1"`,
 
 	"actor":                 `stroke="black" stroke-width="2" fill="#ffffff"`,
+	"boundary":              `stroke="black" stroke-width="2" stroke-dasharray="5,5,5"`,
 	"circle":                `stroke="#d3d3d3" stroke-width="2" fill="#ffffff"`,
 	"cylinder":              `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
 	"card":                  `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
