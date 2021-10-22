@@ -49,7 +49,7 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="179" y="1524">something...</text>
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1626">Process</text>
-<circle stroke="black" fill="#ffffff" cx="219" cy="1618" r="56" />\n<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="170" y="1626">Circle with a label</text>
+<circle stroke="#d3d3d3" fill="#ffffff" cx="219" cy="1618" r="56" />\n<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="170" y="1626">Circle with a label</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1732">Record</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="187" y="1687" width="63" height="74"/>
 <path stroke="#d3d3d3" d="M187,1713 L250,1713" />
