@@ -124,6 +124,11 @@ var DefaultClassAttributes = ClassAttributes{
 	"span-red-title":   `font-family="Arial,Helvetica,sans-serif"`,
 	"state-title":      `font-family="Arial,Helvetica,sans-serif"`,
 	"state":            `stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10"`,
+
+	"store":               `stroke="#d3d3d3" fill="#ffffff"`,
+	"store-title":         `font-family="Arial,Helvetica,sans-serif"`,
+
+	
 	"component":        `stroke="#d3d3d3" fill="#ffffff"`,
 	"component-title":  `font-family="Arial,Helvetica,sans-serif"`,
 	"field":            `font-family="Arial,Helvetica,sans-serif"`,

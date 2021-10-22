@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="276" height="2051">
+  font-family="Arial,Helvetica,sans-serif" width="284" height="2157">
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="36">Actor</text>
 <circle stroke="black" stroke-width="2" fill="#ffffff" cx="218" cy="25" r="5" />
 <path stroke="black" stroke-width="2" fill="#ffffff" d="M218,30 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
@@ -63,5 +63,11 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1944">State</text>
 <rect stroke="#d3d3d3" fill="#ffffff" rx="10" ry="10" x="194" y="1923" width="48" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="200" y="1941">active</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="2050">Triangle</text>
-<path stroke="black" d="M214,2046 l4,-8 l 4,8 Z" /></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="2050">Store</text>
+<path stroke="#d3d3d3" fill="#ffffff" d="M153,2021 L283,2021" />
+<path stroke="#d3d3d3" fill="#ffffff" d="M153,2063 L283,2063" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="159" y="2039">a store</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="159" y="2055">holding keys</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="2156">Triangle</text>
+<path stroke="black" d="M214,2152 l4,-8 l 4,8 Z" /></svg>

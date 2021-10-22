@@ -56,6 +56,7 @@ func Test_write_allshapes(t *testing.T) {
 
 	add("Rect", NewRect("a rectangle"))
 	add("State", NewState("active"))
+	add("Store", NewStore("a store\nholding keys"))
 	add("Triangle", NewTriangle())
 
 	d.SaveAs("allshapes.svg")

@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [unreleased]
 
 - Label shape supports linebreaks
-- Add shape Process
+- Add shapes Process, Store
 
 ## [0.23.0] 2021-09-04
 

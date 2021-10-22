@@ -1,0 +1,92 @@
+package shape
+
+import (
+	"fmt"
+	"io"
+	"strings"
+
+	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
+)
+
+func NewStore(title string) *Store {
+	return &Store{
+		Title: title,
+		Font:  DefaultFont,
+		Pad:   DefaultTextPad,
+		class: "store",
+	}
+}
+
+type Store struct {
+	X, Y  int
+	Title string
+
+	Font  Font
+	Pad   Padding
+	class string
+
+	width, height int
+}
+
+func (r *Store) String() string {
+	return fmt.Sprintf("R %q", r.Title)
+}
+
+func (r *Store) Position() (int, int) { return r.X, r.Y }
+func (r *Store) SetX(x int)           { r.X = x }
+func (r *Store) SetY(y int)           { r.Y = y }
+func (r *Store) Direction() Direction { return DirectionRight }
+func (r *Store) SetClass(c string)    { r.class = c }
+
+func (r *Store) WriteSVG(out io.Writer) error {
+	y := r.Y
+	x := r.X
+	w, err := nexus.NewPrinter(out)
+	top := NewLine(x, y, x+r.Width(), y)
+	top.SetClass(r.class)
+	top.WriteSVG(w)
+
+	y = y + r.Height()
+	bottom := NewLine(x, y, x+r.Width(), y)
+	bottom.SetClass(r.class)
+	bottom.WriteSVG(w)
+
+	w.Printf("\n")
+	r.title().WriteSVG(w)
+	return *err
+}
+
+func (r *Store) title() *Label {
+	return &Label{
+		x:     r.X + r.Pad.Left,
+		y:     r.Y + r.Pad.Top/2,
+		Font:  r.Font,
+		Text:  r.Title,
+		class: r.class + "-title",
+	}
+}
+
+func (r *Store) SetFont(f Font)         { r.Font = f }
+func (r *Store) SetTextPad(pad Padding) { r.Pad = pad }
+
+func (r *Store) Height() int {
+	if r.height > 0 {
+		return r.height
+	}
+	return boxHeight(r.Font, r.Pad, strings.Count(r.Title, "\n")+1)
+}
+
+func (r *Store) Width() int {
+	if r.width > 0 {
+		return r.width
+	}
+	return boxWidth(r.Font, r.Pad, r.Title)
+}
+
+func (r *Store) SetWidth(w int)  { r.width = w }
+func (r *Store) SetHeight(h int) { r.height = h }
+
+func (r *Store) Edge(start xy.Point) xy.Point {
+	return boxEdge(start, r)
+}
