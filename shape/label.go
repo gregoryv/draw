@@ -69,9 +69,6 @@ func (l *Label) WriteSVG(out io.Writer) error {
 		w.Printf(`<text class="%s" font-size="%vpx" x="%v" y="%v">%s</text>`,
 			l.class, l.Font.Height, x, y+(l.Font.LineHeight*i), line)
 	}
-	// single line
-	//	w.Printf(`<text class="%s" font-size="%vpx" x="%v" y="%v">%s</text>`,
-	//		l.class, l.Font.Height, x, y, l.Text)
 	if l.href != "" {
 		w.Printf(`</a>`)
 	}
