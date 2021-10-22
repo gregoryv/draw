@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 	"math"
+	"strings"
 
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
@@ -68,14 +69,15 @@ func (r *Rect) Height() int {
 	if r.height > 0 {
 		return r.height
 	}
-	return boxHeight(r.Font, r.Pad, 1)
+	lines := strings.Count(r.Title, "\n") + 1
+	return boxHeight(r.Font, r.Pad, lines)
 }
 
 func (r *Rect) Width() int {
 	if r.width > 0 {
 		return r.width
 	}
-	return boxWidth(r.Font, r.Pad, r.Title)
+	return boxWidth(r.Font, r.Pad, longestLine(r.Title))
 }
 
 func (r *Rect) SetWidth(w int)  { r.width = w }
