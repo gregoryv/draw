@@ -1,3 +1,4 @@
+// Package docs provides the content of github pages at https://gregoryv.github.io/draw/
 package docs
 
 import (
