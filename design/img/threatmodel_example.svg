@@ -1,20 +1,32 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="422" height="208">
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="20" cy="15" r="5" />
-<path stroke="black" stroke-width="2" fill="#ffffff" d="M20,20 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+  font-family="Arial,Helvetica,sans-serif" width="432" height="248">
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="30" cy="105" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M30,110 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
 
-<rect stroke="#d3d3d3" fill="#ffffff" x="90" y="10" width="69" height="42"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="96" y="28">Customer</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="96" y="44">Details UI</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="219" y="10" width="62" height="42"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="225" y="28">Identity</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="225" y="44">Provider</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="341" y="10" width="79" height="42"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="347" y="28">Customer</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="347" y="44">Details BFF</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="341" y="112" width="69" height="42"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="347" y="130">Customer</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="347" y="146">Service</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="125" y="201">Figure 3. Threat model diagram</text></svg>
+<rect stroke="#d3d3d3" fill="#ffffff" x="100" y="100" width="69" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="106" y="118">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="106" y="134">Details UI</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="229" y="100" width="62" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="235" y="118">Identity</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="235" y="134">Provider</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="351" y="50" width="79" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="68">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="84">Details BFF</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="351" y="152" width="69" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="170">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="186">Service</text>
+<path stroke="black" d="M40,117 L100,119" />
+<g transform="rotate(91 100 119)"><path stroke="black" fill="#ffffff" d="M96,127 l4,-8 l 4,8 Z" /></g>
+
+<path stroke="black" d="M169,121 L229,121" />
+<g transform="rotate(90 229 121)"><path stroke="black" fill="#ffffff" d="M225,129 l4,-8 l 4,8 Z" /></g>
+
+<path stroke="black" d="M291,109 L351,86" />
+<g transform="rotate(70 351 86)"><path stroke="black" fill="#ffffff" d="M347,94 l4,-8 l 4,8 Z" /></g>
+
+<path stroke="black" d="M291,133 L351,158" />
+<g transform="rotate(112 351 158)"><path stroke="black" fill="#ffffff" d="M347,166 l4,-8 l 4,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="130" y="241">Figure 3. Threat model diagram</text></svg>

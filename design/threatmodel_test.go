@@ -15,9 +15,14 @@ func Example_threatModel() {
 		f = Entity("Customer\nService")
 	)
 	d.Style.Spacing = 60
-	d.Place(a).At(10, 10)
+	d.Place(a).At(20, 100)
 	d.Place(b, c, e).RightOf(a)
+	shape.Move(e, 0, -50)
 	d.Place(f).Below(e)
+
+	d.LinkAll(a, b, c)
+	d.Link(c, e)
+	d.Link(c, f)
 
 	d.SetCaption("Figure 3. Threat model diagram")
 	d.SaveAs("img/threatmodel_example.svg")
