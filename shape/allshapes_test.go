@@ -27,7 +27,7 @@ func Test_write_allshapes(t *testing.T) {
 		last = shape
 	}
 
-	add("Arrow", NewLine(240, 0, 300, 0))
+	add("Arrow", NewArrow(240, 0, 300, 0))
 	add("Circle", NewCircle(20))
 	add("Component", NewComponent("Component"))
 	lcomp := NewComponent("Component")
