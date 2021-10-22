@@ -1,0 +1,20 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="422" height="208">
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="20" cy="15" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M20,20 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+
+<rect stroke="#d3d3d3" fill="#ffffff" x="90" y="10" width="69" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="96" y="28">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="96" y="44">Details UI</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="219" y="10" width="62" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="225" y="28">Identity</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="225" y="44">Provider</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="341" y="10" width="79" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="347" y="28">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="347" y="44">Details BFF</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="341" y="112" width="69" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="347" y="130">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="347" y="146">Service</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="125" y="201">Figure 3. Threat model diagram</text></svg>
