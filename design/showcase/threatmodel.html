@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<style>.story {
+border: 3px double;
+width: 400px;
+}
+.story h2 {
+font-size: 1em;
+border-bottom: 3px double;
+padding: 5px 5px 5px 5px;
+margin-top: 0px;
+}
+.story h2 .ref {
+float: right;
+font-size: 12px;
+font-weight: normal;
+}
+.story p {
+padding: 5px 5px 5px 5px;
+font-style: italic;
+}
+</style>
+</head>
+<body>
+<h1>Threat modelling</h1>
+<p>This example illustrates the article <a href="https://martinfowler.com/articles/agile-threat-modelling.html">Agile Threat Modelling</a></p>
+<div class="story"><h2>Customer profile page<span class="ref">WFRS-232</span></h2>
+<p>As a customer, I need a page where I can see my customer details, So that I can confirm they are correct</p>
+</div>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="432" height="269">
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="30" cy="105" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M30,110 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+
+<rect stroke="#d3d3d3" fill="#ffffff" x="100" y="100" width="69" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="106" y="118">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="106" y="134">Details UI</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="229" y="100" width="62" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="235" y="118">Identity</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="235" y="134">Provider</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="351" y="50" width="79" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="68">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="84">Details BFF</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="351" y="152" width="69" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="170">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="186">Service</text>
+<path stroke="black" d="M40,117 L100,119" />
+<g transform="rotate(91 100 119)"><path stroke="black" fill="#ffffff" d="M96,127 l4,-8 l 4,8 Z" /></g>
+
+<path stroke="black" d="M169,121 L229,121" />
+<g transform="rotate(90 229 121)"><path stroke="black" fill="#ffffff" d="M225,129 l4,-8 l 4,8 Z" /></g>
+
+<path stroke="black" d="M291,109 L351,86" />
+<g transform="rotate(70 351 86)"><path stroke="black" fill="#ffffff" d="M347,94 l4,-8 l 4,8 Z" /></g>
+
+<path stroke="black" d="M291,133 L351,158" />
+<g transform="rotate(112 351 158)"><path stroke="black" fill="#ffffff" d="M347,166 l4,-8 l 4,8 Z" /></g>
+
+<path stroke="black" stroke-width="2" stroke-dasharray="5,5,5" d="M196,80 L202,162" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="40" y="56">internet</text>
+<rect stroke="orange" fill="orange" x="249" y="78" width="46" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="255" y="96">creds</text>
+<rect stroke="orange" fill="orange" x="371" y="189" width="30" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="377" y="207">PII</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="94" y="262">Figure 3. Customer profile page threat model</text></svg></body>
+</html>

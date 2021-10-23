@@ -6,9 +6,73 @@ import (
 	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/shape"
+	. "github.com/gregoryv/web"
 )
 
 func Example_threatModel() {
+	d := CustomerProfileThreatModel()
+	d.SaveAs("img/threatmodel_example.svg")
+
+	page := NewPage(
+		Html(
+			Head(
+				Style(theme()),
+			),
+			Body(
+				H1("Threat modelling"),
+				P(`This example illustrates the article `,
+					A(Href("https://martinfowler.com/articles/agile-threat-modelling.html"),
+						"Agile Threat Modelling",
+					),
+				),
+
+				Story("Customer profile page", "WFRS-232",
+					"As a customer, I need a page where I can see ",
+					"my customer details, So that I can confirm ",
+					"they are correct",
+				),
+				CustomerProfileThreatModel().Inline(),
+			),
+		),
+	)
+	page.SaveAs("showcase/threatmodel.html")
+	// output:
+}
+
+func Story(title string, ref string, lines ...interface{}) *Element {
+	return Div(Class("story"),
+		H2(title,
+			Span(Class("ref"), ref),
+		),
+		P(lines...),
+	)
+}
+
+func theme() *CSS {
+	css := NewCSS()
+	css.Style(".story",
+		"border: 3px double",
+		"width: 400px",
+	)
+	css.Style(".story h2",
+		"font-size: 1em",
+		"border-bottom: 3px double",
+		"padding: 5px 5px 5px 5px",
+		"margin-top: 0px",
+	)
+	css.Style(".story h2 .ref",
+		"float: right",
+		"font-size: 12px",
+		"font-weight: normal",
+	)
+	css.Style(".story p",
+		"padding: 5px 5px 5px 5px",
+		"font-style: italic",
+	)
+	return css
+}
+
+func CustomerProfileThreatModel() *design.Diagram {
 	var (
 		d = design.NewDiagram()
 		a = shape.NewActor()
@@ -20,7 +84,8 @@ func Example_threatModel() {
 	d.Style.Spacing = 60
 	// Identify components
 	d.Place(a).At(20, 100)
-	d.Place(b, c, e).RightOf(a).Move(0, -50)
+	d.Place(b, c).RightOf(a)
+	d.Place(e).RightOf(c).Move(0, -50)
 	d.Place(f).Below(e)
 
 	// Add data flows
@@ -30,8 +95,9 @@ func Example_threatModel() {
 
 	// Identify trust boundaries
 	b1 := Boundary(b, c, 20, -3)
+	g := shape.NewLabel("internet")
 	d.Place(b1)
-	d.Place(shape.NewLabel("internet")).At(40, 40)
+	d.Place(g).At(40, 40)
 
 	// Show your assets
 	creds := Asset("creds")
@@ -41,8 +107,7 @@ func Example_threatModel() {
 	d.Place(pii).Below(f).Move(20, -65)
 
 	d.SetCaption("Figure 3. Customer profile page threat model")
-	d.SaveAs("img/threatmodel_example.svg")
-	// output:
+	return d
 }
 
 func Asset(text string) shape.Shape {
