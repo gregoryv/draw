@@ -21,6 +21,13 @@ func (a *Adjuster) At(x, y int) {
 	a.shapes[0].SetY(y)
 }
 
+// Move adjusts shapes by moving them +/- in x and or y direction
+func (a *Adjuster) Move(dx, dy int) {
+	for i, _ := range a.shapes {
+		Move(a.shapes[i], dx, dy)
+	}
+}
+
 // RightOf places the wrapped shape to the right of o. Optional space
 // to override default.
 func (a *Adjuster) RightOf(o Shape, space ...int) {
