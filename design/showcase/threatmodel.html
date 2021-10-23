@@ -2,13 +2,37 @@
 
 <html>
 <head>
-<style>.story {
-border: 3px double;
-width: 400px;
+<style>html, body {
+margin: 0 0;
+padding: 0 0;
+}
+body {
+padding: 1em 1.612em;
+}
+p, li {
+line-height: 1.3em;
+}
+a:link {
+color: #0000EE;
+}
+a:visited {
+color: #551A8B;
+}
+a:link, a:visited {
+color: #007d9c;
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
+.story {
+background-color: #f2f2f2;
+padding: 5px 5px 5px 5px;
+border-radius: 10px;
 }
 .story h2 {
 font-size: 1em;
-border-bottom: 3px double;
+border-bottom: 1px solid #727272;
 padding: 5px 5px 5px 5px;
 margin-top: 0px;
 }
@@ -21,51 +45,66 @@ font-weight: normal;
 padding: 5px 5px 5px 5px;
 font-style: italic;
 }
+.model {
+padding: 1.612em 1.612em;
+text-align: center;
+}
 </style>
 </head>
 <body>
+<header>Example of documenting a threat modelling in Go</header>
 <h1>Threat modelling</h1>
-<p>This example illustrates the article <a href="https://martinfowler.com/articles/agile-threat-modelling.html">Agile Threat Modelling</a></p>
-<div class="story"><h2>Customer profile page<span class="ref">WFRS-232</span></h2>
-<p>As a customer, I need a page where I can see my customer details, So that I can confirm they are correct</p>
+<p></p>
+<div class="story"><h2>Customer profile page<span class="ref"></span></h2>
+<p>As a customer, I need a page where I can see , my
+			       customer details, So that I can confirm , they are
+			       correct</p>
 </div>
-<svg
+<div class="model"><svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="432" height="269">
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="30" cy="105" r="5" />
-<path stroke="black" stroke-width="2" fill="#ffffff" d="M30,110 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+  font-family="Arial,Helvetica,sans-serif" width="418" height="203">
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="10" cy="145" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M10,150 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
 
-<rect stroke="#d3d3d3" fill="#ffffff" x="100" y="100" width="69" height="42"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="106" y="118">Customer</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="106" y="134">Details UI</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="229" y="100" width="62" height="42"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="235" y="118">Identity</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="235" y="134">Provider</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="351" y="50" width="79" height="42"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="68">Customer</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="84">Details BFF</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="351" y="152" width="69" height="42"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="170">Customer</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="357" y="186">Service</text>
-<path stroke="black" d="M40,117 L100,119" />
-<g transform="rotate(91 100 119)"><path stroke="black" fill="#ffffff" d="M96,127 l4,-8 l 4,8 Z" /></g>
+<rect stroke="#d3d3d3" fill="#ffffff" x="80" y="140" width="69" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="86" y="158">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="86" y="174">Details UI</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="209" y="140" width="79" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="215" y="158">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="215" y="174">Details BFF</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="209" y="38" width="62" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="215" y="56">Identity</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="215" y="72">Provider</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="348" y="140" width="69" height="42"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="354" y="158">Customer</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="354" y="174">Service</text>
+<path stroke="black" d="M20,157 L80,159" />
+<g transform="rotate(91 80 159)"><path stroke="black" fill="#ffffff" d="M76,167 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M169,121 L229,121" />
-<g transform="rotate(90 229 121)"><path stroke="black" fill="#ffffff" d="M225,129 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M149,161 L209,161" />
+<g transform="rotate(90 209 161)"><path stroke="black" fill="#ffffff" d="M205,169 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M291,109 L351,86" />
-<g transform="rotate(70 351 86)"><path stroke="black" fill="#ffffff" d="M347,94 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M246,140 L241,80" />
+<g transform="rotate(355 241 80)"><path stroke="black" fill="#ffffff" d="M237,88 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" d="M291,133 L351,158" />
-<g transform="rotate(112 351 158)"><path stroke="black" fill="#ffffff" d="M347,166 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M288,161 L348,161" />
+<g transform="rotate(90 348 161)"><path stroke="black" fill="#ffffff" d="M344,169 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-width="2" stroke-dasharray="5,5,5" d="M196,80 L202,162" />
+<path stroke="black" stroke-width="2" stroke-dasharray="5,5,5" d="M176,120 L182,202" />
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="40" y="56">internet</text>
-<rect stroke="orange" fill="orange" x="249" y="78" width="46" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="255" y="96">creds</text>
-<rect stroke="orange" fill="orange" x="371" y="189" width="30" height="26"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="377" y="207">PII</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="94" y="262">Figure 3. Customer profile page threat model</text></svg></body>
+<rect stroke="orange" fill="orange" x="229" y="16" width="46" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="235" y="34">creds</text>
+<rect stroke="orange" fill="orange" x="368" y="118" width="30" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="374" y="136">PII</text></svg></div>
+<table>
+<tr><th>Data-flow</th><th>Threat</th></tr>
+<tr><td>Customer→Identity Service</td><td><ol>
+<li>authentication is password based, no two-factor authentication</li>
+</ol>
+</td></tr>
+</table>
+<hr/><footer>This example follows the article <a href="https://martinfowler.com/articles/agile-threat-modelling.html">Agile Threat Modelling</a>. The goal is to find a suitable format for documenting the
+            modelling session for future reuse.</footer></body>
 </html>

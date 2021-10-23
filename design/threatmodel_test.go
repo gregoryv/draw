@@ -7,86 +7,77 @@ import (
 	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/shape"
 	. "github.com/gregoryv/web"
+	"github.com/gregoryv/web/theme"
 )
 
 func Example_threatModel() {
-	d := CustomerProfileThreatModel()
-	d.SaveAs("img/threatmodel_example.svg")
+	var tm CustomerProfilePage
+	body := Body(
+		Header(
+			"Example of documenting a threat modelling in Go",
+		),
 
-	page := NewPage(
-		Html(
-			Head(
-				Style(theme()),
-			),
-			Body(
-				H1("Threat modelling"),
-				P(`This example illustrates the article `,
-					A(Href("https://martinfowler.com/articles/agile-threat-modelling.html"),
-						"Agile Threat Modelling",
-					),
-				),
+		H1("Threat modelling"),
+		P(),
 
-				Story("Customer profile page", "WFRS-232",
-					"As a customer, I need a page where I can see ",
-					"my customer details, So that I can confirm ",
-					"they are correct",
-				),
-				CustomerProfileThreatModel().Inline(),
+		tm.Story(),
+		tm.Model(),
+		tm.Threats(),
+		Hr(),
+		Footer(
+			`This example follows the article `,
+			A(Href("https://martinfowler.com/articles/agile-threat-modelling.html"),
+				"Agile Threat Modelling",
 			),
+			". ",
+			`The goal is to find a suitable format for documenting the
+            modelling session for future reuse.`,
 		),
 	)
-	page.SaveAs("showcase/threatmodel.html")
+
+	savePage(body)
 	// output:
 }
 
-func Story(title string, ref string, lines ...interface{}) *Element {
+type CustomerProfilePage struct{}
+
+func (me *CustomerProfilePage) Story() *Element {
+	var (
+		title, ref = "Customer profile page", ""
+		content    = `As a customer, I need a page where I can see , my
+			       customer details, So that I can confirm , they are
+			       correct`
+	)
 	return Div(Class("story"),
 		H2(title,
 			Span(Class("ref"), ref),
 		),
-		P(lines...),
+		P(content),
 	)
 }
 
-func theme() *CSS {
-	css := NewCSS()
-	css.Style(".story",
-		"border: 3px double",
-		"width: 400px",
+func (me *CustomerProfilePage) Model() *Element {
+	return Div(Class("model"),
+		me.Diagram().Inline(),
 	)
-	css.Style(".story h2",
-		"font-size: 1em",
-		"border-bottom: 3px double",
-		"padding: 5px 5px 5px 5px",
-		"margin-top: 0px",
-	)
-	css.Style(".story h2 .ref",
-		"float: right",
-		"font-size: 12px",
-		"font-weight: normal",
-	)
-	css.Style(".story p",
-		"padding: 5px 5px 5px 5px",
-		"font-style: italic",
-	)
-	return css
 }
 
-func CustomerProfileThreatModel() *design.Diagram {
+func (me *CustomerProfilePage) Diagram() *design.Diagram {
 	var (
 		d = design.NewDiagram()
 		a = shape.NewActor()
 		b = Entity("Customer\nDetails UI")
-		c = Entity("Identity\nProvider")
-		e = Entity("Customer\nDetails BFF")
+		e = Entity("Identity\nProvider")
+		c = Entity("Customer\nDetails BFF")
 		f = Entity("Customer\nService")
 	)
+
 	d.Style.Spacing = 60
 	// Identify components
-	d.Place(a).At(20, 100)
+	d.Place(a).At(0, 140)
 	d.Place(b, c).RightOf(a)
-	d.Place(e).RightOf(c).Move(0, -50)
-	d.Place(f).Below(e)
+	d.Place(e).Above(c)
+	d.Place(f).RightOf(c)
 
 	// Add data flows
 	d.LinkAll(a, b, c)
@@ -101,13 +92,60 @@ func CustomerProfileThreatModel() *design.Diagram {
 
 	// Show your assets
 	creds := Asset("creds")
-	d.Place(creds).Above(c).Move(20, 80)
+	d.Place(creds).Above(e).Move(20, 80)
 
 	pii := Asset("PII") // personally identifable information (PII)
-	d.Place(pii).Below(f).Move(20, -65)
+	d.Place(pii).Above(f).Move(20, 80)
 
-	d.SetCaption("Figure 3. Customer profile page threat model")
 	return d
+}
+
+func (me *CustomerProfilePage) Threats() *Element {
+	t := Table(
+		Tr(
+			Th("Data-flow"),
+			Th("Threat"),
+		),
+		row(
+			"Customer→Identity Service",
+			"authentication is password based, no two-factor authentication",
+		),
+	)
+	return t
+}
+
+// ----------------------------------------
+
+func savePage(body *Element) {
+	page := NewPage(
+		Html(
+			Head(
+				Style(
+					theme.GoldenSpace().With(
+						theme.GoishColors(),
+						modelTheme(),
+					),
+				),
+			),
+			body,
+		),
+	)
+	page.SaveAs("showcase/threatmodel.html")
+}
+
+func row(flow string, threats ...string) *Element {
+	return Tr(
+		Td(flow),
+		Td(
+			func() *Element {
+				ol := Ol()
+				for _, threat := range threats {
+					ol.With(Li(threat))
+				}
+				return ol
+			}(),
+		),
+	)
 }
 
 func Asset(text string) shape.Shape {
@@ -144,4 +182,47 @@ func Entity(v string) shape.Shape {
 // https://martinfowler.com/articles/agile-threat-modelling.html
 func intAbs(v int) int {
 	return int(math.Abs(float64(v)))
+}
+
+func story(title string, ref string, lines ...interface{}) *Element {
+	return Div(Class("story"),
+		H2(title,
+			Span(Class("ref"), ref),
+		),
+		P(lines...),
+	)
+}
+
+func modelTheme() *CSS {
+	css := NewCSS()
+	css.Style(".story",
+		"background-color: #f2f2f2",
+		"padding: 5px 5px 5px 5px",
+		"border-radius: 10px",
+	)
+	css.Style(".story h2",
+		"font-size: 1em",
+		"border-bottom: 1px solid #727272",
+		"padding: 5px 5px 5px 5px",
+		"margin-top: 0px",
+	)
+	css.Style(".story h2 .ref",
+		"float: right",
+		"font-size: 12px",
+		"font-weight: normal",
+	)
+	css.Style(".story p",
+		"padding: 5px 5px 5px 5px",
+		"font-style: italic",
+	)
+	css.Style(".model",
+		"padding: 1.612em 1.612em",
+		"text-align: center",
+	)
+	return css
+}
+
+func figure(d *design.Diagram, caption string) *design.Diagram {
+	d.SetCaption(caption)
+	return d
 }
