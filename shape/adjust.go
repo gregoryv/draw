@@ -16,21 +16,23 @@ type Adjuster struct {
 }
 
 // At sets the x, y coordinates of the wrapped shape
-func (a *Adjuster) At(x, y int) {
+func (a *Adjuster) At(x, y int) *Adjuster {
 	a.shapes[0].SetX(x)
 	a.shapes[0].SetY(y)
+	return a
 }
 
 // Move adjusts shapes by moving them +/- in x and or y direction
-func (a *Adjuster) Move(dx, dy int) {
+func (a *Adjuster) Move(dx, dy int) *Adjuster {
 	for i, _ := range a.shapes {
 		Move(a.shapes[i], dx, dy)
 	}
+	return a
 }
 
 // RightOf places the wrapped shape to the right of o. Optional space
 // to override default.
-func (a *Adjuster) RightOf(o Shape, space ...int) {
+func (a *Adjuster) RightOf(o Shape, space ...int) *Adjuster {
 	next := o
 	for _, s := range a.shapes {
 		x, y := next.Position()
@@ -38,11 +40,12 @@ func (a *Adjuster) RightOf(o Shape, space ...int) {
 		s.SetY(y)
 		next = s
 	}
+	return a
 }
 
 // LeftOf places the wrapped shape to the left of o. Optional space
 // to override default.
-func (a *Adjuster) LeftOf(o Shape, space ...int) {
+func (a *Adjuster) LeftOf(o Shape, space ...int) *Adjuster {
 	next := o
 	for _, s := range a.shapes {
 		x, y := next.Position()
@@ -50,11 +53,12 @@ func (a *Adjuster) LeftOf(o Shape, space ...int) {
 		s.SetY(y)
 		next = s
 	}
+	return a
 }
 
 // Below places the wrapped shape below o. Optional space to override
 // default.
-func (a *Adjuster) Below(o Shape, space ...int) {
+func (a *Adjuster) Below(o Shape, space ...int) *Adjuster {
 	next := o
 	for _, s := range a.shapes {
 		x, y := next.Position()
@@ -62,11 +66,12 @@ func (a *Adjuster) Below(o Shape, space ...int) {
 		s.SetX(x)
 		next = s
 	}
+	return a
 }
 
 // Above places the wrapped shape above o. Optional space to override
 // default.
-func (a *Adjuster) Above(o Shape, space ...int) {
+func (a *Adjuster) Above(o Shape, space ...int) *Adjuster {
 	next := o
 	for _, s := range a.shapes {
 		x, y := next.Position()
@@ -74,6 +79,7 @@ func (a *Adjuster) Above(o Shape, space ...int) {
 		s.SetX(x)
 		next = s
 	}
+	return a
 }
 
 func (a *Adjuster) space(space []int) int {
