@@ -20,8 +20,7 @@ func Example_threatModel() {
 	d.Style.Spacing = 60
 	// Identify components
 	d.Place(a).At(20, 100)
-	d.Place(b, c, e).RightOf(a)
-	shape.Move(e, 0, -50)
+	d.Place(b, c, e).RightOf(a).Move(0, -50)
 	d.Place(f).Below(e)
 
 	// Add data flows
@@ -36,12 +35,10 @@ func Example_threatModel() {
 
 	// Show your assets
 	creds := Asset("creds")
-	d.Place(creds).Above(c)
-	shape.Move(creds, 20, 80)
+	d.Place(creds).Above(c).Move(20, 80)
 
 	pii := Asset("PII") // personally identifable information (PII)
-	d.Place(pii).Below(f)
-	shape.Move(pii, 20, -65)
+	d.Place(pii).Below(f).Move(20, -65)
 
 	d.SetCaption("Figure 3. Customer profile page threat model")
 	d.SaveAs("img/threatmodel_example.svg")
