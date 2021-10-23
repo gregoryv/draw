@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="432" height="248">
+  font-family="Arial,Helvetica,sans-serif" width="432" height="269">
 <circle stroke="black" stroke-width="2" fill="#ffffff" cx="30" cy="105" r="5" />
 <path stroke="black" stroke-width="2" fill="#ffffff" d="M30,110 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
 
@@ -29,6 +29,11 @@
 <path stroke="black" d="M291,133 L351,158" />
 <g transform="rotate(112 351 158)"><path stroke="black" fill="#ffffff" d="M347,166 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-width="2" stroke-dasharray="5,5,5" d="M202,90 L196,152" />
+<path stroke="black" stroke-width="2" stroke-dasharray="5,5,5" d="M196,80 L202,162" />
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="130" y="241">Figure 3. Threat model diagram</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="40" y="56">internet</text>
+<rect stroke="orange" fill="orange" x="249" y="78" width="46" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="255" y="96">creds</text>
+<rect stroke="orange" fill="orange" x="371" y="189" width="30" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="377" y="207">PII</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="94" y="262">Figure 3. Customer profile page threat model</text></svg>
