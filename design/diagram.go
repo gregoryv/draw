@@ -26,6 +26,11 @@ type Diagram struct {
 	Caption *shape.Label
 }
 
+// Note is a convenience method to add a shape.Note to a diagram
+func (d *Diagram) Note(v string) *shape.Adjuster {
+	return d.Place(shape.NewNote(v))
+}
+
 // Place adds the shape to the diagram returning an adjuster for
 // positioning.
 func (d *Diagram) Place(s ...shape.Shape) *shape.Adjuster {
