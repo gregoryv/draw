@@ -67,6 +67,8 @@ func (d *SequenceDiagram) WriteSVG(w io.Writer) error {
 	columnX := make([]int, len(d.columns))
 	// columns and vertical lines
 	for i, column := range d.columns {
+		// todo add label in Add, AddStruct and AddInterface methods
+		// so one can place other shapes relative to them
 		label := shape.NewLabel(column)
 		label.Font = d.Font
 		label.Pad = d.Pad
