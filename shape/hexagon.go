@@ -42,9 +42,10 @@ func (r *Hexagon) String() string {
 	return fmt.Sprintf("R %q at %v, %v", r.Title, r.x, r.y)
 }
 
-func (r *Hexagon) Position() (int, int) { return r.x, r.y }
+func (r *Hexagon) Position() (x int, y int) { return r.x, r.y }
 func (r *Hexagon) SetX(x int)           { r.x = x }
 func (r *Hexagon) SetY(y int)           { r.y = y }
+
 func (r *Hexagon) Direction() Direction { return DirectionRight }
 func (r *Hexagon) SetClass(c string)    { r.class = c }
 

@@ -23,9 +23,11 @@ type Actor struct {
 }
 
 func (a *Actor) String() string        { return fmt.Sprintf("Actor") }
-func (a *Actor) Position() (int, int)  { return a.x, a.y }
+
+func (a *Actor) Position() (x int, y int)  { return a.x, a.y }
 func (a *Actor) SetX(x int)            { a.x = x }
 func (a *Actor) SetY(y int)            { a.y = y }
+
 func (a *Actor) Width() int            { return a.rad() * 4 }
 func (a *Actor) Height() int           { return a.height }
 func (a *Actor) SetHeight(h int)       { a.height = h }

@@ -7,7 +7,7 @@ func Move(m Movable, xd, yd int) {
 }
 
 type Movable interface {
-	Position() (int, int)
+	Position() (x int, y int)
 	SetX(int)
 	SetY(int)
 }

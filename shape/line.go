@@ -206,8 +206,8 @@ func maxOf(v ...int) int {
 
 // ----------------------------------------
 
-func (a *Line) Position() (int, int) {
-	x, y := a.Start.XY()
+func (a *Line) Position() (x int, y int) {
+	x, y = a.Start.XY()
 	if a.End.LeftOf(a.Start) {
 		x = a.End.X
 	}
@@ -219,8 +219,8 @@ func (a *Line) Position() (int, int) {
 }
 
 // CenterPosition returns the center x, y values
-func (a *Line) CenterPosition() (int, int) {
-	x, y := a.Position()
+func (a *Line) CenterPosition() (x int, y int) {
+	x, y = a.Position()
 	return x + a.Width()/2, y + a.Height()/2
 }
 

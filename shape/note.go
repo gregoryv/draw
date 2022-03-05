@@ -30,10 +30,11 @@ type Note struct {
 func (n *Note) String() string {
 	return fmt.Sprintf("Note %v", n.Text)
 }
-func (n *Note) Position() (int, int) { return n.x, n.y }
-func (n *Note) Direction() Direction { return DirectionRight }
+func (n *Note) Position() (x int, y int) { return n.x, n.y }
 func (n *Note) SetX(x int)           { n.x = x }
 func (n *Note) SetY(y int)           { n.y = y }
+
+func (n *Note) Direction() Direction { return DirectionRight }
 
 func (n *Note) Width() int {
 	var width int

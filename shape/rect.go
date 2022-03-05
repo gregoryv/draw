@@ -90,7 +90,7 @@ func (r *Rect) Edge(start xy.Point) xy.Point {
 }
 
 type Box interface {
-	Position() (int, int)
+	Position() (x int, y int)
 	Width() int
 	Height() int
 }

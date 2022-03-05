@@ -25,10 +25,10 @@ func (c *Circle) String() string {
 	return fmt.Sprintf("Circle")
 }
 
-func (c *Circle) Position() (int, int) { return c.x, c.y }
-
+func (c *Circle) Position() (x int, y int) { return c.x, c.y }
 func (c *Circle) SetX(x int) { c.x = x }
 func (c *Circle) SetY(y int) { c.y = y }
+
 func (c *Circle) Width() int {
 	stroke := 1
 	return (c.Radius+stroke)*2 - 2

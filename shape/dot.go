@@ -25,12 +25,10 @@ func (d *Dot) String() string {
 	return fmt.Sprintf("Dot")
 }
 
-func (d *Dot) Position() (int, int) {
-	return d.x, d.y
-}
-
+func (d *Dot) Position() (x int, y int) {	return d.x, d.y}
 func (d *Dot) SetX(x int) { d.x = x }
 func (d *Dot) SetY(y int) { d.y = y }
+
 func (d *Dot) Width() int {
 	return d.Radius * 2
 }

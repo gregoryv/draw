@@ -33,10 +33,10 @@ func (c *Cylinder) String() string {
 	return fmt.Sprintf("Cylinder")
 }
 
-func (c *Cylinder) Position() (int, int) { return c.x, c.y }
-
+func (c *Cylinder) Position() (x int, y int) { return c.x, c.y }
 func (c *Cylinder) SetX(x int) { c.x = x }
 func (c *Cylinder) SetY(y int) { c.y = y }
+
 func (c *Cylinder) Width() int {
 	stroke := 2
 	return (c.Radius+stroke)*2 - 2
