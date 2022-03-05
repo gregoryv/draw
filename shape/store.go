@@ -19,7 +19,7 @@ func NewStore(title string) *Store {
 }
 
 type Store struct {
-	X, Y  int
+	x, y  int
 	Title string
 
 	Font  Font
@@ -33,15 +33,15 @@ func (r *Store) String() string {
 	return fmt.Sprintf("R %q", r.Title)
 }
 
-func (r *Store) Position() (int, int) { return r.X, r.Y }
-func (r *Store) SetX(x int)           { r.X = x }
-func (r *Store) SetY(y int)           { r.Y = y }
-func (r *Store) Direction() Direction { return DirectionRight }
-func (r *Store) SetClass(c string)    { r.class = c }
+func (r *Store) Position() (x int, y int) { return r.x, r.y }
+func (r *Store) SetX(x int)               { r.x = x }
+func (r *Store) SetY(y int)               { r.y = y }
+func (r *Store) Direction() Direction     { return DirectionRight }
+func (r *Store) SetClass(c string)        { r.class = c }
 
 func (r *Store) WriteSVG(out io.Writer) error {
-	y := r.Y
-	x := r.X
+	y := r.y
+	x := r.x
 	w, err := nexus.NewPrinter(out)
 	top := NewLine(x, y, x+r.Width(), y)
 	top.SetClass(r.class)
@@ -59,8 +59,8 @@ func (r *Store) WriteSVG(out io.Writer) error {
 
 func (r *Store) title() *Label {
 	return &Label{
-		x:     r.X + r.Pad.Left,
-		y:     r.Y + r.Pad.Top/2,
+		x:     r.x + r.Pad.Left,
+		y:     r.y + r.Pad.Top/2,
 		Font:  r.Font,
 		Text:  r.Title,
 		class: r.class + "-title",

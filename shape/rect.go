@@ -20,7 +20,7 @@ func NewRect(title string) *Rect {
 }
 
 type Rect struct {
-	X, Y  int
+	x, y  int
 	Title string
 
 	Font  Font
@@ -36,17 +36,17 @@ func (r *Rect) String() string {
 	return fmt.Sprintf("R %q", r.Title)
 }
 
-func (r *Rect) Position() (int, int) { return r.X, r.Y }
-func (r *Rect) SetX(x int)           { r.X = x }
-func (r *Rect) SetY(y int)           { r.Y = y }
-func (r *Rect) Direction() Direction { return DirectionRight }
-func (r *Rect) SetClass(c string)    { r.class = c }
+func (r *Rect) Position() (x int, y int) { return r.x, r.y }
+func (r *Rect) SetX(x int)               { r.x = x }
+func (r *Rect) SetY(y int)               { r.y = y }
+func (r *Rect) Direction() Direction     { return DirectionRight }
+func (r *Rect) SetClass(c string)        { r.class = c }
 
 func (r *Rect) WriteSVG(out io.Writer) error {
 	w, err := nexus.NewPrinter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
-		r.class, r.X, r.Y, r.Width(), r.Height())
+		r.class, r.x, r.y, r.Width(), r.Height())
 	w.Printf("\n")
 	r.title().WriteSVG(w)
 	return *err
@@ -54,8 +54,8 @@ func (r *Rect) WriteSVG(out io.Writer) error {
 
 func (r *Rect) title() *Label {
 	return &Label{
-		x:     r.X + r.Pad.Left,
-		y:     r.Y + r.Pad.Top/2,
+		x:     r.x + r.Pad.Left,
+		y:     r.y + r.Pad.Top/2,
 		Font:  r.Font,
 		Text:  r.Title,
 		class: r.class + "-title",

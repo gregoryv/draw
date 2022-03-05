@@ -18,7 +18,7 @@ func NewState(title string) *State {
 }
 
 type State struct {
-	X, Y  int
+	x, y  int
 	Title string
 
 	Font  Font
@@ -30,17 +30,17 @@ func (r *State) String() string {
 	return fmt.Sprintf("R %q", r.Title)
 }
 
-func (r *State) Position() (int, int) { return r.X, r.Y }
-func (r *State) SetX(x int)           { r.X = x }
-func (r *State) SetY(y int)           { r.Y = y }
-func (r *State) Direction() Direction { return DirectionRight }
-func (r *State) SetClass(c string)    { r.class = c }
+func (r *State) Position() (x int, y int) { return r.x, r.y }
+func (r *State) SetX(x int)               { r.x = x }
+func (r *State) SetY(y int)               { r.y = y }
+func (r *State) Direction() Direction     { return DirectionRight }
+func (r *State) SetClass(c string)        { r.class = c }
 
 func (r *State) WriteSVG(out io.Writer) error {
 	w, err := nexus.NewPrinter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
-		r.class, r.X, r.Y, r.Width(), r.Height())
+		r.class, r.x, r.y, r.Width(), r.Height())
 	w.Printf("\n")
 	r.title().WriteSVG(w)
 	return *err
@@ -48,8 +48,8 @@ func (r *State) WriteSVG(out io.Writer) error {
 
 func (r *State) title() *Label {
 	return &Label{
-		x:     r.X + r.Pad.Left,
-		y:     r.Y + r.Pad.Top/2,
+		x:     r.x + r.Pad.Left,
+		y:     r.y + r.Pad.Top/2,
 		Font:  r.Font,
 		Text:  r.Title,
 		class: "state-title",

@@ -20,7 +20,7 @@ func NewComponent(title string) *Component {
 }
 
 type Component struct {
-	X, Y  int
+	x, y  int
 	Title string
 	href  string // optional link
 
@@ -37,26 +37,26 @@ func (c *Component) String() string {
 	return fmt.Sprintf("R %q", c.Title)
 }
 
-func (c *Component) Position() (int, int) { return c.X, c.Y }
-func (c *Component) SetX(x int)           { c.X = x }
-func (c *Component) SetY(y int)           { c.Y = y }
-func (c *Component) Direction() Direction { return DirectionRight }
-func (c *Component) SetClass(v string)    { c.class = v }
-func (c *Component) SetHref(v string)     { c.href = v }
+func (c *Component) Position() (x int, y int) { return c.x, c.y }
+func (c *Component) SetX(x int)               { c.x = x }
+func (c *Component) SetY(y int)               { c.y = y }
+func (c *Component) Direction() Direction     { return DirectionRight }
+func (c *Component) SetClass(v string)        { c.class = v }
+func (c *Component) SetHref(v string)         { c.href = v }
 
 func (c *Component) WriteSVG(out io.Writer) error {
 	w, err := nexus.NewPrinter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
-		c.class, c.X, c.Y, c.Width(), c.Height())
+		c.class, c.x, c.y, c.Width(), c.Height())
 	w.Printf("\n")
 	// small boxes
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
-		c.class, c.X-c.sbWidth/2, c.Y+c.sbHeight, c.sbWidth, c.sbHeight)
+		c.class, c.x-c.sbWidth/2, c.y+c.sbHeight, c.sbWidth, c.sbHeight)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
-		c.class, c.X-c.sbWidth/2, c.Y+c.Height()-c.sbHeight*2, c.sbWidth, c.sbHeight)
+		c.class, c.x-c.sbWidth/2, c.y+c.Height()-c.sbHeight*2, c.sbWidth, c.sbHeight)
 
 	c.title().WriteSVG(w)
 	return *err
@@ -64,8 +64,8 @@ func (c *Component) WriteSVG(out io.Writer) error {
 
 func (c *Component) title() *Label {
 	return &Label{
-		x:     c.X + c.Pad.Left + c.sbWidth/2,
-		y:     c.Y + c.Pad.Top/2,
+		x:     c.x + c.Pad.Left + c.sbWidth/2,
+		y:     c.y + c.Pad.Top/2,
 		Font:  c.Font,
 		Text:  c.Title,
 		href:  c.href,

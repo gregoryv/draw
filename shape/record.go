@@ -18,7 +18,7 @@ func NewRecord(title string) *Record {
 }
 
 type Record struct {
-	X, Y    int
+	x, y    int
 	Title   string
 	Fields  []string
 	Methods []string
@@ -32,27 +32,27 @@ func (r *Record) String() string {
 	return fmt.Sprintf("R %q", r.Title)
 }
 
-func (r *Record) Position() (int, int) { return r.X, r.Y }
-func (r *Record) SetX(x int)           { r.X = x }
-func (r *Record) SetY(y int)           { r.Y = y }
-func (r *Record) Direction() Direction { return DirectionRight }
-func (r *Record) SetClass(c string)    { r.class = c }
+func (r *Record) Position() (x int, y int) { return r.x, r.y }
+func (r *Record) SetX(x int)               { r.x = x }
+func (r *Record) SetY(y int)               { r.y = y }
+func (r *Record) Direction() Direction     { return DirectionRight }
+func (r *Record) SetClass(c string)        { r.class = c }
 
 func (r *Record) WriteSVG(out io.Writer) error {
 	w, err := nexus.NewPrinter(out)
 	w.Printf(
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
-		r.class, r.X, r.Y, r.Width(), r.Height())
+		r.class, r.x, r.y, r.Width(), r.Height())
 	w.Printf("\n")
 	var y = boxHeight(r.Font, r.Pad, 1)
 	hasFields := len(r.Fields) != 0
 	if hasFields {
-		r.writeSeparator(w, r.Y+y)
+		r.writeSeparator(w, r.y+y)
 		for _, txt := range r.Fields {
 			label := &Label{
 
-				x:     r.X + r.Pad.Left,
-				y:     r.Y + y,
+				x:     r.x + r.Pad.Left,
+				y:     r.y + y,
 				Font:  r.Font,
 				Text:  txt,
 				class: "field",
@@ -66,11 +66,11 @@ func (r *Record) WriteSVG(out io.Writer) error {
 		if hasFields {
 			y += r.Pad.Bottom
 		}
-		r.writeSeparator(w, r.Y+y)
+		r.writeSeparator(w, r.y+y)
 		for _, txt := range r.Methods {
 			label := &Label{
-				x:     r.X + r.Pad.Left,
-				y:     r.Y + y,
+				x:     r.x + r.Pad.Left,
+				y:     r.y + y,
 				Font:  r.Font,
 				Text:  txt,
 				class: "method",
@@ -86,8 +86,8 @@ func (r *Record) WriteSVG(out io.Writer) error {
 
 func (r *Record) writeSeparator(w io.Writer, y1 int) error {
 	line := NewLine(
-		r.X, y1,
-		r.X+r.Width(), y1,
+		r.x, y1,
+		r.x+r.Width(), y1,
 	)
 	line.SetClass("record-line")
 	return line.WriteSVG(w)
@@ -95,8 +95,8 @@ func (r *Record) writeSeparator(w io.Writer, y1 int) error {
 
 func (r *Record) title() *Label {
 	return &Label{
-		x:     r.X + r.Pad.Left,
-		y:     r.Y,
+		x:     r.x + r.Pad.Left,
+		y:     r.y,
 		Font:  r.Font,
 		Text:  r.Title,
 		class: "record-title",
