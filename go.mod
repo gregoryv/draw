@@ -7,5 +7,5 @@ require (
 	github.com/gregoryv/golden v0.6.1
 	github.com/gregoryv/nexus v0.5.1
 	github.com/gregoryv/web v0.19.0
-	golang.org/x/net v0.0.0-20210525063256-abc453219eb5 // indirect
+	golang.org/x/net v0.0.0-20211015210444-4f30a5c0130f // indirect
 )
