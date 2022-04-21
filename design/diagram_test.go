@@ -37,7 +37,9 @@ func TestDiagram(t *testing.T) {
 		d.WriteSVG(fixed)
 
 		assert := asserter.New(t)
-		assert(adjusted.String() != fixed.String())
+		a := adjusted.String()
+		f := fixed.String()
+		assert(a != f).Error("fixed same as adjusted")
 	})
 
 	t.Run("Shapes can be placed in a grid", func(t *testing.T) {
