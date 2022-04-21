@@ -78,61 +78,49 @@ func (d *ClassDiagram) compositions() []shape.Shape {
 	for _, struct_ := range d.structs {
 		for _, struct2 := range d.structs {
 			if struct_.ComposedOf(&struct2) {
-				arrow := shape.NewArrowBetween(struct_, struct2)
-				arrow.Tail = shape.NewDiamond()
-				arrow.SetClass("compose-arrow")
-				arrow.Tail.SetClass("compose-arrow-tail")
-				rel = append(rel, arrow)
+				rel = append(rel, composeArrow(struct_, struct2))
 			}
 			if struct_.Aggregates(&struct2) {
-				arrow := shape.NewArrowBetween(struct_, struct2)
-				arrow.Tail = shape.NewDiamond()
-				arrow.SetClass("aggregate-arrow")
-				arrow.Tail.SetClass("aggregate-arrow-tail")
-				rel = append(rel, arrow)
+				rel = append(rel, aggregateArrow(struct_, struct2))
 			}
 		}
 		for _, iface := range d.interfaces {
 			if struct_.ComposedOf(&iface) {
-				arrow := shape.NewArrowBetween(struct_, iface)
-				arrow.Tail = shape.NewDiamond()
-				arrow.SetClass("compose-arrow")
-				arrow.Tail.SetClass("compose-arrow-tail")
-				rel = append(rel, arrow)
+				rel = append(rel, composeArrow(struct_, iface))
 			}
 			if struct_.Aggregates(&iface) {
-				arrow := shape.NewArrowBetween(struct_, iface)
-				arrow.Tail = shape.NewDiamond()
-				arrow.SetClass("aggregate-arrow")
-				arrow.Tail.SetClass("aggregate-arrow-tail")
-				rel = append(rel, arrow)
+				rel = append(rel, aggregateArrow(struct_, iface))
 			}
 		}
 		for _, slice := range d.slices {
 			if struct_.ComposedOf(&slice) {
-				arrow := shape.NewArrowBetween(struct_, slice)
-				arrow.Tail = shape.NewDiamond()
-				arrow.SetClass("compose-arrow")
-				arrow.Tail.SetClass("compose-arrow-tail")
-				rel = append(rel, arrow)
+				rel = append(rel, composeArrow(struct_, slice))
 			}
 			if slice.ComposedOf(&struct_) {
-				arrow := shape.NewArrowBetween(slice, struct_)
-				arrow.Tail = shape.NewDiamond()
-				arrow.SetClass("compose-arrow")
-				arrow.Tail.SetClass("compose-arrow-tail")
-				rel = append(rel, arrow)
+				rel = append(rel, composeArrow(slice, struct_))
 			}
 			if struct_.Aggregates(&slice) {
-				arrow := shape.NewArrowBetween(struct_, slice)
-				arrow.Tail = shape.NewDiamond()
-				arrow.SetClass("aggregate-arrow")
-				arrow.Tail.SetClass("aggregate-arrow-tail")
-				rel = append(rel, arrow)
+				rel = append(rel, aggregateArrow(struct_, slice))
 			}
 		}
 	}
 	return rel
+}
+
+func composeArrow(a, b shape.Shape) *shape.Line {
+	arrow := shape.NewArrowBetween(a, b)
+	arrow.Tail = shape.NewDiamond()
+	arrow.SetClass("compose-arrow")
+	arrow.Tail.SetClass("compose-arrow-tail")
+	return arrow
+}
+
+func aggregateArrow(a, b shape.Shape) *shape.Line {
+	arrow := shape.NewArrowBetween(a, b)
+	arrow.Tail = shape.NewDiamond()
+	arrow.SetClass("aggregate-arrow")
+	arrow.Tail.SetClass("aggregate-arrow-tail")
+	return arrow
 }
 
 // HideRealizations hides all methods of structs that implement a
