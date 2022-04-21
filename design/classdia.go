@@ -75,32 +75,31 @@ func (d *ClassDiagram) implements() []shape.Shape {
 
 func (d *ClassDiagram) compositions() []shape.Shape {
 	rel := make([]shape.Shape, 0)
-	for _, struct_ := range d.structs {
-		for _, struct2 := range d.structs {
-			if struct_.ComposedOf(&struct2) {
-				rel = append(rel, composeArrow(struct_, struct2))
-			}
-			if struct_.Aggregates(&struct2) {
-				rel = append(rel, aggregateArrow(struct_, struct2))
-			}
-		}
-		for _, iface := range d.interfaces {
-			if struct_.ComposedOf(&iface) {
-				rel = append(rel, composeArrow(struct_, iface))
-			}
-			if struct_.Aggregates(&iface) {
-				rel = append(rel, aggregateArrow(struct_, iface))
+	for _, a := range d.structs {
+		for _, b := range d.structs {
+			switch {
+			case a.ComposedOf(&b):
+				rel = append(rel, composeArrow(a, b))
+			case a.Aggregates(&b):
+				rel = append(rel, aggregateArrow(a, b))
 			}
 		}
-		for _, slice := range d.slices {
-			if struct_.ComposedOf(&slice) {
-				rel = append(rel, composeArrow(struct_, slice))
+		for _, b := range d.interfaces {
+			switch {
+			case a.ComposedOf(&b):
+				rel = append(rel, composeArrow(a, b))
+			case a.Aggregates(&b):
+				rel = append(rel, aggregateArrow(a, b))
 			}
-			if slice.ComposedOf(&struct_) {
-				rel = append(rel, composeArrow(slice, struct_))
-			}
-			if struct_.Aggregates(&slice) {
-				rel = append(rel, aggregateArrow(struct_, slice))
+		}
+		for _, b := range d.slices {
+			switch {
+			case a.ComposedOf(&b):
+				rel = append(rel, composeArrow(a, b))
+			case b.ComposedOf(&a):
+				rel = append(rel, composeArrow(b, a))
+			case a.Aggregates(&b):
+				rel = append(rel, aggregateArrow(a, b))
 			}
 		}
 	}
