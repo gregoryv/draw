@@ -255,6 +255,10 @@ func Example_RenderInlinedDiagram() {
 <g transform="rotate(180 280 293)"><path stroke="black" fill="#ffffff" d="M280,293 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(270 145 293)"><path stroke="black" fill="#ffffff" d="M141,301 l4,-8 l 4,8 Z" /></g>
 
+<path stroke="black" d="M124,706 L318,184" />
+<g transform="rotate(-69 124 706)"><path stroke="black" fill="#777777" d="M124,706 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(21 318 184)"><path stroke="black" fill="#ffffff" d="M314,192 l4,-8 l 4,8 Z" /></g>
+
 <path stroke="black" d="M522,591 L582,591" />
 <g transform="rotate(0 522 591)"><path stroke="black" fill="#777777" d="M522,591 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(90 582 591)"><path stroke="black" fill="#ffffff" d="M578,599 l4,-8 l 4,8 Z" /></g>
@@ -752,7 +756,11 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="140" y="1173">active</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="1252">Triangle</text>
 <path stroke="black" d="M154,1248 l4,-8 l 4,8 Z" /></svg><h2 id="changelog"><a href="#changelog">Changelog</a></h2>
-<pre class="srcfile"><code class="go">## [0.24.0] 2021-12-05
+<pre class="srcfile"><code class="go">## [unreleased]
+
+- Draw relations of embedded interface fields
+
+## [0.24.0] 2021-12-05
 
 - Add Diagram.Note helper method
 - Label shape supports linebreaks

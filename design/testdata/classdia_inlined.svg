@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="449" height="439">
+  font-family="Arial,Helvetica,sans-serif" width="460" height="439">
 <path stroke="black" d="M284,23 L314,23" />
 <g transform="rotate(0 284 23)"><path stroke="black" fill="#777777" d="M284,23 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(90 314 23)"><path stroke="black" fill="#ffffff" d="M310,31 l4,-8 l 4,8 Z" /></g>
@@ -17,6 +17,10 @@
 <path stroke="black" d="M68,148 L70,178" />
 <g transform="rotate(86 68 148)"><path stroke="black" fill="#777777" d="M68,148 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(176 70 178)"><path stroke="black" fill="#ffffff" d="M66,186 l4,-8 l 4,8 Z" /></g>
+
+<path stroke="black" d="M118,81 L314,89" />
+<g transform="rotate(2 118 81)"><path stroke="black" fill="#777777" d="M118,81 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(92 314 89)"><path stroke="black" fill="#ffffff" d="M310,97 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M133,292 L163,290" />
 <g transform="rotate(87 163 290)"><path stroke="black" fill="#ffffff" d="M159,298 l4,-8 l 4,8 Z" /></g>
@@ -48,6 +52,10 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="154" y="26">design.Speakers slice</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="314" y="10" width="134" height="26"/>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="320" y="26">design.Speaker struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="314" y="66" width="145" height="52"/>
+<path stroke="#d3d3d3" d="M314,92 L459,92" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="320" y="108">Run()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="320" y="82">design.Engine interface</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="163" y="260" width="128" height="52"/>
 <path stroke="#d3d3d3" d="M163,286 L291,286" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="169" y="302">String()</text>

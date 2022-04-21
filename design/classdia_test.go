@@ -102,10 +102,12 @@ func newClassDiagram() *ClassDiagram {
 		speakers = d.Slice(make(Speakers, 0))
 		stringer = d.Interface((*fmt.Stringer)(nil))
 		driver   = d.Struct(Driver{})
+		engine   = d.Interface((*Engine)(nil))
 	)
 	d.Place(car).At(10, 10)
 	d.Place(wheels, wheel).Below(car)
 	d.Place(speakers, speaker).RightOf(car)
+	d.Place(engine).Below(speaker)
 	d.Place(stringer).RightOf(wheel)
 	d.Place(driver).Below(stringer, 100)
 	d.Link(stringer, driver, "labeled")
@@ -116,6 +118,7 @@ type Car struct {
 	Model string
 	Wheels
 	*Speakers
+	e Engine
 }
 
 // String
@@ -140,3 +143,7 @@ type Driver struct{}
 type Speakers []Speaker
 
 type Speaker struct{}
+
+type Engine interface {
+	Run() error
+}

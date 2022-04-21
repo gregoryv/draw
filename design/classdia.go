@@ -92,6 +92,22 @@ func (d *ClassDiagram) compositions() []shape.Shape {
 				rel = append(rel, arrow)
 			}
 		}
+		for _, iface := range d.interfaces {
+			if struct_.ComposedOf(&iface) {
+				arrow := shape.NewArrowBetween(struct_, iface)
+				arrow.Tail = shape.NewDiamond()
+				arrow.SetClass("compose-arrow")
+				arrow.Tail.SetClass("compose-arrow-tail")
+				rel = append(rel, arrow)
+			}
+			if struct_.Aggregates(&iface) {
+				arrow := shape.NewArrowBetween(struct_, iface)
+				arrow.Tail = shape.NewDiamond()
+				arrow.SetClass("aggregate-arrow")
+				arrow.Tail.SetClass("aggregate-arrow-tail")
+				rel = append(rel, arrow)
+			}
+		}
 		for _, slice := range d.slices {
 			if struct_.ComposedOf(&slice) {
 				arrow := shape.NewArrowBetween(struct_, slice)

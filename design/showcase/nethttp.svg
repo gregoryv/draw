@@ -2,6 +2,10 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   font-family="Arial,Helvetica,sans-serif" width="526" height="452">
+<path stroke="black" d="M374,189 L322,176" />
+<g transform="rotate(194 374 189)"><path stroke="black" fill="#777777" d="M374,189 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(284 322 176)"><path stroke="black" fill="#ffffff" d="M318,184 l4,-8 l 4,8 Z" /></g>
+
 <path stroke="black" stroke-dasharray="5,5,5" d="M255,216 L255,186" />
 <g transform="rotate(0 255 186)"><path stroke="black" fill="#ffffff" d="M251,194 l4,-8 l 4,8 Z" /></g>
 
