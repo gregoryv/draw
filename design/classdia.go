@@ -29,6 +29,10 @@ type ClassDiagram struct {
 	slices     []VRecord
 }
 
+// todo It would be easier to have a generic AddType(v interface{})
+// VRecord or maybe even separate these parts into something that is
+// responsible for maintaining relation ships between types.
+
 func (d *ClassDiagram) Interface(obj interface{}) VRecord {
 	vr := NewVRecord(obj)
 	d.interfaces = append(d.interfaces, *vr)
@@ -49,6 +53,7 @@ func (d *ClassDiagram) Slice(obj interface{}) VRecord {
 
 // WriteSVG renders the diagram as SVG to the given writer.
 func (d *ClassDiagram) WriteSVG(w io.Writer) error {
+	// todo, relations should not be readded each time we write it out
 	rel := d.implements()
 	rel = append(rel, d.compositions()...)
 	for _, s := range rel {

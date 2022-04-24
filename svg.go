@@ -23,18 +23,18 @@ type SVG struct {
 
 // WriteSVG writes <svg> </svg> tags and it's content to the given
 // writer.
-func (s *SVG) WriteSVG(out io.Writer) error {
-	w, err := nexus.NewPrinter(out)
-	w.Printf(`<svg
+func (s *SVG) WriteSVG(w io.Writer) error {
+	p, err := nexus.NewPrinter(w)
+	p.Printf(`<svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   class="root" width="%v" height="%v">`, s.width, s.height)
 
 	for _, c := range s.Content {
-		w.Print("\n")
-		c.WriteSVG(w)
+		p.Print("\n")
+		c.WriteSVG(p)
 	}
-	w.Print("</svg>")
+	p.Print("</svg>")
 	return *err
 }
 
