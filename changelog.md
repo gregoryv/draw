@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Consider a slice struct field of any type to be an
+  aggregate. Ie. before []*Something was considered an aggregate
+  whereas []Something was not. Now both are considered aggregates.
 - Hide X, Y fields of shapes, use SetX, SetY and Position
 
 ## [0.25.0] 2022-04-21

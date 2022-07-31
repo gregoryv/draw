@@ -135,9 +135,14 @@ func (vr *VRecord) ComposedOf(d *VRecord) bool {
 func (vr *VRecord) Aggregates(d *VRecord) bool {
 	for i := 0; i < vr.t.NumField(); i++ {
 		field := vr.t.Field(i)
-		if field.Type == reflect.PtrTo(d.t) || field.Type == reflect.SliceOf(reflect.PtrTo(d.t)) {
-			return true
+		switch field.Type {
+		case reflect.PtrTo(d.t):
+		case reflect.SliceOf(reflect.PtrTo(d.t)):
+		case reflect.SliceOf(d.t):
+		default:
+			continue
 		}
+		return true
 	}
 	return false
 }

@@ -89,6 +89,7 @@ func TestVRecord_Aggregates(t *testing.T) {
 	}
 	ok(struct{ c *C }{}, C{})
 	ok(struct{ c []*C }{}, C{})
+	ok(struct{ c []C }{}, C{})
 	ok(struct{ c *MySlice }{}, MySlice{})
 
 	bad := func(a, b interface{}) {
