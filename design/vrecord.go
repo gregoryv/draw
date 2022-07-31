@@ -142,12 +142,12 @@ func aggregates(a, b reflect.Type) bool {
 	defer func() { _ = recover() }()
 
 	for i := 0; i < a.NumField(); i++ {
-		field := a.Field(i)
+		t := a.Field(i).Type
 		switch {
-		case field.Type == reflect.PtrTo(b):
-		case field.Type == reflect.SliceOf(reflect.PtrTo(b)):
-		case field.Type == reflect.SliceOf(b):
-		case isAggregateKind(field.Type.Kind()) && field.Type == b:
+		case t == reflect.PtrTo(b):
+		case t == reflect.SliceOf(reflect.PtrTo(b)):
+		case t == reflect.SliceOf(b):
+		case t == b && isAggregateKind(t.Kind()):
 		default:
 			continue
 		}
