@@ -119,6 +119,7 @@ func (vr *VRecord) Implements(iface *VRecord) bool {
 	return reflect.PtrTo(vr.t).Implements(iface.t)
 }
 
+// todo shouldn't composedOf be the inverse of aggregates
 func (vr *VRecord) ComposedOf(d *VRecord) bool {
 	if vr.t.Kind() == reflect.Slice {
 		return vr.t.ConvertibleTo(reflect.SliceOf(d.t))
@@ -133,16 +134,32 @@ func (vr *VRecord) ComposedOf(d *VRecord) bool {
 }
 
 func (vr *VRecord) Aggregates(d *VRecord) bool {
-	for i := 0; i < vr.t.NumField(); i++ {
-		field := vr.t.Field(i)
+	return aggregates(vr.t, d.t)
+}
+
+// aggregates returns true if type a aggregates type b
+func aggregates(a, b reflect.Type) bool {
+	if !hasFields(a) {
+		return false
+	}
+
+	for i := 0; i < a.NumField(); i++ {
+		field := a.Field(i)
 		switch field.Type {
-		case reflect.PtrTo(d.t):
-		case reflect.SliceOf(reflect.PtrTo(d.t)):
-		case reflect.SliceOf(d.t):
+		case reflect.PtrTo(b):
+		case reflect.SliceOf(reflect.PtrTo(b)):
+		case reflect.SliceOf(b):
 		default:
 			continue
 		}
 		return true
 	}
 	return false
+}
+
+func hasFields(t reflect.Type) bool {
+	defer func() { _ = recover() }()
+	_ = t.NumField() // panics
+	return true
+
 }

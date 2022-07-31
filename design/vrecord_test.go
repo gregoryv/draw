@@ -101,6 +101,7 @@ func TestVRecord_Aggregates(t *testing.T) {
 		}
 	}
 	bad(struct{ c C }{}, C{})
+	bad(1, C{})
 }
 
 type C struct{}
