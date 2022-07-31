@@ -32,7 +32,7 @@ func ExampleClassDiagram() *design.ClassDiagram {
 	d.HideRealizations()
 
 	d.Place(shapE).At(280, 20)
-	d.Place(record).At(20, 160)
+	d.Place(record).At(20, 260)
 
 	d.Place(circle).RightOf(shapE, 200)
 	d.Place(diamond).Below(circle, 50)
@@ -44,11 +44,13 @@ func ExampleClassDiagram() *design.ClassDiagram {
 
 	d.Place(rel).Below(shapE, 20)
 	d.Place(dia).RightOf(style, 70)
+	d.Place(adj).RightOf(dia, 60)
 	d.Place(aligner).RightOf(dia, 60)
 	d.HAlignCenter(fnt, style, dia, aligner)
 	d.HAlignCenter(record, rel)
+	d.HAlignTop(dia, adj)
+	shape.Move(adj, 0, -60)
 
-	d.Place(adj).Below(fnt, 70)
 	d.Place(seqdia).Below(aligner, 90)
 	d.Place(classdia).Below(dia, 90)
 	d.VAlignCenter(dia, classdia)
