@@ -97,6 +97,8 @@ func TestVRecord_Aggregates(t *testing.T) {
 	ok(struct{ c fmt.Stringer }{}, (*fmt.Stringer)(nil), "interface field")
 	ok(struct{ c map[int]string }{}, map[int]string{}, "a map")
 	ok(struct{ c chan int }{}, make(chan int, 0), "chan")
+	ok(struct{ c func() }{}, func() {}, "func")
+	ok(struct{ c F }{}, F(func() {}), "func")
 
 	bad := func(a, b interface{}) {
 		t.Helper()
@@ -110,5 +112,8 @@ func TestVRecord_Aggregates(t *testing.T) {
 	bad(1, C{})
 }
 
+func noop() {}
+
+type F func()
 type C struct{}
 type MySlice []C

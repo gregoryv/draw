@@ -165,4 +165,5 @@ var destAggregates = map[reflect.Kind]struct{}{
 	reflect.Interface: struct{}{},
 	reflect.Map:       struct{}{},
 	reflect.Chan:      struct{}{},
+	reflect.Func:      struct{}{},
 }
