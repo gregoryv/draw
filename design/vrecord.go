@@ -139,16 +139,15 @@ func (vr *VRecord) Aggregates(d *VRecord) bool {
 
 // aggregates returns true if type a aggregates type b
 func aggregates(a, b reflect.Type) bool {
-	if !hasFields(a) {
-		return false
-	}
+	defer func() { _ = recover() }()
 
 	for i := 0; i < a.NumField(); i++ {
 		field := a.Field(i)
-		switch field.Type {
-		case reflect.PtrTo(b):
-		case reflect.SliceOf(reflect.PtrTo(b)):
-		case reflect.SliceOf(b):
+		switch {
+		case field.Type == reflect.PtrTo(b):
+		case field.Type == reflect.SliceOf(reflect.PtrTo(b)):
+		case field.Type == reflect.SliceOf(b):
+		case isAggregateKind(field.Type.Kind()) && field.Type == b:
 		default:
 			continue
 		}
@@ -157,9 +156,13 @@ func aggregates(a, b reflect.Type) bool {
 	return false
 }
 
-func hasFields(t reflect.Type) bool {
-	defer func() { _ = recover() }()
-	_ = t.NumField() // panics
-	return true
+func isAggregateKind(k reflect.Kind) bool {
+	_, found := destAggregates[k]
+	return found
+}
 
+var destAggregates = map[reflect.Kind]struct{}{
+	reflect.Interface: struct{}{},
+	reflect.Map:       struct{}{},
+	reflect.Chan:      struct{}{},
 }

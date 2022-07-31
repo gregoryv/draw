@@ -79,18 +79,24 @@ func TestVRecord_ComposedOf(t *testing.T) {
 }
 
 func TestVRecord_Aggregates(t *testing.T) {
-	ok := func(a, b interface{}) {
+	ok := func(a, b interface{}, msg string) {
 		t.Helper()
 		A := NewVRecord(a)
 		B := NewVRecord(b)
 		if !A.Aggregates(B) {
-			t.Errorf("%v aggregates of %v", A, B)
+			t.Errorf("%s\n%v aggregates of %v", msg, A, B)
 		}
 	}
-	ok(struct{ c *C }{}, C{})
-	ok(struct{ c []*C }{}, C{})
-	ok(struct{ c []C }{}, C{})
-	ok(struct{ c *MySlice }{}, MySlice{})
+
+	// an aggregate is defined as a relation between two types which
+	// may be nil at runtime.
+	ok(struct{ c *C }{}, C{}, "pointer to struct")
+	ok(struct{ c []*C }{}, C{}, "slice of pointers to struct")
+	ok(struct{ c []C }{}, C{}, "slice of structs")
+	ok(struct{ c *MySlice }{}, MySlice{}, "named slice")
+	ok(struct{ c fmt.Stringer }{}, (*fmt.Stringer)(nil), "interface field")
+	ok(struct{ c map[int]string }{}, map[int]string{}, "a map")
+	ok(struct{ c chan int }{}, make(chan int, 0), "chan")
 
 	bad := func(a, b interface{}) {
 		t.Helper()
