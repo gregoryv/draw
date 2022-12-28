@@ -33,6 +33,9 @@ type Card struct {
 	Title *Label
 	Note  *Label
 	Text  *Label
+
+	// Optional icon placed above the title
+	Icon Shape
 }
 
 func (c *Card) String() string {
@@ -57,7 +60,15 @@ func (c *Card) WriteSVG(out io.Writer) error {
 	c.Rect.SetHeight(c.Height())
 	c.Rect.WriteSVG(w)
 
-	NewAdjuster(T).Below(c.Rect, -c.Height()+c.Pad.Top)
+	top := c.Pad.Top
+	if c.Icon != nil {
+		NewAdjuster(c.Icon).Below(c.Rect, -c.Height()+c.Pad.Top)
+		new(Aligner).VAlignCenter(c.Rect, c.Icon)
+		top += c.Icon.Height()
+		top += c.Pad.Bottom
+		c.Icon.WriteSVG(w)
+	}
+	NewAdjuster(T).Below(c.Rect, -c.Height()+top)
 	NewAdjuster(N).Below(T, 0)
 	NewAdjuster(D).Below(N, c.Pad.Top)
 
@@ -93,6 +104,10 @@ func (c *Card) Height() int {
 		return c.Rect.Height()
 	}
 	h := c.Pad.Top
+	if c.Icon != nil {
+		h += c.Icon.Height()
+		h += c.Pad.Bottom
+	}
 	h += c.Title.Height()
 	h += c.Note.Height()
 	h += c.Pad.Top

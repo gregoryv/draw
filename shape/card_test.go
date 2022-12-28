@@ -8,14 +8,25 @@ import (
 )
 
 func TestCard(t *testing.T) {
+	customer := NewCard(
+		"Personal Banking Customer",
+		"[Person]",
+		`A customer of the bank, with personal 
+bank accounts.`,
+	)
+	customer.Icon = NewActor()
+	customer.SetX(20)
+	customer.SetY(20)
+	customer.SetWidth(310)
+
 	ibs := NewCard(
 		"Internet Banking System",
-		"[Person]",
-		`A customer of the bank, with personal
- bank accounts.`,
+		"[Software System]",
+		`Allows customers to view information about 
+their bank accounts, and make payments.`,
 	)
 	ibs.SetX(20)
-	ibs.SetY(20)
+	ibs.SetY(300)
 
 	mailsys := NewCard(
 		"E-mail System",
@@ -23,14 +34,13 @@ func TestCard(t *testing.T) {
 		`The internal Microsoft Exchange
 e-mail system.`,
 	)
-	mailsys.SetX(300)
-	mailsys.SetY(200)
+	mailsys.SetX(400)
+	mailsys.SetY(300)
 	mailsys.SetClass("card-external")
 
 	d := &draw.SVG{}
 	d.SetSize(800, 700)
-	d.Append(ibs)
-	d.Append(mailsys)
+	d.Append(ibs, mailsys, customer)
 
 	filename := "testdata/card.svg"
 	fh, err := os.Create(filename)
