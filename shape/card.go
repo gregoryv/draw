@@ -26,6 +26,11 @@ func NewCard(title, note, text string) *Card {
 	c.text = NewLabel(text)
 	c.text.Font.Height = 14
 
+	p := size
+	c.rect.Pad.Top = p
+	c.rect.Pad.Left = p
+	c.rect.Pad.Bottom = p
+	c.rect.Pad.Right = p
 	return c
 }
 
@@ -65,14 +70,8 @@ func (c *Card) WriteSVG(out io.Writer) error {
 	N := c.note
 	D := c.text
 
-	p := T.Font.Height
-	c.rect.Pad.Top = p
-	c.rect.Pad.Left = p
-	c.rect.Pad.Bottom = p
-	c.rect.Pad.Right = p
-
-	c.rect.SetWidth(c.Width())
-	c.rect.SetHeight(c.Height())
+	c.rect.width = c.Width()
+	c.rect.height = c.Height()
 	c.rect.WriteSVG(w)
 
 	top := c.rect.Pad.Top
@@ -97,13 +96,8 @@ func (c *Card) WriteSVG(out io.Writer) error {
 	return *err
 }
 
-func (c *Card) resize() {
-	c.rect.SetWidth(c.Width())
-	c.rect.SetHeight(c.Height())
-}
-
 func (c *Card) Width() int {
-	if c.rect.width != 0 {
+	if c.rect.width > 0 {
 		return c.rect.Width()
 	}
 	width := c.title.Width()
@@ -119,8 +113,8 @@ func (c *Card) Width() int {
 }
 
 func (c *Card) Height() int {
-	if c.rect.height != 0 {
-		return c.rect.Height()
+	if c.rect.height > 0 {
+		return c.rect.height
 	}
 	h := c.rect.Pad.Top
 	if c.icon != nil {
@@ -132,6 +126,5 @@ func (c *Card) Height() int {
 	h += c.rect.Pad.Top
 	h += c.text.Height()
 	h += c.rect.Pad.Bottom
-
 	return h
 }
