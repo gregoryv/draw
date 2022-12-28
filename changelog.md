@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Improve default link label positions
 - Add shap.Card
 - Consider a slice struct field of any type to be an
   aggregate. Ie. before []*Something was considered an aggregate

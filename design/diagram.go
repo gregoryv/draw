@@ -97,14 +97,19 @@ func (d *Diagram) Link(from, to shape.Shape, txt ...string) (lnk *shape.Line, la
 	if len(txt) > 0 {
 		label = shape.NewLabel(txt[0])
 
+		x, y := lnk.CenterPosition()
+		d.Place(label).At(x, y)
+
+		d.HAlignCenter(lnk, label)
+
 		// find center of arrow
 		dir := lnk.Direction()
 		if dir == shape.DirectionLeft || dir == shape.DirectionRight {
-			d.Place(label).Above(lnk, label.Height()+label.Pad.Bottom)
 			d.VAlignCenter(lnk, label)
-		} else {
-			x, y := lnk.CenterPosition()
-			d.Place(label).At(x+label.Pad.Left, y-label.Font.Height)
+			shape.Move(label, 0, label.Font.LineHeight/2)
+		}
+		if dir == shape.DirectionUp || dir == shape.DirectionDown {
+			shape.Move(label, label.Pad.Left, 0)
 		}
 	}
 	return

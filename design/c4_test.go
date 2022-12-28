@@ -38,15 +38,17 @@ accounts, transactions, etc.`,
 	d.Place(ibs).Below(customer, 170)
 	d.Place(mailsys).RightOf(ibs, 200)
 	d.Place(mainframe).Below(ibs, 170)
+	d.HAlignCenter(ibs, mailsys)
+	d.VAlignCenter(customer, ibs, mainframe)
 
 	d.Link(customer, ibs,
 		"Views account\nbalances, and\nmakes payments\nusing",
 	)
-	d.VAlignCenter(d.Link(ibs, mailsys, "Sends e-mail\nusing"))
-	d.HAlignCenter(d.Link(mailsys, customer, "Sends e-mail to"))
-	d.HAlignCenter(d.Link(ibs, mainframe,
+	d.Link(ibs, mailsys, "Sends e-mail\nusing")
+	d.Link(mailsys, customer, "Sends e-mail to")
+	d.Link(ibs, mainframe,
 		"Gets account\ninformation from,\nand makes\npayments using",
-	))
+	)
 	d.SetCaption("C4 example diagram")
 
 	if err := d.SaveAs("testdata/c4example.svg"); err != nil {

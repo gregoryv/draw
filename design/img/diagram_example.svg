@@ -51,45 +51,45 @@
 <path stroke="black" d="M216,242 L216,212" />
 <g transform="rotate(0 216 212)"><path stroke="black" fill="#ffffff" d="M212,220 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="230" y="231"></text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="230" y="235"></text>
 <circle stroke="black" cx="606" cy="206" r="6" />\n
 <circle stroke="black" cx="738" cy="206" r="6" />\n
 <path stroke="black" d="M612,206 L732,206" />
 <g transform="rotate(90 732 206)"><path stroke="black" fill="#ffffff" d="M728,214 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="658" y="191">label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="658" y="226">label</text>
 <circle stroke="black" cx="666" cy="266" r="6" />\n
 <path stroke="black" d="M612,212 L660,260" />
 <g transform="rotate(135 660 260)"><path stroke="black" fill="#ffffff" d="M656,268 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="646" y="240">label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="636" y="244">label</text>
 <circle stroke="black" cx="606" cy="338" r="6" />\n
 <path stroke="black" d="M606,212 L606,332" />
 <g transform="rotate(180 606 332)"><path stroke="black" fill="#ffffff" d="M602,340 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="620" y="276">label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="620" y="280">label</text>
 <circle stroke="black" cx="526" cy="286" r="6" />\n
 <path stroke="black" d="M600,212 L532,280" />
 <g transform="rotate(225 532 280)"><path stroke="black" fill="#ffffff" d="M528,288 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="576" y="250">label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="566" y="254">label</text>
 <circle stroke="black" cx="474" cy="206" r="6" />\n
 <path stroke="black" d="M600,206 L480,206" />
 <g transform="rotate(270 480 206)"><path stroke="black" fill="#ffffff" d="M476,214 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="526" y="191">label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="526" y="226">label</text>
 <circle stroke="black" cx="526" cy="126" r="6" />\n
 <path stroke="black" d="M600,200 L532,132" />
 <g transform="rotate(315 532 132)"><path stroke="black" fill="#ffffff" d="M528,140 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="576" y="170">label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="566" y="174">label</text>
 <circle stroke="black" cx="606" cy="74" r="6" />\n
 <path stroke="black" d="M606,200 L606,80" />
 <g transform="rotate(0 606 80)"><path stroke="black" fill="#ffffff" d="M602,88 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="620" y="144">label</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="620" y="148">label</text>
 <circle stroke="black" cx="666" cy="126" r="6" />\n
 <path stroke="black" d="M610,200 L661,132" />
 <g transform="rotate(37 661 132)"><path stroke="black" fill="#ffffff" d="M657,140 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="645" y="170">label</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="635" y="174">label</text></svg>
