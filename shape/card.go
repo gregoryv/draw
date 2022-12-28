@@ -42,6 +42,7 @@ func (c *Card) SetClass(v string)    { c.rect.SetClass(v) }
 func (c *Card) SetX(v int)           { c.rect.SetX(v) }
 func (c *Card) SetY(v int)           { c.rect.SetY(v) }
 func (c *Card) SetWidth(v int)       { c.rect.SetWidth(v) }
+func (c *Card) SetHeight(v int)      { c.rect.SetHeight(v) }
 func (c *Card) Position() (x, y int) { return c.rect.Position() }
 
 func (c *Card) SetTitle(v string) {
