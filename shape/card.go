@@ -10,7 +10,7 @@ import (
 // NewCard returns a card with title, note and text.
 func NewCard(title, note, text string) *Card {
 	c := &Card{
-		Rect: NewRect(""),
+		rect: NewRect(""),
 	}
 	c.SetClass("card")
 	size := 18
@@ -29,7 +29,7 @@ func NewCard(title, note, text string) *Card {
 }
 
 type Card struct {
-	*Rect
+	rect  *Rect
 	title *Label
 	note  *Label
 	text  *Label
@@ -37,6 +37,12 @@ type Card struct {
 	// Optional icon placed above the title
 	icon Shape
 }
+
+func (c *Card) SetClass(v string)    { c.rect.SetClass(v) }
+func (c *Card) SetX(v int)           { c.rect.SetX(v) }
+func (c *Card) SetY(v int)           { c.rect.SetY(v) }
+func (c *Card) SetWidth(v int)       { c.rect.SetWidth(v) }
+func (c *Card) Position() (x, y int) { return c.rect.Position() }
 
 func (c *Card) SetTitle(v string) {
 	c.title.Text = v
@@ -67,30 +73,30 @@ func (c *Card) WriteSVG(out io.Writer) error {
 	D := c.text
 
 	p := T.Font.Height
-	c.Rect.Pad.Top = p
-	c.Rect.Pad.Left = p
-	c.Rect.Pad.Bottom = p
-	c.Rect.Pad.Right = p
+	c.rect.Pad.Top = p
+	c.rect.Pad.Left = p
+	c.rect.Pad.Bottom = p
+	c.rect.Pad.Right = p
 
-	c.Rect.SetWidth(c.Width())
-	c.Rect.SetHeight(c.Height())
-	c.Rect.WriteSVG(w)
+	c.rect.SetWidth(c.Width())
+	c.rect.SetHeight(c.Height())
+	c.rect.WriteSVG(w)
 
-	top := c.Pad.Top
+	top := c.rect.Pad.Top
 	if c.icon != nil {
-		NewAdjuster(c.icon).Below(c.Rect, -c.Height()+c.Pad.Top)
-		new(Aligner).VAlignCenter(c.Rect, c.icon)
+		NewAdjuster(c.icon).Below(c.rect, -c.Height()+c.rect.Pad.Top)
+		new(Aligner).VAlignCenter(c.rect, c.icon)
 		top += c.icon.Height()
-		top += c.Pad.Bottom
+		top += c.rect.Pad.Bottom
 		c.icon.WriteSVG(w)
 	}
-	NewAdjuster(T).Below(c.Rect, -c.Height()+top)
+	NewAdjuster(T).Below(c.rect, -c.Height()+top)
 	NewAdjuster(N).Below(T, 0)
-	NewAdjuster(D).Below(N, c.Pad.Top)
+	NewAdjuster(D).Below(N, c.rect.Pad.Top)
 
-	new(Aligner).VAlignCenter(c.Rect, T, N, D)
-	new(Aligner).VAlignLeft(c.Rect, D)
-	Move(D, c.Pad.Left, 0)
+	new(Aligner).VAlignCenter(c.rect, T, N, D)
+	new(Aligner).VAlignLeft(c.rect, D)
+	Move(D, c.rect.Pad.Left, 0)
 	T.WriteSVG(w)
 	N.WriteSVG(w)
 	D.WriteSVG(w)
@@ -99,13 +105,13 @@ func (c *Card) WriteSVG(out io.Writer) error {
 }
 
 func (c *Card) resize() {
-	c.Rect.SetWidth(c.Width())
-	c.Rect.SetHeight(c.Height())
+	c.rect.SetWidth(c.Width())
+	c.rect.SetHeight(c.Height())
 }
 
 func (c *Card) Width() int {
-	if c.Rect.width != 0 {
-		return c.Rect.Width()
+	if c.rect.width != 0 {
+		return c.rect.Width()
 	}
 	width := c.title.Width()
 	if v := c.note.Width(); v > width {
@@ -114,25 +120,25 @@ func (c *Card) Width() int {
 	if v := c.text.Width(); v > width {
 		width = v
 	}
-	width += c.Rect.Pad.Left
-	width += c.Rect.Pad.Right
+	width += c.rect.Pad.Left
+	width += c.rect.Pad.Right
 	return width
 }
 
 func (c *Card) Height() int {
-	if c.Rect.height != 0 {
-		return c.Rect.Height()
+	if c.rect.height != 0 {
+		return c.rect.Height()
 	}
-	h := c.Pad.Top
+	h := c.rect.Pad.Top
 	if c.icon != nil {
 		h += c.icon.Height()
-		h += c.Pad.Bottom
+		h += c.rect.Pad.Bottom
 	}
 	h += c.title.Height()
 	h += c.note.Height()
-	h += c.Pad.Top
+	h += c.rect.Pad.Top
 	h += c.text.Height()
-	h += c.Pad.Bottom
+	h += c.rect.Pad.Bottom
 
 	return h
 }
