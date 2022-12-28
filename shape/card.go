@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
 
@@ -44,6 +45,8 @@ func (c *Card) SetY(v int)           { c.rect.SetY(v) }
 func (c *Card) SetWidth(v int)       { c.rect.SetWidth(v) }
 func (c *Card) SetHeight(v int)      { c.rect.SetHeight(v) }
 func (c *Card) Position() (x, y int) { return c.rect.Position() }
+
+func (c *Card) Edge(start xy.Point) xy.Point { return boxEdge(start, c) }
 
 func (c *Card) SetTitle(v string) {
 	c.title.Text = v
