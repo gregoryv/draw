@@ -756,6 +756,10 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 <path stroke="black" d="M154,1248 l4,-8 l 4,8 Z" /></svg><h2 id="changelog"><a href="#changelog">Changelog</a></h2>
 <pre class="srcfile"><code class="go">## [unreleased]
 
+- Add shap.Card
+- Consider a slice struct field of any type to be an
+  aggregate. Ie. before []*Something was considered an aggregate
+  whereas []Something was not. Now both are considered aggregates.
 - Hide X, Y fields of shapes, use SetX, SetY and Position
 
 ## [0.25.0] 2022-04-21
