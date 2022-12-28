@@ -48,21 +48,10 @@ func (c *Card) Position() (x, y int) { return c.rect.Position() }
 
 func (c *Card) Edge(start xy.Point) xy.Point { return boxEdge(start, c) }
 
-func (c *Card) SetTitle(v string) {
-	c.title.Text = v
-}
-
-func (c *Card) SetNote(v string) {
-	c.note.Text = v
-}
-
-func (c *Card) SetText(v string) {
-	c.text.Text = v
-}
-
-func (c *Card) SetIcon(v Shape) {
-	c.icon = v
-}
+func (c *Card) SetTitle(v string) { c.title.Text = v }
+func (c *Card) SetNote(v string)  { c.note.Text = v }
+func (c *Card) SetText(v string)  { c.text.Text = v }
+func (c *Card) SetIcon(v Shape)   { c.icon = v }
 
 func (c *Card) String() string {
 	return fmt.Sprintf("Card %q", c.title.Text)
