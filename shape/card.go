@@ -7,48 +7,64 @@ import (
 	"github.com/gregoryv/nexus"
 )
 
-// NewCard returns a card with title, note and description.
-func NewCard(title, note, description string) *Card {
+// NewCard returns a card with title, note and text.
+func NewCard(title, note, text string) *Card {
 	c := &Card{
 		Rect: NewRect(""),
 	}
 	c.SetClass("card")
 	size := 18
 
-	c.Title = NewLabel(title)
-	c.Title.SetClass("card-title")
-	c.Title.Font.Height = size
+	c.title = NewLabel(title)
+	c.title.SetClass("card-title")
+	c.title.Font.Height = size
 
-	c.Note = NewLabel(note)
-	c.Note.SetClass("card-note")
+	c.note = NewLabel(note)
+	c.note.SetClass("card-note")
 
-	c.Text = NewLabel(description)
-	c.Text.Font.Height = 14
+	c.text = NewLabel(text)
+	c.text.Font.Height = 14
 
 	return c
 }
 
 type Card struct {
 	*Rect
-	Title *Label
-	Note  *Label
-	Text  *Label
+	title *Label
+	note  *Label
+	text  *Label
 
 	// Optional icon placed above the title
-	Icon Shape
+	icon Shape
+}
+
+func (c *Card) SetTitle(v string) {
+	c.title.Text = v
+}
+
+func (c *Card) SetNote(v string) {
+	c.note.Text = v
+}
+
+func (c *Card) SetText(v string) {
+	c.text.Text = v
+}
+
+func (c *Card) SetIcon(v Shape) {
+	c.icon = v
 }
 
 func (c *Card) String() string {
-	return fmt.Sprintf("Card %q", c.Title.Text)
+	return fmt.Sprintf("Card %q", c.title.Text)
 }
 func (c *Card) Direction() Direction { return DirectionRight }
 
 func (c *Card) WriteSVG(out io.Writer) error {
 	w, err := nexus.NewPrinter(out)
 
-	T := c.Title
-	N := c.Note
-	D := c.Text
+	T := c.title
+	N := c.note
+	D := c.text
 
 	p := T.Font.Height
 	c.Rect.Pad.Top = p
@@ -61,12 +77,12 @@ func (c *Card) WriteSVG(out io.Writer) error {
 	c.Rect.WriteSVG(w)
 
 	top := c.Pad.Top
-	if c.Icon != nil {
-		NewAdjuster(c.Icon).Below(c.Rect, -c.Height()+c.Pad.Top)
-		new(Aligner).VAlignCenter(c.Rect, c.Icon)
-		top += c.Icon.Height()
+	if c.icon != nil {
+		NewAdjuster(c.icon).Below(c.Rect, -c.Height()+c.Pad.Top)
+		new(Aligner).VAlignCenter(c.Rect, c.icon)
+		top += c.icon.Height()
 		top += c.Pad.Bottom
-		c.Icon.WriteSVG(w)
+		c.icon.WriteSVG(w)
 	}
 	NewAdjuster(T).Below(c.Rect, -c.Height()+top)
 	NewAdjuster(N).Below(T, 0)
@@ -82,17 +98,21 @@ func (c *Card) WriteSVG(out io.Writer) error {
 	return *err
 }
 
+func (c *Card) resize() {
+	c.Rect.SetWidth(c.Width())
+	c.Rect.SetHeight(c.Height())
+}
+
 func (c *Card) Width() int {
 	if c.Rect.width != 0 {
 		return c.Rect.Width()
 	}
-	width := c.Title.Width()
-	if v := c.Note.Width(); v > width {
+	width := c.title.Width()
+	if v := c.note.Width(); v > width {
 		width = v
 	}
-	if v := c.Text.Width(); v > width {
+	if v := c.text.Width(); v > width {
 		width = v
-		fmt.Println(v)
 	}
 	width += c.Rect.Pad.Left
 	width += c.Rect.Pad.Right
@@ -104,14 +124,14 @@ func (c *Card) Height() int {
 		return c.Rect.Height()
 	}
 	h := c.Pad.Top
-	if c.Icon != nil {
-		h += c.Icon.Height()
+	if c.icon != nil {
+		h += c.icon.Height()
 		h += c.Pad.Bottom
 	}
-	h += c.Title.Height()
-	h += c.Note.Height()
+	h += c.title.Height()
+	h += c.note.Height()
 	h += c.Pad.Top
-	h += c.Text.Height()
+	h += c.text.Height()
 	h += c.Pad.Bottom
 
 	return h

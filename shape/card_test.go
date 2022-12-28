@@ -14,7 +14,7 @@ func TestCard(t *testing.T) {
 		`A customer of the bank, with personal 
 bank accounts.`,
 	)
-	customer.Icon = NewActor()
+	customer.SetIcon(NewActor())
 	customer.SetX(20)
 	customer.SetY(20)
 	customer.SetWidth(310)
