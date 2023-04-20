@@ -1,10 +1,10 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="526" height="452">
-<path stroke="black" d="M374,189 L322,176" />
-<g transform="rotate(194 374 189)"><path stroke="black" fill="#777777" d="M374,189 l 6,-4 6,4 -6,4 -6,-4" /></g>
-<g transform="rotate(284 322 176)"><path stroke="black" fill="#ffffff" d="M318,184 l4,-8 l 4,8 Z" /></g>
+  font-family="Arial,Helvetica,sans-serif" width="564" height="468">
+<path stroke="black" d="M374,191 L322,177" />
+<g transform="rotate(195 374 191)"><path stroke="black" fill="#777777" d="M374,191 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(285 322 177)"><path stroke="black" fill="#ffffff" d="M318,185 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M255,216 L255,186" />
 <g transform="rotate(0 255 186)"><path stroke="black" fill="#ffffff" d="M251,194 l4,-8 l 4,8 Z" /></g>
@@ -27,29 +27,30 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="274">HandleFunc()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="290">Handler()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="198" y="232">http.ServeMux struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="374" y="20" width="150" height="378"/>
-<path stroke="#d3d3d3" d="M374,46 L524,46" />
+<rect stroke="#d3d3d3" fill="#ffffff" x="374" y="20" width="188" height="394"/>
+<path stroke="#d3d3d3" d="M374,46 L562,46" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="62">Addr</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="78">Handler</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="94">TLSConfig</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="110">ReadTimeout</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="126">ReadHeaderTimeout</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="142">WriteTimeout</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="158">IdleTimeout</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="174">MaxHeaderBytes</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="190">TLSNextProto</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="206">ConnState</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="222">ErrorLog</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="238">BaseContext</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="254">ConnContext</text>
-<path stroke="#d3d3d3" d="M374,260 L524,260" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="276">Close()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="292">ListenAndServe()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="308">ListenAndServeTLS()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="324">RegisterOnShutdown()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="340">Serve()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="356">ServeTLS()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="372">SetKeepAlivesEnabled()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="388">Shutdown()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="94">DisableGeneralOptionsHandler</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="110">TLSConfig</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="126">ReadTimeout</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="142">ReadHeaderTimeout</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="158">WriteTimeout</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="174">IdleTimeout</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="190">MaxHeaderBytes</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="206">TLSNextProto</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="222">ConnState</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="238">ErrorLog</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="254">BaseContext</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="270">ConnContext</text>
+<path stroke="#d3d3d3" d="M374,276 L562,276" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="292">Close()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="308">ListenAndServe()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="324">ListenAndServeTLS()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="340">RegisterOnShutdown()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="356">Serve()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="372">ServeTLS()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="388">SetKeepAlivesEnabled()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="404">Shutdown()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="380" y="36">http.Server struct</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="134" y="445">Figure 1. ServeMux routes requests to handlers</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="153" y="461">Figure 1. ServeMux routes requests to handlers</text></svg>
