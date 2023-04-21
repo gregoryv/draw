@@ -1,0 +1,29 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="659" height="188">
+<path stroke="#d3d3d3" d="M37,24 L37,134" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">*http.conn</text>
+<path stroke="#d3d3d3" d="M227,24 L227,134" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="177" y="18">http.serverHandler</text>
+<path stroke="#d3d3d3" d="M417,24 L417,134" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="370" y="18">http.HandlerFunc</text>
+<path stroke="#d3d3d3" d="M607,24 L607,134" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="558" y="18">goviz.TestListener</text>
+<path stroke="black" d="M37,57 L227,57" />
+<g transform="rotate(90 227 57)"><path stroke="black" fill="#ffffff" d="M223,65 l4,-8 l 4,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="100" y="54">ServeHTTP</text>
+<path stroke="black" d="M227,90 L417,90" />
+<g transform="rotate(90 417 90)"><path stroke="black" fill="#ffffff" d="M413,98 l4,-8 l 4,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="290" y="87">ServeHTTP</text>
+<path stroke="black" d="M417,123 L607,123" />
+<g transform="rotate(90 607 123)"><path stroke="black" fill="#ffffff" d="M603,131 l4,-8 l 4,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="497" y="120">func1</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="271" y="181">net/http.(*conn).serve</text></svg>

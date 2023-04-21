@@ -1,0 +1,30 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="463" height="210">
+<path stroke="#d3d3d3" d="M46,24 L46,156" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">*goviz.House</text>
+<path stroke="#d3d3d3" d="M236,24 L236,156" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="204" y="18">*goviz.Floor</text>
+<path stroke="#d3d3d3" d="M426,24 L426,156" />
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="391" y="18">*goviz.Room</text>
+<path stroke="black" d="M46,57 L61,57" />
+
+<path stroke="black" d="M61,57 L61,89" />
+
+<path stroke="black" d="M61,89 L46,89" />
+<g transform="rotate(270 46 89)"><path stroke="black" fill="#ffffff" d="M42,97 l4,-8 l 4,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="67" y="76">check</text>
+<path stroke="black" d="M46,112 L236,112" />
+<g transform="rotate(90 236 112)"><path stroke="black" fill="#ffffff" d="M232,120 l4,-8 l 4,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="95" y="109">allRoomsLocked</text>
+<path stroke="black" d="M236,145 L426,145" />
+<g transform="rotate(90 426 145)"><path stroke="black" fill="#ffffff" d="M422,153 l4,-8 l 4,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="313" y="142">locked</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="105" y="203">github.com/gregoryv/draw/goviz.(*House).Run</text></svg>
