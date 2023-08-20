@@ -1,5 +1,5 @@
 /*
-	Package goviz provides means to generate Go diagrams
+Package goviz provides means to generate Go diagrams.
 
 To generate a simple sequence diagram from within your code use
 
