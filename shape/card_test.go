@@ -20,10 +20,13 @@ bank accounts.`,
 	customer.SetWidth(310)
 
 	ibs := NewCard(
+		// title
 		"Internet Banking System",
+		// type of thing
 		"[Software System]",
-		`Allows customers to view information about 
-their bank accounts, and make payments.`,
+		// description
+		"Allows customers to view information about",
+		"their bank accounts, and make payments.",
 	)
 	ibs.SetX(20)
 	ibs.SetY(300)

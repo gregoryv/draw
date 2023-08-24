@@ -37,9 +37,9 @@ func (l *Label) String() string {
 
 func (l *Label) SetHref(v string) { l.href = v }
 
-func (l *Label) Position() (x int, y int) {	return l.x, l.y }
-func (l *Label) SetX(x int) { l.x = x }
-func (l *Label) SetY(y int) { l.y = y }
+func (l *Label) Position() (x int, y int) { return l.x, l.y }
+func (l *Label) SetX(x int)               { l.x = x }
+func (l *Label) SetY(y int)               { l.y = y }
 
 func (l *Label) Width() int {
 	return l.Font.TextWidth(longestLine(l.Text))

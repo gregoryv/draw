@@ -26,8 +26,8 @@ func (e *ExitDot) String() string {
 }
 
 func (e *ExitDot) Position() (x int, y int) { return e.x, e.y }
-func (e *ExitDot) SetX(x int) { e.x = x }
-func (e *ExitDot) SetY(y int) { e.y = y }
+func (e *ExitDot) SetX(x int)               { e.x = x }
+func (e *ExitDot) SetY(y int)               { e.y = y }
 
 func (e *ExitDot) Width() int {
 	// If the style shanges the width will be slightly off, no biggy.

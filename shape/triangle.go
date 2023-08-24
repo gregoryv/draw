@@ -26,12 +26,12 @@ func (t *Triangle) String() string {
 }
 
 func (t *Triangle) Position() (x int, y int) { return t.x, t.y }
-func (t *Triangle) SetX(x int)           { t.x = x }
-func (t *Triangle) SetY(y int)           { t.y = y }
-func (t *Triangle) Width() int           { return t.width }
-func (t *Triangle) Height() int          { return t.height }
-func (t *Triangle) Direction() Direction { return DirectionRight }
-func (t *Triangle) SetClass(c string)    { t.class = c }
+func (t *Triangle) SetX(x int)               { t.x = x }
+func (t *Triangle) SetY(y int)               { t.y = y }
+func (t *Triangle) Width() int               { return t.width }
+func (t *Triangle) Height() int              { return t.height }
+func (t *Triangle) Direction() Direction     { return DirectionRight }
+func (t *Triangle) SetClass(c string)        { t.class = c }
 
 func (t *Triangle) WriteSVG(out io.Writer) error {
 	p, err := nexus.NewPrinter(out)

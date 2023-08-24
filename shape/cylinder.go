@@ -34,8 +34,8 @@ func (c *Cylinder) String() string {
 }
 
 func (c *Cylinder) Position() (x int, y int) { return c.x, c.y }
-func (c *Cylinder) SetX(x int) { c.x = x }
-func (c *Cylinder) SetY(y int) { c.y = y }
+func (c *Cylinder) SetX(x int)               { c.x = x }
+func (c *Cylinder) SetY(y int)               { c.y = y }
 
 func (c *Cylinder) Width() int {
 	stroke := 2
