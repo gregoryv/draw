@@ -33,7 +33,7 @@ func NewCard(title string, args ...string) *Card {
 	t.Pad.Left = 0
 	t.Pad.Right = 0
 	c.title = t
-	
+
 	if len(args) > 0 {
 		note := args[0]
 		c.note = NewLabel(note)
@@ -93,14 +93,14 @@ func (c *Card) WriteSVG(out io.Writer) error {
 	c.rect.height = c.Height()
 	c.rect.WriteSVG(w)
 
-	halfpad := c.rect.Pad.Left/2	
+	halfpad := c.rect.Pad.Left / 2
 	top := c.rect.Pad.Top
 	if c.icon != nil {
 		NewAdjuster(c.icon).Below(c.rect, -c.Height()+c.rect.Pad.Top)
 		new(Aligner).VAlignCenter(c.rect, c.icon)
 		top += c.icon.Height()
 		top += c.rect.Pad.Bottom
-		Move(c.icon, -halfpad, 0)		
+		Move(c.icon, -halfpad, 0)
 		c.icon.WriteSVG(w)
 	}
 	NewAdjuster(T).Below(c.rect, -c.Height()+top)
@@ -115,7 +115,7 @@ func (c *Card) WriteSVG(out io.Writer) error {
 
 	Move(T, -halfpad, 0)
 	Move(N, -halfpad, 0)
-	
+
 	T.WriteSVG(w)
 	N.WriteSVG(w)
 	D.WriteSVG(w)

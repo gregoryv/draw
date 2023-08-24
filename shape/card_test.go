@@ -43,7 +43,7 @@ func TestCard(t *testing.T) {
 	plain := NewCard("Empty thing, title only")
 	plain.SetX(400)
 	plain.SetY(20)
-	
+
 	// save diagram
 	d := &draw.SVG{}
 	d.SetSize(800, 700)

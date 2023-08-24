@@ -73,7 +73,7 @@ var DefaultClassAttributes = ClassAttributes{
 	"circle":                `stroke="#d3d3d3" stroke-width="2" fill="#ffffff"`,
 	"cylinder":              `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
 	"card":                  `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
-	"card-external":         `stroke="#d3d3d3" stroke-width="1" fill="#f8f9fa"`,	
+	"card-external":         `stroke="#d3d3d3" stroke-width="1" fill="#f8f9fa"`,
 	"card-title":            `font-family="Arial,Helvetica,sans-serif" font-weight="bold"`,
 	"database":              `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
 	"dot":                   `stroke="black"`,
