@@ -11,13 +11,12 @@ func TestCard(t *testing.T) {
 	customer := NewCard(
 		"Personal Banking Customer",
 		"[Person]",
-		`A customer of the bank, with personal 
-bank accounts.`,
+		"A customer of the bank, with personal",
+		"bank accounts.",
 	)
 	customer.SetIcon(NewActor())
 	customer.SetX(20)
 	customer.SetY(20)
-	customer.SetWidth(310)
 
 	ibs := NewCard(
 		// title
@@ -34,16 +33,21 @@ bank accounts.`,
 	mailsys := NewCard(
 		"E-mail System",
 		"[Software System]",
-		`The internal Microsoft Exchange
-e-mail system.`,
+		"The internal Microsoft Exchange",
+		"e-mail system.",
 	)
 	mailsys.SetX(400)
 	mailsys.SetY(300)
 	mailsys.SetClass("card-external")
 
+	plain := NewCard("Empty thing, title only")
+	plain.SetX(400)
+	plain.SetY(20)
+	
+	// save diagram
 	d := &draw.SVG{}
 	d.SetSize(800, 700)
-	d.Append(ibs, mailsys, customer)
+	d.Append(ibs, mailsys, customer, plain)
 
 	filename := "testdata/card.svg"
 	fh, err := os.Create(filename)

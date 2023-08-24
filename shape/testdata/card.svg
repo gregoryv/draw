@@ -2,14 +2,16 @@
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   font-family="Arial,Helvetica,sans-serif" width="800" height="700">
-<rect stroke="#d3d3d3" stroke-width="1" fill="#ffffff" x="20" y="300" width="312" height="118"/>
-<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12px" x="38" y="325"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="77" y="334">Internet Banking System</text><text class="card-note" font-size="12px" x="127" y="350">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="384">Allows customers to view information about </text>
+<rect stroke="#d3d3d3" stroke-width="1" fill="#ffffff" x="20" y="300" width="310" height="118"/>
+<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12px" x="38" y="325"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="67" y="334">Internet Banking System</text><text class="card-note" font-size="12px" x="117" y="350">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="384">Allows customers to view information about</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="400">their bank accounts, and make payments.</text>
-<rect stroke="#d3d3d3" stroke-width="1" fill="#f8f9fa" x="400" y="300" width="240" height="118"/>
-<text class="card-external-title" font-size="12px" x="418" y="325"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="461" y="334">E-mail System</text><text class="card-note" font-size="12px" x="471" y="350">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="418" y="384">The internal Microsoft Exchange</text>
+<rect stroke="#d3d3d3" stroke-width="1" fill="#f8f9fa" x="400" y="300" width="310" height="118"/>
+<text class="card-external-title" font-size="12px" x="418" y="325"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="487" y="334">E-mail System</text><text class="card-note" font-size="12px" x="497" y="350">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="418" y="384">The internal Microsoft Exchange</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="418" y="400">e-mail system.</text>
 <rect stroke="#d3d3d3" stroke-width="1" fill="#ffffff" x="20" y="20" width="310" height="171"/>
-<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12px" x="38" y="45"></text><circle stroke="black" stroke-width="2" fill="#ffffff" cx="175" cy="43" r="5" />
-<path stroke="black" stroke-width="2" fill="#ffffff" d="M175,48 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
-<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="60" y="107">Personal Banking Customer</text><text class="card-note" font-size="12px" x="152" y="123">[Person]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="157">A customer of the bank, with personal </text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="173">bank accounts.</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12px" x="38" y="45"></text><circle stroke="black" stroke-width="2" fill="#ffffff" cx="166" cy="43" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M166,48 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="51" y="107">Personal Banking Customer</text><text class="card-note" font-size="12px" x="143" y="123">[Person]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="157">A customer of the bank, with personal</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="173">bank accounts.</text>
+<rect stroke="#d3d3d3" stroke-width="1" fill="#ffffff" x="400" y="20" width="310" height="102"/>
+<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12px" x="418" y="45"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="460" y="54">Empty thing, title only</text><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="546" y="70"></text><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="418" y="104"></text></svg>

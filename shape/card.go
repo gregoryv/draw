@@ -3,34 +3,53 @@ package shape
 import (
 	"fmt"
 	"io"
+	"strings"
 
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
 
-// NewCard returns a card with title, note and text.
-func NewCard(title, note, text string) *Card {
+// NewCard returns a card with title optional note and text. Default
+// width is set to 310px. You can use multiple lines for text which
+// will be joined with newlines.
+func NewCard(title string, args ...string) *Card {
+	size := 18
+	p := size
+	r := NewRect("")
+	r.SetWidth(310)
+	r.Pad.Top = p
+	r.Pad.Left = p
+	r.Pad.Bottom = p
+	r.Pad.Right = p
+
 	c := &Card{
-		rect: NewRect(""),
+		rect: r,
 	}
 	c.SetClass("card")
-	size := 18
 
-	c.title = NewLabel(title)
-	c.title.SetClass("card-title")
-	c.title.Font.Height = size
+	t := NewLabel(title)
+	t.SetClass("card-title")
+	t.Font.Height = size
+	t.Pad.Left = 0
+	t.Pad.Right = 0
+	c.title = t
+	
+	if len(args) > 0 {
+		note := args[0]
+		c.note = NewLabel(note)
+		c.note.SetClass("card-note")
+	} else {
+		c.note = NewLabel("")
+	}
 
-	c.note = NewLabel(note)
-	c.note.SetClass("card-note")
+	if len(args) > 1 {
+		text := strings.Join(args[1:], "\n")
+		c.text = NewLabel(text)
+		c.text.Font.Height = 14
+	} else {
+		c.text = NewLabel("")
+	}
 
-	c.text = NewLabel(text)
-	c.text.Font.Height = 14
-
-	p := size
-	c.rect.Pad.Top = p
-	c.rect.Pad.Left = p
-	c.rect.Pad.Bottom = p
-	c.rect.Pad.Right = p
 	return c
 }
 
@@ -74,12 +93,14 @@ func (c *Card) WriteSVG(out io.Writer) error {
 	c.rect.height = c.Height()
 	c.rect.WriteSVG(w)
 
+	halfpad := c.rect.Pad.Left/2	
 	top := c.rect.Pad.Top
 	if c.icon != nil {
 		NewAdjuster(c.icon).Below(c.rect, -c.Height()+c.rect.Pad.Top)
 		new(Aligner).VAlignCenter(c.rect, c.icon)
 		top += c.icon.Height()
 		top += c.rect.Pad.Bottom
+		Move(c.icon, -halfpad, 0)		
 		c.icon.WriteSVG(w)
 	}
 	NewAdjuster(T).Below(c.rect, -c.Height()+top)
@@ -89,6 +110,12 @@ func (c *Card) WriteSVG(out io.Writer) error {
 	new(Aligner).VAlignCenter(c.rect, T, N, D)
 	new(Aligner).VAlignLeft(c.rect, D)
 	Move(D, c.rect.Pad.Left, 0)
+
+	// todo figure out why VAlignCenter doesn't quite work here
+
+	Move(T, -halfpad, 0)
+	Move(N, -halfpad, 0)
+	
 	T.WriteSVG(w)
 	N.WriteSVG(w)
 	D.WriteSVG(w)
