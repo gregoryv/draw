@@ -1,0 +1,8 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="250" height="200">
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="36">hello</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="100" y="100" width="73" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="106" y="118">something</text></svg>

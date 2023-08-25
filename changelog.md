@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Add shape.Group
 - shape.Card default width is 310px
 - shape.Card takes optional note and text
 

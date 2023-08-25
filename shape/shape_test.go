@@ -12,6 +12,35 @@ import (
 	"github.com/gregoryv/draw/xy"
 )
 
+func TestGroup(t *testing.T) {
+	label := NewLabel("hello")
+	label.SetX(40)
+	label.SetY(40)
+
+	rect := NewRect("something")
+	rect.SetX(120)
+	rect.SetY(120)
+
+	group := NewGroup(
+		label,
+		rect,
+	)
+	Move(group, -20, -20)
+	img := draw.NewSVG()
+	img.SetHeight(200)
+	img.SetWidth(250)
+	img.Append(group, label, rect)
+	file := "img/Group.svg"
+	w, err := os.Create(file)
+	if err != nil {
+		t.Fatal(err)
+	}
+	style := draw.NewStyle()
+	style.SetOutput(w)
+	img.WriteSVG(&style)
+	w.Close()
+}
+
 func TestSaveShapes(t *testing.T) {
 	shapes := []Shape{
 		NewHexagon("hexagon", 80, 50, 20),
@@ -66,6 +95,7 @@ func TestShapes(t *testing.T) {
 		NewState("Waiting for push"),
 		NewDecision(),
 		NewActor(),
+		NewGroup(NewLabel("hello")),
 		r,
 	}
 	for _, shape := range shapes {
