@@ -7,7 +7,8 @@ import (
 	"github.com/gregoryv/draw/xy"
 )
 
-// NewGroup returns a dashed box surrounding the given shapes.
+// NewGroup returns a virtual group of shapes which can be moved
+// together.
 func NewGroup(shapes ...Shape) *Group {
 	return &Group{
 		Shapes: shapes,

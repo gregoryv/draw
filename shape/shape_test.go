@@ -12,6 +12,36 @@ import (
 	"github.com/gregoryv/draw/xy"
 )
 
+func TestContainer(t *testing.T) {
+
+	label := NewLabel("hello")
+	label.SetX(40)
+	label.SetY(40)
+
+	rect := NewRect("something")
+	rect.SetX(120)
+	rect.SetY(120)
+
+	container := NewContainer(
+		NewLabel("CONTAINER\nnote"),
+		label,
+		rect,
+	)
+	img := draw.NewSVG()
+	img.SetHeight(250)
+	img.SetWidth(300)
+	img.Append(container, label, rect)
+	file := "img/Container.svg"
+	w, err := os.Create(file)
+	if err != nil {
+		t.Fatal(err)
+	}
+	style := draw.NewStyle()
+	style.SetOutput(w)
+	img.WriteSVG(&style)
+	w.Close()
+}
+
 func TestGroup(t *testing.T) {
 	label := NewLabel("hello")
 	label.SetX(40)
@@ -96,6 +126,10 @@ func TestShapes(t *testing.T) {
 		NewDecision(),
 		NewActor(),
 		NewGroup(NewLabel("hello")),
+		NewContainer(
+			NewLabel("hello"),
+			NewCircle(24),
+		),
 		r,
 	}
 	for _, shape := range shapes {

@@ -71,6 +71,7 @@ var DefaultClassAttributes = ClassAttributes{
 
 	"actor":                 `stroke="black" stroke-width="2" fill="#ffffff"`,
 	"circle":                `stroke="#d3d3d3" stroke-width="2" fill="#ffffff"`,
+	"container":                 `stroke="#737373" stroke-dasharray="5,5,5" fill="transparent"`,	
 	"cylinder":              `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
 	"card":                  `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
 	"card-external":         `stroke="#d3d3d3" stroke-width="1" fill="#f8f9fa"`,

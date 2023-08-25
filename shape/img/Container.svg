@@ -1,0 +1,10 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="300" height="250">
+<rect stroke="#737373" stroke-dasharray="5,5,5" fill="transparent" x="28" y="28" width="248" height="174"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="40" y="174">CONTAINER</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="40" y="190">note</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="40" y="56">hello</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="120" y="120" width="73" height="26"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="126" y="138">something</text></svg>
