@@ -2,6 +2,8 @@ package draw
 
 type Font struct {
 	Height     int
+
+	// It is allowed to have a smaller line height than height.
 	LineHeight int
 
 	charWidths map[rune]float32
