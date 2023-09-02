@@ -89,6 +89,10 @@ func TestSaveShapes(t *testing.T) {
 		NewDecision(),
 		NewActor(),
 		NewInternet(),
+		NewAnchor(
+			"https://github.com/gregoryv/draw",
+			NewComponent("package draw"),
+		),
 	}
 	for _, shape := range shapes {
 		img := draw.NewSVG()
