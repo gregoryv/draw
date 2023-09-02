@@ -1,44 +1,44 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="731" height="853">
-<rect stroke="#d3d3d3" stroke-width="1" fill="#ffffff" x="20" y="20" width="276" height="171"/>
-<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12px" x="38" y="45"></text><circle stroke="black" stroke-width="2" fill="#ffffff" cx="158" cy="43" r="5" />
-<path stroke="black" stroke-width="2" fill="#ffffff" d="M158,48 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
-<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="43" y="107">Personal Banking Customer</text><text class="card-note" font-size="12px" x="135" y="123">[Person]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="157">A customer of the bank, with personal </text>
+  font-family="Arial,Helvetica,sans-serif" width="842" height="853">
+<rect stroke="#d3d3d3" stroke-width="1" fill="#ffffff" x="20" y="20" width="310" height="171"/>
+<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12px" x="38" y="45"></text><circle stroke="black" stroke-width="2" fill="#ffffff" cx="166" cy="43" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M166,48 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="51" y="107">Personal Banking Customer</text><text class="card-note" font-size="12px" x="143" y="123">[Person]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="157">A customer of the bank, with personal </text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="173">bank accounts.</text>
-<rect stroke="#d3d3d3" stroke-width="1" fill="#ffffff" x="23" y="361" width="269" height="134"/>
-<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12px" x="41" y="386"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="58" y="395">Internet Banking System</text><text class="card-note" font-size="12px" x="109" y="411">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="41" y="445">Allows customers to view information</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="41" y="461">about their bank accounts, and make</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="41" y="477">payments.</text>
-<rect stroke="#d3d3d3" stroke-width="1" fill="#f8f9fa" x="489" y="369" width="240" height="118"/>
-<text class="card-external-title" font-size="12px" x="507" y="394"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="550" y="403">E-mail System</text><text class="card-note" font-size="12px" x="560" y="419">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="507" y="453">The internal Microsoft Exchange</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="507" y="469">e-mail system.</text>
-<rect stroke="#d3d3d3" stroke-width="1" fill="#f8f9fa" x="28" y="665" width="259" height="134"/>
-<text class="card-external-title" font-size="12px" x="46" y="690"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="46" y="699">Mainframe Banking System</text><text class="card-note" font-size="12px" x="109" y="715">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="46" y="749">Stores all of the core banking</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="46" y="765">information about customers,</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="46" y="781">accounts, transactions, etc.</text>
-<path stroke="black" d="M157,191 L157,361" />
-<g transform="rotate(180 157 361)"><path stroke="black" fill="#ffffff" d="M153,369 l4,-8 l 4,8 Z" /></g>
+<rect stroke="#d3d3d3" stroke-width="1" fill="#ffffff" x="20" y="361" width="310" height="134"/>
+<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12px" x="38" y="386"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="67" y="395">Internet Banking System</text><text class="card-note" font-size="12px" x="117" y="411">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="445">Allows customers to view information</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="461">about their bank accounts, and make</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="477">payments.</text>
+<rect stroke="#d3d3d3" stroke-width="1" fill="#f8f9fa" x="530" y="369" width="310" height="118"/>
+<text class="card-external-title" font-size="12px" x="548" y="394"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="617" y="403">E-mail System</text><text class="card-note" font-size="12px" x="627" y="419">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="548" y="453">The internal Microsoft Exchange</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="548" y="469">e-mail system.</text>
+<rect stroke="#d3d3d3" stroke-width="1" fill="#f8f9fa" x="20" y="665" width="310" height="134"/>
+<text class="card-external-title" font-size="12px" x="38" y="690"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="54" y="699">Mainframe Banking System</text><text class="card-note" font-size="12px" x="117" y="715">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="749">Stores all of the core banking</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="765">information about customers,</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="781">accounts, transactions, etc.</text>
+<path stroke="black" d="M175,191 L175,361" />
+<g transform="rotate(180 175 361)"><path stroke="black" fill="#ffffff" d="M171,369 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="171" y="260">Views account</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="171" y="276">balances, and</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="171" y="292">makes payments</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="171" y="308">using</text>
-<path stroke="black" d="M292,428 L489,428" />
-<g transform="rotate(90 489 428)"><path stroke="black" fill="#ffffff" d="M485,436 l4,-8 l 4,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="260">Views account</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="276">balances, and</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="292">makes payments</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="308">using</text>
+<path stroke="black" d="M330,428 L530,428" />
+<g transform="rotate(90 530 428)"><path stroke="black" fill="#ffffff" d="M526,436 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="354" y="440">Sends e-mail</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="354" y="456">using</text>
-<path stroke="black" d="M526,369 L278,191" />
-<g transform="rotate(305 278 191)"><path stroke="black" fill="#ffffff" d="M274,199 l4,-8 l 4,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="394" y="440">Sends e-mail</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="394" y="456">using</text>
+<path stroke="black" d="M591,369 L310,191" />
+<g transform="rotate(302 310 191)"><path stroke="black" fill="#ffffff" d="M306,199 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="402" y="288">Sends e-mail to</text>
-<path stroke="black" d="M157,495 L157,665" />
-<g transform="rotate(180 157 665)"><path stroke="black" fill="#ffffff" d="M153,673 l4,-8 l 4,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="450" y="288">Sends e-mail to</text>
+<path stroke="black" d="M175,495 L175,665" />
+<g transform="rotate(180 175 665)"><path stroke="black" fill="#ffffff" d="M171,673 l4,-8 l 4,8 Z" /></g>
 
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="171" y="564">Gets account</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="171" y="580">information from,</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="171" y="596">and makes</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="171" y="612">payments using</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="308" y="846">C4 example diagram</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="564">Gets account</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="580">information from,</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="596">and makes</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="189" y="612">payments using</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="363" y="846">C4 example diagram</text></svg>
