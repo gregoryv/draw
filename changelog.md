@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Add draw.DefaultFontFamily used in default classes
 - Add shape.Hidden for hiding shapes
 - Add shape.Anchor for linking shapes
 
