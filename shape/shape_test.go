@@ -96,6 +96,7 @@ func TestSaveShapes(t *testing.T) {
 		NewHidden(
 			NewInternet(),
 		),
+		NewLabeled("an actor", NewInternet()),
 	}
 	for _, shape := range shapes {
 		img := draw.NewSVG()
