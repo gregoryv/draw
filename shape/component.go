@@ -45,7 +45,7 @@ func (c *Component) SetClass(v string)        { c.class = v }
 
 // SetHref links the title of the component. As of v0.29.0 you can use
 // [Anchor] to link the entire shape.
-func (c *Component) SetHref(v string)         { c.href = v }
+func (c *Component) SetHref(v string) { c.href = v }
 
 func (c *Component) WriteSVG(out io.Writer) error {
 	w, err := nexus.NewPrinter(out)

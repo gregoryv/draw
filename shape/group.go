@@ -5,6 +5,7 @@ import (
 	"io"
 
 	"github.com/gregoryv/draw/xy"
+	"github.com/gregoryv/nexus"
 )
 
 // NewGroup returns a virtual group of shapes which can be moved
@@ -50,8 +51,13 @@ func (g *Group) Direction() Direction { return DirectionRight }
 // SetClass is a noop
 func (g *Group) SetClass(c string) {}
 
-// WriteSVG is a noop
-func (g *Group) WriteSVG(out io.Writer) error { return nil }
+func (g *Group) WriteSVG(out io.Writer) error {
+	w, err := nexus.NewPrinter(out)
+	for _, s := range g.Shapes {
+		s.WriteSVG(w)
+	}
+	return *err
+}
 
 func (g *Group) SetPad(pad Padding) { g.Pad = pad }
 
