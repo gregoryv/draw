@@ -32,17 +32,17 @@ type Style struct {
 }
 
 var (
-	DefaultFont            = Font{Height: 12, LineHeight: 16, charWidths: arial}
-	DefaultTextPad         = Padding{Left: 6, Top: 4, Bottom: 6, Right: 10}
-	DefaultPad             = Padding{Left: 10, Top: 2, Bottom: 7, Right: 10}
-	DefaultSpacing         = 30 // between elements
+	DefaultFont    = Font{Height: 12, LineHeight: 16, charWidths: arial}
+	DefaultTextPad = Padding{Left: 6, Top: 4, Bottom: 6, Right: 10}
+	DefaultPad     = Padding{Left: 10, Top: 2, Bottom: 7, Right: 10}
+	DefaultSpacing = 30 // between elements
 
 	DefaultFontFamily = `font-family="Arial,Helvetica,sans-serif"`
-	
+
 	DefaultClassAttributes = ClassAttributes{
-		"area-red-label":   `font-style="italic" `+ DefaultFontFamily,
-		"area-green-label": `font-style="italic" `+ DefaultFontFamily,
-		"area-blue-label":  `font-style="italic" `+ DefaultFontFamily,
+		"area-red-label":   `font-style="italic" ` + DefaultFontFamily,
+		"area-green-label": `font-style="italic" ` + DefaultFontFamily,
+		"area-blue-label":  `font-style="italic" ` + DefaultFontFamily,
 		"area-red":         `stroke="black" stroke-width="0" fill="#ff9999" fill-opacity="0.1"`,
 		"area-green":       `stroke="black" stroke-width="0" fill="#ccff99" fill-opacity="0.1"`,
 		"area-blue":        `stroke="black" stroke-width="0" fill="#99e6ff" fill-opacity="0.1"`,
@@ -53,7 +53,7 @@ var (
 		"cylinder":              `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
 		"card":                  `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
 		"card-external":         `stroke="#d3d3d3" stroke-width="1" fill="#f8f9fa"`,
-		"card-title":            DefaultFontFamily +` font-weight="bold"`,
+		"card-title":            DefaultFontFamily + ` font-weight="bold"`,
 		"database":              `stroke="#d3d3d3" stroke-width="1" fill="#ffffff"`,
 		"dot":                   `stroke="black"`,
 		"exit":                  `stroke="black" stroke-width="2" fill="#ffffff"`,

@@ -9,11 +9,11 @@ To generate a simple sequence diagram from within your code use
 
 or if you want to tweek the diagram before saving
 
-    funx x() {
-      d, _ := goviz.FrameSequence()
-      // modify diagram d
-      _ = d.SaveAs("x_sequence.svg")
-    }
+	funx x() {
+	  d, _ := goviz.FrameSequence()
+	  // modify diagram d
+	  _ = d.SaveAs("x_sequence.svg")
+	}
 */
 package goviz
 
