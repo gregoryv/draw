@@ -12,7 +12,7 @@ import (
 
 func NewNote(text string) *Note {
 	return &Note{
-		Text:  text,
+		text:  text,
 		Font:  draw.DefaultFont,
 		Pad:   draw.DefaultPad,
 		class: "note",
@@ -21,15 +21,18 @@ func NewNote(text string) *Note {
 
 type Note struct {
 	x, y int
-	Text string
+	text string
 
 	Font  draw.Font
 	Pad   draw.Padding
 	class string
 }
 
+func (n *Note) SetText(v string) { n.text = v }
+func (n *Note) Text() string     { return n.text }
+
 func (n *Note) String() string {
-	return fmt.Sprintf("Note %v", n.Text)
+	return fmt.Sprintf("Note %v", n.text)
 }
 func (n *Note) Position() (x int, y int) { return n.x, n.y }
 func (n *Note) SetX(x int)               { n.x = x }
@@ -40,7 +43,7 @@ func (n *Note) Direction() Direction { return DirectionRight }
 func (n *Note) Width() int {
 	var width int
 	var widestLine string
-	for _, line := range strings.Split(n.Text, "\n") {
+	for _, line := range strings.Split(n.text, "\n") {
 		w := n.Font.TextWidth(line)
 		if w > width {
 			width = w
@@ -51,7 +54,7 @@ func (n *Note) Width() int {
 }
 
 func (n *Note) Height() int {
-	lines := strings.Count(n.Text, "\n") + 1
+	lines := strings.Count(n.text, "\n") + 1
 	return boxHeight(n.Font, n.Pad, lines)
 }
 func (n *Note) SetClass(c string) { n.class = c }
@@ -76,7 +79,7 @@ func (n *Note) WriteSVG(out io.Writer) error {
 		h, w, -(h - flap), -flap, -flap, x, y, x+w, y+flap, -flap, -flap)
 	t.Print("\n")
 	x += n.Pad.Left
-	for i, line := range strings.Split(n.Text, "\n") {
+	for i, line := range strings.Split(n.text, "\n") {
 		t.Printf(`<text class="note" font-size="%vpx" x="%v" y="%v">%s</text>`,
 			n.Font.Height, x, y+(n.Font.LineHeight*(i+1)), line)
 		t.Print("\n")
