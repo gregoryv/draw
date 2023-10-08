@@ -32,7 +32,7 @@ func (d *Database) WriteSVG(out io.Writer) error {
 		x:     d.x + d.Pad.Left,
 		y:     d.y + d.Pad.Top + int(d.ry()),
 		Font:  d.Font,
-		Text:  d.Title,
+		text:  d.Title,
 		class: d.class + "-title",
 	}
 	l.WriteSVG(w)

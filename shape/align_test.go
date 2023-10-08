@@ -20,13 +20,13 @@ func TestAlignVertical(t *testing.T) {
 			&Label{
 				x:    10,
 				y:    10,
-				Text: "1234",
+				text: "1234",
 				Font: draw.DefaultFont,
 			},
 			&Label{
 				x:    50,
 				y:    40,
-				Text: "12",
+				text: "12",
 				Font: draw.DefaultFont,
 			},
 			17, 40,
@@ -36,13 +36,13 @@ func TestAlignVertical(t *testing.T) {
 			&Label{
 				x:    10,
 				y:    10,
-				Text: "1234",
+				text: "1234",
 				Font: draw.DefaultFont,
 			},
 			&Label{
 				x:    50,
 				y:    40,
-				Text: "12",
+				text: "12",
 				Font: draw.DefaultFont,
 			},
 			10, 40,
@@ -52,13 +52,13 @@ func TestAlignVertical(t *testing.T) {
 			&Label{
 				x:    10,
 				y:    10,
-				Text: "1234",
+				text: "1234",
 				Font: draw.DefaultFont,
 			},
 			&Label{
 				x:    50,
 				y:    40,
-				Text: "12",
+				text: "12",
 				Font: draw.DefaultFont,
 			},
 			24, 40,

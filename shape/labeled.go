@@ -9,7 +9,7 @@ import (
 // NewLabeled returns a shape with the text as a label below it.
 func NewLabeled(text string, s Shape) *Labeled {
 	l := &Label{
-		Text:  template.HTMLEscapeString(text),
+		text:  template.HTMLEscapeString(text),
 		Font:  draw.DefaultFont,
 		Pad:   draw.DefaultPad,
 		class: "label",

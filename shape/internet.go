@@ -37,7 +37,7 @@ func (r *Internet) WriteSVG(out io.Writer) error {
 func (r *Internet) title() *Label {
 	label := &Label{
 		Font:  r.Font,
-		Text:  r.Title,
+		text:  r.Title,
 		class: "internet-title",
 	}
 	label.Font.LineHeight = draw.DefaultFont.Height

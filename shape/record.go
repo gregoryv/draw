@@ -55,7 +55,7 @@ func (r *Record) WriteSVG(out io.Writer) error {
 				x:     r.x + r.Pad.Left,
 				y:     r.y + y,
 				Font:  r.Font,
-				Text:  txt,
+				text:  txt,
 				class: "field",
 			}
 			label.WriteSVG(w)
@@ -73,7 +73,7 @@ func (r *Record) WriteSVG(out io.Writer) error {
 				x:     r.x + r.Pad.Left,
 				y:     r.y + y,
 				Font:  r.Font,
-				Text:  txt,
+				text:  txt,
 				class: "method",
 			}
 			label.WriteSVG(w)
@@ -99,7 +99,7 @@ func (r *Record) title() *Label {
 		x:     r.x + r.Pad.Left,
 		y:     r.y,
 		Font:  r.Font,
-		Text:  r.Title,
+		text:  r.Title,
 		class: "record-title",
 	}
 }

@@ -71,7 +71,7 @@ func (c *Component) title() *Label {
 		x:     c.x + c.Pad.Left + c.sbWidth/2,
 		y:     c.y + c.Pad.Top/2,
 		Font:  c.Font,
-		Text:  c.Title,
+		text:  c.Title,
 		href:  c.href,
 		class: c.class + "-title",
 	}

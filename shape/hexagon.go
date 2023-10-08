@@ -76,7 +76,7 @@ func (r *Hexagon) WriteSVG(out io.Writer) error {
 func (r *Hexagon) title() *Label {
 	label := &Label{
 		Font:  r.Font,
-		Text:  r.Title,
+		text:  r.Title,
 		class: r.class + "-title",
 	}
 	label.Font.LineHeight = draw.DefaultFont.Height - 4
