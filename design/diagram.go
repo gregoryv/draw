@@ -23,7 +23,7 @@ type Diagram struct {
 	shape.Aligner
 	draw.Style
 
-	Caption *shape.Label
+	caption *shape.Label
 }
 
 // Note is a convenience method to add a shape.Note to a diagram
@@ -141,15 +141,15 @@ func (d *Diagram) WriteSVG(w io.Writer) error {
 	if d.Width() == 0 && d.Height() == 0 {
 		d.AdaptSize()
 	}
-	if d.Caption != nil {
+	if caption := d.caption; caption != nil {
 		margin := 30
-		x := (d.Width() - d.Caption.Width()) / 2
+		x := (d.Width() - caption.Width()) / 2
 		if x < 0 {
 			x = 0
 		}
-		d.Place(d.Caption).At(x, d.Height()+margin)
+		d.Place(caption).At(x, d.Height()+margin)
 		d.AdaptSize()
-		d.SetHeight(d.Height() + d.Caption.Font.Height/2) // Fit protruding letters like 'g'
+		d.SetHeight(d.Height() + caption.Font.Height/2) // Fit protruding letters like 'g'
 	}
 	return d.SVG.WriteSVG(w)
 }
@@ -192,5 +192,9 @@ func min(a, b int) int {
 func (d *Diagram) SetCaption(txt string) {
 	l := shape.NewLabel(txt)
 	l.SetClass("caption")
-	d.Caption = l
+	d.caption = l
+}
+
+func (d *Diagram) Caption() *shape.Label{
+	return d.caption
 }
