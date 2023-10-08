@@ -31,6 +31,13 @@ type Style struct {
 	styles  map[string]string
 }
 
+func (s *Style) SetScale(v float64) {
+	s.Font.SetScale(v)
+	s.TextPad.SetScale(v)
+	s.Pad.SetScale(v)
+	s.Spacing = int(float64(s.Spacing) * v)
+}
+
 var (
 	DefaultFont    = Font{Height: 12, LineHeight: 16, charWidths: arial}
 	DefaultTextPad = Padding{Left: 6, Top: 4, Bottom: 6, Right: 10}

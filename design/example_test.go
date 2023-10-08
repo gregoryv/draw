@@ -19,6 +19,7 @@ func ExampleClassDiagram() *design.ClassDiagram {
 		triangle = d.Struct(shape.Triangle{})
 		shapE    = d.Interface((*shape.Shape)(nil))
 	)
+	d.SetScale(1.2)
 	d.HideRealizations()
 
 	var (

@@ -10,14 +10,14 @@ import (
 // placing the label shape in the bottom left corner.
 func NewContainer(label Shape, shapes ...Shape) *Container {
 	return &Container{
-		Label: label,
+		label: label,
 		Group: NewGroup(shapes...),
 		class: "container",
 	}
 }
 
 type Container struct {
-	Label Shape
+	label Shape
 	*Group
 	class string
 }
@@ -32,23 +32,23 @@ func (c *Container) WriteSVG(out io.Writer) error {
 
 	// move label to bottom left
 	y += c.Height()
-	y -= c.Label.Height()
+	y -= c.label.Height()
 	y -= c.Group.Pad.Bottom
 
 	x += c.Group.Pad.Left
 
-	c.Label.SetX(x)
-	c.Label.SetY(y)
-	c.Label.WriteSVG(w)
+	c.label.SetX(x)
+	c.label.SetY(y)
+	c.label.WriteSVG(w)
 	return *err
 }
 
 func (c *Container) Height() int {
-	h := c.Group.Height() + c.Label.Height()
+	h := c.Group.Height() + c.label.Height()
 	h += c.Group.Pad.Top // above the label
 	return h
 }
 
 func (c *Container) Width() int {
-	return c.Group.Width() + c.Label.Width()
+	return c.Group.Width() + c.label.Width()
 }

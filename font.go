@@ -9,6 +9,11 @@ type Font struct {
 	charWidths map[rune]float32
 }
 
+func (f *Font) SetScale(v float64) {
+	f.Height = int(float64(f.Height) * v)
+	f.LineHeight = int(float64(f.LineHeight) * v)
+}
+
 // TextWidth returns the width of the given text based on a 12px arial
 // font.
 func (f Font) TextWidth(txt string) int {
