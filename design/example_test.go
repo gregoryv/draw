@@ -60,7 +60,7 @@ func ExampleClassDiagram() *design.ClassDiagram {
 	d.HAlignBottom(classdia, seqdia)
 
 	d.HAlignCenter(circle, point)
-	
+
 	d.SetCaption("Figure 1. Class diagram of design and design.shape packages")
 	d.SaveAs("img/class_example.svg")
 	return d

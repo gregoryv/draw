@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/draw/xy"
@@ -17,16 +16,12 @@ func NewActor() *Actor {
 }
 
 type Actor struct {
-	x, y   int // top left
+	xy.Point
 	height int
 	class  string
 }
 
-func (a *Actor) String() string { return fmt.Sprintf("Actor") }
-
-func (a *Actor) Position() (x int, y int) { return a.x, a.y }
-func (a *Actor) SetX(x int)               { a.x = x }
-func (a *Actor) SetY(y int)               { a.y = y }
+func (a *Actor) String() string { return "Actor" }
 
 func (a *Actor) Width() int            { return a.rad() * 4 }
 func (a *Actor) Height() int           { return a.height }
