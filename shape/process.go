@@ -2,6 +2,8 @@ package shape
 
 import (
 	"io"
+
+	"github.com/gregoryv/draw"
 )
 
 func NewProcess(text string) *Process {
@@ -9,7 +11,7 @@ func NewProcess(text string) *Process {
 	label.SetClass("process-title")
 	return &Process{
 		Circle: Circle{
-			Radius: (label.Width() + DefaultTextPad.Left + DefaultTextPad.Right) / 2,
+			Radius: (label.Width() + draw.DefaultTextPad.Left + draw.DefaultTextPad.Right) / 2,
 			class:  "process",
 		},
 		label: label,

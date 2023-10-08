@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
@@ -11,8 +12,8 @@ import (
 func NewComponent(title string) *Component {
 	return &Component{
 		Title:    title,
-		Font:     DefaultFont,
-		Pad:      DefaultTextPad,
+		Font:     draw.DefaultFont,
+		Pad:      draw.DefaultTextPad,
 		class:    "component",
 		sbWidth:  10,
 		sbHeight: 5,
@@ -24,8 +25,8 @@ type Component struct {
 	Title string
 	href  string // optional link
 
-	Font  Font
-	Pad   Padding
+	Font  draw.Font
+	Pad   draw.Padding
 	class string
 
 	//smallBoxWidth
@@ -76,8 +77,8 @@ func (c *Component) title() *Label {
 	}
 }
 
-func (c *Component) SetFont(f Font)         { c.Font = f }
-func (c *Component) SetTextPad(pad Padding) { c.Pad = pad }
+func (c *Component) SetFont(f draw.Font)         { c.Font = f }
+func (c *Component) SetTextPad(pad draw.Padding) { c.Pad = pad }
 
 func (c *Component) Height() int {
 	return boxHeight(c.Font, c.Pad, 1)

@@ -18,7 +18,7 @@ func ExampleClassDiagram() *design.ClassDiagram {
 	d.HideRealizations()
 
 	var (
-		fnt      = d.Struct(shape.Font{})
+		fnt      = d.Struct(draw.Font{})
 		style    = d.Struct(draw.Style{})
 		seqdia   = d.Struct(design.SequenceDiagram{})
 		classdia = d.Struct(design.ClassDiagram{})

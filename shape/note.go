@@ -5,6 +5,7 @@ import (
 	"io"
 	"strings"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
@@ -12,8 +13,8 @@ import (
 func NewNote(text string) *Note {
 	return &Note{
 		Text:  text,
-		Font:  DefaultFont,
-		Pad:   DefaultPad,
+		Font:  draw.DefaultFont,
+		Pad:   draw.DefaultPad,
 		class: "note",
 	}
 }
@@ -22,8 +23,8 @@ type Note struct {
 	x, y int
 	Text string
 
-	Font
-	Pad   Padding
+	Font  draw.Font
+	Pad   draw.Padding
 	class string
 }
 
@@ -40,7 +41,7 @@ func (n *Note) Width() int {
 	var width int
 	var widestLine string
 	for _, line := range strings.Split(n.Text, "\n") {
-		w := n.TextWidth(line)
+		w := n.Font.TextWidth(line)
 		if w > width {
 			width = w
 			widestLine = line

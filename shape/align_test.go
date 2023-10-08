@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/gregoryv/asserter"
+	"github.com/gregoryv/draw"
 )
 
 func TestAlignVertical(t *testing.T) {
@@ -20,13 +21,13 @@ func TestAlignVertical(t *testing.T) {
 				x:    10,
 				y:    10,
 				Text: "1234",
-				Font: DefaultFont,
+				Font: draw.DefaultFont,
 			},
 			&Label{
 				x:    50,
 				y:    40,
 				Text: "12",
-				Font: DefaultFont,
+				Font: draw.DefaultFont,
 			},
 			17, 40,
 		},
@@ -36,13 +37,13 @@ func TestAlignVertical(t *testing.T) {
 				x:    10,
 				y:    10,
 				Text: "1234",
-				Font: DefaultFont,
+				Font: draw.DefaultFont,
 			},
 			&Label{
 				x:    50,
 				y:    40,
 				Text: "12",
-				Font: DefaultFont,
+				Font: draw.DefaultFont,
 			},
 			10, 40,
 		},
@@ -52,13 +53,13 @@ func TestAlignVertical(t *testing.T) {
 				x:    10,
 				y:    10,
 				Text: "1234",
-				Font: DefaultFont,
+				Font: draw.DefaultFont,
 			},
 			&Label{
 				x:    50,
 				y:    40,
 				Text: "12",
-				Font: DefaultFont,
+				Font: draw.DefaultFont,
 			},
 			24, 40,
 		},
@@ -87,8 +88,8 @@ func TestAlignHorizontal(t *testing.T) {
 	}{
 		{
 			aligner.HAlignTop,
-			&Label{Font: DefaultFont, x: 10, y: 10},
-			&Label{Font: DefaultFont, x: 50, y: 40},
+			&Label{Font: draw.DefaultFont, x: 10, y: 10},
+			&Label{Font: draw.DefaultFont, x: 50, y: 40},
 			50, 10,
 		},
 		{
@@ -99,8 +100,8 @@ func TestAlignHorizontal(t *testing.T) {
 		},
 		{
 			aligner.HAlignCenter,
-			&Label{Font: DefaultFont, x: 10, y: 10},
-			&Label{Font: DefaultFont, x: 50, y: 40},
+			&Label{Font: draw.DefaultFont, x: 10, y: 10},
+			&Label{Font: draw.DefaultFont, x: 50, y: 40},
 			50, 10,
 		},
 		{
@@ -133,7 +134,7 @@ func TestAlignHorizontal(t *testing.T) {
 			NewLine(0, 10, 0, 20),
 			&Label{
 				y:    20,
-				Font: Font{LineHeight: 10},
+				Font: draw.Font{LineHeight: 10},
 			},
 			0, 10,
 		},
@@ -141,11 +142,11 @@ func TestAlignHorizontal(t *testing.T) {
 			aligner.HAlignCenter,
 			&Label{
 				y:    20,
-				Font: Font{LineHeight: 10},
+				Font: draw.Font{LineHeight: 10},
 			},
 			&Label{
 				y:    20,
-				Font: Font{LineHeight: 6},
+				Font: draw.Font{LineHeight: 6},
 			},
 			0, 22,
 		},

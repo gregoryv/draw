@@ -195,6 +195,6 @@ func (d *Diagram) SetCaption(txt string) {
 	d.caption = l
 }
 
-func (d *Diagram) Caption() *shape.Label{
+func (d *Diagram) Caption() *shape.Label {
 	return d.caption
 }

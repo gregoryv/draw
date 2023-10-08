@@ -6,6 +6,7 @@ import (
 	"math"
 	"strings"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
@@ -13,8 +14,8 @@ import (
 func NewRect(title string) *Rect {
 	return &Rect{
 		Title: title,
-		Font:  DefaultFont,
-		Pad:   DefaultTextPad,
+		Font:  draw.DefaultFont,
+		Pad:   draw.DefaultTextPad,
 		class: "rect",
 	}
 }
@@ -23,8 +24,8 @@ type Rect struct {
 	x, y  int
 	Title string
 
-	Font  Font
-	Pad   Padding
+	Font  draw.Font
+	Pad   draw.Padding
 	class string
 
 	width, height int
@@ -62,8 +63,8 @@ func (r *Rect) title() *Label {
 	}
 }
 
-func (r *Rect) SetFont(f Font)         { r.Font = f }
-func (r *Rect) SetTextPad(pad Padding) { r.Pad = pad }
+func (r *Rect) SetFont(f draw.Font)         { r.Font = f }
+func (r *Rect) SetTextPad(pad draw.Padding) { r.Pad = pad }
 
 func (r *Rect) Height() int {
 	if r.height > 0 {

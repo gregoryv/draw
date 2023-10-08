@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
@@ -11,8 +12,8 @@ import (
 func NewCylinder(radius, height int) *Cylinder {
 	return &Cylinder{
 		Radius: radius,
-		Font:   DefaultFont,
-		Pad:    DefaultTextPad,
+		Font:   draw.DefaultFont,
+		Pad:    draw.DefaultTextPad,
 		height: height,
 		class:  "cylinder",
 	}
@@ -21,8 +22,8 @@ func NewCylinder(radius, height int) *Cylinder {
 type Cylinder struct {
 	Radius int
 
-	Font Font
-	Pad  Padding
+	Font draw.Font
+	Pad  draw.Padding
 
 	x, y   int // top left
 	height int

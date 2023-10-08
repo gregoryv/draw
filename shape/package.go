@@ -8,21 +8,11 @@ import (
 	"github.com/gregoryv/draw/xy"
 )
 
-type Padding = draw.Padding
-type Font = draw.Font
-
-var (
-	DefaultFont    = draw.DefaultFont
-	DefaultPad     = draw.DefaultPad
-	DefaultTextPad = draw.DefaultTextPad
-	DefaultSpacing = draw.DefaultSpacing
-)
-
-func boxHeight(font Font, pad Padding, lines int) int {
+func boxHeight(font draw.Font, pad draw.Padding, lines int) int {
 	return (pad.Top + pad.Bottom) + lines*font.LineHeight
 }
 
-func boxWidth(font Font, pad Padding, txt string) int {
+func boxWidth(font draw.Font, pad draw.Padding, txt string) int {
 	return pad.Left + font.TextWidth(txt) + pad.Right
 }
 
@@ -37,9 +27,9 @@ type Edge interface {
 }
 
 type HasFont interface {
-	SetFont(Font)
+	SetFont(draw.Font)
 }
 
 type HasTextPad interface {
-	SetTextPad(Padding)
+	SetTextPad(draw.Padding)
 }

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
@@ -11,8 +12,8 @@ import (
 func NewState(title string) *State {
 	return &State{
 		Title: title,
-		Font:  DefaultFont,
-		Pad:   DefaultTextPad,
+		Font:  draw.DefaultFont,
+		Pad:   draw.DefaultTextPad,
 		class: "state",
 	}
 }
@@ -21,8 +22,8 @@ type State struct {
 	x, y  int
 	Title string
 
-	Font  Font
-	Pad   Padding
+	Font  draw.Font
+	Pad   draw.Padding
 	class string
 }
 
@@ -56,8 +57,8 @@ func (r *State) title() *Label {
 	}
 }
 
-func (r *State) SetFont(f Font)         { r.Font = f }
-func (r *State) SetTextPad(pad Padding) { r.Pad = pad }
+func (r *State) SetFont(f draw.Font)         { r.Font = f }
+func (r *State) SetTextPad(pad draw.Padding) { r.Pad = pad }
 
 func (r *State) Height() int {
 	return boxHeight(r.Font, r.Pad, 1)

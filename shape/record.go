@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
@@ -11,8 +12,8 @@ import (
 func NewRecord(title string) *Record {
 	return &Record{
 		Title: title,
-		Font:  DefaultFont,
-		Pad:   DefaultTextPad,
+		Font:  draw.DefaultFont,
+		Pad:   draw.DefaultTextPad,
 		class: "record",
 	}
 }
@@ -23,8 +24,8 @@ type Record struct {
 	Fields  []string
 	Methods []string
 
-	Font  Font
-	Pad   Padding
+	Font  draw.Font
+	Pad   draw.Padding
 	class string
 }
 
@@ -106,8 +107,8 @@ func (r *Record) title() *Label {
 func (r *Record) HideFields()  { r.Fields = []string{} }
 func (r *Record) HideMethods() { r.Methods = []string{} }
 
-func (r *Record) SetFont(f Font)         { r.Font = f }
-func (r *Record) SetTextPad(pad Padding) { r.Pad = pad }
+func (r *Record) SetFont(f draw.Font)         { r.Font = f }
+func (r *Record) SetTextPad(pad draw.Padding) { r.Pad = pad }
 
 func (r *Record) hasFields() bool  { return len(r.Fields) != 0 }
 func (r *Record) hasMethods() bool { return len(r.Methods) != 0 }

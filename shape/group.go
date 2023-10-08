@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
@@ -13,13 +14,13 @@ import (
 func NewGroup(shapes ...Shape) *Group {
 	return &Group{
 		Shapes: shapes,
-		Pad:    Padding{Top: 12, Left: 12, Bottom: 12, Right: 12},
+		Pad:    draw.Padding{Top: 12, Left: 12, Bottom: 12, Right: 12},
 	}
 }
 
 type Group struct {
 	Shapes []Shape
-	Pad    Padding
+	Pad    draw.Padding
 }
 
 func (g *Group) String() string {
@@ -59,7 +60,7 @@ func (g *Group) WriteSVG(out io.Writer) error {
 	return *err
 }
 
-func (g *Group) SetPad(pad Padding) { g.Pad = pad }
+func (g *Group) SetPad(pad draw.Padding) { g.Pad = pad }
 
 func (g *Group) Height() int {
 	_, minY := g.TopLeftPos()

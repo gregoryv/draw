@@ -5,6 +5,7 @@ import (
 	"io"
 	"strings"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
@@ -12,8 +13,8 @@ import (
 func NewStore(title string) *Store {
 	return &Store{
 		Title: title,
-		Font:  DefaultFont,
-		Pad:   DefaultTextPad,
+		Font:  draw.DefaultFont,
+		Pad:   draw.DefaultTextPad,
 		class: "store",
 	}
 }
@@ -22,8 +23,8 @@ type Store struct {
 	x, y  int
 	Title string
 
-	Font  Font
-	Pad   Padding
+	Font  draw.Font
+	Pad   draw.Padding
 	class string
 
 	width, height int
@@ -67,8 +68,8 @@ func (r *Store) title() *Label {
 	}
 }
 
-func (r *Store) SetFont(f Font)         { r.Font = f }
-func (r *Store) SetTextPad(pad Padding) { r.Pad = pad }
+func (r *Store) SetFont(f draw.Font)         { r.Font = f }
+func (r *Store) SetTextPad(pad draw.Padding) { r.Pad = pad }
 
 func (r *Store) Height() int {
 	if r.height > 0 {

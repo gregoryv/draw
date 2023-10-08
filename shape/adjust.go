@@ -1,10 +1,12 @@
 package shape
 
+import "github.com/gregoryv/draw"
+
 // NewAdjuster returns an adjuster using DefaultSpacing.
 func NewAdjuster(s ...Shape) *Adjuster {
 	return &Adjuster{
 		shapes:  s,
-		Spacing: DefaultSpacing,
+		Spacing: draw.DefaultSpacing,
 	}
 }
 

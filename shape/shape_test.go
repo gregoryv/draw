@@ -198,7 +198,7 @@ func testShape(t *testing.T, shape Shape) {
 		if !ok {
 			return
 		}
-		s.SetFont(DefaultFont)
+		s.SetFont(draw.DefaultFont)
 	})
 
 	t.Run("Uses text padding", func(t *testing.T) {
@@ -206,7 +206,7 @@ func testShape(t *testing.T, shape Shape) {
 		if !ok {
 			return
 		}
-		s.SetTextPad(DefaultTextPad)
+		s.SetTextPad(draw.DefaultTextPad)
 	})
 
 	t.Run("Has edge", func(t *testing.T) {

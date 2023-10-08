@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"io"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
@@ -16,8 +17,8 @@ func NewHexagon(title string, width, height, radius int) *Hexagon {
 	}
 	return &Hexagon{
 		Title:  title,
-		Font:   DefaultFont,
-		Pad:    DefaultTextPad,
+		Font:   draw.DefaultFont,
+		Pad:    draw.DefaultTextPad,
 		class:  "hexagon",
 		width:  width,
 		height: height,
@@ -29,8 +30,8 @@ type Hexagon struct {
 	x, y  int
 	Title string
 
-	Font  Font
-	Pad   Padding
+	Font  draw.Font
+	Pad   draw.Padding
 	class string
 
 	width, height, radius int // radius is the left/right corner distance
@@ -78,19 +79,19 @@ func (r *Hexagon) title() *Label {
 		Text:  r.Title,
 		class: r.class + "-title",
 	}
-	label.Font.LineHeight = DefaultFont.Height - 4
+	label.Font.LineHeight = draw.DefaultFont.Height - 4
 	align := Aligner{}
 	align.VAlignCenter(r, label)
 	align.HAlignCenter(r, label)
 	return label
 }
 
-func (r *Hexagon) SetFont(f Font)         { r.Font = f }
-func (r *Hexagon) SetTextPad(pad Padding) { r.Pad = pad }
-func (r *Hexagon) Width() int             { return r.width }
-func (r *Hexagon) Height() int            { return r.height }
-func (r *Hexagon) SetWidth(w int)         { r.width = w }
-func (r *Hexagon) SetHeight(h int)        { r.height = h }
+func (r *Hexagon) SetFont(f draw.Font)         { r.Font = f }
+func (r *Hexagon) SetTextPad(pad draw.Padding) { r.Pad = pad }
+func (r *Hexagon) Width() int                  { return r.width }
+func (r *Hexagon) Height() int                 { return r.height }
+func (r *Hexagon) SetWidth(w int)              { r.width = w }
+func (r *Hexagon) SetHeight(h int)             { r.height = h }
 
 // Edge returns intersecting position of a line starting at start and
 // pointing to the rect center.

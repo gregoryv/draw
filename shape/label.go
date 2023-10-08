@@ -6,6 +6,7 @@ import (
 	"io"
 	"strings"
 
+	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/xy"
 	"github.com/gregoryv/nexus"
 )
@@ -13,8 +14,8 @@ import (
 func NewLabel(text string) *Label {
 	return &Label{
 		Text:  template.HTMLEscapeString(text),
-		Font:  DefaultFont,
-		Pad:   DefaultPad,
+		Font:  draw.DefaultFont,
+		Pad:   draw.DefaultPad,
 		class: "label",
 	}
 }
@@ -26,8 +27,8 @@ type Label struct {
 	Text string
 	href string
 
-	Font  Font
-	Pad   Padding
+	Font  draw.Font
+	Pad   draw.Padding
 	class string
 }
 

@@ -2,14 +2,16 @@ package shape
 
 import (
 	"html/template"
+
+	"github.com/gregoryv/draw"
 )
 
 // NewLabeled returns a shape with the text as a label below it.
 func NewLabeled(text string, s Shape) *Labeled {
 	l := &Label{
 		Text:  template.HTMLEscapeString(text),
-		Font:  DefaultFont,
-		Pad:   DefaultPad,
+		Font:  draw.DefaultFont,
+		Pad:   draw.DefaultPad,
 		class: "label",
 	}
 	// todo place below
