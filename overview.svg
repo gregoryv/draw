@@ -23,32 +23,33 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="278">Width()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="294">WriteSVG()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="218" y="156">shape.Shape interface</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="451" y="252" width="117" height="52"/>
-<path stroke="#d3d3d3" d="M451,278 L568,278" />
+<rect stroke="#d3d3d3" fill="#ffffff" x="451" y="236" width="117" height="68"/>
+<path stroke="#d3d3d3" d="M451,262 L568,262" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="278">Point</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="294">Radius</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="268">shape.Circle struct</text>
-<path stroke="black" stroke-dasharray="5,5,5" d="M451,263 L351,239" />
-<g transform="rotate(283 351 239)"><path stroke="black" fill="#ffffff" d="M347,247 l4,-8 l 4,8 Z" /></g>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="457" y="252">shape.Circle struct</text>
+<path stroke="black" stroke-dasharray="5,5,5" d="M451,257 L351,236" />
+<g transform="rotate(281 351 236)"><path stroke="black" fill="#ffffff" d="M347,244 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="#d3d3d3" fill="#ffffcc" d="M501,140 v 41 h 159 v -31 l -10,-10 L 501,140 M660,150 h -10 v -10"/>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="511" y="156">Anything is possible!</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="511" y="172">Go draw your next design</text>
+<path stroke="#d3d3d3" fill="#ffffcc" d="M501,108 v 41 h 159 v -31 l -10,-10 L 501,108 M660,118 h -10 v -10"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="511" y="124">Anything is possible!</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="511" y="140">Go draw your next design</text>
 
-<circle stroke="black" stroke-width="2" fill="#ffffff" cx="511" cy="74" r="5" />
-<path stroke="black" stroke-width="2" fill="#ffffff" d="M511,79 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+<circle stroke="black" stroke-width="2" fill="#ffffff" cx="511" cy="42" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M511,47 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
 
-<path stroke="black" d="M521,96 L561,140" />
-<g transform="rotate(137 561 140)"><path stroke="black" fill="#ffffff" d="M557,148 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" d="M521,64 L561,108" />
+<g transform="rotate(137 561 108)"><path stroke="black" fill="#ffffff" d="M557,116 l4,-8 l 4,8 Z" /></g>
 
-<rect stroke="#d3d3d3" fill="#ffffff" x="730" y="70" width="62" height="26"/>
-<rect stroke="#d3d3d3" fill="#ffffff" x="725" y="75" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="725" y="86" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="741" y="88">Service</text>
-<path stroke="#d3d3d3" stroke-width="1" fill="#ffffff" d="M 822 76 L 822 100 C 822 112, 888 112, 888 100 L 888 76" />
-<ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="855" cy="76" rx="33" ry="6" />
-<text class="database-title" font-size="12px" x="828" y="96">database</text>
-<circle stroke="#d3d3d3" fill="#e2e2e2" cx="761" cy="166" r="40" />\n
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="740" y="172">Internet</text>
-<rect stroke="#d3d3d3" fill="#e2e2e2" x="728" y="236" width="66" height="26"/>
-<rect stroke="#d3d3d3" fill="#e2e2e2" x="723" y="241" width="10" height="5"/><rect stroke="#d3d3d3" fill="#e2e2e2" x="723" y="252" width="10" height="5"/><text class="external-title" font-size="12px" x="739" y="254">Browser</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="730" y="38" width="62" height="26"/>
+<rect stroke="#d3d3d3" fill="#ffffff" x="725" y="43" width="10" height="5"/><rect stroke="#d3d3d3" fill="#ffffff" x="725" y="54" width="10" height="5"/><text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="741" y="56">Service</text>
+<path stroke="#d3d3d3" stroke-width="1" fill="#ffffff" d="M 822 44 L 822 68 C 822 80, 888 80, 888 68 L 888 44" />
+<ellipse stroke="#d3d3d3" stroke-width="1" fill="#ffffff" cx="855" cy="44" rx="33" ry="6" />
+<text class="database-title" font-size="12px" x="828" y="64">database</text>
+<circle stroke="#d3d3d3" fill="#e2e2e2" cx="761" cy="134" r="40" />\n
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="740" y="140">Internet</text>
+<rect stroke="#d3d3d3" fill="#e2e2e2" x="728" y="204" width="66" height="26"/>
+<rect stroke="#d3d3d3" fill="#e2e2e2" x="723" y="209" width="10" height="5"/><rect stroke="#d3d3d3" fill="#e2e2e2" x="723" y="220" width="10" height="5"/><text class="external-title" font-size="12px" x="739" y="222">Browser</text>
 <path stroke="#d3d3d3" d="M38,24 L38,101" />
 
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="10" y="18">app.Client</text>

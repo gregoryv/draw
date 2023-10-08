@@ -1,7 +1,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
-  font-family="Arial,Helvetica,sans-serif" width="775" height="1130">
+  font-family="Arial,Helvetica,sans-serif" width="929" height="1130">
 <path stroke="black" d="M280,377 L145,377" />
 <g transform="rotate(180 280 377)"><path stroke="black" fill="#ffffff" d="M280,377 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(270 145 377)"><path stroke="black" fill="#ffffff" d="M141,385 l4,-8 l 4,8 Z" /></g>
@@ -30,6 +30,10 @@
 <g transform="rotate(180 212 659)"><path stroke="black" fill="#777777" d="M212,659 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(270 133 659)"><path stroke="black" fill="#ffffff" d="M129,667 l4,-8 l 4,8 Z" /></g>
 
+<path stroke="black" d="M736,183 L836,183" />
+<g transform="rotate(0 736 183)"><path stroke="black" fill="#777777" d="M736,183 l 6,-4 6,4 -6,4 -6,-4" /></g>
+<g transform="rotate(90 836 183)"><path stroke="black" fill="#ffffff" d="M832,191 l4,-8 l 4,8 Z" /></g>
+
 <path stroke="black" d="M82,494 L82,614" />
 <g transform="rotate(90 82 494)"><path stroke="black" fill="#777777" d="M82,494 l 6,-4 6,4 -6,4 -6,-4" /></g>
 <g transform="rotate(180 82 614)"><path stroke="black" fill="#ffffff" d="M78,622 l4,-8 l 4,8 Z" /></g>
@@ -37,11 +41,11 @@
 <path stroke="black" stroke-dasharray="5,5,5" d="M636,258 L419,140" />
 <g transform="rotate(298 419 140)"><path stroke="black" fill="#ffffff" d="M415,148 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M619,175 L419,121" />
-<g transform="rotate(285 419 121)"><path stroke="black" fill="#ffffff" d="M415,129 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M619,63 L419,92" />
+<g transform="rotate(262 419 92)"><path stroke="black" fill="#ffffff" d="M415,100 l4,-8 l 4,8 Z" /></g>
 
-<path stroke="black" stroke-dasharray="5,5,5" d="M619,71 L419,94" />
-<g transform="rotate(264 419 94)"><path stroke="black" fill="#ffffff" d="M415,102 l4,-8 l 4,8 Z" /></g>
+<path stroke="black" stroke-dasharray="5,5,5" d="M619,168 L419,119" />
+<g transform="rotate(283 419 119)"><path stroke="black" fill="#ffffff" d="M415,127 l4,-8 l 4,8 Z" /></g>
 
 <path stroke="black" stroke-dasharray="5,5,5" d="M145,312 L280,173" />
 <g transform="rotate(45 280 173)"><path stroke="black" fill="#ffffff" d="M276,181 l4,-8 l 4,8 Z" /></g>
@@ -73,22 +77,40 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="468">SetTextPad()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="484">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="26" y="276">shape.Record struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="619" y="20" width="117" height="90"/>
-<path stroke="#d3d3d3" d="M619,46 L736,46" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="62">Radius</text>
-<path stroke="#d3d3d3" d="M619,68 L736,68" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="84">Edge()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="100">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="36">shape.Circle struct</text>
-<rect stroke="#d3d3d3" fill="#ffffff" x="619" y="160" width="135" height="68"/>
-<path stroke="#d3d3d3" d="M619,186 L754,186" />
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="202">Edge()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="218">String()</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="176">shape.Diamond struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="619" y="20" width="135" height="68"/>
+<path stroke="#d3d3d3" d="M619,46 L754,46" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="62">Edge()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="78">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="36">shape.Diamond struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="619" y="138" width="117" height="90"/>
+<path stroke="#d3d3d3" d="M619,164 L736,164" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="180">Point</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="196">Radius</text>
+<path stroke="#d3d3d3" d="M619,202 L736,202" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="218">Edge()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="154">shape.Circle struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="619" y="258" width="130" height="52"/>
 <path stroke="#d3d3d3" d="M619,284 L749,284" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="300">String()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="625" y="274">shape.Triangle struct</text>
+<rect stroke="#d3d3d3" fill="#ffffff" x="836" y="50" width="91" height="266"/>
+<path stroke="#d3d3d3" d="M836,76 L927,76" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="92">X</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="108">Y</text>
+<path stroke="#d3d3d3" d="M836,114 L927,114" />
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="130">Above()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="146">Below()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="162">Distance()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="178">Equals()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="194">LeftOf()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="210">Position()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="226">RightOf()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="242">SetX()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="258">SetY()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="274">String()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="290">XY()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="306">XYfloat64()</text>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="842" y="66">xy.Point struct</text>
 <rect stroke="#d3d3d3" fill="#ffffff" x="31" y="614" width="102" height="90"/>
 <path stroke="#d3d3d3" d="M31,640 L133,640" />
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="37" y="656">Height</text>
@@ -179,4 +201,4 @@
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="1050">Slice()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="1066">Struct()</text>
 <text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="378" y="970">design.ClassDiagram struct</text>
-<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="217" y="1123">Figure 1. Class diagram of design and design.shape packages</text></svg>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="294" y="1123">Figure 1. Class diagram of design and design.shape packages</text></svg>

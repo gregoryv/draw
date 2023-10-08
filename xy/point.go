@@ -19,6 +19,9 @@ func (p Point) RightOf(q Point) bool { return p.X > q.X }
 func (p Point) Above(q Point) bool   { return p.Y < q.Y }
 func (p Point) Below(q Point) bool   { return p.Y > q.Y }
 func (p Point) XY() (int, int)       { return p.X, p.Y }
+func (p Point) Position() (int, int) { return p.X, p.Y }
+func (p *Point) SetX(v int)          { p.X = v }
+func (p *Point) SetY(v int)          { p.Y = v }
 
 func (p Point) String() string {
 	x, y := p.XY()

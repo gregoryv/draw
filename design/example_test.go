@@ -6,11 +6,13 @@ import (
 	"github.com/gregoryv/draw"
 	"github.com/gregoryv/draw/design"
 	"github.com/gregoryv/draw/shape"
+	"github.com/gregoryv/draw/xy"
 )
 
 func ExampleClassDiagram() *design.ClassDiagram {
 	var (
 		d        = design.NewClassDiagram()
+		point    = d.Struct(xy.Point{})
 		record   = d.Struct(shape.Record{})
 		circle   = d.Struct(shape.Circle{})
 		diamond  = d.Struct(shape.Diamond{})
@@ -34,9 +36,10 @@ func ExampleClassDiagram() *design.ClassDiagram {
 	d.Place(shapE).At(280, 20)
 	d.Place(record).At(20, 260)
 
-	d.Place(circle).RightOf(shapE, 200)
-	d.Place(diamond).Below(circle, 50)
-	d.Place(triangle).Below(diamond)
+	d.Place(diamond).RightOf(shapE, 200)
+	d.Place(circle).Below(diamond, 50)
+	d.Place(triangle).Below(circle)
+	d.Place(point).RightOf(circle, 100)
 
 	d.Place(fnt).Below(record, 120)
 	d.Place(style).RightOf(fnt, 90)
@@ -56,6 +59,8 @@ func ExampleClassDiagram() *design.ClassDiagram {
 	d.VAlignCenter(dia, classdia)
 	d.HAlignBottom(classdia, seqdia)
 
+	d.HAlignCenter(circle, point)
+	
 	d.SetCaption("Figure 1. Class diagram of design and design.shape packages")
 	d.SaveAs("img/class_example.svg")
 	return d
