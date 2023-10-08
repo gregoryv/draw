@@ -91,6 +91,7 @@ func (r *Rect) Edge(start xy.Point) xy.Point {
 }
 
 type Box interface {
+	// Position returns the xy position of the top left corner.
 	Position() (x int, y int)
 	Width() int
 	Height() int
