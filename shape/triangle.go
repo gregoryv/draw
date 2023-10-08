@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/nexus"
@@ -19,10 +18,6 @@ type Triangle struct {
 	x, y          int
 	width, height int
 	class         string
-}
-
-func (t *Triangle) String() string {
-	return fmt.Sprintf("triangle at %v,%v", t.x, t.y)
 }
 
 func (t *Triangle) Position() (x int, y int) { return t.x, t.y }

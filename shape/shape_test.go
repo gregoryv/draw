@@ -175,14 +175,6 @@ func testShape(t *testing.T, shape Shape) {
 		assert(got >= 0).Errorf("0 height for: %v", shape)
 	})
 
-	t.Run("Implements fmt.Stringer", func(t *testing.T) {
-		assert := asserter.New(t)
-		s, ok := shape.(fmt.Stringer)
-		assert(ok).Fatalf("%v", shape)
-		got := s.String()
-		assert(got != "").Error("String() returned empty string")
-	})
-
 	t.Run("May have class", func(t *testing.T) {
 		shape.SetClass("something")
 	})

@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/draw/xy"
@@ -19,10 +18,6 @@ type Circle struct {
 	xy.Point
 	Radius int
 	class  string
-}
-
-func (c *Circle) String() string {
-	return fmt.Sprintf("Circle")
 }
 
 func (c *Circle) Width() int {

@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 	"strings"
 
@@ -31,9 +30,6 @@ type Note struct {
 func (n *Note) SetText(v string) { n.text = v }
 func (n *Note) Text() string     { return n.text }
 
-func (n *Note) String() string {
-	return fmt.Sprintf("Note %v", n.text)
-}
 func (n *Note) Position() (x int, y int) { return n.x, n.y }
 func (n *Note) SetX(x int)               { n.x = x }
 func (n *Note) SetY(y int)               { n.y = y }

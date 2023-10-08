@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"html/template"
 	"io"
 	"strings"
@@ -34,10 +33,6 @@ type Label struct {
 
 func (l *Label) Text() string     { return l.text }
 func (l *Label) SetText(v string) { l.text = v }
-
-func (l *Label) String() string {
-	return fmt.Sprintf("label %s at %v", l.text, &xy.Point{X: l.x, Y: l.y})
-}
 
 func (l *Label) SetHref(v string) { l.href = v }
 

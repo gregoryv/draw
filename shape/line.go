@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 	"math"
 	"strings"
@@ -38,10 +37,6 @@ type Line struct {
 	Head  Shape
 
 	class string
-}
-
-func (a *Line) String() string {
-	return fmt.Sprintf("Arrow from %v to %v", a.Start, a.End)
 }
 
 func (a *Line) WriteSVG(out io.Writer) error {

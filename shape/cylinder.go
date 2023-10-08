@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/draw"
@@ -28,10 +27,6 @@ type Cylinder struct {
 	x, y   int // top left
 	height int
 	class  string
-}
-
-func (c *Cylinder) String() string {
-	return fmt.Sprintf("Cylinder")
 }
 
 func (c *Cylinder) Position() (x int, y int) { return c.x, c.y }

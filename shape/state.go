@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/draw"
@@ -25,10 +24,6 @@ type State struct {
 	Font  draw.Font
 	Pad   draw.Padding
 	class string
-}
-
-func (r *State) String() string {
-	return fmt.Sprintf("R %q", r.Title)
 }
 
 func (r *State) Position() (x int, y int) { return r.x, r.y }

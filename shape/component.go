@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/draw"
@@ -32,10 +31,6 @@ type Component struct {
 	//smallBoxWidth
 	sbWidth  int
 	sbHeight int
-}
-
-func (c *Component) String() string {
-	return fmt.Sprintf("R %q", c.Title)
 }
 
 func (c *Component) Position() (x int, y int) { return c.x, c.y }

@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 	"strings"
 
@@ -77,9 +76,6 @@ func (c *Card) SetNote(v string)  { c.note.SetText(v) }
 func (c *Card) SetText(v string)  { c.text.SetText(v) }
 func (c *Card) SetIcon(v Shape)   { c.icon = v }
 
-func (c *Card) String() string {
-	return fmt.Sprintf("Card %q", c.title.Text())
-}
 func (c *Card) Direction() Direction { return DirectionRight }
 
 func (c *Card) WriteSVG(out io.Writer) error {

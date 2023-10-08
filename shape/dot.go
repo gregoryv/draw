@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/draw/xy"
@@ -19,10 +18,6 @@ type Dot struct {
 	x, y   int
 	Radius int
 	class  string
-}
-
-func (d *Dot) String() string {
-	return fmt.Sprintf("Dot")
 }
 
 func (d *Dot) Position() (x int, y int) { return d.x, d.y }

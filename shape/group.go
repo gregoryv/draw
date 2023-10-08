@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/draw"
@@ -21,10 +20,6 @@ func NewGroup(shapes ...Shape) *Group {
 type Group struct {
 	Shapes []Shape
 	Pad    draw.Padding
-}
-
-func (g *Group) String() string {
-	return fmt.Sprintf("Group")
 }
 
 func (g *Group) Position() (x, y int) {

@@ -21,8 +21,6 @@ type Actor struct {
 	class  string
 }
 
-func (a *Actor) String() string { return "Actor" }
-
 func (a *Actor) Width() int            { return a.rad() * 4 }
 func (a *Actor) Height() int           { return a.height }
 func (a *Actor) SetHeight(h int)       { a.height = h }

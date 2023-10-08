@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/nexus"
@@ -21,10 +20,6 @@ type Container struct {
 	Label Shape
 	*Group
 	class string
-}
-
-func (c *Container) String() string {
-	return fmt.Sprintf("Container")
 }
 
 func (c *Container) WriteSVG(out io.Writer) error {

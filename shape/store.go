@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 	"strings"
 
@@ -28,10 +27,6 @@ type Store struct {
 	class string
 
 	width, height int
-}
-
-func (r *Store) String() string {
-	return fmt.Sprintf("R %q", r.Title)
 }
 
 func (r *Store) Position() (x int, y int) { return r.x, r.y }

@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/draw"
@@ -37,10 +36,6 @@ type Hexagon struct {
 	width, height, radius int // radius is the left/right corner distance
 
 	textAlign string
-}
-
-func (r *Hexagon) String() string {
-	return fmt.Sprintf("R %q at %v, %v", r.Title, r.x, r.y)
 }
 
 func (r *Hexagon) Position() (x int, y int) { return r.x, r.y }

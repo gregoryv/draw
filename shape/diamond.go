@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/draw/xy"
@@ -29,10 +28,6 @@ type Diamond struct {
 	width  int
 	height int
 	class  string
-}
-
-func (d *Diamond) String() string {
-	return fmt.Sprintf("Diamond at %v,%v", d.x, d.y)
 }
 
 // fixme should point to top left corner

@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 	"math"
 	"strings"
@@ -31,10 +30,6 @@ type Rect struct {
 	width, height int
 
 	textAlign string
-}
-
-func (r *Rect) String() string {
-	return fmt.Sprintf("R %q", r.Title)
 }
 
 func (r *Rect) Position() (x int, y int) { return r.x, r.y }

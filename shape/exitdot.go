@@ -1,7 +1,6 @@
 package shape
 
 import (
-	"fmt"
 	"io"
 
 	"github.com/gregoryv/draw/xy"
@@ -19,10 +18,6 @@ type ExitDot struct {
 	x, y   int
 	Radius int
 	class  string
-}
-
-func (e *ExitDot) String() string {
-	return fmt.Sprintf("ExitDot")
 }
 
 func (e *ExitDot) Position() (x int, y int) { return e.x, e.y }

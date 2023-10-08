@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [unreleased]
 
+- Shapes no longer implement fmt.Stringer
 - Hide field Note.Text
 
 ## [0.31.0] 2023-10-08
