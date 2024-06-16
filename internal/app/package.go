@@ -1,5 +1,7 @@
 package app
 
-type Client struct{}
-type Server struct{}
-type Database struct{}
+type (
+	Client   struct{}
+	Server   struct{}
+	Database struct{}
+)

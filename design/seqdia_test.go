@@ -17,7 +17,6 @@ func TestSequenceDiagram_AddInterface(t *testing.T) {
 	exp := "design.X"
 	assert := asserter.New(t)
 	assert().Equals(got, exp)
-
 }
 
 func TestSequenceDiagram_WithCaption(t *testing.T) {

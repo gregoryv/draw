@@ -75,7 +75,7 @@ func exampleClassDiagram() *ClassDiagram {
 func TestClassDiagram_OtherType(t *testing.T) {
 	newClassDiagram().SaveAs("testdata/classdia_test.svg")
 	data := newClassDiagram().Inline()
-	ioutil.WriteFile("testdata/classdia_inlined.svg", []byte(data), 0644)
+	ioutil.WriteFile("testdata/classdia_inlined.svg", []byte(data), 0o644)
 }
 
 func TestClassDiagram_Inline(t *testing.T) {

@@ -28,7 +28,7 @@ type Component struct {
 	Pad   draw.Padding
 	class string
 
-	//smallBoxWidth
+	// smallBoxWidth
 	sbWidth  int
 	sbHeight int
 }

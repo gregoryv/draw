@@ -13,7 +13,6 @@ possible in notes`)
 	n.SetY(20)
 	saveAsSvg(t, n, "testdata/note.svg")
 	testShape(t, n)
-
 }
 
 func saveAsSvg(t *testing.T, shape Shape, filename string) {

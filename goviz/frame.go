@@ -42,7 +42,6 @@ func SaveFrameSeq(filename string) error {
 	defer fh.Close()
 	_, err = fh.Write([]byte(d.Inline()))
 	return err
-
 }
 
 // FrameSequence returns a sequence diagram based on the caller
@@ -136,7 +135,6 @@ func ffsplit(v string) (pkg, receiver, fn string) {
 	}
 	receiver = strings.Trim(receiver, "()")
 	return
-
 }
 
 // pstr returns fully qualified package string

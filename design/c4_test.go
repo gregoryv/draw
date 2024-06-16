@@ -54,5 +54,4 @@ accounts, transactions, etc.`,
 	if err := d.SaveAs("testdata/c4example.svg"); err != nil {
 		t.Fatal(err)
 	}
-
 }

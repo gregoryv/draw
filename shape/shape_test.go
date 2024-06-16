@@ -13,7 +13,6 @@ import (
 )
 
 func TestContainer(t *testing.T) {
-
 	label := NewLabel("hello")
 	label.SetX(40)
 	label.SetY(40)
@@ -215,7 +214,7 @@ func testShape(t *testing.T, shape Shape) {
 	t.Run("Is resizable", func(t *testing.T) {
 		s, ok := shape.(resizable)
 		if !ok {
-			//t.Errorf("%T", shape)
+			// t.Errorf("%T", shape)
 			return
 		}
 		s.SetHeight(100)
@@ -233,7 +232,7 @@ func testShape(t *testing.T, shape Shape) {
 	t.Run("Special", func(t *testing.T) {
 		s, ok := shape.(*Actor)
 		if !ok {
-			//t.Errorf("%T", shape)
+			// t.Errorf("%T", shape)
 			return
 		}
 		s.SetHeight(100)
@@ -242,7 +241,6 @@ func testShape(t *testing.T, shape Shape) {
 			t.Fail()
 		}
 	})
-
 }
 
 type resizable interface {

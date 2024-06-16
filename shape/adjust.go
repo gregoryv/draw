@@ -26,7 +26,7 @@ func (a *Adjuster) At(x, y int) *Adjuster {
 
 // Move adjusts shapes by moving them +/- in x and or y direction
 func (a *Adjuster) Move(dx, dy int) *Adjuster {
-	for i, _ := range a.shapes {
+	for i := range a.shapes {
 		Move(a.shapes[i], dx, dy)
 	}
 	return a

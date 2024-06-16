@@ -16,5 +16,4 @@ func TestTextWidth(t *testing.T) {
 			t.Errorf("%q found=%v c.ok=%v", c.r, got, c.exp)
 		}
 	}
-
 }

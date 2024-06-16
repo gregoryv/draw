@@ -40,13 +40,12 @@ func (r *Record) WriteSVG(out io.Writer) error {
 		`<rect class="%s" x="%v" y="%v" width="%v" height="%v"/>`,
 		r.class, r.x, r.y, r.Width(), r.Height())
 	w.Printf("\n")
-	var y = boxHeight(r.Font, r.Pad, 1)
+	y := boxHeight(r.Font, r.Pad, 1)
 	hasFields := len(r.Fields) != 0
 	if hasFields {
 		r.writeSeparator(w, r.y+y)
 		for _, txt := range r.Fields {
 			label := &Label{
-
 				x:     r.x + r.Pad.Left,
 				y:     r.y + y,
 				Font:  r.Font,

@@ -31,9 +31,9 @@ func TestHouse(t *testing.T) {
 func NewHouse() *House {
 	return &House{
 		floors: []*Floor{
-			&Floor{
+			{
 				rooms: []*Room{
-					&Room{},
+					{},
 				},
 			},
 		},

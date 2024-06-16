@@ -191,7 +191,7 @@ func ExampleGanttChart_year() {
 
 func TestExamples(t *testing.T) {
 	ExampleClassDiagram()
-	//ExampleSequenceDiagram()
+	// ExampleSequenceDiagram()
 	ExampleDiagram()
 	ExampleActivityDiagram()
 	ExampleGanttChart()

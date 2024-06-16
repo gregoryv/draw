@@ -11,7 +11,6 @@ import (
 )
 
 func TestDiagram(t *testing.T) {
-
 	t.Run("Adapts in size", func(t *testing.T) {
 		d := NewDiagram()
 		l1 := shape.NewLine(0, 0, 100, 100)

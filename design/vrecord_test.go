@@ -23,8 +23,10 @@ func (me *car) Model(x int) string {
 	return ""
 }
 
-type myOwn int
-type myStr struct{ f string }
+type (
+	myOwn int
+	myStr struct{ f string }
+)
 
 func Test_NewVRecord_types(t *testing.T) {
 	ok := func(v interface{}, exp string) {
@@ -114,6 +116,8 @@ func TestVRecord_Aggregates(t *testing.T) {
 
 func noop() {}
 
-type F func()
-type C struct{}
-type MySlice []C
+type (
+	F       func()
+	C       struct{}
+	MySlice []C
+)
