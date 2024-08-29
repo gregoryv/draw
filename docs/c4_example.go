@@ -7,38 +7,46 @@ import (
 
 func ExampleC4SystemContextDiagram() *design.Diagram {
 	var (
-		d = design.NewDiagram()
-
-		person = shape.NewCard(
-			"Customer", "[Person]",
-			"Someone buying books",
+		d        = design.NewDiagram()
+		customer = shape.NewCard("Personal Banking Customer", "[Person]",
+			`A customer of the bank, with personal 
+bank accounts.`,
 		)
-		store  = shape.NewCard(
-			"Book Store",
-			"[Software System]",
-			"Register of all books.",
+		ibs = shape.NewCard("Internet Banking System", "[Software System]",
+			`Allows customers to view information
+about their bank accounts, and make
+payments.`,
 		)
-		acc    = shape.NewCard(
-			"Accounting",
-			"[Software System]",
-			"Journal of all sales",
+		mailsys = shape.NewCard("E-mail System", "[Software System]",
+			`The internal Microsoft Exchange
+e-mail system.`,
 		)
-
-		cont = shape.NewContainer(
-			shape.NewLabel("[System Context] Book store"),
-			person, store, acc,
+		mainframe = shape.NewCard("Mainframe Banking System", "[Software System]",
+			`Stores all of the core banking
+information about customers,
+accounts, transactions, etc.`,
 		)
 	)
-	d.Spacing = 150
-	person.SetIcon(shape.NewActor())
-	acc.SetClass("external")
 
-	d.Place(cont).At(10, 10)
-	d.Place(person).At(20, 20)
-	d.Place(acc).Below(person)
-	d.Place(store).RightOf(acc)
+	mailsys.SetClass("card-external")
+	mainframe.SetClass("card-external")
+	customer.SetIcon(shape.NewActor())
 
-	d.Link(person, store, "Finds and buys a book")
-	d.Link(store, acc, "Logs purchases")
+	d.Place(customer).At(20, 20)
+	d.Place(ibs).Below(customer, 170)
+	d.Place(mailsys).RightOf(ibs, 200)
+	d.Place(mainframe).Below(ibs, 170)
+	d.HAlignCenter(ibs, mailsys)
+	d.VAlignCenter(customer, ibs, mainframe)
+
+	d.Link(customer, ibs,
+		"Views account\nbalances, and\nmakes payments\nusing",
+	)
+	d.Link(ibs, mailsys, "Sends e-mail\nusing")
+	d.Link(mailsys, customer, "Sends e-mail to")
+	d.Link(ibs, mainframe,
+		"Gets account\ninformation from,\nand makes\npayments using",
+	)
+	d.SetCaption("C4 example diagram")
 	return d
 }

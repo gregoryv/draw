@@ -47,7 +47,7 @@ This diagram is rendered by
 
 Read more about the [C4 model](https://c4model.com/).
 
-[ExampleC4Diagram](https://gregoryv.github.io/draw/#c4diagrams)
+[Example C4 diagrams](https://gregoryv.github.io/draw/#c4diagrams)
 
 ![](img/c4_example.svg)
 

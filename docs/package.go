@@ -181,7 +181,7 @@ func NewProjectArticle() *Element {
 		H3("C4 diagrams"),
 		ExampleC4SystemContextDiagram().Inline(),
 		LoadFile("c4_example.go", 1, -1),
-		
+
 		H3("Gantt chart"),
 		ExampleGanttChart().Inline(),
 
