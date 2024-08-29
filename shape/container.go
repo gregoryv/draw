@@ -50,5 +50,5 @@ func (c *Container) Height() int {
 }
 
 func (c *Container) Width() int {
-	return c.Group.Width() + c.label.Width()
+	return c.Group.Width()
 }

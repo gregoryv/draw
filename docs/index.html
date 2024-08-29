@@ -109,6 +109,7 @@ float: left;
 <li class="h3"><a href="#class">Class</a></li>
 <li class="h3"><a href="#activity">Activity</a></li>
 <li class="h3"><a href="#sequence">Sequence</a></li>
+<li class="h3"><a href="#c4diagrams">C4 diagrams</a></li>
 <li class="h3"><a href="#ganttchart">Gantt chart</a></li>
 <li class="h3"><a href="#generic">Generic</a></li>
 <li class="h2"><a href="#shapes">Shapes</a></li>
@@ -580,6 +581,72 @@ func ExampleSequenceDiagram() *design.SequenceDiagram {
 	d.Link(srv, srv, "Transform to view model").Class = "highlight"
 	d.Link(srv, cli, "Send HTML")
 	d.Link(srv, sqs, "Publish event")
+	return d
+}
+</code></pre><h3 id="c4diagrams"><a href="#c4diagrams">C4 diagrams</a></h3>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  font-family="Arial,Helvetica,sans-serif" width="803" height="468">
+<rect stroke="#737373" stroke-dasharray="5,5,5" fill="transparent" x="8" y="8" width="794" height="459"/>
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="20" y="455">[System Context] Book store</text>
+<rect stroke="#d3d3d3" stroke-width="1" fill="#ffffff" x="20" y="20" width="310" height="155"/>
+<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12px" x="38" y="45"></text><circle stroke="black" stroke-width="2" fill="#ffffff" cx="166" cy="43" r="5" />
+<path stroke="black" stroke-width="2" fill="#ffffff" d="M166,48 l 0,15 m -10,-10 l 20,0 m -10,10 l -10,10 m 10,-10 l 10,10 Z" />
+<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="126" y="107">Customer</text><text class="card-note" font-size="12px" x="143" y="123">[Person]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="157">Someone buying books</text>
+<rect stroke="#d3d3d3" fill="#e2e2e2" x="20" y="325" width="310" height="102"/>
+<text class="external-title" font-size="12px" x="38" y="350"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="120" y="359">Accounting</text><text class="card-note" font-size="12px" x="117" y="375">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="38" y="409">Journal of all sales</text>
+<rect stroke="#d3d3d3" stroke-width="1" fill="#ffffff" x="480" y="325" width="310" height="102"/>
+<text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="12px" x="498" y="350"></text><text font-family="Arial,Helvetica,sans-serif" font-weight="bold" font-size="18px" x="581" y="359">Book Store</text><text class="card-note" font-size="12px" x="577" y="375">[Software System]</text><text font-family="Arial,Helvetica,sans-serif" font-size="14px" x="498" y="409">Register of all books.</text>
+<path stroke="black" d="M303,175 L550,325" />
+<g transform="rotate(121 550 325)"><path stroke="black" fill="#ffffff" d="M546,333 l4,-8 l 4,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="426" y="258">Finds and buys a book</text>
+<path stroke="black" d="M480,376 L330,376" />
+<g transform="rotate(270 330 376)"><path stroke="black" fill="#ffffff" d="M326,384 l4,-8 l 4,8 Z" /></g>
+
+<text font-family="Arial,Helvetica,sans-serif" font-size="12px" x="361" y="396">Logs purchases</text></svg><pre class="srcfile"><code class="go">package docs
+
+import (
+	"github.com/gregoryv/draw/design"
+	"github.com/gregoryv/draw/shape"
+)
+
+func ExampleC4SystemContextDiagram() *design.Diagram {
+	var (
+		d = design.NewDiagram()
+
+		person = shape.NewCard(
+			"Customer", "[Person]",
+			"Someone buying books",
+		)
+		store  = shape.NewCard(
+			"Book Store",
+			"[Software System]",
+			"Register of all books.",
+		)
+		acc    = shape.NewCard(
+			"Accounting",
+			"[Software System]",
+			"Journal of all sales",
+		)
+
+		cont = shape.NewContainer(
+			shape.NewLabel("[System Context] Book store"),
+			person, store, acc,
+		)
+	)
+	d.Spacing = 150
+	person.SetIcon(shape.NewActor())
+	acc.SetClass("external")
+
+	d.Place(cont).At(10, 10)
+	d.Place(person).At(20, 20)
+	d.Place(acc).Below(person)
+	d.Place(store).RightOf(acc)
+
+	d.Link(person, store, "Finds and buys a book")
+	d.Link(store, acc, "Logs purchases")
 	return d
 }
 </code></pre><h3 id="ganttchart"><a href="#ganttchart">Gantt chart</a></h3>
