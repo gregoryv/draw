@@ -51,7 +51,7 @@ accounts, transactions, etc.`,
 	)
 	d.SetCaption("C4 example diagram")
 
-	if err := d.SaveAs("testdata/c4example.svg"); err != nil {
+	if err := d.SaveAs("img/c4_example.svg"); err != nil {
 		t.Fatal(err)
 	}
 }

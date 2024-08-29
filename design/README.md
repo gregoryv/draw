@@ -43,6 +43,14 @@ This diagram is rendered by
 ![](img/diagram_example.svg)
 
 
+## C4 diagram
+
+Read more about the [C4 model](https://c4model.com/).
+
+[ExampleC4Diagram](https://gregoryv.github.io/draw/#c4diagrams)
+
+![](img/c4_example.svg)
+
 ## Grid layout
 
 Simplifying placing shapes in a grid layout aligning different sizes of shapes.
