@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/gregoryv/draw.svg?branch=main)](https://travis-ci.org/gregoryv/draw)
-[![codecov](https://codecov.io/gh/gregoryv/draw/branch/main/graph/badge.svg)](https://codecov.io/gh/gregoryv/draw)
-[![Maintainability](https://api.codeclimate.com/v1/badges/86799d699c1e4ac69531/maintainability)](https://codeclimate.com/github/gregoryv/draw/maintainability)
+ARCHIVED! Moved to https://sogvin.com/draw
 
 [draw](https://godoc.org/github.com/gregoryv/draw) - package for writing software design diagrams
 
